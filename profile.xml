@@ -1,0 +1,35 @@
+<Profile>
+
+<Name>Act 1 - Loader</Name>
+
+<GameParams quest="101758" step="1" act="OpenWorld" difficulty="Normal" resumeFromSave="False" isPrivate="True" numGames="-1"  />
+<!--This is the Beging of your ORder list-->
+<Order>
+<!--Teleports to town if not in town-->
+<If condition="Me.IsInTown==False">   
+<UseTownPortal questId="1" />       
+</If>
+<If condition="Me.IsInTown">
+
+
+<!-- Field of Misery Bounties -->
+	<LogMessage quest="1" step="1" output="Tristram -> Fields of Misery" />
+	<UseWaypoint questId="1" stepId="1" actorId="223757" x="401.096"  y="554.0627" z="24.89972" waypointNumber="8"/> 
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+	<!-- Clear Khazra Den -->
+	<If condition="IsActiveQuest(Zeta.Game.SNOQuest.X1_Bounty_A1_Fields_Clear_KhazraDen) and CurrentLevelAreaId == 71150">
+		<LoadProfile file="./Act1/X1_Bounty_A1_Fields_Clear_KhazraDen.xml" />
+	</If>
+	<!-- Clear Scavenger's Den -->
+	<If condition="IsActiveQuest(Zeta.Game.SNOQuest.X1_Bounty_A1_Fields_Clear_ScavengerDen2) and CurrentWorldId == 71150">
+		<LoadProfile file="./Act1/X1_Bounty_A1_Fields_Clear_KhazraDen.xml" />
+	</If>
+<!-- End Fields of Misry -->
+	
+	
+		
+</If>
+</Order>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+</Profile>
