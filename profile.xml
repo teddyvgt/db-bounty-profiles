@@ -50,8 +50,8 @@
 		<LoadProfile file="./Act1/344486.xml" />
 	</HaveBounty>
 	<!-- Kill Garrach the Afflicted -->
-	<HaveBounty questSNO="344486">
-		<LoadProfile file="./Act1/344486.xml" />
+	<HaveBounty questSNO="347027">
+		<LoadProfile file="./Act1/347027.xml" />
 	</HaveBounty>
 	<!-- Kill Grimsmack -->
 	<HaveBounty questSNO="345507">
