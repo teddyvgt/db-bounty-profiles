@@ -30,8 +30,10 @@
     <!-- Look for him -->
 	<BountyAtStep questSNO="367559" step="4">
 		<If condition="CurrentWorldId == 71150">
-			
-			<MoveToActor questId="312429" stepId="2" actorId="176001" isPortal="True" destinationWorldId="75049" x="1079.47" y="3379.56" z="66.53082" />
+			<SafeMoveTo questId="312429" stepId="2" x="1430" y="4030" z="39"/> 
+			<SafeMoveTo questId="312429" stepId="2" x="1269" y="3903" z="78" />
+			<SafeMoveTo questId="312429" stepId="2" x="1080.303" y="3401.695" z="65.4789" />
+			<MoveToActor questId="312429" stepId="2" actorId="176001" isPortal="True" destinationWorldId="75049" />
 			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
 			<AWTrinityExploreDungeon bountyQuestSNO="367559" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" actorId="218664" boxTolerance="0.10" boxSize="15" />
 			<!-- If not completed, keep killing things until it is complete-->
