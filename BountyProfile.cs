@@ -18,7 +18,7 @@ namespace BountyProfile
 {
     public partial class BountyProfile : IPlugin
     {
-        public Version Version { get { return new Version(0, 0, 2); } }
+        public Version Version { get { return new Version(0, 0, 3); } }
         public string Author { get { return "Sychotix"; } }
         public string Description { get { return "Adds functionaly to make adventure profiles work."; } }
         public string Name { get { return "BountyProfile "; } }
@@ -105,6 +105,8 @@ namespace BountyProfile
 
         public override void OnStart()
         {
+            Logger.Log("Refreshing Cache!");
+            BountyCache.timer_tick(null, null);
             var b = BountyCache.getBounties().Where(bounty => bounty.Info.QuestSNO == QuestSNO).FirstOrDefault();
             if(b == null) Logger.Log("Don't have quest: " + QuestSNO);
             else base.OnStart(); return;
