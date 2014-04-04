@@ -105,7 +105,7 @@ namespace BountyProfile
 
         public override void OnStart()
         {
-            var b = ZetaDia.ActInfo.Bounties.Where(bounty => bounty.Info.QuestSNO == QuestSNO).FirstOrDefault();
+            var b = BountyCache.getBounties().Where(bounty => bounty.Info.QuestSNO == QuestSNO).FirstOrDefault();
             if(b == null) Logger.Log("Don't have quest: " + QuestSNO);
             else base.OnStart(); return;
             
@@ -116,13 +116,14 @@ namespace BountyProfile
         {
             get
             {
-                if (ZetaDia.ActInfo.ActiveBounty == null)
+                var b = BountyCache.getBounties().Where(bounty => bounty.Info.QuestSNO == QuestSNO).FirstOrDefault();
+                if (b == null)
                 {
                     Logger.Log("Something went wrong, started but can't find bounty anymore. Assuming done.");
                     return true;
                 }
                 //If completed or on next step, we are good.
-                if (ZetaDia.ActInfo.ActiveBounty.Info.State == QuestState.Completed || ZetaDia.ActInfo.ActiveBounty.Info.QuestStep != Step)
+                if (b.Info.State == QuestState.Completed || b.Info.QuestStep != Step)
                 {
                     Logger.Log("Seems completed!");
                     return true;
@@ -156,7 +157,7 @@ namespace BountyProfile
 
         public override bool GetConditionExec()
         {
-            return ZetaDia.ActInfo.Bounties.Where(bounty => bounty.Info.QuestSNO == QuestSNO && bounty.Info.State != QuestState.Completed).FirstOrDefault() != null;
+            return BountyCache.getBounties().Where(bounty => bounty.Info.QuestSNO == QuestSNO && bounty.Info.State != QuestState.Completed).FirstOrDefault() != null;
         }
 
         private bool CheckNotAlreadyDone(object obj)
@@ -188,7 +189,7 @@ namespace BountyProfile
 
         public override bool GetConditionExec()
         {
-            return ZetaDia.ActInfo.Bounties.Where(bounty => bounty.Info.QuestSNO == QuestSNO && bounty.Info.QuestStep == QuestStep && bounty.Info.State != QuestState.Completed).FirstOrDefault() != null;
+            return BountyCache.getBounties().Where(bounty => bounty.Info.QuestSNO == QuestSNO && bounty.Info.QuestStep == QuestStep && bounty.Info.State != QuestState.Completed).FirstOrDefault() != null;
         }
 
         private bool CheckNotAlreadyDone(object obj)
@@ -209,6 +210,34 @@ namespace BountyProfile
             get;
             set;
         }
+    }
+
+    public class BountyCache
+    {
+        static System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        static private bool _init;
+        static IEnumerable<BountyInfo> _bounties;
+
+        static public IEnumerable<BountyInfo> getBounties() {
+            if(!_init) {
+                timer.Tick += new EventHandler(timer_tick);
+                timer.Interval = (1000) * (1);
+                _bounties = ZetaDia.ActInfo.Bounties;
+                timer.Enabled = true;
+                timer.Start();
+                _init = true;
+            }
+            return _bounties;
+        }
+
+        static private void timer_tick(object sender, EventArgs e)
+        {
+            timer.Stop();
+            _bounties = ZetaDia.ActInfo.Bounties;
+            timer.Start();
+        }
+        
+
     }
 
 } // namespace
