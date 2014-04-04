@@ -1,0 +1,50 @@
+<Profile>
+
+<Name>Kill Logrut the Warrior</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<Order>
+<If condition="Me.IsInTown==False>   
+<UseTownPortal questId="1" />       
+</If>
+<If condition="Me.IsInTown ">
+	<!--Act 1 WP-->
+	<If condition="CurrentWorldId == 332336">
+		<UseWaypoint questId="1" stepId="1" actorId="223757" x="401.7305" y="555.0093" z="24.90835" waypointNumber="14"/>
+	</If>
+	<!--Act 2 WP-->
+	<If condition="CurrentWorldId == 161472">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="324.8699" y="291.0312" z="1.645629" waypointNumber="14"/> 
+	</If>
+	<!--Act 3/4 WP-->
+	<If condition="CurrentWorldId == 172909">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="14"/> 
+	</If>
+	<!--Act 4 WP-->
+	<If condition="CurrentWorldId == 304235">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="557.5455" y="525.3394" z="2.796465" waypointNumber="14"/> 
+	</If>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+</If>
+    <!-- Look for him -->
+	<BountyAtStep questSNO="350529" step="4">
+		<If condition="CurrentWorldId == 71150">
+			<AWTrinityExploreDungeon bountyQuestSNO="344497" bountyStep="4" questId="312429" stepId="2" boxTolerance="0.01" boxSize="40" until="ExitFound" exitNameHash="853662530" ignoreMarkers="False" />
+			<MoveToMapMarker  questId="72546" stepId="17" markerNameHash="853662530"  actorId="5502" isPortal="True" destinationWorldId="132995" />
+			<WaitTimer questId="72546" stepId="17" waitTime="1000" />
+			<MoveToActor questId="312429" stepId="2" actorId="129782" />
+			
+			<AWTrinityExploreDungeon bountyQuestSNO="344497" bountyStep="4" questId="312429" stepId="2" boxTolerance="0.01" boxSize="40" until="ObjectFound" actorId="136009" ignoreMarkers="False" />
+			<WaitTimer questId="72546" stepId="17" waitTime="10000" />
+			<MoveToActor questId="312429" stepId="2" actorId="129782" />
+			<WaitTimer questId="72546" stepId="17" waitTime="10000" />
+		</If>
+	</BountyAtStep>
+
+    <!-- Portal Home -->
+    <TrinityTownPortal questId="312429" stepId="2" />
+    <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+	<LoadProfile file="../profile.xml" />
+</Order>
+</Profile>
