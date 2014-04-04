@@ -79,6 +79,7 @@
     <!-- Inside Khazra Den -->
 	<BountyAtStep questSNO="347065" step="4">
 		<If condition="CurrentWorldId == 119888">
+			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
 			<AWTrinityExploreDungeon bountyQuestSNO="347065" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
 			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
 		</If>
