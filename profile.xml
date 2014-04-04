@@ -61,6 +61,10 @@
 	<HaveBounty questSNO="369944">
 		<LoadProfile file="./Act1/369944.xml" />
 	</HaveBounty>
+	<!-- The Cursed Bellows -->
+	<HaveBounty questSNO="369789">
+		<LoadProfile file="./Act1/369789.xml" />
+	</HaveBounty>
 </If>
  <LeaveGame reason="No more bounties that we can do. Resetting game." />  
 </While>
