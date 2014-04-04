@@ -8,6 +8,8 @@
 <Order>
 <WaitTimer questId="312429" stepId="2" waitTime="500" />
 <While condition="True">
+<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+<RefreshBountyCache/>
 <!--Teleports to town if not in town-->
 <If condition="Me.IsInTown==False">   
 	<UseTownPortal questId="1" />       

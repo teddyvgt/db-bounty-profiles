@@ -212,6 +212,40 @@ namespace BountyProfile
         }
     }
 
+    [XmlElement("RefreshBountyCache")]
+    public class RefreshBountyCache : ProfileBehavior
+    {
+        private bool m_IsDone = false;
+        public override bool IsDone
+        {
+            get
+            {
+                return m_IsDone;
+            }
+        }
+
+        protected override Composite CreateBehavior()
+        {
+            return new Zeta.TreeSharp.Action(ret =>
+            {
+                Log("Refreshing Cache!");
+                BountyCache.timer_tick(null, null);
+                m_IsDone = true;
+            });
+        }
+
+        public override void ResetCachedDone()
+        {
+            m_IsDone = false;
+            base.ResetCachedDone();
+        }
+
+        private void Log(string message, LogLevel logLevel = LogLevel.Info)
+        {
+            Logger.Log(message);
+        }
+    }
+
     public class BountyCache
     {
         static System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
@@ -220,6 +254,7 @@ namespace BountyProfile
 
         static public IEnumerable<BountyInfo> getBounties() {
             if(!_init) {
+                Logger.Log("Initializing cache!");
                 timer.Tick += new EventHandler(timer_tick);
                 timer.Interval = (1000) * (1);
                 _bounties = ZetaDia.ActInfo.Bounties;
@@ -230,11 +265,14 @@ namespace BountyProfile
             return _bounties;
         }
 
-        static private void timer_tick(object sender, EventArgs e)
+
+
+        static public void timer_tick(object sender, EventArgs e)
         {
-            timer.Stop();
+            //Make sure we have initialized before messing with timer
+            if(_init) timer.Stop();
             _bounties = ZetaDia.ActInfo.Bounties;
-            timer.Start();
+            if (_init) timer.Start();
         }
         
 
