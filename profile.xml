@@ -41,6 +41,10 @@
 	<HaveBounty questSNO="350529">
 		<LoadProfile file="./Act1/350529.xml" />
 	</HaveBounty>
+	<!-- Kill Krailen the Wicked-->
+	<HaveBounty questSNO="367559">
+		<LoadProfile file="./Act1/367559.xml" />
+	</HaveBounty>
 </If>
  <LeaveGame reason="No more bounties that we can do. Resetting game." />  
 </While>
