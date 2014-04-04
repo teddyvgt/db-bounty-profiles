@@ -18,7 +18,7 @@ namespace BountyProfile
 {
     public partial class BountyProfile : IPlugin
     {
-        public Version Version { get { return new Version(0, 2, 2); } }
+        public Version Version { get { return new Version(0, 0, 2); } }
         public string Author { get { return "Sychotix"; } }
         public string Description { get { return "Adds functionaly to make adventure profiles work."; } }
         public string Name { get { return "BountyProfile "; } }
@@ -116,10 +116,10 @@ namespace BountyProfile
         {
             get
             {
-                var b = BountyCache.getBounties().Where(bounty => bounty.Info.QuestSNO == QuestSNO).FirstOrDefault();
+                var b = BountyCache.getActiveBounty();
                 if (b == null)
                 {
-                    Logger.Log("Something went wrong, started but can't find bounty anymore. Assuming done.");
+                    Logger.Log("Something went wrong, active bounty returned null. Assuming done.");
                     return true;
                 }
                 //If completed or on next step, we are good.
@@ -251,18 +251,33 @@ namespace BountyProfile
         static System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         static private bool _init;
         static IEnumerable<BountyInfo> _bounties;
+        static BountyInfo _activeBounty;
 
-        static public IEnumerable<BountyInfo> getBounties() {
-            if(!_init) {
-                Logger.Log("Initializing cache!");
+        static private void init()
+        {
+             Logger.Log("Initializing cache!");
                 timer.Tick += new EventHandler(timer_tick);
                 timer.Interval = (1000) * (1);
                 _bounties = ZetaDia.ActInfo.Bounties;
+                if(_bounties == null) Logger.Log("Bounties returned null during init, hope that is OK");
+                _activeBounty = ZetaDia.ActInfo.ActiveBounty;
+                if (_activeBounty == null) Logger.Log("Active Bounty returned null during init, hope that is OK");
                 timer.Enabled = true;
                 timer.Start();
                 _init = true;
-            }
+        }
+
+        static public IEnumerable<BountyInfo> getBounties() {
+            if(!_init)
+                init();
             return _bounties;
+        }
+
+        static public BountyInfo getActiveBounty()
+        {
+            if (!_init)
+                init();
+            return _activeBounty;
         }
 
 
@@ -272,6 +287,9 @@ namespace BountyProfile
             //Make sure we have initialized before messing with timer
             if(_init) timer.Stop();
             _bounties = ZetaDia.ActInfo.Bounties;
+            if (_bounties == null) Logger.Log("Bounties returned null during timer_tick, hope that is OK");
+            _activeBounty = ZetaDia.ActInfo.ActiveBounty;
+            if (_activeBounty == null) Logger.Log("Active Bounty returned null during timer_tick, hope that is OK");
             if (_init) timer.Start();
         }
         

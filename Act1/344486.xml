@@ -1,11 +1,11 @@
 <Profile>
 
-<Name>Kill Logrut the Warrior</Name>
+<Name>Revenge of Gharbad</Name>
 
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
 <Order>
-<If condition="Me.IsInTown==False">   
+<If condition="Me.IsInTown==False and not CurrentLevelAreaId == 19952">   
 <UseTownPortal questId="1" />       
 </If>
 <If condition="Me.IsInTown ">
@@ -28,16 +28,18 @@
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
     <!-- Look for him -->
-	<BountyAtStep questSNO="344497" step="4">
+	<BountyAtStep questSNO="344486" step="4">
 		<If condition="CurrentWorldId == 71150">
-			<AWTrinityExploreDungeon bountyQuestSNO="344497" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" actorId="104813" boxTolerance="0.10" boxSize="15" />
-			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+			<SafeMoveTo questId="312429" stepId="2" x="2136.469" y="4327.496" z="-28.8857"/>
+			<MoveToActor questId="312429" stepId="2" actorId="81068"/>
+			<WaitTimer questId="312429" stepId="2" waitTime="5000" />
+			<MoveToActor questId="312429" stepId="2" actorId="225252" x="2100.818" y="4297.587" z="-28.5686"/>
+			<WaitTimer questId="312429" stepId="2" waitTime="2000" />
+			<MoveToActor questId="312429" stepId="2" actorId="225252" x="2105.039" y="4368.726" z="-28.89764"/>
+			<WaitTimer questId="312429" stepId="2" waitTime="2000" />
+			<MoveToActor questId="312429" stepId="2" actorId="81068"/>
+			<WaitTimer questId="312429" stepId="2" waitTime="10000" />
 			<!-- If not completed, keep killing things until it is complete-->
-			<BountyAtStep questSNO="344497" step="4">
-				<LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
-				<AWTrinityExploreDungeon bountyQuestSNO="344497" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
-			</BountyAtStep>
-			<MoveToActor questId="312429" stepId="2" actorId="176003" />
 		</If>
 	</BountyAtStep>
 

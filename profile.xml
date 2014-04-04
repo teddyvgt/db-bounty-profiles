@@ -45,6 +45,10 @@
 	<HaveBounty questSNO="367559">
 		<LoadProfile file="./Act1/367559.xml" />
 	</HaveBounty>
+	<!-- Revenge of Gharbad-->
+	<HaveBounty questSNO="344486">
+		<LoadProfile file="./Act1/344486.xml" />
+	</HaveBounty>
 </If>
  <LeaveGame reason="No more bounties that we can do. Resetting game." />  
 </While>
