@@ -5,7 +5,7 @@
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
 <Order>
-<If condition="Me.IsInTown==False>   
+<If condition="Me.IsInTown==False">   
 <UseTownPortal questId="1" />       
 </If>
 <If condition="Me.IsInTown ">
