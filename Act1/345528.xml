@@ -1,0 +1,51 @@
+<Profile>
+
+<Name>Kill Queen Araneae</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<Order>
+<If condition="Me.IsInTown==False and not CurrentLevelAreaId == 78572">   
+<UseTownPortal questId="1" />       
+</If>
+<If condition="Me.IsInTown ">
+	<!--Act 1 WP-->
+	<If condition="CurrentWorldId == 332336">
+		<UseWaypoint questId="1" stepId="1" actorId="223757" x="401.7305" y="555.0093" z="24.90835" waypointNumber="12"/>
+	</If>
+	<!--Act 2 WP-->
+	<If condition="CurrentWorldId == 161472">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="324.8699" y="291.0312" z="1.645629" waypointNumber="12"/> 
+	</If>
+	<!--Act 3/4 WP-->
+	<If condition="CurrentWorldId == 172909">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="12"/> 
+	</If>
+	<!--Act 4 WP-->
+	<If condition="CurrentWorldId == 304235">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="557.5455" y="525.3394" z="2.796465" waypointNumber="12"/> 
+	</If>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+</If>
+    <!-- Look for her -->
+	
+	<BountyAtStep questSNO="345528" step="4">
+	
+		<If condition="CurrentLevelAreaId == 78572">
+			<AWTrinityExploreDungeon bountyQuestSNO="345528" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" actorId="183032" boxTolerance="0.10" boxSize="15" />
+			<MoveToActor questId="1" x="434.5819" y="610.8437" z="13.03412" actorId="183032" interactRange="8" name="Boss_Portal_SpiderQueen-9281" isPortal="True" destinationWorldId="182976" pathPrecision="8" pathPointLimit="250" statusText="" /> 
+			<WaitTimer questId="345528" stepId="2" waitTime="5000" />
+			<!-- Hack to make sure she's killed.-->
+			<BountyAtStep questSNO="345528" step="4">
+				<AWTrinityExploreDungeon bountyQuestSNO="345528" bountyStep="4" questId="369249" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+			</BountyAtStep>
+			<MoveToActor questId="345528" stepId="2" actorId="176003" />
+		</If>
+	</BountyAtStep>
+
+    <!-- Portal Home -->
+    <TrinityTownPortal questId="345528" stepId="2" />
+    <WaitTimer questId="345528" stepId="2" waitTime="2500" />
+	<LoadProfile file="../profile.xml" />
+</Order>
+</Profile>

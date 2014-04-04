@@ -49,6 +49,42 @@
 	<HaveBounty questSNO="344486">
 		<LoadProfile file="./Act1/344486.xml" />
 	</HaveBounty>
+	<!-- Kill Garrach the Afflicted -->
+	<HaveBounty questSNO="344486">
+		<LoadProfile file="./Act1/344486.xml" />
+	</HaveBounty>
+	<!-- Kill Grimsmack -->
+	<HaveBounty questSNO="345507">
+		<LoadProfile file="./Act1/345507.xml" />
+	</HaveBounty>
+	<!-- The Cursed Cellar -->
+	<HaveBounty questSNO="369944">
+		<LoadProfile file="./Act1/369944.xml" />
+	</HaveBounty>
+	<!-- The Cursed Court-->
+	<HaveBounty questSNO="375191">
+		<LoadProfile file="./Act1/375191.xml" />
+	</HaveBounty>
+	<!-- Kill Qurash the Reviled-->
+	<HaveBounty questSNO="345862">
+		<LoadProfile file="./Act1/345862.xml" />
+	</HaveBounty>
+	<!-- Kill Glidewing-->
+	<HaveBounty questSNO="361331">
+		<LoadProfile file="./Act1/361331.xml" />
+	</HaveBounty>
+	<!-- Kill Lord Brone-->
+	<HaveBounty questSNO="369249">
+		<LoadProfile file="./Act1/369249.xml" />
+	</HaveBounty>
+	<!-- Kill Queen Araneae-->
+	<HaveBounty questSNO="345528">
+		<LoadProfile file="./Act1/345528.xml" />
+	</HaveBounty>
+	<!-- Kill Rathlin the Widowmaker-->
+	<HaveBounty questSNO="345526">
+		<LoadProfile file="./Act1/345526.xml" />
+	</HaveBounty>
 </If>
  <LeaveGame reason="No more bounties that we can do. Resetting game." />  
 </While>

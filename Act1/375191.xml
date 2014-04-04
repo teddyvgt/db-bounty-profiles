@@ -1,0 +1,51 @@
+<Profile>
+
+<Name>The Cursed Court</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<Order>
+<If condition="Me.IsInTown==False and not CurrentLevelAreaId == 19783">   
+<UseTownPortal questId="1" />       
+</If>
+<If condition="Me.IsInTown ">
+	<!--Act 1 WP-->
+	<If condition="CurrentWorldId == 332336">
+		<UseWaypoint questId="1" stepId="1" actorId="223757" x="401.7305" y="555.0093" z="24.90835" waypointNumber="3"/>
+	</If>
+	<!--Act 2 WP-->
+	<If condition="CurrentWorldId == 161472">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="324.8699" y="291.0312" z="1.645629" waypointNumber="3"/> 
+	</If>
+	<!--Act 3/4 WP-->
+	<If condition="CurrentWorldId == 172909">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="3"/> 
+	</If>
+	<!--Act 4 WP-->
+	<If condition="CurrentWorldId == 304235">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="557.5455" y="525.3394" z="2.796465" waypointNumber="3"/> 
+	</If>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+</If>
+    <!-- Look for chest -->
+	<BountyAtStep questSNO="375191" step="4">
+		<If condition="CurrentLevelAreaId == 19783">
+			<AWTrinityExploreDungeon bountyQuestSNO="375191" bountyStep="2" questId="312429" stepId="2" until="ObjectFound" actorId="365097" boxTolerance="0.10" boxSize="15" />
+			<WaitTimer questId="375191" stepId="2" waitTime="5000" />
+			<MoveToActor questId="1" x="380" y="599" z="-25" actorId="365097" interactRange="10" name="x1_Global_Chest_CursedChest_B-1939"  pathPrecision="50" pathPointLimit="250" statusText="" /> 
+			<!-- If not completed, keep killing waves until it is complete-->
+			<While condition="ZetaDia.ActInfo.ActiveBounty != null and ZetaDia.ActInfo.ActiveBounty.Info.State != QuestState.Completed">
+				<LogMessage quest="1" step="1" output="Chest activated, but bounty not done. Will keep killing." />
+				<WaitTimer questId="375191" stepId="4" waitTime="3000" />
+			</While>
+			<WaitTimer questId="375191" stepId="2" waitTime="1000" />
+			<MoveToActor questId="375191" stepId="2" actorId="176003" />
+		</If>
+	</BountyAtStep>
+
+    <!-- Portal Home -->
+    <TrinityTownPortal questId="375191" stepId="2" />
+    <WaitTimer questId="375191" stepId="2" waitTime="2500" />
+	<LoadProfile file="../profile.xml" />
+</Order>
+</Profile>
