@@ -81,6 +81,14 @@
 	<HaveBounty questSNO="347032">
 		<LoadProfile file="./Act1/347032.xml" />
 	</HaveBounty>
+	<!-- Kill Braluk Grimlow -->
+	<HaveBounty questSNO="361327">
+		<LoadProfile file="./Act1/361327.xml" />
+	</HaveBounty>
+	<!-- Clear the Den of the Fallen -->
+	<HaveBounty questSNO="345488">
+		<LoadProfile file="./Act1/345488.xml" />
+	</HaveBounty>
 	
 	<ActBountiesComplete act="A1">
 		<!-- Make sure we are in New Tristram -->
