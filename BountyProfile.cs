@@ -230,7 +230,7 @@ namespace BountyProfile
 
         public override bool GetConditionExec()
         {
-            var b = BountyCache.getBounties().Where(bounty => bounty.Act.ToString().Equals(Act) && bounty.Info.State != QuestState.Completed);
+            var b = BountyCache.getBounties().Where(bounty => bounty.Act.ToString().Equals(Act) && bounty.Info.State == QuestState.Completed);
             if(b.FirstOrDefault() != null) Logger.Log("Bounties Complete count:" + b.Count());
             else Logger.Log("Bounties complete returned null.");
             return b.FirstOrDefault() != null && b.Count() == 5;

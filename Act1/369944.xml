@@ -31,7 +31,7 @@
 	<BountyAtStep questSNO="369944" step="4">
 		<If condition="CurrentWorldId == 71150">
 			<SafeMoveTo questId="312429" stepId="2" x="2289.81" y="2562.356" z="27.10001" />
-			<MoveToActor questId="312429" stepId="2" actorId="5502" isPortal="True" destinationWorldId="106752"/>
+			<MoveToMapMarker questId="312429" stepId="2" exitNameHash="1107870150" destinationWorldId="106752" interactRange="20"  />
 			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
 			<SafeMoveTo questId="312429" stepId="2" x="128.015" y="125.9703" z="0.1" />
 			<MoveToActor questId="312429" stepId="2" actorId="365097"/>

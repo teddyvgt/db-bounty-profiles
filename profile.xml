@@ -89,6 +89,14 @@
 	<HaveBounty questSNO="345488">
 		<LoadProfile file="./Act1/345488.xml" />
 	</HaveBounty>
+	<!-- The Precious Ores -->
+	<HaveBounty questSNO="347060">
+		<LoadProfile file="./Act1/347060.xml" />
+	</HaveBounty>
+	<!-- Clear the Clan of the Moon Cave -->
+	<HaveBounty questSNO="344547">
+		<LoadProfile file="./Act1/344547.xml" />
+	</HaveBounty>
 	
 	<ActBountiesComplete act="A1">
 		<!-- Make sure we are in New Tristram -->
