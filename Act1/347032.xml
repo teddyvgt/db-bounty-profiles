@@ -1,0 +1,95 @@
+<Profile>
+
+<Name>Kill Cadhul the Deathcaller</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<Order>
+<If condition="Me.IsInTown==False">   
+<UseTownPortal questId="1" />       
+</If>
+<If condition="Me.IsInTown ">
+	<!--Act 1 WP-->
+	<If condition="CurrentWorldId == 332336">
+		<UseWaypoint questId="1" stepId="1" actorId="223757" x="401.7305" y="555.0093" z="24.90835" waypointNumber="17"/>
+	</If>
+	<!--Act 2 WP-->
+	<If condition="CurrentWorldId == 161472">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="324.8699" y="291.0312" z="1.645629" waypointNumber="17"/> 
+	</If>
+	<!--Act 3/4 WP-->
+	<If condition="CurrentWorldId == 172909">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="17"/> 
+	</If>
+	<!--Act 4 WP-->
+	<If condition="CurrentWorldId == 304235">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="557.5455" y="525.3394" z="2.796465" waypointNumber="17"/> 
+	</If>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+</If>
+    <!-- Look for him -->
+	<BountyAtStep questSNO="347032" step="4">
+		
+		<If condition="IsActiveQuest(72801) and IsActiveQuestStep(36) and CurrentWorldId == 58983">
+      <!-- Find Chamber of Suffering -->
+      <TrinityExploreDungeon questId="72801" stepId="36" boxTolerance="0.18" boxSize="18" until="ExitFound" actorId="158944" exitNameHash="356899046">
+        <PrioritizeScenes>
+          <PriorityScene sceneName="ButcherLair" />
+        </PrioritizeScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="Leor_N_" />
+          <IgnoreScene sceneName="Leor_S_" />
+          <IgnoreScene sceneName="Leor_E_" />
+          <IgnoreScene sceneName="Leor_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <!-- Enter Chamber of Suffering -->
+      <MoveToMapMarker questId="312429" stepId="2" actorId="158944" interactRange="15" isPortal="True" destinationWorldId="78839"  markerNameHash="356899046" />
+      <WaitTimer questId="312429" stepId="2" waitTime="1000" />
+      <MoveToMapMarker questId="312429" stepId="2" actorId="158944" interactRange="15" isPortal="True" destinationWorldId="78839"  markerNameHash="0" />
+      <WaitTimer questId="312429" stepId="2" waitTime="1000" />
+      <MoveToActor  questId="312429" stepId="2" actorId="158944" interactRange="15" isPortal="True" pathPointLimit="50" destinationWorldId="78839" />
+    </If>
+    <If condition="CurrentWorldId == 58983">
+      <LogMessage output="Stuck: Stuck in Halls of Agony Level 3" />
+      <WaitTimer questId="312429" stepId="2" waitTime="11000" />
+    </If>
+    <If condition="CurrentWorldId == 78839">
+      <WaitWhile questId="312429" stepId="2" condition="CurrentWorldId == 78839" />
+    </If>
+    <While condition="CurrentWorldId == 58983">
+      <!-- Chamber of Suffering Death Handling: The mapMarker & actor are always visible on death... -->
+      <TrinityExploreDungeon questId="312429" stepId="2" boxTolerance="0.18" boxSize="18" until="ExitFound" actorId="158944" exitNameHash="356899046">
+        <PrioritizeScenes>
+          <PriorityScene sceneName="ButcherLair" />
+        </PrioritizeScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="Leor_N_" />
+          <IgnoreScene sceneName="Leor_S_" />
+          <IgnoreScene sceneName="Leor_E_" />
+          <IgnoreScene sceneName="Leor_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <MoveToMapMarker questId="312429" stepId="2" actorId="158944" interactRange="15" isPortal="True" pathPointLimit="50" destinationWorldId="78839"  markerNameHash="356899046" />
+      <WaitTimer questId="312429" stepId="2" waitTime="1000" />
+      <MoveToMapMarker questId="312429" stepId="2" actorId="158944" interactRange="15" isPortal="True" pathPointLimit="50" destinationWorldId="78839"  markerNameHash="0" />
+      <WaitTimer questId="312429" stepId="2" waitTime="1000" />
+      <MoveToActor  questId="312429" stepId="2" actorId="158944" interactRange="15" isPortal="True" pathPointLimit="50" destinationWorldId="78839" />
+    </While>
+    <!-- Kill the Butcher -->
+    <If condition="CurrentWorldId == 78839">
+      <WaitTimer questId="312429" stepId="2" waitTime="1000" />
+    </If>
+    <If condition="CurrentWorldId == 78839">
+      <WaitTimer questId="312429" stepId="2" waitTime="1000" />
+      <SafeMoveTo questId="312429" stepId="2" name="Kill Butcher" pathPrecision="10" x="120" y="120" z="0" />
+    </If>
+		
+	</BountyAtStep>
+
+    <!-- Portal Home -->
+    <TrinityTownPortal questId="312429" stepId="2" />
+    <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+	<LoadProfile file="../profile.xml" />
+</Order>
+</Profile>
