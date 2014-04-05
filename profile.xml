@@ -77,6 +77,10 @@
 	<HaveBounty questSNO="345528">
 		<LoadProfile file="./Act1/345528.xml" />
 	</HaveBounty>
+	<!-- Kill the Butcher -->
+	<HaveBounty questSNO="347032">
+		<LoadProfile file="./Act1/347032.xml" />
+	</HaveBounty>
 	
 	<ActBountiesComplete act="A1">
 		<!-- Make sure we are in New Tristram -->
