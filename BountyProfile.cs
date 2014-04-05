@@ -18,7 +18,7 @@ namespace BountyProfile
 {
     public partial class BountyProfile : IPlugin
     {
-        public Version Version { get { return new Version(0, 0, 4); } }
+        public Version Version { get { return new Version(0, 0, 5); } }
         public string Author { get { return "Sychotix"; } }
         public string Description { get { return "Adds functionaly to make adventure profiles work."; } }
         public string Name { get { return "BountyProfile "; } }
@@ -230,7 +230,7 @@ namespace BountyProfile
 
         public override bool GetConditionExec()
         {
-            var b = BountyCache.getBounties().Where(bounty => bounty.Act.Equals(Act) && bounty.Info.State != QuestState.Completed);
+            var b = BountyCache.getBounties().Where(bounty => bounty.Act.ToString().Equals(Act) && bounty.Info.State != QuestState.Completed);
             if(b.FirstOrDefault() != null) Logger.Log("Bounties Complete count:" + b.Count());
             else Logger.Log("Bounties complete returned null.");
             return b.FirstOrDefault() != null && b.Count() == 5;
