@@ -61,10 +61,6 @@
 	<HaveBounty questSNO="369944">
 		<LoadProfile file="./Act1/369944.xml" />
 	</HaveBounty>
-	<!-- The Cursed Bellows -->
-	<HaveBounty questSNO="369789">
-		<LoadProfile file="./Act1/369789.xml" />
-	</HaveBounty>
 	<!-- A Stranger In Need -->
 	<HaveBounty questSNO="345546">
 		<LoadProfile file="./Act1/345546.xml" />
