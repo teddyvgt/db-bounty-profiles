@@ -1,0 +1,46 @@
+<Profile>
+
+<Name>Kill Aspect of Hatred</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<Order>
+<If condition="Me.IsInTown ">
+	<!--Act 1 WP-->
+	<If condition="CurrentWorldId == 332336">
+		<UseWaypoint questId="1" stepId="1" actorId="223757" x="401.7305" y="555.0093" z="24.90835" waypointNumber="44"/>
+	</If>
+	<!--Act 2 WP-->
+	<If condition="CurrentWorldId == 161472">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="324.8699" y="291.0312" z="1.645629" waypointNumber="44"/> 
+	</If>
+	<!--Act 3/4 WP-->
+	<If condition="CurrentWorldId == 172909">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="44"/> 
+	</If>
+	<!--Act 4 WP-->
+	<If condition="CurrentWorldId == 304235">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="557.5455" y="525.3394" z="2.796465" waypointNumber="44"/> 
+	</If>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+</If>
+    <!-- Look for him -->
+	<BountyAtStep questSNO="357133" step="4">
+		<If condition="CurrentWorldId == 121579">
+			<!-- <AWTrinityExploreDungeon bountyQuestSNO="357133" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" objectDistance="300" actorId="219727" boxTolerance="0.7" boxSize="15" ignoreMarkers="False" />
+			<MoveToActor questId="312429" stepId="2" actorId="219727" />
+			<WaitTimer questId="312429" stepId="2" waitTime="1000" /> -->
+			<!-- If not completed, keep killing things until it is complete-->
+			<BountyAtStep questSNO="357133" step="4">
+				<LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
+				<AWTrinityExploreDungeon bountyQuestSNO="357133" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.7" boxSize="15" ignoreMarkers="False" />
+			</BountyAtStep>
+		</If>
+	</BountyAtStep>
+
+    <!-- Portal Home -->
+    <TrinityTownPortal questId="312429" stepId="2" />
+    <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+	<LoadProfile file="../profile.xml" />
+</Order>
+</Profile>

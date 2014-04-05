@@ -1,0 +1,57 @@
+<Profile>
+
+<Name>Kill Izual</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<Order>
+<If condition="Me.IsInTown ">
+	<!--Act 1 WP-->
+	<If condition="CurrentWorldId == 332336">
+		<UseWaypoint questId="1" stepId="1" actorId="223757" x="401.7305" y="555.0093" z="24.90835" waypointNumber="44"/>
+	</If>
+	<!--Act 2 WP-->
+	<If condition="CurrentWorldId == 161472">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="324.8699" y="291.0312" z="1.645629" waypointNumber="44"/> 
+	</If>
+	<!--Act 3/4 WP-->
+	<If condition="CurrentWorldId == 172909">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="44"/> 
+	</If>
+	<!--Act 4 WP-->
+	<If condition="CurrentWorldId == 304235">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="557.5455" y="525.3394" z="2.796465" waypointNumber="44"/> 
+	</If>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+</If>
+	<BountyAtStep questSNO="361421" step="4">
+	<If condition="CurrentWorldId == 121579">
+      <AWTrinityExploreDungeon bountyQuestSNO="361421" bountyStep="4" questId="312429" stepId="2"  until="ObjectFound" objectDistance="300" actorId="225195" boxTolerance="0.45" boxSize="25" pathPrecision="40">
+        <PrioritizeScenes>
+          <PriorityScene sceneName="Exit" />
+        </PrioritizeScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </AWTrinityExploreDungeon>
+      <!-- The Great Span -->
+      <MoveToActor questId="312429" stepId="2" actorId="225195" isPortal="True" destinationWorldId="214956" interactRange="20" />
+      <WaitTimer questId="312429" stepId="2" waitTime="1000" />
+	 </If>
+    <If condition="CurrentWorldId == 214956">
+      <WaitTimer questId="312429" stepId="2" waitTime="1000" />
+      <!-- Kill Izual -->
+      <SafeMoveTo questId="312429" stepId="2" name="Izual" pathPrecision="10" x="583" y="558" z="0" />
+      <WaitTimer questId="312429" stepId="2" waitTime="1000" />
+    </If>
+	</BountyAtStep>
+
+    <!-- Portal Home -->
+    <TrinityTownPortal questId="312429" stepId="2" />
+    <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+	<LoadProfile file="../profile.xml" />
+</Order>
+</Profile>
