@@ -65,6 +65,44 @@
 	<HaveBounty questSNO="369789">
 		<LoadProfile file="./Act1/369789.xml" />
 	</HaveBounty>
+	<!-- A Stranger In Need -->
+	<HaveBounty questSNO="345546">
+		<LoadProfile file="./Act1/345546.xml" />
+	</HaveBounty>
+	<!-- Kill Reggrel the Despised -->
+	<HaveBounty questSNO="369253">
+		<LoadProfile file="./Act1/369253.xml" />
+	</HaveBounty>
+	<!-- Kill Cadhul the Deathcaller -->
+	<HaveBounty questSNO="344490">
+		<LoadProfile file="./Act1/344490.xml" />
+	</HaveBounty>
+	<!-- Kill Queen Araneae -->
+	<HaveBounty questSNO="345528">
+		<LoadProfile file="./Act1/345528.xml" />
+	</HaveBounty>
+	
+	<ActBountiesComplete act="A1">
+		<!-- Make sure we are in New Tristram -->
+		<If condition="Me.IsInTown==False">   
+			<UseTownPortal questId="1" />       
+		</If>
+		<If condition="not CurrentWorldId == 332336">
+			<!--Act 2 WP-->
+			<If condition="CurrentWorldId == 161472">
+				<UseWaypoint questId="1" stepId="1" actorId="6442" x="324.8699" y="291.0312" z="1.645629" waypointNumber="0"/> 
+			</If>
+			<!--Act 3/4 WP-->
+			<If condition="CurrentWorldId == 172909">
+				<UseWaypoint questId="1" stepId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="0"/> 
+			</If>
+			<!--Act 5 WP-->
+			<If condition="CurrentWorldId == 304235">
+				<UseWaypoint questId="1" stepId="1" actorId="6442" x="557.5455" y="525.3394" z="2.796465" waypointNumber="0"/> 
+			</If>
+		</If>
+		<MoveToActor questId="312429" stepId="2" actorId="114622" />
+	</ActBountiesComplete>
 </If>
  <LeaveGame reason="No more bounties that we can do. Resetting game." />  
 </While>

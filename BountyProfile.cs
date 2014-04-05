@@ -18,7 +18,7 @@ namespace BountyProfile
 {
     public partial class BountyProfile : IPlugin
     {
-        public Version Version { get { return new Version(0, 0, 3); } }
+        public Version Version { get { return new Version(0, 0, 4); } }
         public string Author { get { return "Sychotix"; } }
         public string Description { get { return "Adds functionaly to make adventure profiles work."; } }
         public string Name { get { return "BountyProfile "; } }
@@ -208,6 +208,41 @@ namespace BountyProfile
 
         [XmlAttribute("step", true)]
         public int QuestStep
+        {
+            get;
+            set;
+        }
+    }
+
+    [XmlElement("ActBountiesComplete")]
+    public class ActBountiesComplete : Trinity.XmlTags.BaseComplexNodeTag
+    {
+
+        protected override Composite CreateBehavior()
+        {
+            PrioritySelector decorated = new PrioritySelector(new Composite[0]);
+            foreach (ProfileBehavior behavior in base.GetNodes())
+            {
+                decorated.AddChild(behavior.Behavior);
+            }
+            return new Zeta.TreeSharp.Decorator(new CanRunDecoratorDelegate(CheckNotAlreadyDone), decorated);
+        }
+
+        public override bool GetConditionExec()
+        {
+            var b = BountyCache.getBounties().Where(bounty => bounty.Act.Equals(Act) && bounty.Info.State != QuestState.Completed);
+            if(b.FirstOrDefault() != null) Logger.Log("Bounties Complete count:" + b.Count());
+            else Logger.Log("Bounties complete returned null.");
+            return b.FirstOrDefault() != null && b.Count() == 5;
+        }
+
+        private bool CheckNotAlreadyDone(object obj)
+        {
+            return !IsDone;
+        }
+
+        [XmlAttribute("act", true)]
+        public string Act
         {
             get;
             set;

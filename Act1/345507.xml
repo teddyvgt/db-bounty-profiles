@@ -31,14 +31,13 @@
 	<BountyAtStep questSNO="345507" step="4">
 		<If condition="CurrentWorldId == 71150">
 			<AWTrinityExploreDungeon bountyQuestSNO="345507" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" actorId="218444" boxTolerance="0.10" boxSize="15" >
-			!-- Ignored Scenes sub-tag: List Wrapper for Ignore Scenes - required if using Ignore Scenes. -->
 				<IgnoreScenes>        
 					<IgnoreScene sceneId="58974" />      
 				</IgnoreScenes>
 			</AWTrinityExploreDungeon>
 			<MoveToActor questId="312429" stepId="2" actorId="218444" />
 			<!-- If not completed, keep killing things until it is complete-->
-			<BountyAtStep questSNO="344497" step="4">
+			<BountyAtStep questSNO="345507" step="4">
 				<LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
 				<AWTrinityExploreDungeon bountyQuestSNO="345507" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
 			</BountyAtStep>

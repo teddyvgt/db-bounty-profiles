@@ -1,6 +1,6 @@
 <Profile>
 
-<Name>Apothecary's Brother</Name>
+<Name>Kill Reggrel the Despised</Name>
 
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
@@ -27,17 +27,20 @@
 	</If>
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
-	<BountyAtStep questSNO="350529" step="4">
+    <!-- Look for him -->
+	<BountyAtStep questSNO="369253" step="4">
 		<If condition="CurrentWorldId == 71150">
-			<SafeMoveTo questId="312429" stepId="2" x="1120.026" y="4005.365" z="80.1" />
-			<MoveToActor questId="312429" stepId="2" actorId="175482" isPortal="True" destinationWorldId="132995" />
-			<WaitTimer questId="72546" stepId="17" waitTime="1000" />
-			<MoveToActor questId="312429" stepId="2" actorId="129782" />
-			
-			<AWTrinityExploreDungeon bountyQuestSNO="350529" bountyStep="4" questId="312429" stepId="2" boxTolerance="0.01" boxSize="40" until="ObjectFound" actorId="136009" ignoreMarkers="False" />
-			<WaitTimer questId="72546" stepId="17" waitTime="30000" />
-			<MoveToActor questId="312429" stepId="2" actorId="129782" />
-			<WaitTimer questId="72546" stepId="17" waitTime="10000" />
+			<AWTrinityExploreDungeon bountyQuestSNO="369253" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" actorId="366975" boxTolerance="0.10" boxSize="15" >
+			<IgnoreScenes>        
+					<IgnoreScene sceneId="130522" />      
+				</IgnoreScenes>
+			</AWTrinityExploreDungeon>
+			<MoveToActor questId="312429" stepId="2" actorId="366975" />
+			<!-- If not completed, keep killing things until it is complete-->
+			<BountyAtStep questSNO="369253" step="4">
+				<LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
+				<AWTrinityExploreDungeon bountyQuestSNO="369253" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+			</BountyAtStep>
 		</If>
 	</BountyAtStep>
 

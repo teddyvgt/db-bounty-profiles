@@ -1,6 +1,6 @@
 <Profile>
 
-<Name>Kill Logrut the Warrior</Name>
+<Name>Kill Cadhul the Deathcaller</Name>
 
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
@@ -28,17 +28,15 @@
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
     <!-- Look for him -->
-	<BountyAtStep questSNO="344497" step="4">
+	<BountyAtStep questSNO="344490" step="4">
 		<If condition="CurrentWorldId == 71150">
-			<AWTrinityExploreDungeon bountyQuestSNO="344497" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" actorId="104813" boxTolerance="0.10" boxSize="15" />
+			<SafeMoveTo questId="312429" stepId="2" x="2099.974" y="4309.199" z="9.91527" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
 			<!-- If not completed, keep killing things until it is complete-->
-			<BountyAtStep questSNO="344497" step="4">
-				<LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
-				<AWTrinityExploreDungeon bountyQuestSNO="344497" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+			<BountyAtStep questSNO="344490" step="4">
+				<LogMessage quest="312429" step="2" output="Found named but still not done, clearing some more." />
+				<AWTrinityExploreDungeon bountyQuestSNO="344490" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
 			</BountyAtStep>
-			<MoveToActor questId="312429" stepId="2" actorId="176003" />
-			<WaitTimer questId="312429" stepId="2" waitTime="20000" />
 		</If>
 	</BountyAtStep>
 
