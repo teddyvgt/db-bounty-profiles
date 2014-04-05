@@ -1,6 +1,6 @@
 <Profile>
 
-<Name>Kill Logrut the Warrior</Name>
+<Name>Kill Charger</Name>
 
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
@@ -12,31 +12,31 @@
 <If condition="Me.IsInTown ">
 	<!--Act 1 WP-->
 	<If condition="CurrentWorldId == 332336">
-		<UseWaypoint questId="1" stepId="1" actorId="223757" x="401.7305" y="555.0093" z="24.90835" waypointNumber="13"/>
+		<UseWaypoint questId="1" stepId="1" actorId="223757" x="401.7305" y="555.0093" z="24.90835" waypointNumber="8"/>
 	</If>
 	<!--Act 2 WP-->
 	<If condition="CurrentWorldId == 161472">
-		<UseWaypoint questId="1" stepId="1" actorId="6442" x="324.8699" y="291.0312" z="1.645629" waypointNumber="13"/> 
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="324.8699" y="291.0312" z="1.645629" waypointNumber="8"/> 
 	</If>
 	<!--Act 3/4 WP-->
 	<If condition="CurrentWorldId == 172909">
-		<UseWaypoint questId="1" stepId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="13"/> 
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="8"/> 
 	</If>
 	<!--Act 4 WP-->
 	<If condition="CurrentWorldId == 304235">
-		<UseWaypoint questId="1" stepId="1" actorId="6442" x="557.5455" y="525.3394" z="2.796465" waypointNumber="13"/> 
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="557.5455" y="525.3394" z="2.796465" waypointNumber="8"/> 
 	</If>
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
     <!-- Look for him -->
-	<BountyAtStep questSNO="344497" step="4">
+	<BountyAtStep questSNO="347070" step="4">
 		<If condition="CurrentWorldId == 71150">
-			<AWTrinityExploreDungeon bountyQuestSNO="344497" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" actorId="104813" boxTolerance="0.10" boxSize="15" />
+			<AWTrinityExploreDungeon bountyQuestSNO="347070" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" actorId="218422" boxTolerance="0.10" boxSize="15" />
 			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
 			<!-- If not completed, keep killing things until it is complete-->
-			<BountyAtStep questSNO="344497" step="4">
-				<LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
-				<AWTrinityExploreDungeon bountyQuestSNO="344497" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+			<BountyAtStep questSNO="347070" step="4">
+				<LogMessage quest="312429" step="2" output="Found named but still not done, clearing some more." />
+				<AWTrinityExploreDungeon bountyQuestSNO="347070" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
 			</BountyAtStep>
 			<MoveToActor questId="312429" stepId="2" actorId="176003" />
 			<WaitTimer questId="312429" stepId="2" waitTime="20000" />

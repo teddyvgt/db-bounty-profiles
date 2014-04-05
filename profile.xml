@@ -97,6 +97,14 @@
 	<HaveBounty questSNO="344547">
 		<LoadProfile file="./Act1/344547.xml" />
 	</HaveBounty>
+	<!-- Clear the Scavenger's Den -->
+	<HaveBounty questSNO="345496">
+		<LoadProfile file="./Act1/345496.xml" />
+	</HaveBounty>
+	<!-- Kill Charger -->
+	<HaveBounty questSNO="347070">
+		<LoadProfile file="./Act1/347070.xml" />
+	</HaveBounty>
 	
 	<ActBountiesComplete act="A1">
 		<!-- Make sure we are in New Tristram -->

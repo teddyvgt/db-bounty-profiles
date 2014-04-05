@@ -1,6 +1,6 @@
 <Profile>
 
-<Name>Clear Khazra Den Bounty</Name>
+<Name>Clear the Scavenger's Den</Name>
 
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
@@ -35,8 +35,8 @@
     </If>
     <!-- Enter Khazra Den #1 -->
     <If condition="CurrentWorldId == 71150
-          and ActorExistsAt(176003, 2068, 899, 0, 300)">
-      <MoveToActor questId="312429" stepId="2" actorId="176003" isPortal="True" destinationWorldId="119888" x="2068" y="899" z="-0" />
+          and ActorExistsAt(175501, 2068, 899, 0, 300)">
+      <MoveToActor questId="312429" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" x="2068" y="899" z="-0" />
       <WaitTimer questId="312429" stepId="2" waitTime="2500" />
     </If>
 
@@ -47,8 +47,8 @@
     </If>
     <!-- Enter Khazra Den #2 -->
     <If condition="CurrentWorldId == 71150
-          and ActorExistsAt(176003, 1745.596, 353.9031, -4.620636, 300)">
-      <MoveToActor questId="312429" stepId="2" actorId="176003" isPortal="True" destinationWorldId="119888" x="1768" y="359" z="-0" />
+          and ActorExistsAt(175501, 1745.596, 353.9031, -4.620636, 300)">
+      <MoveToActor questId="312429" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" x="1768" y="359" z="-0" />
       <WaitTimer questId="312429" stepId="2" waitTime="2500" />
     </If>
 
@@ -60,8 +60,8 @@
     </If>
     <!-- Enter Khazra Den #3 -->
     <If condition="CurrentWorldId == 71150
-          and ActorExistsAt(176003, 2129, 597, 0, 300)">
-      <MoveToActor questId="312429" stepId="2" actorId="176003" isPortal="True" destinationWorldId="119888" x="2129" y="597" z="-0" />
+          and ActorExistsAt(175501, 2129, 597, 0, 300)">
+      <MoveToActor questId="312429" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" x="2129" y="597" z="-0" />
       <WaitTimer questId="312429" stepId="2" waitTime="2500" />
     </If>
 
@@ -72,16 +72,25 @@
     </If>
     <!-- Enter Khazra Den #4 -->
     <If condition="CurrentWorldId == 71150
-          and ActorExistsAt(176003, 2258, 1059, 0, 300)">
-      <MoveToActor questId="312429" stepId="2" actorId="176003" isPortal="True" destinationWorldId="119888" x="2258" y="1059" z="-0" />
+          and ActorExistsAt(175501, 2258, 1059, 0, 300)">
+      <MoveToActor questId="312429" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" x="2258" y="1059" z="-0" />
       <WaitTimer questId="312429" stepId="2" waitTime="2500" />
     </If>
 
     <!-- Inside Khazra Den -->
-	<BountyAtStep questSNO="347065" step="4">
-		<If condition="CurrentWorldId == 119888">
+	<BountyAtStep questSNO="345496" step="4">
+		<If condition="CurrentWorldId == 81163">
 			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
-			<AWTrinityExploreDungeon bountyQuestSNO="347065" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
+			<AWTrinityExploreDungeon bountyQuestSNO="345496" bountyStep="4" questId="312429" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="925091455" ignoreMarkers="False">
+				<PrioritizeScenes>
+					<PriorityScene sceneName="Exit" />
+				</PrioritizeScenes>
+			</AWTrinityExploreDungeon>
+			<MoveToMapMarker questId="312429" stepId="2" exitNameHash="925091455" destinationWorldId="81164" interactRange="20"  />
+			<WaitTimer questId="72095" stepId="11" waitTime="1000" />
+		</If>
+		<If condition="CurrentWorldId == 81164">
+			<AWTrinityExploreDungeon bountyQuestSNO="345496" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
 			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
 		</If>
 	</BountyAtStep>
