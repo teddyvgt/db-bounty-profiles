@@ -185,6 +185,10 @@
 	<HaveBounty questSNO="369246">
 		<LoadProfile file="kill_fields_of_misery.xml" />
 	</HaveBounty>
+	<!-- Crumbling tower -->
+	<HaveBounty questSNO="344482">
+		<LoadProfile file="344482.xml" />
+	</HaveBounty>
 	
 	<ActBountiesComplete act="A1">
 		<!-- Make sure we are in New Tristram -->
