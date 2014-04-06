@@ -27,7 +27,7 @@
     <!-- Look for him -->
 	<BountyAtStep questSNO="349258" step="4">
 		<If condition="CurrentWorldId == 109513">
-			<AWTrinityExploreDungeon bountyQuestSNO="349258" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" objectDistance="300" actorId="219727" boxTolerance="0.7" boxSize="15" ignoreMarkers="False" />
+			<AWTrinityExploreDungeon bountyQuestSNO="349258" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" objectDistance="300" actorId="219727" boxTolerance="0.45" boxSize="15" ignoreMarkers="False" />
 			<MoveToActor questId="312429" stepId="2" actorId="219727" />
 			<WaitTimer questId="312429" stepId="2" waitTime="1000" /> -->
 			<!-- If not completed, keep killing things until it is complete-->
@@ -41,6 +41,6 @@
     <!-- Portal Home -->
     <TrinityTownPortal questId="312429" stepId="2" />
     <WaitTimer questId="312429" stepId="2" waitTime="2500" />
-	<LoadProfile file="act4.xml" />
+	<LoadProfile file="../act4.xml" />
 </Order>
 </Profile>
