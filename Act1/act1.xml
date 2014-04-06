@@ -177,11 +177,14 @@
 	<HaveBounty questSNO="347011">
 		<LoadProfile file="kill_halls_of_agony_level_1.xml" />
 	</HaveBounty>
-  <!-- Clear Warrior's Rest -->
-  <HaveBounty questSNO="345520">
-    <LoadProfile file="345520.xml" />
-  </HaveBounty>
-	
+	<!-- Clear Warrior's Rest -->
+	<HaveBounty questSNO="345520">
+		<LoadProfile file="345520.xml" />
+	</HaveBounty>
+	<!-- Kill Krelm the Flagitious -->
+	<HaveBounty questSNO="369246">
+		<LoadProfile file="kill_fields_of_misery.xml" />
+	</HaveBounty>
 	
 	<ActBountiesComplete act="A1">
 		<!-- Make sure we are in New Tristram -->
