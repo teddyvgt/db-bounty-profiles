@@ -133,10 +133,10 @@
 	<HaveBounty questSNO="375198">
 		<LoadProfile file="375198.xml" />
 	</HaveBounty>
-	<!-- Carrion Farm -->
+	<!-- Carrion Farm >
 	<HaveBounty questSNO="345500">
 		<LoadProfile file="345500.xml" />
-	</HaveBounty>
+	</HaveBounty-->
 	<!-- Kill Percepeus -->
 	<HaveBounty questSNO="369273">
 		<LoadProfile file="kill_northern_highlands.xml" />
