@@ -1,0 +1,212 @@
+<Profile>
+
+<Name>Act 1 - Loader</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams quest="101758" step="1" act="OpenWorld" difficulty="Normal" resumeFromSave="False" isPrivate="True" numGames="-1"  />
+<!--This is the Beging of your ORder list-->
+<Order>
+<WaitTimer questId="312429" stepId="2" waitTime="500" />
+<While condition="True">
+<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+<RefreshBountyCache/>
+<!--Teleports to town if not in town-->
+<If condition="Me.IsInTown==False">   
+	<UseTownPortal questId="1" />       
+</If>
+<If condition="Me.IsInTown">
+	<!-- Act 1 Bounties -->
+	<LogMessage quest="1" step="1" output="Blah" /> 
+	<!-- Clear Khazra Den -->
+	<HaveBounty questSNO="347065">
+		<LoadProfile file="347065.xml" />
+	</HaveBounty>
+	<!-- Kill Bludgeonskull-->
+	<HaveBounty questSNO="345544">
+		<LoadProfile file="345544.xml" />
+	</HaveBounty>
+	<!-- Kill Logrut the warrior-->
+	<HaveBounty questSNO="344497">
+		<LoadProfile file="kill_southern_highlands.xml" />
+	</HaveBounty>
+	<!-- Kill Merrium Skullthorn-->
+	<HaveBounty questSNO="361334">
+		<LoadProfile file="kill_cathedral_level_2.xml" />
+	</HaveBounty>
+	<!-- Kill Skeleton King-->
+	<HaveBounty questSNO="361234">
+		<LoadProfile file="361234.xml" />
+	</HaveBounty>
+	<!-- Apothecary's Brother-->
+	<HaveBounty questSNO="350529">
+		<LoadProfile file="350529.xml" />
+	</HaveBounty>
+	<!-- Kill Krailen the Wicked-->
+	<HaveBounty questSNO="367559">
+		<LoadProfile file="367559.xml" />
+	</HaveBounty>
+	<!-- Revenge of Gharbad-->
+	<HaveBounty questSNO="344486">
+		<LoadProfile file="344486.xml" />
+	</HaveBounty>
+	<!-- Kill Garrach the Afflicted -->
+	<HaveBounty questSNO="347027">
+		<LoadProfile file="kill_halls_of_agony_level_3.xml" />
+	</HaveBounty>
+	<!-- Kill Grimsmack -->
+	<HaveBounty questSNO="345507">
+		<LoadProfile file="kill_the_festering_woods.xml" />
+	</HaveBounty>
+	<!-- The Cursed Cellar -->
+	<HaveBounty questSNO="369944">
+		<LoadProfile file="369944.xml" />
+	</HaveBounty>
+	<!-- A Stranger In Need -->
+	<HaveBounty questSNO="345546">
+		<LoadProfile file="345546.xml" />
+	</HaveBounty>
+	<!-- Kill Reggrel the Despised -->
+	<HaveBounty questSNO="369253">
+		<LoadProfile file="kill_northern_highlands.xml" />
+	</HaveBounty>
+	<!-- Kill Cadhul the Deathcaller -->
+	<HaveBounty questSNO="344490">
+		<LoadProfile file="344490.xml" />
+	</HaveBounty>
+	<!-- Kill Queen Araneae -->
+	<HaveBounty questSNO="345528">
+		<LoadProfile file="345528.xml" />
+	</HaveBounty>
+	<!-- Kill the Butcher -->
+	<HaveBounty questSNO="347032">
+		<LoadProfile file="347032.xml" />
+	</HaveBounty>
+	<!-- Kill Braluk Grimlow -->
+	<HaveBounty questSNO="361327">
+		<LoadProfile file="361327.xml" />
+	</HaveBounty>
+	<!-- Clear the Den of the Fallen -->
+	<HaveBounty questSNO="345488">
+		<LoadProfile file="345488.xml" />
+	</HaveBounty>
+	<!-- The Precious Ores -->
+	<HaveBounty questSNO="347060">
+		<LoadProfile file="347060.xml" />
+	</HaveBounty>
+	<!-- Clear the Clan of the Moon Cave -->
+	<HaveBounty questSNO="344547">
+		<LoadProfile file="344547.xml" />
+	</HaveBounty>
+	<!-- Clear the Scavenger's Den -->
+	<HaveBounty questSNO="345496">
+		<LoadProfile file="345496.xml" />
+	</HaveBounty>
+	<!-- Kill Charger -->
+	<HaveBounty questSNO="347070">
+		<LoadProfile file="347070.xml" />
+	</HaveBounty>
+	<!-- Kill Hrugowl the Defiant -->
+	<HaveBounty questSNO="369257">
+		<LoadProfile file="kill_northern_highlands.xml" />
+	</HaveBounty>
+	<!-- The Matriarch's Bones -->
+	<HaveBounty questSNO="349020">
+		<LoadProfile file="349020.xml" />
+	</HaveBounty>
+	<!-- Kill Treefist Woodhead -->
+	<HaveBounty questSNO="347020">
+		<LoadProfile file="349020.xml" />
+	</HaveBounty>
+	<!-- Clear the Crypt of the Ancients -->
+	<HaveBounty questSNO="345517">
+		<LoadProfile file="345517.xml" />
+	</HaveBounty>
+	<!-- Kill Captain Cage -->
+	<HaveBounty questSNO="361341">
+		<LoadProfile file="kill_cathedral_level_4.xml" />
+	</HaveBounty>
+	<!-- Kill Ragus Grimlow -->
+	<HaveBounty questSNO="361320">
+		<LoadProfile file="kill_cathedral_level_1.xml" />
+	</HaveBounty>
+	<!-- The Cursed Chamber of Bones -->
+	<HaveBounty questSNO="375198">
+		<LoadProfile file="375198.xml" />
+	</HaveBounty>
+	<!-- Carrion Farm -->
+	<HaveBounty questSNO="345500">
+		<LoadProfile file="345500.xml" />
+	</HaveBounty>
+	<!-- Kill Percepeus -->
+	<HaveBounty questSNO="369273">
+		<LoadProfile file="kill_northern_highlands.xml" />
+	</HaveBounty>
+	<!-- The Cursed Hatchery -->
+	<HaveBounty questSNO="375201">
+		<LoadProfile file="375201.xml" />
+	</HaveBounty>
+	<!-- Kill Crassus The Tormentor -->
+	<HaveBounty questSNO="345542">
+		<LoadProfile file="kill_halls_of_agony_level_1.xml" />
+	</HaveBounty>
+	<!-- Kill Mira Eamon -->
+	<HaveBounty questSNO="347099">
+		<LoadProfile file="kill_the_weeping_hollow.xml" />
+	</HaveBounty>
+	<!-- Kill Killian Damort -->
+	<HaveBounty questSNO="361343">
+		<LoadProfile file="kill_cathedral_level_4.xml" />
+	</HaveBounty>
+	<!-- Kill Red Rock -->
+	<HaveBounty questSNO="344503">
+		<LoadProfile file="kill_southern_highlands.xml" />
+	</HaveBounty>
+	<!-- Kill Buras the Impaler -->
+	<HaveBounty questSNO="344499">
+		<LoadProfile file="kill_southern_highlands.xml" />
+	</HaveBounty>
+	<!-- Kill Galush Valdant -->
+	<HaveBounty questSNO="369251">
+		<LoadProfile file="kill_the_festering_woods.xml" />
+	</HaveBounty>
+	<!-- Kill Bellybloat the Scarred -->
+	<HaveBounty questSNO="361345">
+		<LoadProfile file="kill_cathedral_level_4.xml" />
+	</HaveBounty>
+	<!-- Kill Battlerage the Plagued -->
+	<HaveBounty questSNO="347011">
+		<LoadProfile file="kill_halls_of_agony_level_1.xml" />
+	</HaveBounty>
+  <!-- Clear Warrior's Rest -->
+  <HaveBounty questSNO="345520">
+    <LoadProfile file="345520.xml" />
+  </HaveBounty>
+	
+	
+	<ActBountiesComplete act="A1">
+		<!-- Make sure we are in New Tristram -->
+		<If condition="Me.IsInTown==False">   
+			<UseTownPortal questId="1" />       
+		</If>
+		<If condition="not CurrentWorldId == 332336">
+			<!--Act 2 WP-->
+			<If condition="CurrentWorldId == 161472">
+				<UseWaypoint questId="1" stepId="1" actorId="6442" x="324.8699" y="291.0312" z="1.645629" waypointNumber="0"/> 
+			</If>
+			<!--Act 3/4 WP-->
+			<If condition="CurrentWorldId == 172909">
+				<UseWaypoint questId="1" stepId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="0"/> 
+			</If>
+			<!--Act 5 WP-->
+			<If condition="CurrentWorldId == 304235">
+				<UseWaypoint questId="1" stepId="1" actorId="6442" x="557.5455" y="525.3394" z="2.796465" waypointNumber="0"/> 
+			</If>
+		</If>
+		<MoveToActor questId="312429" stepId="2" actorId="114622" />
+	</ActBountiesComplete>
+</If>
+ <LeaveGame reason="No more bounties that we can do. Resetting game." />  
+</While>
+</Order>
+
+</Profile>

@@ -1,0 +1,161 @@
+	
+
+    <Profile>
+     
+    <Name>Act 4 - Loader</Name>
+    <KillMonsters>True</KillMonsters>
+    <PickupLoot>true</PickupLoot>
+    <GameParams quest="101758" step="1" act="OpenWorld" difficulty="Normal" resumeFromSave="False" isPrivate="True" numGames="-1"  />
+    <!--This is the Beging of your ORder list-->
+    <Order>
+    <WaitTimer questId="312429" stepId="2" waitTime="500" />
+    <While condition="True">
+    <WaitTimer questId="312429" stepId="2" waitTime="1000" />
+    <RefreshBountyCache/>
+    <!--Teleports to town if not in town-->
+    <If condition="Me.IsInTown==False">  
+            <UseTownPortal questId="1" />      
+    </If>
+    <If condition="Me.IsInTown">
+            <!-- Act 4 Bounties -->
+            <LogMessage quest="1" step="1" output="Act 4 Bounties" />
+            <!-- Cursed Dais  -->
+            <HaveBounty questSNO="369900">
+                    <LoadProfile file="369900.xml" />
+            </HaveBounty>
+            <!-- Kill Rakanoth -->
+            <HaveBounty questSNO="349262">
+                    <LoadProfile file="349262.xml" />
+            </HaveBounty>
+            <!-- Kill Khatun (non-specific) -->
+            <HaveBounty questSNO="349258">
+                    <LoadProfile file="349258.xml" />
+            </HaveBounty>
+            <!-- Kill Torchlighter -->
+            <HaveBounty questSNO="349256">
+                    <LoadProfile file="349256.xml" />
+            </HaveBounty>
+            <!-- Kill Veshan the fierce (non-specific) -->
+            <HaveBounty questSNO="349260">
+                    <LoadProfile file="349260.xml" />
+            </HaveBounty>
+            <!-- Kill the aspect of destruction -->
+            <HaveBounty questSNO="357131">
+                    <LoadProfile file="357131.xml" />
+            </HaveBounty>
+            <!-- kill the aspect of pain -->
+            <HaveBounty questSNO="357129">
+                    <LoadProfile file="357129.xml" />
+            </HaveBounty>
+            <!-- Kill the aspect of anguish -->
+            <HaveBounty questSNO="357127">
+                    <LoadProfile file="357127.xml" />
+            </HaveBounty>
+            <!-- kill kao'ahn (non-specific) -->
+            <HaveBounty questSNO="349254">
+                    <LoadProfile file="349254.xml" />
+            </HaveBounty>
+            <!-- kill oah'tash -->
+            <HaveBounty questSNO="349252">
+                    <LoadProfile file="349252.xml" />
+            </HaveBounty>
+            <!-- Kill sledge -->
+            <HaveBounty questSNO="364336">
+                    <LoadProfile file="364336.xml" />
+            </HaveBounty>
+            <!-- kill hammermash -->
+            <HaveBounty questSNO="364333">
+                    <LoadProfile file="364333.xml" />
+            </HaveBounty>
+            <!-- clear hell rift -->
+            <HaveBounty questSNO="362140">
+                    <LoadProfile file="362140.xml" />
+            </HaveBounty>
+            <!-- kill aspect of hatred (non-specific) -->
+            <HaveBounty questSNO="357133">
+                    <LoadProfile file="357133.xml" />
+            </HaveBounty>
+            <!-- kill aspect of lies -->
+            <HaveBounty questSNO="357135">
+                    <LoadProfile file="357135.xml" />
+            </HaveBounty>
+            <!-- kill izual -->
+            <HaveBounty questSNO="361421">
+                    <LoadProfile file="361421.xml" />
+            </HaveBounty>
+            <!-- kill slarg the behemoth -->
+            <HaveBounty questSNO="349280">
+                    <LoadProfile file="349280.xml" />
+            </HaveBounty>
+            <!-- kill kysindra the wretched (non-specific) -->
+            <HaveBounty questSNO="349276">
+                    <LoadProfile file="349276.xml" />
+            </HaveBounty>
+            <!-- kill pyres the damned (non-specific) -->
+            <HaveBounty questSNO="349278">
+                    <LoadProfile file="349278.xml" />
+            </HaveBounty>
+            <!-- kill aspect of terror (non-specific) -->
+            <HaveBounty questSNO="357139">
+                    <LoadProfile file="357139.xml" />
+            </HaveBounty>
+            <!-- kill grimnight the soulless (non-specific) -->
+            <HaveBounty questSNO="349272">
+                    <LoadProfile file="349272.xml" />
+            </HaveBounty>
+            <!-- kill Sao'thall (non-specific) -->
+            <HaveBounty questSNO="349274">
+                    <LoadProfile file="349274.xml" />
+            </HaveBounty>
+            <!-- kill rhau'kye (non-specific) -->
+            <HaveBounty questSNO="349282">
+                    <LoadProfile file="349282.xml" />
+            </HaveBounty>
+            <!-- kill haures (non-specific) -->
+            <HaveBounty questSNO="349270">
+                    <LoadProfile file="349270.xml" />
+            </HaveBounty>
+            <!-- kill aspect of sin (non-specific) -->
+            <HaveBounty questSNO="357137">
+                    <LoadProfile file="357137.xml" />
+            </HaveBounty>
+            <!-- Cursed chapel (Might be static, x="411" y="890" z="0") -->
+            <HaveBounty questSNO="369878">
+                    <LoadProfile file="369878.xml" />
+            </HaveBounty>
+            <!-- kill diablo -->
+            <HaveBounty questSNO="349288">
+                    <LoadProfile file="349288.xml" />
+            </HaveBounty>
+     
+     
+     
+            <ActBountiesComplete act="A4">
+                    <!-- Make sure we are in Bastion's Keep -->
+                    <If condition="Me.IsInTown==False">  
+                            <UseTownPortal questId="1" />      
+                    </If>
+                    <If condition="not CurrentWorldId == 172909">
+                            <!--Act 1 WP-->
+                            <If condition="CurrentWorldId == 332336">
+                                    <UseWaypoint questId="1" stepId="1" actorId="223757" x="401.7305" y="555.0093" z="24.90835" waypointNumber="26"/>
+                            </If>
+                            <!--Act 2 WP-->
+                            <If condition="CurrentWorldId == 161472">
+                                    <UseWaypoint questId="1" stepId="1" actorId="6442" x="324.8699" y="291.0312" z="1.645629" waypointNumber="26"/>
+                            </If>
+                            <!--Act 5 WP-->
+                            <If condition="CurrentWorldId == 304235">
+                                    <UseWaypoint questId="1" stepId="1" actorId="6442" x="557.5455" y="525.3394" z="2.796465" waypointNumber="26"/>
+                            </If>
+                    </If>
+                    <MoveToActor questId="312429" stepId="2" actorId="114622" />
+            </ActBountiesComplete>
+     
+    </If>
+     <LeaveGame reason="No more bounties that we can do. Resetting game." />  
+    </While>
+    </Order>
+     
+    </Profile>
+

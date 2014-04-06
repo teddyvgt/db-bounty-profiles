@@ -12,15 +12,14 @@ using Zeta.Common.Plugins;
 using Zeta.XmlEngine;
 using Zeta.TreeSharp;
 using Zeta.Game;
-using System.Windows;
 using Zeta.Game.Internals;
 
 namespace Test
 {
     public partial class Test : IPlugin
     {
-        public Version Version { get { return new Version(0, 2, 2); } }
-        public string Author { get { return "STF"; } }
+        public Version Version { get { return new Version(0, 0, 2); } }
+        public string Author { get { return "Sychotix"; } }
         public string Description { get { return "Spam dumps all the profiles ingame."; } }
         public string Name { get { return "Bounty Dumper "; } }
         public bool Equals(IPlugin other) { return (other.Name == Name) && (other.Version == Version); }
@@ -31,6 +30,11 @@ namespace Test
         public void OnEnabled()
         {
             Logger.Log("Enabled.");
+            foreach (var b in ZetaDia.ActInfo.Bounties)
+            {
+                Logger.Log("Act: " + b.Act.ToString() + " info: " + b.Info + " levelarea: " + b.LevelArea + " quest: " + b.Quest + " state: " + b.State);
+            }
+            Logger.Log("done.");
         }
 
         public void OnDisabled()
@@ -45,12 +49,9 @@ namespace Test
 
         public void OnPulse()
         {
-            Logger.Log(ZetaDia.CurrentQuest.Name);
-            foreach(var b in ZetaDia.ActInfo.Bounties)
-            {
-                Logger.Log("Act: " + b.Act.ToString() + " info: " + b.Info + " levelarea: " + b.LevelArea + " quest: " + b.Quest + " state: " + b.State);
-            }
-            Logger.Log("done.");
+            BountyInfo b = ZetaDia.ActInfo.ActiveBounty;
+            if (b == null) Logger.Log("Active Bounty Was null");
+            else Logger.Log("Active: Quest:" + b.Info.Quest + " QuestSNO: " + b.Info.QuestSNO + " NumSteps: " + b.Info.QuestRecord.NumberOfSteps + " NumCompletionSteps: " + b.Info.QuestRecord.NumberOfCompletionSteps + "BounusCount: " + b.Info.BonusCount + " Kill Count " + b.Info.KillCount + " QuestMeter " + b.Info.QuestMeter);
         }
 
         public void OnShutdown()
