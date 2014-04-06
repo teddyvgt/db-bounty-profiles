@@ -1,6 +1,6 @@
 <Profile>
 
-<Name>Kill Hammermash</Name>
+<Name>Clear Hellrift</Name>
 
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
@@ -25,15 +25,15 @@
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
     <!-- Look for portal -->
-	<BountyAtStep questSNO="364333" step="4">
+	<BountyAtStep questSNO="362140" step="4">
 		<If condition="CurrentWorldId == 109525">
-			<AWTrinityExploreDungeon bountyQuestSNO="364333" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" objectDistance="300" actorId="224890" boxTolerance="0.7" boxSize="15" ignoreMarkers="False" />
+			<AWTrinityExploreDungeon bountyQuestSNO="362140" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" objectDistance="300" actorId="224890" boxTolerance="0.7" boxSize="15" ignoreMarkers="False" />
 			<MoveToActor questId="312429" stepId="2" actorId="224890" isPortal="True"/>
 			<WaitTimer questId="312429" stepId="2" waitTime="2500" />
 			<!-- If not completed, keep killing things until it is complete-->
-			<BountyAtStep questSNO="364333" step="4">
+			<BountyAtStep questSNO="362140" step="4">
 				<LogMessage quest="1" step="1" output="Clearing level 2." />
-				<AWTrinityExploreDungeon bountyQuestSNO="364333" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.7" boxSize="15" ignoreMarkers="False" />
+				<AWTrinityExploreDungeon bountyQuestSNO="362140" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.7" boxSize="15" ignoreMarkers="False" />
 			</BountyAtStep>
 		</If>
 	</BountyAtStep>
@@ -41,6 +41,6 @@
     <!-- Portal Home -->
     <TrinityTownPortal questId="312429" stepId="2" />
     <WaitTimer questId="312429" stepId="2" waitTime="2500" />
-	<LoadProfile file="../profile.xml" />
+	<LoadProfile file="act4.xml" />
 </Order>
 </Profile>

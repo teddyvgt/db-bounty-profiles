@@ -1,6 +1,6 @@
 <Profile>
 
-<Name>Kill aspect of destruction</Name>
+<Name>Kill Rakanoth</Name>
 
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
@@ -25,22 +25,21 @@
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
     <!-- Look for him -->
-	<BountyAtStep questSNO="357131" step="4">
-		<If condition="CurrentWorldId == 109513">
-			<AWTrinityExploreDungeon bountyQuestSNO="357131" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" objectDistance="300" actorId="197495" boxTolerance="0.7" boxSize="15" ignoreMarkers="False" />
-			<MoveToActor questId="312429" stepId="2" actorId="197495" />
-			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
-			<!-- If not completed, keep killing things until it is complete-->
-			<BountyAtStep questSNO="357131" step="4">
-				<LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
-				<AWTrinityExploreDungeon bountyQuestSNO="357131" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.7" boxSize="15" ignoreMarkers="False" />
-			</BountyAtStep>
-		</If>
+	<BountyAtStep questSNO="349262" step="4">
+   <If condition="CurrentWorldId == 109513">
+      <MoveToActor questId="312429" stepId="2" actorId="161276" isPortal="True" destinationWorldId="166640" x="990" y="268" z="18" />
+      <WaitTimer questId="312429" stepId="2" waitTime="1000" />
+    </If>
+    <If condition="CurrentWorldId == 166640">
+      <!-- Kill Rakanoth -->
+      <SafeMoveTo questId="312429" stepId="2" name="Rakanoth" pathPrecision="10" x="358" y="352" z="0" />
+      <WaitTimer questId="312429" stepId="2" waitTime="10000" />
+    </If>
 	</BountyAtStep>
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="312429" stepId="2" />
     <WaitTimer questId="312429" stepId="2" waitTime="2500" />
-	<LoadProfile file="../profile.xml" />
+	<LoadProfile file="act4.xml" />
 </Order>
 </Profile>

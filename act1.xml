@@ -19,91 +19,91 @@
 	<LogMessage quest="1" step="1" output="Blah" /> 
 	<!-- Clear Khazra Den -->
 	<HaveBounty questSNO="347065">
-		<LoadProfile file="./Act1/347065.xml" />
+		<LoadProfile file="Act1/347065.xml" />
 	</HaveBounty>
 	<!-- Kill Bludgeonskull *ACTOR ID IN PROFILE MAYBE INCORRECT*-->
 	<HaveBounty questSNO="345544">
-		<LoadProfile file="./Act1/345544.xml" />
+		<LoadProfile file="Act1/345544.xml" />
 	</HaveBounty>
 	<!-- Kill Logrut the warrior *ACTOR ID IN PROFILE MAYBE INCORRECT*-->
 	<HaveBounty questSNO="344497">
-		<LoadProfile file="./Act1/344497.xml" />
+		<LoadProfile file="Act1/344497.xml" />
 	</HaveBounty>
 	<!-- Kill Merrium Skullthorn *ACTOR ID IN PROFILE MAYBE INCORRECT*-->
 	<HaveBounty questSNO="361334">
-		<LoadProfile file="./Act1/361334.xml" />
+		<LoadProfile file="Act1/361334.xml" />
 	</HaveBounty>
 	<!-- Kill Skeleton King-->
 	<HaveBounty questSNO="361234">
-		<LoadProfile file="./Act1/361234.xml" />
+		<LoadProfile file="Act1/361234.xml" />
 	</HaveBounty>
 	<!-- Apothecary's Brother-->
 	<HaveBounty questSNO="350529">
-		<LoadProfile file="./Act1/350529.xml" />
+		<LoadProfile file="Act1/350529.xml" />
 	</HaveBounty>
 	<!-- Kill Krailen the Wicked-->
 	<HaveBounty questSNO="367559">
-		<LoadProfile file="./Act1/367559.xml" />
+		<LoadProfile file="Act1/367559.xml" />
 	</HaveBounty>
 	<!-- Revenge of Gharbad-->
 	<HaveBounty questSNO="344486">
-		<LoadProfile file="./Act1/344486.xml" />
+		<LoadProfile file="Act1/344486.xml" />
 	</HaveBounty>
 	<!-- Kill Garrach the Afflicted -->
 	<HaveBounty questSNO="347027">
-		<LoadProfile file="./Act1/347027.xml" />
+		<LoadProfile file="Act1/347027.xml" />
 	</HaveBounty>
 	<!-- Kill Grimsmack -->
 	<HaveBounty questSNO="345507">
-		<LoadProfile file="./Act1/345507.xml" />
+		<LoadProfile file="Act1/345507.xml" />
 	</HaveBounty>
 	<!-- The Cursed Cellar -->
 	<HaveBounty questSNO="369944">
-		<LoadProfile file="./Act1/369944.xml" />
+		<LoadProfile file="Act1/369944.xml" />
 	</HaveBounty>
 	<!-- A Stranger In Need -->
 	<HaveBounty questSNO="345546">
-		<LoadProfile file="./Act1/345546.xml" />
+		<LoadProfile file="Act1/345546.xml" />
 	</HaveBounty>
 	<!-- Kill Reggrel the Despised -->
 	<HaveBounty questSNO="369253">
-		<LoadProfile file="./Act1/369253.xml" />
+		<LoadProfile file="Act1/369253.xml" />
 	</HaveBounty>
 	<!-- Kill Cadhul the Deathcaller -->
 	<HaveBounty questSNO="344490">
-		<LoadProfile file="./Act1/344490.xml" />
+		<LoadProfile file="Act1/344490.xml" />
 	</HaveBounty>
 	<!-- Kill Queen Araneae -->
 	<HaveBounty questSNO="345528">
-		<LoadProfile file="./Act1/345528.xml" />
+		<LoadProfile file="Act1/345528.xml" />
 	</HaveBounty>
 	<!-- Kill the Butcher -->
 	<HaveBounty questSNO="347032">
-		<LoadProfile file="./Act1/347032.xml" />
+		<LoadProfile file="Act1/347032.xml" />
 	</HaveBounty>
 	<!-- Kill Braluk Grimlow -->
 	<HaveBounty questSNO="361327">
-		<LoadProfile file="./Act1/361327.xml" />
+		<LoadProfile file="Act1/361327.xml" />
 	</HaveBounty>
 	<!-- Clear the Den of the Fallen -->
 	<HaveBounty questSNO="345488">
-		<LoadProfile file="./Act1/345488.xml" />
+		<LoadProfile file="Act1/345488.xml" />
 	</HaveBounty>
 	<!-- The Precious Ores -->
 	<HaveBounty questSNO="347060">
-		<LoadProfile file="./Act1/347060.xml" />
+		<LoadProfile file="Act1/347060.xml" />
 	</HaveBounty>
 	<!-- Clear the Clan of the Moon Cave -->
 	<HaveBounty questSNO="344547">
-		<LoadProfile file="./Act1/344547.xml" />
+		<LoadProfile file="Act1/344547.xml" />
 	</HaveBounty>
 	<!-- Clear the Scavenger's Den -->
 	<HaveBounty questSNO="345496">
-		<LoadProfile file="./Act1/345496.xml" />
+		<LoadProfile file="Act1/345496.xml" />
 	</HaveBounty>
 	<!-- Kill Charger -->
 	<HaveBounty questSNO="347070">
-		<LoadProfile file="./Act1/347070.xml" />
+		<LoadProfile file="Act1/347070.xml" />
 	</HaveBounty>
 	
 	<ActBountiesComplete act="A1">
