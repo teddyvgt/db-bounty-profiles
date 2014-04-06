@@ -29,24 +29,33 @@
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
 	<BountyAtStep questSNO="344547" step="4">
-    <!--Find cave 2-->
+    <!--Find cave 1-->
     <If condition="CurrentWorldId == 71150">
       <SafeMoveTo questId="312429" stepId="2" x="2188.627" y="4504.445" z="-0.3508204" />
       <SafeMoveTo questId="312429" stepId="2" x="2188.627" y="4504.445" z="-0.3508204" />
+    </If>
+    <!--Enter cave 1-->
+    <If condition="CurrentWorldId == 71150">
+      <MoveToActor questId="312429" stepId="2" actorId="176008" isPortal="True" destinationWorldId="82502"/>
+    </If>
+    <!--Find cave 2-->
+    <If condition="CurrentWorldId == 71150">
+      <SafeMoveTo questId="312429" stepId="2" x="2431.127" y="4249.725" z="0.3582907" />
+      <SafeMoveTo questId="312429" stepId="2" x="2431.127" y="4249.725" z="0.3582907" />
     </If>
     <!--Enter cave 2-->
     <If condition="CurrentWorldId == 71150">
       <MoveToActor questId="312429" stepId="2" actorId="176008" isPortal="True" destinationWorldId="82502"/>
     </If>
-    <!--Find cave 1-->
+    <!--Find cave 2-->
     <If condition="CurrentWorldId == 71150">
-      <SafeMoveTo questId="312429" stepId="2" x="2431.127" y="4249.725" z="0.3582907" />
-      <SafeMoveTo questId="312429" stepId="2" x="2431.127" y="4249.725" z="0.3582907" />
+      <SafeMoveTo questId="312429" stepId="2" x="2183.475" y="4028.584" z="-1.920981" />
+      <SafeMoveTo questId="312429" stepId="2" x="2183.475" y="4028.584" z="-1.920981" />
     </If>
-    <!--Enter cave 1-->
-      <If condition="CurrentWorldId == 71150">
-        <MoveToActor questId="312429" stepId="2" actorId="176008" isPortal="True" destinationWorldId="82502"/>
-      </If>
+    <!--Enter cave 2-->
+    <If condition="CurrentWorldId == 71150">
+      <MoveToActor questId="312429" stepId="2" actorId="176008" isPortal="True" destinationWorldId="82502"/>
+    </If>
     
     <!--Explore for Caves-->
     <If condition="CurrentWorldId == 71150">
