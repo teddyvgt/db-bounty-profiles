@@ -18,7 +18,7 @@ namespace BountyProfile
 {
     public partial class BountyProfile : IPlugin
     {
-        public Version Version { get { return new Version(0, 0, 9); } }
+        public Version Version { get { return new Version(0, 0, 10); } }
         public string Author { get { return "Sychotix"; } }
         public string Description { get { return "Adds functionaly to make adventure profiles work."; } }
         public string Name { get { return "BountyProfile "; } }
@@ -125,6 +125,15 @@ namespace BountyProfile
                     Logger.Log("Seems completed!");
                     return true;
                 }
+                if (ZetaDia.IsInTown)
+                {
+                    return true;
+                }
+                if (ZetaDia.Me.IsInBossEncounter)
+                {
+                    return false;
+                }
+
                 
                 return false;
             }
