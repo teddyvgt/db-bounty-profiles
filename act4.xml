@@ -17,113 +17,133 @@
 <If condition="Me.IsInTown">
 	<!-- Act 4 Bounties -->
 	<LogMessage quest="1" step="1" output="Act 4 Bounties" /> 
+	
+	
+	<!-- Waypoint [41] -->
+	
 	<!-- Cursed Dais  -->
 	<HaveBounty questSNO="369900">
-		<LoadProfile file="Act4/369900.xml" />
+		<LoadProfile file="Act4/Dais.xml" />
 	</HaveBounty>
 	<!-- Kill Rakanoth -->
 	<HaveBounty questSNO="349262">
-		<LoadProfile file="Act4/349262.xml" />
+		<LoadProfile file="Act4/Rakanoth.xml" />
 	</HaveBounty>
-	<!-- Kill Khatun (non-specific) -->
+	<!-- Kill Khatun -->
 	<HaveBounty questSNO="349258">
-		<LoadProfile file="Act4/349258.xml" />
+		<LoadProfile file="Act4/Gardens of hope 1.xml" />
 	</HaveBounty>
 	<!-- Kill Torchlighter -->
 	<HaveBounty questSNO="349256">
-		<LoadProfile file="Act4/349256.xml" />
+		<LoadProfile file="Act4/Gardens of hope 1.xml" />
 	</HaveBounty>
-	<!-- Kill Veshan the fierce (non-specific) -->
+	<!-- Kill Veshan the fierce -->
 	<HaveBounty questSNO="349260">
-		<LoadProfile file="Act4/349260.xml" />
+		<LoadProfile file="Act4/Gardens of hope 1.xml" />
 	</HaveBounty>
 	<!-- Kill the aspect of destruction -->
 	<HaveBounty questSNO="357131">
-		<LoadProfile file="Act4/357131.xml" />
+		<LoadProfile file="Act4/Gardens of hope 1.xml" />
 	</HaveBounty>
+	
+	
+	<!-- Waypoint [42] -->
+	
 	<!-- kill the aspect of pain -->
 	<HaveBounty questSNO="357129">
-		<LoadProfile file="Act4/357129.xml" />
+		<LoadProfile file="Act4/Gardens of hope 2.xml" />
 	</HaveBounty>
 	<!-- Kill the aspect of anguish -->
 	<HaveBounty questSNO="357127">
-		<LoadProfile file="Act4/357127.xml" />
+		<LoadProfile file="Act4/Gardens of hope 2.xml" />
 	</HaveBounty>
-	<!-- kill kao'ahn (non-specific) -->
+	<!-- kill kao'ahn -->
 	<HaveBounty questSNO="349254">
-		<LoadProfile file="Act4/349254.xml" />
+		<LoadProfile file="Act4/Gardens of hope 2.xml" />
 	</HaveBounty>
 	<!-- kill oah'tash -->
 	<HaveBounty questSNO="349252">
-		<LoadProfile file="Act4/349252.xml" />
+		<LoadProfile file="Act4/Gardens of hope 2.xml" />
 	</HaveBounty>
+	
+	
+	<!-- Waypoint [43] -->
+	
 	<!-- Kill sledge -->
 	<HaveBounty questSNO="364336">
-		<LoadProfile file="Act4/364336.xml" />
+		<LoadProfile file="Act4/Hellrift.xml" />
 	</HaveBounty>
 	<!-- kill hammermash -->
 	<HaveBounty questSNO="364333">
-		<LoadProfile file="Act4/364333.xml" />
+		<LoadProfile file="Act4/Hellrift.xml" />
 	</HaveBounty>
 	<!-- clear hell rift -->
 	<HaveBounty questSNO="362140">
-		<LoadProfile file="Act4/362140.xml" />
+		<LoadProfile file="Act4/Hellrift.xml" />
 	</HaveBounty>
-	<!-- kill aspect of hatred (non-specific) -->
+	
+	
+	<!-- Waypoint [44] -->
+	
+	<!-- kill aspect of hatred -->
 	<HaveBounty questSNO="357133">
-		<LoadProfile file="Act4/357133.xml" />
+		<LoadProfile file="Act4/Silver Spire 1.xml" />
 	</HaveBounty>
 	<!-- kill aspect of lies -->
 	<HaveBounty questSNO="357135">
-		<LoadProfile file="Act4/357135.xml" />
+		<LoadProfile file="Act4/Silver Spire 1.xml" />
 	</HaveBounty>
 	<!-- kill izual -->
 	<HaveBounty questSNO="361421">
-		<LoadProfile file="Act4/361421.xml" />
+		<LoadProfile file="Act4/Izual.xml" />
 	</HaveBounty>
 	<!-- kill slarg the behemoth -->
 	<HaveBounty questSNO="349280">
-		<LoadProfile file="Act4/349280.xml" />
+		<LoadProfile file="Act4/Silver Spire 1.xml" />
 	</HaveBounty>
-	<!-- kill kysindra the wretched (non-specific) -->
+	<!-- kill kysindra the wretched -->
 	<HaveBounty questSNO="349276">
-		<LoadProfile file="Act4/349276.xml" />
+		<LoadProfile file="Act4/Silver Spire 1.xml" />
 	</HaveBounty>
-	<!-- kill pyres the damned (non-specific) -->
+	<!-- kill pyres the damned -->
 	<HaveBounty questSNO="349278">
-		<LoadProfile file="Act4/349278.xml" />
+		<LoadProfile file="Act4/Silver Spire 1.xml" />
 	</HaveBounty>
-	<!-- kill aspect of terror (non-specific) -->
+	
+	
+	<!-- Waypoint [45] -->
+	
+	<!-- kill aspect of terror -->
 	<HaveBounty questSNO="357139">
-		<LoadProfile file="Act4/357139.xml" />
+		<LoadProfile file="Act4/Silver Spire 2.xml" />
 	</HaveBounty>
-	<!-- kill grimnight the soulless (non-specific) -->
+	<!-- kill grimnight the soulless -->
 	<HaveBounty questSNO="349272">
-		<LoadProfile file="Act4/349272.xml" />
+		<LoadProfile file="Act4/Silver Spire 2.xml" />
 	</HaveBounty>
-	<!-- kill Sao'thall (non-specific) -->
+	<!-- kill Sao'thall -->
 	<HaveBounty questSNO="349274">
-		<LoadProfile file="Act4/349274.xml" />
+		<LoadProfile file="Act4/Silver Spire 2.xml" />
 	</HaveBounty>
-	<!-- kill rhau'kye (non-specific) -->
+	<!-- kill rhau'kye -->
 	<HaveBounty questSNO="349282">
-		<LoadProfile file="Act4/349282.xml" />
+		<LoadProfile file="Act4/Silver Spire 2.xml" />
 	</HaveBounty>
-	<!-- kill haures (non-specific) -->
+	<!-- kill haures -->
 	<HaveBounty questSNO="349270">
-		<LoadProfile file="Act4/349270.xml" />
+		<LoadProfile file="Act4/Silver Spire 2.xml" />
 	</HaveBounty>
-	<!-- kill aspect of sin (non-specific) -->
+	<!-- kill aspect of sin -->
 	<HaveBounty questSNO="357137">
-		<LoadProfile file="Act4/357137.xml" />
+		<LoadProfile file="Act4/Silver Spire 2.xml" />
 	</HaveBounty>
 	<!-- Cursed chapel (Might be static, x="411" y="890" z="0") -->
 	<HaveBounty questSNO="369878">
-		<LoadProfile file="Act4/369878.xml" />
+		<LoadProfile file="Act4/Chapel.xml" />
 	</HaveBounty>
 	<!-- kill diablo -->
 	<HaveBounty questSNO="349288">
-		<LoadProfile file="Act4/349288.xml" />
+		<LoadProfile file="Act4/Diablo.xml" />
 	</HaveBounty>
 
 

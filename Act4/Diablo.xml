@@ -1,0 +1,57 @@
+<Profile>
+
+<Name>Kill Diablo</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<Order>
+<If condition="Me.IsInTown ">
+	<!--Act 1 WP-->
+	<If condition="CurrentWorldId == 332336">
+		<UseWaypoint questId="1" stepId="1" actorId="223757" x="401.7305" y="555.0093" z="24.90835" waypointNumber="45"/>
+	</If>
+	<!--Act 2 WP-->
+	<If condition="CurrentWorldId == 161472">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="324.8699" y="291.0312" z="1.645629" waypointNumber="45"/> 
+	</If>
+	<!--Act 3/4 WP-->
+	<If condition="CurrentWorldId == 172909">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="45"/> 
+	</If>
+	<!--Act 4 WP-->
+	<If condition="CurrentWorldId == 304235">
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="557.5455" y="525.3394" z="2.796465" waypointNumber="45"/> 
+	</If>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+</If>
+    <!-- Look for him -->
+		<If condition="CurrentWorldId == 129305">
+      <AWTrinityExploreDungeon questId="312429" stepId="2"  until="ExitFound" exitNameHash="-72895048" boxTolerance="0.550" boxSize="10" pathPrecision="40" ignoreMarkers="False">
+        <PrioritizeScenes>
+          <PriorityScene sceneName="Exit" />
+        </PrioritizeScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_0" />
+          <IgnoreScene sceneName="_S_0" />
+          <IgnoreScene sceneName="_E_0" />
+          <IgnoreScene sceneName="_W_0" />
+        </IgnoreScenes>
+      </AWTrinityExploreDungeon>
+			<MoveToActor questId="312429" stepId="2" actorId="210763" isPortal="True" destinationWorldId="205399" interactRange="20" />
+			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		</If>
+    <If condition="CurrentWorldId == 205399">
+      <!-- Pinnacle of Heaven -->
+	  <MoveToActor questId="312429" stepId="2" actorId="161279" isPortal="True" interactRange="20" />
+	  <WaitTimer questId="312429" stepId="2" waitTime="1000" />
+	  <SafeMoveTo questId="312429" stepId="2" name="Diablo" pathPrecision="10" x="360" y="358" z="40"/>
+	  <AWTrinityExploreDungeon questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.55" boxSize="15" ignoreMarkers="False" />
+	  
+    </If>
+
+    <!-- Portal Home -->
+    <TrinityTownPortal questId="312429" stepId="2" />
+    <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+	<LoadProfile file="../act4.xml" />
+</Order>
+</Profile>
