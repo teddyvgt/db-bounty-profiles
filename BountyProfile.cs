@@ -18,7 +18,7 @@ namespace BountyProfile
 {
     public partial class BountyProfile : IPlugin
     {
-        public Version Version { get { return new Version(0, 0, 7); } }
+        public Version Version { get { return new Version(0, 0, 8); } }
         public string Author { get { return "Sychotix"; } }
         public string Description { get { return "Adds functionaly to make adventure profiles work."; } }
         public string Name { get { return "BountyProfile "; } }
@@ -84,7 +84,8 @@ namespace BountyProfile
     {
 
         public AWTrinityExploreDungeon() : base() {
-            
+            //Override the marker to true.
+            IgnoreMarkers = true;
         }
 
         private bool _isDone = false;
