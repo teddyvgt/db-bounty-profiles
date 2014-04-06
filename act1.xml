@@ -177,6 +177,10 @@
 	<HaveBounty questSNO="347011">
 		<LoadProfile file="Act1/kill_halls_of_agony_level_1.xml" />
 	</HaveBounty>
+  <!-- Clear Warrior's Rest -->
+  <HaveBounty questSNO="345520">
+    <LoadProfile file="Act1/345520.xml" />
+  </HaveBounty>
 	
 	
 	<ActBountiesComplete act="A1">

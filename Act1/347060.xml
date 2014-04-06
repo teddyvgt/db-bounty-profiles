@@ -29,9 +29,20 @@
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
 	<BountyAtStep questSNO="347060" step="4">
-		
-		<AWTrinityExploreDungeon bountyQuestSNO="347060" bountyStep="4" questId="312429" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-431250552" ignoreMarkers="False"/>
-		<MoveToMapMarker questId="312429" stepId="2" exitNameHash="-431250552" destinationWorldId="82370" interactRange="20"  />
+    <!--Find Cave 1-->
+    <If condition="CurrentWorldId == 71150">
+      <SafeMoveTo questId="312429" stepId="2" x="2145.583" y="663.1968" z="0.1" />
+      <SafeMoveTo questId="312429" stepId="2" x="2062.841" y="900.3805" z="-1.179883" />
+      <SafeMoveTo questId="312429" stepId="2" x="2062.841" y="900.3805" z="-1.179883" />
+    </If>
+    <!--Enter Cave 1-->
+    <If condition="CurrentWorldId == 71150">
+      <MoveToActor questId="312429" stepId="2" actorId="176038" isPortal="True" destinationWorldId="82370"/>
+    </If>
+    <If condition="CurrentWorldId == 71150">
+      <AWTrinityExploreDungeon bountyQuestSNO="347060" bountyStep="4" questId="312429" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-431250552" ignoreMarkers="False"/>
+      <MoveToMapMarker questId="312429" stepId="2" exitNameHash="-431250552" destinationWorldId="82370" interactRange="20"  />
+    </If>
 
 		<If condition="CurrentWorldId == 82370">
 			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
