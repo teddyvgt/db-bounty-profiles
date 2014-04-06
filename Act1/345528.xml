@@ -40,7 +40,7 @@
 			</AWTrinityExploreDungeon>
 			<MoveToMapMarker questId="312429" stepId="2" exitNameHash="1317387500" destinationWorldId="182976" interactRange="20"  />
 			<MoveToActor questId="345528" stepId="2" actorId="176003" />
-			<WaitTimer questId="72095" stepId="11" waitTime="30000" />
+			<WaitTimer questId="72095" stepId="11" waitTime="15000" />
 			<!-- Hack to make sure she's killed.-->
 			<BountyAtStep questSNO="345528" step="4">
 				<AWTrinityExploreDungeon bountyQuestSNO="345528" bountyStep="4" questId="369249" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
