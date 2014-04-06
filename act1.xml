@@ -21,17 +21,17 @@
 	<HaveBounty questSNO="347065">
 		<LoadProfile file="Act1/347065.xml" />
 	</HaveBounty>
-	<!-- Kill Bludgeonskull *ACTOR ID IN PROFILE MAYBE INCORRECT*-->
+	<!-- Kill Bludgeonskull-->
 	<HaveBounty questSNO="345544">
 		<LoadProfile file="Act1/345544.xml" />
 	</HaveBounty>
-	<!-- Kill Logrut the warrior *ACTOR ID IN PROFILE MAYBE INCORRECT*-->
+	<!-- Kill Logrut the warrior-->
 	<HaveBounty questSNO="344497">
 		<LoadProfile file="Act1/kill_southern_highlands.xml" />
 	</HaveBounty>
-	<!-- Kill Merrium Skullthorn *ACTOR ID IN PROFILE MAYBE INCORRECT*-->
+	<!-- Kill Merrium Skullthorn-->
 	<HaveBounty questSNO="361334">
-		<LoadProfile file="Act1/361334.xml" />
+		<LoadProfile file="Act1/kill_cathedral_level_2.xml" />
 	</HaveBounty>
 	<!-- Kill Skeleton King-->
 	<HaveBounty questSNO="361234">
@@ -51,11 +51,11 @@
 	</HaveBounty>
 	<!-- Kill Garrach the Afflicted -->
 	<HaveBounty questSNO="347027">
-		<LoadProfile file="Act1/347027.xml" />
+		<LoadProfile file="Act1/kill_halls_of_agony_level_3.xml" />
 	</HaveBounty>
 	<!-- Kill Grimsmack -->
 	<HaveBounty questSNO="345507">
-		<LoadProfile file="Act1/345507.xml" />
+		<LoadProfile file="Act1/kill_the_festering_woods.xml" />
 	</HaveBounty>
 	<!-- The Cursed Cellar -->
 	<HaveBounty questSNO="369944">
@@ -105,7 +105,7 @@
 	<HaveBounty questSNO="347070">
 		<LoadProfile file="Act1/347070.xml" />
 	</HaveBounty>
-	<!-- Kill Hrugowl the Defiant =( -->
+	<!-- Kill Hrugowl the Defiant -->
 	<HaveBounty questSNO="369257">
 		<LoadProfile file="Act1/kill_northern_highlands.xml" />
 	</HaveBounty>
@@ -113,6 +113,71 @@
 	<HaveBounty questSNO="349020">
 		<LoadProfile file="Act1/349020.xml" />
 	</HaveBounty>
+	<!-- Kill Treefist Woodhead -->
+	<HaveBounty questSNO="347020">
+		<LoadProfile file="Act1/349020.xml" />
+	</HaveBounty>
+	<!-- Clear the Crypt of the Ancients -->
+	<HaveBounty questSNO="345517">
+		<LoadProfile file="Act1/345517.xml" />
+	</HaveBounty>
+	<!-- Kill Captain Cage -->
+	<HaveBounty questSNO="361341">
+		<LoadProfile file="Act1/kill_cathedral_level_4.xml" />
+	</HaveBounty>
+	<!-- Kill Ragus Grimlow -->
+	<HaveBounty questSNO="361320">
+		<LoadProfile file="Act1/kill_cathedral_level_1.xml" />
+	</HaveBounty>
+	<!-- The Cursed Chamber of Bones -->
+	<HaveBounty questSNO="375198">
+		<LoadProfile file="Act1/375198.xml" />
+	</HaveBounty>
+	<!-- Carrion Farm -->
+	<HaveBounty questSNO="345500">
+		<LoadProfile file="Act1/345500.xml" />
+	</HaveBounty>
+	<!-- Kill Percepeus -->
+	<HaveBounty questSNO="369273">
+		<LoadProfile file="Act1/kill_northern_highlands.xml" />
+	</HaveBounty>
+	<!-- The Cursed Hatchery -->
+	<HaveBounty questSNO="375201">
+		<LoadProfile file="Act1/375201.xml" />
+	</HaveBounty>
+	<!-- Kill Crassus The Tormentor -->
+	<HaveBounty questSNO="345542">
+		<LoadProfile file="Act1/kill_halls_of_agony_level_1.xml" />
+	</HaveBounty>
+	<!-- Kill Mira Eamon -->
+	<HaveBounty questSNO="347099">
+		<LoadProfile file="Act1/kill_the_weeping_hollow.xml" />
+	</HaveBounty>
+	<!-- Kill Killian Damort -->
+	<HaveBounty questSNO="361343">
+		<LoadProfile file="Act1/kill_cathedral_level_4.xml" />
+	</HaveBounty>
+	<!-- Kill Red Rock -->
+	<HaveBounty questSNO="344503">
+		<LoadProfile file="Act1/kill_southern_highlands.xml" />
+	</HaveBounty>
+	<!-- Kill Buras the Impaler -->
+	<HaveBounty questSNO="344499">
+		<LoadProfile file="Act1/kill_southern_highlands.xml" />
+	</HaveBounty>
+	<!-- Kill Galush Valdant -->
+	<HaveBounty questSNO="369251">
+		<LoadProfile file="Act1/kill_the_festering_woods.xml" />
+	</HaveBounty>
+	<!-- Kill Bellybloat the Scarred -->
+	<HaveBounty questSNO="361345">
+		<LoadProfile file="Act1/kill_cathedral_level_4.xml" />
+	</HaveBounty>
+	<!-- Kill Battlerage the Plagued -->
+	<HaveBounty questSNO="347011">
+		<LoadProfile file="Act1/kill_halls_of_agony_level_1.xml" />
+	</HaveBounty>
+	
 	
 	<ActBountiesComplete act="A1">
 		<!-- Make sure we are in New Tristram -->
