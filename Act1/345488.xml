@@ -28,7 +28,7 @@
 	</If>
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
-<While condition="Me.IsInTown == False">
+
     <!-- Inside Khazra Den -->
 	<BountyAtStep questSNO="345488" step="4">
 		
@@ -54,7 +54,6 @@
     <!-- Portal Home -->
     <TrinityTownPortal questId="312429" stepId="2" />
     <WaitTimer questId="312429" stepId="2" waitTime="2500" />
-</While>
-	<LoadProfile file="act1.xml" />
+<LoadProfile file="act1.xml" />
 </Order>
 </Profile>
