@@ -28,6 +28,7 @@
 	</If>
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
+<While condition="Me.IsInTown == False">
     <!-- Look for it -->
 	<BountyAtStep questSNO="361331" step="4">
 		<If condition="CurrentLevelAreaId == 19780">
@@ -45,6 +46,7 @@
     <!-- Portal Home -->
     <TrinityTownPortal questId="361331" stepId="2" />
     <WaitTimer questId="361331" stepId="2" waitTime="2500" />
+</While>
 	<LoadProfile file="act1.xml" />
 </Order>
 </Profile>

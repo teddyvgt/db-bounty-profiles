@@ -28,7 +28,7 @@
 	</If>
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
-
+<While condition="Me.IsInTown == False">
 
 	<If condition="MarkerExistsAt(-1861222194, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
       <UsePortal questId="312429" stepId="2" isPortal="True" portalMarkerHash="-1861222194" destinationWorldId="154587" />
@@ -87,6 +87,7 @@
     <!-- Portal Home -->
     <TrinityTownPortal questId="312429" stepId="2" />
     <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+</While>
 	<LoadProfile file="act1.xml" />
 </Order>
 </Profile>

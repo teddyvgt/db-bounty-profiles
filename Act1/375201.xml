@@ -28,6 +28,7 @@
 	</If>
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
+<While condition="Me.IsInTown == False">
 	<!-- Move to the chest -->
 	<SafeMoveTo questId="312429" stepId="2" x="536" y="1102" z="0" />  
 	<MoveToActor questId="365097" stepId="2" actorId="81980" />
@@ -41,6 +42,7 @@
     <!-- Portal Home -->
     <TrinityTownPortal questId="312429" stepId="2" />
     <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+</While>
 	<LoadProfile file="act1.xml" />
 </Order>
 </Profile>
