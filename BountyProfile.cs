@@ -18,7 +18,7 @@ namespace BountyProfile
 {
     public partial class BountyProfile : IPlugin
     {
-        public Version Version { get { return new Version(0, 0, 6); } }
+        public Version Version { get { return new Version(0, 0, 7); } }
         public string Author { get { return "Sychotix"; } }
         public string Description { get { return "Adds functionaly to make adventure profiles work."; } }
         public string Name { get { return "BountyProfile "; } }
@@ -83,12 +83,6 @@ namespace BountyProfile
     public class AWTrinityExploreDungeon : Trinity.XmlTags.TrinityExploreDungeon
     {
 
-        [XmlAttribute("bountyQuestSNO", true)]
-        public int QuestSNO { get; set; }
-
-        [XmlAttribute("bountyStep", true)]
-        public int Step { get; set; }
-
         public AWTrinityExploreDungeon() : base() {
             
         }
@@ -107,8 +101,8 @@ namespace BountyProfile
         {
             Logger.Log("Refreshing Cache!");
             BountyCache.timer_tick(null, null);
-            var b = BountyCache.getBounties().Where(bounty => bounty.Info.QuestSNO == QuestSNO).FirstOrDefault();
-            if(b == null) Logger.Log("Don't have quest: " + QuestSNO);
+            var b = BountyCache.getActiveBounty();
+            if(b == null) Logger.Log("Don't have an active quest. Assume we have completed it.");
             else base.OnStart(); return;
             
         }
@@ -121,17 +115,16 @@ namespace BountyProfile
                 var b = BountyCache.getActiveBounty();
                 if (b == null)
                 {
-                    Logger.Log("Something went wrong, active bounty returned null. Assuming done.");
+                    Logger.Log("Active bounty returned null, Assuming done.");
                     return true;
                 }
                 //If completed or on next step, we are good.
-                if (b.Info.State == QuestState.Completed || b.Info.QuestStep != Step)
+                if (b.Info.State == QuestState.Completed)
                 {
                     Logger.Log("Seems completed!");
                     return true;
                 }
-                   
-                //If Trinity thinks we are done, make sure
+                
                 return false;
             }
         }
@@ -265,7 +258,7 @@ namespace BountyProfile
         {
             return new Zeta.TreeSharp.Action(ret =>
             {
-                Log("Refreshing Cache!");
+                Logger.Log("Refreshing Cache!");
                 BountyCache.timer_tick(null, null);
                 m_IsDone = true;
             });
@@ -275,11 +268,6 @@ namespace BountyProfile
         {
             m_IsDone = false;
             base.ResetCachedDone();
-        }
-
-        private void Log(string message, LogLevel logLevel = LogLevel.Info)
-        {
-            Logger.Log(message);
         }
     }
 

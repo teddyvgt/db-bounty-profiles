@@ -27,7 +27,7 @@
 	</HaveBounty>
 	<!-- Kill Logrut the warrior *ACTOR ID IN PROFILE MAYBE INCORRECT*-->
 	<HaveBounty questSNO="344497">
-		<LoadProfile file="Act1/344497.xml" />
+		<LoadProfile file="Act1/kill_southern_highlands.xml" />
 	</HaveBounty>
 	<!-- Kill Merrium Skullthorn *ACTOR ID IN PROFILE MAYBE INCORRECT*-->
 	<HaveBounty questSNO="361334">
@@ -67,7 +67,7 @@
 	</HaveBounty>
 	<!-- Kill Reggrel the Despised -->
 	<HaveBounty questSNO="369253">
-		<LoadProfile file="Act1/369253.xml" />
+		<LoadProfile file="Act1/kill_northern_highlands.xml" />
 	</HaveBounty>
 	<!-- Kill Cadhul the Deathcaller -->
 	<HaveBounty questSNO="344490">
@@ -104,6 +104,14 @@
 	<!-- Kill Charger -->
 	<HaveBounty questSNO="347070">
 		<LoadProfile file="Act1/347070.xml" />
+	</HaveBounty>
+	<!-- Kill Hrugowl the Defiant =( -->
+	<HaveBounty questSNO="369257">
+		<LoadProfile file="Act1/kill_northern_highlands.xml" />
+	</HaveBounty>
+	<!-- The Matriarch's Bones -->
+	<HaveBounty questSNO="349020">
+		<LoadProfile file="Act1/349020.xml" />
 	</HaveBounty>
 	
 	<ActBountiesComplete act="A1">
