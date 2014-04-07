@@ -7,7 +7,7 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 <If condition="Me.IsInTown==False">   
-	<LoadProfile file="act1.xml" />       
+	<TrinityLoadProfile nodelay="True" file="act1.xml" />       
 </If>
 <If condition="Me.IsInTown ">
 	<!--Act 1 WP-->
@@ -62,6 +62,6 @@
     <!-- Portal Home -->
     <TrinityTownPortal questId="312429" stepId="2" />
     <WaitTimer questId="312429" stepId="2" waitTime="2500" />
-<LoadProfile file="act1.xml" />
+<TrinityLoadProfile nodelay="True" file="act1.xml" />
 </Order>
 </Profile>

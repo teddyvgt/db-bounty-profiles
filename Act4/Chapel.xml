@@ -63,6 +63,6 @@
     <!-- Portal Home -->
     <TrinityTownPortal questId="312429" stepId="2" />
     <WaitTimer questId="312429" stepId="2" waitTime="2500" />
-	<LoadProfile file="act4.xml" />
+	<TrinityLoadProfile nodelay="True" file="act4.xml" />
 </Order>
 </Profile>
