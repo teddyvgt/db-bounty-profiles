@@ -18,7 +18,7 @@ namespace BountyProfile
 {
     public partial class BountyProfile : IPlugin
     {
-        public Version Version { get { return new Version(0, 0, 10); } }
+        public Version Version { get { return new Version(0, 0, 11); } }
         public string Author { get { return "Sychotix"; } }
         public string Description { get { return "Adds functionaly to make adventure profiles work."; } }
         public string Name { get { return "BountyProfile "; } }
@@ -320,12 +320,17 @@ namespace BountyProfile
         static public void timer_tick(object sender, EventArgs e)
         {
             //Make sure we have initialized before messing with timer
-            if(_init) timer.Stop();
-            _bounties = ZetaDia.ActInfo.Bounties;
-            if (_bounties == null) Logger.Log("Bounties returned null during timer_tick, hope that is OK");
-            _activeBounty = ZetaDia.ActInfo.ActiveBounty;
-            if (_activeBounty == null) Logger.Log("Active Bounty returned null during timer_tick, hope that is OK");
-            if (_init) timer.Start();
+            if (!_init)
+                init();
+            else
+            {
+                timer.Stop();
+                _bounties = ZetaDia.ActInfo.Bounties;
+                if (_bounties == null) Logger.Log("Bounties returned null during timer_tick, hope that is OK");
+                _activeBounty = ZetaDia.ActInfo.ActiveBounty;
+                if (_activeBounty == null) Logger.Log("Active Bounty returned null during timer_tick, hope that is OK");
+                timer.Start();
+            }
         }
         
 
