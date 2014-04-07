@@ -109,13 +109,13 @@
 	<HaveBounty questSNO="369257">
 		<LoadProfile file="kill_northern_highlands.xml" />
 	</HaveBounty>
-	<!-- The Matriarch's Bones >
+	<!-- The Matriarch's Bones -->
 	<HaveBounty questSNO="349020">
 		<LoadProfile file="349020.xml" />
 	</HaveBounty-->
 	<!-- Kill Treefist Woodhead -->
 	<HaveBounty questSNO="347020">
-		<LoadProfile file="349020.xml" />
+		<LoadProfile file="kill_halls_of_agony_level_3.xml" />
 	</HaveBounty>
 	<!-- Clear the Crypt of the Ancients -->
 	<HaveBounty questSNO="345517">
