@@ -189,6 +189,30 @@
 	<HaveBounty questSNO="344482">
 		<TrinityLoadProfile nodelay="True" file="344482.xml" />
 	</HaveBounty>
+	<!-- The Cursed Court-->
+	<HaveBounty questSNO="375191">
+		<LoadProfile file="./Act1/375191.xml" />
+	</HaveBounty>
+	<!--Kill Qurash the Reviled-->
+	<HaveBounty questSNO="345862">
+		<LoadProfile file="./Act1/kill_caverns_of_araneae.xml" />
+	</HaveBounty>
+	<!-- Kill Rathlin the Widowmaker-->
+	<HaveBounty questSNO="345526">
+		<LoadProfile file="./Act1/kill_caverns_of_araneae.xml" />
+	</HaveBounty>
+	<!-- Kill Lord Brone-->
+	<HaveBounty questSNO="369249">
+		<LoadProfile file="./Act1/kill_the_festering_woods.xml" />
+	</HaveBounty>
+	<!-- Kill Hawthorne Gable-->
+	<HaveBounty questSNO="347054">
+		<LoadProfile file="./Act1/kill_the_festering_woods.xml" />
+	</HaveBounty>
+	<!-- Kill Glidewing-->
+	<HaveBounty questSNO="361331">
+		<LoadProfile file="kill_cathedral_level_1.xml" />
+	</HaveBounty>
 	
 	<ActBountiesComplete act="A1">
 		<!-- Make sure we are in New Tristram -->
