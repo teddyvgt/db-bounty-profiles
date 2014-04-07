@@ -112,7 +112,7 @@
 	<!-- The Matriarch's Bones -->
 	<HaveBounty questSNO="349020">
 		<LoadProfile file="349020.xml" />
-	</HaveBounty-->
+	</HaveBounty>
 	<!-- Kill Treefist Woodhead -->
 	<HaveBounty questSNO="347020">
 		<LoadProfile file="kill_halls_of_agony_level_3.xml" />
