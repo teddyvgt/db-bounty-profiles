@@ -5,12 +5,11 @@
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
-
-<Order>
-
 <TargetBlacklists>
 <TargetBlacklist actorId="103919"/> <!-- Demonic Vessels -->
 </TargetBlacklists>
+
+<Order>
 
 <If condition="Me.IsInTown ">
 	<!--Act 1 WP-->
@@ -31,7 +30,7 @@
 	</If>
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
-    <LogMessage quest="1" step="1" output="Looking for Portal." />
+    <LogMessage quest="312429" step="2" output="Looking for Portal." />
 	<ToggleTargeting questId="1" combat="false" looting="false" killRadius="40" lootRadius="90" />  
 	<AWTrinityExploreDungeon questId="312429" stepId="2" until="ObjectFound" objectDistance="300" actorId="224890" boxTolerance="0.7" boxSize="15" ignoreMarkers="False">
 		<PrioritizeScenes>
