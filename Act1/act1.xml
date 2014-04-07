@@ -213,7 +213,10 @@
 	<HaveBounty questSNO="361331">
 		<LoadProfile file="kill_cathedral_level_1.xml" />
 	</HaveBounty>
-	
+	<!-- The Cursed Grove-->
+	<HaveBounty questSNO="365381">
+		<LoadProfile file="365381.xml" />
+	</HaveBounty>
 	<ActBountiesComplete act="A1">
 		<!-- Make sure we are in New Tristram -->
 		<If condition="Me.IsInTown==False">   
