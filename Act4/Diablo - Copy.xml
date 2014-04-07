@@ -4,7 +4,8 @@
 
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
- <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+
 <Order>
 <If condition="Me.IsInTown ">
 	<!--Act 1 WP-->
@@ -28,7 +29,7 @@
     <!-- Look for him -->
 	<BountyAtStep questSNO="349288" step="4">
 		<If condition="CurrentWorldId == 129305">
-      <AWTrinityExploreDungeon bountyQuestSNO="349288" bountyStep="4" questId="312429" stepId="2"  until="ExitFound" exitNameHash="-72895048" boxTolerance="0.45" boxSize="10" pathPrecision="40">
+      <AWTrinityExploreDungeon bountyQuestSNO="349288" bountyStep="4" questId="312429" stepId="2"  until="ExitFound" exitNameHash="-72895048" boxTolerance="0.550" boxSize="10" pathPrecision="40">
         <PrioritizeScenes>
           <PriorityScene sceneName="Exit" />
         </PrioritizeScenes>
