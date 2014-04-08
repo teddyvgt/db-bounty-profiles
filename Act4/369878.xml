@@ -28,39 +28,31 @@
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
 	<BountyAtStep questSNO="369878" step="4">
-	<If condition="CurrentWorldId == 129305">
-	<!-- Speed running, turn combat off to increase speed -->
-	<ToggleTargeting questId="1" combat="true" looting="true" killRadius="15" lootRadius="10" />  
-	<AWTrinityExploreDungeon questId="312429" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.55" boxSize="15" ignoreMarkers="False">
+	<If condition="CurrentWorldId == 129305"> 
+	<AWTrinityExploreDungeon questId="312429" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.45" boxSize="15" ignoreMarkers="False">
 	<PrioritizeScenes>
         <PriorityScene sceneName="a4dun_spire_corrupt_SE_02" pathPrecision="40" />          
     </PrioritizeScenes>
 	</AWTrinityExploreDungeon>
       <MoveToActor questId="312429" stepId="2" actorId="365097"/>
-	  <WaitTimer questId="312429" stepId="2" waitTime="500" />
-	  <ToggleTargeting questId="1" combat="True" looting="True" killRadius="90" lootRadius="90" />  
-		<While condition="ActorExistsAt(364559, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
-			<MoveToActor questId="312429" stepId="2" actorId="365097"/>
-		</While>
+	  <WaitTimer questId="312429" stepId="2" waitTime="1000" />
+	  <TrinityIfSNOInRange snoid="364559" range="30"> 
+	  </TrinityIfSNOInRange>
 	  </If>
 	</BountyAtStep>
 	
 	<!-- Duplicate to handle getting interrupted by the other cursed chest, couldn't find a more elegant solution -->
 	<BountyAtStep questSNO="369878" step="4">
 	<If condition="CurrentWorldId == 129305">
-	<!-- Speed running, turn combat off to increase speed -->
-	<ToggleTargeting questId="1" combat="true" looting="true" killRadius="15" lootRadius="10" />  
-	<AWTrinityExploreDungeon questId="312429" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.55" boxSize="15" ignoreMarkers="False">
+	<AWTrinityExploreDungeon questId="312429" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.45" boxSize="15" ignoreMarkers="False">
 	<PrioritizeScenes>
         <PriorityScene sceneName="a4dun_spire_corrupt_SE_02" pathPrecision="40" />          
     </PrioritizeScenes>
 	</AWTrinityExploreDungeon>
       <MoveToActor questId="312429" stepId="2" actorId="365097"/>
-	  <WaitTimer questId="312429" stepId="2" waitTime="500" />
-	  <ToggleTargeting questId="1" combat="True" looting="True" killRadius="90" lootRadius="90" />  
-		<While condition="ActorExistsAt(364559, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
-			<MoveToActor questId="312429" stepId="2" actorId="365097"/>
-		</While>
+	  <WaitTimer questId="312429" stepId="2" waitTime="1000" />
+	  <TrinityIfSNOInRange snoid="364559" range="30">
+	  </TrinityIfSNOInRange>
 	  </If>
 	</BountyAtStep>
 
