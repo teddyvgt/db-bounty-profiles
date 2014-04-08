@@ -27,7 +27,7 @@
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
 
-	<AWTrinityExploreDungeon questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.7" boxSize="15" ignoreMarkers="False" />
+	<AWTrinityExploreDungeon questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.55" boxSize="15" ignoreMarkers="False" />
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="312429" stepId="2" />

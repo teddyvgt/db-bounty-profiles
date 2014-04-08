@@ -27,7 +27,7 @@
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
 	<If condition="CurrentWorldId == 121579">
-      <AWTrinityExploreDungeon questId="312429" stepId="2"  until="ObjectFound" objectDistance="300" actorId="225195" boxTolerance="0.45" boxSize="25" pathPrecision="40">
+      <AWTrinityExploreDungeon questId="312429" stepId="2"  until="ObjectFound" objectDistance="150" actorId="225195" boxTolerance="0.65" boxSize="15" pathPrecision="40">
         <PrioritizeScenes>
           <PriorityScene sceneName="Exit" />
         </PrioritizeScenes>
@@ -46,7 +46,11 @@
       <WaitTimer questId="312429" stepId="2" waitTime="1000" />
       <!-- Kill Izual -->
       <SafeMoveTo questId="312429" stepId="2" name="Izual" pathPrecision="10" x="583" y="558" z="0" />
-	  <AWTrinityExploreDungeon questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.55" boxSize="15" ignoreMarkers="False" />
+	  <While condition="Me.IsInBossEncounter">
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+	  </While>
+	  <!-- try to counteract the healthglobe run -->
+	  <SafeMoveTo questId="312429" stepId="2" name="Izual" pathPrecision="10" x="583" y="558" z="0" />
     </If>
 
 

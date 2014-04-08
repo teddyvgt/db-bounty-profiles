@@ -29,9 +29,26 @@
     <!-- Look for him -->
 	<BountyAtStep questSNO="369900" step="4">
 		<If condition="CurrentWorldId == 109513">
-			<AWTrinityExploreDungeon bountyQuestSNO="369900" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" objectDistance="300" actorId="368169" boxTolerance="0.7" boxSize="15" ignoreMarkers="False" />
+			<!-- Speed running, turn combat off to increase speed -->
+			<ToggleTargeting questId="1" combat="true" looting="true" killRadius="15" lootRadius="10" />  
+			<AWTrinityExploreDungeon questId="312429" stepId="2" until="ObjectFound" objectDistance="300" actorId="368169" boxTolerance="0.55" boxSize="15" ignoreMarkers="False">
+				<PrioritizeScenes>
+					<PriorityScene sceneName="a4dun_garden_level_01_E01_S04" pathPrecision="40" />
+					<PriorityScene sceneName="a4dun_garden_level_01_E03_S03" pathPrecision="40" />
+					<PriorityScene sceneName="a4dun_garden_level_01_E04_S02" pathPrecision="40" />          
+				</PrioritizeScenes>
+				<IgnoreScenes>
+					<IgnoreScene sceneName="a4dun_garden_level_01_E04S05" />
+					<IgnoreScene sceneName="a4dun_garden_level_01_E05S05" />
+					<IgnoreScene sceneName="a4dun_garden_level_01_E05S04" />
+					<IgnoreScene sceneName="a4dun_garden_level_01_E04S04" />    
+				</IgnoreScenes>
+			</AWTrinityExploreDungeon>
 			<MoveToActor questId="312429" stepId="2" actorId="368169"/>
-			<WaitTimer questId="312429" stepId="2" waitTime="10000" />
+			<ToggleTargeting questId="1" combat="True" looting="True" killRadius="90" lootRadius="90" />
+			<While condition="ActorExistsAt(368169, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="368169"/>
+			</While>
 		</If>
 	</BountyAtStep>
 

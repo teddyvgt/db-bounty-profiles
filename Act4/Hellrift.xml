@@ -39,9 +39,23 @@
 	</AWTrinityExploreDungeon>
 		<MoveToActor questId="312429" stepId="2" actorId="224890" isPortal="True"/>
 	<WaitTimer questId="312429" stepId="2" waitTime="2500" />
-	<LogMessage quest="1" step="1" output="Clearing level 2." />	
-	<ToggleTargeting questId="1" combat="True" looting="True" killRadius="40" lootRadius="90" />  
-	<AWTrinityExploreDungeon questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.7" boxSize="15" ignoreMarkers="False"/>
+	
+	<If condition="CurrentWorldId == 109530">
+		<LogMessage quest="1" step="1" output="Clearing level 2." />	
+		<ToggleTargeting questId="1" combat="True" looting="True" killRadius="40" lootRadius="90" />  
+		<AWTrinityExploreDungeon questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.7" boxSize="15" ignoreMarkers="False"/>
+	</If>
+	
+	<If condition="CurrentWorldId == 109525">
+		<MoveToActor questId="312429" stepId="2" actorId="224890" isPortal="True"/>
+		<WaitTimer questId="312429" stepId="2" waitTime="2500" />
+	</If>
+	
+	<If condition="CurrentWorldId == 109530">
+		<LogMessage quest="1" step="1" output="Clearing level 2." />	
+		<ToggleTargeting questId="1" combat="True" looting="True" killRadius="40" lootRadius="90" />  
+		<AWTrinityExploreDungeon questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.7" boxSize="15" ignoreMarkers="False"/>
+	</If>	
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="312429" stepId="2" />

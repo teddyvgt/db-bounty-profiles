@@ -34,7 +34,11 @@
     <If condition="CurrentWorldId == 166640">
       <!-- Kill Rakanoth -->
       <SafeMoveTo questId="312429" stepId="2" name="Rakanoth" pathPrecision="10" x="358" y="352" z="0" />
-	  <AWTrinityExploreDungeon questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.55" boxSize="15" ignoreMarkers="False" />
+	  <While condition="Me.IsInBossEncounter">
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+	  </While>
+	  <!-- try to counteract the healthglobe run -->	  
+      <SafeMoveTo questId="312429" stepId="2" name="Rakanoth" pathPrecision="10" x="358" y="352" z="0" />
     </If>
     <!-- Portal Home -->
     <TrinityTownPortal questId="312429" stepId="2" />
