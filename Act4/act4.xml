@@ -144,14 +144,11 @@
 
 
 	<ActBountiesComplete act="A4">
-		<!-- Make sure we are in Bastion's Keep -->
-		<If condition="Me.IsInTown==False">   
-			<UseTownPortal questId="1" />       
-		</If>
-		<If condition="CurrentLevelAreaId != 92945">
-			<UseWaypoint waypointNumber="26" questId="1"/>
-			<WaitTimer questId="1" stepId="1" waitTime="500"/>
-		</If>
+
+		<While condition="CurrentLevelAreaId != 92945">
+			<UseWaypoint waypointNumber="26" questId="312429"/>
+			<WaitTimer questId="312429" stepId="2" waitTime="500"/>
+		</While>
 		<MoveToActor questId="312429" stepId="2" actorId="114622" />
 	</ActBountiesComplete>
 
