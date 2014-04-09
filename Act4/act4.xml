@@ -10,11 +10,6 @@
 <While condition="True">
 <WaitTimer questId="312429" stepId="2" waitTime="1000" />
 <RefreshBountyCache/>
-<!--Teleports to town if not in town-->
-<If condition="Me.IsInTown==False">   
-	<UseTownPortal questId="1" />       
-</If>
-<If condition="Me.IsInTown">
 	<!-- Act 4 Bounties -->
 	<LogMessage quest="1" step="1" output="Act 4 Bounties" /> 
 	
@@ -153,24 +148,13 @@
 		<If condition="Me.IsInTown==False">   
 			<UseTownPortal questId="1" />       
 		</If>
-		<If condition="not CurrentWorldId == 172909">
-			<!--Act 1 WP-->
-			<If condition="CurrentWorldId == 332336">
-				<UseWaypoint questId="1" stepId="1" actorId="223757" x="401.7305" y="555.0093" z="24.90835" waypointNumber="26"/>
-			</If>
-			<!--Act 2 WP-->
-			<If condition="CurrentWorldId == 161472">
-				<UseWaypoint questId="1" stepId="1" actorId="6442" x="324.8699" y="291.0312" z="1.645629" waypointNumber="26"/> 
-			</If>
-			<!--Act 5 WP-->
-			<If condition="CurrentWorldId == 304235">
-				<UseWaypoint questId="1" stepId="1" actorId="6442" x="557.5455" y="525.3394" z="2.796465" waypointNumber="26"/> 
-			</If>
+		<If condition="CurrentLevelAreaId != 92945">
+			<UseWaypoint waypointNumber="26" questId="1"/>
+			<WaitTimer questId="1" stepId="1" waitTime="500"/>
 		</If>
 		<MoveToActor questId="312429" stepId="2" actorId="114622" />
 	</ActBountiesComplete>
 
-</If>
  <LeaveGame reason="No more bounties that we can do. Resetting game." />  
 </While>
 </Order>
