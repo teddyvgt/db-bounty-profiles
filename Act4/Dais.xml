@@ -7,10 +7,10 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 
 <Order>
-<If condition="CurrentLevelAreaId != 109513">
+<While condition="CurrentLevelAreaId != 109513">
 	<UseWaypoint waypointNumber="41" questId="369900"/>
 	<WaitTimer questId="1" stepId="1" waitTime="500"/>
-</If>
+</While>
     <!-- Look for him -->
 		<If condition="CurrentWorldId == 109513">
 			<!-- Speed running, turn combat off to increase speed -->

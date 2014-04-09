@@ -10,10 +10,10 @@
 </TargetBlacklists>
 
 <Order>
-<If condition="CurrentWorldId != 109526 and CurrentWorldId == 109530 and CurrentWorldId == 109525 and CurrentWorldId == 109530">
+<While condition="CurrentWorldId != 109526 and CurrentWorldId == 109530 and CurrentWorldId == 109525 and CurrentWorldId == 109530">
 	<UseWaypoint waypointNumber="43" questId="1"/>
 	<WaitTimer questId="1" stepId="1" waitTime="500"/>
-</If>
+</While>
 
     <LogMessage quest="312429" step="2" output="Looking for Portal." />
 	<ToggleTargeting questId="1" combat="true" looting="true" killRadius="10" lootRadius="10" />  
