@@ -13,7 +13,7 @@
 </While>
 
 	<If condition="CurrentWorldId == 121579">
-      <AWTrinityExploreDungeon questId="312429" stepId="2"  until="ObjectFound" objectDistance="150" actorId="225195" boxTolerance="0.65" boxSize="15" pathPrecision="40">
+      <AWTrinityExploreDungeon questId="1" stepId="2"  until="ObjectFound" objectDistance="150" actorId="225195" boxTolerance="0.65" boxSize="15" pathPrecision="40">
         <PrioritizeScenes>
           <PriorityScene sceneName="Exit" />
         </PrioritizeScenes>
@@ -25,18 +25,18 @@
         </IgnoreScenes>
       </AWTrinityExploreDungeon>
       <!-- The Great Span -->
-      <MoveToActor questId="312429" stepId="2" actorId="225195" isPortal="True" destinationWorldId="214956" interactRange="20" />
-      <WaitTimer questId="312429" stepId="2" waitTime="1000" />
+      <MoveToActor questId="1" stepId="2" actorId="225195" isPortal="True" destinationWorldId="214956" interactRange="20" />
+      <WaitTimer questId="1" stepId="2" waitTime="1000" />
 	 </If>
     <If condition="CurrentWorldId == 214956">
-      <WaitTimer questId="312429" stepId="2" waitTime="1000" />
+      <WaitTimer questId="1" stepId="2" waitTime="1000" />
       <!-- Kill Izual -->
-      <SafeMoveTo questId="312429" stepId="2" name="Izual" pathPrecision="10" x="583" y="558" z="0" />
+      <SafeMoveTo questId="1" stepId="2" name="Izual" pathPrecision="10" x="583" y="558" z="0" />
 	  <While condition="Me.IsInBossEncounter">
-		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<WaitTimer questId="1" stepId="2" waitTime="1000" />
 	  </While>
 	  <!-- try to counteract the healthglobe run -->
-	  <SafeMoveTo questId="312429" stepId="2" name="Izual" pathPrecision="10" x="583" y="558" z="0" />
+	  <SafeMoveTo questId="1" stepId="2" name="Izual" pathPrecision="10" x="583" y="558" z="0" />
     </If>
 
 	<TrinityLoadProfile nodelay="True" file="act4.xml" />

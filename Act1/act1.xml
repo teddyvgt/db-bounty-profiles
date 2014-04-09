@@ -7,7 +7,6 @@
 <!--This is the Beging of your ORder list-->
 <Order>
 <WaitTimer questId="312429" stepId="2" waitTime="1500" />
-<RefreshBountyCache/>
 <While condition="True">
 <WaitTimer questId="312429" stepId="2" waitTime="500" />
 <!--Teleports to town if not in town-->

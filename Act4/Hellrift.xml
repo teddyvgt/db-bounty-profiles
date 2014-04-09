@@ -15,31 +15,31 @@
 	<WaitTimer questId="1" stepId="1" waitTime="500"/>
 </While>
 
-    <LogMessage quest="312429" step="2" output="Looking for Portal." />
+    <LogMessage quest="1" step="2" output="Looking for Portal." />
 	<ToggleTargeting questId="1" combat="true" looting="true" killRadius="10" lootRadius="10" />  
-	<AWTrinityExploreDungeon questId="312429" stepId="2" until="ObjectFound" objectDistance="300" actorId="224890" boxTolerance="0.7" boxSize="15" ignoreMarkers="False">
+	<AWTrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="224890" boxTolerance="0.7" boxSize="15" ignoreMarkers="False">
 		<PrioritizeScenes>
 			<PriorityScene sceneName="a3dun_Crater_E_Dead_End_02_E01_N01" pathPrecision="40" />          
 		</PrioritizeScenes>
 	</AWTrinityExploreDungeon>
-		<MoveToActor questId="312429" stepId="2" actorId="224890" isPortal="True"/>
-	<WaitTimer questId="312429" stepId="2" waitTime="2500" />
+		<MoveToActor questId="1" stepId="2" actorId="224890" isPortal="True"/>
+	<WaitTimer questId="1" stepId="2" waitTime="2500" />
 	
 	<If condition="CurrentWorldId == 109530">
 		<LogMessage quest="1" step="1" output="Clearing level 2." />	
 		<ToggleTargeting questId="1" combat="True" looting="True" killRadius="40" lootRadius="90" />  
-		<AWTrinityExploreDungeon questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.7" boxSize="15" ignoreMarkers="False"/>
+		<AWTrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.7" boxSize="15" ignoreMarkers="False"/>
 	</If>
 	
 	<If condition="CurrentWorldId == 109525">
-		<MoveToActor questId="312429" stepId="2" actorId="224890" isPortal="True"/>
-		<WaitTimer questId="312429" stepId="2" waitTime="2500" />
+		<MoveToActor questId="1" stepId="2" actorId="224890" isPortal="True"/>
+		<WaitTimer questId="1" stepId="2" waitTime="2500" />
 	</If>
 	
 	<If condition="CurrentWorldId == 109530">
 		<LogMessage quest="1" step="1" output="Clearing level 2." />	
 		<ToggleTargeting questId="1" combat="True" looting="True" killRadius="40" lootRadius="90" />  
-		<AWTrinityExploreDungeon questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.7" boxSize="15" ignoreMarkers="False"/>
+		<AWTrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.7" boxSize="15" ignoreMarkers="False"/>
 	</If>	
 
 	<TrinityLoadProfile nodelay="True" file="act4.xml" />

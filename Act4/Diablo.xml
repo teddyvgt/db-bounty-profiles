@@ -13,7 +13,7 @@
 </While>
     <!-- Look for him -->
 		<If condition="CurrentWorldId == 129305">
-      <AWTrinityExploreDungeon questId="312429" stepId="2"  until="ObjectFound" objectDistance="150" actorId="210763" boxTolerance="0.7" boxSize="10" pathPrecision="40" ignoreMarkers="False">
+      <AWTrinityExploreDungeon questId="1" stepId="2"  until="ObjectFound" objectDistance="150" actorId="210763" boxTolerance="0.7" boxSize="10" pathPrecision="40" ignoreMarkers="False">
         <PrioritizeScenes>
           <PriorityScene sceneName="Exit" />
         </PrioritizeScenes>
@@ -24,19 +24,19 @@
           <IgnoreScene sceneName="_W_0" />
         </IgnoreScenes>
       </AWTrinityExploreDungeon>
-			<MoveToActor questId="312429" stepId="2" actorId="210763" isPortal="True" interactRange="20"/>
-			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+			<MoveToActor questId="1" stepId="2" actorId="210763" isPortal="True" interactRange="20"/>
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</If>
     <If condition="CurrentWorldId == 205399">
       <!-- Pinnacle of Heaven -->
-	  <MoveToActor questId="312429" stepId="2" actorId="161279" isPortal="True" interactRange="20"/>
-	  <WaitTimer questId="312429" stepId="2" waitTime="1000" />
-	  <SafeMoveTo questId="312429" stepId="2" name="Diablo" pathPrecision="10" x="360" y="358" z="40"/>
+	  <MoveToActor questId="1" stepId="2" actorId="161279" isPortal="True" interactRange="20"/>
+	  <WaitTimer questId="1" stepId="2" waitTime="1000" />
+	  <SafeMoveTo questId="1" stepId="2" name="Diablo" pathPrecision="10" x="360" y="358" z="40"/>
 	  <While condition="Me.IsInBossEncounter">
-	  <WaitTimer questId="312429" stepId="2" waitTime="1000" />
+	  <WaitTimer questId="1" stepId="2" waitTime="1000" />
 	  </While>
 	  <!-- try to counteract the healthglobe run -->
-	  <SafeMoveTo questId="312429" stepId="2" name="Diablo" pathPrecision="10" x="360" y="358" z="40"/>
+	  <SafeMoveTo questId="1" stepId="2" name="Diablo" pathPrecision="10" x="360" y="358" z="40"/>
 	  
 	  
     </If>

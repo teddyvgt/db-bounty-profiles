@@ -9,7 +9,6 @@
 <WaitTimer questId="312429" stepId="2" waitTime="500" />
 <While condition="True">
 <WaitTimer questId="312429" stepId="2" waitTime="1000" />
-<RefreshBountyCache/>
 	<!-- Act 4 Bounties -->
 	<LogMessage quest="1" step="1" output="Act 4 Bounties" /> 
 	
@@ -152,7 +151,7 @@
 		<MoveToActor questId="312429" stepId="2" actorId="114622" />
 	</ActBountiesComplete>
 
- <LeaveGame reason="No more bounties that we can do. Resetting game." />  
+ <!--LeaveGame reason="No more bounties that we can do. Resetting game." /-->  
 </While>
 </Order>
 
