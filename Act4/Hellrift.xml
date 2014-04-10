@@ -12,7 +12,7 @@
 <Order>
 <While condition="CurrentWorldId != 109526 and CurrentWorldId != 109530 and CurrentWorldId != 109525 and CurrentWorldId != 109530">
 	<UseWaypoint waypointNumber="43" questId="1"/>
-	<WaitTimer questId="1" stepId="1" waitTime="500"/>
+	<WaitTimer questId="1" stepId="1" waitTime="7500"/>
 </While>
 
     <LogMessage quest="1" step="2" output="Looking for Portal." />

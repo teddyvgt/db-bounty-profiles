@@ -9,11 +9,11 @@
 <Order>
 <While condition="CurrentWorldId != 121579 and CurrentWorldId != 214956">
 	<UseWaypoint waypointNumber="44" questId="1"/>
-	<WaitTimer questId="1" stepId="1" waitTime="500"/>
+	<WaitTimer questId="1" stepId="1" waitTime="7500"/>
 </While>
 
 	<If condition="CurrentWorldId == 121579">
-      <AWTrinityExploreDungeon questId="1" stepId="2"  until="ObjectFound" objectDistance="150" actorId="225195" boxTolerance="0.65" boxSize="15" pathPrecision="40">
+      <AWTrinityExploreDungeon questId="1" stepId="2"  until="ObjectFound" objectDistance="150" actorId="225195" boxTolerance="0.65" boxSize="15" pathPrecision="40" ignoreMarkers="false">
         <PrioritizeScenes>
           <PriorityScene sceneName="Exit" />
         </PrioritizeScenes>

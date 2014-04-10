@@ -89,7 +89,8 @@
 	</HaveBounty>
 	<!-- kill izual -->
 	<HaveBounty questSNO="361421">
-		<TrinityLoadProfile nodelay="True" file="Izual.xml" />
+		<LogMessage quest="1" step="1" output="Kill Izual disabled right now! Chance of being permantently stuck." />
+		<!--TrinityLoadProfile nodelay="True" file="Izual.xml" /-->
 	</HaveBounty>
 	<!-- kill slarg the behemoth -->
 	<HaveBounty questSNO="349280">
@@ -143,14 +144,16 @@
 
 
 	<ActBountiesComplete act="A4">
-
+		<TrinityTownPortal />
 		<While condition="CurrentLevelAreaId != 92945">
 			<UseWaypoint waypointNumber="26" questId="1"/>
-			<WaitTimer questId="1" stepId="2" waitTime="500"/>
+			<WaitTimer questId="1" stepId="1" waitTime="7500"/>
 		</While>
-		<MoveToActor questId="312429" stepId="2" actorId="114622" />
+		<MoveToActor questId="1" stepId="1" actorId="114622" />
 	</ActBountiesComplete>
 
+	
+	<!--WaitTimer questId="1" stepId="1" waitTime="60000"/-->
  <LeaveGame reason="No more bounties that we can do. Resetting game." />  
 </While>
 </Order>

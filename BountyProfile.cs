@@ -19,7 +19,7 @@ namespace BountyProfile
 {
     public partial class BountyProfile : IPlugin
     {
-        public Version Version { get { return new Version(0, 0, 13); } }
+        public Version Version { get { return new Version(0, 0, 14); } }
         public string Author { get { return "Sychotix"; } }
         public string Description { get { return "Adds functionaly to make adventure profiles work."; } }
         public string Name { get { return "BountyProfile "; } }
@@ -235,6 +235,11 @@ namespace BountyProfile
             var b = ZetaDia.ActInfo.Bounties.Where(bounty => bounty.Act.ToString().Equals(Act) && bounty.Info.State == QuestState.Completed);
             if(b.FirstOrDefault() != null) Logger.Log("Bounties Complete count:" + b.Count());
             else Logger.Log("Bounties complete returned null.");
+
+            foreach(var c in ZetaDia.ActInfo.Bounties.Where(bounty => bounty.Act.ToString().Equals(Act) && bounty.Info.State != QuestState.Completed)) {
+                Logger.Log("Bounty " + c.Info.Quest.ToString() + " (" + c.Info.QuestSNO + ") unsupported or invalid.");
+            }
+
             return b.FirstOrDefault() != null && b.Count() == 5;
         }
 
