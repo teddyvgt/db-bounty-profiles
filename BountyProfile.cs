@@ -19,7 +19,7 @@ namespace BountyProfile
 {
     public partial class BountyProfile : IPlugin
     {
-        public Version Version { get { return new Version(0, 0, 14); } }
+        public Version Version { get { return new Version(0, 0, 15); } }
         public string Author { get { return "Sychotix"; } }
         public string Description { get { return "Adds functionaly to make adventure profiles work."; } }
         public string Name { get { return "BountyProfile "; } }
@@ -116,6 +116,15 @@ namespace BountyProfile
                 if (b == null)
                 {
                     Logger.Log("Active bounty returned null, Assuming done.");
+                    return true;
+                }
+                if (!b.Info.IsValid)
+                {
+                    Logger.Log("Does this even work? Thinks the bounty is not valid.");
+                }
+                if (b.Info.QuestSNO > 500000 || b.Info.QuestSNO < 200000)
+                {
+                    Logger.Log("Got some weird numbers going on with the QuestSNO of the active bounty. Assuming glitched and done.");
                     return true;
                 }
                 //If completed or on next step, we are good.
