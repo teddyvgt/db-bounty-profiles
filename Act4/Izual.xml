@@ -13,7 +13,7 @@
 </While>
 
 	<If condition="CurrentWorldId == 121579">
-      <AWTrinityExploreDungeon questId="1" stepId="2"  until="ObjectFound" objectDistance="150" actorId="225195" boxTolerance="0.65" boxSize="15" pathPrecision="40" ignoreMarkers="false">
+      <AWTrinityExploreDungeon questId="1" stepId="2"  until="ObjectFound" objectDistance="150" actorId="225195" boxTolerance="0.35" boxSize="15" pathPrecision="40" ignoreMarkers="false">
         <PrioritizeScenes>
           <PriorityScene sceneName="Exit" />
         </PrioritizeScenes>
