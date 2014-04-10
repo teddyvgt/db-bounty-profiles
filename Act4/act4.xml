@@ -89,8 +89,7 @@
 	</HaveBounty>
 	<!-- kill izual -->
 	<HaveBounty questSNO="361421">
-		<LogMessage quest="1" step="1" output="Kill Izual disabled right now! Chance of being permantently stuck." />
-		<!--TrinityLoadProfile nodelay="True" file="Izual.xml" /-->
+		<TrinityLoadProfile nodelay="True" file="Izual.xml" />
 	</HaveBounty>
 	<!-- kill slarg the behemoth -->
 	<HaveBounty questSNO="349280">
