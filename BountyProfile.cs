@@ -13,12 +13,13 @@ using Zeta.TreeSharp;
 using Zeta.Game;
 using Zeta.Game.Internals;
 using Zeta.Bot.Profile;
+using Trinity.DbProvider;
 
 namespace BountyProfile
 {
     public partial class BountyProfile : IPlugin
     {
-        public Version Version { get { return new Version(0, 0, 11); } }
+        public Version Version { get { return new Version(0, 0, 13); } }
         public string Author { get { return "Sychotix"; } }
         public string Description { get { return "Adds functionaly to make adventure profiles work."; } }
         public string Name { get { return "BountyProfile "; } }
@@ -29,7 +30,7 @@ namespace BountyProfile
 
         public void OnEnabled()
         {
-            Logger.Log("Enabled.");
+            Logger.Log("Version " + Version + " Enabled.");
         }
 
         public void OnDisabled()
@@ -100,10 +101,8 @@ namespace BountyProfile
 
         public override void OnStart()
         {
-            Logger.Log("Refreshing Cache!");
-            BountyCache.timer_tick(null, null);
-            var b = BountyCache.getActiveBounty();
-            if(b == null) Logger.Log("Don't have an active quest. Assume we have completed it.");
+
+            if(ZetaDia.ActInfo.ActiveBounty == null) Logger.Log("Don't have an active quest. Assume we have completed it.");
             else base.OnStart(); return;
             
         }
@@ -113,7 +112,7 @@ namespace BountyProfile
         {
             get
             {
-                var b = BountyCache.getActiveBounty();
+                var b = ZetaDia.ActInfo.ActiveBounty;
                 if (b == null)
                 {
                     Logger.Log("Active bounty returned null, Assuming done.");
@@ -162,7 +161,7 @@ namespace BountyProfile
 
         public override bool GetConditionExec()
         {
-            return BountyCache.getBounties().Where(bounty => bounty.Info.QuestSNO == QuestSNO && bounty.Info.State != QuestState.Completed).FirstOrDefault() != null;
+            return ZetaDia.ActInfo.Bounties.Where(bounty => bounty.Info.QuestSNO == QuestSNO && bounty.Info.State != QuestState.Completed).FirstOrDefault() != null;
         }
 
         private bool CheckNotAlreadyDone(object obj)
@@ -194,7 +193,7 @@ namespace BountyProfile
 
         public override bool GetConditionExec()
         {
-            return BountyCache.getBounties().Where(bounty => bounty.Info.QuestSNO == QuestSNO && bounty.Info.QuestStep == QuestStep && bounty.Info.State != QuestState.Completed).FirstOrDefault() != null;
+            return ZetaDia.ActInfo.Bounties.Where(bounty => bounty.Info.QuestSNO == QuestSNO && bounty.Info.QuestStep == QuestStep && bounty.Info.State != QuestState.Completed).FirstOrDefault() != null;
         }
 
         private bool CheckNotAlreadyDone(object obj)
@@ -233,7 +232,7 @@ namespace BountyProfile
 
         public override bool GetConditionExec()
         {
-            var b = BountyCache.getBounties().Where(bounty => bounty.Act.ToString().Equals(Act) && bounty.Info.State == QuestState.Completed);
+            var b = ZetaDia.ActInfo.Bounties.Where(bounty => bounty.Act.ToString().Equals(Act) && bounty.Info.State == QuestState.Completed);
             if(b.FirstOrDefault() != null) Logger.Log("Bounties Complete count:" + b.Count());
             else Logger.Log("Bounties complete returned null.");
             return b.FirstOrDefault() != null && b.Count() == 5;
@@ -250,90 +249,6 @@ namespace BountyProfile
             get;
             set;
         }
-    }
-
-    [XmlElement("RefreshBountyCache")]
-    public class RefreshBountyCache : ProfileBehavior
-    {
-        private bool m_IsDone = false;
-        public override bool IsDone
-        {
-            get
-            {
-                return m_IsDone;
-            }
-        }
-
-        protected override Composite CreateBehavior()
-        {
-            return new Zeta.TreeSharp.Action(ret =>
-            {
-                Logger.Log("Refreshing Cache!");
-                BountyCache.timer_tick(null, null);
-                m_IsDone = true;
-            });
-        }
-
-        public override void ResetCachedDone()
-        {
-            m_IsDone = false;
-            base.ResetCachedDone();
-        }
-    }
-
-    public class BountyCache
-    {
-        static System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-        static private bool _init;
-        static IEnumerable<BountyInfo> _bounties;
-        static BountyInfo _activeBounty;
-
-        static private void init()
-        {
-             Logger.Log("Initializing cache!");
-                timer.Tick += new EventHandler(timer_tick);
-                timer.Interval = (1000) * (1);
-                _bounties = ZetaDia.ActInfo.Bounties;
-                if(_bounties == null) Logger.Log("Bounties returned null during init, hope that is OK");
-                _activeBounty = ZetaDia.ActInfo.ActiveBounty;
-                if (_activeBounty == null) Logger.Log("Active Bounty returned null during init, hope that is OK");
-                timer.Enabled = true;
-                timer.Start();
-                _init = true;
-        }
-
-        static public IEnumerable<BountyInfo> getBounties() {
-            if(!_init)
-                init();
-            return _bounties;
-        }
-
-        static public BountyInfo getActiveBounty()
-        {
-            if (!_init)
-                init();
-            return _activeBounty;
-        }
-
-
-
-        static public void timer_tick(object sender, EventArgs e)
-        {
-            //Make sure we have initialized before messing with timer
-            if (!_init)
-                init();
-            else
-            {
-                timer.Stop();
-                _bounties = ZetaDia.ActInfo.Bounties;
-                if (_bounties == null) Logger.Log("Bounties returned null during timer_tick, hope that is OK");
-                _activeBounty = ZetaDia.ActInfo.ActiveBounty;
-                if (_activeBounty == null) Logger.Log("Active Bounty returned null during timer_tick, hope that is OK");
-                timer.Start();
-            }
-        }
-        
-
     }
 
 } // namespace
