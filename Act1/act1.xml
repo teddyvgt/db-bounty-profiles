@@ -109,9 +109,9 @@
 		<LoadProfile file="kill_northern_highlands.xml" />
 	</HaveBounty>
 	<!-- The Matriarch's Bones -->
-	<HaveBounty questId="349020">
+	<!--HaveBounty questId="349020">
 		<LoadProfile file="349020.xml" />
-	</HaveBounty>
+	</HaveBounty-->
 	<!-- Kill Treefist Woodhead -->
 	<HaveBounty questId="347020">
 		<LoadProfile file="kill_halls_of_agony_level_3.xml" />
