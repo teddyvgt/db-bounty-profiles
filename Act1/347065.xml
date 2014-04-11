@@ -79,14 +79,14 @@
     </If>
 
     <!-- Inside Khazra Den -->
-	<BountyAtStep questSNO="347065" step="4">
+	<HaveBounty questId="347065">
 		<TrinitySetQuesting />
 		<If condition="CurrentWorldId == 119888">
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
-			<AWTrinityExploreDungeon bountyQuestSNO="347065" bountyStep="4" questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
+			<AWTrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</If>
-	</BountyAtStep>
+	</HaveBounty>
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="1" stepId="2" />

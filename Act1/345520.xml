@@ -29,7 +29,7 @@
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
     <!-- Look for him -->
-	<BountyAtStep questSNO="345520" step="4">
+	<HaveBounty questId="345520">
 		<If condition="CurrentLevelAreaId == 19953">
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 			<!--  Warriors Rest #1 -->
@@ -50,13 +50,13 @@
 				<WaitTimer questId="1" stepId="2" waitTime="1000" />
 			</If>
 			<!-- Explore the dungeon.-->
-			<BountyAtStep questSNO="345520" step="4">
+			<HaveBounty questId="345520">
 				<LogMessage quest="1" step="1" output="Clearing." />
-				<AWTrinityExploreDungeon bountyQuestSNO="345520" bountyStep="4" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
-			</BountyAtStep>
+				<AWTrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+			</HaveBounty>
 			<MoveToActor questId="345520" stepId="2" actorId="176003" />
 		</If>
-	</BountyAtStep>
+	</HaveBounty>
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="345520" stepId="2" />

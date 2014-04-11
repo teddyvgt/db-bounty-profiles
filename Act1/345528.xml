@@ -30,7 +30,7 @@
 </If>
     <!-- Look for her -->
 	
-	<BountyAtStep questSNO="345528" step="4">
+	<HaveBounty questId="345528">
 	
 		<If condition="CurrentLevelAreaId == 78572">
 			<AWTrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="1317387500" ignoreMarkers="False">
@@ -42,12 +42,12 @@
 			<MoveToActor questId="345528" stepId="2" actorId="176003" />
 			<WaitTimer questId="72095" stepId="11" waitTime="15000" />
 			<!-- Hack to make sure she's killed.-->
-			<BountyAtStep questSNO="345528" step="4">
+			<HaveBounty questId="345528">
 				<AWTrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
-			</BountyAtStep>
+			</HaveBounty>
 			<MoveToActor questId="1" stepId="2" actorId="176003" />
 		</If>
-	</BountyAtStep>
+	</HaveBounty>
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="345528" stepId="2" />

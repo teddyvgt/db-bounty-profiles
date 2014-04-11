@@ -30,9 +30,9 @@
 </If>
 
     <!-- Look for Shrine -->
-	<BountyAtStep questSNO="375198" step="4">
+	<HaveBounty questId="375198">
     <If condition="CurrentLevelAreaId == 19780">
-      <AWTrinityExploreDungeon bountyQuestSNO="375198" bountyStep="2" questId="1" stepId="2" until="ObjectFound" actorId="364601" boxTolerance="0.10" boxSize="15" >
+      <AWTrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="364601" boxTolerance="0.10" boxSize="15" >
       <PrioritizeScenes>
         <PriorityScene sceneID="1884" />
       </PrioritizeScenes>
@@ -46,7 +46,7 @@
       <WaitTimer questId="375198" stepId="2" waitTime="1000" />
       <MoveToActor questId="375198" stepId="2" actorId="176003" />
     </If>
-	</BountyAtStep>
+	</HaveBounty>
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="375198" stepId="2" />

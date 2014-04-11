@@ -29,7 +29,7 @@
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
 
-	<BountyAtStep questSNO="350529" step="4">
+	<HaveBounty questId="350529">
     <!-- Find Highlands Cave #3-->
     <If condition="CurrentWorldId == 71150">
       <SafeMoveTo questId="1" stepId="2" x="1234.006" y="3785.742" z="80.34615" />
@@ -60,14 +60,14 @@
     <!-- Help this moron find his lost douche of a brother-->
     <If condition="CurrentWorldId == 132995">
       <MoveToActor questId="1" stepId="2" actorId="129782" />
-      <AWTrinityExploreDungeon bountyQuestSNO="350529" bountyStep="4" questId="1" stepId="2" boxTolerance="0.01" boxSize="40" until="ObjectFound" actorId="136009" ignoreMarkers="False" />
+      <AWTrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.01" boxSize="40" until="ObjectFound" actorId="136009" ignoreMarkers="False" />
 	  <MoveToActor questId="1" stepId="2" actorId="136009" />
       <WaitTimer questId="72546" stepId="17" waitTime="5000" />
 	  <While condition="ZetaDia.ActInfo.ActiveBounty.Info.State != QuestState.Completed">
 				<MoveToActor questId="1" stepId="2" actorId="129782" />
 	  </While>
     </If>
-	</BountyAtStep>
+	</HaveBounty>
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="1" stepId="2" />

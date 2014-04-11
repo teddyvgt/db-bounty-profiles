@@ -30,19 +30,19 @@
 </If>
 
     <!-- Look for him -->
-	<BountyAtStep questSNO="347070" step="4">
+	<HaveBounty questId="347070">
 		<If condition="CurrentWorldId == 71150">
-			<AWTrinityExploreDungeon bountyQuestSNO="347070" bountyStep="4" questId="1" stepId="2" until="ObjectFound" actorId="218422" boxTolerance="0.10" boxSize="15" />
+			<AWTrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="218422" boxTolerance="0.10" boxSize="15" />
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 			<!-- If not completed, keep killing things until it is complete-->
-			<BountyAtStep questSNO="347070" step="4">
+			<HaveBounty questId="347070">
 				<LogMessage quest="1" step="2" output="Found named but still not done, clearing some more." />
-				<AWTrinityExploreDungeon bountyQuestSNO="347070" bountyStep="4" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
-			</BountyAtStep>
+				<AWTrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+			</HaveBounty>
 			<MoveToActor questId="1" stepId="2" actorId="176003" />
 			<WaitTimer questId="1" stepId="2" waitTime="20000" />
 		</If>
-	</BountyAtStep>
+	</HaveBounty>
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="1" stepId="2" />

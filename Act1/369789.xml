@@ -30,9 +30,9 @@
 </If>
 
     <!-- Look for chest -->
-	<BountyAtStep questSNO="369789" step="4">
+	<HaveBounty questId="369789">
 		<If condition="CurrentLevelAreaId == 19776">
-			<AWTrinityExploreDungeon bountyQuestSNO="369789" bountyStep="4" questId="1" stepId="2" until="ObjectFound" actorId="365097" boxTolerance="0.10" boxSize="15" />
+			<AWTrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="365097" boxTolerance="0.10" boxSize="15" />
 			<WaitTimer questId="369789" stepId="2" waitTime="5000" />
 			<MoveToActor questId="1" actorId="365097" interactRange="10" name="x1_Global_Chest_CursedChest_B-1209"  pathPrecision="50" pathPointLimit="250" statusText="" /> 
 			<!-- If not completed, keep killing waves until it is complete-->
@@ -43,7 +43,7 @@
 			<WaitTimer questId="369789" stepId="2" waitTime="1000" />
 			<MoveToActor questId="369789" stepId="2" actorId="176003" />
 		</If>
-	</BountyAtStep>
+	</HaveBounty>
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="369789" stepId="2" />

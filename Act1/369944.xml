@@ -30,7 +30,7 @@
 </If>
 
     <!-- Look for him -->
-	<BountyAtStep questSNO="369944" step="4">
+	<HaveBounty questId="369944">
 		<If condition="CurrentWorldId == 71150">
 			<SafeMoveTo questId="1" stepId="2" x="2289.81" y="2562.356" z="27.10001" />
 			<MoveToMapMarker questId="1" stepId="2" exitNameHash="1107870150" destinationWorldId="106752" interactRange="20"  />
@@ -39,12 +39,12 @@
 			<MoveToActor questId="1" stepId="2" actorId="365097"/>
 			<WaitTimer questId="1" stepId="2" waitTime="10000" />
 			<!-- If not completed, keep killing things until it is complete-->
-			<BountyAtStep questSNO="369944" step="4">
+			<HaveBounty questId="369944">
 				<LogMessage quest="1" step="1" output="Interacted with chest, but still not done. Roaming to make sure everything is dead." />
-				<AWTrinityExploreDungeon bountyQuestSNO="369944" bountyStep="4" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
-			</BountyAtStep>
+				<AWTrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+			</HaveBounty>
 		</If>
-	</BountyAtStep>
+	</HaveBounty>
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="1" stepId="2" />

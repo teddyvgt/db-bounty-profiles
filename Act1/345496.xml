@@ -75,11 +75,11 @@
     </If>
 
    
-	<BountyAtStep questSNO="345496" step="4">
+	<HaveBounty questId="345496">
 	 <!-- Inside Scavenger's Den Level 1-->
 		<If condition="CurrentWorldId == 81163">
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
-			<AWTrinityExploreDungeon bountyQuestSNO="345496" bountyStep="4" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="925091455" ignoreMarkers="False">
+			<AWTrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="925091455" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
@@ -90,10 +90,10 @@
 		 <!-- Inside Scavenger's Den Level 2-->
 		<If condition="CurrentWorldId == 81164">
 			<TrinitySetQuesting />
-			<AWTrinityExploreDungeon bountyQuestSNO="345496" bountyStep="4" questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
+			<AWTrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</If>
-	</BountyAtStep>
+	</HaveBounty>
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="1" stepId="2" />

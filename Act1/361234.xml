@@ -29,7 +29,7 @@
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
 
-	<BountyAtStep questSNO="361234" step="4">
+	<HaveBounty questId="361234">
 	<If condition="CurrentWorldId == 50585">
       <SafeMoveTo questId="1" stepId="2" x="627" y="571" z="0" useNavigator="True" />
       <WaitTimer questId="1" stepId="2" waitTime="5000" />
@@ -84,7 +84,7 @@
       <SafeMoveTo questId="1" stepId="2" name="Kill the Skeleton King" pathPrecision="10" x="339" y="271" z="15" />
       <WaitTimer questId="1" stepId="2" waitTime="1000" />
     </If>
-	</BountyAtStep>
+	</HaveBounty>
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="1" stepId="2" />

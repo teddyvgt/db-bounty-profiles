@@ -15,7 +15,7 @@
 		<If condition="CurrentWorldId == 109513">
 			<!-- Speed running, turn combat off to increase speed -->
 			<ToggleTargeting questId="1" combat="true" looting="true" killRadius="15" lootRadius="10" />  
-			<AWTrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="368169" boxTolerance="0.55" boxSize="15" ignoreMarkers="False">
+			<AWTrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="368169" boxTolerance="0.45" boxSize="15" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="a4dun_garden_level_01_E01_S04" pathPrecision="40" />
 					<PriorityScene sceneName="a4dun_garden_level_01_E03_S03" pathPrecision="40" />

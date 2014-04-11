@@ -30,7 +30,7 @@
 </If>
 
     <!-- Look for him -->
-	<BountyAtStep questSNO="347032" step="4">
+	<HaveBounty questId="347032">
 		
 		<If condition="IsActiveQuest(72801) and IsActiveQuestStep(36) and CurrentWorldId == 58983">
       <!-- Find Chamber of Suffering -->
@@ -87,7 +87,7 @@
       <SafeMoveTo questId="1" stepId="2" name="Kill Butcher" pathPrecision="10" x="120" y="120" z="0" />
     </If>
 		
-	</BountyAtStep>
+	</HaveBounty>
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="1" stepId="2" />

@@ -16,27 +16,27 @@
 	<!-- Waypoint [41] -->
 	
 	<!-- Cursed Dais  -->
-	<HaveBounty questSNO="369900">
+	<HaveBounty questId="369900">
 		<TrinityLoadProfile nodelay="True" file="Dais.xml" />
 	</HaveBounty>
 	<!-- Kill Rakanoth -->
-	<HaveBounty questSNO="349262">
+	<HaveBounty questId="349262">
 		<TrinityLoadProfile nodelay="True" file="Rakanoth.xml" />
 	</HaveBounty>
 	<!-- Kill Khatun -->
-	<HaveBounty questSNO="349258">
+	<HaveBounty questId="349258">
 		<TrinityLoadProfile nodelay="True" file="Gardens of hope 1.xml" />
 	</HaveBounty>
 	<!-- Kill Torchlighter -->
-	<HaveBounty questSNO="349256">
+	<HaveBounty questId="349256">
 		<TrinityLoadProfile nodelay="True" file="Gardens of hope 1.xml" />
 	</HaveBounty>
 	<!-- Kill Veshan the fierce -->
-	<HaveBounty questSNO="349260">
+	<HaveBounty questId="349260">
 		<TrinityLoadProfile nodelay="True" file="Gardens of hope 1.xml" />
 	</HaveBounty>
 	<!-- Kill the aspect of destruction -->
-	<HaveBounty questSNO="357131">
+	<HaveBounty questId="357131">
 		<TrinityLoadProfile nodelay="True" file="Gardens of hope 1.xml" />
 	</HaveBounty>
 	
@@ -44,19 +44,19 @@
 	<!-- Waypoint [42] -->
 	
 	<!-- kill the aspect of pain -->
-	<HaveBounty questSNO="357129">
+	<HaveBounty questId="357129">
 		<TrinityLoadProfile nodelay="True" file="Gardens of hope 2.xml" />
 	</HaveBounty>
 	<!-- Kill the aspect of anguish -->
-	<HaveBounty questSNO="357127">
+	<HaveBounty questId="357127">
 		<TrinityLoadProfile nodelay="True" file="Gardens of hope 2.xml" />
 	</HaveBounty>
 	<!-- kill kao'ahn -->
-	<HaveBounty questSNO="349254">
+	<HaveBounty questId="349254">
 		<TrinityLoadProfile nodelay="True" file="Gardens of hope 2.xml" />
 	</HaveBounty>
 	<!-- kill oah'tash -->
-	<HaveBounty questSNO="349252">
+	<HaveBounty questId="349252">
 		<TrinityLoadProfile nodelay="True" file="Gardens of hope 2.xml" />
 	</HaveBounty>
 	
@@ -64,15 +64,15 @@
 	<!-- Waypoint [43] -->
 	
 	<!-- Kill sledge -->
-	<HaveBounty questSNO="364336">
+	<HaveBounty questId="364336">
 		<TrinityLoadProfile nodelay="True" file="Hellrift.xml" />
 	</HaveBounty>
 	<!-- kill hammermash -->
-	<HaveBounty questSNO="364333">
+	<HaveBounty questId="364333">
 		<TrinityLoadProfile nodelay="True" file="Hellrift.xml" />
 	</HaveBounty>
 	<!-- clear hell rift -->
-	<HaveBounty questSNO="362140">
+	<HaveBounty questId="362140">
 		<TrinityLoadProfile nodelay="True" file="Hellrift.xml" />
 	</HaveBounty>
 	
@@ -80,27 +80,27 @@
 	<!-- Waypoint [44] -->
 	
 	<!-- kill aspect of hatred -->
-	<HaveBounty questSNO="357133">
+	<HaveBounty questId="357133">
 		<TrinityLoadProfile nodelay="True" file="Silver Spire 1.xml" />
 	</HaveBounty>
 	<!-- kill aspect of lies -->
-	<HaveBounty questSNO="357135">
+	<HaveBounty questId="357135">
 		<TrinityLoadProfile nodelay="True" file="Silver Spire 1.xml" />
 	</HaveBounty>
 	<!-- kill izual -->
-	<HaveBounty questSNO="361421">
+	<HaveBounty questId="361421">
 		<TrinityLoadProfile nodelay="True" file="Izual.xml" />
 	</HaveBounty>
 	<!-- kill slarg the behemoth -->
-	<HaveBounty questSNO="349280">
+	<HaveBounty questId="349280">
 		<TrinityLoadProfile nodelay="True" file="Silver Spire 1.xml" />
 	</HaveBounty>
 	<!-- kill kysindra the wretched -->
-	<HaveBounty questSNO="349276">
+	<HaveBounty questId="349276">
 		<TrinityLoadProfile nodelay="True" file="Silver Spire 1.xml" />
 	</HaveBounty>
 	<!-- kill pyres the damned -->
-	<HaveBounty questSNO="349278">
+	<HaveBounty questId="349278">
 		<TrinityLoadProfile nodelay="True" file="Silver Spire 1.xml" />
 	</HaveBounty>
 	
@@ -108,39 +108,39 @@
 	<!-- Waypoint [45] -->
 	
 	<!-- kill aspect of terror -->
-	<HaveBounty questSNO="357139">
+	<HaveBounty questId="357139">
 		<TrinityLoadProfile nodelay="True" file="Silver Spire 2.xml" />
 	</HaveBounty>
 	<!-- kill grimnight the soulless -->
-	<HaveBounty questSNO="349272">
+	<HaveBounty questId="349272">
 		<TrinityLoadProfile nodelay="True" file="Silver Spire 2.xml" />
 	</HaveBounty>
 	<!-- kill Sao'thall -->
-	<HaveBounty questSNO="349274">
+	<HaveBounty questId="349274">
 		<TrinityLoadProfile nodelay="True" file="Silver Spire 2.xml" />
 	</HaveBounty>
 	<!-- kill rhau'kye -->
-	<HaveBounty questSNO="349282">
+	<HaveBounty questId="349282">
 		<TrinityLoadProfile nodelay="True" file="Silver Spire 2.xml" />
 	</HaveBounty>
 	<!-- kill haures -->
-	<HaveBounty questSNO="349270">
+	<HaveBounty questId="349270">
 		<TrinityLoadProfile nodelay="True" file="Silver Spire 2.xml" />
 	</HaveBounty>
 	<!-- kill aspect of sin -->
-	<HaveBounty questSNO="357137">
+	<HaveBounty questId="357137">
 		<TrinityLoadProfile nodelay="True" file="Silver Spire 2.xml" />
 	</HaveBounty>
 	<!-- Cursed chapel (Might be static, x="411" y="890" z="0") -->
-	<HaveBounty questSNO="369878">
+	<HaveBounty questId="369878">
 		<TrinityLoadProfile nodelay="True" file="Chapel.xml" />
 	</HaveBounty>
 	<!-- kill diablo -->
-	<HaveBounty questSNO="349288">
+	<HaveBounty questId="349288">
 		<TrinityLoadProfile nodelay="True" file="Diablo.xml" />
 	</HaveBounty>
 
-
+	<ForceTownRun questId="1"/>
 
 	<ActBountiesComplete act="A4">
 		<If condition="Me.IsInTown==False">   

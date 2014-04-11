@@ -17,219 +17,219 @@
 	<!-- Act 1 Bounties -->
 	<LogMessage quest="1" step="1" output="Blah" /> 
 	<!-- Clear Khazra Den -->
-	<HaveBounty questSNO="347065">
+	<HaveBounty questId="347065">
 		<TrinityLoadProfile nodelay="True" file="347065.xml" />
 	</HaveBounty>
 	<!-- Kill Bludgeonskull-->
-	<HaveBounty questSNO="345544">
+	<HaveBounty questId="345544">
 		<TrinityLoadProfile nodelay="True" file="345544.xml" />
 	</HaveBounty>
 	<!-- Kill Logrut the warrior-->
-	<HaveBounty questSNO="344497">
+	<HaveBounty questId="344497">
 		<TrinityLoadProfile nodelay="True" file="kill_southern_highlands.xml" />
 	</HaveBounty>
 	<!-- Kill Merrium Skullthorn-->
-	<HaveBounty questSNO="361334">
+	<HaveBounty questId="361334">
 		<TrinityLoadProfile nodelay="True" file="kill_cathedral_level_2.xml" />
 	</HaveBounty>
 	<!-- Kill Skeleton King-->
-	<HaveBounty questSNO="361234">
+	<HaveBounty questId="361234">
 		<TrinityLoadProfile nodelay="True" file="361234.xml" />
 	</HaveBounty>
 	<!-- Apothecary's Brother-->
-	<HaveBounty questSNO="350529">
+	<HaveBounty questId="350529">
 		<TrinityLoadProfile nodelay="True" file="350529.xml" />
 	</HaveBounty>
 	<!-- Kill Krailen the Wicked-->
-	<HaveBounty questSNO="367559">
+	<HaveBounty questId="367559">
 		<TrinityLoadProfile nodelay="True" file="367559.xml" />
 	</HaveBounty>
 	<!-- Revenge of Gharbad-->
-	<HaveBounty questSNO="344486">
+	<HaveBounty questId="344486">
 		<TrinityLoadProfile nodelay="True" file="344486.xml" />
 	</HaveBounty>
 	<!-- Kill Garrach the Afflicted -->
-	<HaveBounty questSNO="347027">
+	<HaveBounty questId="347027">
 		<TrinityLoadProfile nodelay="True" file="kill_halls_of_agony_level_3.xml" />
 	</HaveBounty>
 	<!-- Kill Grimsmack -->
-	<HaveBounty questSNO="345507">
+	<HaveBounty questId="345507">
 		<TrinityLoadProfile nodelay="True" file="kill_the_festering_woods.xml" />
 	</HaveBounty>
 	<!-- The Cursed Cellar -->
-	<HaveBounty questSNO="369944">
+	<HaveBounty questId="369944">
 		<TrinityLoadProfile nodelay="True" file="369944.xml" />
 	</HaveBounty>
 	<!-- A Stranger In Need -->
-	<HaveBounty questSNO="345546">
+	<HaveBounty questId="345546">
 		<TrinityLoadProfile nodelay="True" file="345546.xml" />
 	</HaveBounty>
 	<!-- Kill Reggrel the Despised -->
-	<HaveBounty questSNO="369253">
+	<HaveBounty questId="369253">
 		<TrinityLoadProfile nodelay="True" file="kill_northern_highlands.xml" />
 	</HaveBounty>
 	<!-- Kill Cadhul the Deathcaller -->
-	<HaveBounty questSNO="344490">
+	<HaveBounty questId="344490">
 		<TrinityLoadProfile nodelay="True" file="344490.xml" />
 	</HaveBounty>
 	<!-- Kill Queen Araneae -->
-	<HaveBounty questSNO="345528">
+	<HaveBounty questId="345528">
 		<TrinityLoadProfile nodelay="True" file="345528.xml" />
 	</HaveBounty>
 	<!-- Kill the Butcher -->
-	<HaveBounty questSNO="347032">
+	<HaveBounty questId="347032">
 		<TrinityLoadProfile nodelay="True" file="347032.xml" />
 	</HaveBounty>
 	<!-- Kill Braluk Grimlow -->
-	<HaveBounty questSNO="361327">
+	<HaveBounty questId="361327">
 		<TrinityLoadProfile nodelay="True" file="361327.xml" />
 	</HaveBounty>
 	<!-- Clear the Den of the Fallen -->
-	<HaveBounty questSNO="345488">
+	<HaveBounty questId="345488">
 		<TrinityLoadProfile nodelay="True" file="345488.xml" />
 	</HaveBounty>
 	<!-- The Precious Ores -->
-	<HaveBounty questSNO="347060">
+	<HaveBounty questId="347060">
 		<TrinityLoadProfile nodelay="True" file="347060.xml" />
 	</HaveBounty>
 	<!-- Clear the Clan of the Moon Cave -->
-	<HaveBounty questSNO="344547">
+	<HaveBounty questId="344547">
 		<TrinityLoadProfile nodelay="True" file="344547.xml" />
 	</HaveBounty>
 	<!-- Clear the Scavenger's Den -->
-	<HaveBounty questSNO="345496">
+	<HaveBounty questId="345496">
 		<TrinityLoadProfile nodelay="True" file="345496.xml" />
 	</HaveBounty>
 	<!-- Kill Charger -->
-	<HaveBounty questSNO="347070">
+	<HaveBounty questId="347070">
 		<TrinityLoadProfile nodelay="True" file="347070.xml" />
 	</HaveBounty>
 	<!-- Kill Hrugowl the Defiant -->
-	<HaveBounty questSNO="369257">
+	<HaveBounty questId="369257">
 		<TrinityLoadProfile nodelay="True" file="kill_northern_highlands.xml" />
 	</HaveBounty>
 	<!-- The Matriarch's Bones -->
-	<HaveBounty questSNO="349020">
+	<HaveBounty questId="349020">
 		<TrinityLoadProfile nodelay="True" file="349020.xml" />
 	</HaveBounty>
 	<!-- Kill Treefist Woodhead -->
-	<HaveBounty questSNO="347020">
+	<HaveBounty questId="347020">
 		<TrinityLoadProfile nodelay="True" file="kill_halls_of_agony_level_3.xml" />
 	</HaveBounty>
 	<!-- Clear the Crypt of the Ancients -->
-	<HaveBounty questSNO="345517">
+	<HaveBounty questId="345517">
 		<TrinityLoadProfile nodelay="True" file="345517.xml" />
 	</HaveBounty>
 	<!-- Kill Captain Cage -->
-	<HaveBounty questSNO="361341">
+	<HaveBounty questId="361341">
 		<TrinityLoadProfile nodelay="True" file="kill_cathedral_level_4.xml" />
 	</HaveBounty>
 	<!-- Kill Ragus Grimlow -->
-	<HaveBounty questSNO="361320">
+	<HaveBounty questId="361320">
 		<TrinityLoadProfile nodelay="True" file="kill_cathedral_level_1.xml" />
 	</HaveBounty>
 	<!-- The Cursed Chamber of Bones -->
-	<HaveBounty questSNO="375198">
+	<HaveBounty questId="375198">
 		<TrinityLoadProfile nodelay="True" file="375198.xml" />
 	</HaveBounty>
 	<!-- Carrion Farm >
-	<HaveBounty questSNO="345500">
+	<HaveBounty questId="345500">
 		<TrinityLoadProfile nodelay="True" file="345500.xml" />
 	</HaveBounty-->
 	<!-- Kill Percepeus -->
-	<HaveBounty questSNO="369273">
+	<HaveBounty questId="369273">
 		<TrinityLoadProfile nodelay="True" file="kill_northern_highlands.xml" />
 	</HaveBounty>
 	<!-- The Cursed Hatchery -->
-	<HaveBounty questSNO="375201">
+	<HaveBounty questId="375201">
 		<TrinityLoadProfile nodelay="True" file="375201.xml" />
 	</HaveBounty>
 	<!-- Kill Crassus The Tormentor -->
-	<HaveBounty questSNO="345542">
+	<HaveBounty questId="345542">
 		<TrinityLoadProfile nodelay="True" file="kill_halls_of_agony_level_1.xml" />
 	</HaveBounty>
 	<!-- Kill Mira Eamon -->
-	<HaveBounty questSNO="347099">
+	<HaveBounty questId="347099">
 		<TrinityLoadProfile nodelay="True" file="kill_the_weeping_hollow.xml" />
 	</HaveBounty>
 	<!-- Kill Killian Damort -->
-	<HaveBounty questSNO="361343">
+	<HaveBounty questId="361343">
 		<TrinityLoadProfile nodelay="True" file="kill_cathedral_level_4.xml" />
 	</HaveBounty>
 	<!-- Kill Red Rock -->
-	<HaveBounty questSNO="344503">
+	<HaveBounty questId="344503">
 		<TrinityLoadProfile nodelay="True" file="kill_southern_highlands.xml" />
 	</HaveBounty>
 	<!-- Kill Buras the Impaler -->
-	<HaveBounty questSNO="344499">
+	<HaveBounty questId="344499">
 		<TrinityLoadProfile nodelay="True" file="kill_southern_highlands.xml" />
 	</HaveBounty>
 	<!-- Kill Galush Valdant -->
-	<HaveBounty questSNO="369251">
+	<HaveBounty questId="369251">
 		<TrinityLoadProfile nodelay="True" file="kill_the_festering_woods.xml" />
 	</HaveBounty>
 	<!-- Kill Bellybloat the Scarred -->
-	<HaveBounty questSNO="361345">
+	<HaveBounty questId="361345">
 		<TrinityLoadProfile nodelay="True" file="kill_cathedral_level_4.xml" />
 	</HaveBounty>
 	<!-- Kill Battlerage the Plagued -->
-	<HaveBounty questSNO="347011">
+	<HaveBounty questId="347011">
 		<TrinityLoadProfile nodelay="True" file="kill_halls_of_agony_level_1.xml" />
 	</HaveBounty>
 	<!-- Clear Warrior's Rest -->
-	<HaveBounty questSNO="345520">
+	<HaveBounty questId="345520">
 		<TrinityLoadProfile nodelay="True" file="345520.xml" />
 	</HaveBounty>
 	<!-- Kill Krelm the Flagitious -->
-	<HaveBounty questSNO="369246">
+	<HaveBounty questId="369246">
 		<TrinityLoadProfile nodelay="True" file="kill_fields_of_misery.xml" />
 	</HaveBounty>
 	<!-- Crumbling tower -->
-	<HaveBounty questSNO="344482">
+	<HaveBounty questId="344482">
 		<TrinityLoadProfile nodelay="True" file="344482.xml" />
 	</HaveBounty>
 	<!-- The Cursed Court-->
-	<HaveBounty questSNO="375191">
+	<HaveBounty questId="375191">
 		<LoadProfile file="375191.xml" />
 	</HaveBounty>
 	<!--Kill Qurash the Reviled-->
-	<HaveBounty questSNO="345862">
+	<HaveBounty questId="345862">
 		<LoadProfile file="kill_caverns_of_araneae.xml" />
 	</HaveBounty>
 	<!-- Kill Rathlin the Widowmaker-->
-	<HaveBounty questSNO="345526">
+	<HaveBounty questId="345526">
 		<LoadProfile file="kill_caverns_of_araneae.xml" />
 	</HaveBounty>
 	<!-- Kill Lord Brone-->
-	<HaveBounty questSNO="369249">
+	<HaveBounty questId="369249">
 		<LoadProfile file="kill_the_festering_woods.xml" />
 	</HaveBounty>
 	<!-- Kill Hawthorne Gable-->
-	<HaveBounty questSNO="347054">
+	<HaveBounty questId="347054">
 		<LoadProfile file="kill_the_festering_woods.xml" />
 	</HaveBounty>
 	<!-- Kill Glidewing-->
-	<HaveBounty questSNO="361331">
+	<HaveBounty questId="361331">
 		<LoadProfile file="kill_cathedral_level_1.xml" />
 	</HaveBounty>
 	<!-- The Cursed Grove-->
-	<HaveBounty questSNO="365381">
+	<HaveBounty questId="365381">
 		<LoadProfile file="365381.xml" />
 	</HaveBounty>
 	<!-- Kill Fecklar's Ghost-->
-	<HaveBounty questSNO="347056">
+	<HaveBounty questId="347056">
 		<LoadProfile file="kill_the_festering_woods.xml" />
 	</HaveBounty>
 	<!-- Kill Snotnob the Fool-->
-	<HaveBounty questSNO="349026">
+	<HaveBounty questId="349026">
 		<LoadProfile file="kill_halls_of_agony_level_2.xml" />
 	</HaveBounty>
 	<!-- Kill Rad'noj-->
-	<HaveBounty questSNO="361352">
+	<HaveBounty questId="361352">
 		<LoadProfile file="kill_the_royal_crypts.xml" />
 	</HaveBounty>
 		<!-- Eternal War -->
-	<HaveBounty questSNO="345505">
+	<HaveBounty questId="345505">
 		<LoadProfile file="345505.xml" />
 	</HaveBounty>
 	

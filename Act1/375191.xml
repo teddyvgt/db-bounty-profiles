@@ -28,7 +28,7 @@
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
     <!-- Look for chest -->
-	<BountyAtStep questSNO="375191" step="4">
+	<HaveBounty questId="375191">
 		<If condition="CurrentLevelAreaId == 19783">
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 			<AWTrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.55" boxSize="15" ignoreMarkers="False" />
@@ -38,7 +38,7 @@
 				<MoveToActor questId="1" stepId="2" actorId="364559"/>
 			</While>
 		</If>
-	</BountyAtStep>
+	</HaveBounty>
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="375191" stepId="2" />

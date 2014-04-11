@@ -29,7 +29,7 @@
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
 
-	<BountyAtStep questSNO="344482" step="4">
+	<HaveBounty questId="344482">
     <!--Find lyceum-->
     <If condition="CurrentWorldId == 71150">
       <SafeMoveTo questId="1" stepId="2" x="2114.882" y="4342.156" z="10.57983" />
@@ -41,14 +41,14 @@
     </If>    
     <!--Explore for Caves-->
     <If condition="CurrentWorldId == 71150">
-        <AWTrinityExploreDungeon bountyQuestSNO="344482" bountyStep="4" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-1187439574" ignoreMarkers="False"/>
+        <AWTrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-1187439574" ignoreMarkers="False"/>
 			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1187439574" destinationWorldId="80057" interactRange="20"  />
 		</If>		
 		<If condition="CurrentWorldId == 80057">
-			<AWTrinityExploreDungeon bountyQuestSNO="344482" bountyStep="4" questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
+			<AWTrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</If>
-	</BountyAtStep>
+	</HaveBounty>
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="1" stepId="2" />

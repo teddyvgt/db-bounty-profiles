@@ -29,7 +29,7 @@
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />
 </If>
 
-	<BountyAtStep questSNO="344547" step="4">
+	<HaveBounty questId="344547">
     <!--Find cave 1-->
     <If condition="CurrentWorldId == 71150">
       <SafeMoveTo questId="1" stepId="2" x="2188.627" y="4504.445" z="-0.3508204" />
@@ -60,12 +60,12 @@
     
     <!--Explore for Caves-->
     <If condition="CurrentWorldId == 71150">
-        <AWTrinityExploreDungeon bountyQuestSNO="344547" bountyStep="4" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-1187439574" ignoreMarkers="False"/>
+        <AWTrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-1187439574" ignoreMarkers="False"/>
 			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1187439574" destinationWorldId="82502" interactRange="20"  />
 		</If>
 		<If condition="CurrentWorldId == 82502">
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
-			<AWTrinityExploreDungeon bountyQuestSNO="344547" bountyStep="4" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-1187439573" ignoreMarkers="False">
+			<AWTrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-1187439573" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
@@ -74,10 +74,10 @@
 			<WaitTimer questId="72095" stepId="11" waitTime="1000" />
 		</If>
 		<If condition="CurrentWorldId == 82511">
-			<AWTrinityExploreDungeon bountyQuestSNO="344547" bountyStep="4" questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
+			<AWTrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</If>
-	</BountyAtStep>
+	</HaveBounty>
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="1" stepId="2" />
