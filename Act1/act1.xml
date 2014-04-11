@@ -228,7 +228,10 @@
 	<HaveBounty questSNO="361352">
 		<LoadProfile file="kill_the_royal_crypts.xml" />
 	</HaveBounty>
-	
+		<!-- Eternal War -->
+	<HaveBounty questSNO="345505">
+		<LoadProfile file="345505.xml" />
+	</HaveBounty>
 	
 	<ActBountiesComplete act="A1">
 		<!-- Make sure we are in New Tristram -->

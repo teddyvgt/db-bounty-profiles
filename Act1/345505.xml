@@ -30,7 +30,7 @@
 </If>
 
     <!-- Look for him -->
-	<If condition="CurrentWorldId == 109513">
+	<If condition="CurrentWorldId == 71150">
 			<!-- Speed running, turn combat off to increase speed -->
 			<ToggleTargeting questId="1" combat="true" looting="true" killRadius="15" lootRadius="10" />  
 			<AWTrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="111907" boxTolerance="0.55" boxSize="15" ignoreMarkers="False">
@@ -43,7 +43,7 @@
 			<While condition="ZetaDia.ActInfo.ActiveBounty.Info.State != QuestState.Completed">
 				<MoveToActor questId="1" stepId="2" actorId="111907"/>
 			</While>
-		</If>
+	</If>
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="1" stepId="2" />
