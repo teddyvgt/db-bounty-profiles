@@ -151,7 +151,7 @@
 			<UseWaypoint waypointNumber="26" questId="1"/>
 			<WaitTimer questId="1" stepId="1" waitTime="7500"/>
 		</While>
-		<MoveToActor questId="1" stepId="1" actorId="114622" />
+		<MoveToActor questId="1" stepId="1" actorId="114622" x="379" y="422" z="0"  />
 	</ActBountiesComplete>
 
 	
