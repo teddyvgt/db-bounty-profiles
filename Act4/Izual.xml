@@ -39,6 +39,6 @@
 	  <SafeMoveTo questId="1" stepId="2" name="Izual" pathPrecision="10" x="583" y="558" z="0" />
     </If>
 
-	<TrinityLoadProfile nodelay="True" file="act4.xml" />
+	<LoadProfile file="act4.xml" />
 </Order>
 </Profile>

@@ -35,6 +35,6 @@
 			</While>
 		</If>
 
-	<TrinityLoadProfile nodelay="True" file="act4.xml" />
+	<LoadProfile file="act4.xml" />
 </Order>
 </Profile>

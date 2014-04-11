@@ -26,6 +26,6 @@
       <SafeMoveTo questId="1" stepId="2" name="Rakanoth" pathPrecision="10" x="358" y="352" z="0" />
     </If>
 
-	<TrinityLoadProfile nodelay="True" file="act4.xml" />
+	<LoadProfile file="act4.xml" />
 </Order>
 </Profile>

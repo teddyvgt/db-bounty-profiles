@@ -14,6 +14,6 @@
 
 	<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.45" boxSize="15" ignoreMarkers="False" />
 
-	<TrinityLoadProfile nodelay="True" file="act4.xml" />
+	<LoadProfile file="act4.xml" />
 </Order>
 </Profile>
