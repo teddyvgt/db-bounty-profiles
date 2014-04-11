@@ -83,7 +83,7 @@
 		<TrinitySetQuesting />
 		<If condition="CurrentWorldId == 119888">
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
-			<AWTrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
+			<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</If>
 	</HaveBounty>

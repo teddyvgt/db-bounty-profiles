@@ -31,11 +31,11 @@
 
     <!-- Look for him -->
 	<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />
-	<AWTrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" >
+	<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" >
     <IgnoreScenes>
       <IgnoreScene sceneName="_S01" />
     </IgnoreScenes>
-  </AWTrinityExploreDungeon>
+  </TrinityExploreDungeon>
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="1" stepId="2" />

@@ -32,12 +32,12 @@
     <!-- Look for him -->
 	<HaveBounty questId="369249">
 		<If condition="CurrentLevelAreaId == 19953">
-			<AWTrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="365425" boxTolerance="0.10" boxSize="15" />
+			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="365425" boxTolerance="0.10" boxSize="15" />
 			<WaitTimer questId="369249" stepId="2" waitTime="1000" />
 			<!-- If not completed, keep killing things until it is complete-->
 			<HaveBounty questId="361334">
 				<LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
-				<AWTrinityExploreDungeon questId="369249" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+				<TrinityExploreDungeon questId="369249" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
 			</HaveBounty>
 			<MoveToActor questId="369249" stepId="2" actorId="176003" />
 		</If>

@@ -52,7 +52,7 @@
 			<!-- Explore the dungeon.-->
 			<HaveBounty questId="345520">
 				<LogMessage quest="1" step="1" output="Clearing." />
-				<AWTrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+				<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
 			</HaveBounty>
 			<MoveToActor questId="345520" stepId="2" actorId="176003" />
 		</If>

@@ -32,11 +32,11 @@
     <!-- Look for Shrine -->
 	<HaveBounty questId="375198">
     <If condition="CurrentLevelAreaId == 19780">
-      <AWTrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="364601" boxTolerance="0.10" boxSize="15" >
+      <TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="364601" boxTolerance="0.10" boxSize="15" >
       <PrioritizeScenes>
         <PriorityScene sceneID="1884" />
       </PrioritizeScenes>
-      </AWTrinityExploreDungeon>
+      </TrinityExploreDungeon>
       <WaitTimer questId="375198" stepId="2" waitTime="5000" />
 
       <MoveToActor questId="1" actorId="364601" interactRange="10" name="x1__Event_CursedShrine"  pathPrecision="50" pathPointLimit="250" statusText="" />

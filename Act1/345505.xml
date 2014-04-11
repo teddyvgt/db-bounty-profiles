@@ -33,11 +33,11 @@
 	<If condition="CurrentWorldId == 71150">
 			<!-- Speed running, turn combat off to increase speed -->
 			<ToggleTargeting questId="1" combat="true" looting="true" killRadius="15" lootRadius="10" />  
-			<AWTrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="111907" boxTolerance="0.55" boxSize="15" ignoreMarkers="False">
+			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="111907" boxTolerance="0.55" boxSize="15" ignoreMarkers="False">
 				<IgnoreScenes>
 					<IgnoreScene sceneName="_S01" />
 				</IgnoreScenes>
-			</AWTrinityExploreDungeon>
+			</TrinityExploreDungeon>
 			<MoveToActor questId="1" stepId="2" actorId="111907"/>
 			<ToggleTargeting questId="1" combat="True" looting="True" killRadius="90" lootRadius="90" />
 			<While condition="ZetaDia.ActInfo.ActiveBounty.Info.State != QuestState.Completed">

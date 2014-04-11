@@ -39,8 +39,8 @@
 <TrinityLoadProfile nodelay="True" file="act1.xml" /></If>
 <!--if not there go a full area check-->
 <If condition="(CurrentLevelAreaId == 19952) and (not ActorExistsAt(365097, 1798, 605, 0, 100))">
-<AWTrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="365097" boxTolerance="0.10" boxSize="15" >
-</AWTrinityExploreDungeon>
+<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="365097" boxTolerance="0.10" boxSize="15" >
+</TrinityExploreDungeon>
 <MoveToActor questId="375198" stepId="2" actorId="365097" />
 <WaitTimer questId="375198" stepId="2" waitTime="5000" />
 <TrinityTownPortal questId="1" stepId="2" />
