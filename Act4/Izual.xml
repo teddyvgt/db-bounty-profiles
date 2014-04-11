@@ -9,7 +9,7 @@
 <Order>
 <While condition="CurrentWorldId != 121579 and CurrentWorldId != 214956">
 	<UseWaypoint waypointNumber="44" questId="1"/>
-	<WaitTimer questId="1" stepId="1" waitTime="7500"/>
+	<WaitTimer questId="1" stepId="1" waitTime="2500"/>
 </While>
 
 	<If condition="CurrentWorldId == 121579">

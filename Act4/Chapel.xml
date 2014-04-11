@@ -9,13 +9,13 @@
 <Order>
 <While condition="CurrentWorldId != 129305">
 	<UseWaypoint waypointNumber="45" questId="1"/>
-	<WaitTimer questId="1" stepId="1" waitTime="7500"/>
+	<WaitTimer questId="1" stepId="1" waitTime="2500"/>
 </While>
 	<HaveBounty questId="369878">
 	<If condition="CurrentWorldId == 129305">
 	<!-- Speed running, turn combat off to increase speed -->
 	<ToggleTargeting questId="1" combat="true" looting="true" killRadius="15" lootRadius="10" />  
-	<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.55" boxSize="15" ignoreMarkers="False">
+	<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.45" boxSize="15" ignoreMarkers="False">
 	<PrioritizeScenes>
         <PriorityScene sceneName="a4dun_spire_corrupt_SE_02" pathPrecision="40" />          
     </PrioritizeScenes>
@@ -34,7 +34,7 @@
 	<If condition="CurrentWorldId == 129305">
 	<!-- Speed running, turn combat off to increase speed -->
 	<ToggleTargeting questId="1" combat="true" looting="true" killRadius="15" lootRadius="10" />  
-	<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.55" boxSize="15" ignoreMarkers="False">
+	<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.45" boxSize="15" ignoreMarkers="False">
 	<PrioritizeScenes>
         <PriorityScene sceneName="a4dun_spire_corrupt_SE_02" pathPrecision="40" />          
     </PrioritizeScenes>
