@@ -140,8 +140,6 @@
 		<TrinityLoadProfile nodelay="True" file="Diablo.xml" />
 	</HaveBounty>
 
-	<ForceTownRun questId="1"/>
-
 	<LogMessage quest="1" step="1" output="Checking if we have all bounties complete" /> 
 	<ActBountiesComplete act="A4">
 	<LogMessage quest="1" step="1" output="Seems like we have 5 complete" />
