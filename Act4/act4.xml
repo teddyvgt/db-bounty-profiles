@@ -142,16 +142,24 @@
 
 	<ForceTownRun questId="1"/>
 
+	<LogMessage quest="1" step="1" output="Checking if we have all bounties complete" /> 
 	<ActBountiesComplete act="A4">
+	<LogMessage quest="1" step="1" output="Seems like we have 5 complete" />
 		<If condition="Me.IsInTown==False">   
+			<LogMessage quest="1" step="1" output="Going back to town to turn it in." />
 			<TrinityTownPortal questId="1" /> 
 		</If>
 		<WaitTimer questId="1" stepId="1" waitTime="1000"/>	
-		<While condition="CurrentLevelAreaId != 92945">
+		<LogMessage quest="1" step="1" output="Lets make sure we are actually in the right town" />
+		<While condition="CurrentWorldId != 172909">
+			<LogMessage quest="1" step="1" output="Doesn't look like we are! using the waypoint" />
 			<UseWaypoint waypointNumber="26" questId="1"/>
 			<WaitTimer questId="1" stepId="1" waitTime="7500"/>
 		</While>
+		<LogMessage quest="1" step="1" output="Attempting to interact with Tyrael" />
 		<MoveToActor questId="1" stepId="1" actorId="114622" x="379" y="422" z="0"  />
+		<LogMessage quest="1" step="1" output="Should have interacted with him by now." />
+
 	</ActBountiesComplete>
 
 	
