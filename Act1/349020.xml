@@ -79,12 +79,12 @@
 		<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="102079" boxTolerance="0.10" boxSize="15" ignoreMarkers="False"/>
 		<MoveToActor questId="1" stepId="2" actorId="102079" />
 		<!-- Interact with the Sarcophagus, alternate ID is 203608 if this one doesn't work -->
-		<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="105754 " boxTolerance="0.10" boxSize="15" ignoreMarkers="False"/>
+		<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="105754 " boxTolerance="0.10" boxSize="15" ignoreMarkers="False">
 			<AlternateActors>
 							<AlternateActor actorId="203608" objectDistance="300" />
 			</AlternateActors>
 		</TrinityExploreDungeon>
-		<MoveToActor questId="1" stepId="2" objectDistance="300" actorId="105754 " />
+		<MoveToActor questId="1" stepId="2" objectDistance="300" actorId="105754 " >
 			<AlternateActors>
 							<AlternateActor actorId="203608" objectDistance="300" />
 			</AlternateActors>
