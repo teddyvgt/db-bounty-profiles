@@ -30,44 +30,44 @@
 </If>
 
 	<!-- Move to the farmer -->
-	<SafeMoveTo questId="312429" stepId="2" x="1773" y="537" z="0"/> 
-	<MoveToActor questId="312429" stepId="2" actorId="81980" />
-	<WaitTimer questId="312429" stepId="2" waitTime="3000" />
+	<SafeMoveTo questId="1" stepId="2" x="1773" y="537" z="0"/> 
+	<MoveToActor questId="1" stepId="2" actorId="81980" />
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />
 	
 	<!-- Kill all the Plague Nests -->
-	<SafeMoveTo questId="312429" stepId="2" x="1774" y="649" z="0" /> 
-	<WaitTimer questId="312429" stepId="2" waitTime="3000" />
+	<SafeMoveTo questId="1" stepId="2" x="1774" y="649" z="0" /> 
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />
 	
-	<SafeMoveTo questId="312429" stepId="2" x="1849" y="651" z="0" /> 
-	<WaitTimer questId="312429" stepId="2" waitTime="3000" />
+	<SafeMoveTo questId="1" stepId="2" x="1849" y="651" z="0" /> 
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />
 	
-	<SafeMoveTo questId="312429" stepId="2" x="1870" y="597" z="0" /> 
-	<WaitTimer questId="312429" stepId="2" waitTime="3000" />
+	<SafeMoveTo questId="1" stepId="2" x="1870" y="597" z="0" /> 
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />
 	
-	<SafeMoveTo questId="312429" stepId="2" x="1791" y="566" z="0" /> 
-	<WaitTimer questId="312429" stepId="2" waitTime="3000" />
+	<SafeMoveTo questId="1" stepId="2" x="1791" y="566" z="0" /> 
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />
 	
 	<!-- Kill the named, He died before I could get his ID, just going to run around again -->
-	<SafeMoveTo questId="312429" stepId="2" x="1774" y="649" z="0" /> 
-	<WaitTimer questId="312429" stepId="2" waitTime="3000" />
+	<SafeMoveTo questId="1" stepId="2" x="1774" y="649" z="0" /> 
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />
 	
-	<SafeMoveTo questId="312429" stepId="2" x="1849" y="651" z="0" /> 
-	<WaitTimer questId="312429" stepId="2" waitTime="3000" />
+	<SafeMoveTo questId="1" stepId="2" x="1849" y="651" z="0" /> 
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />
 	
-	<SafeMoveTo questId="312429" stepId="2" x="1870" y="597" z="0" /> 
-	<WaitTimer questId="312429" stepId="2" waitTime="3000" />
+	<SafeMoveTo questId="1" stepId="2" x="1870" y="597" z="0" /> 
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />
 	
-	<SafeMoveTo questId="312429" stepId="2" x="1791" y="566" z="0" /> 
-	<WaitTimer questId="312429" stepId="2" waitTime="3000" />
+	<SafeMoveTo questId="1" stepId="2" x="1791" y="566" z="0" /> 
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />
 	
 	<!-- Hopefully done. -->
-	<SafeMoveTo questId="312429" stepId="2" x="1779" y="565" z="0"/>  
-	<MoveToActor questId="312429" stepId="2" actorId="81980" />
-	<WaitTimer questId="312429" stepId="2" waitTime="3000" />
+	<SafeMoveTo questId="1" stepId="2" x="1779" y="565" z="0"/>  
+	<MoveToActor questId="1" stepId="2" actorId="81980" />
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />
 	
     <!-- Portal Home -->
-    <TrinityTownPortal questId="312429" stepId="2" />
-    <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+    <TrinityTownPortal questId="1" stepId="2" />
+    <WaitTimer questId="1" stepId="2" waitTime="2500" />
 <TrinityLoadProfile nodelay="True" file="act1.xml" />
 </Order>
 </Profile>

@@ -30,12 +30,12 @@
 </If>
 
     <!-- Look for him -->
-	<LogMessage quest="312429" step="2" output="Swiggity swooty, we're roaming for that booty..." />
-	<AWTrinityExploreDungeon questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+	<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />
+	<AWTrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
 
     <!-- Portal Home -->
-    <TrinityTownPortal questId="312429" stepId="2" />
-    <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+    <TrinityTownPortal questId="1" stepId="2" />
+    <WaitTimer questId="1" stepId="2" waitTime="2500" />
 <TrinityLoadProfile nodelay="True" file="act1.xml" />
 </Order>
 </Profile>

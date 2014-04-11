@@ -19,7 +19,7 @@ namespace BountyProfile
 {
     public partial class BountyProfile : IPlugin
     {
-        public Version Version { get { return new Version(0, 0, 15); } }
+        public Version Version { get { return new Version(0, 0, 16); } }
         public string Author { get { return "Sychotix"; } }
         public string Description { get { return "Adds functionaly to make adventure profiles work."; } }
         public string Name { get { return "BountyProfile "; } }
@@ -84,9 +84,9 @@ namespace BountyProfile
     public class AWTrinityExploreDungeon : Trinity.XmlTags.TrinityExploreDungeon
     {
 
-        public AWTrinityExploreDungeon() : base() {
-            //Override the marker to true.
-            IgnoreMarkers = false;
+        public AWTrinityExploreDungeon()
+            : base()
+        {
         }
 
         private bool _isDone = false;
@@ -102,9 +102,9 @@ namespace BountyProfile
         public override void OnStart()
         {
 
-            if(ZetaDia.ActInfo.ActiveBounty == null) Logger.Log("Don't have an active quest. Assume we have completed it.");
+            if (ZetaDia.ActInfo.ActiveBounty == null) Logger.Log("Don't have an active quest. Assume we have completed it.");
             else base.OnStart(); return;
-            
+
         }
 
         //Had to use ActiveBounty, caused too much lag constantly searching the bounty list
@@ -142,7 +142,7 @@ namespace BountyProfile
                     return false;
                 }
 
-                
+
                 return false;
             }
         }
@@ -242,10 +242,11 @@ namespace BountyProfile
         public override bool GetConditionExec()
         {
             var b = ZetaDia.ActInfo.Bounties.Where(bounty => bounty.Act.ToString().Equals(Act) && bounty.Info.State == QuestState.Completed);
-            if(b.FirstOrDefault() != null) Logger.Log("Bounties Complete count:" + b.Count());
+            if (b.FirstOrDefault() != null) Logger.Log("Bounties Complete count:" + b.Count());
             else Logger.Log("Bounties complete returned null.");
 
-            foreach(var c in ZetaDia.ActInfo.Bounties.Where(bounty => bounty.Act.ToString().Equals(Act) && bounty.Info.State != QuestState.Completed)) {
+            foreach (var c in ZetaDia.ActInfo.Bounties.Where(bounty => bounty.Act.ToString().Equals(Act) && bounty.Info.State != QuestState.Completed))
+            {
                 Logger.Log("Bounty " + c.Info.Quest.ToString() + " (" + c.Info.QuestSNO + ") unsupported or invalid.");
             }
 

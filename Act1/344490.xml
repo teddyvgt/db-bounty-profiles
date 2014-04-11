@@ -32,19 +32,19 @@
     <!-- Look for him -->
 	<BountyAtStep questSNO="344490" step="4">
 		<If condition="CurrentWorldId == 71150">
-			<SafeMoveTo questId="312429" stepId="2" x="2099.974" y="4309.199" z="9.91527" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+			<SafeMoveTo questId="1" stepId="2" x="2099.974" y="4309.199" z="9.91527" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 			<!-- If not completed, keep killing things until it is complete-->
 			<BountyAtStep questSNO="344490" step="4">
-				<LogMessage quest="312429" step="2" output="Found named but still not done, clearing some more." />
-				<AWTrinityExploreDungeon bountyQuestSNO="344490" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+				<LogMessage quest="1" step="2" output="Found named but still not done, clearing some more." />
+				<AWTrinityExploreDungeon bountyQuestSNO="344490" bountyStep="4" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
 			</BountyAtStep>
 		</If>
 	</BountyAtStep>
 
     <!-- Portal Home -->
-    <TrinityTownPortal questId="312429" stepId="2" />
-    <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+    <TrinityTownPortal questId="1" stepId="2" />
+    <WaitTimer questId="1" stepId="2" waitTime="2500" />
 <TrinityLoadProfile nodelay="True" file="act1.xml" />
 </Order>
 </Profile>

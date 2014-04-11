@@ -32,7 +32,7 @@
     <!-- Look for him -->
 	<BountyAtStep questSNO="345862" step="4">
 		<If condition="CurrentLevelAreaId == 78572">
-			<AWTrinityExploreDungeon bountyQuestSNO="345862" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" actorId="218364" boxTolerance="0.10" boxSize="15" />
+			<AWTrinityExploreDungeon bountyQuestSNO="345862" bountyStep="4" questId="1" stepId="2" until="ObjectFound" actorId="218364" boxTolerance="0.10" boxSize="15" />
 			<WaitTimer questId="345862" stepId="2" waitTime="1000" />
 			<!-- If not completed, keep killing things until it is complete-->
 			<BountyAtStep questSNO="361334" step="4">

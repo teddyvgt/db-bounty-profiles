@@ -31,28 +31,28 @@
     <!-- Look for him -->
 	<BountyAtStep questSNO="345520" step="4">
 		<If condition="CurrentLevelAreaId == 19953">
-			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 			<!--  Warriors Rest #1 -->
 			<If condition="CurrentLevelAreaId == 19953">
-				<MoveToActor questId="312429" stepId="2" actorId="176008" isPortal="True" destinationWorldId="60393" x="404" y="678" z="15" maxSearchDistance="50" />
-				<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+				<MoveToActor questId="1" stepId="2" actorId="176008" isPortal="True" destinationWorldId="60393" x="404" y="678" z="15" maxSearchDistance="50" />
+				<WaitTimer questId="1" stepId="2" waitTime="1000" />
 			</If>
 
 			<!-- Warrior's Rest #2 -->
 			<If condition="CurrentLevelAreaId == 19953">
-				<MoveToActor questId="312429" stepId="2" actorId="176008" isPortal="True" destinationWorldId="60393" x="522" y="665" z="15" maxSearchDistance="50" />
-				<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+				<MoveToActor questId="1" stepId="2" actorId="176008" isPortal="True" destinationWorldId="60393" x="522" y="665" z="15" maxSearchDistance="50" />
+				<WaitTimer questId="1" stepId="2" waitTime="1000" />
 			</If>
 
 			<!-- Warrior's Rest #3 -->
 			<If condition="CurrentLevelAreaId == 19953">
-				<MoveToActor questId="312429" stepId="2" actorId="176008" isPortal="True" destinationWorldId="60393" x="282" y="665" z="15" maxSearchDistance="50" />
-				<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+				<MoveToActor questId="1" stepId="2" actorId="176008" isPortal="True" destinationWorldId="60393" x="282" y="665" z="15" maxSearchDistance="50" />
+				<WaitTimer questId="1" stepId="2" waitTime="1000" />
 			</If>
 			<!-- Explore the dungeon.-->
 			<BountyAtStep questSNO="345520" step="4">
 				<LogMessage quest="1" step="1" output="Clearing." />
-				<AWTrinityExploreDungeon bountyQuestSNO="345520" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+				<AWTrinityExploreDungeon bountyQuestSNO="345520" bountyStep="4" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
 			</BountyAtStep>
 			<MoveToActor questId="345520" stepId="2" actorId="176003" />
 		</If>

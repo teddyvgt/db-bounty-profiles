@@ -32,22 +32,22 @@
     <!-- Look for him -->
 	<BountyAtStep questSNO="344486" step="4">
 		<If condition="CurrentWorldId == 71150">
-			<SafeMoveTo questId="312429" stepId="2" x="2136.469" y="4327.496" z="-28.8857"/>
-			<MoveToActor questId="312429" stepId="2" actorId="81068"/>
-			<WaitTimer questId="312429" stepId="2" waitTime="5000" />
-			<MoveToActor questId="312429" stepId="2" actorId="225252" x="2100.818" y="4297.587" z="-28.5686"/>
-			<WaitTimer questId="312429" stepId="2" waitTime="2000" />
-			<MoveToActor questId="312429" stepId="2" actorId="225252" x="2105.039" y="4368.726" z="-28.89764"/>
-			<WaitTimer questId="312429" stepId="2" waitTime="2000" />
-			<MoveToActor questId="312429" stepId="2" actorId="81068"/>
-			<WaitTimer questId="312429" stepId="2" waitTime="10000" />
+			<SafeMoveTo questId="1" stepId="2" x="2136.469" y="4327.496" z="-28.8857"/>
+			<MoveToActor questId="1" stepId="2" actorId="81068"/>
+			<WaitTimer questId="1" stepId="2" waitTime="5000" />
+			<MoveToActor questId="1" stepId="2" actorId="225252" x="2100.818" y="4297.587" z="-28.5686"/>
+			<WaitTimer questId="1" stepId="2" waitTime="2000" />
+			<MoveToActor questId="1" stepId="2" actorId="225252" x="2105.039" y="4368.726" z="-28.89764"/>
+			<WaitTimer questId="1" stepId="2" waitTime="2000" />
+			<MoveToActor questId="1" stepId="2" actorId="81068"/>
+			<WaitTimer questId="1" stepId="2" waitTime="10000" />
 			<!-- If not completed, keep killing things until it is complete-->
 		</If>
 	</BountyAtStep>
 
     <!-- Portal Home -->
-    <TrinityTownPortal questId="312429" stepId="2" />
-    <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+    <TrinityTownPortal questId="1" stepId="2" />
+    <WaitTimer questId="1" stepId="2" waitTime="2500" />
 <TrinityLoadProfile nodelay="True" file="act1.xml" />
 </Order>
 </Profile>

@@ -31,70 +31,73 @@
 
     <!-- Find Scavenger's Den #1-->
     <If condition="CurrentWorldId == 71150">
-      <SafeMoveTo questId="312429" stepId="2" x="2068" y="899" z="-0" />
-      <SafeMoveTo questId="312429" stepId="2" x="2068" y="899" z="-0" />
+      <SafeMoveTo questId="1" stepId="2" x="2068" y="899" z="-0" />
+      <SafeMoveTo questId="1" stepId="2" x="2068" y="899" z="-0" />
     </If>
     <!-- Enter Scavenger's Den #1 -->
     <If condition="CurrentWorldId == 71150
           and ActorExistsAt(175501, 2068, 899, 0, 300)">
-      <MoveToActor questId="312429" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" x="2068" y="899" z="-0" />
-      <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+      <MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" x="2068" y="899" z="-0" />
+      <WaitTimer questId="1" stepId="2" waitTime="2500" />
     </If>
     <!-- Find KScavenger's Den #2 -->
     <If condition="CurrentWorldId == 71150">
-      <SafeMoveTo questId="312429" stepId="2" x="1768" y="359" z="-0" />
-      <SafeMoveTo questId="312429" stepId="2" x="1768" y="359" z="-0" />
+      <SafeMoveTo questId="1" stepId="2" x="1768" y="359" z="-0" />
+      <SafeMoveTo questId="1" stepId="2" x="1768" y="359" z="-0" />
     </If>
     <!-- Enter Scavenger's #2 -->
     <If condition="CurrentWorldId == 71150
           and ActorExistsAt(175501, 1745.596, 353.9031, -4.620636, 300)">
-      <MoveToActor questId="312429" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" x="1768" y="359" z="-0" />
-      <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+      <MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" x="1768" y="359" z="-0" />
+      <WaitTimer questId="1" stepId="2" waitTime="2500" />
     </If>
     <!-- Find Scavenger's Den #3 -->
     <If condition="CurrentWorldId == 71150">
-      <SafeMoveTo questId="312429" stepId="2" x="2129" y="597" z="-0" />
-      <SafeMoveTo questId="312429" stepId="2" x="2129" y="597" z="-0" />
+      <SafeMoveTo questId="1" stepId="2" x="2129" y="597" z="-0" />
+      <SafeMoveTo questId="1" stepId="2" x="2129" y="597" z="-0" />
     </If>
     <!-- Enter Scavenger's Den #3 -->
     <If condition="CurrentWorldId == 71150
           and ActorExistsAt(175501, 2129, 597, 0, 300)">
-      <MoveToActor questId="312429" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" x="2129" y="597" z="-0" />
-      <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+      <MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" x="2129" y="597" z="-0" />
+      <WaitTimer questId="1" stepId="2" waitTime="2500" />
     </If>
     <!-- Find Scavenger's Den #4 -->
     <If condition="CurrentWorldId == 71150">
-      <SafeMoveTo questId="312429" stepId="2" x="2258" y="1059" z="-0" />
-      <SafeMoveTo questId="312429" stepId="2" x="2258" y="1059" z="-0" />
+      <SafeMoveTo questId="1" stepId="2" x="2258" y="1059" z="-0" />
+      <SafeMoveTo questId="1" stepId="2" x="2258" y="1059" z="-0" />
     </If>
     <!-- Enter Scavenger's Den #4 -->
     <If condition="CurrentWorldId == 71150
           and ActorExistsAt(175501, 2258, 1059, 0, 300)">
-      <MoveToActor questId="312429" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" x="2258" y="1059" z="-0" />
-      <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+      <MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" x="2258" y="1059" z="-0" />
+      <WaitTimer questId="1" stepId="2" waitTime="2500" />
     </If>
 
-    <!-- Inside Khazra Den -->
+   
 	<BountyAtStep questSNO="345496" step="4">
+	 <!-- Inside Scavenger's Den Level 1-->
 		<If condition="CurrentWorldId == 81163">
-			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
-			<AWTrinityExploreDungeon bountyQuestSNO="345496" bountyStep="4" questId="312429" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="925091455" ignoreMarkers="False">
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<AWTrinityExploreDungeon bountyQuestSNO="345496" bountyStep="4" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="925091455" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
 			</AWTrinityExploreDungeon>
-			<MoveToMapMarker questId="312429" stepId="2" exitNameHash="925091455" destinationWorldId="81164" interactRange="20"  />
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="925091455" destinationWorldId="81164" interactRange="20"  />
 			<WaitTimer questId="72095" stepId="11" waitTime="1000" />
 		</If>
+		 <!-- Inside Scavenger's Den Level 2-->
 		<If condition="CurrentWorldId == 81164">
-			<AWTrinityExploreDungeon bountyQuestSNO="345496" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
-			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+			<TrinitySetQuesting />
+			<AWTrinityExploreDungeon bountyQuestSNO="345496" bountyStep="4" questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</If>
 	</BountyAtStep>
 
     <!-- Portal Home -->
-    <TrinityTownPortal questId="312429" stepId="2" />
-    <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+    <TrinityTownPortal questId="1" stepId="2" />
+    <WaitTimer questId="1" stepId="2" waitTime="2500" />
 <TrinityLoadProfile nodelay="True" file="act1.xml" />
 </Order>
 </Profile>

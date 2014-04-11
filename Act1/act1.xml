@@ -6,9 +6,9 @@
 <GameParams quest="101758" step="1" act="OpenWorld" difficulty="Normal" resumeFromSave="False" isPrivate="True" numGames="-1"  />
 <!--This is the Beging of your ORder list-->
 <Order>
-<WaitTimer questId="312429" stepId="2" waitTime="1500" />
+<WaitTimer questId="1" stepId="2" waitTime="1500" />
 <While condition="True">
-<WaitTimer questId="312429" stepId="2" waitTime="500" />
+<WaitTimer questId="1" stepId="2" waitTime="500" />
 <!--Teleports to town if not in town-->
 <If condition="Me.IsInTown==False">   
 	<UseTownPortal questId="1" />       
@@ -190,23 +190,23 @@
 	</HaveBounty>
 	<!-- The Cursed Court-->
 	<HaveBounty questSNO="375191">
-		<LoadProfile file="./Act1/375191.xml" />
+		<LoadProfile file="375191.xml" />
 	</HaveBounty>
 	<!--Kill Qurash the Reviled-->
 	<HaveBounty questSNO="345862">
-		<LoadProfile file="./Act1/kill_caverns_of_araneae.xml" />
+		<LoadProfile file="kill_caverns_of_araneae.xml" />
 	</HaveBounty>
 	<!-- Kill Rathlin the Widowmaker-->
 	<HaveBounty questSNO="345526">
-		<LoadProfile file="./Act1/kill_caverns_of_araneae.xml" />
+		<LoadProfile file="kill_caverns_of_araneae.xml" />
 	</HaveBounty>
 	<!-- Kill Lord Brone-->
 	<HaveBounty questSNO="369249">
-		<LoadProfile file="./Act1/kill_the_festering_woods.xml" />
+		<LoadProfile file="kill_the_festering_woods.xml" />
 	</HaveBounty>
 	<!-- Kill Hawthorne Gable-->
 	<HaveBounty questSNO="347054">
-		<LoadProfile file="./Act1/kill_the_festering_woods.xml" />
+		<LoadProfile file="kill_the_festering_woods.xml" />
 	</HaveBounty>
 	<!-- Kill Glidewing-->
 	<HaveBounty questSNO="361331">
@@ -216,6 +216,20 @@
 	<HaveBounty questSNO="365381">
 		<LoadProfile file="365381.xml" />
 	</HaveBounty>
+	<!-- Kill Fecklar's Ghost-->
+	<HaveBounty questSNO="347056">
+		<LoadProfile file="kill_the_festering_woods.xml" />
+	</HaveBounty>
+	<!-- Kill Snotnob the Fool-->
+	<HaveBounty questSNO="349026">
+		<LoadProfile file="kill_halls_of_agony_level_2.xml" />
+	</HaveBounty>
+	<!-- Kill Rad'noj-->
+	<HaveBounty questSNO="361352">
+		<LoadProfile file="kill_the_royal_crypts.xml" />
+	</HaveBounty>
+	
+	
 	<ActBountiesComplete act="A1">
 		<!-- Make sure we are in New Tristram -->
 		<If condition="Me.IsInTown==False">   
@@ -235,10 +249,11 @@
 				<UseWaypoint questId="1" stepId="1" actorId="6442" x="557.5455" y="525.3394" z="2.796465" waypointNumber="0"/> 
 			</If>
 		</If>
-		<MoveToActor questId="312429" stepId="2" actorId="114622" />
+		<MoveToActor questId="1" stepId="2" actorId="114622" />
 	</ActBountiesComplete>
 </If>
- <LeaveGame reason="No more bounties that we can do. Resetting game." />  
+<LogMessage quest="1" step="1" output="Blah Done." /> 
+ <!--LeaveGame reason="No more bounties that we can do. Resetting game." /-->  
 </While>
 </Order>
 

@@ -30,18 +30,18 @@
 </If>
 
 	<!-- Move to the chest -->
-	<SafeMoveTo questId="312429" stepId="2" x="536" y="1102" z="0" />  
+	<SafeMoveTo questId="1" stepId="2" x="536" y="1102" z="0" />  
 	<MoveToActor questId="365097" stepId="2" actorId="81980" />
-	<WaitTimer questId="312429" stepId="2" waitTime="3000" />
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />
 	
 	<!-- Hope we kill everything by waiting -->
-	<SafeMoveTo questId="312429" stepId="2" x="537" y="1110" z="0" /> 
-	<WaitTimer questId="312429" stepId="2" waitTime="15000" />
+	<SafeMoveTo questId="1" stepId="2" x="537" y="1110" z="0" /> 
+	<WaitTimer questId="1" stepId="2" waitTime="15000" />
 	
 	
     <!-- Portal Home -->
-    <TrinityTownPortal questId="312429" stepId="2" />
-    <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+    <TrinityTownPortal questId="1" stepId="2" />
+    <WaitTimer questId="1" stepId="2" waitTime="2500" />
 <TrinityLoadProfile nodelay="True" file="act1.xml" />
 </Order>
 </Profile>

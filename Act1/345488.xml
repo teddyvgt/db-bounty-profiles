@@ -32,28 +32,28 @@
     <!-- Inside Khazra Den -->
 	<BountyAtStep questSNO="345488" step="4">
 		
-		<AWTrinityExploreDungeon bountyQuestSNO="345488" bountyStep="4" questId="312429" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-2043651426" ignoreMarkers="False"/>
-		<MoveToMapMarker questId="312429" stepId="2" exitNameHash="-2043651426" destinationWorldId="135193" interactRange="20"  />
+		<AWTrinityExploreDungeon bountyQuestSNO="345488" bountyStep="4" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-2043651426" ignoreMarkers="False"/>
+		<MoveToMapMarker questId="1" stepId="2" exitNameHash="-2043651426" destinationWorldId="135193" interactRange="20"  />
 
 		<If condition="CurrentWorldId == 135193">
-			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
-			<AWTrinityExploreDungeon bountyQuestSNO="345488" bountyStep="4" questId="312429" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-711350153" ignoreMarkers="False">
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<AWTrinityExploreDungeon bountyQuestSNO="345488" bountyStep="4" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-711350153" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
 			</AWTrinityExploreDungeon>
-			<MoveToMapMarker questId="312429" stepId="2" exitNameHash="-711350153" destinationWorldId="194231" interactRange="20"  />
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-711350153" destinationWorldId="194231" interactRange="20"  />
 			<WaitTimer questId="72095" stepId="11" waitTime="1000" />
 		</If>
 		<If condition="CurrentWorldId == 194231">
-			<AWTrinityExploreDungeon bountyQuestSNO="345488" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
-			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+			<AWTrinityExploreDungeon bountyQuestSNO="345488" bountyStep="4" questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</If>
 	</BountyAtStep>
 
     <!-- Portal Home -->
-    <TrinityTownPortal questId="312429" stepId="2" />
-    <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+    <TrinityTownPortal questId="1" stepId="2" />
+    <WaitTimer questId="1" stepId="2" waitTime="2500" />
 <TrinityLoadProfile nodelay="True" file="act1.xml" />
 </Order>
 </Profile>

@@ -31,65 +31,66 @@
 
     <!-- Find Khazra Den #1-->
     <If condition="CurrentWorldId == 71150">
-      <SafeMoveTo questId="312429" stepId="2" x="2068" y="899" z="-0" />
-      <SafeMoveTo questId="312429" stepId="2" x="2068" y="899" z="-0" />
+      <SafeMoveTo questId="1" stepId="2" x="2068" y="899" z="-0" />
+      <SafeMoveTo questId="1" stepId="2" x="2068" y="899" z="-0" />
     </If>
     <!-- Enter Khazra Den #1 -->
     <If condition="CurrentWorldId == 71150
           and ActorExistsAt(176003, 2068, 899, 0, 300)">
-      <MoveToActor questId="312429" stepId="2" actorId="176003" isPortal="True" destinationWorldId="119888" x="2068" y="899" z="-0" />
-      <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+      <MoveToActor questId="1" stepId="2" actorId="176003" isPortal="True" destinationWorldId="119888" x="2068" y="899" z="-0" />
+      <WaitTimer questId="1" stepId="2" waitTime="2500" />
     </If>
 
     <!-- Find Khazra Den #2 -->
     <If condition="CurrentWorldId == 71150">
-      <SafeMoveTo questId="312429" stepId="2" x="1768" y="359" z="-0" />
-      <SafeMoveTo questId="312429" stepId="2" x="1768" y="359" z="-0" />
+      <SafeMoveTo questId="1" stepId="2" x="1768" y="359" z="-0" />
+      <SafeMoveTo questId="1" stepId="2" x="1768" y="359" z="-0" />
     </If>
     <!-- Enter Khazra Den #2 -->
     <If condition="CurrentWorldId == 71150
           and ActorExistsAt(176003, 1745.596, 353.9031, -4.620636, 300)">
-      <MoveToActor questId="312429" stepId="2" actorId="176003" isPortal="True" destinationWorldId="119888" x="1768" y="359" z="-0" />
-      <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+      <MoveToActor questId="1" stepId="2" actorId="176003" isPortal="True" destinationWorldId="119888" x="1768" y="359" z="-0" />
+      <WaitTimer questId="1" stepId="2" waitTime="2500" />
     </If>
 
 
     <!-- Find Khazra Den #3 -->
     <If condition="CurrentWorldId == 71150">
-      <SafeMoveTo questId="312429" stepId="2" x="2129" y="597" z="-0" />
-      <SafeMoveTo questId="312429" stepId="2" x="2129" y="597" z="-0" />
+      <SafeMoveTo questId="1" stepId="2" x="2129" y="597" z="-0" />
+      <SafeMoveTo questId="1" stepId="2" x="2129" y="597" z="-0" />
     </If>
     <!-- Enter Khazra Den #3 -->
     <If condition="CurrentWorldId == 71150
           and ActorExistsAt(176003, 2129, 597, 0, 300)">
-      <MoveToActor questId="312429" stepId="2" actorId="176003" isPortal="True" destinationWorldId="119888" x="2129" y="597" z="-0" />
-      <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+      <MoveToActor questId="1" stepId="2" actorId="176003" isPortal="True" destinationWorldId="119888" x="2129" y="597" z="-0" />
+      <WaitTimer questId="1" stepId="2" waitTime="2500" />
     </If>
 
     <!-- Find Khazra Den #4 -->
     <If condition="CurrentWorldId == 71150">
-      <SafeMoveTo questId="312429" stepId="2" x="2258" y="1059" z="-0" />
-      <SafeMoveTo questId="312429" stepId="2" x="2258" y="1059" z="-0" />
+      <SafeMoveTo questId="1" stepId="2" x="2258" y="1059" z="-0" />
+      <SafeMoveTo questId="1" stepId="2" x="2258" y="1059" z="-0" />
     </If>
     <!-- Enter Khazra Den #4 -->
     <If condition="CurrentWorldId == 71150
           and ActorExistsAt(176003, 2258, 1059, 0, 300)">
-      <MoveToActor questId="312429" stepId="2" actorId="176003" isPortal="True" destinationWorldId="119888" x="2258" y="1059" z="-0" />
-      <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+      <MoveToActor questId="1" stepId="2" actorId="176003" isPortal="True" destinationWorldId="119888" x="2258" y="1059" z="-0" />
+      <WaitTimer questId="1" stepId="2" waitTime="2500" />
     </If>
 
     <!-- Inside Khazra Den -->
 	<BountyAtStep questSNO="347065" step="4">
+		<TrinitySetQuesting />
 		<If condition="CurrentWorldId == 119888">
-			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
-			<AWTrinityExploreDungeon bountyQuestSNO="347065" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
-			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<AWTrinityExploreDungeon bountyQuestSNO="347065" bountyStep="4" questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</If>
 	</BountyAtStep>
 
     <!-- Portal Home -->
-    <TrinityTownPortal questId="312429" stepId="2" />
-    <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+    <TrinityTownPortal questId="1" stepId="2" />
+    <WaitTimer questId="1" stepId="2" waitTime="2500" />
 <TrinityLoadProfile nodelay="True" file="act1.xml" />
 </Order>
 </Profile>
