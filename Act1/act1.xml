@@ -228,11 +228,97 @@
 	<HaveBounty questId="361352">
 		<LoadProfile file="kill_the_royal_crypts.xml" />
 	</HaveBounty>
-		<!-- Eternal War -->
+	<!-- Eternal War 
 	<HaveBounty questId="345505">
 		<LoadProfile file="345505.xml" />
-	</HaveBounty>
+	</HaveBounty>-->
 	
+	
+	
+	<!-- Kill Warden-->
+	<HaveBounty questId="347030">
+		<LoadProfile file="347030_kill_the_warden.xml" />
+	</HaveBounty>	
+	<!-- Eternal War -->
+	<HaveBounty questId="345505">
+		<LoadProfile file="345505_eternal_war.xml" />
+	</HaveBounty>	
+	<!-- Cursed Camp-->
+	<HaveBounty questId="369763">
+		<LoadProfile file="369763_the_cursed_camp.xml" />
+	</HaveBounty>			
+	<!-- Last stand of the Ancients -->
+	<HaveBounty questId="345502">
+		<LoadProfile file="345502_last_stand_of_the_ancients.xml" />
+	</HaveBounty>		
+	<!-- The family of Rathe -->
+	<HaveBounty questId="347058">
+		<LoadProfile file="347058_the_family_of_rathe.xml" />
+	</HaveBounty>	
+	<!-- The Dataminer -->
+	<HaveBounty questId="347095">
+		<LoadProfile file="347095_kill_the_dataminer.xml" />
+	</HaveBounty>	
+	<!-- Kill Dreadclaw -->
+	<HaveBounty questId="347073">
+		<LoadProfile file="347073_kill_dreadclaw.xml" />
+	</HaveBounty>
+	<!-- Kill Firestarter -->
+	<HaveBounty questId="361339">
+		<LoadProfile file="361339_kill_firestarter.xml" />
+	</HaveBounty>		
+	<!-- Kill Jezeb the Conjuror -->
+	<HaveBounty questId="367561">
+		<LoadProfile file="367561_kill_jezeb.xml" />
+	</HaveBounty>	
+	<!-- Kill Jezeb the Conjuror -->
+	<HaveBounty questId="345490">
+		<LoadProfile file="345490_kill_mange.xml" />
+	</HaveBounty>	
+	<!-- Kill Kill Horrus the Nightstalker / Kankerrot -->
+	<HaveBounty questId="369404">
+		<LoadProfile file="369404_Kill_Kankerrot.xml" />
+	</HaveBounty>		
+	<!-- Kill Kill Horrus the Nightstalker / Kankerrot -->
+	<HaveBounty questId="344501">
+		<LoadProfile file="344501_Kill_Lorzak.xml" />
+	</HaveBounty>	
+	<!-- The Cursed Bellows / Deathfire -->
+	<HaveBounty questId="369789">
+		<LoadProfile file="369789_deathfire.xml" />
+	</HaveBounty>		
+	<!-- The Matriarchs Bones -->
+	<HaveBounty questId="349020">
+		<LoadProfile file="349020_matriarchs_bones.xml" />
+	</HaveBounty>		
+	<!-- Jar of Souls -->
+	<HaveBounty questId="349016">
+		<LoadProfile file="349016_jar_of_souls.xml" />
+	</HaveBounty>		
+	<!-- Vendor Armorer / Scavenged Scabbard -->
+	<HaveBounty questId="344488">
+		<LoadProfile file="344488_Vendor_Armorer.xml" />
+	</HaveBounty>	
+	<!-- Kill Boneslag -->
+	<HaveBounty questId="347023">
+		<LoadProfile file="347023_kill_boneslag.xml" />
+	</HaveBounty>
+	<!-- Kill Cudgelarm -->
+	<HaveBounty questId="361336">
+		<LoadProfile file="361336_kill_cudgelarm.xml" />
+	</HaveBounty>	
+	<!-- Kill Theodyn -->
+	<HaveBounty questId="369271">
+		<LoadProfile file="369271_Kill_Theodyn.xml" />
+	</HaveBounty>	
+	<!-- Kill Captain Clegg -->
+	<HaveBounty questId="361354">
+		<LoadProfile file="361354_Kill_CaptainClegg.xml" />
+	</HaveBounty>			
+	
+	
+	
+
 	<ActBountiesComplete act="A1">
 		<!-- Make sure we are in New Tristram -->
 		<If condition="Me.IsInTown==False">   
