@@ -1,0 +1,91 @@
+<!-- X1_Bounty_A1_Fields_Event_FamilyRathe (347058)  -->
+<Profile>
+<Name>The Family of Rathe</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+
+	<If condition="Me.IsInTown==False">   
+		<TrinityLoadProfile nodelay="True" file="act1.xml" />       
+	</If>
+
+	<If condition="Me.IsInTown ">
+		<!--Act 1 WP-->
+		<If condition="CurrentWorldId == 332336">
+			<UseWaypoint questId="1" stepId="1" actorId="223757" x="401.7305" y="555.0093" z="24.90835" waypointNumber="8"/>
+		</If>
+		<!--Act 2 WP-->
+		<If condition="CurrentWorldId == 161472">
+			<UseWaypoint questId="1" stepId="1" actorId="6442" x="324.8699" y="291.0312" z="1.645629" waypointNumber="8"/> 
+		</If>
+		<!--Act 3/4 WP-->
+		<If condition="CurrentWorldId == 172909">
+			<UseWaypoint questId="1" stepId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="8"/> 
+		</If>
+		<!--Act 4 WP-->
+		<If condition="CurrentWorldId == 304235">
+			<UseWaypoint questId="1" stepId="1" actorId="6442" x="557.5455" y="525.3394" z="2.796465" waypointNumber="8"/> 
+		</If>
+		<WaitTimer questId="1" stepId="1" waitTime="1000" />
+	</If>
+
+    <!-- Only do the thing if we have the bounty for it -->
+	<HaveBounty questId="347058">
+
+		<!--  Fields of Misery  -->
+		<If condition="CurrentLevelAreaId == 19952">
+
+			<!-- Find the Decaying Crypt -->
+			<MoveToActor questId="312429" stepId="2" x="2259" y="842" z="0" actorId="5502" interactRange="8" name="Start_Location_0-3157"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<WaitTimer questId="1" stepId="1" waitTime="1000" />	
+			
+			<!-- Not sure yet if decaying crypt moves around -->
+			<If condition="CurrentLevelAreaId == 19952">
+				<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="5502" pathPrecision="40" boxSize="10" boxTolerance="0.70" />	
+			</If>
+		</If>
+
+		<!--  Decaying Crypt Level 1 -->
+		<If condition="CurrentLevelAreaId == 102300">							
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="1070710596" ignoreMarkers="False">
+				<PrioritizeScenes>
+					<PriorityScene sceneName="Exit" />
+				</PrioritizeScenes>
+			</TrinityExploreDungeon>			
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="1070710596" destinationWorldId="165797" interactRange="20"  />			
+		</If>	
+
+		<!--  Decaying Crypt Level 2 -->
+		<If condition="CurrentLevelAreaId == 165798">	
+		
+			<MoveToActor questId="312429" stepId="2" x="595" y="579" z="-5" actorId="76907" interactRange="8" name="FamilyTree_Daughter-5204"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		
+			<!-- Wait for it to start -->
+			<WaitTimer questId="1" stepId="1" waitTime="13000" />	
+			
+			<!-- Talk to daughter again after killing things -->
+			<MoveToActor questId="312429" actorId="76907" interactRange="8" name="FamilyTree_Daughter-5666"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			
+			
+			<!-- Hack to make sure we found it -->
+			<HaveBounty questId="347058">
+				<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
+				<MoveToActor questId="1" stepId="2" actorId="76907" />
+				<WaitTimer questId="1" stepId="1" waitTime="10000" />				
+				<MoveToActor questId="1" stepId="2" actorId="76907" />
+			</HaveBounty>				
+		
+		</If>		
+	
+	</HaveBounty>
+	
+	<LogMessage quest="1" step="2" output="X1_Bounty_A1_Fields_Event_FamilyRathe (347058) seems to be finished" />	
+	
+    <!-- Portal Home -->
+    <TrinityTownPortal questId="1" stepId="2" />
+    <WaitTimer questId="1" stepId="2" waitTime="2500" />
+	<LoadProfile nodelay="True" file="act1.xml" />
+	
+	
+</Order>
+</Profile>

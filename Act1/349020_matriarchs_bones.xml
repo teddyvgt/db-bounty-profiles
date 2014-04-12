@@ -1,0 +1,119 @@
+<!-- X1_Bounty_A1_Cemetery_Event_MatriarchsBones (349020)  -->
+<Profile>
+<Name>The Matriarchs Bones</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+
+<TargetBlacklists>
+    <TargetBlacklist actorId="365097" /><!-- Cursed Chest outside gate causing flipflop -->
+	<TargetBlacklist actorId="230324" /><!-- Cemetery Gate -->
+</TargetBlacklists>
+
+<Order>
+
+<!--
+	<If condition="Me.IsInTown==False">   
+		<TrinityLoadProfile nodelay="True" file="act1.xml" />       
+	</If>
+	
+	-->
+
+	<If condition="Me.IsInTown ">
+		<!--Act 1 WP-->
+		<If condition="CurrentWorldId == 332336">
+			<UseWaypoint questId="1" stepId="1" actorId="223757" x="401.7305" y="555.0093" z="24.90835" waypointNumber="7"/>
+		</If>
+		<!--Act 2 WP-->
+		<If condition="CurrentWorldId == 161472">
+			<UseWaypoint questId="1" stepId="1" actorId="6442" x="324.8699" y="291.0312" z="1.645629" waypointNumber="7"/> 
+		</If>
+		<!--Act 3/4 WP-->
+		<If condition="CurrentWorldId == 172909">
+			<UseWaypoint questId="1" stepId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="7"/> 
+		</If>
+		<!--Act 4 WP-->
+		<If condition="CurrentWorldId == 304235">
+			<UseWaypoint questId="1" stepId="1" actorId="6442" x="557.5455" y="525.3394" z="2.796465" waypointNumber="7"/> 
+		</If>
+		<WaitTimer questId="1" stepId="1" waitTime="1000" />
+	</If>
+
+    <!-- Only do the thing if we have the bounty for it  -->
+	<HaveBounty questId="349020">
+
+		<!--  Cemetery of the Forsaken  -->
+		<If condition="CurrentWorldId == 71150">			
+			<SafeMoveTo questId="1" stepId="2" x="2233" y="1811" z="6" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1965109038" destinationWorldId="72636" interactRange="20"  />						
+		</If>			
+		<If condition="CurrentWorldId == 71150">
+			<SafeMoveTo questId="1" stepId="2" x="2057" y="1801" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1965109038" destinationWorldId="72636" interactRange="20"  />			
+		</If>
+		<If condition="CurrentWorldId == 71150">			
+			<SafeMoveTo questId="1" stepId="2" x="2081" y="1948" z="-5" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1965109038" destinationWorldId="72636" interactRange="20"  />			
+		</If>
+		<If condition="CurrentWorldId == 71150">			
+			<SafeMoveTo questId="1" stepId="2" x="2152" y="1951" z="-5" pathPrecision="5" pathPointLimit="250" statusText="" /> 		
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1965109038" destinationWorldId="72636" interactRange="20"  />			
+		</If>
+
+		<!--  Defiled Crypt -->
+		<If condition="CurrentLevelAreaId == 83264">
+
+			<!-- Talk to Lady Dunhyld -->	
+			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="3892" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="25" />
+			<MoveToActor questId="1" stepId="1" actorId="3892" interactRange="8" name="CryingGhost_Female_01_A-1573"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<WaitTimer questId="1" stepId="1" waitTime="2000" />	
+			
+			<!-- Click on the bowls -->
+			<MoveToActor questId="1" stepId="1" actorId="174754" interactRange="7" name="a1dun_Crypts_Bowl_of_Bones_03-1762"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<WaitTimer questId="1" stepId="1" waitTime="2000" />
+			<MoveToActor questId="1" stepId="1" actorId="174753" interactRange="7" name="a1dun_Crypts_Bowl_of_Bones_02-1566"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			 
+			<WaitTimer questId="1" stepId="1" waitTime="2000" />
+			<MoveToActor questId="1" stepId="1" actorId="102079" interactRange="7" name="a1dun_Crypts_Bowl_of_Bones_01-1651"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<WaitTimer questId="1" stepId="1" waitTime="2000" />						
+
+			<!-- If we know where the casket is already then go there -->
+			<MoveToActor questId="1" stepId="1" actorId="105754" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToActor questId="1" stepId="1" actorId="203608" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" />			
+			
+			<!-- Otherwise Find the casket -->
+			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="105754" pathPrecision="15" boxSize="10" boxTolerance="0.10" objectDistance="20" >
+				<AlternateActors>
+					<AlternateActor actorId="203608" objectDistance="20" /> <!-- scabbard -->
+				</AlternateActors>	
+			</TrinityExploreDungeon>	
+			<MoveToActor questId="1" stepId="1" actorId="105754" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToActor questId="1" stepId="1" actorId="203608" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" />
+
+			<!-- Backup Plan -->
+			<HaveBounty questId="349020">
+				<LogMessage quest="1" step="1" output="Maybe something went wrong..." />	
+				<TrinityExploreDungeon questId="1" stepId="1" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
+				<MoveToActor questId="1" stepId="1" actorId="3892" interactRange="8" name="CryingGhost_Female_01_A-1573"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<MoveToActor questId="1" stepId="1" actorId="174754" interactRange="7" name="a1dun_Crypts_Bowl_of_Bones_03-1762"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<MoveToActor questId="1" stepId="1" actorId="174753" interactRange="7" name="a1dun_Crypts_Bowl_of_Bones_02-1566"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			 
+				<MoveToActor questId="1" stepId="1" actorId="102079" interactRange="7" name="a1dun_Crypts_Bowl_of_Bones_01-1651"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<MoveToActor questId="1" stepId="1" actorId="105754" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<MoveToActor questId="1" stepId="1" actorId="203608" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			</HaveBounty>	
+				
+			
+		</If>
+	
+	</HaveBounty>
+
+	<LogMessage quest="1" step="2" output="X1_Bounty_A1_Cemetery_Event_MatriarchsBones (349020) seems to be finished" />	
+	
+    <!-- Portal Home -->
+	<WaitTimer questId="1" stepId="2" waitTime="500" />	
+    <TrinityTownPortal questId="1" stepId="2" />
+    <WaitTimer questId="1" stepId="2" waitTime="2500" />
+	<LoadProfile nodelay="True" file="act1.xml" />
+	
+	
+</Order>
+</Profile>
