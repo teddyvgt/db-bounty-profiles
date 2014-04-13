@@ -11,7 +11,7 @@
 	<WaitTimer questId="1" stepId="1" waitTime="2500"/>
 </While>
 
-	<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.35" boxSize="15" ignoreMarkers="False" />
+	<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" />
 
     <!-- Portal Home -->
 	<LoadProfile file="act4.xml" />
