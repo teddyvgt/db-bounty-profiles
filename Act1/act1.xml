@@ -342,7 +342,7 @@
 				<UseWaypoint questId="1" stepId="1" actorId="6442" x="557.5455" y="525.3394" z="2.796465" waypointNumber="0"/> 
 			</If>
 		</If>
-		<MoveToActor questId="1" stepId="2" actorId="114622" />
+		<MoveToActor questId="1" stepId="1" x="419" y="531" z="24" actorId="114622"/> 
 	</ActBountiesComplete>
 </If>
 <LogMessage quest="1" step="1" output="Blah Done." /> 
