@@ -15,7 +15,7 @@
 		<If condition="CurrentWorldId == 109513">
 			<!-- Speed running, turn combat off to increase speed -->
 			<ToggleTargeting questId="1" combat="true" looting="true" killRadius="15" lootRadius="10" />  
-			<TrinityExploreDungeon   questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="368169" boxTolerance="0.01" boxSize="25" ignoreMarkers="False">
+			<TrinityExploreDungeon stayAfterBounty="False"    questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="368169" boxTolerance="0.01" boxSize="25" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="a4dun_garden_level_01_E01_S04" pathPrecision="40" />
 					<PriorityScene sceneName="a4dun_garden_level_01_E03_S03" pathPrecision="40" />
@@ -27,7 +27,7 @@
 					<IgnoreScene sceneName="a4dun_garden_level_01_E05S04" />
 					<IgnoreScene sceneName="a4dun_garden_level_01_E04S04" />    
 				</IgnoreScenes>
-			</TrinityExploreDungeon  >
+			</TrinityExploreDungeon stayAfterBounty="False"   >
 			<MoveToActor questId="1" stepId="2" actorId="368169"/>
 			<ToggleTargeting questId="1" combat="True" looting="True" killRadius="90" lootRadius="90" />
 			<While condition="ActorExistsAt(368169, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
