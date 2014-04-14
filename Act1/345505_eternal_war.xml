@@ -37,7 +37,7 @@
 		<If condition="CurrentLevelAreaId == 19953">
 
 			<!-- Search for the the monument -->			
-			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="111907" pathPrecision="40" boxSize="10" boxTolerance="0.70" />				
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="ObjectFound" actorId="111907" pathPrecision="40" boxSize="10" boxTolerance="0.70" />				
 			<UseObject questId="1" stepId="1" actorId="111907" isPortal="False" />
 
 			<!-- Wait for it to start -->
@@ -45,7 +45,7 @@
 			
 			<!-- Hack to make sure we found it -->
 			<HaveBounty questId="345505">
-				<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
+				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
 				<MoveToActor questId="1" stepId="2" actorId="111907" />
 			</HaveBounty>			
 			

@@ -33,7 +33,7 @@
 	<If condition="CurrentWorldId == 71150">
 			<!-- Speed running, turn combat off to increase speed -->
 			<ToggleTargeting questId="1" combat="true" looting="true" killRadius="15" lootRadius="10" />  
-			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="111907" boxTolerance="0.55" boxSize="15" ignoreMarkers="False">
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="111907" boxTolerance="0.55" boxSize="15" ignoreMarkers="False">
 				<IgnoreScenes>
 					<IgnoreScene sceneName="_S01" />
 				</IgnoreScenes>

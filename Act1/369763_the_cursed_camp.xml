@@ -45,7 +45,7 @@
 			
 			<!-- Hack to make sure we found the shrine -->
 			<HaveBounty questId="369763">
-				<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
+				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
 				<MoveToActor questId="1" stepId="2" actorId="364601" />
 			</HaveBounty>			
 			

@@ -60,7 +60,7 @@
 		<If condition="CurrentLevelAreaId == 83264">
 
 			<!-- Find the Jar of Souls -->
-			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="93713" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="25" />
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="ObjectFound" actorId="93713" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="25" />
 			<MoveToActor questId="1" stepId="1" actorId="93713" interactRange="6" name="a1dun_Crypts_Jar_of_Souls-5097"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			<WaitTimer questId="1" stepId="1" waitTime="2000" />		
 			<WaitTimer questId="1" stepId="1" waitTime="17000" />		
 			<MoveToActor questId="1" stepId="1" actorId="93713" interactRange="6" name="a1dun_Crypts_Jar_of_Souls-5097"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			<WaitTimer questId="1" stepId="1" waitTime="2000" />		
@@ -68,7 +68,7 @@
 			<!-- Backup Plan -->
 			<HaveBounty questId="349020">
 				<LogMessage quest="1" step="1" output="Maybe something went wrong... fully exploring dungeon" />	
-				<TrinityExploreDungeon questId="1" stepId="1" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
+				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
 				<MoveToActor questId="1" stepId="1" actorId="93713" interactRange="8" name="CryingGhost_Female_01_A-1573"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
 			</HaveBounty>	
 							

@@ -3,7 +3,7 @@
 <Name>Act 1 - Loader</Name>
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
-<GameParams quest="101758" step="1" act="OpenWorld" difficulty="Normal" resumeFromSave="False" isPrivate="True" numGames="-1"  />
+<GameParams act="OpenWorld" difficulty="Normal" resumeFromSave="False" isPrivate="True" numGames="-1"  />
 <!--This is the Beging of your ORder list-->
 <Order>
 <WaitTimer questId="1" stepId="2" waitTime="1500" />
@@ -314,7 +314,11 @@
 	<!-- Kill Captain Clegg -->
 	<HaveBounty questId="361354">
 		<LoadProfile file="361354_Kill_CaptainClegg.xml" />
-	</HaveBounty>			
+	</HaveBounty>
+	<!-- Kill Venimite  -->
+	<HaveBounty questId="345524">
+		<LoadProfile file="kill_caverns_of_araneae.xml" />
+	</HaveBounty>
 	
 	
 	
@@ -342,7 +346,7 @@
 	</ActBountiesComplete>
 </If>
 <LogMessage quest="1" step="1" output="Blah Done." /> 
-<WaitTimer questId="1" stepId="2" waitTime="50000" />
+<!--WaitTimer questId="1" stepId="2" waitTime="50000" /-->
  <LeaveGame reason="No more bounties that we can do. Resetting game." />  
 </While>
 </Order>

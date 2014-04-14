@@ -62,11 +62,11 @@
 		<If condition="CurrentLevelAreaId == 83264">
 
 			<!-- Kill dat Dataminer -->
-			<TrinityExploreDungeon questId="312429" stepId="2" until="ObjectFound" actorId="225502" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="25" />
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" actorId="225502" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="25" />
 		
 			<!-- Make sure we killed enough monsters to finish the bounty -->
 			<HaveBounty questId="347095">
-				<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
+				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
 				<MoveToActor questId="1" stepId="2" actorId="0" />
 			</HaveBounty>			
 			

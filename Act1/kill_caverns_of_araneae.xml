@@ -4,7 +4,7 @@
 
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
-<GameParams quest="101758" step="1" act="OpenWorld" difficulty="Normal" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<GameParams act="OpenWorld" difficulty="Normal" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 <If condition="Me.IsInTown==False">   
 	<LoadProfile profile="../act1.xml" />       
@@ -31,7 +31,7 @@
 
     <!-- Look for the named -->
 	<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />
-	<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15"/>
+	<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15"/>
 
     <!-- Portal Home -->
     <TrinityTownPortal questId="1" stepId="2" />

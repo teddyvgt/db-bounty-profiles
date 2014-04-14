@@ -1,6 +1,6 @@
 <Profile>
 
-<Name>General Weeping Hollow Bounty</Name>
+<Name>General Northern Highland Bounty</Name>
 
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
@@ -31,8 +31,11 @@
 
     <!-- Look for him -->
 	<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />
-	<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
-	
+	<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" >
+		<IgnoreScenes>
+		  <IgnoreScene sceneName="_Chokepoint_" />
+		</IgnoreScenes>
+	</TrinityExploreDungeon>
     <!-- Portal Home -->
     <TrinityTownPortal questId="1" stepId="2" />
     <WaitTimer questId="1" stepId="2" waitTime="2500" />

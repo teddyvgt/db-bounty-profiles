@@ -37,18 +37,18 @@
 		<If condition="CurrentLevelAreaId == 19952">
 
 			<!-- Find the Decaying Crypt -->
-			<MoveToActor questId="312429" stepId="2" x="2259" y="842" z="0" actorId="5502" interactRange="8" name="Start_Location_0-3157"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToActor questId="1" stepId="2" x="2259" y="842" z="0" actorId="5502" interactRange="8" name="Start_Location_0-3157"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
 			<WaitTimer questId="1" stepId="1" waitTime="1000" />	
 			
 			<!-- Not sure yet if decaying crypt moves around -->
 			<If condition="CurrentLevelAreaId == 19952">
-				<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="5502" pathPrecision="40" boxSize="10" boxTolerance="0.70" />	
+				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="ObjectFound" actorId="5502" pathPrecision="40" boxSize="10" boxTolerance="0.70" />	
 			</If>
 		</If>
 
 		<!--  Decaying Crypt Level 1 -->
 		<If condition="CurrentLevelAreaId == 102300">							
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="1070710596" ignoreMarkers="False">
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="1070710596" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
@@ -59,17 +59,17 @@
 		<!--  Decaying Crypt Level 2 -->
 		<If condition="CurrentLevelAreaId == 165798">	
 		
-			<MoveToActor questId="312429" stepId="2" x="595" y="579" z="-5" actorId="76907" interactRange="8" name="FamilyTree_Daughter-5204"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToActor questId="1" stepId="2" x="595" y="579" z="-5" actorId="76907" interactRange="8" name="FamilyTree_Daughter-5204"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
 		
 			<!-- Wait for it to start -->
 			<WaitTimer questId="1" stepId="1" waitTime="13000" />	
 			
 			<!-- Talk to daughter again after killing things -->
-			<MoveToActor questId="312429" actorId="76907" interactRange="8" name="FamilyTree_Daughter-5666"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			
+			<MoveToActor questId="1" actorId="76907" interactRange="8" name="FamilyTree_Daughter-5666"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			
 			
 			<!-- Hack to make sure we found it -->
 			<HaveBounty questId="347058">
-				<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
+				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
 				<MoveToActor questId="1" stepId="2" actorId="76907" />
 				<WaitTimer questId="1" stepId="1" waitTime="10000" />				
 				<MoveToActor questId="1" stepId="2" actorId="76907" />

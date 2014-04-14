@@ -32,22 +32,22 @@
     <!-- Look for chest -->
 	<HaveBounty questId="369789">
 		<If condition="CurrentLevelAreaId == 19776">
-			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="365097" boxTolerance="0.10" boxSize="15" />
-			<WaitTimer questId="369789" stepId="2" waitTime="5000" />
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" actorId="365097" boxTolerance="0.10" boxSize="15" />
+			<WaitTimer questId="1" stepId="2" waitTime="5000" />
 			<MoveToActor questId="1" actorId="365097" interactRange="10" name="x1_Global_Chest_CursedChest_B-1209"  pathPrecision="50" pathPointLimit="250" statusText="" /> 
 			<!-- If not completed, keep killing waves until it is complete-->
 			<While condition="ZetaDia.ActInfo.ActiveBounty != null and ZetaDia.ActInfo.ActiveBounty.Info.State != QuestState.Completed">
 				<LogMessage quest="1" step="1" output="Chest activated, but bounty not done. Will keep killing." />
-				<WaitTimer questId="369789" stepId="4" waitTime="3000" />
+				<WaitTimer questId="1" stepId="4" waitTime="3000" />
 			</While>
-			<WaitTimer questId="369789" stepId="2" waitTime="1000" />
-			<MoveToActor questId="369789" stepId="2" actorId="176003" />
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<MoveToActor questId="1" stepId="2" actorId="176003" />
 		</If>
 	</HaveBounty>
 
     <!-- Portal Home -->
-    <TrinityTownPortal questId="369789" stepId="2" />
-    <WaitTimer questId="369789" stepId="2" waitTime="2500" />
+    <TrinityTownPortal questId="1" stepId="2" />
+    <WaitTimer questId="1" stepId="2" waitTime="2500" />
 <LoadProfile file="act1.xml" />
 </Order>
 </Profile>

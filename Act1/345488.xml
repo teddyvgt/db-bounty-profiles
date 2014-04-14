@@ -32,21 +32,21 @@
     <!-- Inside Khazra Den -->
 	<HaveBounty questId="345488">
 		
-		<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-2043651426" ignoreMarkers="False"/>
+		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-2043651426" ignoreMarkers="False"/>
 		<MoveToMapMarker questId="1" stepId="2" exitNameHash="-2043651426" destinationWorldId="135193" interactRange="20"  />
 
 		<If condition="CurrentWorldId == 135193">
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-711350153" ignoreMarkers="False">
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-711350153" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
 			</TrinityExploreDungeon>
 			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-711350153" destinationWorldId="194231" interactRange="20"  />
-			<WaitTimer questId="72095" stepId="11" waitTime="1000" />
+			<WaitTimer questId="1" stepId="1" waitTime="1000" />
 		</If>
 		<If condition="CurrentWorldId == 194231">
-			<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</If>
 	</HaveBounty>

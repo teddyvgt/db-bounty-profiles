@@ -33,16 +33,16 @@
 <!--known spawn-->
 <If condition="CurrentLevelAreaId == 19952">
 <MoveToMapMarker questId="1" x="1798" y="605" z="0" actorId="365097" interactRange="20" pathPrecision="50" pathPointLimit="250" statusText="This should go to chest spawn xyz" />
-<WaitTimer questId="375198" stepId="2" waitTime="5000" />
+<WaitTimer questId="1" stepId="2" waitTime="5000" />
 <TrinityTownPortal questId="1" stepId="2" />
 <WaitTimer questId="1" stepId="2" waitTime="2500" />
 <LoadProfile file="act1.xml" /></If>
 <!--if not there go a full area check-->
 <If condition="(CurrentLevelAreaId == 19952) and (not ActorExistsAt(365097, 1798, 605, 0, 100))">
-<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="365097" boxTolerance="0.10" boxSize="15" >
+<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" actorId="365097" boxTolerance="0.10" boxSize="15" >
 </TrinityExploreDungeon>
-<MoveToActor questId="375198" stepId="2" actorId="365097" />
-<WaitTimer questId="375198" stepId="2" waitTime="5000" />
+<MoveToActor questId="1" stepId="2" actorId="365097" />
+<WaitTimer questId="1" stepId="2" waitTime="5000" />
 <TrinityTownPortal questId="1" stepId="2" />
 <WaitTimer questId="1" stepId="2" waitTime="2500" />
 <LoadProfile file="act1.xml" /></If>

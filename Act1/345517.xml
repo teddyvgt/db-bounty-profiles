@@ -33,12 +33,12 @@
 	<HaveBounty questId="345517">
 		<If condition="CurrentWorldId == 71150">
 			<If condition="CurrentLevelAreaId == 78572">
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="976523526" ignoreMarkers="False"/>
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="976523526" ignoreMarkers="False"/>
 			<MoveToMapMarker questId="1" stepId="2" exitNameHash="976523526" destinationWorldId="60394" interactRange="20"  />
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 			<!-- Clear the dungeon -->
 			<HaveBounty questId="345517">
-				<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="10" />
+				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="10" />
 			</HaveBounty>
 		</If>
 	</HaveBounty>
