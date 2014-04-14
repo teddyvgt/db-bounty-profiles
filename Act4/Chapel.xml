@@ -15,11 +15,11 @@
 	<If condition="CurrentWorldId == 129305">
 	<!-- Speed running, turn combat off to increase speed -->
 	<ToggleTargeting questId="1" combat="true" looting="true" killRadius="15" lootRadius="10" />  
-	<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.01" boxSize="25" ignoreMarkers="False">
+	<TrinityExploreDungeon stayAfterBounty="False"  questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.01" boxSize="25" ignoreMarkers="False">
 	<PrioritizeScenes>
         <PriorityScene sceneName="a4dun_spire_corrupt_SE_02" pathPrecision="40" />          
     </PrioritizeScenes>
-	</TrinityExploreDungeon>
+	</TrinityExploreDungeon stayAfterBounty="False" >
       <MoveToActor questId="1" stepId="2" actorId="365097"/>
 	  <WaitTimer questId="1" stepId="2" waitTime="500" />
 	  <ToggleTargeting questId="1" combat="True" looting="True" killRadius="90" lootRadius="90" />  
@@ -34,11 +34,11 @@
 	<If condition="CurrentWorldId == 129305">
 	<!-- Speed running, turn combat off to increase speed -->
 	<ToggleTargeting questId="1" combat="true" looting="true" killRadius="15" lootRadius="10" />  
-	<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.01" boxSize="25" ignoreMarkers="False">
+	<TrinityExploreDungeon stayAfterBounty="False"  questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.01" boxSize="25" ignoreMarkers="False">
 	<PrioritizeScenes>
         <PriorityScene sceneName="a4dun_spire_corrupt_SE_02" pathPrecision="40" />          
     </PrioritizeScenes>
-	</TrinityExploreDungeon>
+	</TrinityExploreDungeon stayAfterBounty="False" >
       <MoveToActor questId="1" stepId="2" actorId="365097"/>
 	  <WaitTimer questId="1" stepId="2" waitTime="500" />
 	  <ToggleTargeting questId="1" combat="True" looting="True" killRadius="90" lootRadius="90" />  
