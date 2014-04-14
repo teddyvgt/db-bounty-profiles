@@ -46,6 +46,7 @@
 			<WaitTimer questId="1" stepId="1" waitTime="1000" />
 		</If>
 		<If condition="CurrentWorldId == 194231">
+			<TrinitySetQuesting />
 			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</If>
