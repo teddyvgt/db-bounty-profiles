@@ -319,6 +319,10 @@
 	<HaveBounty questId="345524">
 		<LoadProfile file="kill_caverns_of_araneae.xml" />
 	</HaveBounty>
+	<!-- Kill Kankerrot  -->
+	<HaveBounty questId="369399">
+		<LoadProfile file="kill_the_weeping_hollow.xml" />
+	</HaveBounty>
 	
 	
 	
