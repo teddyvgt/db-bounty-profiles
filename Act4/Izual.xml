@@ -23,7 +23,7 @@
           <IgnoreScene sceneName="_E_" />
           <IgnoreScene sceneName="_W_" />
         </IgnoreScenes>
-      </TrinityExploreDungeon stayAfterBounty="False"   >
+      </TrinityExploreDungeon >
       <!-- The Great Span -->
       <MoveToActor questId="1" stepId="2" actorId="225195" isPortal="True" destinationWorldId="214956" interactRange="20" />
       <WaitTimer questId="1" stepId="2" waitTime="1000" />

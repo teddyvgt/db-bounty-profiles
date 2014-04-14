@@ -21,7 +21,7 @@
 		<PrioritizeScenes>
 			<PriorityScene sceneName="a3dun_Crater_E_Dead_End_02_E01_N01" pathPrecision="40" />          
 		</PrioritizeScenes>
-	</TrinityExploreDungeon stayAfterBounty="False"   >
+	</TrinityExploreDungeon >
 		<MoveToActor questId="1" stepId="2" actorId="224890" isPortal="True"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2500" />
 	

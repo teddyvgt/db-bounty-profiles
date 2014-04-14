@@ -19,7 +19,7 @@
 	<PrioritizeScenes>
         <PriorityScene sceneName="a4dun_spire_corrupt_SE_02" pathPrecision="40" />          
     </PrioritizeScenes>
-	</TrinityExploreDungeon stayAfterBounty="False"   >
+	</TrinityExploreDungeon >
       <MoveToActor questId="1" stepId="2" actorId="365097"/>
 	  <WaitTimer questId="1" stepId="2" waitTime="500" />
 	  <ToggleTargeting questId="1" combat="True" looting="True" killRadius="90" lootRadius="90" />  
@@ -38,7 +38,7 @@
 	<PrioritizeScenes>
         <PriorityScene sceneName="a4dun_spire_corrupt_SE_02" pathPrecision="40" />          
     </PrioritizeScenes>
-	</TrinityExploreDungeon stayAfterBounty="False"   >
+	</TrinityExploreDungeon >
       <MoveToActor questId="1" stepId="2" actorId="365097"/>
 	  <WaitTimer questId="1" stepId="2" waitTime="500" />
 	  <ToggleTargeting questId="1" combat="True" looting="True" killRadius="90" lootRadius="90" />  
