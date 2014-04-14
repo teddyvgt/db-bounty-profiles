@@ -17,7 +17,7 @@
 
     <LogMessage quest="1" step="2" output="Looking for Portal." />
 	<ToggleTargeting questId="1" combat="true" looting="true" killRadius="10" lootRadius="10" />  
-	<TrinityExploreDungeon stayAfterBounty="False"    questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="224890" boxTolerance="0.01" boxSize="25" ignoreMarkers="False">
+	<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="224890" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" stayAfterBounty="False">
 		<PrioritizeScenes>
 			<PriorityScene sceneName="a3dun_Crater_E_Dead_End_02_E01_N01" pathPrecision="40" />          
 		</PrioritizeScenes>
@@ -28,7 +28,7 @@
 	<If condition="CurrentWorldId == 109530">
 		<LogMessage quest="1" step="1" output="Clearing level 2." />	
 		<ToggleTargeting questId="1" combat="True" looting="True" killRadius="40" lootRadius="90" />  
-		<TrinityExploreDungeon stayAfterBounty="False"    questId="1" stepId="2" until="FullyExplored" boxTolerance="0.45" boxSize="15" ignoreMarkers="False"/>
+		<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.45" boxSize="15" ignoreMarkers="False" stayAfterBounty="False"/>
 	</If>
 	
 	<If condition="CurrentWorldId == 109525">
@@ -39,7 +39,7 @@
 	<If condition="CurrentWorldId == 109530">
 		<LogMessage quest="1" step="1" output="Clearing level 2." />	
 		<ToggleTargeting questId="1" combat="True" looting="True" killRadius="40" lootRadius="90" />  
-		<TrinityExploreDungeon stayAfterBounty="False"    questId="1" stepId="2" until="FullyExplored" boxTolerance="0.45" boxSize="15" ignoreMarkers="False"/>
+		<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.45" boxSize="15" ignoreMarkers="False" stayAfterBounty="False"/>
 	</If>	
 
 	<LoadProfile file="act4.xml" />
