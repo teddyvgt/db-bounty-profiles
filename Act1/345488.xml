@@ -41,6 +41,9 @@
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
+				<IgnoreScenes>
+					<IgnoreScene sceneName="_MainGraveyard_" />
+				</IgnoreScenes>
 			</TrinityExploreDungeon>
 			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-711350153" destinationWorldId="194231" interactRange="20"  />
 			<WaitTimer questId="1" stepId="1" waitTime="1000" />
