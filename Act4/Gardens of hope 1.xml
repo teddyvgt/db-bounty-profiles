@@ -9,7 +9,7 @@
 <Order>
 <While condition="CurrentWorldId != 109513">
 	<UseWaypoint waypointNumber="41" questId="1"/>
-	<WaitTimer questId="1" stepId="1" waitTime="2500"/>
+	<WaitTimer questId="1" stepId="1" waitTime="5000"/>
 </While>
 
 	<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" stayAfterBounty="False" />

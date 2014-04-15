@@ -35,10 +35,14 @@
 	
 		<!--  Northern Highlands & Leorics Hunting Grounds -->
 		<If condition="CurrentWorldId == 71150">
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-1019926638" ignoreMarkers="False">
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.01" boxSize="25" until="ExitFound" exitNameHash="-1019926638" ignoreMarkers="False">
 				<PrioritizeScenes>
-					<PriorityScene sceneName="Exit" />
+					<PriorityScene sceneName="_LeoricManor_" />
 				</PrioritizeScenes>
+				<IgnoreScenes>
+					  <IgnoreScene sceneName="_Chokepoint_" />
+					  <IgnoreScene sceneName="_N01" />
+				</IgnoreScenes>
 			</TrinityExploreDungeon>			
 			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1019926638" destinationWorldId="75049" interactRange="20"  />			
 		</If>	
