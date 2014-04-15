@@ -21,7 +21,7 @@
 		</TrinityExploreDungeon>	
 
 		<!-- this MoveToMapMarker is unreliable, gets stuck sometimes -->
-		<MoveToMapMarker questId="1" stepId="1" markerNameHash="356899046" actorId="158944" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="78839" statusText="" /> 			
+		<MoveToActor questId="1" stepId="1" actorId="158944" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="78839" /> 			
 		<WaitTimer questId="1" stepId="1" waitTime="16000" />
 		
 		<!-- bot is having issues picking up loot in this room -->

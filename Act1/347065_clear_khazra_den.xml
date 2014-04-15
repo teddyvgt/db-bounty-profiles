@@ -10,6 +10,7 @@
 	<UseWaypoint waypointNumber="8" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
 	<HaveBounty questId="347065">
+	<ToggleTargeting questId="1" combat="False" looting="False" lootRadius="0" killRadius="0" />
 
 		<!-- Find Khazra Den #1-->
 		<If condition="CurrentWorldId == 71150">
@@ -17,12 +18,14 @@
 		  <SafeMoveTo questId="312429" stepId="2" x="2052" y="510" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 		  <SafeMoveTo questId="1" stepId="2" x="2068" y="899" z="-0" />
 		</If>
+		
 		<!-- Enter Khazra Den #1 -->
 		<If condition="CurrentWorldId == 71150
 			  and ActorExistsAt(176003, 2068, 899, 0, 300)">
 		  <MoveToActor questId="1" stepId="2" actorId="176003" isPortal="True" destinationWorldId="119888" x="2068" y="899" z="-0" />
 		  <WaitTimer questId="1" stepId="2" waitTime="2500" />
 		</If>
+		<ToggleTargeting questId="1" combat="True" looting="True" lootRadius="60" killRadius="20" />
 
 		<!-- Find Khazra Den #2 -->
 		<If condition="CurrentWorldId == 71150">

@@ -9,49 +9,53 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
 	<UseWaypoint waypointNumber="8" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
-	<HaveBounty questId="345496">	
+	<HaveBounty questId="345496">
+	<ToggleTargeting questId="1" combat="False" looting="False" lootRadius="0" killRadius="0" />	
 
-		<SafeMoveTo questId="312429" stepId="2" x="2876" y="2115" z="-3" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<MoveToMapMarker questId="1" stepId="2" exitNameHash="-2043651426" destinationWorldId="135193" interactRange="20"  />
-			
 		<!-- Check common places first -->
 		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="312429" stepId="2" x="2038" y="912" z="-3" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
+			<SafeMoveTo questId="1" stepId="2" x="1768" y="359" z="-3" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
+      <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="1768" y="359" z="-3" isPortal="True" destinationWorldId="81163" />
+		</If>
+		<If condition="CurrentWorldId == 71150">
+			<SafeMoveTo questId="1" stepId="2" x="2048" y="458" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+      <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="2048" y="458" z="0" isPortal="True" destinationWorldId="81163" />
+		</If>	
+		<If condition="CurrentWorldId == 71150">
+			<SafeMoveTo questId="1" stepId="2" x="2121" y="542" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+      <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="2121" y="542" z="0" isPortal="True" destinationWorldId="81163" />
+		</If>
+		<If condition="CurrentWorldId == 71150">		
+			<SafeMoveTo questId="1" stepId="2" x="2038" y="912" z="-3" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
+      <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="2107" y="593" z="0" isPortal="True" destinationWorldId="81163" />
+		</If>
+		<If condition="CurrentWorldId == 71150">		
+			<SafeMoveTo questId="1" stepId="2" x="2038" y="912" z="-3" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
       <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="2038" y="912" z="-3" isPortal="True" destinationWorldId="81163" />
 		</If>		
 		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="312429" stepId="2" x="2027" y="813" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="1" stepId="2" x="2027" y="813" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
       <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="2027" y="813" z="0" isPortal="True" destinationWorldId="81163" />
 		</If>		
-		<If condition="CurrentWorldId == 71150">
-			<SafeMoveTo questId="312429" stepId="2" x="2048" y="458" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-      <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="2048" y="458" z="0" isPortal="True" destinationWorldId="81163" />
-		</If>				
+			
 		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="312429" stepId="2" x="2258" y="1059" z="-3" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
+			<SafeMoveTo questId="1" stepId="2" x="2258" y="1059" z="-3" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
       <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="2258" y="1059" z="-3" isPortal="True" destinationWorldId="81163" />
 		</If>	
 		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="312429" stepId="2" x="1768" y="359" z="-3" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
-      <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="1768" y="359" z="-3" isPortal="True" destinationWorldId="81163" />
-		</If>
-		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="312429" stepId="2" x="2068" y="899" z="-3" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
+			<SafeMoveTo questId="1" stepId="2" x="2068" y="899" z="-3" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
       <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="2068" y="899" z="-3" isPortal="True" destinationWorldId="81163" />
 		</If>	
- 		<If condition="CurrentWorldId == 71150">
-			<SafeMoveTo questId="312429" stepId="2" x="2121" y="542" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-      <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="2121" y="542" z="0" isPortal="True" destinationWorldId="81163" />
-		</If>
 
 		<!-- Look Everywhere -->
-		
+		<If condition="CurrentWorldId == 71150">
 			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="175501" pathPrecision="10" boxSize="10" boxTolerance="0.05" objectDistance="40" />
       <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" isPortal="True" destinationWorldId="81163" />
-
-
+		</If>
+		
 		<!-- Inside Scavenger's Den Level 1-->
 		<If condition="CurrentWorldId == 81163">
+		<ToggleTargeting questId="1" combat="True" looting="True" lootRadius="60" killRadius="20" />
 			<WaitTimer questId="1" stepId="2" waitTime="2000" />
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="925091455" ignoreMarkers="False">
 				<PrioritizeScenes>
