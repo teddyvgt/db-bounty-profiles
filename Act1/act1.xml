@@ -131,7 +131,13 @@
 		<!-- Status: Needs Testing -->			
 		<HaveBounty questId="369404">
 			<LoadProfile file="369399_kill_horrus.xml" />
-		</HaveBounty>			
+		</HaveBounty>
+
+		<!-- Kill Mira Eamon -->
+		<!-- Status: Needs Testing -->			
+		<HaveBounty questId="347099">
+			<LoadProfile file="347099_kill_mira_eamon.xml" />
+		</HaveBounty>	
 
 	
 	<!-- 7	Cemetery of the Forsaken ==================================================-->
@@ -159,6 +165,7 @@
 		<HaveBounty questId="347095">
 			<LoadProfile file="347095_kill_the_dataminer.xml" />
 		</HaveBounty>	
+				
 		
 	<!-- 8	Fields of Misery ==========================================================-->
 			
@@ -228,23 +235,19 @@
 			<LoadProfile file="347070_kill_charger.xml" />
 		</HaveBounty>		
 		
-		<!-- Kill Mira Eamon -->
-		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="347099">
-			<LoadProfile file="347099_kill_mira_eamon.xml" />
-		</HaveBounty>		
 		
 		<!-- The Cursed Grove -->
 		<!-- Status: Needs Testing -->			
 		<HaveBounty questId="365381">
 			<LoadProfile file="365381_the_cursed_grove.xml" />
-		</HaveBounty>
-
+		</HaveBounty>		
+		
 		<!-- The Cursed Mill -->
 		<!-- Status: Needs Testing -->	
 		<HaveBounty questId="365401">
 			<LoadProfile file="365401_the_cursed_mill.xml" />
-		</HaveBounty>
+		</HaveBounty>			
+		
 	
 	<!-- 10 Festering Woods ===========================================================-->
 	
