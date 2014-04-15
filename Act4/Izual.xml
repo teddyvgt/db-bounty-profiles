@@ -5,6 +5,9 @@
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<TargetBlacklists>
+<TargetBlacklist actorId="182526"/> <!-- Demonic Vessels -->
+</TargetBlacklists>
 
 <Order>
 <While condition="CurrentWorldId != 121579 and CurrentWorldId != 214956">
