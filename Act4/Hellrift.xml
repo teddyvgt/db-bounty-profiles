@@ -31,7 +31,8 @@
 		<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.45" boxSize="15" ignoreMarkers="False" stayAfterBounty="False"/>
 	</If>
 	
-	<If condition="CurrentWorldId == 109525">
+	<!-- Not sure what these are for... -->
+	<!--If condition="CurrentWorldId == 109525">
 		<MoveToActor questId="1" stepId="2" actorId="224890" isPortal="True"/>
 		<WaitTimer questId="1" stepId="2" waitTime="2500" />
 	</If>
@@ -40,7 +41,7 @@
 		<LogMessage quest="1" step="1" output="Clearing level 2." />	
 		<ToggleTargeting questId="1" combat="True" looting="True" killRadius="40" lootRadius="90" />  
 		<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.45" boxSize="15" ignoreMarkers="False" stayAfterBounty="False"/>
-	</If>	
+	</If-->	
 
 	<LoadProfile file="act4.xml" />
 </Order>
