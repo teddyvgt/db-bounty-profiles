@@ -238,7 +238,13 @@
 		<!-- Status: Needs Testing -->			
 		<HaveBounty questId="365381">
 			<LoadProfile file="365381_the_cursed_grove.xml" />
-		</HaveBounty>		
+		</HaveBounty>
+
+		<!-- The Cursed Mill -->
+		<!-- Status: Needs Testing -->	
+		<HaveBounty questId="365401">
+			<LoadProfile file="365401_the_cursed_mill.xml" />
+		</HaveBounty>
 	
 	<!-- 10 Festering Woods ===========================================================-->
 	
