@@ -41,13 +41,13 @@
       <MoveToActor questId="1" stepId="2" actorId="176038" isPortal="True" destinationWorldId="82370"/>
     </If>
     <If condition="CurrentWorldId == 71150">
-      <TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-431250552" ignoreMarkers="False"/>
+      <TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.01" boxSize="25" until="ExitFound" exitNameHash="-431250552" ignoreMarkers="False"/>
       <MoveToMapMarker questId="1" stepId="2" exitNameHash="-431250552" destinationWorldId="82370" interactRange="20"  />
     </If>
 
 		<If condition="CurrentWorldId == 82370">
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-431250551" ignoreMarkers="False">
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.01" boxSize="25" until="ExitFound" exitNameHash="-431250551" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
@@ -57,9 +57,9 @@
 		</If>
 		<If condition="CurrentWorldId == 82371">
 			<MoveToActor questId="1" stepId="2" actorId="107076" />
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" actorId="204032" boxTolerance=".10" boxSize="9" />
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" actorId="204032" boxTolerance="0.01" boxSize="25" />
 			<MoveToActor questId="1" stepId="2" actorId="204032" />
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" actorId="202277" boxTolerance=".10" boxSize="9" />
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" actorId="202277" boxTolerance="0.01" boxSize="25" />
 			<MoveToActor questId="1" stepId="2" actorId="202277" />
 			<WaitTimer questId="1" stepId="2" waitTime="10000" />
 			<MoveToActor questId="1" stepId="2" actorId="107076" />

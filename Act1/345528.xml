@@ -33,7 +33,7 @@
 	<HaveBounty questId="345528">
 	
 		<If condition="CurrentLevelAreaId == 78572">
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="1317387500" ignoreMarkers="False">
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.01" boxSize="25" until="ExitFound" exitNameHash="1317387500" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
@@ -43,7 +43,7 @@
 			<WaitTimer questId="1" stepId="11" waitTime="15000" />
 			<!-- Hack to make sure she's killed.-->
 			<HaveBounty questId="345528">
-				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
+				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.01" boxSize="25" />
 			</HaveBounty>
 			<MoveToActor questId="1" stepId="2" actorId="176003" />
 		</If>

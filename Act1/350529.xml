@@ -60,7 +60,7 @@
     <!-- Help this moron find his lost douche of a brother-->
     <If condition="CurrentWorldId == 132995">
       <MoveToActor questId="1" stepId="2" actorId="129782" />
-      <TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.01" boxSize="40" until="ObjectFound" actorId="136009" ignoreMarkers="False" />
+      <TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.01" boxSize="25" until="ObjectFound" actorId="136009" ignoreMarkers="False" />
 	  <MoveToActor questId="1" stepId="2" actorId="136009" />
       <WaitTimer questId="1" stepId="17" waitTime="5000" />
 	  <While condition="ZetaDia.ActInfo.ActiveBounty.Info.State != QuestState.Completed">

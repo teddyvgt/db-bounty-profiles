@@ -66,20 +66,20 @@
 	
 	<If condition="CurrentWorldId == 72636">
 		<!-- Find the girl -->
-		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="3892" boxTolerance="0.10" boxSize="15" ignoreMarkers="False"/> 
+		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="3892" boxTolerance="0.01" boxSize="25" ignoreMarkers="False"/> 
 		<MoveToActor questId="1" stepId="2" actorId="3892" />
 		<WaitTimer questId="1" stepId="2" waitTime="30000" />
 		<!-- Interact with farthest right one -->
-		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="174754" boxTolerance="0.10" boxSize="15" ignoreMarkers="False"/>
+		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="174754" boxTolerance="0.01" boxSize="25" ignoreMarkers="False"/>
 		<MoveToActor questId="1" stepId="2" actorId="174754" />
 		<!-- Interact with middle one -->
-		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="174753" boxTolerance="0.10" boxSize="15" ignoreMarkers="False"/>
+		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="174753" boxTolerance="0.01" boxSize="25" ignoreMarkers="False"/>
 		<MoveToActor questId="1" stepId="2" actorId="174753" />
 		<!-- Interact with farthest right one -->
-		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="102079" boxTolerance="0.10" boxSize="15" ignoreMarkers="False"/>
+		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="102079" boxTolerance="0.01" boxSize="25" ignoreMarkers="False"/>
 		<MoveToActor questId="1" stepId="2" actorId="102079" />
 		<!-- Interact with the Sarcophagus, alternate ID is 203608 if this one doesn't work -->
-		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="105754 " boxTolerance="0.10" boxSize="15" ignoreMarkers="False">
+		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="105754 " boxTolerance="0.01" boxSize="25" ignoreMarkers="False">
 			<AlternateActors>
 							<AlternateActor actorId="203608" objectDistance="300" />
 			</AlternateActors>

@@ -42,13 +42,13 @@
 			
 			<!-- Not sure yet if decaying crypt moves around -->
 			<If condition="CurrentLevelAreaId == 19952">
-				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="ObjectFound" actorId="5502" pathPrecision="40" boxSize="10" boxTolerance="0.70" />	
+				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="ObjectFound" actorId="5502" pathPrecision="40" boxSize="25" boxTolerance="0.01" />	
 			</If>
 		</If>
 
 		<!--  Decaying Crypt Level 1 -->
 		<If condition="CurrentLevelAreaId == 102300">							
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="1070710596" ignoreMarkers="False">
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.01" boxSize="25" until="ExitFound" exitNameHash="1070710596" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
@@ -69,7 +69,7 @@
 			
 			<!-- Hack to make sure we found it -->
 			<HaveBounty questId="347058">
-				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
+				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.01" boxSize="25" />
 				<MoveToActor questId="1" stepId="2" actorId="76907" />
 				<WaitTimer questId="1" stepId="1" waitTime="10000" />				
 				<MoveToActor questId="1" stepId="2" actorId="76907" />

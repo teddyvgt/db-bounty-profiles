@@ -31,7 +31,7 @@
 	<HaveBounty questId="375191">
 		<If condition="CurrentLevelAreaId == 19783">
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.55" boxSize="15" ignoreMarkers="False" />
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" />
 			<MoveToActor questId="1" stepId="2" actorId="365097"/>
 			<ToggleTargeting questId="1" combat="True" looting="True" killRadius="90" lootRadius="90" />
 			<While condition="ActorExistsAt(364559, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">

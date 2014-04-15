@@ -39,7 +39,7 @@
 <LoadProfile file="act1.xml" /></If>
 <!--if not there go a full area check-->
 <If condition="(CurrentLevelAreaId == 19952) and (not ActorExistsAt(365097, 1798, 605, 0, 100))">
-<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" actorId="365097" boxTolerance="0.10" boxSize="15" >
+<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" actorId="365097" boxTolerance="0.01" boxSize="25" >
 </TrinityExploreDungeon>
 <MoveToActor questId="1" stepId="2" actorId="365097" />
 <WaitTimer questId="1" stepId="2" waitTime="5000" />

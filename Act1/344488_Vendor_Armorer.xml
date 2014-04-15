@@ -37,7 +37,7 @@
 
 	
 		<!--  Southern Highlands -->
-		<If condition="CurrentLevelAreaId == 19940">
+		<If condition="CurrentLevelAreaId == 93632">
 		
 		<LogMessage quest="1" step="1" output="s./highlands" />	
 		
@@ -48,7 +48,7 @@
 			
 			<MoveToMapMarker questId="1" stepId="1" exitNameHash="497382903" destinationWorldId="82076" interactRange="20"  />		
 			<!--  Search for Watch Tower
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="497382903" ignoreMarkers="False">
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" boxTolerance="0.01" boxSize="25" until="ExitFound" exitNameHash="497382903" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
@@ -65,7 +65,7 @@
 		<If condition="CurrentLevelAreaId == 82326">
 		
 			<!--  Search for Watch Tower -->
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" boxTolerance="0.05" boxSize="8" until="ExitFound" exitNameHash="497382904" ignoreMarkers="False">
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" boxTolerance="0.01" boxSize="25" until="ExitFound" exitNameHash="497382904" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>				
@@ -84,7 +84,7 @@
 			<WaitTimer questId="1" stepId="1" waitTime="500" />
 
 			<!-- Find and Kill the Monster who stole the poor guys scabbard  -->
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="ObjectFound" actorId="104247" pathPrecision="10" boxSize="10" boxTolerance="0.05" objectDistance="20" >
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="ObjectFound" actorId="104247" pathPrecision="10" boxTolerance="0.01" boxSize="25" objectDistance="20" >
 				<AlternateActors>
 					<AlternateActor actorId="222404" objectDistance="10" /> <!-- scabbard -->
 				</AlternateActors>	
@@ -101,7 +101,7 @@
 			<HaveBounty questId="344488">
 				<LogMessage quest="1" step="1" output="Maybe something went wrong...fully exploring dungeon" />	
 				<MoveToActor questId="1" stepId="1" actorId="81609" interactRange="8" name="A1_UniqueVendor_Armorer-3541"  pathPrecision="5" pathPointLimit="250" statusText="" /> 				
-				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
+				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="FullyExplored" boxTolerance="0.01" boxSize="25" />
 				<MoveToActor questId="1" stepId="1" actorId="222404" interactRange="9" name="a1dun_highlands_JeweledScabbard-4736"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			
 				<MoveToActor questId="1" stepId="1" actorId="81609" interactRange="8" name="A1_UniqueVendor_Armorer-3541"  pathPrecision="5" pathPointLimit="250" statusText="" /> 				
 			</HaveBounty>	

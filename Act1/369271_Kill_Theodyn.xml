@@ -53,7 +53,7 @@
 		<HaveBounty questId="369271">	
 			<!-- Look for him -->
 			<LogMessage quest="1" step="2" output="We're hunting for the asshat known as Theodyn..." />
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="FullyExplored" boxTolerance="0.01" boxSize="25" />
 		</HaveBounty>
 		
 	</HaveBounty>

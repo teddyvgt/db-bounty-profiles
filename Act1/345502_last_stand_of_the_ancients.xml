@@ -39,7 +39,7 @@
 		<If condition="CurrentLevelAreaId == 19953">
 
 			<!-- Search for the corpses near the thing -->			
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="ObjectFound" actorId="188119" pathPrecision="40" boxTolerance="0.05" boxSize="20"  />				
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="ObjectFound" actorId="188119" pathPrecision="40" boxTolerance="0.01" boxSize="25"  />				
 			<MoveToActor questId="312429" stepId="2" actorId="102008" interactRange="11" name="Temp_Story_Trigger_Enabled-6907"  pathPrecision="5" pathPointLimit="250" statusText="" /> 						
 			<UseObject questId="1" stepId="1" actorId="102008" isPortal="False" />		
 			
@@ -47,7 +47,7 @@
 			<WaitTimer questId="1" stepId="1" waitTime="20000" />				
 			
 			<!-- Try to find the stragglers - move to column at base -->
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="ObjectFound" actorId="105303" pathPrecision="5" boxTolerance="0.05" boxSize="10"  />			
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="ObjectFound" actorId="105303" pathPrecision="5" boxTolerance="0.01" boxSize="25"  />			
 			<WaitTimer questId="1" stepId="1" waitTime="1000" />	
 			
 			<!-- Try to find ghouls -->			
@@ -61,7 +61,7 @@
 			<!-- Hack to make sure we found it -->
 			<HaveBounty questId="345502">
 				<LogMessage quest="1" step="1" output="hmmm should be finished by now.. exploring entire area." />	
-				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
+				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="FullyExplored" boxTolerance="0.01" boxSize="25" />
 				<MoveToActor questId="1" stepId="2" actorId="188119" />
 			</HaveBounty>		
 			

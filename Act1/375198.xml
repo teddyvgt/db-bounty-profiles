@@ -32,7 +32,7 @@
     <!-- Look for Shrine -->
 	<HaveBounty questId="375198">
     <If condition="CurrentLevelAreaId == 19780">
-      <TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" actorId="364601" boxTolerance="0.10" boxSize="15" >
+      <TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" actorId="364601" boxTolerance="0.01" boxSize="25" >
       <PrioritizeScenes>
         <PriorityScene sceneID="1884" />
       </PrioritizeScenes>

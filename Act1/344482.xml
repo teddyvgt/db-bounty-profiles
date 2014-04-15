@@ -41,11 +41,11 @@
     </If>    
     <!--Explore for Caves-->
     <If condition="CurrentWorldId == 71150">
-        <TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-1187439574" ignoreMarkers="False"/>
+        <TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.01" boxSize="25" until="ExitFound" exitNameHash="-1187439574" ignoreMarkers="False"/>
 			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1187439574" destinationWorldId="80057" interactRange="20"  />
 		</If>		
 		<If condition="CurrentWorldId == 80057">
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.01" boxSize="25" />
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</If>
 	</HaveBounty>

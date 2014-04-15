@@ -90,7 +90,7 @@
 		 <!-- Inside Scavenger's Den Level 2-->
 		<If condition="CurrentWorldId == 81164">
 			<TrinitySetQuesting />
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" />
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.01" boxSize="25" />
 			<WaitTimer questId="1" stepId="1" waitTime="1000" />
 		</If>
 	</HaveBounty>

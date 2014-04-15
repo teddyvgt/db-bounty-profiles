@@ -34,7 +34,7 @@
 		
 		<If condition="IsActiveQuest(72801) and IsActiveQuestStep(36) and CurrentWorldId == 58983">
       <!-- Find Chamber of Suffering -->
-      <TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" boxTolerance="0.18" boxSize="18" until="ExitFound" actorId="158944" exitNameHash="356899046">
+      <TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" boxTolerance="0.01" boxSize="25" until="ExitFound" actorId="158944" exitNameHash="356899046">
         <PrioritizeScenes>
           <PriorityScene sceneName="ButcherLair" />
         </PrioritizeScenes>
@@ -61,7 +61,7 @@
     </If>
     <While condition="CurrentWorldId == 58983">
       <!-- Chamber of Suffering Death Handling: The mapMarker & actor are always visible on death... -->
-      <TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.18" boxSize="18" until="ExitFound" actorId="158944" exitNameHash="356899046">
+      <TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.01" boxSize="25" until="ExitFound" actorId="158944" exitNameHash="356899046">
         <PrioritizeScenes>
           <PriorityScene sceneName="ButcherLair" />
         </PrioritizeScenes>

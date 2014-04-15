@@ -35,7 +35,7 @@
 
 		<!--  Halls of Agony Level 3  -->
 		<If condition="CurrentLevelAreaId == 19776">
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" />				
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.01" boxSize="25" />				
 		</If>
 	
 	</HaveBounty> 

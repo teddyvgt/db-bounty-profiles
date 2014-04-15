@@ -32,7 +32,7 @@
     <!-- Look for him -->
 	<HaveBounty questId="345546">
 		<If condition="CurrentWorldId == 58982">
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" actorId="221574" boxTolerance="0.10" boxSize="15" ignoreMarkers="False"/> 
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="ObjectFound" actorId="221574" boxTolerance="0.01" boxSize="25" ignoreMarkers="False"/> 
 			<MoveToActor questId="1" stepId="2" actorId="221574" />
 			<WaitTimer questId="1" stepId="2" waitTime="30000" />
 			<MoveToActor questId="1" stepId="2" actorId="218071" />

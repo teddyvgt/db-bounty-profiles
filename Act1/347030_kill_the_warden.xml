@@ -35,7 +35,7 @@
 	
 		<!--  Halls of Agony Level 2 -->
 		<If condition="CurrentLevelAreaId == 19775">
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="1241437688" ignoreMarkers="False">
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.01" boxSize="25" until="ExitFound" exitNameHash="1241437688" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
@@ -45,7 +45,7 @@
 		
 		<!--  Highlands Passage -->
 		<If condition="CurrentWorldId == 87707">								
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="1303804501" ignoreMarkers="False">
+			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.01" boxSize="25" until="ExitFound" exitNameHash="1303804501" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
@@ -64,7 +64,7 @@
 			<!-- Hack to make sure we found him -->		
 			<HaveBounty questId="345502">
 				<LogMessage quest="1" step="1" output="hmmm.. something went wrong, fully exploring area" />	
-				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="FullyExplored" boxTolerance="0.10" boxSize="5" />
+				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="FullyExplored" boxTolerance="0.01" boxSize="25" />
 				<MoveToActor questId="1" stepId="2" actorId="188119" />
 			</HaveBounty>					
 						

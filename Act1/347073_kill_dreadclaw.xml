@@ -35,7 +35,7 @@
 	
 		<!-- Look for him -->
 		<LogMessage quest="1" step="2" output="Sufferin Succotash... we're roaming for that booty..." />
-		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" >
+		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.01" boxSize="25" >
 			<IgnoreScenes>
 			  <IgnoreScene sceneName="_S01" />
 			</IgnoreScenes>
