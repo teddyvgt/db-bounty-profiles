@@ -1,0 +1,71 @@
+<!-- X1_Bounty_A1_Wilderness_Clear_DenOfTheFallen2 (345488) -->
+<Profile>
+<Name>Clear the Den of the Fallen (345488)</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
+	<UseWaypoint waypointNumber="6" questId="1"/>
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
+	<HaveBounty questId="345488">
+
+		<SafeMoveTo questId="312429" stepId="2" x="2876" y="2115" z="-3" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		<MoveToMapMarker questId="1" stepId="2" exitNameHash="-2043651426" destinationWorldId="135193" interactRange="20"  />
+		<If condition="CurrentWorldId == 71150">
+			<SafeMoveTo questId="312429" stepId="2" x="2848" y="1986" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-2043651426" destinationWorldId="135193" interactRange="20"  />
+		</If>
+		<If condition="CurrentWorldId == 71150">		
+			<SafeMoveTo questId="312429" stepId="2" x="2814" y="1914" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-2043651426" destinationWorldId="135193" interactRange="20"  />
+		</If>		
+		<If condition="CurrentWorldId == 71150">		
+			<SafeMoveTo questId="312429" stepId="2" x="2765" y="2003" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-2043651426" destinationWorldId="135193" interactRange="20"  />
+		</If>
+		<If condition="CurrentWorldId == 71150">		
+			<SafeMoveTo questId="312429" stepId="2" x="2541" y="2107" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-2043651426" destinationWorldId="135193" interactRange="20"  />
+		</If>
+		<If condition="CurrentWorldId == 71150">		
+			<SafeMoveTo questId="312429" stepId="2" x="2410" y="2051" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-2043651426" destinationWorldId="135193" interactRange="20"  />
+		</If>
+		<If condition="CurrentWorldId == 71150">		
+			<SafeMoveTo questId="312429" stepId="2" x="2462" y="1779" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-2043651426" destinationWorldId="135193" interactRange="20"  />
+		</If>		
+		<If condition="CurrentWorldId == 71150">		
+			<SafeMoveTo questId="312429" stepId="2" x="2632" y="1895" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 		
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-2043651426" destinationWorldId="135193" interactRange="20"  />
+		</If>
+		
+		<!-- Den of the Fallen Level 1 -->
+		<If condition="CurrentWorldId == 135193">
+			<WaitTimer questId="1" stepId="2" waitTime="2000" />
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-711350153" ignoreMarkers="False">
+				<PrioritizeScenes>
+					<PriorityScene sceneName="Exit" />
+				</PrioritizeScenes>
+				<IgnoreScenes>
+					<IgnoreScene sceneName="_MainGraveyard_" />
+				</IgnoreScenes>				
+			</TrinityExploreDungeon>
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-711350153" destinationWorldId="194231" interactRange="20"  />
+			<WaitTimer questId="72095" stepId="11" waitTime="1000" />
+		</If>	
+		
+		<!-- Den of the Fallen Level 2 -->		
+		<If condition="CurrentWorldId == 194231">
+			<TrinitySetQuesting />
+			<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" stayAfterBounty="False"/>
+			<WaitTimer questId="1" stepId="2" waitTime="2000" />
+		</If>				
+		
+	</HaveBounty>
+	<LoadProfile file="act1.xml" />
+	
+</Order>
+</Profile>

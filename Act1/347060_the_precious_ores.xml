@@ -1,0 +1,56 @@
+<!--  -->
+<Profile>
+<Name>The Precious Ores (347060)</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<UseWaypoint waypointNumber="8" questId="1"/>
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
+	<HaveBounty questId="347060">
+	
+		<!--Find Cave 1-->
+		<If condition="CurrentWorldId == 71150">
+		  <SafeMoveTo questId="1" stepId="2" x="2145.583" y="663.1968" z="0.1" />
+		  <SafeMoveTo questId="1" stepId="2" x="2062.841" y="900.3805" z="-1.179883" />
+		  <SafeMoveTo questId="1" stepId="2" x="2062.841" y="900.3805" z="-1.179883" />
+		</If>
+		
+		<!--Enter Cave 1-->
+		<If condition="CurrentWorldId == 71150">
+		  <MoveToActor questId="1" stepId="2" actorId="176038" isPortal="True" destinationWorldId="82370"/>
+		</If>
+		<If condition="CurrentWorldId == 71150">
+		  <TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-431250552" ignoreMarkers="False"/>
+		  <MoveToMapMarker questId="1" stepId="2" exitNameHash="-431250552" destinationWorldId="82370" interactRange="20"  />
+		</If>
+
+		<If condition="CurrentWorldId == 82370">
+			<WaitTimer questId="1" stepId="2" waitTime="2000" />
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-431250551" ignoreMarkers="False">
+				<PrioritizeScenes>
+					<PriorityScene sceneName="Exit" />
+				</PrioritizeScenes>
+			</TrinityExploreDungeon>
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-431250551" destinationWorldId="82371" interactRange="20"  />
+			<WaitTimer questId="72095" stepId="11" waitTime="1000" />
+		</If>
+		
+		<If condition="CurrentWorldId == 82371">
+			<MoveToActor questId="1" stepId="2" actorId="107076" />
+			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="204032" boxTolerance=".10" boxSize="9" />
+			<MoveToActor questId="1" stepId="2" actorId="204032" />
+			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="202277" boxTolerance=".10" boxSize="9" />
+			<MoveToActor questId="1" stepId="2" actorId="202277" />
+			<WaitTimer questId="1" stepId="2" waitTime="10000" />
+			<MoveToActor questId="1" stepId="2" actorId="107076" />
+			<WaitTimer questId="1" stepId="2" waitTime="7000" />
+		</If>
+		
+	</HaveBounty>
+	<LoadProfile file="act1.xml" />
+	
+</Order>
+</Profile>

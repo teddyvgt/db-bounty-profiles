@@ -1,6 +1,6 @@
 <!-- X1_Bounty_A1_Highlands_Northern_Kill_Theodyn (369271) -->
 <Profile>
-<Name>Kill Theodyn</Name>
+<Name>Kill Theodyn (369271)</Name>
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
@@ -8,63 +8,47 @@
 </TargetBlacklists>
 <Order>
 
-	<If condition="Me.IsInTown==False">   
-		<TrinityLoadProfile nodelay="True" profile="act1.xml" />       
-	</If>
-
-	<If condition="Me.IsInTown ">
-		<!--Act 1 WP-->
-		<If condition="CurrentWorldId == 332336">
-			<UseWaypoint questId="1" stepId="1" actorId="223757" x="401.7305" y="555.0093" z="24.90835" waypointNumber="14"/>
-		</If>
-		<!--Act 2 WP-->
-		<If condition="CurrentWorldId == 161472">
-			<UseWaypoint questId="1" stepId="1" actorId="6442" x="324.8699" y="291.0312" z="1.645629" waypointNumber="14"/> 
-		</If>
-		<!--Act 3/4 WP-->
-		<If condition="CurrentWorldId == 172909">
-			<UseWaypoint questId="1" stepId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="14"/> 
-		</If>
-		<!--Act 4 WP-->
-		<If condition="CurrentWorldId == 304235">
-			<UseWaypoint questId="1" stepId="1" actorId="6442" x="557.5455" y="525.3394" z="2.796465" waypointNumber="14"/> 
-		</If>
-		<WaitTimer questId="1" stepId="1" waitTime="1000" />
-	</If>
-
-    <!-- Only do the thing if we have the bounty for it -->
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
+	<UseWaypoint waypointNumber="14" questId="1"/>
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
 	<HaveBounty questId="369271">	
 	
-		<!-- Waypoint Experiment to try and avoid bot going into southern highlands -->
-		<SafeMoveTo questId="1" stepId="2" x="1725" y="3855" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="1" stepId="2" x="1702" y="4059" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="1" stepId="2" x="1616" y="4112" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="1" stepId="2" x="1550" y="3960" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="1" stepId="2" x="1438" y="4054" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="1" stepId="2" x="1334" y="3958" z="61" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="1" stepId="2" x="1274" y="3887" z="78" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="1" stepId="2" x="1124" y="3716" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="1" stepId="2" x="1041" y="3865" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="1" stepId="2" x="1147" y="3843" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="1" stepId="2" x="912" y="3957" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="1" stepId="2" x="1226" y="3958" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="1" stepId="2" x="1156" y="3960" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		<!-- Attempt to find him efficiently -->
+		<SafeMoveTo questId="312429" stepId="2" x="1725" y="3855" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		<SafeMoveTo questId="312429" stepId="2" x="1702" y="4059" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		<SafeMoveTo questId="312429" stepId="2" x="1616" y="4112" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		<SafeMoveTo questId="312429" stepId="2" x="1550" y="3960" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		<SafeMoveTo questId="312429" stepId="2" x="1438" y="4054" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		<SafeMoveTo questId="312429" stepId="2" x="1334" y="3958" z="61" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		<HaveBounty questId="369271">		
+			<SafeMoveTo questId="312429" stepId="2" x="1274" y="3887" z="78" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		</HaveBounty>	
+		<HaveBounty questId="369271">				
+			<SafeMoveTo questId="312429" stepId="2" x="1124" y="3716" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		</HaveBounty>			
+		<HaveBounty questId="369271">			
+			<SafeMoveTo questId="312429" stepId="2" x="1041" y="3865" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		</HaveBounty>	
+		<HaveBounty questId="369271">			
+			<SafeMoveTo questId="312429" stepId="2" x="1147" y="3843" z="80" pathPrecision="5" pathPointLimit="250" statusText="" />
+		</HaveBounty>		
+		<HaveBounty questId="369271">
+			<SafeMoveTo questId="312429" stepId="2" x="1226" y="3958" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		</HaveBounty>	
+		<HaveBounty questId="369271">
+			<SafeMoveTo questId="312429" stepId="2" x="1156" y="3960" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		</HaveBounty>		
+		
+		<!-- Search Everywhere -->
+		<TrinityExploreDungeon questId="1" stepId="1" until="FullyExplored" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">			
+			<IgnoreScenes>        
+				<IgnoreScene sceneName="_N01" /><!-- Southern Highlands--> 	
+			</IgnoreScenes>
+		</TrinityExploreDungeon>			
 
-		<HaveBounty questId="369271">	
-			<!-- Look for him -->
-			<LogMessage quest="1" step="2" output="We're hunting for the asshat known as Theodyn..." />
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="1" until="FullyExplored" boxTolerance="0.01" boxSize="25" />
-		</HaveBounty>
 		
 	</HaveBounty>
-	
-	<LogMessage quest="1" step="1" output="X1_Bounty_A1_Highlands_Northern_Kill_Theodyn (369271) seems to be finished" />	
-	
-    <!-- Portal Home -->
-    <WaitTimer questId="1" stepId="2" waitTime="500" />	
-    <TrinityTownPortal questId="1" stepId="2" />
-    <WaitTimer questId="1" stepId="2" waitTime="2500" />
-	<LoadProfile nodelay="True" file="act1.xml" />
+	<LoadProfile file="act1.xml" />
 	
 </Order>
 </Profile>
