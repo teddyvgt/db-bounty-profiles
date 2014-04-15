@@ -31,8 +31,9 @@
       <!-- Pinnacle of Heaven -->
 	  <MoveToActor questId="1" stepId="2" actorId="161279" isPortal="True" interactRange="20"/>
 	  <WaitTimer questId="1" stepId="2" waitTime="1000" />
-	  <SafeMoveTo questId="1" stepId="2" name="Diablo" pathPrecision="10" x="360" y="358" z="40"/>
-	  <While condition="Me.IsInBossEncounter">
+	  <!--SafeMoveTo questId="1" stepId="2" name="Diablo" pathPrecision="10" x="360" y="358" z="40"/-->
+	  <SafeMoveTo questId="312429" stepId="2" x="356" y="355" z="41" /> 
+		<While condition="Me.IsInBossEncounter">
 	  <WaitTimer questId="1" stepId="2" waitTime="1000" />
 	  </While>
 	  <!-- try to counteract the healthglobe run -->
