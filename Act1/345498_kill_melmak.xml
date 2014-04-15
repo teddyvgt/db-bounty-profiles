@@ -9,10 +9,11 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
 	<UseWaypoint waypointNumber="8" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
-	<HaveBounty questId="369243">	
+	<HaveBounty questId="345498">	
 	
 		<!-- Known Locations -->	
-		<SafeMoveTo questId="312429" stepId="2" x="2404" y="988" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		<SafeMoveTo questId="1" stepId="2" x="2404" y="988" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="1" stepId="2" x="2127.217" y="1408.609" z="0.1" pathPrecision="5" pathPointLimit="250" statusText="" />
 
 		<!-- Look for him -->
 		<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">
