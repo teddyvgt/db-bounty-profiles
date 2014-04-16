@@ -13,6 +13,10 @@
       </While>
 
       <If condition="CurrentWorldId == 95804">
+        <While condition="CurrentLevelAreaId != 154644">
+          <UseWaypoint questId="1" waypointNumber="31" />
+          <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        </While>
         <!-- <TrinityExploreDungeon questId="346190" stepId="1" until="ObjectFound" actorId="176003" boxTolerance="0.10" boxSize="15" />-->
         <!--<TrinityExploreDungeon questId="349206" stepId="2" until="ObjectFound" actorId="54882" boxTolerance="0.40" boxSize="15" />-->
         <SafeMoveTo questId="312429" stepId="2" x="4183" y="393" z="-2" pathPrecision="5" pathPointLimit="250" statusText="" />
