@@ -15,8 +15,14 @@
 		<If condition="CurrentWorldId == 71150">
 		
 			<!-- Find the cellar -->
-			<ToggleTargeting questId="1" stepId="1" killRadius="25" />
-			<SafeMoveTo questId="1" stepId="2" pathPrecision="20" x="2289.81" y="2562.356" z="27.10001" />
+			<ToggleTargeting questId="1" stepId="1" killRadius="25" />			
+			<SafeMoveTo questId="312429" stepId="2" x="2005" y="2758" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="1994" y="2652" z="39" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="1991" y="2596" z="27" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="2109" y="2507" z="27" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="2263" y="2499" z="27" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="2304" y="2545" z="27" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="2293" y="2561" z="27" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
 			<MoveToMapMarker questId="1" stepId="2" exitNameHash="1107870150" destinationWorldId="106752" interactRange="20"  />
 			<WaitTimer questId="1" stepId="2" waitTime="2000" />
 			
@@ -35,7 +41,7 @@
 			</If>
 			
 			<!-- Kill Stuff -->
-			<WaitTimer questId="1" stepId="2" waitTime="10000" />			
+			<WaitTimer questId="1" stepId="2" waitTime="5000" />			
 			
 			<!-- If not completed, keep killing things until it is complete-->
 			<HaveBounty questId="369944">
