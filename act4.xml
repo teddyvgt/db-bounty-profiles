@@ -7,7 +7,7 @@
 <!--This is the Beging of your ORder list-->
 <Order>
 	<LogMessage quest="1" step="1" output="[BountyProfiles] Ensure that you delete BountyProfile's Plugin and update Trinity *VIA SVN* before reporting errors!" />
-	<LoadProfile file="Act4/act4.xml" />
+	<LoadProfile file="Acts/A4/act4.xml" />
 </Order>
 
 </Profile>
