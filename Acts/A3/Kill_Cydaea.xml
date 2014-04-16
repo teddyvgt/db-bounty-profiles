@@ -1,0 +1,82 @@
+<Profile>
+  <Name>Kill_Cydeaea</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>true</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+
+  <Order>
+    <HaveBounty questId="349224">
+
+      <While condition="CurrentWorldId != 119641 and CurrentWorldId != 139272 and CurrentWorldId != 119650">
+        <UseWaypoint questId="1" waypointNumber="37" />
+        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+      </While>
+
+      <If condition="CurrentWorldId == 119641">
+        <!-- <TrinityExploreDungeon questId="346190" stepId="1" until="ObjectFound" actorId="176003" boxTolerance="0.10" boxSize="15" />-->
+        
+        <TrinityExploreDungeon questId="349224" stepId="2" until="ExitFound" exitNameHash="43541819" actorId="176001" pathPrecision="25" boxSize="20" boxTolerance="0.2" objectDistance="45">
+          <AlternateActors>
+            <AlternateActor actorId="0" objectDistance="45" />
+          </AlternateActors>
+          <PriorityScenes>
+            <PriorityScene sceneName="Exit" />
+          </PriorityScenes>
+          <IgnoreScenes>
+            <IgnoreScene sceneName="_N_" />
+            <IgnoreScene sceneName="_S_" />
+            <IgnoreScene sceneName="_E_" />
+            <IgnoreScene sceneName="_W_" />
+          </IgnoreScenes>
+        </TrinityExploreDungeon>
+        <!--<SafeMoveTo questId="349224" stepId="2" x="978" y="1018" z="-10" pathPrecision="5" pathPointLimit="250"  />
+        <SafeMoveTo questId="349224" stepId="2" x="973" y="1022" z="-10" pathPrecision="5" pathPointLimit="250"  />
+        <SafeMoveTo questId="349224" stepId="2" x="1062" y="929" z="-20" pathPrecision="5" pathPointLimit="250"  />
+        <SafeMoveTo questId="349224" stepId="2" x="1196" y="914" z="-30" pathPrecision="5" pathPointLimit="250"  />
+        <SafeMoveTo questId="349224" stepId="2" x="1278" y="1058" z="-41" pathPrecision="5" pathPointLimit="250"  />
+        <SafeMoveTo questId="349224" stepId="2" x="1246" y="1193" z="-50" pathPrecision="5" pathPointLimit="250"  />
+        <SafeMoveTo questId="349224" stepId="2" x="1140" y="1260" z="-60" pathPrecision="5" pathPointLimit="250"  />
+        <SafeMoveTo questId="349224" stepId="2" x="1033" y="1172" z="-60" pathPrecision="5" pathPointLimit="250"  />
+        <SafeMoveTo questId="349224" stepId="2" x="1088" y="1038" z="-122" pathPrecision="5" pathPointLimit="250"  />-->
+
+        <WaitTimer questId="1" stepId="2" waitTime="500" />
+        <MoveToMapMarker questId="349224" stepId="2" markerNameHash="43541819" actorId="176001" interactRange="20"
+ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="139272"  />
+
+        <WaitTimer questId="1" stepId="2" waitTime="500" />
+      </If>
+
+      <If condition="CurrentWorldId == 139272">
+        <TrinityExploreDungeon questId="349224" stepId="2" until="ExitFound" exitNameHash="43541885" actorId="161278" pathPrecision="25" boxSize="20" boxTolerance="0.2" objectDistance="45">
+          <AlternateActors>
+            <AlternateActor actorId="0" objectDistance="45" />
+          </AlternateActors>
+          <PriorityScenes>
+            <PriorityScene sceneName="Exit" />
+          </PriorityScenes>
+          <IgnoreScenes>
+            <IgnoreScene sceneName="_N_" />
+            <IgnoreScene sceneName="_S_" />
+            <IgnoreScene sceneName="_E_" />
+            <IgnoreScene sceneName="_W_" />
+          </IgnoreScenes>
+        </TrinityExploreDungeon>
+        <WaitTimer questId="1" stepId="2" waitTime="500" />
+        <!--<MoveToMapMarker questId="349224" stepId="2" markerNameHash="43541885" actorId="161278" isPortal="True" destinationWorldId="119650" />-->
+        <!--<MoveToMapMarker questId="312429" stepId="2" x="1093" y="887" z="-88" markerNameHash="43541885" actorId="161278" interactRange="20"
+        pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="119650" />-->
+        <UsePortal questId="349224" stepId="1" actorId="161278" destinationWorldId="119650" interactRange="40" portalMarkerHash="43541885" x="1083" y="1043" z="-70.48186" />
+        <WaitTimer questId="1" stepId="2" waitTime="500" />
+      </If>
+      <If condition="CurrentWorldId == 119650">
+        <SafeMoveTo questId="349224" stepId="2" x="1268" y="1089" z="41" pathPrecision="5" pathPointLimit="250"  />
+        <SafeMoveTo questId="349224" stepId="2" x="1152" y="1093" z="0" pathPrecision="5" pathPointLimit="250"  />
+        <While condition="Me.IsInBossEncounter">
+          <WaitTimer questId="1" stepId="2" waitTime="1000" />
+        </While>
+      </If>
+    </HaveBounty>
+
+    <LoadProfile file="act3.xml" />
+  </Order>
+</Profile>

@@ -1,24 +1,307 @@
 <Profile>
-<Name>Act 3</Name>
-<KillMonsters>True</KillMonsters>
-<PickupLoot>true</PickupLoot>
-<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" maxDeaths="5" numGames="-1" />
-<Order>
 
-	<LogMessage quest="1" step="1" output=">> ACT 3 IS NOT SUPPORTED" />
-	<WaitTimer questId="1" stepId="1" waitTime="500"/>
-	
-	
-	
-	<!-- ACT profiles go here -->
-	
+  <Name>Act 3 - Loader</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>true</PickupLoot>
+  <GameParams quest="101758" step="1" act="OpenWorld" difficulty="Normal" resumeFromSave="False" isPrivate="True" numGames="-1"  />
+  <!--This is the Beging of your ORder list-->
+  <Order>
+    <WaitTimer questId="1" stepId="2" waitTime="1500" />
+    <While condition="True">
+      <WaitTimer questId="1" stepId="2" waitTime="500" />
 
 
-	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('All')">
-		<TrinityLoadProfile file="All_Distributer.xml" />			
-	</If>		
-	
-	<ReloadProfile />
+      <!-- Act 3 Bounties -->
+      <LogMessage quest="1" step="1" output="Act 3 Bounties" />
 
-</Order>
+
+      <!--bugggy-->
+      <!--
+      
+ 
+
+      <HaveBounty questId="346204">
+        <LoadProfile file="Kill_Garganug.xml" />
+      </HaveBounty>
+      <HaveBounty questId="369825">
+        <LoadProfile file="Event_InfernalSky.xml" />
+      </HaveBounty>
+      <HaveBounty questId="349214">
+        <LoadProfile file="Kill_Ghallem.xml" />
+      </HaveBounty>
+      -->
+
+      <!--Zotan-->
+      <!--Kill_Lashtongue-->
+      <HaveBounty questId="349117">
+        <LoadProfile file="Kill_Lashtongue.xml"/>
+      </HaveBounty>
+      <!--kill_ghom-->
+      <HaveBounty questId="346166">
+        <LoadProfile file="kill_ghom.xml"/>
+      </HaveBounty>
+      <!--Kill_CaptainDonnAdams-->
+      <HaveBounty questId="346154">
+        <LoadProfile file="Kill_CaptainDonnAdams.xml"/>
+      </HaveBounty>
+      <!--BloodClanAssault-->
+      <HaveBounty questId="369868">
+        <LoadProfile file="BloodClanAssault.xml"/>
+      </HaveBounty>
+      <!--Kill_Growlfang-->
+      <HaveBounty questId="356422">
+        <LoadProfile file="Kill_Growlfang.xml"/>
+      </HaveBounty>
+      <!--Kill_ViciousGrayTurkey-->
+      <HaveBounty questId="349121">
+        <LoadProfile file="Kill_ViciousGrayTurkey.xml"/>
+      </HaveBounty>
+      <!--Kill_Sawtooth-->
+      <HaveBounty questId="349230">
+        <LoadProfile file="Kill_Sawtooth.xml"/>
+      </HaveBounty>
+      <!--Clear_TheBarracks2-->
+      <HaveBounty questId="349210">
+        <LoadProfile file="Clear_TheBarracks2.xml"/>
+      </HaveBounty>
+      <!--Kill_Valifahr-->
+      <HaveBounty questId="346228">
+        <LoadProfile file="Kill_Valifahr.xml"/>
+      </HaveBounty>
+      <!--Clear_ForwardBarracks-->
+      <HaveBounty questId="349198">
+        <LoadProfile file="Clear_ForwardBarracks.xml" />
+      </HaveBounty>
+      <!--Kill_Ganthar-->
+      <HaveBounty questId="369319">
+        <LoadProfile file="Kill_Ganthar.xml" />
+      </HaveBounty>
+      <!--Kill_Crabbs-->
+      <HaveBounty questId="349234">
+        <LoadProfile file="Kill_Crabbs.xml" />
+      </HaveBounty>
+	  <!--Kill_Belagg-->
+      <HaveBounty questId="346162">
+        <LoadProfile file="Kill_Belagg.xml" />
+      </HaveBounty>
+
+      <!--Vera-->
+      <!--Clear_TheUnderbridge-->
+      <HaveBounty questId="349208">
+        <LoadProfile file="Clear_TheUnderbridge.xml" />
+      </HaveBounty>
+      <!--Clear_IcefallCaves2-->
+      <HaveBounty questId="346192">
+        <LoadProfile file="Clear_IcefallCaves2.xml" />
+      </HaveBounty>
+      <!--Clear_CavernsOfFrost2-->
+      <HaveBounty questId="346190">
+        <LoadProfile file="Clear_CavernsOfFrost2.xml" />
+      </HaveBounty>
+      <!--Kill_Siegebreaker-->
+      <HaveBounty questId="349242">
+        <LoadProfile file="Kill_Siegebreaker.xml" />
+      </HaveBounty>
+      <!--Kill_Brimstone-->
+      <HaveBounty questId="346235">
+        <LoadProfile file="Kill_Brimstone.xml" />
+      </HaveBounty>
+      <!--Kill_Gholash-->
+      <HaveBounty questId="349238">
+        <LoadProfile file="Kill_Gholash.xml" />
+      </HaveBounty>
+      <!--Event_BloodTies-->
+      <HaveBounty questId="349196">
+        <LoadProfile file="Event_BloodTies.xml" />
+      </HaveBounty>
+      <!--Kill_Greelode-->
+      <HaveBounty questId="369323">
+        <LoadProfile file="Kill_Greelode.xml" />
+      </HaveBounty>
+      <!--Kill_Azmodan-->
+      <HaveBounty questId="349244">
+        <LoadProfile file="Kill_Azmodan.xml" />
+      </HaveBounty>
+      <!--Event_BlazeOfGlory-->
+      <HaveBounty questId="346184">
+        <LoadProfile file="Event_BlazeOfGlory.xml" />
+      </HaveBounty>
+      <!--Kill_Aloysius-->
+      <HaveBounty questId="349119">
+        <LoadProfile file="Kill_Aloysius.xml" />
+      </HaveBounty>
+      <!--Event_DeathChill-->
+      <HaveBounty questId="369851">
+        <LoadProfile file="Event_DeathChill.xml" />
+      </HaveBounty>
+      <!--Kill_Allucayrd-->
+      <HaveBounty questId="369329">
+        <LoadProfile file="Kill_Allucayrd.xml" />
+      </HaveBounty>
+      <!--Kill_Gorog-->
+      <HaveBounty questId="349228">
+        <LoadProfile file="Kill_Gorog.xml" />
+      </HaveBounty>
+      <!--Kill_Cydaea-->
+      <HaveBounty questId="349224">
+        <LoadProfile file="Kill_Cydaea.xml" />
+      </HaveBounty>
+      <!--Kill_Brutu-->
+      <HaveBounty questId="349222">
+        <LoadProfile file="Kill_Brutu.xml" />
+      </HaveBounty>
+      <!--Kill_Snitchley-->
+      <HaveBounty questId="349298">
+        <LoadProfile file="Kill_Snitchley.xml" />
+      </HaveBounty>
+      <!--Event_KeepBlacksmith-->
+      <HaveBounty questId="346146">
+        <LoadProfile file="Event_KeepBlacksmith.xml" />
+      </HaveBounty>
+      <!--Kill_Thromp-->
+      <HaveBounty questId="369312">
+        <LoadProfile file="Kill_Thromp.xml" />
+      </HaveBounty>
+      <!--Kill_Marchocyas-->
+      <HaveBounty questId="346132">
+        <LoadProfile file="Kill_Marchocyas.xml" />
+      </HaveBounty>
+      <!--Kill_CaptainDale-->
+      <HaveBounty questId="346157">
+        <LoadProfile file="Kill_CaptainDale.xml" />
+      </HaveBounty>
+      <!--Kill_Severclaw-->
+      <HaveBounty questId="346225">
+        <LoadProfile file="Kill_Severclaw.xml" />
+      </HaveBounty>
+      <!--Kill_Axgore-->
+      <HaveBounty questId="346232">
+        <LoadProfile file="Kill_Axgore.xml" />
+      </HaveBounty>
+      <!--Event_Triage-->
+      <HaveBounty questId="346180">
+        <LoadProfile file="Event_Triage.xml" />
+      </HaveBounty>
+      <!--Clear_TheFoundry2-->
+      <HaveBounty questId="349206">
+        <LoadProfile file="Clear_TheFoundry2.xml" />
+      </HaveBounty>
+      <!--Clear_BattlefieldStores2-->
+      <HaveBounty questId="349204">
+        <LoadProfile file="Clear_BattlefieldStores2.xml" />
+      </HaveBounty>
+      <!--Kill_Thornback-->
+      <HaveBounty questId="346148">
+        <LoadProfile file="Kill_Thornback.xml" />
+      </HaveBounty>
+      <!--Kill_Barrucus-->
+      <HaveBounty questId="369326">
+        <LoadProfile file="Kill_Barrucus.xml" />
+      </HaveBounty>
+      <!--Event_ForsakenSoldiers-->
+      <HaveBounty questId="369853">
+        <LoadProfile file="Event_ForsakenSoldiers.xml" />
+      </HaveBounty>
+      <!--Clear_CrydersOutpost-->
+      <HaveBounty questId="346188">
+        <LoadProfile file="Clear_CrydersOutpost.xml" />
+      </HaveBounty>
+      <!--Kill_Obis-->
+      <HaveBounty questId="369316">
+        <LoadProfile file="Kill_Obis.xml" />
+      </HaveBounty>
+      <!--Kill_Gormungandr-->
+      <HaveBounty questId="349232">
+        <LoadProfile file="Kill_Gormungandr.xml" />
+      </HaveBounty>
+      <!--Kill_Bricktop-->
+      <HaveBounty questId="346128">
+        <LoadProfile file="Kill_Bricktop.xml" />
+      </HaveBounty>
+      <!--Kill_Axegrave-->
+      <HaveBounty questId="349115">
+        <LoadProfile file="Kill_Axegrave.xml" />
+      </HaveBounty>
+      <!--Kill_Mhawgann-->
+      <HaveBounty questId="346222">
+        <LoadProfile file="Kill_Mhawgann.xml" />
+      </HaveBounty>
+      <!--Kill_Lummock-->
+      <HaveBounty questId="356417">
+        <LoadProfile file="Kill_Lummock.xml" />
+      </HaveBounty>
+      <!--Clear_FortifiedBunker2-->
+      <HaveBounty questId="349202">
+        <LoadProfile file="Clear_FortifiedBunker2.xml" />
+      </HaveBounty>
+      <!--Kill_Riplash-->
+      <HaveBounty questId="349236">
+        <LoadProfile file="Kill_Riplash.xml" />
+      </HaveBounty>
+      <!--Kill_TheCrusher-->
+      <HaveBounty questId="346160">
+        <LoadProfile file="Kill_TheCrusher.xml" />
+      </HaveBounty>
+      <!--Kill_Direclaw-->
+     <HaveBounty questId="349216">
+        <LoadProfile file="Kill_Direclaw.xml" />
+      </HaveBounty>
+      <!--Kill_Gugyn-->
+      <HaveBounty questId="346164">
+        <LoadProfile file="Kill_Gugyn.xml" />
+      </HaveBounty>
+      <!--Kill_Maggrus-->
+      <HaveBounty questId="346217">
+        <LoadProfile file="Kill_Maggrus.xml" />
+      </HaveBounty>
+      <!--Kill_Maggrus-->
+      <HaveBounty questId="346182">
+        <LoadProfile file="Event_TideOfBattle.xml" />
+      </HaveBounty>
+      <!--Kill_Scorpitox-->
+      <HaveBounty questId="349226">
+        <LoadProfile file="Kill_Scorpitox.xml" />
+      </HaveBounty>
+      <!--Kill_Bashface-->
+      <HaveBounty questId="346130">
+        <LoadProfile file="Kill_Bashface.xml" />
+      </HaveBounty>
+      <!--Kill_Haxxor-->
+      <HaveBounty questId="349240">
+        <LoadProfile file="Kill_Haxxor.xml" />
+      </HaveBounty>
+      <!--Kill_Hyrug-->
+      <HaveBounty questId="346215">
+        <LoadProfile file="Kill_Hyrug.xml" />
+      </HaveBounty>
+      <!--Kill_Hyrug-->
+      <HaveBounty questId="346200">
+        <LoadProfile file="Kill_Shertik.xml" />
+      </HaveBounty>
+
+      <LogMessage quest="1" step="1" output="Checking if we have all bounties complete" />
+      <ActBountiesComplete act="A3">
+        <LogMessage quest="1" step="1" output="Seems like we have 5 complete" />
+        <If condition="Me.IsInTown==False">
+          <LogMessage quest="1" step="1" output="Going back to town to turn it in." />
+          <TrinityTownPortal questId="1" />
+        </If>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
+        <LogMessage quest="1" step="1" output="Lets make sure we are actually in the right town" />
+        <While condition="CurrentWorldId != 172909">
+          <LogMessage quest="1" step="1" output="Doesn't look like we are! using the waypoint" />
+          <UseWaypoint waypointNumber="26" questId="1"/>
+          <WaitTimer questId="1" stepId="1" waitTime="7500"/>
+        </While>
+        <LogMessage quest="1" step="1" output="Attempting to interact with Tyrael" />
+        <MoveToActor questId="1" stepId="1" actorId="114622" x="379" y="422" z="0"  />
+        <LogMessage quest="1" step="1" output="Should have interacted with him by now." />
+
+      </ActBountiesComplete>
+      <!--<LeaveGame quest="1" step="1" reason="All supported ACTS have been completed" stayInParty="False" />-->
+      <!--WaitTimer questId="1" stepId="1" waitTime="60000"/-->
+    </While>
+  </Order>
+
+
 </Profile>

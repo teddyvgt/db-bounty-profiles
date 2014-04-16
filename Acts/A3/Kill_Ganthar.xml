@@ -1,0 +1,35 @@
+<Profile>
+  <Name>Kill_Ganthar</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>true</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+
+  <Order>
+    <HaveBounty questId="369319">
+
+      <While condition="CurrentWorldId != 93099 and CurrentWorldId != 81019">
+        <UseWaypoint questId="1" waypointNumber="27" />
+        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+      </While>
+
+	  <If condition="CurrentWorldId == 93099">
+		<SafeMoveTo questId="312429" stepId="2" x="4269" y="4183" z="-25" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		<UsePortal questId="369319" stepId="1" actorId="176002" destinationWorldId="81019" interactRange="40" portalMarkerHash="-1078336204" />
+	  </If>
+	  
+      <If condition="CurrentWorldId == 81019">
+        <TrinityExploreDungeon questId="369319" stepId="1" until="ObjectFound" actorId="367341" boxTolerance="0.10" boxSize="15" />
+        <WaitTimer questId="1" stepId="2" waitTime="1000" />
+        <!-- If not completed, keep killing things until it is complete-->
+        <HaveBounty questId="369319">
+          <LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
+          <TrinityExploreDungeon questId="369319" stepId="1" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+        </HaveBounty>
+        <WaitTimer questId="369319" stepId="2" waitTime="500" />
+      </If>
+
+    </HaveBounty>
+
+    <LoadProfile file="act3.xml" />
+  </Order>
+</Profile>

@@ -1,0 +1,38 @@
+<Profile>
+  <Name>Event_BlazeOfClory</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>true</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+
+  <Order>
+    <HaveBounty questId="346184">
+
+      <While condition="CurrentWorldId != 95804 ">
+        <UseWaypoint questId="1" waypointNumber="33" />
+        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+      </While>
+
+      <If condition="CurrentWorldId == 95804">
+        <!--until="ObjectFound" actorId="152145"-->
+        <SafeMoveTo questId="346184" stepId="2" x="2570" y="634" z="0" pathPrecision="5" pathPointLimit="250" />
+        <WaitTimer questId="1" stepId="2" waitTime="500" />
+        <TrinityExploreDungeon questId="346184" stepId="1" until="ObjectFound" actorId="152145" sceneName="Exit" boxTolerance="0.70" boxSize="15">
+          <IgnoreScenes>
+            <IgnoreScene sceneName="a3_Battlefield_ChokepointB_E02_S01" />
+          </IgnoreScenes>
+        </TrinityExploreDungeon>
+        <WaitTimer questId="1" stepId="2" waitTime="500" />
+        <MoveToActor questId="346184" stepId="1" actorId="152145" interactRange="8" name="Hireling_Enchantress-169"  pathPrecision="5" pathPointLimit="250"  />
+        <While condition="ActorExistsAt(152145, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+          <MoveToActor questId="1" stepId="2" actorId="152145"/>
+        </While>
+        <!--<WaitTimer questId="1" stepId="2" waitTime="30000" />
+          <MoveToActor questId="346184" stepId="2" actorId="152145" interactRange="8" name="bastionsKeepGuard_Melee_A_02_BlazeOfGlory-2052"  pathPrecision="5" pathPointLimit="250" />
+
+        <WaitTimer questId="1" stepId="2" waitTime="1000" />-->
+      </If>
+    </HaveBounty>
+
+    <LoadProfile file="act3.xml" />
+  </Order>
+</Profile>

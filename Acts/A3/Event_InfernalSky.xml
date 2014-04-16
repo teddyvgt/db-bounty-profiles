@@ -1,0 +1,26 @@
+<Profile>
+  <Name>Event_InfernalSky</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>true</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+
+  <Order>
+    <HaveBounty questId="369825">
+
+      <While condition="CurrentWorldId != 95804 ">
+        <UseWaypoint questId="1" waypointNumber="31" />
+        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+      </While>
+
+      <If condition="CurrentWorldId == 95804">
+        <TrinityExploreDungeon questId="369825" stepId="1" until="ObjectFound" actorId="365097" boxTolerance="0.40" boxSize="15" />
+        <MoveToActor questId="369825" stepId="1" actorId="365097" interactRange="10" name="x1_Global_Chest_CursedChest_B-9174"  pathPrecision="5" pathPointLimit="250" />
+        <WaitTimer questId="369825" stepId="1" waitTime="5000" />
+
+      </If>
+
+    </HaveBounty>
+
+    <LoadProfile file="act3.xml" />
+  </Order>
+</Profile>

@@ -1,0 +1,34 @@
+<Profile>
+  <Name>Kill_Direclaw</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>true</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+
+  <Order>
+    <HaveBounty questId="349216">
+
+      <While condition="CurrentWorldId != 95804">
+        <UseWaypoint questId="1" waypointNumber="33" />
+        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+      </While>
+
+      <If condition="CurrentWorldId == 95804">
+        <SafeMoveTo questId="349216" stepId="2" x="2570" y="634" z="0" pathPrecision="5" pathPointLimit="250" />
+        <TrinityExploreDungeon questId="349216" stepId="1" until="ObjectFound" actorId="220775" sceneName="Exit"  boxTolerance="0.70" boxSize="15">
+          <IgnoreScenes>
+            <IgnoreScene sceneName="a3_Battlefield_ChokepointB_E02_S01" />
+          </IgnoreScenes>
+        </TrinityExploreDungeon>
+        <!--<TrinityExploreDungeon questId="349216" stepId="1" until="ObjectFound" actorId="220775" boxTolerance="0.10" boxSize="15" />-->
+        <WaitTimer questId="1" stepId="2" waitTime="1000" />
+        <!-- If not completed, keep killing things until it is complete-->
+        <HaveBounty questId="349216">
+          <LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
+          <TrinityExploreDungeon questId="349216" stepId="1" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+        </HaveBounty>
+      </If>
+    </HaveBounty>
+
+    <LoadProfile file="act3.xml" />
+  </Order>
+</Profile>

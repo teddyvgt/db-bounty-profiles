@@ -1,0 +1,55 @@
+<Profile>
+  <Name>Clear_TheFoundry2</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>true</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+
+  <Order>
+    <HaveBounty questId="349206">
+
+      <While condition="CurrentWorldId != 95804 and CurrentWorldId != 174665 and CurrentWorldId != 221751">
+        <UseWaypoint questId="1" waypointNumber="31" />
+        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+      </While>
+
+      <If condition="CurrentWorldId == 95804">
+        <!-- <TrinityExploreDungeon questId="346190" stepId="1" until="ObjectFound" actorId="176003" boxTolerance="0.10" boxSize="15" />-->
+        <!--<TrinityExploreDungeon questId="349206" stepId="2" until="ObjectFound" actorId="54882" boxTolerance="0.40" boxSize="15" />-->
+        <SafeMoveTo questId="312429" stepId="2" x="4183" y="393" z="-2" pathPrecision="5" pathPointLimit="250" statusText="" />
+        <SafeMoveTo questId="312429" stepId="2" x="4089" y="519" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
+        <SafeMoveTo questId="312429" stepId="2" x="4027" y="600" z="-23" pathPrecision="5" pathPointLimit="250" statusText="" />
+        <MoveToActor questId="54882" stepId="2" actorId="5502" interactRange="8" name="a3dun_Keep_Door_Wooden_A-26598"  pathPrecision="5" pathPointLimit="250"  />
+        <WaitTimer questId="1" stepId="2" waitTime="500" />
+        <MoveToMapMarker questId="349206" stepId="2" markerNameHash="-1049649951" actorId="176001" interactRange="20"
+ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="174665" />
+        <WaitTimer questId="1" stepId="2" waitTime="500" />
+      </If>
+
+      <If condition="CurrentWorldId == 174665">
+        <TrinityExploreDungeon questId="349206" stepId="2" until="ExitFound" exitNameHash="-1558381351" actorId="175482" pathPrecision="25" boxSize="25" boxTolerance="0.5" objectDistance="45">
+          <AlternateActors>
+            <AlternateActor actorId="0" objectDistance="45" />
+          </AlternateActors>
+          <PriorityScenes>
+            <PriorityScene sceneName="Exit" />
+          </PriorityScenes>
+          <IgnoreScenes>
+            <IgnoreScene sceneName="_N_" />
+            <IgnoreScene sceneName="_S_" />
+            <IgnoreScene sceneName="_E_" />
+            <IgnoreScene sceneName="_W_" />
+          </IgnoreScenes>
+        </TrinityExploreDungeon>
+        <MoveToMapMarker questId="349206" stepId="2"  markerNameHash="-1558381351" actorId="175482" interactRange="20"
+        pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="221751" />
+
+        <WaitTimer questId="1" stepId="2" waitTime="500" />
+      </If>
+      <If condition="CurrentWorldId == 221751">
+        <TrinityExploreDungeon questId="349206" stepId="2" until="FullyExplored" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
+      </If>
+    </HaveBounty>
+
+    <LoadProfile file="act3.xml" />
+  </Order>
+</Profile>

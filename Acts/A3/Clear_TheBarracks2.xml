@@ -1,0 +1,37 @@
+<Profile>
+  <Name>Clear_TheBarracks2</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>true</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+
+  <Order>
+    <HaveBounty questId="349210">
+
+      <While condition="CurrentWorldId != 95804 and CurrentWorldId != 174665 and CurrentWorldId != 221751">
+        <UseWaypoint questId="1" waypointNumber="31" />
+        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+      </While>
+
+      <If condition="CurrentWorldId == 95804">
+        <MoveToActor questId="349210" stepId="2" name="The Barracks Level 1 Entrance" actorId="176001" interactRange="10" x="4144" y="316" z="1" isPortal="True" destinationWorldId="174555" />
+        <WaitTimer questId="349210" stepId="2" waitTime="1000" />
+      </If>
+
+      <!-- Explore The Barracks Level 1 -->
+      <If condition="CurrentWorldId == 174555">
+        <TrinityExploreDungeon questId="349210" stepId="2" until="ExitFound" boxSize="10" boxTolerance="0.70" exitNameHash="-1693984105" pathPrecision="40">
+          <PrioritizeScenes>
+            <PriorityScene sceneName="Exit" />
+          </PrioritizeScenes>
+        </TrinityExploreDungeon>
+        <MoveToMapMarker questId="349210" stepId="2" markerNameHash="-1693984105" interactRange="10" actorId="175482" />
+      </If>
+      <!-- Explore The Barracks Level 2 -->
+      <If condition="CurrentWorldId == 221749">
+        <TrinityExploreDungeon questId="349210" stepId="2" until="FullyExplored" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
+      </If>
+    </HaveBounty>
+
+    <LoadProfile file="act3.xml" />
+  </Order>
+</Profile>

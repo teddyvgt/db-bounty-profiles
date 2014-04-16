@@ -1,0 +1,60 @@
+<Profile>
+  <Name>Event_BloodTies</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>true</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+
+  <Order>
+    <HaveBounty questId="349196">
+
+      <While condition="CurrentWorldId != 95804 and CurrentWorldId != 174555 and CurrentWorldId != 221749">
+        <UseWaypoint questId="1" waypointNumber="31" />
+        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+      </While>
+
+      <If condition="CurrentWorldId == 95804">
+        <SafeMoveTo questId="349196" stepId="2" x="4146" y="326" z="-3" pathPrecision="5" pathPointLimit="250" />
+        <MoveToMapMarker questId="349196" stepId="2" markerNameHash="-1049649953" actorId="176001" interactRange="20"
+        pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="174555"  />
+        <WaitTimer questId="1" stepId="2" waitTime="500" />
+
+      </If>
+
+      <If condition="CurrentWorldId == 174555">
+        <TrinityExploreDungeon questId="349196" stepId="2" until="ExitFound" exitNameHash="-1693984105" actorId="175482" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+          <AlternateActors>
+            <AlternateActor actorId="0" objectDistance="45" />
+          </AlternateActors>
+          <PriorityScenes>
+            <PriorityScene sceneName="Exit" />
+          </PriorityScenes>
+          <IgnoreScenes>
+            <IgnoreScene sceneName="_N_" />
+            <IgnoreScene sceneName="_S_" />
+            <IgnoreScene sceneName="_E_" />
+            <IgnoreScene sceneName="_W_" />
+          </IgnoreScenes>
+        </TrinityExploreDungeon>
+        <MoveToMapMarker questId="349196" stepId="2" markerNameHash="-1693984105" actorId="175482" interactRange="20"
+        pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="221749"  />
+        <WaitTimer questId="349196" stepId="2" waitTime="500" />
+      </If>
+
+
+
+      <If condition="CurrentWorldId == 221749">
+        <MoveToActor questId="1" stepId="1" actorId="174995" x="341" y="1234" z="0"  />
+        <WaitTimer questId="349196" stepId="2" waitTime="500" />
+        <TrinityExploreDungeon questId="349196" stepId="3" until="ObjectFound" actorId="118261" boxTolerance="0.10" boxSize="15" />
+        <WaitTimer questId="1" stepId="2" waitTime="500" />
+        <MoveToActor questId="349196" stepId="3"  actorId="118261" interactRange="4" name="bastionsKeepGuard_Melee_A_02-10321"  pathPrecision="5" pathPointLimit="250"  />
+        <!--<TrinityExploreDungeon questId="349196" stepId="3" until="ObjectFound" actorId="260230" boxTolerance="0.10" boxSize="15" />-->
+        <WaitTimer questId="1" stepId="2" waitTime="3000" />
+        <MoveToActor questId="349196" stepId="3"  actorId="174995" interactRange="4" name="ProximityTrigger-43328"  pathPrecision="5" pathPointLimit="250"  />
+        <WaitTimer questId="349196" stepId="2" waitTime="1000" />
+      </If>
+    </HaveBounty>
+
+    <LoadProfile file="act3.xml" />
+  </Order>
+</Profile>

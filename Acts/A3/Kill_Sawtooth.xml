@@ -1,0 +1,31 @@
+<Profile>
+  <Name>Kill Sawtooth</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>true</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+
+  <Order>
+    <HaveBounty questId="349230">
+
+      <!-- Checking we are in Keep Death 1 -->
+      <While condition="CurrentWorldId != 81934">
+        <UseWaypoint questId="1" waypointNumber="36" />
+        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+      </While>
+
+      <If condition="CurrentWorldId == 81934">
+        <TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="220851 " boxTolerance="0.10" boxSize="15" />
+        <WaitTimer questId="1" stepId="2" waitTime="1000" />
+        <!-- If not completed, keep killing things until it is complete-->
+        <HaveBounty questId="349230">
+          <LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
+          <TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+        </HaveBounty>
+        <MoveToActor questId="1" stepId="2" actorId="176003" />
+        <WaitTimer questId="1" stepId="2" waitTime="20000" />
+      </If>
+    </HaveBounty>
+
+    <LoadProfile file="act3.xml" />
+  </Order>
+</Profile>
