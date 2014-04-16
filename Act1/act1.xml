@@ -337,6 +337,12 @@
 			<LoadProfile file="kill_caverns_of_araneae.xml" />
 		</HaveBounty>
 		
+		<!--Kill Zhelobb -->
+		<!-- Status: Needs Testing -->			
+		<HaveBounty questId="345522">
+			<LoadProfile file="kill_caverns_of_araneae.xml" />
+		</HaveBounty>
+		
 					
 	<!-- 13	Southern Highlands ========================================================-->
 
