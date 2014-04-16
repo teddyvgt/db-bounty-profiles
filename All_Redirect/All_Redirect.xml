@@ -1,0 +1,8 @@
+<Profile>
+<Order>
+	
+	<!-- This file is important, do not touch it or the folder its in -->
+	<TrinityLoadProfile file="../Acts/All_Distributor.xml" />
+
+</Order>
+</Profile>

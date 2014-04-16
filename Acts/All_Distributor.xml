@@ -1,0 +1,28 @@
+<Profile>
+<Name>All - Distributor</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" difficulty="Normal" resumeFromSave="False" isPrivate="True" numGames="-1"  />
+<Order>
+
+	<WaitTimer questId="1" stepId="1" waitTime="500"/>
+
+	<TrinityLoadOnce questId="1" stepId="1" noRandom="true">
+      <ProfileList>
+        <LoadProfileOnce profile="A1/Act1.xml" />
+        <!--<LoadProfileOnce profile="A2/Act2.xml" />-->
+        <!--<LoadProfileOnce profile="A3/Act3.xml" />-->
+        <LoadProfileOnce profile="A4/Act4.xml" />
+		<!--<LoadProfileOnce profile="A5/Act5.xml" />-->
+      </ProfileList>
+    </TrinityLoadOnce>	
+	
+	<WaitTimer questId="1" stepId="1" waitTime="500"/>
+	
+	<LeaveGame quest="1" step="1" reason="All supported ACTS have been completed" stayInParty="False" />
+	
+	<LoadProfile file="All_Distributer.xml" /> 
+		
+</Order>
+
+</Profile>

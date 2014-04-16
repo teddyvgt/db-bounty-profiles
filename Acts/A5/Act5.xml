@@ -1,0 +1,24 @@
+<Profile>
+<Name>Act 5</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" maxDeaths="5" numGames="-1" />
+<Order>
+
+	<LogMessage quest="1" step="1" output=">> ACT 5 IS NOT SUPPORTED" />
+	<WaitTimer questId="1" stepId="1" waitTime="500"/>
+	
+	
+	
+	<!-- ACT profiles go here -->
+	
+
+
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('All')">
+		<TrinityLoadProfile file="All_Distributer.xml" />			
+	</If>		
+	
+	<ReloadProfile />
+
+</Order>
+</Profile>

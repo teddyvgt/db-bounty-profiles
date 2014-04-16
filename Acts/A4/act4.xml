@@ -1,0 +1,175 @@
+<Profile>
+<Name>Act 4 - Loader</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+
+	<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+
+	<!-- Act 4 Bounties -->
+	<LogMessage quest="1" step="1" output="Act 4 Bounties" /> 
+	
+	
+	<!-- Waypoint [41] -->
+	
+	<!-- Cursed Dais  -->
+	<HaveBounty questId="369900">
+		<LoadProfile file="Dais.xml" />
+	</HaveBounty>
+	<!-- Kill Rakanoth -->
+	<HaveBounty questId="349262">
+		<LoadProfile file="Rakanoth.xml" />
+	</HaveBounty>
+	<!-- Kill Khatun -->
+	<HaveBounty questId="349258">
+		<LoadProfile file="Gardens of hope 1.xml" />
+	</HaveBounty>
+	<!-- Kill Torchlighter -->
+	<HaveBounty questId="349256">
+		<LoadProfile file="Gardens of hope 1.xml" />
+	</HaveBounty>
+	<!-- Kill Veshan the fierce -->
+	<HaveBounty questId="349260">
+		<LoadProfile file="Gardens of hope 1.xml" />
+	</HaveBounty>
+	<!-- Kill the aspect of destruction -->
+	<HaveBounty questId="357131">
+		<LoadProfile file="Gardens of hope 1.xml" />
+	</HaveBounty>
+	
+	
+	<!-- Waypoint [42] -->
+	
+	<!-- kill the aspect of pain -->
+	<HaveBounty questId="357129">
+		<LoadProfile file="Gardens of hope 2.xml" />
+	</HaveBounty>
+	<!-- Kill the aspect of anguish -->
+	<HaveBounty questId="357127">
+		<LoadProfile file="Gardens of hope 2.xml" />
+	</HaveBounty>
+	<!-- kill kao'ahn -->
+	<HaveBounty questId="349254">
+		<LoadProfile file="Gardens of hope 2.xml" />
+	</HaveBounty>
+	<!-- kill oah'tash -->
+	<HaveBounty questId="349252">
+		<LoadProfile file="Gardens of hope 2.xml" />
+	</HaveBounty>
+	
+	
+	<!-- Waypoint [43] -->
+	
+	<!-- Kill sledge -->
+	<HaveBounty questId="364336">
+		<LoadProfile file="Hellrift.xml" />
+	</HaveBounty>
+	<!-- kill hammermash -->
+	<HaveBounty questId="364333">
+		<LoadProfile file="Hellrift.xml" />
+	</HaveBounty>
+	<!-- clear hell rift -->
+	<HaveBounty questId="362140">
+		<LoadProfile file="Hellrift.xml" />
+	</HaveBounty>
+	
+	
+	<!-- Waypoint [44] -->
+	
+	<!-- kill aspect of hatred -->
+	<HaveBounty questId="357133">
+		<LoadProfile file="Silver Spire 1.xml" />
+	</HaveBounty>
+	<!-- kill aspect of lies -->
+	<HaveBounty questId="357135">
+		<LoadProfile file="Silver Spire 1.xml" />
+	</HaveBounty>
+	<!-- kill izual -->
+	<HaveBounty questId="361421">
+		<LoadProfile file="Izual.xml" />
+	</HaveBounty>
+	<!-- kill slarg the behemoth -->
+	<HaveBounty questId="349280">
+		<LoadProfile file="Silver Spire 1.xml" />
+	</HaveBounty>
+	<!-- kill kysindra the wretched -->
+	<HaveBounty questId="349276">
+		<LoadProfile file="Silver Spire 1.xml" />
+	</HaveBounty>
+	<!-- kill pyres the damned -->
+	<HaveBounty questId="349278">
+		<LoadProfile file="Silver Spire 1.xml" />
+	</HaveBounty>
+	
+	
+	<!-- Waypoint [45] -->
+	
+	<!-- kill aspect of terror -->
+	<HaveBounty questId="357139">
+		<LoadProfile file="Silver Spire 2.xml" />
+	</HaveBounty>
+	<!-- kill grimnight the soulless -->
+	<HaveBounty questId="349272">
+		<LoadProfile file="Silver Spire 2.xml" />
+	</HaveBounty>
+	<!-- kill Sao'thall -->
+	<HaveBounty questId="349274">
+		<LoadProfile file="Silver Spire 2.xml" />
+	</HaveBounty>
+	<!-- kill rhau'kye -->
+	<HaveBounty questId="349282">
+		<LoadProfile file="Silver Spire 2.xml" />
+	</HaveBounty>
+	<!-- kill haures -->
+	<HaveBounty questId="349270">
+		<LoadProfile file="Silver Spire 2.xml" />
+	</HaveBounty>
+	<!-- kill aspect of sin -->
+	<HaveBounty questId="357137">
+		<LoadProfile file="Silver Spire 2.xml" />
+	</HaveBounty>
+	<!-- Cursed chapel (Might be static, x="411" y="890" z="0") -->
+	<HaveBounty questId="369878">
+		<LoadProfile file="Chapel.xml" />
+	</HaveBounty>
+	<!-- kill diablo -->
+	<HaveBounty questId="349288">
+		<LoadProfile file="Diablo.xml" />
+	</HaveBounty>
+
+	<LogMessage quest="1" step="1" output="Checking if we have all bounties complete" /> 
+	<ActBountiesComplete act="A4">
+	<LogMessage quest="1" step="1" output="Seems like we have 5 complete" />
+		<If condition="Me.IsInTown==False">   
+			<LogMessage quest="1" step="1" output="Going back to town to turn it in." />
+			<TrinityTownPortal questId="1" /> 
+		</If>
+		<WaitTimer questId="1" stepId="1" waitTime="1000"/>	
+		<LogMessage quest="1" step="1" output="Lets make sure we are actually in the right town" />
+		<While condition="CurrentWorldId != 172909">
+			<LogMessage quest="1" step="1" output="Doesn't look like we are! using the waypoint" />
+			<UseWaypoint waypointNumber="26" questId="1"/>
+			<WaitTimer questId="1" stepId="1" waitTime="7500"/>
+		</While>
+		
+		<!-- Currently DB has issues with picking up cache loot in town if bags are already full, force town run to try and avoid this situation -->
+		<ForceTownRun questId="1"/>	
+		<WaitTimer questId="1" stepId="1" waitTime="1000"/>			
+		
+		<LogMessage quest="1" step="1" output="Attempting to interact with Tyrael" />
+		<MoveToActor questId="1" stepId="1" actorId="114622" x="379" y="422" z="0"  />
+		<LogMessage quest="1" step="1" output="Should have interacted with him by now." />
+
+	</ActBountiesComplete>
+
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('All_Redirect')">
+		<TrinityLoadProfile file="../All_Distributor.xml" />			
+	</If>		
+	
+	<LeaveGame reason="No more bounties that we can do. Resetting game." />  
+	
+	<ReloadProfile />
+
+</Order>
+</Profile>	

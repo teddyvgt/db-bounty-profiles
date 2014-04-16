@@ -1,0 +1,51 @@
+<!-- X1_Bounty_A1_SpiderCaves_Event_SpiderTrap (375201) -->
+<Profile>
+<Name>The Cursed Hatchery / Spider Trap </Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
+	<UseWaypoint waypointNumber="12" questId="1"/>
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
+	<HaveBounty questId="375201">
+
+		<!-- Move to known chest location 
+		<SafeMoveTo questId="1" stepId="2" x="536" y="1102" z="0" />  
+		<MoveToActor questId="1" stepId="2" actorId="365097" interactRange="10" name="x1_Global_Chest_CursedChest_B-20337"  pathPrecision="5" pathPointLimit="250" statusText="" /> 	
+		<WaitTimer questId="1" stepId="2" waitTime="3000" />-->
+		
+		<!-- Look for the chest -->
+		<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="365097" pathPrecision="20" boxSize="15"  boxTolerance="0.10" objectDistance="60">	
+			<PriorityScenes>						
+				<PriorityScene sceneId="71536" /> <!-- sceneid where event has been found before -->		
+			</PriorityScenes>
+		</TrinityExploreDungeon>			
+		
+		<!-- Start the event -->
+		<MoveToActor questId="1" stepId="2" actorId="365097" interactRange="10" name="x1_Global_Chest_CursedChest_B-20337"  pathPrecision="5" pathPointLimit="250" statusText="" /> 	
+		
+		<!-- Wait for waves to spawn -->
+		<WaitTimer questId="1" stepId="1" waitTime="15000" />	
+
+		<!-- try to ensure we open the chests -->
+		<MoveToActor timeout="8000" questId="312429" stepId="2" actorId="363725" interactRange="10" name="x1_Global_Chest_StartsClean-10904"  pathPrecision="5" pathPointLimit="250" statusText="" /> 				
+		<MoveToActor timeout="4000" questId="312429" stepId="2" actorId="357331" interactRange="10" name="x1_Global_Chest-10901"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		<WaitTimer questId="1" stepId="1" waitTime="1000" />	
+	
+		<!-- Should be done by now, clear dungeon to make sure we've killed everything -->
+		<HaveBounty questId="375201">		
+			<TrinityExploreDungeon questId="1" stepId="1" until="FullyExplored" actorId="365097" pathPrecision="20" boxSize="15"  boxTolerance="0.10" objectDistance="60">	
+				<PriorityScenes>						
+					<PriorityScene sceneId="71536" /> <!-- sceneid where event has been found before -->		
+				</PriorityScenes>
+			</TrinityExploreDungeon>	
+		</HaveBounty>		
+	
+	
+	</HaveBounty>
+	<LoadProfile file="act1.xml" />
+	
+</Order>
+</Profile>

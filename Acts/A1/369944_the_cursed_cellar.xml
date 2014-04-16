@@ -1,0 +1,63 @@
+<!-- X1_Bounty_A1_OldTristram_Event_DeathCellar (369944) -->
+<Profile>
+<Name>The Cursed Cellar (369944)</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
+	<UseWaypoint waypointNumber="1" questId="1"/>
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />
+
+	<HaveBounty questId="369944">
+
+		<If condition="CurrentWorldId == 71150">
+		
+			<!-- Find the cellar -->
+			<ToggleTargeting questId="1" stepId="1" killRadius="25" />			
+			<SafeMoveTo questId="312429" stepId="2" x="2005" y="2758" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="1994" y="2652" z="39" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="1991" y="2596" z="27" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="2109" y="2507" z="27" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="2263" y="2499" z="27" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="2304" y="2545" z="27" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="2293" y="2561" z="27" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="1107870150" destinationWorldId="106752" interactRange="20"  />
+			<WaitTimer questId="1" stepId="2" waitTime="2000" />
+			
+		</If>
+		
+		<If condition="CurrentWorldId == 106752">
+		
+			<!-- Start the event -->
+			<ToggleTargeting questId="1" stepId="1" killRadius="100" />	
+			<SafeMoveTo questId="1" stepId="2" x="128.015" y="125.9703" z="0.1" />
+			<MoveToActor questId="1" stepId="2" timeout="10000" actorId="365097"/>
+			
+			<!-- Open the chest anyway if bounty isn't here -->
+			<If condition="ActorExistsAt(362404, 140, 133, 0, 300)">
+				<MoveToActor questId="312429" stepId="2" x="140" y="133" z="0" actorId="362404" interactRange="7" name="trOut_Tristram_Chest_Guaranteed-2416"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			</If>
+			
+			<!-- Kill Stuff -->
+			<WaitTimer questId="1" stepId="2" waitTime="5000" />			
+			
+			<!-- If not completed, keep killing things until it is complete-->
+			<HaveBounty questId="369944">
+				<LogMessage quest="1" step="1" output="Interacted with chest, but still not done. Roaming to make sure everything is dead." />
+				<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
+			</HaveBounty>		
+			
+			<!-- Go back to the chest location in case fighting mobs moved us out of range. -->
+			<SafeMoveTo questId="1" stepId="2" x="128.015" y="125.9703" z="0.1" />			
+			<MoveToActor questId="1" stepId="2" timeout="5000" actorId="365097"/>
+			<WaitTimer questId="1" stepId="2" waitTime="500" />			
+		
+		</If>		
+		
+	</HaveBounty>
+	<LoadProfile file="act1.xml" />
+	
+</Order>
+</Profile>

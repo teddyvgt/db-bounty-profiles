@@ -1,0 +1,22 @@
+<Profile>
+<Name>General Halls of Agony Level 2 Bounty</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<TargetBlacklists>
+	<TargetBlacklist actorId="89579"/> <!-- Firewall -->
+</TargetBlacklists>
+<Order>
+
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
+	<UseWaypoint waypointNumber="16" questId="1"/>	
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+
+    <!-- Look for him -->
+	<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />
+	<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
+
+	<LoadProfile file="act1.xml" />
+	
+</Order>
+</Profile>
