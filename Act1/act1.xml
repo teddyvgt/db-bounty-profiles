@@ -239,13 +239,7 @@
 		<!-- Status: Needs Testing -->			
 		<HaveBounty questId="365381">
 			<LoadProfile file="365381_the_cursed_grove.xml" />
-		</HaveBounty>		
-		
-		<!-- The Cursed Mill -->
-		<!-- Status: Needs Testing -->	
-		<HaveBounty questId="365401">
-			<LoadProfile file="365401_the_cursed_mill.xml" />
-		</HaveBounty>	
+		</HaveBounty>				
 		
 		<!-- Kill Growler -->
 		<!-- Status: Needs Testing -->	
@@ -253,6 +247,13 @@
 			<LoadProfile file="347073_kill_growler.xml" />
 		</HaveBounty>		
 
+	<!-- 9 Drowned Temple ===========================================================-->		
+		
+		<!-- The Cursed Mill -->
+		<!-- Status: Needs Testing -->	
+		<HaveBounty questId="365401">
+			<LoadProfile file="365401_the_cursed_mill.xml" />
+		</HaveBounty>			
 	
 	<!-- 10 Festering Woods ===========================================================-->
 	
@@ -420,7 +421,7 @@
 	<!-- 14	Northern Highlands ========================================================-->
 	
 		<!-- Kill Theodyn -->
-		<!-- Status: OK, needs path optimised -->				
+		<!-- Status: BAD, needs path optimised, gets stuck a lot -->				
 		<HaveBounty questId="369271">
 			<LoadProfile file="369271_kill_theodyn.xml" />
 		</HaveBounty>	
