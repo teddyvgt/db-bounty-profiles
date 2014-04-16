@@ -559,14 +559,14 @@
 
 	</ActBountiesComplete>
 	
+	<!-- should we move onto to the next act? -->
 	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('All_Redirect')">
 		<TrinityLoadProfile file="../All_Distributor.xml" />			
 	</If>		
 	
-	<LeaveGame quest="1" step="1" reason="All profiles have been loaded! Nothing left to do." stayInParty="False" />	
+	<!-- nope repeating the same act. gooo! -->
+	<LeaveGame quest="1" step="1" reason="done." stayInParty="False" />		
+	<ReloadProfile />	
 	
-	<ReloadProfile />
-
 </Order>
 </Profile>
- 

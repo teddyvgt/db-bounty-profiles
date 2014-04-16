@@ -6,10 +6,6 @@
   <GameParams quest="101758" step="1" act="OpenWorld" difficulty="Normal" resumeFromSave="False" isPrivate="True" numGames="-1"  />
   <!--This is the Beging of your ORder list-->
   <Order>
-    <WaitTimer questId="1" stepId="2" waitTime="1500" />
-    <While condition="True">
-      <WaitTimer questId="1" stepId="2" waitTime="500" />
-
 
       <!-- Act 3 Bounties -->
       <LogMessage quest="1" step="1" output="Act 3 Bounties" />
@@ -298,9 +294,15 @@
         <LogMessage quest="1" step="1" output="Should have interacted with him by now." />
 
       </ActBountiesComplete>
-      <LeaveGame quest="1" step="1" reason="No more bounties to do in this act" stayInParty="False" />
-    </While>
-  </Order>
-
-
+		
+	<!-- should we move onto to the next act? -->
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('All_Redirect')">
+		<TrinityLoadProfile file="../All_Distributor.xml" />			
+	</If>		
+	
+	<!-- nope repeating the same act. gooo! -->
+	<LeaveGame quest="1" step="1" reason="done." stayInParty="False" />		
+	<ReloadProfile />	
+	
+</Order>
 </Profile>

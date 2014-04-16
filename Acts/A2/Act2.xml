@@ -14,11 +14,14 @@
 	
 	
 	
-	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('All')">
-		<TrinityLoadProfile file="All_Distributer.xml" />			
+	<!-- should we move onto to the next act? -->
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('All_Redirect')">
+		<TrinityLoadProfile file="../All_Distributor.xml" />			
 	</If>		
 	
-	<ReloadProfile />
-
+	<!-- nope repeating the same act. gooo! -->
+	<LeaveGame quest="1" step="1" reason="done." stayInParty="False" />		
+	<ReloadProfile />	
+	
 </Order>
 </Profile>
