@@ -21,9 +21,11 @@
 		  <MoveToActor questId="1" actorId="364601" interactRange="10" name="x1__Event_CursedShrine"  pathPrecision="50" pathPointLimit="250" statusText="" />
 		  
 		  <!-- If not completed, keep killing waves until it is complete-->
-		  <WaitTimer questId="375198" stepId="4" waitTime="3000" />
-		  <WaitTimer questId="375198" stepId="2" waitTime="1000" />
-		  <MoveToActor questId="375198" stepId="2" actorId="176003" />
+		  <HaveBounty questId="375198">
+			  <WaitTimer questId="375198" stepId="4" waitTime="3000" />
+			  <MoveToActor questId="375198" stepId="2" actorId="176003" timeout="5000" />
+			  <MoveToActor questId="1" actorId="364601" interactRange="10"  timeout="5000" name="x1__Event_CursedShrine"  pathPrecision="50" pathPointLimit="250" statusText="" />		  
+		  </HaveBounty>
 		</If>
 	
 	</HaveBounty>

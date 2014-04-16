@@ -161,7 +161,7 @@
 		</HaveBounty>		
 		
 		<!-- The Dataminer -->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: Needs Testing, timed out in cemetary -->			
 		<HaveBounty questId="347095">
 			<LoadProfile file="347095_kill_the_dataminer.xml" />
 		</HaveBounty>	
@@ -294,7 +294,7 @@
 		</HaveBounty>		
 		
 		<!-- Clear Warrior's Rest -->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: OK -->			
 		<HaveBounty questId="345520">
 			<LoadProfile file="345520_clear_warriors_rest.xml" />
 		</HaveBounty>		
@@ -483,7 +483,7 @@
 	<!-- 16	Halls of Agony Level 2 ====================================================-->
 	
 		<!-- A Stranger In Need -->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: OK -->			
 		<HaveBounty questId="345546">
 			<LoadProfile file="345546_stranger_in_need.xml" />
 		</HaveBounty>	

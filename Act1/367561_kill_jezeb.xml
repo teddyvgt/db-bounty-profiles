@@ -26,9 +26,20 @@
 		</If>	
 	
 		<!-- Look for him -->
+		<If condition="CurrentLevelAreaId == 100854">		
+			<SafeMoveTo questId="312429" stepId="2" x="364" y="705" z="3" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<HaveBounty questId="367561">
+				<SafeMoveTo questId="312429" stepId="2" x="371" y="615" z="13" pathPrecision="5" pathPointLimit="250" statusText="" /> 		
+			</HaveBounty>
+		</If>	
+		
+		<!-- go back outside and kill things -->
 		<If condition="CurrentLevelAreaId == 100854">
-			<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />
-			<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
+			<HaveBounty questId="367561">		
+				<MoveToActor questId="312429" stepId="2" x="371" y="787" z="5" actorId="176536" interactRange="23" name="g_Portal_Ladder_Orange-8207" isPortal="True" destinationWorldId="71150" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<SafeMoveTo questId="312429" stepId="2" x="1085" y="3835" z="78" pathPrecision="5" pathPointLimit="250" statusText="" /> 				
+				<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
+			</HaveBounty>
 		</If>				
 				
 	</HaveBounty>
