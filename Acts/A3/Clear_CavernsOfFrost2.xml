@@ -98,7 +98,7 @@
           </IgnoreScenes>
         </TrinityExploreDungeon>
         <!--<TrinityExploreDungeon questId="346190" stepId="1" until="ObjectFound" actorId="176038" boxTolerance="0.10" boxSize="15" />-->
-        <MoveToMapMarker questId="346190" stepId="2" markerNameHash="151580180" actorId="176038" interactRange="20"
+        <MoveToMapMarker questId="346190" stepId="2" markerNameHash="151580180" actorId="176038" interactRange="15"
         pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="221688"  />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
