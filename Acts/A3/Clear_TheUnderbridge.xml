@@ -26,6 +26,7 @@ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="19762
       </If>
 
       <If condition="CurrentWorldId == 197622">
+		<TrinitySetQuesting />
         <TrinityExploreDungeon questId="349208" stepId="2" until="FullyExplored" boxTolerance="0.45" boxSize="15" ignoreMarkers="False" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>

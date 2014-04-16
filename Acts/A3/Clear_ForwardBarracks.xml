@@ -18,6 +18,7 @@
       </If>
 
       <If condition="CurrentWorldId == 185247">
+		<TrinitySetQuesting />
         <TrinityExploreDungeon questId="349198" stepId="2" until="FullyExplored" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
