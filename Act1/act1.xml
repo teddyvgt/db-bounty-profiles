@@ -253,16 +253,14 @@
 			<LoadProfile file="347073_kill_growler.xml" />
 		</HaveBounty>		
 
+	
+	<!-- 10 Festering Woods ===========================================================-->
+	
 		<!-- Kill Galush -->
 		<!-- Status: Needs Testing -->	
 		<HaveBounty questId="369251">
 			<LoadProfile file="369251_kill_galush.xml" />
-		</HaveBounty>	
-
-		
-		
-	
-	<!-- 10 Festering Woods ===========================================================-->
+		</HaveBounty>		
 	
 		<!-- Clear the Crypt of the Ancients -->
 		<!-- Status: Needs Testing -->			
