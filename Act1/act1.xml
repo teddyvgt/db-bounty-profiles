@@ -128,7 +128,7 @@
 		</HaveBounty>	
 
 		<!-- Kill Horrus (Kankerrot) -->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: OK -->			
 		<HaveBounty questId="369404">
 			<LoadProfile file="369399_kill_horrus.xml" />
 		</HaveBounty>
@@ -312,7 +312,7 @@
 		</HaveBounty>		
 		
 		<!-- Kill Lord Brone-->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: OK, path needs tweaking because it has some dead spots -->			
 		<HaveBounty questId="369249">
 			<LoadProfile file="369249_kill_lord_brone.xml" />
 		</HaveBounty>		
@@ -371,7 +371,7 @@
 		</HaveBounty>			
 		
 		<!-- Revenge of Gharbad -->
-		<!-- Status: Needs Testing -->		
+		<!-- Status: OK -->		
 		<HaveBounty questId="344486">
 			<LoadProfile file="344486_revenge_of_gharbad.xml" />
 		</HaveBounty>	

@@ -11,6 +11,8 @@
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />
 	<HaveBounty questId="344547">
 		
+		<ToggleTargeting questId="1" stepId="1" killRadius="15" />		
+		
 		<!--Find cave 1-->
 		<If condition="CurrentWorldId == 71150">
 		  <SafeMoveTo questId="1" stepId="2" x="2188.627" y="4504.445" z="-0.3508204" />
@@ -34,8 +36,7 @@
 			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1187439574" destinationWorldId="82502" interactRange="20"  />
 		</If>
 		
-		<If condition="CurrentWorldId == 82502">
-			<TrinitySetQuesting />		
+		<If condition="CurrentWorldId == 82502">		
 			<WaitTimer questId="1" stepId="2" waitTime="2000" />
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="12" until="ExitFound" exitNameHash="-1187439573" ignoreMarkers="False">
 				<PrioritizeScenes>
@@ -47,6 +48,8 @@
 		</If>
 			
 		<If condition="CurrentWorldId == 82511">
+			<TrinitySetQuesting />			
+			<ToggleTargeting questId="1" stepId="1" killRadius="80" />			
 			<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance=".05" boxSize="7" stayAfterBounty="False"/>
 			<WaitTimer questId="1" stepId="2" waitTime="2000" />
 		</If>

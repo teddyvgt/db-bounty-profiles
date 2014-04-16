@@ -12,7 +12,9 @@
 	<HaveBounty questId="344486">
 	
 		<If condition="CurrentWorldId == 71150">
+			<ToggleTargeting questId="1" stepId="1" killRadius="15" />
 			<SafeMoveTo questId="1" stepId="2" x="2136.469" y="4327.496" z="-28.8857"/>
+			<ToggleTargeting questId="1" stepId="1" killRadius="80" />			
 			<MoveToActor questId="1" stepId="2" actorId="81068"/>
 			<WaitTimer questId="1" stepId="2" waitTime="5000" />
 			<MoveToActor questId="1" stepId="2" actorId="225252" x="2100.818" y="4297.587" z="-28.5686"/>

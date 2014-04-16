@@ -27,7 +27,18 @@
 			<UseObject questId="1" stepId="1" actorId="111907" isPortal="False" />
 
 			<!-- Wait for it to start and some extra time for delays between spawns -->
-			<WaitTimer questId="1" stepId="1" waitTime="35000" />	
+			<HaveBounty questId="345505">
+				<WaitTimer questId="1" stepId="1" waitTime="10000" />				
+				<MoveToActor questId="312429" stepId="2" actorId="111907" interactRange="9" name="Temp_FesteringWoodsAmbush_Switch-2213"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			
+			</HaveBounty>			
+			<HaveBounty questId="345505">
+				<WaitTimer questId="1" stepId="1" waitTime="10000" />				
+				<MoveToActor questId="312429" stepId="2" actorId="111907" interactRange="9" name="Temp_FesteringWoodsAmbush_Switch-2213"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			
+			</HaveBounty>			
+			<HaveBounty questId="345505">
+				<WaitTimer questId="1" stepId="1" waitTime="10000" />				
+				<MoveToActor questId="312429" stepId="2" actorId="111907" interactRange="9" name="Temp_FesteringWoodsAmbush_Switch-2213"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			
+			</HaveBounty>
 			
 			<!-- Hack to make sure we found it -->
 			<HaveBounty questId="345505">
