@@ -298,8 +298,7 @@
         <LogMessage quest="1" step="1" output="Should have interacted with him by now." />
 
       </ActBountiesComplete>
-      <!--<LeaveGame quest="1" step="1" reason="All supported ACTS have been completed" stayInParty="False" />-->
-      <!--WaitTimer questId="1" stepId="1" waitTime="60000"/-->
+      <LeaveGame quest="1" step="1" reason="No more bounties to do in this act" stayInParty="False" />
     </While>
   </Order>
 
