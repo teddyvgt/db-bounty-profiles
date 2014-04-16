@@ -8,22 +8,47 @@
 
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
 	<UseWaypoint waypointNumber="1" questId="1"/>
-	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />
+
 	<HaveBounty questId="369944">
-	
+
 		<If condition="CurrentWorldId == 71150">
+		
+			<!-- Find the cellar -->
+			<ToggleTargeting questId="1" stepId="1" killRadius="25" />
 			<SafeMoveTo questId="1" stepId="2" pathPrecision="20" x="2289.81" y="2562.356" z="27.10001" />
 			<MoveToMapMarker questId="1" stepId="2" exitNameHash="1107870150" destinationWorldId="106752" interactRange="20"  />
 			<WaitTimer questId="1" stepId="2" waitTime="2000" />
+			
+		</If>
+		
+		<If condition="CurrentWorldId == 106752">
+		
+			<!-- Start the event -->
+			<ToggleTargeting questId="1" stepId="1" killRadius="100" />	
 			<SafeMoveTo questId="1" stepId="2" x="128.015" y="125.9703" z="0.1" />
-			<MoveToActor questId="1" stepId="2" actorId="365097"/>
-			<WaitTimer questId="1" stepId="2" waitTime="3000" />
+			<MoveToActor questId="1" stepId="2" timeout="10000" actorId="365097"/>
+			
+			<!-- Open the chest anyway if bounty isn't here -->
+			<If condition="ActorExistsAt(362404, 140, 133, 0, 300)">
+				<MoveToActor questId="312429" stepId="2" x="140" y="133" z="0" actorId="362404" interactRange="7" name="trOut_Tristram_Chest_Guaranteed-2416"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			</If>
+			
+			<!-- Kill Stuff -->
+			<WaitTimer questId="1" stepId="2" waitTime="10000" />			
+			
 			<!-- If not completed, keep killing things until it is complete-->
 			<HaveBounty questId="369944">
 				<LogMessage quest="1" step="1" output="Interacted with chest, but still not done. Roaming to make sure everything is dead." />
 				<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
-			</HaveBounty>
-		</If>
+			</HaveBounty>		
+			
+			<!-- Go back to the chest location in case fighting mobs moved us out of range. -->
+			<SafeMoveTo questId="1" stepId="2" x="128.015" y="125.9703" z="0.1" />			
+			<MoveToActor questId="1" stepId="2" timeout="5000" actorId="365097"/>
+			<WaitTimer questId="1" stepId="2" waitTime="500" />			
+		
+		</If>		
 		
 	</HaveBounty>
 	<LoadProfile file="act1.xml" />

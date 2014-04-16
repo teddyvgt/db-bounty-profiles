@@ -1,7 +1,7 @@
 <!-- X1_Bounty_A1_Wilderness_Kill_Horrus (369399)  -->
 <!-- X1_Bounty_A1_Wilderness_Kill_Kankerrot (369404)  -->
 <Profile>
-<Name>Kill Horrus (369399)</Name>
+<Name>Kill Horrus/Kankerrot (369399/369404)</Name>
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
@@ -11,7 +11,7 @@
 	<UseWaypoint waypointNumber="6" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />
 	
-	<If condition="HasQuest(369404)">		
+	<HaveBounty questId="369404">		
 	
 		<!-- Look for him -->
 		<SafeMoveTo questId="312429" stepId="2" x="2890" y="2358" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
@@ -63,9 +63,9 @@
 			<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" stayAfterBounty="False"/>
 		</HaveBounty>	
 	
-	</If>
+	</HaveBounty>
 	
-	<If condition="HasQuest(369399)">	
+	<HaveBounty questId="369399">	
 	
 		<!-- Look for him -->
 		<SafeMoveTo questId="312429" stepId="2" x="2890" y="2358" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
@@ -117,8 +117,7 @@
 			<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" stayAfterBounty="False"/>
 		</HaveBounty>	
 	
-	</If>
-	
+	</HaveBounty>		
 	<LoadProfile file="act1.xml" />
 	
 </Order>
