@@ -233,8 +233,7 @@
 		<!-- Status: Needs Testing -->			
 		<HaveBounty questId="347070">
 			<LoadProfile file="347070_kill_charger.xml" />
-		</HaveBounty>		
-		
+		</HaveBounty>				
 		
 		<!-- The Cursed Grove -->
 		<!-- Status: Needs Testing -->			
@@ -246,7 +245,21 @@
 		<!-- Status: Needs Testing -->	
 		<HaveBounty questId="365401">
 			<LoadProfile file="365401_the_cursed_mill.xml" />
-		</HaveBounty>			
+		</HaveBounty>	
+		
+		<!-- Kill Growler -->
+		<!-- Status: Needs Testing -->	
+		<HaveBounty questId="369243">
+			<LoadProfile file="347073_kill_growler.xml" />
+		</HaveBounty>		
+
+		<!-- Kill Galush -->
+		<!-- Status: Needs Testing -->	
+		<HaveBounty questId="369251">
+			<LoadProfile file="369251_kill_galush.xml" />
+		</HaveBounty>	
+
+		
 		
 	
 	<!-- 10 Festering Woods ===========================================================-->
