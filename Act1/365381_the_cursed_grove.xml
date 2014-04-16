@@ -11,37 +11,31 @@
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
 	<HaveBounty questId="365381">
 		
-		<!-- search known spawn locations -->
-		<HaveBounty questId="365381">	
-			<SafeMoveTo questId="312429" stepId="2" x="1798" y="605" z="-2" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-			<While condition="ActorExistsAt(365097, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
-				<MoveToActor questId="1" stepId="2" actorId="365097"/>
+		<!-- search known spawn locations -->	
+			<SafeMoveTo questId="1" stepId="2" x="1798" y="605" z="-2" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<While condition="ActorExistsAt(364559, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+				<MoveToActor questId="1" stepId="2" actorId="364559"/>
 			</While>
-			<SafeMoveTo questId="312429" stepId="2" x="1798" y="605" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" /> 			
-		</If>		
-		<HaveBounty questId="365381">		
-			<SafeMoveTo questId="312429" stepId="2" x="2287" y="840" z="-2" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-			<While condition="ActorExistsAt(365097, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
-				<MoveToActor questId="1" stepId="2" actorId="365097"/>
+			<SafeMoveTo questId="1" stepId="2" x="1798" y="605" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" /> 	
+		
+			<SafeMoveTo questId="1" stepId="2" x="2287" y="840" z="-2" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<While condition="ActorExistsAt(364559, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+				<MoveToActor questId="1" stepId="2" actorId="364559"/>
 			</While>
-			<SafeMoveTo questId="312429" stepId="2" x="2287" y="840" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" /> 
-		</HaveBounty>			
-		<HaveBounty questId="365381">		
-			<SafeMoveTo questId="312429" stepId="2" x="2097" y="619" z="-2" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-			<While condition="ActorExistsAt(365097, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
-				<MoveToActor questId="1" stepId="2" actorId="365097"/>
+			<SafeMoveTo questId="1" stepId="2" x="2287" y="840" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" /> 				
+			<SafeMoveTo questId="1" stepId="2" x="2097" y="619" z="-2" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<While condition="ActorExistsAt(364559, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+				<MoveToActor questId="1" stepId="2" actorId="364559"/>
 			</While>
-			<SafeMoveTo questId="312429" stepId="2" x="2097" y="619" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" /> 
-		</HaveBounty>
+			<SafeMoveTo questId="1" stepId="2" x="2097" y="619" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" /> 
 		
 		<!-- search everywhere -->
 		<HaveBounty questId="365381">
-			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="365097" boxTolerance="0.10" boxSize="15" >
+			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="364559" boxTolerance="0.10" boxSize="15" >
 			</TrinityExploreDungeon>
-			<MoveToActor questId="375198" stepId="2" actorId="365097" />
-			<WaitTimer questId="375198" stepId="2" waitTime="5000" />
-		</If>
-		
+			<MoveToActor questId="18" stepId="2" actorId="364559" />
+			<WaitTimer questId="1" stepId="2" waitTime="5000" />
+		</HaveBounty>
 	</HaveBounty>
 	<LoadProfile file="act1.xml" />
 	
