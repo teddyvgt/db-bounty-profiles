@@ -14,10 +14,11 @@
 
       <If condition="CurrentWorldId == 95804">
         <!-- <TrinityExploreDungeon questId="346190" stepId="1" until="ObjectFound" actorId="176003" boxTolerance="0.10" boxSize="15" />-->
-        <TrinityExploreDungeon questId="346192" stepId="2" until="ExitFound" sceneName="Exit" exitNameHash="942020622" actorId="176003" pathPrecision="25" boxSize="25" boxTolerance="0.4" objectDistance="45">
+        <TrinityExploreDungeon questId="346192" stepId="2" until="ExitFound" exitNameHash="942020622" actorId="5502" pathPrecision="25" boxSize="25" boxTolerance="0.4" objectDistance="45">
           <IgnoreScenes>
-            <IgnoreScene sceneName="_ChokepointB" />
+            <IgnoreScene sceneName="_Chokepoint" />
 			<IgnoreScene sceneName="a3dun_Bridge_" />
+			<IgnoreScene sceneName="_03" />
           </IgnoreScenes>
         </TrinityExploreDungeon>
         <!--<SafeMoveTo questId="312429" stepId="2" x="3372" y="684" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
