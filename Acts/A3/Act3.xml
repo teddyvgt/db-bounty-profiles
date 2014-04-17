@@ -82,6 +82,10 @@
       <If condition="HasQuest(346162)">
         <LoadProfile file="Kill_Belagg.xml" />
       </If>
+	  <!--Kill_ShandraHar-->
+	  <If condition="HasQuest(349218)">
+		<LoadProfile file="Kill_ShandraHar.xml" />
+	  </If>
 
       <!--Vera-->
       <!--Clear_TheUnderbridge-->
