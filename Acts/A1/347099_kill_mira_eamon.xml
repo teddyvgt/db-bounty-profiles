@@ -17,7 +17,7 @@
 
 		<!-- Look Everywhere & Kill things -->
 		<HaveBounty questId="347099">
-		<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>			
+		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>			
 		<MoveToActor questId="312429" stepId="2" x="2043" y="898" z="-5" actorId="5502" interactRange="8" name="Start_Location_0-7587"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
 		</HaveBounty>
 		

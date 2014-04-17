@@ -37,7 +37,7 @@
 		
 			<!-- Search around for things to kill -->
 			<HaveBounty questId="365401">
-				<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" stayAfterBounty="False">
+				<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False">
 					<IgnoreScenes>
 						<IgnoreScene sceneName="_S02" />
 						<IgnoreScene sceneName="NE_02" />					
@@ -74,7 +74,7 @@
 				
 				<!-- If event is not over by now, explore to kill everything -->
 				<HaveBounty questId="365401">
-					<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" stayAfterBounty="False">
+					<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False">
 						<IgnoreScenes>				
 						</IgnoreScenes>
 					</TrinityExploreDungeon>
@@ -107,7 +107,7 @@
 				
 				<!-- If event is not over by now, explore to kill everything -->
 				<HaveBounty questId="365401">
-					<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" stayAfterBounty="False">
+					<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False">
 						<IgnoreScenes>				
 						</IgnoreScenes>
 					</TrinityExploreDungeon>

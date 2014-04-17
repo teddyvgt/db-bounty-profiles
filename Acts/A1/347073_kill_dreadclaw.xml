@@ -12,7 +12,7 @@
 	<HaveBounty questId="347073">	
 	
 		<!-- Look for him -->
-		<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">
+		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">
 			<IgnoreScenes>
 			  <IgnoreScene sceneName="_S01" />
 			  <IgnoreScene sceneId="74617" /><!-- Cemetery -->

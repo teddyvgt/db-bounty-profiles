@@ -68,7 +68,7 @@
 			<!-- Backup Plan -->
 			<HaveBounty questId="349020">
 				<LogMessage quest="1" step="1" output="Maybe something went wrong..." />	
-				<TrinityExploreDungeon questId="1" stepId="1" until="FullyExplored" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
+				<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
 				<MoveToActor questId="1" stepId="1" actorId="3892" interactRange="8" name="CryingGhost_Female_01_A-1573"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
 				<MoveToActor questId="1" stepId="1" actorId="174754" interactRange="7" name="a1dun_Crypts_Bowl_of_Bones_03-1762"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
 				<MoveToActor questId="1" stepId="1" actorId="174753" interactRange="7" name="a1dun_Crypts_Bowl_of_Bones_02-1566"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			 

@@ -41,7 +41,7 @@
 			<!-- Backup Plan -->
 			<HaveBounty questId="349020">
 				<LogMessage quest="1" step="1" output="Maybe something went wrong... fully exploring dungeon" />	
-				<TrinityExploreDungeon questId="1" stepId="1" until="FullyExplored" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
+				<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
 				<MoveToActor questId="1" stepId="1" actorId="93713" interactRange="8" name="a1dun_Crypts_Jar_of_Souls-5097"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
 			</HaveBounty>	
 							

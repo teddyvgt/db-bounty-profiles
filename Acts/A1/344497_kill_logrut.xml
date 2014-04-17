@@ -15,7 +15,7 @@
 		<SafeMoveTo questId="312429" stepId="2" x="2296" y="4873" z="-1" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 	
 		<!-- Look Everywhere -->
-		<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">
+		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">
 			<IgnoreScenes>
 				 <IgnoreScene sceneName="_Chokepoint_" />
 			</IgnoreScenes>

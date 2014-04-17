@@ -26,7 +26,7 @@
 	
 	<If condition="CurrentWorldId == 109530">
 		<LogMessage quest="1" step="1" output="Clearing level 2." />	
-		<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.45" boxSize="15" ignoreMarkers="False" stayAfterBounty="False"/>
+		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.45" boxSize="15" ignoreMarkers="False" stayAfterBounty="False"/>
 	</If>
 
 	<LoadProfile file="act4.xml" />

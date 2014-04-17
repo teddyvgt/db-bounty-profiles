@@ -19,7 +19,7 @@
         <!-- If not completed, keep killing things until it is complete-->
         <HaveBounty questId="349230">
           <LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
-          <TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+          <TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" />
         </HaveBounty>
         <MoveToActor questId="1" stepId="2" actorId="176003" />
         <WaitTimer questId="1" stepId="2" waitTime="20000" />

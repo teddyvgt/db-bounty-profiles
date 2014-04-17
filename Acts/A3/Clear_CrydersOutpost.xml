@@ -31,7 +31,7 @@ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="18521
       <If condition="CurrentWorldId == 185217">
         <HaveBounty questId="346188">
 			<TrinitySetQuesting />
-          <TrinityExploreDungeon questId="346188" stepId="1" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+          <TrinityExploreDungeon questId="346188" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" />
         </HaveBounty>
       </If>
     </HaveBounty>

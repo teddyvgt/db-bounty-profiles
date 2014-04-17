@@ -40,7 +40,7 @@
         <WaitTimer questId="1" stepId="3" waitTime="1000" />
         <HaveBounty questId="349222">
 
-          <TrinityExploreDungeon questId="349222" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+          <TrinityExploreDungeon questId="349222" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" />
         </HaveBounty>
 
 

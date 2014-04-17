@@ -29,7 +29,7 @@
       <!-- Explore The Barracks Level 2 -->
       <If condition="CurrentWorldId == 221749">
 		<TrinitySetQuesting />
-        <TrinityExploreDungeon questId="349210" stepId="2" until="FullyExplored" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
+        <TrinityExploreDungeon questId="349210" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
       </If>
     </HaveBounty>
 

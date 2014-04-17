@@ -51,7 +51,7 @@
       </If>
       <If condition="CurrentWorldId == 221751">
 		<TrinitySetQuesting />
-        <TrinityExploreDungeon questId="349206" stepId="2" until="FullyExplored" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
+        <TrinityExploreDungeon questId="349206" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
       </If>
     </HaveBounty>
 

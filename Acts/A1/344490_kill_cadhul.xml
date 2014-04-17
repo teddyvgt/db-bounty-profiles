@@ -18,7 +18,7 @@
 			<WaitTimer questId="1" stepId="2" waitTime="2000" />
 			
 			<!-- Search Everywhere -->
-			<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">
 				<IgnoreScenes>
 					 <IgnoreScene sceneName="_Chokepoint_" />
 				</IgnoreScenes>

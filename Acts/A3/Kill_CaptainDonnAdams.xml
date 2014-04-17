@@ -15,7 +15,7 @@
 
       <!-- START: Finde Donn Adams und töte 150 mobs -->
       <If condition="CurrentWorldId == 93104">
-        <TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" />
+        <TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" />
       </If>
       <!-- END: Finde Donn Adams und töte 150 mobs -->
     </HaveBounty>

@@ -58,7 +58,7 @@
 			<SafeMoveTo questId="312429" stepId="2" x="2604" y="1928" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 		</HaveBounty>
 		<HaveBounty questId="345490">	
-			<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="9" stayAfterBounty="False"/>
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance=".10" boxSize="9" stayAfterBounty="False"/>
 		</HaveBounty>			
 	
 	</HaveBounty>

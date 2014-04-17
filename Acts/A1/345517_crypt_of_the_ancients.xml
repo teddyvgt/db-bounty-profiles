@@ -27,7 +27,7 @@
 		<!-- Clear out the crypt -->
 		<If condition="CurrentWorldId == 60394">
 			<TrinitySetQuesting />
-			<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="10" stayAfterBounty="False"/>
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="10" stayAfterBounty="False"/>
 		</If>
 
 	</HaveBounty>

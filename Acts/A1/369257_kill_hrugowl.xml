@@ -50,7 +50,7 @@
 		</HaveBounty>	
 		
 		<!-- Search Everywhere -->
-		<TrinityExploreDungeon questId="1" stepId="1" until="FullyExplored" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">			
+		<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">			
 			<IgnoreScenes>        
 				<IgnoreScene sceneName="_N01" /><!-- Southern Highlands--> 	  
 			</IgnoreScenes>

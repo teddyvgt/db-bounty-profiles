@@ -18,7 +18,7 @@
         <!-- If not completed, keep killing things until it is complete-->
         <HaveBounty questId="349226">
           <LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
-          <TrinityExploreDungeon questId="349226" stepId="1" until="FullyExplored" boxTolerance="0.10" boxSize="15" />
+          <TrinityExploreDungeon questId="349226" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" />
         </HaveBounty>
       </If>
     </HaveBounty>

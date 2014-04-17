@@ -43,7 +43,7 @@ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="22174
       
         <If condition="CurrentWorldId == 221748">
 		<TrinitySetQuesting />
-        <TrinityExploreDungeon questId="349202" stepId="2" until="FullyExplored" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
+        <TrinityExploreDungeon questId="349202" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
 

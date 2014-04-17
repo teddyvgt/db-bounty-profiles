@@ -42,7 +42,7 @@
 			<!-- Hack to make sure we found him -->		
 			<HaveBounty questId="345502">
 				<LogMessage quest="1" step="1" output="hmmm.. something went wrong, fully exploring area" />	
-				<TrinityExploreDungeon questId="1" stepId="1" until="FullyExplored" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
+				<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
 				<MoveToActor questId="1" stepId="2" actorId="188119" />
 			</HaveBounty>					
 						

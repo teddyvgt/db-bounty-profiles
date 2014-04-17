@@ -36,7 +36,7 @@
 				<ToggleTargeting questId="1" stepId="1" killRadius="80" />	
 				<LogMessage quest="1" step="1" output="Clearing." />
 				<TrinitySetQuesting />	
-				<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
+				<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
 			</HaveBounty>
 
 		</If>

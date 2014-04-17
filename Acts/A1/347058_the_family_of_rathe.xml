@@ -51,7 +51,7 @@
 			
 			<!-- Hack to make sure we found it -->
 			<HaveBounty questId="347058">
-				<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
+				<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
 				<MoveToActor questId="1" stepId="2" actorId="76907" />
 				<WaitTimer questId="1" stepId="1" waitTime="10000" />				
 				<MoveToActor questId="1" stepId="2" actorId="76907" />

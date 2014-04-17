@@ -38,7 +38,7 @@
 			<HaveBounty questId="367561">		
 				<MoveToActor questId="312429" stepId="2" x="371" y="787" z="5" actorId="176536" interactRange="23" name="g_Portal_Ladder_Orange-8207" isPortal="True" destinationWorldId="71150" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 				<SafeMoveTo questId="312429" stepId="2" x="1085" y="3835" z="78" pathPrecision="5" pathPointLimit="250" statusText="" /> 				
-				<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
+				<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
 			</HaveBounty>
 		</If>				
 				

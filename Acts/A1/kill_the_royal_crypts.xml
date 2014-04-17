@@ -11,7 +11,7 @@
 
     <!-- Look for him -->
 	<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />
-	<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" ignoreMarkers="false" stayAfterBounty="False"/>
+	<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" ignoreMarkers="false" stayAfterBounty="False"/>
 
 	<LoadProfile file="act1.xml" />
 	

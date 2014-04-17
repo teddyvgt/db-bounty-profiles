@@ -23,7 +23,7 @@
       <TrinityExploreDungeon questId="346162" stepId="1" until="ObjectFound" actorId="220499" boxTolerance="0.10" boxSize="15" />
 	  <WaitTimer questId="1" stepId="1" waitTime="2500"/>
 	  <TrinityExploreDungeon questId="346162" stepId="1" SetNodesExploredAutomatically="true"
-        until="FullyExplored" boxSize="50" boxTolerance="0.01" 
+        until="BountyComplete" boxSize="50" boxTolerance="0.01" 
         timeoutType="GoldInactivity" townPortalOnTimeout="True" timeoutValue="60" 
         ignoreMarkers="True" pathPrecision="30">
         <IgnoreScenes>

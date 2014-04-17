@@ -12,7 +12,7 @@
 </While>
 
 	<WaitTimer questId="1" stepId="1" waitTime="1000"/>
-	<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.01" boxSize="20" ignoreMarkers="False" stayAfterBounty="False"/>
+	<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="20" ignoreMarkers="False" stayAfterBounty="False"/>
 
     <!-- Portal Home -->
 	<LoadProfile file="act4.xml" />

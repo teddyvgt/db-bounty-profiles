@@ -37,7 +37,7 @@
 		
 			<!-- Make sure we killed enough monsters to finish the bounty -->
 			<HaveBounty questId="347095">
-				<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
+				<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
 			</HaveBounty>			
 			
 		</If>

@@ -46,7 +46,7 @@
 			<!-- If not completed, keep killing things until it is complete-->
 			<HaveBounty questId="369944">
 				<LogMessage quest="1" step="1" output="Interacted with chest, but still not done. Roaming to make sure everything is dead." />
-				<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
+				<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
 			</HaveBounty>		
 			
 			<!-- Go back to the chest location in case fighting mobs moved us out of range. -->

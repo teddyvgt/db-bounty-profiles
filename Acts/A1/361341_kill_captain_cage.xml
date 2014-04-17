@@ -13,7 +13,7 @@
 
 		<!-- Look for him -->
 		<LogMessage quest="1" step="2" output="meep! meep! entering assassination mode..." />
-		<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" pathPrecision="20" boxTolerance="0.20" boxSize="25" stayAfterBounty="False"/>
+		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" pathPrecision="20" boxTolerance="0.20" boxSize="25" stayAfterBounty="False"/>
 
 	</HaveBounty>
 	<LoadProfile file="act1.xml" />
