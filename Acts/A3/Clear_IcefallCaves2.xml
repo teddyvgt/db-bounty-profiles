@@ -16,11 +16,8 @@
         <!-- <TrinityExploreDungeon questId="346190" stepId="1" until="ObjectFound" actorId="176003" boxTolerance="0.10" boxSize="15" />-->
         <TrinityExploreDungeon questId="346192" stepId="2" until="ExitFound" sceneName="Exit" exitNameHash="942020622" actorId="176003" pathPrecision="25" boxSize="25" boxTolerance="0.4" objectDistance="45">
           <IgnoreScenes>
-            <IgnoreScene sceneName="a3dun_Bridge_NS_01_Chokepoint" />
-            <IgnoreScene sceneName="a3_Battlefield_Chokepoint_B" />
-            <IgnoreScene sceneName="a3dun_Bridge_NS_04_Chokepoint" />
-            <IgnoreScene sceneName="a3_Battlefield_ChokepointB_E02_S01" />
-            <IgnoreScene sceneName="a3dun_Bridge_NS_03_Chokepoint" />
+            <IgnoreScene sceneName="_ChokepointB" />
+			<IgnoreScene sceneName="a3dun_Bridge_" />
           </IgnoreScenes>
         </TrinityExploreDungeon>
         <!--<SafeMoveTo questId="312429" stepId="2" x="3372" y="684" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
