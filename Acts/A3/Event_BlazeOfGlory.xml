@@ -16,9 +16,10 @@
         <!--until="ObjectFound" actorId="152145"-->
         <SafeMoveTo questId="346184" stepId="2" x="2570" y="634" z="0" pathPrecision="5" pathPointLimit="250" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
-        <TrinityExploreDungeon questId="346184" stepId="1" until="ObjectFound" actorId="152145" sceneName="Exit" boxTolerance="0.70" boxSize="15">
+        <TrinityExploreDungeon questId="346184" stepId="1" until="ObjectFound" actorId="152145" boxTolerance="0.70" boxSize="15">
           <IgnoreScenes>
-            <IgnoreScene sceneName="a3_Battlefield_ChokepointB_E02_S01" />
+            <IgnoreScene sceneName="_E02_S01" />
+            <IgnoreScene sceneName="a3_Battlefield_" />
           </IgnoreScenes>
         </TrinityExploreDungeon>
         <WaitTimer questId="1" stepId="2" waitTime="500" />
