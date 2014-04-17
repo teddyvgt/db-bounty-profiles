@@ -11,7 +11,7 @@
 	<UseWaypoint waypointNumber="45" questId="1"/>
 	<WaitTimer questId="1" stepId="1" waitTime="5000"/>
 </While>
-	<HaveBounty questId="369878">
+	<If condition="HasQuest(369878)">
 	<If condition="CurrentWorldId == 129305">
 	<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" stayAfterBounty="False">
 	<PrioritizeScenes>
@@ -24,10 +24,10 @@
 			<MoveToActor questId="1" stepId="2" actorId="365097"/>
 		</While>
 	  </If>
-	</HaveBounty>
+	</If>
 	
 	<!-- Duplicate to handle getting interrupted by the other cursed chest, couldn't find a more elegant solution -->
-	<HaveBounty questId="369878">
+	<If condition="HasQuest(369878)">
 	<If condition="CurrentWorldId == 129305">
 	<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" stayAfterBounty="False">
 	<PrioritizeScenes>
@@ -40,7 +40,7 @@
 			<MoveToActor questId="1" stepId="2" actorId="365097"/>
 		</While>
 	  </If>
-	</HaveBounty>
+	</If>
 
 	<LoadProfile file="act4.xml" />
 </Order>

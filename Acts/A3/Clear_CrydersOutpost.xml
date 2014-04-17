@@ -5,7 +5,7 @@
   <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 
   <Order>
-    <HaveBounty questId="346188">
+    <If condition="HasQuest(346188)">
 
       <While condition="CurrentWorldId != 95804 and CurrentWorldId != 185217">
         <UseWaypoint questId="1" waypointNumber="31" />
@@ -29,12 +29,12 @@ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="18521
       </If>
 
       <If condition="CurrentWorldId == 185217">
-        <HaveBounty questId="346188">
+        <If condition="HasQuest(346188)">
 			<TrinitySetQuesting />
           <TrinityExploreDungeon questId="346188" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" />
-        </HaveBounty>
+        </If>
       </If>
-    </HaveBounty>
+    </If>
 
     <LoadProfile file="act3.xml" />
   </Order>

@@ -9,7 +9,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
 	<UseWaypoint waypointNumber="13" questId="1"/>	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
-	<HaveBounty questId="344488">	
+	<If condition="HasQuest(344488)">	
 
 		<!-- Check Known Locations -->
 		<If condition="CurrentWorldId == 71150">		
@@ -69,17 +69,17 @@
 			<MoveToActor questId="312429" stepId="2" actorId="81609" interactRange="8" name="A1_UniqueVendor_Armorer-3541"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
 			<WaitTimer questId="1" stepId="1" waitTime="1000" />		
 			
-			<HaveBounty questId="344488">
+			<If condition="HasQuest(344488)">
 				<LogMessage quest="1" step="1" output="Maybe something went wrong...fully exploring dungeon" />	
 				<MoveToActor questId="1" stepId="1" actorId="81609" interactRange="8" name="A1_UniqueVendor_Armorer-3541"  pathPrecision="5" pathPointLimit="250" statusText="" /> 				
 				<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="5"  stayAfterBounty="False"/>
 				<MoveToActor questId="1" stepId="1" actorId="222404" interactRange="9" name="a1dun_highlands_JeweledScabbard-4736"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			
 				<MoveToActor questId="1" stepId="1" actorId="81609" interactRange="8" name="A1_UniqueVendor_Armorer-3541"  pathPrecision="5" pathPointLimit="250" statusText="" /> 				
-			</HaveBounty>	
+			</If>	
 			
 		</If>			
 
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

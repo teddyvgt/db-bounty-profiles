@@ -9,7 +9,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
 	<UseWaypoint waypointNumber="17" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
-	<HaveBounty questId="369789">
+	<If condition="HasQuest(369789)">
 
 		<!--  Halls of Agony Level 3  -->
 		<If condition="CurrentLevelAreaId == 19776">
@@ -20,14 +20,14 @@
 			<WaitTimer questId="1" stepId="1" waitTime="5000" />	
 			
 			<!-- Hack to make sure we found the shrine -->
-			<HaveBounty questId="369789">
+			<If condition="HasQuest(369789)">
 				<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
 				<MoveToActor questId="1" stepId="2" actorId="89578" />
-			</HaveBounty>			
+			</If>			
 			
 		</If>
 	
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

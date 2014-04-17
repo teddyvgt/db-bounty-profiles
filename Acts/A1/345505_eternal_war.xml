@@ -9,7 +9,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
 	<UseWaypoint waypointNumber="10" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
-	<HaveBounty questId="345505">
+	<If condition="HasQuest(345505)">
 
 		<!--  Festering Woods  -->
 		<If condition="CurrentLevelAreaId == 19953">
@@ -27,32 +27,32 @@
 			<UseObject questId="1" stepId="1" actorId="111907" isPortal="False" />
 
 			<!-- Wait for it to start and some extra time for delays between spawns -->
-			<HaveBounty questId="345505">
+			<If condition="HasQuest(345505)">
 				<WaitTimer questId="1" stepId="1" waitTime="10000" />				
 				<MoveToActor questId="312429" stepId="2" actorId="111907" interactRange="9" name="Temp_FesteringWoodsAmbush_Switch-2213"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			
-			</HaveBounty>			
-			<HaveBounty questId="345505">
+			</If>			
+			<If condition="HasQuest(345505)">
 				<WaitTimer questId="1" stepId="1" waitTime="10000" />				
 				<MoveToActor questId="312429" stepId="2" actorId="111907" interactRange="9" name="Temp_FesteringWoodsAmbush_Switch-2213"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			
-			</HaveBounty>			
-			<HaveBounty questId="345505">
+			</If>			
+			<If condition="HasQuest(345505)">
 				<WaitTimer questId="1" stepId="1" waitTime="10000" />				
 				<MoveToActor questId="312429" stepId="2" actorId="111907" interactRange="9" name="Temp_FesteringWoodsAmbush_Switch-2213"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			
-			</HaveBounty>
+			</If>
 			
 			<!-- Hack to make sure we found it -->
-			<HaveBounty questId="345505">
+			<If condition="HasQuest(345505)">
 				<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">
 					<IgnoreScenes>
 						<IgnoreScene sceneName="_S01" />		
 					</IgnoreScenes>
 				</TrinityExploreDungeon>
 				<MoveToActor questId="1" stepId="2" actorId="111907" />
-			</HaveBounty>			
+			</If>			
 			
 		</If>
 	
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

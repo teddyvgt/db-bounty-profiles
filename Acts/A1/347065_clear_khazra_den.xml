@@ -9,7 +9,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
 	<UseWaypoint waypointNumber="8" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
-	<HaveBounty questId="347065">
+	<If condition="HasQuest(347065)">
 
 		<!-- Find Khazra Den #1-->
 		<If condition="CurrentWorldId == 71150">
@@ -66,7 +66,7 @@
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</If>
 		
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

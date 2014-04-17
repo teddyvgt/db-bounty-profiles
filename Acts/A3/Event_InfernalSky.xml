@@ -5,7 +5,7 @@
   <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 
   <Order>
-    <HaveBounty questId="369825">
+    <If condition="HasQuest(369825)">
 
       <While condition="CurrentWorldId != 95804 ">
         <UseWaypoint questId="1" waypointNumber="31" />
@@ -19,7 +19,7 @@
 
       </If>
 
-    </HaveBounty>
+    </If>
 
     <LoadProfile file="act3.xml" />
   </Order>

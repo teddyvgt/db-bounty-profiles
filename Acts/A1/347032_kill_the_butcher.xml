@@ -10,7 +10,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
 	<UseWaypoint waypointNumber="17" questId="1"/>
 	<WaitTimer questId="1" stepId="1" waitTime="1000" />	
-	<HaveBounty questId="347032">
+	<If condition="HasQuest(347032)">
 	
 		<!-- Halls of Agony Level 3 -->
 		<TrinityExploreDungeon questId="312429" stepId="2" until="ObjectFound" actorId="158944" boxSize="10" boxTolerance="0.05" objectDistance="70">	
@@ -30,7 +30,7 @@
 		<SafeMoveTo questId="312429" stepId="2" x="130" y="133" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 		<WaitTimer questId="1" stepId="1" waitTime="1000" />		
 		
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

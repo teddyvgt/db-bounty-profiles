@@ -9,7 +9,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
 	<UseWaypoint waypointNumber="10" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />
-	<HaveBounty questId="345502">
+	<If condition="HasQuest(345502)">
 
 		<!--  Check Known Locations -->
 		<SafeMoveTo questId="312429" stepId="2" x="315" y="782" z="43" pathPrecision="5" pathPointLimit="250" statusText="" /> 
@@ -35,29 +35,29 @@
 		<WaitTimer questId="1" stepId="1" waitTime="20000" />				
 		
 		<!-- Try to find the stragglers - move to column at base -->
-		<HaveBounty questId="345502">			
+		<If condition="HasQuest(345502)">			
 			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="105303" pathPrecision="5" boxTolerance="0.05" boxSize="10"  />			
 			<WaitTimer questId="1" stepId="1" waitTime="1000" />	
-		</HaveBounty>	
+		</If>	
 		
 		<!-- Try to find remaining ghouls and ghosts -->	
-		<HaveBounty questId="345502">
+		<If condition="HasQuest(345502)">
 			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="4201" pathPrecision="40" boxTolerance="0.05" boxSize="20">				
 				<AlternateActors>
 					<AlternateActor actorId="136943" objectDistance="20" />
 				</AlternateActors>				
 			</TrinityExploreDungeon>
 			<WaitTimer questId="1" stepId="1" waitTime="2000" />
-		</HaveBounty>	
+		</If>	
 		
 		<!-- Hack to make sure we found it -->
-		<HaveBounty questId="345502">
+		<If condition="HasQuest(345502)">
 			<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
 			<MoveToActor questId="1" stepId="2" actorId="188119" />
-		</HaveBounty>		
+		</If>		
 			
 		
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

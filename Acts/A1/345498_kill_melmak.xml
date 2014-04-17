@@ -9,7 +9,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
 	<UseWaypoint waypointNumber="8" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
-	<HaveBounty questId="345498">	
+	<If condition="HasQuest(345498)">	
 	
 		<!-- Known Locations -->	
 		<SafeMoveTo questId="1" stepId="2" x="2404" y="988" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
@@ -24,7 +24,7 @@
 			</IgnoreScenes>
 		</TrinityExploreDungeon>
 		
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

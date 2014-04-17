@@ -9,13 +9,13 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
 	<UseWaypoint waypointNumber="4" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />
-	<HaveBounty questId="361341">
+	<If condition="HasQuest(361341)">
 
 		<!-- Look for him -->
 		<LogMessage quest="1" step="2" output="meep! meep! entering assassination mode..." />
 		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" pathPrecision="20" boxTolerance="0.20" boxSize="25" stayAfterBounty="False"/>
 
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

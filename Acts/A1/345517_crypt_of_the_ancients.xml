@@ -9,7 +9,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
 	<UseWaypoint waypointNumber="10" questId="1"/>	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
-	<HaveBounty questId="345517">
+	<If condition="HasQuest(345517)">
 	
 		<!-- needs to use waypoints or scene ignores to stop running down into fields of misery -->
 		
@@ -30,7 +30,7 @@
 			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="10" stayAfterBounty="False"/>
 		</If>
 
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

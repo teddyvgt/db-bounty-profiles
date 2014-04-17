@@ -8,7 +8,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
 	<UseWaypoint waypointNumber="3" questId="1"/>	    
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
-	<HaveBounty questId="375191">
+	<If condition="HasQuest(375191)">
 	
 		<!-- Look for chest -->
 		<WaitTimer questId="1" stepId="2" waitTime="2000" />
@@ -18,7 +18,7 @@
 			<MoveToActor questId="1" stepId="2" actorId="364559"/>
 		</While>
 
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

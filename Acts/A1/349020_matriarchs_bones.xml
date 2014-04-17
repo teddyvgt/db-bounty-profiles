@@ -9,7 +9,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
 	<UseWaypoint waypointNumber="7" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />			
-	<HaveBounty questId="349020">
+	<If condition="HasQuest(349020)">
 
 		<!--  Cemetery of the Forsaken  -->
 		<If condition="CurrentWorldId == 71150">			
@@ -66,7 +66,7 @@
 			<MoveToActor questId="1" stepId="1" actorId="203608" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" />
 
 			<!-- Backup Plan -->
-			<HaveBounty questId="349020">
+			<If condition="HasQuest(349020)">
 				<LogMessage quest="1" step="1" output="Maybe something went wrong..." />	
 				<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
 				<MoveToActor questId="1" stepId="1" actorId="3892" interactRange="8" name="CryingGhost_Female_01_A-1573"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
@@ -75,12 +75,12 @@
 				<MoveToActor questId="1" stepId="1" actorId="102079" interactRange="7" name="a1dun_Crypts_Bowl_of_Bones_01-1651"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
 				<MoveToActor questId="1" stepId="1" actorId="105754" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
 				<MoveToActor questId="1" stepId="1" actorId="203608" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
-			</HaveBounty>	
+			</If>	
 				
 			
 		</If>
 	
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

@@ -9,7 +9,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
 	<UseWaypoint waypointNumber="16" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
-	<HaveBounty questId="347030">
+	<If condition="HasQuest(347030)">
 	
 		<!--  Halls of Agony Level 2 -->
 		<If condition="CurrentLevelAreaId == 19775">
@@ -40,15 +40,15 @@
 			<WaitTimer questId="1" stepId="1" waitTime="1000" />
 						
 			<!-- Hack to make sure we found him -->		
-			<HaveBounty questId="345502">
+			<If condition="HasQuest(345502)">
 				<LogMessage quest="1" step="1" output="hmmm.. something went wrong, fully exploring area" />	
 				<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
 				<MoveToActor questId="1" stepId="2" actorId="188119" />
-			</HaveBounty>					
+			</If>					
 						
 		</If>
 		
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

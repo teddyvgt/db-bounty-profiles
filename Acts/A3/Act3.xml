@@ -16,266 +16,266 @@
       
  
 
-      <HaveBounty questId="346204">
+      <If condition="HasQuest(346204)">
         <LoadProfile file="Kill_Garganug.xml" />
-      </HaveBounty>
-      <HaveBounty questId="369825">
+      </If>
+      <If condition="HasQuest(369825)">
         <LoadProfile file="Event_InfernalSky.xml" />
-      </HaveBounty>-->
+      </If>-->
 	  
 	  <!--Kill_Ghallem-->
-      <HaveBounty questId="349214">
+      <If condition="HasQuest(349214)">
         <LoadProfile file="Kill_Ghallem.xml" />
-      </HaveBounty>
+      </If>
       
 
       <!--Zotan-->
       <!--Kill_Lashtongue-->
-      <HaveBounty questId="349117">
+      <If condition="HasQuest(349117)">
         <LoadProfile file="Kill_Lashtongue.xml"/>
-      </HaveBounty>
+      </If>
       <!--kill_ghom-->
-      <HaveBounty questId="346166">
+      <If condition="HasQuest(346166)">
         <LoadProfile file="kill_ghom.xml"/>
-      </HaveBounty>
+      </If>
       <!--Kill_CaptainDonnAdams-->
-      <HaveBounty questId="346154">
+      <If condition="HasQuest(346154)">
         <LoadProfile file="Kill_CaptainDonnAdams.xml"/>
-      </HaveBounty>
+      </If>
       <!--BloodClanAssault-->
-      <HaveBounty questId="369868">
+      <If condition="HasQuest(369868)">
         <LoadProfile file="BloodClanAssault.xml"/>
-      </HaveBounty>
+      </If>
       <!--Kill_Growlfang-->
-      <HaveBounty questId="356422">
+      <If condition="HasQuest(356422)">
         <LoadProfile file="Kill_Growlfang.xml"/>
-      </HaveBounty>
+      </If>
       <!--Kill_ViciousGrayTurkey-->
-      <HaveBounty questId="349121">
+      <If condition="HasQuest(349121)">
         <LoadProfile file="Kill_ViciousGrayTurkey.xml"/>
-      </HaveBounty>
+      </If>
       <!--Kill_Sawtooth-->
-      <HaveBounty questId="349230">
+      <If condition="HasQuest(349230)">
         <LoadProfile file="Kill_Sawtooth.xml"/>
-      </HaveBounty>
+      </If>
       <!--Clear_TheBarracks2-->
-      <HaveBounty questId="349210">
+      <If condition="HasQuest(349210)">
         <LoadProfile file="Clear_TheBarracks2.xml"/>
-      </HaveBounty>
+      </If>
       <!--Kill_Valifahr-->
-      <HaveBounty questId="346228">
+      <If condition="HasQuest(346228)">
         <LoadProfile file="Kill_Valifahr.xml"/>
-      </HaveBounty>
+      </If>
       <!--Clear_ForwardBarracks-->
-      <HaveBounty questId="349198">
+      <If condition="HasQuest(349198)">
         <LoadProfile file="Clear_ForwardBarracks.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Ganthar-->
-      <HaveBounty questId="369319">
+      <If condition="HasQuest(369319)">
         <LoadProfile file="Kill_Ganthar.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Crabbs-->
-      <HaveBounty questId="349234">
+      <If condition="HasQuest(349234)">
         <LoadProfile file="Kill_Crabbs.xml" />
-      </HaveBounty>
+      </If>
 	  <!--Kill_Belagg-->
-      <HaveBounty questId="346162">
+      <If condition="HasQuest(346162)">
         <LoadProfile file="Kill_Belagg.xml" />
-      </HaveBounty>
+      </If>
 
       <!--Vera-->
       <!--Clear_TheUnderbridge-->
-      <HaveBounty questId="349208">
+      <If condition="HasQuest(349208)">
         <LoadProfile file="Clear_TheUnderbridge.xml" />
-      </HaveBounty>
+      </If>
       <!--Clear_IcefallCaves2-->
-      <HaveBounty questId="346192">
+      <If condition="HasQuest(346192)">
         <LoadProfile file="Clear_IcefallCaves2.xml" />
-      </HaveBounty>
+      </If>
       <!--Clear_CavernsOfFrost2-->
-      <HaveBounty questId="346190">
+      <If condition="HasQuest(346190)">
         <LoadProfile file="Clear_CavernsOfFrost2.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Siegebreaker-->
-      <HaveBounty questId="349242">
+      <If condition="HasQuest(349242)">
         <LoadProfile file="Kill_Siegebreaker.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Brimstone-->
-      <HaveBounty questId="346235">
+      <If condition="HasQuest(346235)">
         <LoadProfile file="Kill_Brimstone.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Gholash-->
-      <HaveBounty questId="349238">
+      <If condition="HasQuest(349238)">
         <LoadProfile file="Kill_Gholash.xml" />
-      </HaveBounty>
+      </If>
       <!--Event_BloodTies-->
-      <HaveBounty questId="349196">
+      <If condition="HasQuest(349196)">
         <LoadProfile file="Event_BloodTies.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Greelode-->
-      <HaveBounty questId="369323">
+      <If condition="HasQuest(369323)">
         <LoadProfile file="Kill_Greelode.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Azmodan-->
-      <HaveBounty questId="349244">
+      <If condition="HasQuest(349244)">
         <LoadProfile file="Kill_Azmodan.xml" />
-      </HaveBounty>
+      </If>
       <!--Event_BlazeOfGlory-->
-      <HaveBounty questId="346184">
+      <If condition="HasQuest(346184)">
         <LoadProfile file="Event_BlazeOfGlory.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Aloysius-->
-      <HaveBounty questId="349119">
+      <If condition="HasQuest(349119)">
         <LoadProfile file="Kill_Aloysius.xml" />
-      </HaveBounty>
+      </If>
       <!--Event_DeathChill-->
-      <HaveBounty questId="369851">
+      <If condition="HasQuest(369851)">
         <LoadProfile file="Event_DeathChill.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Allucayrd-->
-      <HaveBounty questId="369329">
+      <If condition="HasQuest(369329)">
         <LoadProfile file="Kill_Allucayrd.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Gorog-->
-      <HaveBounty questId="349228">
+      <If condition="HasQuest(349228)">
         <LoadProfile file="Kill_Gorog.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Cydaea-->
-      <HaveBounty questId="349224">
+      <If condition="HasQuest(349224)">
         <LoadProfile file="Kill_Cydaea.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Brutu-->
-      <HaveBounty questId="349222">
+      <If condition="HasQuest(349222)">
         <LoadProfile file="Kill_Brutu.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Snitchley-->
-      <HaveBounty questId="349298">
+      <If condition="HasQuest(349298)">
         <LoadProfile file="Kill_Snitchley.xml" />
-      </HaveBounty>
+      </If>
       <!--Event_KeepBlacksmith-->
-      <HaveBounty questId="346146">
+      <If condition="HasQuest(346146)">
         <LoadProfile file="Event_KeepBlacksmith.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Thromp-->
-      <HaveBounty questId="369312">
+      <If condition="HasQuest(369312)">
         <LoadProfile file="Kill_Thromp.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Marchocyas-->
-      <HaveBounty questId="346132">
+      <If condition="HasQuest(346132)">
         <LoadProfile file="Kill_Marchocyas.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_CaptainDale-->
-      <HaveBounty questId="346157">
+      <If condition="HasQuest(346157)">
         <LoadProfile file="Kill_CaptainDale.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Severclaw-->
-      <HaveBounty questId="346225">
+      <If condition="HasQuest(346225)">
         <LoadProfile file="Kill_Severclaw.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Axgore-->
-      <HaveBounty questId="346232">
+      <If condition="HasQuest(346232)">
         <LoadProfile file="Kill_Axgore.xml" />
-      </HaveBounty>
+      </If>
       <!--Event_Triage-->
-      <HaveBounty questId="346180">
+      <If condition="HasQuest(346180)">
         <LoadProfile file="Event_Triage.xml" />
-      </HaveBounty>
+      </If>
       <!--Clear_TheFoundry2-->
-      <HaveBounty questId="349206">
+      <If condition="HasQuest(349206)">
         <LoadProfile file="Clear_TheFoundry2.xml" />
-      </HaveBounty>
+      </If>
       <!--Clear_BattlefieldStores2-->
-      <HaveBounty questId="349204">
+      <If condition="HasQuest(349204)">
         <LoadProfile file="Clear_BattlefieldStores2.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Thornback-->
-      <HaveBounty questId="346148">
+      <If condition="HasQuest(346148)">
         <LoadProfile file="Kill_Thornback.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Barrucus-->
-      <HaveBounty questId="369326">
+      <If condition="HasQuest(369326)">
         <LoadProfile file="Kill_Barrucus.xml" />
-      </HaveBounty>
+      </If>
       <!--Event_ForsakenSoldiers-->
-      <HaveBounty questId="369853">
+      <If condition="HasQuest(369853)">
         <LoadProfile file="Event_ForsakenSoldiers.xml" />
-      </HaveBounty>
+      </If>
       <!--Clear_CrydersOutpost-->
-      <HaveBounty questId="346188">
+      <If condition="HasQuest(346188)">
         <LoadProfile file="Clear_CrydersOutpost.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Obis-->
-      <HaveBounty questId="369316">
+      <If condition="HasQuest(369316)">
         <LoadProfile file="Kill_Obis.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Gormungandr-->
-      <HaveBounty questId="349232">
+      <If condition="HasQuest(349232)">
         <LoadProfile file="Kill_Gormungandr.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Bricktop-->
-      <HaveBounty questId="346128">
+      <If condition="HasQuest(346128)">
         <LoadProfile file="Kill_Bricktop.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Axegrave-->
-      <HaveBounty questId="349115">
+      <If condition="HasQuest(349115)">
         <LoadProfile file="Kill_Axegrave.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Mhawgann-->
-      <HaveBounty questId="346222">
+      <If condition="HasQuest(346222)">
         <LoadProfile file="Kill_Mhawgann.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Lummock-->
-      <HaveBounty questId="356417">
+      <If condition="HasQuest(356417)">
         <LoadProfile file="Kill_Lummock.xml" />
-      </HaveBounty>
+      </If>
       <!--Clear_FortifiedBunker2-->
-      <HaveBounty questId="349202">
+      <If condition="HasQuest(349202)">
         <LoadProfile file="Clear_FortifiedBunker2.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Riplash-->
-      <HaveBounty questId="349236">
+      <If condition="HasQuest(349236)">
         <LoadProfile file="Kill_Riplash.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_TheCrusher-->
-      <HaveBounty questId="346160">
+      <If condition="HasQuest(346160)">
         <LoadProfile file="Kill_TheCrusher.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Direclaw-->
-     <HaveBounty questId="349216">
+     <If condition="HasQuest(349216)">
         <LoadProfile file="Kill_Direclaw.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Gugyn-->
-      <HaveBounty questId="346164">
+      <If condition="HasQuest(346164)">
         <LoadProfile file="Kill_Gugyn.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Maggrus-->
-      <HaveBounty questId="346217">
+      <If condition="HasQuest(346217)">
         <LoadProfile file="Kill_Maggrus.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Maggrus-->
-      <HaveBounty questId="346182">
+      <If condition="HasQuest(346182)">
         <LoadProfile file="Event_TideOfBattle.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Scorpitox-->
-      <HaveBounty questId="349226">
+      <If condition="HasQuest(349226)">
         <LoadProfile file="Kill_Scorpitox.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Bashface-->
-      <HaveBounty questId="346130">
+      <If condition="HasQuest(346130)">
         <LoadProfile file="Kill_Bashface.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Haxxor-->
-      <HaveBounty questId="349240">
+      <If condition="HasQuest(349240)">
         <LoadProfile file="Kill_Haxxor.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Hyrug-->
-      <HaveBounty questId="346215">
+      <If condition="HasQuest(346215)">
         <LoadProfile file="Kill_Hyrug.xml" />
-      </HaveBounty>
+      </If>
       <!--Kill_Hyrug-->
-      <HaveBounty questId="346200">
+      <If condition="HasQuest(346200)">
         <LoadProfile file="Kill_Shertik.xml" />
-      </HaveBounty>
+      </If>
 
       <LogMessage quest="1" step="1" output="Checking if we have all bounties complete" />
       <ActBountiesComplete act="A3">

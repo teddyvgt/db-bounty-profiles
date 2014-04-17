@@ -9,7 +9,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
 	<UseWaypoint waypointNumber="8" questId="1"/>	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
-	<HaveBounty questId="347058">
+	<If condition="HasQuest(347058)">
 
 		<!--  Search Known Locations  -->
 		<If condition="CurrentLevelAreaId == 19952">
@@ -50,16 +50,16 @@
 			<MoveToActor questId="1" actorId="76907" interactRange="8" name="FamilyTree_Daughter-5666"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			
 			
 			<!-- Hack to make sure we found it -->
-			<HaveBounty questId="347058">
+			<If condition="HasQuest(347058)">
 				<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
 				<MoveToActor questId="1" stepId="2" actorId="76907" />
 				<WaitTimer questId="1" stepId="1" waitTime="10000" />				
 				<MoveToActor questId="1" stepId="2" actorId="76907" />
-			</HaveBounty>				
+			</If>				
 		
 		</If>		
 	
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

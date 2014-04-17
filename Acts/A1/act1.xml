@@ -11,526 +11,526 @@
 	<!-- 1	The Old Ruins =============================================================-->
 	
 		<!-- The Cursed Cellar -->
-		<HaveBounty questId="369944">
+		<If condition="HasQuest(369944)">
 			<LoadProfile file="369944_the_cursed_cellar.xml" />
-		</HaveBounty>	
+		</If>	
 	
 	<!-- 2	Cathedral Level 1 =========================================================-->
 	
 		<!-- The Cursed Chamber of Bones -->
 		<!-- Status: OK -->			
-		<HaveBounty questId="375198">
+		<If condition="HasQuest(375198)">
 			<LoadProfile file="375198_cursed_chamber_of_bone.xml" />
-		</HaveBounty>	
+		</If>	
 		
 		<!-- Kill Glidewing-->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="361331">
+		<If condition="HasQuest(361331)">
 			<LoadProfile file="kill_cathedral_level_1.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- Kill Braluk Grimlow -->
-		<HaveBounty questId="361327">
+		<If condition="HasQuest(361327)">
 			<LoadProfile file="kill_cathedral_level_1.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- Kill Ragus Grimlow -->
-		<HaveBounty questId="361320">
+		<If condition="HasQuest(361320)">
 			<LoadProfile file="kill_cathedral_level_1.xml" />
-		</HaveBounty>		
+		</If>		
 	
 	<!-- 3	Cathedral Level 2 =========================================================-->
 	
 		<!-- Kill Merrium Skullthorn-->
 		<!-- Status: OK -->			
-		<HaveBounty questId="361334">
+		<If condition="HasQuest(361334)">
 			<LoadProfile file="kill_cathedral_level_2.xml" />
-		</HaveBounty>	
+		</If>	
 	
 		<!-- Kill Firestarter -->
 		<!-- Status: OK -->		
-		<HaveBounty questId="361339">
+		<If condition="HasQuest(361339)">
 			<LoadProfile file="kill_cathedral_level_2.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- Kill Cudgelarm -->
 		<!-- Status: OK -->			
-		<HaveBounty questId="361336">
+		<If condition="HasQuest(361336)">
 			<LoadProfile file="kill_cathedral_level_2.xml" />
-		</HaveBounty>			
+		</If>			
 		
 		<!-- The Cursed Court -->
 		<!-- Status: GOOD -->			
-		<HaveBounty questId="375191">
+		<If condition="HasQuest(375191)">
 			<LoadProfile file="375191_cursed_court.xml" />
-		</HaveBounty>		
+		</If>		
 	
 	<!-- 4	Cathedral Level 4 =========================================================-->
 	
 		<!-- Kill Killian Damort -->
 		<!-- Status: OK -->			
-		<HaveBounty questId="361343">
+		<If condition="HasQuest(361343)">
 			<LoadProfile file="kill_cathedral_level_4.xml" />
-		</HaveBounty>	
+		</If>	
 		
 		<!-- Kill Captain Cage -->
 		<!-- Status: OK -->	
-		<HaveBounty questId="361341">
+		<If condition="HasQuest(361341)">
 			<LoadProfile file="kill_cathedral_level_4.xml" />
-		</HaveBounty>	
+		</If>	
 
 		<!-- Kill Bellybloat the Scarred -->
 		<!-- Status: OK -->		
-		<HaveBounty questId="361345">
+		<If condition="HasQuest(361345)">
 			<LoadProfile file="kill_cathedral_level_4.xml" />
-		</HaveBounty>	
+		</If>	
 
 	
 	<!-- 5	The Royal Crypts ==========================================================-->
 	
 		<!-- Kill Skeleton King-->
 		<!-- Status: EXCELLENT -->		
-		<HaveBounty questId="361234">
+		<If condition="HasQuest(361234)">
 			<LoadProfile file="361234_kill_skeleton_king.xml" />
-		</HaveBounty>	
+		</If>	
 		
 		<!-- Kill Rad'noj-->
 		<!-- Status: Needs Testing -->		
-		<HaveBounty questId="361352">
+		<If condition="HasQuest(361352)">
 			<LoadProfile file="kill_the_royal_crypts.xml" />
-		</HaveBounty>	
+		</If>	
 		
 		<!-- Kill Captain Clegg -->
 		<!-- Status: OK -->			
-		<HaveBounty questId="361354">
+		<If condition="HasQuest(361354)">
 			<LoadProfile file="kill_the_royal_crypts.xml" />
-		</HaveBounty>			
+		</If>			
 	
 	<!-- 6	The Weeping Hollow ========================================================-->
 	
 		<!-- Clear the Den of the Fallen -->
 		<!-- Status: GOOD -->			
-		<HaveBounty questId="345488">
+		<If condition="HasQuest(345488)">
 			<LoadProfile file="345488_clear_den_of_the_fallen.xml" />
-		</HaveBounty>	
+		</If>	
 		
 		<!-- Kill Mange -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="345490">
+		<If condition="HasQuest(345490)">
 			<LoadProfile file="345490_kill_mange.xml" />
-		</HaveBounty>			
+		</If>			
 		
 		<!-- Kill Horrus -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="369399">
+		<If condition="HasQuest(369399)">
 			<LoadProfile file="369399_kill_horrus.xml" />
-		</HaveBounty>	
+		</If>	
 
 		<!-- Kill Horrus (Kankerrot) -->
 		<!-- Status: OK -->			
-		<HaveBounty questId="369404">
+		<If condition="HasQuest(369404)">
 			<LoadProfile file="369399_kill_horrus.xml" />
-		</HaveBounty>
+		</If>
 
 		<!-- Kill Mira Eamon -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="347099">
+		<If condition="HasQuest(347099)">
 			<LoadProfile file="347099_kill_mira_eamon.xml" />
-		</HaveBounty>	
+		</If>	
 
 	
 	<!-- 7	Cemetery of the Forsaken ==================================================-->
 
 		<!-- The Matriarchs Bones -->
 		<!-- Status: OK -->			
-		<HaveBounty questId="349020">
+		<If condition="HasQuest(349020)">
 			<LoadProfile file="349020_matriarchs_bones.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- Jar of Souls -->
 		<!-- Status: OK -->			
-		<HaveBounty questId="349016">
+		<If condition="HasQuest(349016)">
 			<LoadProfile file="349016_jar_of_souls.xml" />
-		</HaveBounty>			
+		</If>			
 	
 		<!-- Kill Digger'O'Dell -->
 		<!-- Status: OK -->				
-		<HaveBounty questId="347097">
+		<If condition="HasQuest(347097)">
 			<LoadProfile file="347097_kill_diggerodell.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- The Dataminer -->
 		<!-- Status: Needs Testing, timed out in cemetary -->			
-		<HaveBounty questId="347095">
+		<If condition="HasQuest(347095)">
 			<LoadProfile file="347095_kill_the_dataminer.xml" />
-		</HaveBounty>	
+		</If>	
 				
 		
 	<!-- 8	Fields of Misery ==========================================================-->
 			
 		<!-- The Precious Ores -->
 		<!-- Status: Needs Testing -->		
-		<HaveBounty questId="347060">
+		<If condition="HasQuest(347060)">
 			<LoadProfile file="347060_the_precious_ores.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- The family of Rathe -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="347058">
+		<If condition="HasQuest(347058)">
 			<LoadProfile file="347058_the_family_of_rathe.xml" />
-		</HaveBounty>		
+		</If>		
 
 		<!-- Farm Besieged -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="347062">
+		<If condition="HasQuest(347062)">
 			<LoadProfile file="347062_farm_besieged.xml" />
-		</HaveBounty>	
+		</If>	
 		
 		<!-- Carrion Farm-->
 		<!-- Status: ??  -->		
-		<HaveBounty questId="345500">
+		<If condition="HasQuest(345500)">
 			<LoadProfile file="345500_carrion_farm.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- Clear the Scavenger's Den -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="345496">
+		<If condition="HasQuest(345496)">
 			<LoadProfile file="345496_clear_the_scavengers_den.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- Kill Melmak -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="345498">
+		<If condition="HasQuest(345498)">
 			<LoadProfile file="345498_kill_melmak.xml" />
-		</HaveBounty>			
+		</If>			
 		
 		<!-- Kill Krelm the Flagitious -->
 		<!-- Status: Needs Testing -->		
-		<HaveBounty questId="369246">
+		<If condition="HasQuest(369246)">
 			<LoadProfile file="kill_fields_of_misery.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- The Cursed Grove-->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="365381">
+		<If condition="HasQuest(365381)">
 			<LoadProfile file="365381_the_cursed_grove.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- Clear Khazra Den -->
 		<!-- Status: OK -->			
-		<HaveBounty questId="347065">
+		<If condition="HasQuest(347065)">
 			<LoadProfile file="347065_clear_khazra_den.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- Kill Dreadclaw -->
 		<!-- Status: OK -->				
-		<HaveBounty questId="347073">
+		<If condition="HasQuest(347073)">
 			<LoadProfile file="347073_kill_dreadclaw.xml" />
-		</HaveBounty>			
+		</If>			
 
 		<!-- Kill Charger -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="347070">
+		<If condition="HasQuest(347070)">
 			<LoadProfile file="347070_kill_charger.xml" />
-		</HaveBounty>				
+		</If>				
 		
 		<!-- The Cursed Grove -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="365381">
+		<If condition="HasQuest(365381)">
 			<LoadProfile file="365381_the_cursed_grove.xml" />
-		</HaveBounty>				
+		</If>				
 		
 		<!-- Kill Growler -->
 		<!-- Status: Needs Testing -->	
-		<HaveBounty questId="369243">
+		<If condition="HasQuest(369243)">
 			<LoadProfile file="347073_kill_growler.xml" />
-		</HaveBounty>		
+		</If>		
 
 	<!-- 9 Drowned Temple ===========================================================-->		
 		
 		<!-- The Cursed Mill -->
 		<!-- Status: Needs Testing -->	
-		<HaveBounty questId="365401">
+		<If condition="HasQuest(365401)">
 			<LoadProfile file="365401_the_cursed_mill.xml" />
-		</HaveBounty>			
+		</If>			
 	
 	<!-- 10 Festering Woods ===========================================================-->
 	
 		<!-- Kill Galush -->
 		<!-- Status: Needs Testing -->	
-		<HaveBounty questId="369251">
+		<If condition="HasQuest(369251)">
 			<LoadProfile file="369251_kill_galush.xml" />
-		</HaveBounty>		
+		</If>		
 	
 		<!-- Clear the Crypt of the Ancients -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="345517">
+		<If condition="HasQuest(345517)">
 			<LoadProfile file="345517_crypt_of_the_ancients.xml" />
-		</HaveBounty>	
+		</If>	
 
 		<!-- Kill Fecklar's Ghost-->
 		<!-- Status: OK -->			
-		<HaveBounty questId="347056">
+		<If condition="HasQuest(347056)">
 			<LoadProfile file="kill_the_festering_woods.xml" />
-		</HaveBounty>
+		</If>
 			
 		<!-- Kill Hawthorne Gable-->
 		<!-- Status: OK -->				
-		<HaveBounty questId="347054">
+		<If condition="HasQuest(347054)">
 			<LoadProfile file="kill_the_festering_woods.xml" />
-		</HaveBounty>	
+		</If>	
 
 		<!-- Eternal War -->
 		<!-- Status: Needs Testing -->		
-		<HaveBounty questId="345505">
+		<If condition="HasQuest(345505)">
 			<LoadProfile file="345505_eternal_war.xml" />
-		</HaveBounty>	
+		</If>	
 		
 		<!-- Last Stand of the Ancients -->
 		<!-- Status: Needs Testing -->		
-		<HaveBounty questId="345502">
+		<If condition="HasQuest(345502)">
 			<LoadProfile file="345502_last_stand_of_the_ancients.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- Clear Warrior's Rest -->
 		<!-- Status: OK -->			
-		<HaveBounty questId="345520">
+		<If condition="HasQuest(345520)">
 			<LoadProfile file="345520_clear_warriors_rest.xml" />
-		</HaveBounty>		
+		</If>		
 
 		<!-- Kill Grimsmack -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="345507">
+		<If condition="HasQuest(345507)">
 			<LoadProfile file="345507_kill_grimshack.xml" />
-		</HaveBounty>		
+		</If>		
 
 		<!-- Kill Galush Valdant -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="369251">
+		<If condition="HasQuest(369251)">
 			<LoadProfile file="369251_kill_galush.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- Kill Lord Brone-->
 		<!-- Status: OK, path needs tweaking because it has some dead spots -->			
-		<HaveBounty questId="369249">
+		<If condition="HasQuest(369249)">
 			<LoadProfile file="369249_kill_lord_brone.xml" />
-		</HaveBounty>		
+		</If>		
 		
 	<!-- 12	Caverns of Araneae ========================================================-->
 	
 		<!-- Kill Queen Araneae -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="345528">
+		<If condition="HasQuest(345528)">
 			<LoadProfile file="345528_kill_queen_araneae.xml" />
-		</HaveBounty>	
+		</If>	
 		
 		<!-- Kill Rathlin the Widowmaker -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="345526">
+		<If condition="HasQuest(345526)">
 			<LoadProfile file="kill_caverns_of_araneae.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- Cursed Hatchery / Spider Trap -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="375201">
+		<If condition="HasQuest(375201)">
 			<LoadProfile file="375201_cursed_hatchery.xml" />
-		</HaveBounty>			
+		</If>			
 
 		<!-- Kill Venomite -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="345524">
+		<If condition="HasQuest(345524)">
 			<LoadProfile file="kill_caverns_of_araneae.xml" />
-		</HaveBounty>		
+		</If>		
 
 		<!--Kill Qurash the Reviled -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="345862">
+		<If condition="HasQuest(345862)">
 			<LoadProfile file="kill_caverns_of_araneae.xml" />
-		</HaveBounty>
+		</If>
 		
 		<!--Kill Zhelobb -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="345522">
+		<If condition="HasQuest(345522)">
 			<LoadProfile file="kill_caverns_of_araneae.xml" />
-		</HaveBounty>
+		</If>
 		
 					
 	<!-- 13	Southern Highlands ========================================================-->
 
 		<!-- Crumbling tower -->
 		<!-- Status: GOOD -->		
-		<HaveBounty questId="344482">
+		<If condition="HasQuest(344482)">
 			<LoadProfile file="344482_crumbling_tower.xml" />
-		</HaveBounty>	
+		</If>	
 		
 		<!-- Kill Logrut the warrior -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="344497">
+		<If condition="HasQuest(344497)">
 			<LoadProfile file="344497_kill_logrut.xml" />
-		</HaveBounty>			
+		</If>			
 		
 		<!-- Revenge of Gharbad -->
 		<!-- Status: OK -->		
-		<HaveBounty questId="344486">
+		<If condition="HasQuest(344486)">
 			<LoadProfile file="344486_revenge_of_gharbad.xml" />
-		</HaveBounty>	
+		</If>	
 		
 		<!-- Vendor Armorer / Scavenged Scabbard -->
 		<!-- Status: Needs Testing -->		
-		<HaveBounty questId="344488">
+		<If condition="HasQuest(344488)">
 			<LoadProfile file="344488_vendor_armorer.xml" />
-		</HaveBounty>	
+		</If>	
 
 		<!-- Kill Cadhul the Deathcaller -->
 		<!-- Status: OK -->			
-		<HaveBounty questId="344490">
+		<If condition="HasQuest(344490)">
 			<LoadProfile file="344490_kill_cadhul.xml" />
-		</HaveBounty>	
+		</If>	
 		
 		<!-- Kill Lorzak -->
 		<!-- Status: Needs Testing -->				
-		<HaveBounty questId="344501">
+		<If condition="HasQuest(344501)">
 			<LoadProfile file="344501_Kill_Lorzak.xml" />
-		</HaveBounty>	
+		</If>	
 
 		<!-- Clear the Clan of the Moon Cave -->
 		<!-- Status: GOOD -->						
-		<HaveBounty questId="344547">
+		<If condition="HasQuest(344547)">
 			<LoadProfile file="344547_clan_of_the_mooncave.xml" />
-		</HaveBounty>
+		</If>
 		
 		<!-- Kill Red Rock -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="344503">
+		<If condition="HasQuest(344503)">
 			<LoadProfile file="kill_southern_highlands.xml" />
-		</HaveBounty>
+		</If>
 		
 		<!-- Kill Buras the Impaler -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="344499">
+		<If condition="HasQuest(344499)">
 			<LoadProfile file="kill_southern_highlands.xml" />
-		</HaveBounty>	
+		</If>	
 
 		<!-- Cursed Camp-->
 		<!-- Status: GOOD -->			
-		<HaveBounty questId="369763">
+		<If condition="HasQuest(369763)">
 			<LoadProfile file="369763_the_cursed_camp.xml" />
-		</HaveBounty>	
+		</If>	
 	
 	<!-- 14	Northern Highlands ========================================================-->
 	
 		<!-- Kill Theodyn -->
 		<!-- Status: BAD, needs path optimised, gets stuck a lot -->				
-		<HaveBounty questId="369271">
+		<If condition="HasQuest(369271)">
 			<LoadProfile file="369271_kill_theodyn.xml" />
-		</HaveBounty>	
+		</If>	
 
 		<!-- Kill Reggrel the Despised -->
 		<!-- Status: OK, needs spawn locations mapped -->			
-		<HaveBounty questId="369253">
+		<If condition="HasQuest(369253)">
 			<LoadProfile file="369253_kill_reggrel.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- Apothecary's Brother-->
 		<!-- Status: Needs Testing -->		
-		<HaveBounty questId="350529">
+		<If condition="HasQuest(350529)">
 			<LoadProfile file="350529_apothecarys_brother.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- Kill Percepeus -->
 		<!-- Status: Needs Testing -->		
-		<HaveBounty questId="369273">
+		<If condition="HasQuest(369273)">
 			<LoadProfile file="369273_kill_percepeus.xml" />
-		</HaveBounty>			
+		</If>			
 		
 		<!-- Kill Krailen the Wicked-->
 		<!-- Status: OK, pathing to leorics manner gets stuck a lot -->				
-		<HaveBounty questId="367559">
+		<If condition="HasQuest(367559)">
 			<LoadProfile file="367559_kill_krailen.xml" />
-		</HaveBounty>	
+		</If>	
 
 		<!-- Kill Hrugowl the Defiant -->
-		<HaveBounty questId="369257">
+		<If condition="HasQuest(369257)">
 			<LoadProfile file="369257_kill_hrugowl.xml" />
-		</HaveBounty>
+		</If>
 		
 		<!-- Kill Jezeb the Conjuror -->
 		<!-- Status: BAD, didn't find entrance and ran down to s.highlands -->					
-		<HaveBounty questId="367561">
+		<If condition="HasQuest(367561)">
 			<LoadProfile file="367561_kill_jezeb.xml" />
-		</HaveBounty>			
+		</If>			
 		
 	<!-- 15	Halls of Agony Level 1 ====================================================-->
 		
 		<!-- Kill Bludgeonskull-->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="345544">
+		<If condition="HasQuest(345544)">
 			<LoadProfile file="kill_halls_of_agony_level_1.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- Kill Battlerage the Plagued -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="347011">
+		<If condition="HasQuest(347011)">
 			<LoadProfile file="kill_halls_of_agony_level_1.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- Kill Crassus The Tormentor -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="345542">
+		<If condition="HasQuest(345542)">
 			<LoadProfile file="kill_halls_of_agony_level_1.xml" />
-		</HaveBounty>		
+		</If>		
 	
 	<!-- 16	Halls of Agony Level 2 ====================================================-->
 	
 		<!-- A Stranger In Need -->
 		<!-- Status: ISSUES, stands in the corner not attacking while the elite beats on you -->			
-		<HaveBounty questId="345546">
+		<If condition="HasQuest(345546)">
 			<LoadProfile file="345546_stranger_in_need.xml" />
-		</HaveBounty>	
+		</If>	
 		
 		<!-- Kill Warden-->
 		<!-- Status: GOOD -->			
-		<HaveBounty questId="347030">
+		<If condition="HasQuest(347030)">
 			<LoadProfile file="347030_kill_the_warden.xml" />
-		</HaveBounty>	
+		</If>	
 
 		<!-- Kill Sotnob the Fool-->
-		<HaveBounty questId="349026">
+		<If condition="HasQuest(349026)">
 			<LoadProfile file="kill_halls_of_agony_level_2.xml" />
-		</HaveBounty>
+		</If>
 
 	
 	<!-- 17	Halls of Agony Level 3 ====================================================-->
 	
 		<!-- Kill the Butcher -->
 		<!-- Status: OK, sometimes turns away from exit portal -->			
-		<HaveBounty questId="347032">
+		<If condition="HasQuest(347032)">
 			<LoadProfile file="347032_kill_the_butcher.xml" />
-		</HaveBounty>	
+		</If>	
 
 		<!-- Kill Garrach the Afflicted -->
 		<!-- Status: Needs Testing -->		
-		<HaveBounty questId="347027">
+		<If condition="HasQuest(347027)">
 			<LoadProfile file="kill_halls_of_agony_level_3.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		<!-- Kill Treefist Woodhead -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="347020">
+		<If condition="HasQuest(347020)">
 			<LoadProfile file="kill_halls_of_agony_level_3.xml" />
-		</HaveBounty>
+		</If>
 		
 		<!-- Kill Boneslag -->
 		<!-- Status: Needs Testing -->		
-		<HaveBounty questId="347023">
+		<If condition="HasQuest(347023)">
 			<LoadProfile file="kill_halls_of_agony_level_3.xml" />
-		</HaveBounty>		
+		</If>		
 
 		<!-- The Cursed Bellows / Deathfire -->
 		<!-- Status: Needs Testing -->			
-		<HaveBounty questId="369789">
+		<If condition="HasQuest(369789)">
 			<LoadProfile file="369789_deathfire.xml" />
-		</HaveBounty>		
+		</If>		
 		
 		
 		

@@ -9,7 +9,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
 	<UseWaypoint waypointNumber="13" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
-	<HaveBounty questId="369763">
+	<If condition="HasQuest(369763)">
 
 		<!--  Southern Highlands  -->
 		<If condition="CurrentWorldId == 71150">
@@ -24,14 +24,14 @@
 			<WaitTimer questId="1" stepId="1" waitTime="12000" />	
 			
 			<!-- Hack to make sure we found the shrine -->
-			<HaveBounty questId="369763">
+			<If condition="HasQuest(369763)">
 				<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
 				<MoveToActor questId="1" stepId="2" actorId="364601" />
-			</HaveBounty>			
+			</If>			
 			
 		</If>
 	
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

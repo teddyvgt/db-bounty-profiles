@@ -9,7 +9,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
 	<UseWaypoint waypointNumber="8" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
-	<HaveBounty questId="347062">
+	<If condition="HasQuest(347062)">
 
 		<!-- Search Priority Locations First -->
 		<If condition="CurrentWorldId == 71150">		
@@ -35,13 +35,13 @@
 		</If>		
 	
 		<!-- Search Everywhere -->
-		<HaveBounty questId="347062">		
+		<If condition="HasQuest(347062)">		
 			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="3341" pathPrecision="15" boxSize="15" boxTolerance="0.10" objectDistance="40" />
 			<MoveToActor questId="1" stepId="1" actorId="3341" interactRange="6" name="Beast_Corpse_A_02-3298"  pathPrecision="5" pathPointLimit="250" statusText="" />	
 			<WaitTimer questId="1" stepId="2" waitTime="4000" />
-		</HaveBounty>			
+		</If>			
 		
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

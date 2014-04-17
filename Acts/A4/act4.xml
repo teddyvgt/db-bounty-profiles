@@ -14,129 +14,129 @@
 	<!-- Waypoint [41] -->
 	
 	<!-- Cursed Dais  -->
-	<HaveBounty questId="369900">
+	<If condition="HasQuest(369900)">
 		<LoadProfile file="Dais.xml" />
-	</HaveBounty>
+	</If>
 	<!-- Kill Rakanoth -->
-	<HaveBounty questId="349262">
+	<If condition="HasQuest(349262)">
 		<LoadProfile file="Rakanoth.xml" />
-	</HaveBounty>
+	</If>
 	<!-- Kill Khatun -->
-	<HaveBounty questId="349258">
+	<If condition="HasQuest(349258)">
 		<LoadProfile file="Gardens of hope 1.xml" />
-	</HaveBounty>
+	</If>
 	<!-- Kill Torchlighter -->
-	<HaveBounty questId="349256">
+	<If condition="HasQuest(349256)">
 		<LoadProfile file="Gardens of hope 1.xml" />
-	</HaveBounty>
+	</If>
 	<!-- Kill Veshan the fierce -->
-	<HaveBounty questId="349260">
+	<If condition="HasQuest(349260)">
 		<LoadProfile file="Gardens of hope 1.xml" />
-	</HaveBounty>
+	</If>
 	<!-- Kill the aspect of destruction -->
-	<HaveBounty questId="357131">
+	<If condition="HasQuest(357131)">
 		<LoadProfile file="Gardens of hope 1.xml" />
-	</HaveBounty>
+	</If>
 	
 	
 	<!-- Waypoint [42] -->
 	
 	<!-- kill the aspect of pain -->
-	<HaveBounty questId="357129">
+	<If condition="HasQuest(357129)">
 		<LoadProfile file="Gardens of hope 2.xml" />
-	</HaveBounty>
+	</If>
 	<!-- Kill the aspect of anguish -->
-	<HaveBounty questId="357127">
+	<If condition="HasQuest(357127)">
 		<LoadProfile file="Gardens of hope 2.xml" />
-	</HaveBounty>
+	</If>
 	<!-- kill kao'ahn -->
-	<HaveBounty questId="349254">
+	<If condition="HasQuest(349254)">
 		<LoadProfile file="Gardens of hope 2.xml" />
-	</HaveBounty>
+	</If>
 	<!-- kill oah'tash -->
-	<HaveBounty questId="349252">
+	<If condition="HasQuest(349252)">
 		<LoadProfile file="Gardens of hope 2.xml" />
-	</HaveBounty>
+	</If>
 	
 	
 	<!-- Waypoint [43] -->
 	
 	<!-- Kill sledge -->
-	<HaveBounty questId="364336">
+	<If condition="HasQuest(364336)">
 		<LoadProfile file="Hellrift.xml" />
-	</HaveBounty>
+	</If>
 	<!-- kill hammermash -->
-	<HaveBounty questId="364333">
+	<If condition="HasQuest(364333)">
 		<LoadProfile file="Hellrift.xml" />
-	</HaveBounty>
+	</If>
 	<!-- clear hell rift -->
-	<HaveBounty questId="362140">
+	<If condition="HasQuest(362140)">
 		<LoadProfile file="Hellrift.xml" />
-	</HaveBounty>
+	</If>
 	
 	
 	<!-- Waypoint [44] -->
 	
 	<!-- kill aspect of hatred -->
-	<HaveBounty questId="357133">
+	<If condition="HasQuest(357133)">
 		<LoadProfile file="Silver Spire 1.xml" />
-	</HaveBounty>
+	</If>
 	<!-- kill aspect of lies -->
-	<HaveBounty questId="357135">
+	<If condition="HasQuest(357135)">
 		<LoadProfile file="Silver Spire 1.xml" />
-	</HaveBounty>
+	</If>
 	<!-- kill izual -->
-	<HaveBounty questId="361421">
+	<If condition="HasQuest(361421)">
 		<LoadProfile file="Izual.xml" />
-	</HaveBounty>
+	</If>
 	<!-- kill slarg the behemoth -->
-	<HaveBounty questId="349280">
+	<If condition="HasQuest(349280)">
 		<LoadProfile file="Silver Spire 1.xml" />
-	</HaveBounty>
+	</If>
 	<!-- kill kysindra the wretched -->
-	<HaveBounty questId="349276">
+	<If condition="HasQuest(349276)">
 		<LoadProfile file="Silver Spire 1.xml" />
-	</HaveBounty>
+	</If>
 	<!-- kill pyres the damned -->
-	<HaveBounty questId="349278">
+	<If condition="HasQuest(349278)">
 		<LoadProfile file="Silver Spire 1.xml" />
-	</HaveBounty>
+	</If>
 	
 	
 	<!-- Waypoint [45] -->
 	
 	<!-- kill aspect of terror -->
-	<HaveBounty questId="357139">
+	<If condition="HasQuest(357139)">
 		<LoadProfile file="Silver Spire 2.xml" />
-	</HaveBounty>
+	</If>
 	<!-- kill grimnight the soulless -->
-	<HaveBounty questId="349272">
+	<If condition="HasQuest(349272)">
 		<LoadProfile file="Silver Spire 2.xml" />
-	</HaveBounty>
+	</If>
 	<!-- kill Sao'thall -->
-	<HaveBounty questId="349274">
+	<If condition="HasQuest(349274)">
 		<LoadProfile file="Silver Spire 2.xml" />
-	</HaveBounty>
+	</If>
 	<!-- kill rhau'kye -->
-	<HaveBounty questId="349282">
+	<If condition="HasQuest(349282)">
 		<LoadProfile file="Silver Spire 2.xml" />
-	</HaveBounty>
+	</If>
 	<!-- kill haures -->
-	<HaveBounty questId="349270">
+	<If condition="HasQuest(349270)">
 		<LoadProfile file="Silver Spire 2.xml" />
-	</HaveBounty>
+	</If>
 	<!-- kill aspect of sin -->
-	<HaveBounty questId="357137">
+	<If condition="HasQuest(357137)">
 		<LoadProfile file="Silver Spire 2.xml" />
-	</HaveBounty>
+	</If>
 	<!-- Cursed chapel (Might be static, x="411" y="890" z="0") -->
-	<HaveBounty questId="369878">
+	<If condition="HasQuest(369878)">
 		<LoadProfile file="Chapel.xml" />
-	</HaveBounty>
+	</If>
 	<!-- kill diablo -->
-	<HaveBounty questId="349288">
+	<If condition="HasQuest(349288)">
 		<LoadProfile file="Diablo.xml" />
-	</HaveBounty>
+	</If>
 
 	<LogMessage quest="1" step="1" output="Checking if we have all bounties complete" /> 
 	<ActBountiesComplete act="A4">

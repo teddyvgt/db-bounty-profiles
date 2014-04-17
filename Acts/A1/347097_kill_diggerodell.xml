@@ -9,7 +9,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
 	<UseWaypoint waypointNumber="7" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
-	<HaveBounty questId="347097">
+	<If condition="HasQuest(347097)">
 	
 		<!--  Cemetery of the Forsaken  -->
 		<If condition="CurrentWorldId == 71150">			
@@ -37,7 +37,7 @@
 
 		</If>
 	
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

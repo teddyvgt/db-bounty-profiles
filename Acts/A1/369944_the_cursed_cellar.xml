@@ -10,7 +10,7 @@
 	<UseWaypoint waypointNumber="1" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />
 
-	<HaveBounty questId="369944">
+	<If condition="HasQuest(369944)">
 
 		<If condition="CurrentWorldId == 71150">
 		
@@ -44,10 +44,10 @@
 			<WaitTimer questId="1" stepId="2" waitTime="5000" />			
 			
 			<!-- If not completed, keep killing things until it is complete-->
-			<HaveBounty questId="369944">
+			<If condition="HasQuest(369944)">
 				<LogMessage quest="1" step="1" output="Interacted with chest, but still not done. Roaming to make sure everything is dead." />
 				<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
-			</HaveBounty>		
+			</If>		
 			
 			<!-- Go back to the chest location in case fighting mobs moved us out of range. -->
 			<SafeMoveTo questId="1" stepId="2" x="128.015" y="125.9703" z="0.1" />			
@@ -56,7 +56,7 @@
 		
 		</If>		
 		
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

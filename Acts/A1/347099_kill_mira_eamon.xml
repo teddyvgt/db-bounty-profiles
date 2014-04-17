@@ -9,19 +9,19 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
 	<UseWaypoint waypointNumber="6" questId="1"/>	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />			
-	<HaveBounty questId="347099">	
+	<If condition="HasQuest(347099)">	
 			
 		<!-- Check common places first -->
 		<SafeMoveTo questId="312429" stepId="2" x="2213" y="2043" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
 		<MoveToMapMarker questId="312429" stepId="2" markerNameHash="925091454" actorId="175501" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="81163" statusText="" />
 
 		<!-- Look Everywhere & Kill things -->
-		<HaveBounty questId="347099">
+		<If condition="HasQuest(347099)">
 		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>			
 		<MoveToActor questId="312429" stepId="2" x="2043" y="898" z="-5" actorId="5502" interactRange="8" name="Start_Location_0-7587"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		</HaveBounty>
+		</If>
 		
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

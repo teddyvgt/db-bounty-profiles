@@ -11,7 +11,7 @@
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
 
     <!-- Look for him -->
-	<HaveBounty questId="345546">
+	<If condition="HasQuest(345546)">
 		<If condition="CurrentWorldId == 58982">
 			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="221574" boxTolerance="0.10" boxSize="15" ignoreMarkers="False"/> 
 			<MoveToActor questId="1" stepId="2" actorId="221574" />
@@ -20,7 +20,7 @@
 			<WaitTimer questId="1" stepId="2" waitTime="10000" />
 			<MoveToActor questId="1" stepId="2" actorId="218071" />
 		</If>
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

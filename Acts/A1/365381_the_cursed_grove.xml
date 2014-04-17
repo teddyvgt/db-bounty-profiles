@@ -9,7 +9,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
 	<UseWaypoint waypointNumber="8" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
-	<HaveBounty questId="365381">
+	<If condition="HasQuest(365381)">
 		
 		<!-- search known spawn locations -->	
 			<SafeMoveTo questId="1" stepId="2" x="1798" y="605" z="-2" pathPrecision="5" pathPointLimit="250" statusText="" /> 
@@ -30,13 +30,13 @@
 			<SafeMoveTo questId="1" stepId="2" x="2097" y="619" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" /> 
 		
 		<!-- search everywhere -->
-		<HaveBounty questId="365381">
+		<If condition="HasQuest(365381)">
 			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="364559" boxTolerance="0.10" boxSize="15" >
 			</TrinityExploreDungeon>
 			<MoveToActor questId="18" stepId="2" actorId="364559" />
 			<WaitTimer questId="1" stepId="2" waitTime="5000" />
-		</HaveBounty>
-	</HaveBounty>
+		</If>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

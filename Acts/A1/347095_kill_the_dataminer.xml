@@ -9,7 +9,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
 	<UseWaypoint waypointNumber="7" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
-	<HaveBounty questId="347095">
+	<If condition="HasQuest(347095)">
 
 		<!--  Cemetery of the Forsaken  -->
 		<If condition="CurrentWorldId == 71150">			
@@ -36,13 +36,13 @@
 			<TrinityExploreDungeon questId="312429" stepId="2" until="ObjectFound" actorId="225502" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="25" />
 		
 			<!-- Make sure we killed enough monsters to finish the bounty -->
-			<HaveBounty questId="347095">
+			<If condition="HasQuest(347095)">
 				<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
-			</HaveBounty>			
+			</If>			
 			
 		</If>
 	
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

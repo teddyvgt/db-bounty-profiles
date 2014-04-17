@@ -5,7 +5,7 @@
   <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 
   <Order>
-    <HaveBounty questId="349117">
+    <If condition="HasQuest(349117)">
 
       <!-- Checking we are in Keep Death 1 -->
       <While condition="CurrentWorldId != 93104">
@@ -17,14 +17,14 @@
         <TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="220444" boxTolerance="0.30" boxSize="15" />
         <WaitTimer questId="1" stepId="2" waitTime="1000" />
         <!-- If not completed, keep killing things until it is complete-->
-        <HaveBounty questId="349117">
+        <If condition="HasQuest(349117)">
           <LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
           <TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.30" boxSize="15" />
-        </HaveBounty>
+        </If>
         <MoveToActor questId="1" stepId="2" actorId="176003" />
         <WaitTimer questId="1" stepId="2" waitTime="20000" />
       </If>
-    </HaveBounty>
+    </If>
 
     <LoadProfile file="act3.xml" />
   </Order>

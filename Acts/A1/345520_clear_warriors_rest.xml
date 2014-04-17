@@ -7,7 +7,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
 	<UseWaypoint waypointNumber="10" questId="1"/>	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
-	<HaveBounty questId="345520">
+	<If condition="HasQuest(345520)">
 	
 		<If condition="CurrentLevelAreaId == 19953">
 
@@ -32,16 +32,16 @@
 			</If>
 			
 			<!-- Explore the dungeon.-->
-			<HaveBounty questId="345520">
+			<If condition="HasQuest(345520)">
 				<ToggleTargeting questId="1" stepId="1" killRadius="80" />	
 				<LogMessage quest="1" step="1" output="Clearing." />
 				<TrinitySetQuesting />	
 				<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
-			</HaveBounty>
+			</If>
 
 		</If>
 		
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

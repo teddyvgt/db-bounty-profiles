@@ -12,7 +12,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
 	<UseWaypoint waypointNumber="13" questId="1"/>	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
-	<HaveBounty questId="344501">	
+	<If condition="HasQuest(344501)">	
 	
 		<!-- Look for him -->
 		<LogMessage quest="1" step="2" output="We're hunting for the creature known as Lorzak..." />
@@ -22,7 +22,7 @@
 			</IgnoreScenes>
 		</TrinityExploreDungeon>			
 
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

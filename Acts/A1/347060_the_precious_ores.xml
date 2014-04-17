@@ -10,7 +10,7 @@
 	<WaitTimer questId="1" stepId="2" waitTime="2500" />		
 	<UseWaypoint waypointNumber="8" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
-	<HaveBounty questId="347060">
+	<If condition="HasQuest(347060)">
 	
 		<!-- Middle Cave Location 1 -->
 		<If condition="CurrentWorldId == 71150">			
@@ -79,7 +79,7 @@
 			<WaitTimer questId="1" stepId="2" waitTime="7000" />
 		</If>
 		
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

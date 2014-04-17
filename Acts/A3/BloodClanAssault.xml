@@ -5,7 +5,7 @@
   <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 
   <Order>
-    <HaveBounty questId="369868">
+    <If condition="HasQuest(369868)">
 
       <!-- Checking we are in Keep Death 1 -->
       <While condition="CurrentWorldId != 81934">
@@ -28,7 +28,7 @@
         </While>
 
       </If>
-    </HaveBounty>
+    </If>
 
     <LoadProfile file="act3.xml" />
   </Order>

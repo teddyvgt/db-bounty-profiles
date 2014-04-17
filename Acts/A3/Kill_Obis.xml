@@ -5,7 +5,7 @@
   <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 
   <Order>
-    <HaveBounty questId="369316">
+    <If condition="HasQuest(369316)">
 
       <While condition="CurrentWorldId != 93099 and CurrentWorldId != 81019">
         <UseWaypoint questId="1" waypointNumber="27" />
@@ -23,12 +23,12 @@ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="81019
         <TrinityExploreDungeon questId="369316" stepId="1" until="ObjectFound" actorId="367335" boxTolerance="0.20" boxSize="20" />
         <WaitTimer questId="1" stepId="2" waitTime="1000" />
         <!-- If not completed, keep killing things until it is complete-->
-        <HaveBounty questId="369316">
+        <If condition="HasQuest(369316)">
           <LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
           <TrinityExploreDungeon questId="369316" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" />
-        </HaveBounty>
+        </If>
       </If>
-    </HaveBounty>
+    </If>
 
     <LoadProfile file="act3.xml" />
   </Order>

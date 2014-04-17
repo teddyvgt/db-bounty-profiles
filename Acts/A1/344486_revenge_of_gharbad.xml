@@ -9,7 +9,7 @@
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
 	<UseWaypoint waypointNumber="13" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
-	<HaveBounty questId="344486">
+	<If condition="HasQuest(344486)">
 	
 		<If condition="CurrentWorldId == 71150">
 			<ToggleTargeting questId="1" stepId="1" killRadius="15" />
@@ -26,7 +26,7 @@
 			<!-- If not completed, keep killing things until it is complete-->
 		</If>
 		
-	</HaveBounty>
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>

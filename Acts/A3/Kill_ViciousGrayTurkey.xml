@@ -5,7 +5,7 @@
   <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 
   <Order>
-    <HaveBounty questId="349121">
+    <If condition="HasQuest(349121)">
 
       <!-- Checking we are in Keep Death 3 or Speisekammer -->
       <While condition="CurrentWorldId != 136415 and CurrentWorldId != 103209">
@@ -17,14 +17,14 @@
         <TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="220485" boxTolerance="0.10" boxSize="15" />
         <WaitTimer questId="1" stepId="2" waitTime="1000" />
         <!-- If not completed, keep killing things until it is complete-->
-        <HaveBounty questId="356422">
+        <If condition="HasQuest(356422)">
           <LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
           <TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" />
-        </HaveBounty>
+        </If>
         <WaitTimer questId="1" stepId="2" waitTime="20000" />
       </If>
 
-    </HaveBounty>
+    </If>
 
     <LoadProfile file="act3.xml" />
   </Order>
