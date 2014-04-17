@@ -483,7 +483,7 @@
 	<!-- 16	Halls of Agony Level 2 ====================================================-->
 	
 		<!-- A Stranger In Need -->
-		<!-- Status: OK -->			
+		<!-- Status: ISSUES, stands in the corner not attacking while the elite beats on you -->			
 		<HaveBounty questId="345546">
 			<LoadProfile file="345546_stranger_in_need.xml" />
 		</HaveBounty>	
