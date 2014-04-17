@@ -11,8 +11,11 @@
         <UseWaypoint questId="1" waypointNumber="37" />
         <WaitTimer questId="1" stepId="1" waitTime="2500"/>
       </While>
+	  
 
       <If condition="CurrentWorldId == 119641">
+		<SafeMoveTo questId="349222" stepId="2" x="948" y="1074" z="-10" pathPrecision="5" pathPointLimit="250" />
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
         <TrinityExploreDungeon questId="349222" stepId="2" until="ExitFound" exitNameHash="43541819" actorId="176001" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
           <AlternateActors>
             <AlternateActor actorId="0" objectDistance="45" />
