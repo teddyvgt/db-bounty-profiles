@@ -63,15 +63,9 @@
 		<If condition="CurrentWorldId == 82371">
 			<MoveToActor questId="1" stepId="2" actorId="107076" />
 			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="204032" boxTolerance="0.10" boxSize="12" objectDistance="60">
-				<AlternateActors>
-					<AlternateActor actorId="202277" objectDistance="60" />
-				</AlternateActors>
 			</TrinityExploreDungeon>
 			<MoveToActor questId="1" stepId="2" timeout="10000" actorId="204032" />
 			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="202277" boxTolerance="0.10" boxSize="12" objectDistance="60">
-				<AlternateActors>
-					<AlternateActor actorId="204032" objectDistance="60" />
-				</AlternateActors>
 			</TrinityExploreDungeon>			
 			<MoveToActor questId="1" stepId="2" timeout="10000" actorId="202277" />
 			<WaitTimer questId="1" stepId="2" waitTime="10000" />

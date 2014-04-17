@@ -175,25 +175,25 @@
 		</If>		
 		
 		<!-- The family of Rathe -->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: OK, seemed to have a 10s wait after everything was done -->			
 		<If condition="HasQuest(347058)">
 			<LoadProfile file="347058_the_family_of_rathe.xml" />
 		</If>		
 
 		<!-- Farm Besieged -->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: OK -->			
 		<If condition="HasQuest(347062)">
 			<LoadProfile file="347062_farm_besieged.xml" />
 		</If>	
 		
 		<!-- Carrion Farm-->
-		<!-- Status: ??  -->		
+		<!-- Status: OK  -->		
 		<If condition="HasQuest(345500)">
 			<LoadProfile file="345500_carrion_farm.xml" />
 		</If>		
 		
 		<!-- Clear the Scavenger's Den -->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: OK -->			
 		<If condition="HasQuest(345496)">
 			<LoadProfile file="345496_clear_the_scavengers_den.xml" />
 		</If>		

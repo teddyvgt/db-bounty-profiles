@@ -11,66 +11,47 @@
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
 	<If condition="HasQuest(345496)">
 
-		<!-- Check common places first -->
-		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="1" stepId="2" x="1768" y="359" z="-3" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
-      <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="1768" y="359" z="-3" isPortal="True" destinationWorldId="81163" />
-		</If>
-		<If condition="CurrentWorldId == 71150">
-			<SafeMoveTo questId="1" stepId="2" x="2048" y="458" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-      <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="2048" y="458" z="0" isPortal="True" destinationWorldId="81163" />
+		<ToggleTargeting questId="1" stepId="1" killRadius="15" />
+	
+		<!-- Middle Cave Location 1 -->
+		<If condition="CurrentWorldId == 71150">			
+			<SafeMoveTo questId="312429" stepId="2" x="2068" y="896" z="0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Middle Cave Location #1" /> 
+			<MoveToMapMarker questId="312429" stepId="2" markerNameHash="925091454" actorId="175501" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="81163" statusText="Entering Cave" />
 		</If>	
-		<If condition="CurrentWorldId == 71150">
-			<SafeMoveTo questId="1" stepId="2" x="2121" y="542" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-      <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="2121" y="542" z="0" isPortal="True" destinationWorldId="81163" />
-		</If>
+		
+		<!-- Middle Cave Location 2 -->
 		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="1" stepId="2" x="2038" y="912" z="-3" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
-      <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="2107" y="593" z="0" isPortal="True" destinationWorldId="81163" />
-		</If>
-		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="1" stepId="2" x="2038" y="912" z="-3" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
-      <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="2038" y="912" z="-3" isPortal="True" destinationWorldId="81163" />
-		</If>		
-		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="1" stepId="2" x="2027" y="813" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-      <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="2027" y="813" z="0" isPortal="True" destinationWorldId="81163" />
-		</If>		
-			
-		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="1" stepId="2" x="2258" y="1059" z="-3" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
-      <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="2258" y="1059" z="-3" isPortal="True" destinationWorldId="81163" />
+			<SafeMoveTo questId="312429" stepId="2" x="2120" y="612" z="0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Middle Cave Location #2" /> 
+			<MoveToMapMarker questId="312429" stepId="2" markerNameHash="925091454" actorId="175501" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="81163" statusText="Entering Cave" />
 		</If>	
+		
+		<!-- Bottom Cave Location -->
 		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="1" stepId="2" x="2068" y="899" z="-3" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
-      <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" x="2068" y="899" z="-3" isPortal="True" destinationWorldId="81163" />
+			<SafeMoveTo questId="312429" stepId="2" x="2242" y="1054" z="0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Bottom Cave Location" /> 
+			<MoveToMapMarker questId="312429" stepId="2" markerNameHash="925091454" actorId="175501" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="81163" statusText="Entering Cave" />
 		</If>	
-
-		<!-- Look Everywhere -->
-		<If condition="CurrentWorldId == 71150">
-			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="175501" pathPrecision="10" boxSize="10" boxTolerance="0.05" objectDistance="40" />
-      <MoveToActor questId="1" stepId="2" actorId="175501" interactRange="20" maxSearchDistance="90" isPortal="True" destinationWorldId="81163" />
-		</If>
+		
+		<!-- Top Cave Location -->
+		<If condition="CurrentWorldId == 71150">			
+			<SafeMoveTo questId="312429" stepId="2" x="1770" y="369" z="0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Top Cave Location" /> 
+			<MoveToMapMarker questId="312429" stepId="2" markerNameHash="925091454" actorId="175501" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="81163" statusText="Entering Cave" />
+		</If>	
 		
 		<!-- Inside Scavenger's Den Level 1-->
 		<If condition="CurrentWorldId == 81163">
-			<WaitTimer questId="1" stepId="2" waitTime="2000" />
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="925091455" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
 			</TrinityExploreDungeon>
 			<MoveToMapMarker questId="1" stepId="2" exitNameHash="925091455" destinationWorldId="81164" interactRange="20"  />
-			<WaitTimer questId="1" stepId="11" waitTime="1000" />
 		</If>
-		<If condition="HasQuest(345496)">
-		
-		 <!-- Inside Scavenger's Den Level 2-->
+
+		<!-- Inside Scavenger's Den Level 2-->
 		<If condition="CurrentWorldId == 81164">
 			<TrinitySetQuesting />
+			<ToggleTargeting questId="1" stepId="1" killRadius="80" />			
 			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance=".10" boxSize="9" stayAfterBounty="False"/>
-			<WaitTimer questId="1" stepId="2" waitTime="2000" />
-		</If>
 		</If>
 		
 	</If>
