@@ -1,6 +1,6 @@
 <Profile>
 
-<Name>Act 1 - Loader</Name>
+<Name>Act 3 - Loader</Name>
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" difficulty="Normal" resumeFromSave="False" isPrivate="True" numGames="-1"  />
