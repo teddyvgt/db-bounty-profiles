@@ -278,7 +278,7 @@
       </If>
 
       <LogMessage quest="1" step="1" output="Checking if we have all bounties complete" />
-      <If condition="HasQuest(356996)">
+     <ActBountiesComplete act="A3">
         <LogMessage quest="1" step="1" output="Seems like we have 5 complete" />
         <If condition="Me.IsInTown==False">
           <LogMessage quest="1" step="1" output="Going back to town to turn it in." />
@@ -295,7 +295,7 @@
         <MoveToActor questId="1" stepId="1" actorId="114622" x="379" y="422" z="0"  />
         <LogMessage quest="1" step="1" output="Should have interacted with him by now." />
 
-      </If>
+      </ActBountiesComplete>
 		
 	<!-- should we move onto to the next act? -->
 	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('All_Redirect')">
