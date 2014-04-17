@@ -29,6 +29,7 @@
 		</If>	
 		
 		<If condition="CurrentWorldId == 80057">
+			<TrinitySetQuesting />
 			<TrinityExploreDungeon questId="1" stepId="2" until="FullyExplored" boxTolerance="0.01" boxSize="25"  stayAfterBounty="False"/>
 			<WaitTimer questId="1" stepId="2" waitTime="2000" />
 		</If>
