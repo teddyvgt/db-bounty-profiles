@@ -14,19 +14,16 @@
       </While>
 
       <If condition="CurrentWorldId == 81934">
-        <ToggleTargeting questId="1" combat="true" looting="true" killRadius="15" lootRadius="10" />
-        <TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="364601" boxTolerance="0.01" boxSize="25" ignoreMarkers="False">
-          <PrioritizeScenes>
-            <PriorityScene sceneName="x1_Event_CursedShrine-8564" pathPrecision="40" />
-          </PrioritizeScenes>
-        </TrinityExploreDungeon>
-        <MoveToActor questId="1" stepId="2" actorId="364601"/>
-        <WaitTimer questId="1" stepId="2" waitTime="500" />
-        <ToggleTargeting questId="1" combat="True" looting="True" killRadius="90" lootRadius="90" />
-        <While condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
-          <MoveToActor questId="1" stepId="2" actorId="364601"/>
-        </While>
-
+	  <TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.01" boxSize="25" until="ObjectFound" actorId="364601" ignoreMarkers="False" />
+	  <MoveToActor questId="369868" stepId="2" actorId="364601" interactRange="11" name="x1_Event_CursedShrine-8564" pathPrecision="5" pathPointLimit="250" statusText="" />
+	  
+	  <!-- Waves are pretty quick but throw in a wait just in case -->
+		<HaveBounty questId="369868">
+			<WaitTimer questId="1" stepId="1" waitTime="4000" />
+		</HaveBounty>
+		<HaveBounty questId="369868">
+			<WaitTimer questId="1" stepId="1" waitTime="4000" />
+		</HaveBounty>
       </If>
     </If>
 
