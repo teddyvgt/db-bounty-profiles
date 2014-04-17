@@ -21,11 +21,13 @@
       </HaveBounty>
       <HaveBounty questId="369825">
         <LoadProfile file="Event_InfernalSky.xml" />
-      </HaveBounty>
+      </HaveBounty>-->
+	  
+	  <!--Kill_Ghallem-->
       <HaveBounty questId="349214">
         <LoadProfile file="Kill_Ghallem.xml" />
       </HaveBounty>
-      -->
+      
 
       <!--Zotan-->
       <!--Kill_Lashtongue-->
