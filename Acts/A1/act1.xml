@@ -455,6 +455,7 @@
 		</HaveBounty>
 		
 		<!-- Kill Jezeb the Conjuror -->
+		<!-- Status: BAD, didn't find entrance and ran down to s.highlands -->					
 		<HaveBounty questId="367561">
 			<LoadProfile file="367561_kill_jezeb.xml" />
 		</HaveBounty>			
