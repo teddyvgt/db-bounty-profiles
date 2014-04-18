@@ -19,10 +19,9 @@
             <AlternateActor actorId="0" objectDistance="45" />
           </AlternateActors>
           <IgnoreScenes>
-            <IgnoreScene sceneName="a3dun_Bridge_NS_01_Chokepoint" />
-            <IgnoreScene sceneName="a3_Battlefield_Chokepoint_B" />
-            <IgnoreScene sceneName="a3dun_Bridge_NS_04_Chokepoint" />
-            <IgnoreScene sceneName="a3_Battlefield_ChokepointB_E02_S01" />
+            <IgnoreScene sceneName="_Chokepoint" />
+			<IgnoreScene sceneName="a3dun_Bridge_" />
+			<IgnoreScene sceneName="_03" />
           </IgnoreScenes>
         </TrinityExploreDungeon>
         <MoveToMapMarker questId="369851" stepId="2" markerNameHash="942020622" actorId="176003" interactRange="20"
