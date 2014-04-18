@@ -13,8 +13,12 @@
 	<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />
 	<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="25" >
 		<IgnoreScenes>
-			<IgnoreScene sceneName="_S01" />
-		</IgnoreScenes>
+			<!-- Block path to Cemetery -->
+			<IgnoreScene sceneName="_EntranceA_" />
+			<IgnoreScene sceneName="_MainGraveyard_" />
+			<!-- Block path to Old Mill -->
+			<IgnoreScene sceneName="_ExitA_" />			
+		</IgnoreScenes>	
 	</TrinityExploreDungeon>
 
 	<LoadProfile file="act1.xml" />

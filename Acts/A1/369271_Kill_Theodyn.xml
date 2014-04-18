@@ -15,12 +15,20 @@
 	
 		<!-- Attempt to find him efficiently -->
 		<SafeMoveTo questId="312429" stepId="2" x="1725" y="3855" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="312429" stepId="2" x="1702" y="4059" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="312429" stepId="2" x="1616" y="4112" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="312429" stepId="2" x="1550" y="3960" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="312429" stepId="2" x="1438" y="4054" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="312429" stepId="2" x="1334" y="3958" z="61" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<If condition="HasQuest(369271)">		
+		<SafeMoveTo questId="312429" stepId="2" x="1702" y="4059" z="40" pathPrecision="5" pathPointLimit="250" statusText="" />
+    <If condition="HasQuest(369271)">
+      <SafeMoveTo questId="312429" stepId="2" x="1616" y="4112" z="40" pathPrecision="5" pathPointLimit="250" statusText="" />
+    </If>
+    <If condition="HasQuest(369271)">
+      <SafeMoveTo questId="312429" stepId="2" x="1550" y="3960" z="40" pathPrecision="5" pathPointLimit="250" statusText="" />
+    </If>
+    <If condition="HasQuest(369271)">
+      <SafeMoveTo questId="312429" stepId="2" x="1438" y="4054" z="40" pathPrecision="5" pathPointLimit="250" statusText="" />
+    </If>
+    <If condition="HasQuest(369271)">
+      <SafeMoveTo questId="312429" stepId="2" x="1334" y="3958" z="61" pathPrecision="5" pathPointLimit="250" statusText="" />
+    </If>
+    <If condition="HasQuest(369271)">		
 			<SafeMoveTo questId="312429" stepId="2" x="1274" y="3887" z="78" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 		</If>	
 		<If condition="HasQuest(369271)">				

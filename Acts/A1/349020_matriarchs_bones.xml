@@ -4,11 +4,15 @@
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<TargetBlacklists>
+	<TargetBlacklist actorId="3892" /> <!-- Lady Dunhyld -->
+</TargetBlacklists>
 <Order>
 
-	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
-	<UseWaypoint waypointNumber="7" questId="1"/>
-	<WaitTimer questId="1" stepId="2" waitTime="2000" />			
+  <If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
+  <UseWaypoint waypointNumber="7" questId="1"/>
+  <WaitTimer questId="1" stepId="2" waitTime="2000" />
+	
 	<If condition="HasQuest(349020)">
 
 		<!--  Cemetery of the Forsaken  -->
@@ -32,37 +36,72 @@
 		<!--  Defiled Crypt -->
 		<If condition="CurrentLevelAreaId == 83264">
 
+			<!-- find the coffin -->
+			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="105754" pathPrecision="2" boxSize="5" boxTolerance="0.10" objectDistance="70" statusText="Looking for the coffin" >
+				<PriorityScenes>
+					<PriorityScene sceneName="_1000dead_"/> <!-- Event Area -->
+				</PriorityScenes>
+			</TrinityExploreDungeon>	
+			
 			<!-- Talk to Lady Dunhyld -->	
-			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="105754" pathPrecision="20" boxSize="20" boxTolerance="0.20" objectDistance="40" />
-			
-<!-- 			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="3892" pathPrecision="15" boxSize="15" boxTolerance="0.04" objectDistance="25" /> -->
-			
 			<MoveToActor questId="1" stepId="1" actorId="3892" interactRange="8" name="CryingGhost_Female_01_A-1573"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<WaitTimer questId="1" stepId="1" waitTime="2000" />		
 
-			<WaitTimer questId="1" stepId="1" waitTime="2000" />	
+			<!-- Middle Bowl -->
 			
-			<!-- Click on the bowls -->
-			<MoveToActor questId="1" stepId="1" actorId="174754" interactRange="7" name="a1dun_Crypts_Bowl_of_Bones_03-1762"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
-			<WaitTimer questId="1" stepId="1" waitTime="2000" />
-			<MoveToActor questId="1" stepId="1" actorId="174753" interactRange="7" name="a1dun_Crypts_Bowl_of_Bones_02-1566"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			 
-			<WaitTimer questId="1" stepId="1" waitTime="2000" />
-			<MoveToActor questId="1" stepId="1" actorId="102079" interactRange="7" name="a1dun_Crypts_Bowl_of_Bones_01-1651"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
-			<WaitTimer questId="1" stepId="1" waitTime="2000" />						
+				<If condition="not ActorExistsAt(174754, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+					<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="174754" pathPrecision="2" boxSize="10" boxTolerance="0.70" objectDistance="40" >
+						<PriorityScenes>
+							<PriorityScene sceneName="_1000dead_"/> <!-- Event Area -->
+						</PriorityScenes>
+					</TrinityExploreDungeon>
+				</If>						
+			
+				<MoveToActor questId="1" stepId="1" actorId="174754" interactRange="15" name="a1dun_Crypts_Bowl_of_Bones_03-1762"  pathPrecision="2" pathPointLimit="250" statusText="" /> 
+				<WaitTimer questId="1" stepId="1" waitTime="2000" />
 
-			<!-- If we know where the casket is already then go there -->
+			<!-- Left Bowl -->
+			
+				<If condition="not ActorExistsAt(174753, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+					<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="174753" pathPrecision="2" boxSize="10" boxTolerance="0.70" objectDistance="40" >
+						<PriorityScenes>
+							<PriorityScene sceneName="_1000dead_"/> <!-- Event Area -->
+						</PriorityScenes>
+					</TrinityExploreDungeon>
+				</If>
+		
+				<MoveToActor questId="1" stepId="1" actorId="174753" interactRange="15" name="a1dun_Crypts_Bowl_of_Bones_02-1566"  pathPrecision="2" pathPointLimit="250" statusText="" /> 			 
+				<WaitTimer questId="1" stepId="1" waitTime="2000" />		
+			
+			<!-- Right Bowl -->	
+			
+				<If condition="not ActorExistsAt(102079, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">			
+					<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="102079" pathPrecision="2" boxSize="10" boxTolerance="0.70" objectDistance="40" >
+						<PriorityScenes>
+							<PriorityScene sceneName="_1000dead_"/> <!-- Event Area -->
+						</PriorityScenes>
+					</TrinityExploreDungeon>	
+				</If>
+				
+				<MoveToActor questId="1" stepId="1" actorId="102079" interactRange="15" name="a1dun_Crypts_Bowl_of_Bones_01-1651"  pathPrecision="2" pathPointLimit="250" statusText="" /> 
+				<WaitTimer questId="1" stepId="1" waitTime="2000" />								
+		
+			<!-- Interact with the Casket -->			
 			<MoveToActor questId="1" stepId="1" actorId="105754" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
 			<MoveToActor questId="1" stepId="1" actorId="203608" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" />			
 			
-			<!-- Otherwise Find the casket -->
-			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="105754" pathPrecision="15" boxSize="10" boxTolerance="0.10" objectDistance="20" >				
+			<!-- Nope? Find the casket -->
+			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="105754" pathPrecision="15" boxSize="10" boxTolerance="0.10" objectDistance="20">				
 				<PriorityScenes>
-					<PriorityScene sceneId="82107" /> <!-- Event Area -->
+					<PriorityScene sceneName="_1000dead_"/> <!-- Event Area -->
 				</PriorityScenes>
 				<IgnoreScenes>
-					<IgnoreScene sceneId="33054" /> <!-- Non Event Area -->
-					<IgnoreScene sceneId="33068" /> <!-- Non Event Area -->					
+					<!--<IgnoreScene sceneId="33054" />  Non Event Area -->
+					<!-- <IgnoreScene sceneId="33068" /> Non Event Area -->					
 				</IgnoreScenes>				
 			</TrinityExploreDungeon>	
+			
+			<!-- Interact with the Casket -->			
 			<MoveToActor questId="1" stepId="1" actorId="105754" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
 			<MoveToActor questId="1" stepId="1" actorId="203608" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" />
 
@@ -80,6 +119,7 @@
 
 		</If>
 		
+		<!-- Wait for Loot -->
 		<WaitTimer questId="1" stepId="1" waitTime="4000" />								
 	
 	</If>

@@ -12,6 +12,8 @@
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
 	<If condition="HasQuest(347060)">
 	
+		<ToggleTargeting questId="1" stepId="1" killRadius="15" />	
+	
 		<!-- Middle Cave Location 1 -->
 		<If condition="CurrentWorldId == 71150">			
 			<SafeMoveTo questId="312429" stepId="2" x="2068" y="896" z="0" pathPrecision="5" pathPointLimit="250" statusText="Middle Cave Location 1" /> 
@@ -61,19 +63,46 @@
 		</If>
 		
 		<If condition="CurrentWorldId == 82371">
+		
 			<MoveToActor questId="1" stepId="2" actorId="107076" />
-			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="204032" boxTolerance="0.10" boxSize="12" objectDistance="60">
+		
+			<!-- Find one of the ores -->			
+			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="202277" boxTolerance="0.10" boxSize="12" objectDistance="45">
+				<AlternateActors>
+					<AlternateActor actorId="204032" objectDistance="45" />
+				</AlternateActors>			
 			</TrinityExploreDungeon>
-			<MoveToActor questId="1" stepId="2" timeout="10000" actorId="204032" />
-			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="202277" boxTolerance="0.10" boxSize="12" objectDistance="60">
-			</TrinityExploreDungeon>			
-			<MoveToActor questId="1" stepId="2" timeout="10000" actorId="202277" />
-			<WaitTimer questId="1" stepId="2" waitTime="10000" />
-			<MoveToActor questId="1" stepId="2" actorId="107076" />
-			<WaitTimer questId="1" stepId="2" waitTime="7000" />
+			
+			<!-- Find the other ore -->	 
+			<If condition="HasQuest(347060) and ActorExistsAt(202277, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+				<MoveToActor questId="1" stepId="2" timeout="15000" actorId="202277" />				
+				<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="204032" boxTolerance="0.10" boxSize="12" objectDistance="80" stayAfterBounty="False" />
+				<MoveToActor questId="1" stepId="2" timeout="15000" actorId="204032" />					
+			</If>
+			<If condition="HasQuest(347060) and ActorExistsAt(204032, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+				<MoveToActor questId="1" stepId="2" timeout="15000" actorId="204032" />				
+				<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="202277" boxTolerance="0.10" boxSize="12" objectDistance="80"  stayAfterBounty="False" />
+				<MoveToActor questId="1" stepId="2" timeout="15000" actorId="202277" />					
+			</If>			
+			
+			<!-- fight off the scavengers and finish it -->		
+			<If condition="HasQuest(347060)">			
+				<WaitTimer questId="1" stepId="2" waitTime="10000" />
+			</If>	
+			<If condition="HasQuest(347060)">
+				<MoveToActor questId="1" timeout="5000"stepId="2" actorId="107076" />
+			</If>	
+			<If condition="HasQuest(347060)">
+				<WaitTimer questId="1" stepId="2" waitTime="7000" />
+			</If>	
+			
 		</If>
 		
 	</If>
+	
+	<!-- not sure if we need to reset kill radius, do it just in case -->
+	<ToggleTargeting questId="1" stepId="1" killRadius="80" />	
+		
 	<LoadProfile file="act1.xml" />
 	
 </Order>

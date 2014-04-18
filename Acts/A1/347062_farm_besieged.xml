@@ -12,7 +12,7 @@
 	<If condition="HasQuest(347062)">
 
 		<!-- Beast Location #1 -->
-		<If condition="CurrentWorldId == 71150">		
+		<If condition="HasQuest(347062)">	
 			<SafeMoveTo questId="312429" stepId="2" x="2278" y="820" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 			<If condition="ActorExistsAt(3341, 2278, 820, 0, 80)">			
 				<MoveToActor questId="312429" stepId="2" actorId="3341" interactRange="14" name="Beast_Corpse_A_02-3298"  pathPrecision="5" pathPointLimit="250" statusText="Moving to Beast Location #1" /> 			
@@ -21,7 +21,7 @@
 		</If>
 		
 		<!-- Beast Location #2 -->		
-		<If condition="CurrentWorldId == 71150">
+		<If condition="HasQuest(347062)">
 			<SafeMoveTo questId="312429" stepId="2" x="1799" y="560" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 			<If condition="ActorExistsAt(3341, 1799, 560, 0, 80)">			
 				<MoveToActor questId="312429" stepId="2" actorId="3341" interactRange="14" name="Beast_Corpse_A_02-3298"  pathPrecision="5" pathPointLimit="250" statusText="Moving to Beast Location #2" /> 			
@@ -30,7 +30,7 @@
 		</If>
 
 		<!-- Beast Location #3 -->		
-		<If condition="CurrentWorldId == 71150">
+		<If condition="HasQuest(347062)">
 			<SafeMoveTo questId="312429" stepId="2" x="2268" y="1047" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 			<If condition="ActorExistsAt(3341, 2268, 1047, 0, 80)">
 				<MoveToActor questId="312429" stepId="2" actorId="3341" interactRange="14" name="Beast_Corpse_A_02-3298"  pathPrecision="5" pathPointLimit="250" statusText="Moving to Beast Location #3" /> 						
@@ -39,18 +39,28 @@
 		</If>		
 		
 		<!-- Beast Location #4 -->		
-		<If condition="CurrentWorldId == 71150">
+		<If condition="HasQuest(347062)">
 			<SafeMoveTo questId="312429" stepId="2" x="2268" y="821" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
 			<If condition="ActorExistsAt(3341, 2268, 821, 0, 80)">
 				<MoveToActor questId="312429" stepId="2" actorId="3341" interactRange="14" name="Beast_Corpse_A_02-3298"  pathPrecision="5" pathPointLimit="250" statusText="Moving to Beast Location #4" /> 						
 				<WaitTimer questId="1" stepId="2" waitTime="4000" />
 			</If>
 		</If>				
-	
+
 		<!-- Search Everywhere -->	
-		<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="3341" pathPrecision="15" boxSize="15" boxTolerance="0.10" objectDistance="40" />
-		<MoveToActor questId="1" stepId="1" actorId="3341" interactRange="6" name="Beast_Corpse_A_02-3298"  pathPrecision="5" pathPointLimit="250" statusText="" />	
-		<WaitTimer questId="1" stepId="2" waitTime="4000" />		
+		<If condition="HasQuest(347062)">
+			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="3341" pathPrecision="15" boxSize="15" boxTolerance="0.10" objectDistance="40">	
+				<IgnoreScenes>
+					<!-- Block path to Cemetery -->
+					<IgnoreScene sceneName="_EntranceA_" />
+					<IgnoreScene sceneName="_MainGraveyard_" />
+					<!-- Block path to Old Mill -->
+					<IgnoreScene sceneName="_ExitA_" />			
+				</IgnoreScenes>		
+			</TrinityExploreDungeon>			
+			<MoveToActor questId="1" stepId="1" actorId="3341" interactRange="6" name="Beast_Corpse_A_02-3298"  pathPrecision="5" pathPointLimit="250" statusText="" />	
+			<WaitTimer questId="1" stepId="2" waitTime="4000" />		
+		</If>		
 		
 	</If>
 	<LoadProfile file="act1.xml" />

@@ -32,19 +32,27 @@
 		<!--  Defiled Crypt -->
 		<If condition="CurrentLevelAreaId == 83264">
 
-			<!-- Find the Jar of Souls - // reduced box/path to get the middle of jar room explored -->
-			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="93713" pathPrecision="10" boxSize="10" boxTolerance="0.05" objectDistance="50" />
-			<MoveToActor questId="1" stepId="1" actorId="93713" interactRange="6" name="a1dun_Crypts_Jar_of_Souls-5097"  pathPrecision="5" pathPointLimit="250" statusText="" />	
-			<WaitTimer questId="1" stepId="1" waitTime="10000" />		
-			<MoveToActor questId="1" stepId="1" actorId="93713" interactRange="6" name="a1dun_Crypts_Jar_of_Souls-5097"  pathPrecision="5" pathPointLimit="250" statusText="" />
-
-			<!-- Backup Plan -->
-			<If condition="HasQuest(349020)">
-				<LogMessage quest="1" step="1" output="Maybe something went wrong... fully exploring dungeon" />	
-				<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
-				<MoveToActor questId="1" stepId="1" actorId="93713" interactRange="8" name="a1dun_Crypts_Jar_of_Souls-5097"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
-			</If>	
-							
+			<!-- Find the Jar of Souls -->
+			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="93713" boxSize="8" boxTolerance="0.05" objectDistance="70">				
+				<AlternateActors>
+					<AlternateActor actorId="219334" objectDistance="45" />
+				</AlternateActors>				
+			</TrinityExploreDungeon>
+			
+			<!-- Jar #1 ID=93713 -->			
+			<If condition="HasQuest(349016) and ActorExistsAt(93713, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+				<MoveToActor questId="1" stepId="1" timeout="10000" actorId="93713" interactRange="6" name="a1dun_Crypts_Jar_of_Souls-5097"  pathPrecision="5" pathPointLimit="250" statusText="" />	
+				<WaitTimer questId="1" stepId="1" waitTime="5000" />			
+				<MoveToActor questId="1" stepId="1" timeout="10000" actorId="93713" interactRange="6" name="a1dun_Crypts_Jar_of_Souls-5097"  pathPrecision="5" pathPointLimit="250" statusText="" />	
+			</If>
+			
+			<!-- Jar #2 ID=219334 -->	
+			<If condition="HasQuest(349016) and ActorExistsAt(219334, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">	
+				<MoveToActor questId="1" stepId="1" timeout="10000" actorId="219334" interactRange="6" name="a1dun_Crypts_Jar_of_Souls-5097"  pathPrecision="5" pathPointLimit="250" statusText="" />				
+				<WaitTimer questId="1" stepId="1" waitTime="5000" />	
+				<MoveToActor questId="1" stepId="1" timeout="10000" actorId="219334" interactRange="6" name="a1dun_Crypts_Jar_of_Souls-5097"  pathPrecision="5" pathPointLimit="250" statusText="" />				
+			</If>
+			
 		</If>
 	
 	</If>

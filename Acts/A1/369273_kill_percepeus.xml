@@ -13,13 +13,23 @@
 	
 		<!-- Use waypoints instead of DungeonExplore to avoid wandering into southern highlands -->
 		<SafeMoveTo questId="312429" stepId="2" x="1703" y="4130" z="41" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="312429" stepId="2" x="1612" y="4197" z="32" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="312429" stepId="2" x="1423" y="4140" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="312429" stepId="2" x="1518" y="3847" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="312429" stepId="2" x="1802" y="3815" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="312429" stepId="2" x="1711" y="4070" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="312429" stepId="2" x="1609" y="3937" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<If condition="HasQuest(369273)">	
+		<SafeMoveTo questId="312429" stepId="2" x="1612" y="4197" z="32" pathPrecision="5" pathPointLimit="250" statusText="" />
+    <If condition="HasQuest(369273)">
+      <SafeMoveTo questId="312429" stepId="2" x="1423" y="4140" z="40" pathPrecision="5" pathPointLimit="250" statusText="" />
+    </If>
+    <If condition="HasQuest(369273)">	
+      <SafeMoveTo questId="312429" stepId="2" x="1518" y="3847" z="40" pathPrecision="5" pathPointLimit="250" statusText="" />
+    </If>
+    <If condition="HasQuest(369273)">
+      <SafeMoveTo questId="312429" stepId="2" x="1802" y="3815" z="40" pathPrecision="5" pathPointLimit="250" statusText="" />
+    </If>
+    <If condition="HasQuest(369273)">
+      <SafeMoveTo questId="312429" stepId="2" x="1711" y="4070" z="40" pathPrecision="5" pathPointLimit="250" statusText="" />
+    </If>
+    <If condition="HasQuest(369273)">
+      <SafeMoveTo questId="312429" stepId="2" x="1609" y="3937" z="40" pathPrecision="5" pathPointLimit="250" statusText="" />
+    </If>
+    <If condition="HasQuest(369273)">	
 			<SafeMoveTo questId="312429" stepId="2" x="1494" y="4046" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 		</If>
 		<If condition="HasQuest(369273)">	
@@ -56,12 +66,14 @@
 			<SafeMoveTo questId="312429" stepId="2" x="1170" y="3924" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 		</If>
 		
-		<!-- Search Everywhere -->
-		<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">			
-			<IgnoreScenes>        
-				<IgnoreScene sceneName="_N01" /><!-- Southern Highlands--> 	
-			</IgnoreScenes>
-		</TrinityExploreDungeon>		
+		<If condition="HasQuest(369273)">			
+			<!-- Search Everywhere -->
+			<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">			
+				<IgnoreScenes>        
+					<IgnoreScene sceneName="_N01" /><!-- Southern Highlands--> 	
+				</IgnoreScenes>
+			</TrinityExploreDungeon>		
+		</If>			
 		
 	</If>
 	<LoadProfile file="act1.xml" />

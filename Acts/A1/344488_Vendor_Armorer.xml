@@ -38,7 +38,7 @@
 		<If condition="CurrentLevelAreaId == 82326">
 		
 			<!--  Search for Watch Tower -->
-			<TrinityExploreDungeon questId="1" stepId="1" boxTolerance="0.05" boxSize="8" until="ExitFound" exitNameHash="497382904" ignoreMarkers="False">
+			<TrinityExploreDungeon questId="1" stepId="1" boxTolerance="0.10" boxSize="11" until="ExitFound" exitNameHash="497382904" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>				

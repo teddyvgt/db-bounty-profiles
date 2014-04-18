@@ -11,7 +11,7 @@
       <ProfileList>
         <LoadProfileOnce profile="A1/Act1.xml" />
         <!--<LoadProfileOnce profile="A2/Act2.xml" />-->
-        <LoadProfileOnce profile="A3/Act3.xml" />
+        <!--<LoadProfileOnce profile="A3/Act3.xml" />-->
         <LoadProfileOnce profile="A4/Act4.xml" />
 		<!--<LoadProfileOnce profile="A5/Act5.xml" />-->
       </ProfileList>

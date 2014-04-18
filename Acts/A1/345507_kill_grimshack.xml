@@ -12,13 +12,23 @@
 	<If condition="HasQuest(345507)">	
 	
 		<!-- Try to find him quickly with waypoints -->
-		<SafeMoveTo questId="312429" stepId="2" x="635" y="616" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="312429" stepId="2" x="421" y="602" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="312429" stepId="2" x="464" y="980" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="312429" stepId="2" x="618" y="977" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<SafeMoveTo questId="312429" stepId="2" x="727" y="855" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<If condition="HasQuest(345507)">			
-			<SafeMoveTo questId="312429" stepId="2" x="211" y="821" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+    <If condition="HasQuest(345507)">
+      <SafeMoveTo questId="312429" stepId="2" x="635" y="616" z="20" pathPrecision="5" pathPointLimit="250" statusText="" />
+    </If>
+    <If condition="HasQuest(345507)">
+      <SafeMoveTo questId="312429" stepId="2" x="421" y="602" z="20" pathPrecision="5" pathPointLimit="250" statusText="" />
+    </If>
+    <If condition="HasQuest(345507)">
+      <SafeMoveTo questId="312429" stepId="2" x="464" y="980" z="20" pathPrecision="5" pathPointLimit="250" statusText="" />
+    </If>
+    <If condition="HasQuest(345507)">
+      <SafeMoveTo questId="312429" stepId="2" x="618" y="977" z="20" pathPrecision="5" pathPointLimit="250" statusText="" />
+    </If>
+    <If condition="HasQuest(345507)">
+      <SafeMoveTo questId="312429" stepId="2" x="727" y="855" z="20" pathPrecision="5" pathPointLimit="250" statusText="" />
+    </If>
+    <If condition="HasQuest(345507)">
+      <SafeMoveTo questId="312429" stepId="2" x="211" y="821" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 		</If>		
 		<If condition="HasQuest(345507)">			
 			<SafeMoveTo questId="312429" stepId="2" x="293" y="977" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /> 

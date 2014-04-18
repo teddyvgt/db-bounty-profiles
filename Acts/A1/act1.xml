@@ -127,7 +127,7 @@
 		</If>	
 
 		<!-- Kill Horrus (Kankerrot) -->
-		<!-- Status: OK -->			
+		<!-- Status: OK too slow at finding target :( -->			
 		<If condition="HasQuest(369404)">
 			<LoadProfile file="369399_kill_horrus.xml" />
 		</If>
@@ -169,7 +169,7 @@
 	<!-- 8	Fields of Misery ==========================================================-->
 			
 		<!-- The Precious Ores -->
-		<!-- Status: Needs Testing -->		
+		<!-- Status: OK - has issues with the final ore the NPC does something to it before Trinity registers tag complete -->		
 		<If condition="HasQuest(347060)">
 			<LoadProfile file="347060_the_precious_ores.xml" />
 		</If>		
@@ -382,7 +382,7 @@
 		</If>	
 
 		<!-- Kill Cadhul the Deathcaller -->
-		<!-- Status: OK -->			
+		<!-- Status: OK - we need priority targeting on the summoners to bring down cadhuls force field -->			
 		<If condition="HasQuest(344490)">
 			<LoadProfile file="344490_kill_cadhul.xml" />
 		</If>	
@@ -411,7 +411,7 @@
 			<LoadProfile file="kill_southern_highlands.xml" />
 		</If>	
 
-		<!-- Cursed Camp-->
+		<!-- Cursed Camp -->
 		<!-- Status: GOOD -->			
 		<If condition="HasQuest(369763)">
 			<LoadProfile file="369763_the_cursed_camp.xml" />
@@ -432,7 +432,7 @@
 		</If>		
 		
 		<!-- Apothecary's Brother-->
-		<!-- Status: Needs Testing -->		
+		<!-- Status: OK -->		
 		<If condition="HasQuest(350529)">
 			<LoadProfile file="350529_apothecarys_brother.xml" />
 		</If>		
@@ -536,6 +536,8 @@
 		
 	<!--===============================================================================-->
 		
+	<ToggleTargeting questId="1" stepId="1" killRadius="80" />			
+		
 	<LogMessage quest="1" step="1" output="Checking if we have all bounties complete" /> 
 	<ActBountiesComplete act="A1">
 	<LogMessage quest="1" step="1" output="Seems like we have 5 complete" />
@@ -550,11 +552,7 @@
 			<UseWaypoint waypointNumber="0" questId="1"/>
 			<WaitTimer questId="1" stepId="1" waitTime="7500"/>
 		</While>
-		
-		<!-- Currently DB has issues with picking up cache loot in town if bags are already full, force town run to try and avoid this situation -->
-		<ForceTownRun questId="1"/>	
-		<WaitTimer questId="1" stepId="1" waitTime="1000"/>	
-		
+				
 		<LogMessage quest="1" step="1" output="Attempting to interact with Tyrael" />
 		<MoveToActor questId="1" stepId="1" x="419" y="531" z="24" actorId="114622" interactRange="8" name="Tyrael_Heaven-34594"  pathPrecision="5" pathPointLimit="250" statusText="" />
 

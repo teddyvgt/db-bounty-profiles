@@ -18,35 +18,9 @@
 		<SafeMoveTo questId="312429" stepId="2" x="1349" y="855" z="61" pathPrecision="5" pathPointLimit="250" statusText="Moving to Old Mills Location" /> 
 		<SafeMoveTo questId="312429" stepId="2" x="1492" y="770" z="40" pathPrecision="5" pathPointLimit="250" statusText="Moving to Old Mills Location" /> 	
 
-		<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
-		
-			<ToggleTargeting questId="1" stepId="1" killRadius="80" />			
-		
-			<MoveToActor questId="312429" stepId="2"  actorId="364601" interactRange="11" name="x1_Event_CursedShrine-21318"  pathPrecision="5" pathPointLimit="250" statusText="" /> 					
-			
-			<!-- Waves are pretty quick but throw in a wait just in case -->
-			<If condition="HasQuest(365401)">		
-				<WaitTimer questId="1" stepId="1" waitTime="4000" />
-			</If>			
-			<If condition="HasQuest(365401)">
-				<WaitTimer questId="1" stepId="1" waitTime="4000" />
-			</If>
-			
-			<!-- go back to the shrine if we strayed -->
-			<MoveToActor questId="312429" stepId="2" timeout="5000" actorId="364601" interactRange="11" name="x1_Event_CursedShrine-21318"  pathPrecision="5" pathPointLimit="250" statusText="" /> 													
-		
-			<!-- Search around for things to kill -->
-			<If condition="HasQuest(365401)">
-				<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False">
-					<IgnoreScenes>
-						<IgnoreScene sceneName="_S02" />
-						<IgnoreScene sceneName="NE_02" />					
-						<IgnoreScene sceneName="E01_S03" />					
-					</IgnoreScenes>
-				</TrinityExploreDungeon>
-			</If>
-			
-		</If>
+		<While condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">		
+			<MoveToActor questId="312429" stepId="2" timeout="5000" actorId="364601" interactRange="11" name="x1_Event_CursedShrine-21318"  pathPrecision="5" pathPointLimit="250" statusText="" /> 																
+		</While>
 		
 		<!-- Try the Fields Location #1 -->		
 		<If condition="HasQuest(365401)">		
@@ -57,30 +31,9 @@
 			<SafeMoveTo questId="312429" stepId="2" x="1769" y="805" z="0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Fields Location #1" /> 
 			<SafeMoveTo questId="312429" stepId="2" x="1916" y="729" z="0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Fields Location #1" /> 		
 		
-			<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">		
-		
-				<MoveToActor questId="312429" stepId="2"  actorId="364601" interactRange="11" name="x1_Event_CursedShrine-21318"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
-				
-				<!-- Waves are pretty quick but throw in a wait just in case -->
-				<If condition="HasQuest(365401)">		
-					<WaitTimer questId="1" stepId="1" waitTime="4000" />
-				</If>			
-				<If condition="HasQuest(365401)">
-					<WaitTimer questId="1" stepId="1" waitTime="4000" />
-				</If>	
-				
-				<!-- go back to the shrine if we strayed -->
+			<While condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">				
 				<MoveToActor questId="312429" stepId="2" timeout="5000" actorId="364601" interactRange="11" name="x1_Event_CursedShrine-21318"  pathPrecision="5" pathPointLimit="250" statusText="" /> 													
-				
-				<!-- If event is not over by now, explore to kill everything -->
-				<If condition="HasQuest(365401)">
-					<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False">
-						<IgnoreScenes>				
-						</IgnoreScenes>
-					</TrinityExploreDungeon>
-				</If>
-			
-			</If>
+			</While>
 			
 		</If>	
 
@@ -90,35 +43,12 @@
 			<SafeMoveTo questId="312429" stepId="2" x="1915" y="626" z="0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Fields Location #2" /> 
 			<SafeMoveTo questId="312429" stepId="2" x="1940" y="378" z="0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Fields Location #2" /> 
 		
-			<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">		
-		
-				<MoveToActor questId="312429" stepId="2"  actorId="364601" interactRange="11" name="x1_Event_CursedShrine-21318"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
-				
-				<!-- Waves are pretty quick but throw in a wait just in case -->
-				<If condition="HasQuest(365401)">		
-					<WaitTimer questId="1" stepId="1" waitTime="4000" />
-				</If>			
-				<If condition="HasQuest(365401)">
-					<WaitTimer questId="1" stepId="1" waitTime="4000" />
-				</If>	
-				
-				<!-- go back to the shrine if we strayed -->
+			<While condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">				
 				<MoveToActor questId="312429" stepId="2" timeout="5000" actorId="364601" interactRange="11" name="x1_Event_CursedShrine-21318"  pathPrecision="5" pathPointLimit="250" statusText="" /> 																	
-				
-				<!-- If event is not over by now, explore to kill everything -->
-				<If condition="HasQuest(365401)">
-					<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False">
-						<IgnoreScenes>				
-						</IgnoreScenes>
-					</TrinityExploreDungeon>
-				</If>
-			
-			</If>
+			</While>
 			
 		</If>	
 
-
-			
 		<!-- If we haven't found the shrine yet, explore -->
 		<If condition="HasQuest(365401)">
 			

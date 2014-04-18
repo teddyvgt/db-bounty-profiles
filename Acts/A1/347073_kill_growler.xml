@@ -15,7 +15,11 @@
 		<LogMessage quest="1" step="2" output="We're roaming for the Growly monster..." />
 		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">
 			<IgnoreScenes>
-			  <IgnoreScene sceneName="_S01" />
+				<!-- Block path to Cemetery -->
+				<IgnoreScene sceneName="_EntranceA_" />
+				<IgnoreScene sceneName="_MainGraveyard_" />
+				<!-- Block path to Old Mill -->
+				<IgnoreScene sceneName="_ExitA_" />	
 			</IgnoreScenes>
 		</TrinityExploreDungeon>
 	

@@ -10,38 +10,35 @@
 	<UseWaypoint waypointNumber="14" questId="1"/>
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
 	<If condition="HasQuest(367561)">
-	
-		<!--  Northern Highlands & Leorics Hunting Grounds -->
-		<If condition="CurrentWorldId == 71150">
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" boxTolerance="0.01" boxSize="25" until="ExitFound" exitNameHash="-1019926638" ignoreMarkers="False">
-				<PrioritizeScenes>
-					<PriorityScene sceneName="_LeoricManor_" />
-				</PrioritizeScenes>
-				<IgnoreScenes>
-					  <IgnoreScene sceneName="_Chokepoint_" />
-					  <IgnoreScene sceneName="_N01" />
-				</IgnoreScenes>
-			</TrinityExploreDungeon>				
-			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1019926638" destinationWorldId="75049" interactRange="20"  />			
-		</If>	
-	
-		<!-- Look for him -->
-		<If condition="CurrentLevelAreaId == 100854">		
-			<SafeMoveTo questId="312429" stepId="2" x="364" y="705" z="3" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-			<If condition="HasQuest(367561)">
-				<SafeMoveTo questId="312429" stepId="2" x="371" y="615" z="13" pathPrecision="5" pathPointLimit="250" statusText="" /> 		
-			</If>
-		</If>	
+
+		<!-- Northern Highlands -->
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="1568" y="4032" z="38" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="1431" y="4020" z="38" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="1414" y="3958" z="50" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="1338" y="3955" z="61" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="1334" y="3907" z="70" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="1277" y="3900" z="78" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="1170" y="3980" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="1046" y="3953" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="1121" y="3850" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="1216" y="3806" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="1009" y="3824" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="1083" y="3700" z="78" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="1080" y="3524" z="78" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="1086" y="3400" z="66" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><MoveToMapMarker questId="1" stepId="2" exitNameHash="-1019926638" destinationWorldId="75049" interactRange="20"  /></If>	
 		
-		<!-- go back outside and kill things -->
-		<If condition="CurrentLevelAreaId == 100854">
-			<If condition="HasQuest(367561)">		
-				<MoveToActor questId="312429" stepId="2" x="371" y="787" z="5" actorId="176536" interactRange="23" name="g_Portal_Ladder_Orange-8207" isPortal="True" destinationWorldId="71150" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-				<SafeMoveTo questId="312429" stepId="2" x="1085" y="3835" z="78" pathPrecision="5" pathPointLimit="250" statusText="" /> 				
-				<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
-			</If>
-		</If>				
-				
+		<!-- Leorics Manner -->
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="368" y="685" z="3" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="441" y="619" z="3" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="365" y="654" z="3" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="279" y="612" z="3" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="364" y="651" z="3" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="396" y="581" z="21" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="458" y="577" z="26" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="448" y="538" z="26" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+		<If condition="HasQuest(367561)"><SafeMoveTo questId="312429" stepId="2" x="367" y="516" z="26" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
+						
 	</If>
 	<LoadProfile file="act1.xml" />
 	

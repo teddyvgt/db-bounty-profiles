@@ -30,16 +30,8 @@
 		</If>
 
 		<!--  Defiled Crypt -->
-		<If condition="CurrentLevelAreaId == 83264">
-
-			<!-- Kill dat Dataminer -->
-			<TrinityExploreDungeon questId="312429" stepId="2" until="ObjectFound" actorId="225502" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="25" />
-		
-			<!-- Make sure we killed enough monsters to finish the bounty -->
-			<If condition="HasQuest(347095)">
-				<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
-			</If>			
-			
+		<If condition="CurrentLevelAreaId == 83264">			
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
 		</If>
 	
 	</If>

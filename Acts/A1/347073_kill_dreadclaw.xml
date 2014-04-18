@@ -14,9 +14,11 @@
 		<!-- Look for him -->
 		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">
 			<IgnoreScenes>
-			  <IgnoreScene sceneName="_S01" />
-			  <IgnoreScene sceneId="74617" /><!-- Cemetery -->
-			  <IgnoreScene sceneId="60702" /><!-- Drowned Temple -->			  			  
+				<!-- Block path to Cemetery -->
+				<IgnoreScene sceneName="_EntranceA_" />
+				<IgnoreScene sceneName="_MainGraveyard_" />
+				<!-- Block path to Old Mill -->
+				<IgnoreScene sceneName="_ExitA_" />				  			  
 			</IgnoreScenes>
 		</TrinityExploreDungeon>
 	
