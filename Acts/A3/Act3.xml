@@ -280,6 +280,10 @@
       <If condition="HasQuest(346200)">
         <LoadProfile file="Kill_Shertik.xml" />
       </If>
+	  <!--Kill_Demonika-->
+      <If condition="HasQuest(346230)">
+        <LoadProfile file="Kill_Demonika.xml" />
+      </If>
 
       <LogMessage quest="1" step="1" output="Checking if we have all bounties complete" />
      <ActBountiesComplete act="A3">
