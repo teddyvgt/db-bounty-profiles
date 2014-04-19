@@ -18,8 +18,11 @@
         </If>
         <LogMessage quest="1" step="2" output="Search mobs to complete the quest..." />
         <TrinityExploreDungeon questId="356417" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" pathPrecision="15"  >
+          <PrioritizeScenes>
+            <PriorityScene sceneName="Exit" />
+          </PrioritizeScenes>
           <IgnoreScenes>
-            <IgnoreScene sceneName="a3_Battlefield_" />
+            <IgnoreScene sceneName="_Chokepoint" />
             <IgnoreScene sceneName="_E02_S01" />
           </IgnoreScenes>
         </TrinityExploreDungeon>

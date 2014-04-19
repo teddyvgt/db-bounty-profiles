@@ -3,7 +3,9 @@
   <KillMonsters>True</KillMonsters>
   <PickupLoot>true</PickupLoot>
   <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
-
+  <TargetBlacklists>
+    <TargetBlacklist actorId="161278" />
+  </TargetBlacklists>
   <Order>
     <If condition="HasQuest(349224)">
 
@@ -60,13 +62,11 @@
           </IgnoreScenes>
         </TrinityExploreDungeon>
         <WaitTimer questId="1" stepId="2" waitTime="500" />
-        <!--<MoveToMapMarker questId="349224" stepId="2" markerNameHash="43541885" actorId="161278" isPortal="True" destinationWorldId="119650" />-->
-        <!--<MoveToMapMarker questId="312429" stepId="2" x="1093" y="887" z="-88" markerNameHash="43541885" actorId="161278" interactRange="20"
-        pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="119650" />-->
-        <!--<UsePortal questId="349224" stepId="1" actorId="161278" destinationWorldId="119650" interactRange="40" portalMarkerHash="43541885" x="1083" y="1043" z="-70.48186" />-->
-        <MoveToActor questId="312429" stepId="2"  actorId="161278" destinationWorldId="119650" portalMarkerHash="43541885" />
+        <MoveToMapMarker questId="349224" markerNameHash="43541885" actorId="161278" interactRange="22."
+                       pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
+
       <If condition="CurrentWorldId == 119650">
         <SafeMoveTo questId="349224" stepId="2" x="1110" y="1281" z="41" pathPrecision="5" pathPointLimit="250" />
         <SafeMoveTo questId="349224" stepId="2" x="1271" y="1094" z="41" pathPrecision="5" pathPointLimit="250" />
