@@ -62,8 +62,8 @@
           </IgnoreScenes>
         </TrinityExploreDungeon>
         <WaitTimer questId="1" stepId="2" waitTime="500" />
-        <MoveToMapMarker questId="349224" markerNameHash="43541885" actorId="161278" interactRange="22."
-                       pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+        <MoveToMapMarker questId="1" markerNameHash="43541885" actorId="161278" interactRange="50"
+                       pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="119650" statusText="" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
 
