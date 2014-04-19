@@ -18,7 +18,7 @@
         <TrinityExploreDungeon questId="346182" stepId="1" until="ObjectFound" actorId="207272" boxTolerance="0.40" boxSize="15" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
         <MoveToActor questId="346182" stepId="1" actorId="207272" interactRange="8"  pathPrecision="5" pathPointLimit="250"  />
-        <While condition="ActorExistsAt(207272, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+        <While condition="HasQuest(346182) and ActorExistsAt(207272, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
           <MoveToActor questId="346182" stepId="2" actorId="207272" interactRange="8" pathPrecision="5" pathPointLimit="250"  />
         </While>
        
