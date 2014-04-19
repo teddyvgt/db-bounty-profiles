@@ -553,6 +553,10 @@
 			<WaitTimer questId="1" stepId="1" waitTime="7500"/>
 		</While>
 				
+		<!-- Currently DB has issues with picking up cache loot in town if bags are already full, force town run to try and avoid this situation -->
+		<ForceTownRun questId="1"/>	
+		<WaitTimer questId="1" stepId="1" waitTime="1000"/>						
+				
 		<LogMessage quest="1" step="1" output="Attempting to interact with Tyrael" />
 		<MoveToActor questId="1" stepId="1" x="419" y="531" z="24" actorId="114622" interactRange="8" name="Tyrael_Heaven-34594"  pathPrecision="5" pathPointLimit="250" statusText="" />
 
