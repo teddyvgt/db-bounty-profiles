@@ -13,12 +13,6 @@
 
       <!--bugggy-->
       <!--
-      
- 
-
-      <If condition="HasQuest(346204)">
-        <LoadProfile file="Kill_Garganug.xml" />
-      </If>
       <If condition="HasQuest(369825)">
         <LoadProfile file="Event_InfernalSky.xml" />
       </If>-->
@@ -283,6 +277,14 @@
 	  <!--Kill_Demonika-->
       <If condition="HasQuest(346230)">
         <LoadProfile file="Kill_Demonika.xml" />
+      </If>
+	  <!--Kill_Garganug-->
+	  <If condition="HasQuest(346204)">
+        <LoadProfile file="Kill_Garganug.xml" />
+      </If>
+	  <!--Kill_Bholen-->
+	  <If condition="HasQuest(349301)">
+        <LoadProfile file="Kill_Bholen.xml" />
       </If>
 
       <LogMessage quest="1" step="1" output="Checking if we have all bounties complete" />

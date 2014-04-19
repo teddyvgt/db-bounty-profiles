@@ -13,13 +13,11 @@
       </While>
 
       <If condition="CurrentWorldId == 95804">
-        <TrinityExploreDungeon questId="346204" stepId="1" until="ObjectFound" actorId="220773" boxTolerance="0.10" boxSize="15" />
-        <WaitTimer questId="1" stepId="2" waitTime="1000" />
-        <!-- If not completed, keep killing things until it is complete-->
-        <If condition="HasQuest(346204)">
-          <LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
-          <TrinityExploreDungeon questId="346204" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" />
-        </If>
+			<TrinityExploreDungeon questId="346204" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" >
+				<IgnoreScenes>
+					<IgnoreScene sceneName="a3_Battlefield_" />	  
+				</IgnoreScenes>
+			</TrinityExploreDungeon>
       </If>
     </If>
 
