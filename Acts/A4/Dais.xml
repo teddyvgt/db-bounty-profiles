@@ -13,19 +13,7 @@
 </While>
     <!-- Look for him -->
 		<If condition="CurrentWorldId == 109513">
-			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="368169" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" stayAfterBounty="False">
-				<PrioritizeScenes>
-					<PriorityScene sceneName="a4dun_garden_level_01_E01_S04" pathPrecision="40" />
-					<PriorityScene sceneName="a4dun_garden_level_01_E03_S03" pathPrecision="40" />
-					<PriorityScene sceneName="a4dun_garden_level_01_E04_S02" pathPrecision="40" />          
-				</PrioritizeScenes>
-				<IgnoreScenes>
-					<IgnoreScene sceneName="a4dun_garden_level_01_E04S05" />
-					<IgnoreScene sceneName="a4dun_garden_level_01_E05S05" />
-					<IgnoreScene sceneName="a4dun_garden_level_01_E05S04" />
-					<IgnoreScene sceneName="a4dun_garden_level_01_E04S04" />    
-				</IgnoreScenes>
-			</TrinityExploreDungeon >
+			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="368169" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" stayAfterBounty="False" />
 			<MoveToActor questId="1" stepId="2" actorId="368169"/>
 			<While condition="ActorExistsAt(368169, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
 				<MoveToActor questId="1" stepId="2" actorId="368169"/>
