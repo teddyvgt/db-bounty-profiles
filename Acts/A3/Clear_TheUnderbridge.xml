@@ -37,6 +37,9 @@ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="19762
 		<If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 947, 602, 0, 300)">
 			<SafeMoveTo questId="349208" stepId="1" x="721" y="597" z="0" pathPrecision="50" unsafeRandomDistance="15" allowLongDistance="True" timeout="600" />
 		</If>
+      <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 947, 602, 0, 300)">
+        <SafeMoveTo questId="349208" stepId="1" x="715" y="570" z="0" pathPrecision="50" unsafeRandomDistance="15" allowLongDistance="True" timeout="600" />
+      </If>
 		<If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 721, 597, 0, 300)">
 			<MoveToMapMarker questId="349208" stepId="1" markerNameHash="211059666" actorId="176001" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="197622"  />
 			<WaitTimer questId="1" stepId="2" waitTime="500" />

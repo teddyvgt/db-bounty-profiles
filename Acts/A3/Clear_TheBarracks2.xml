@@ -7,7 +7,7 @@
   <Order>
     <If condition="HasQuest(349210)">
 
-      <While condition="CurrentWorldId != 95804 and CurrentWorldId != 174665 and CurrentWorldId != 221751">
+      <While condition="CurrentWorldId != 95804 and CurrentWorldId != 174555 and CurrentWorldId != 221749">
         <UseWaypoint questId="1" waypointNumber="31" />
         <WaitTimer questId="1" stepId="1" waitTime="2500"/>
       </While>
@@ -19,7 +19,7 @@
 
       <!-- Explore The Barracks Level 1 -->
       <If condition="CurrentWorldId == 174555">
-        <TrinityExploreDungeon questId="349210" stepId="2" until="ExitFound" boxSize="10" boxTolerance="0.70" exitNameHash="-1693984105" pathPrecision="40">
+        <TrinityExploreDungeon questId="349210" stepId="2" until="ExitFound" boxSize="20" boxTolerance="0.70" exitNameHash="-1693984105" pathPrecision="40">
           <PrioritizeScenes>
             <PriorityScene sceneName="Exit" />
           </PrioritizeScenes>

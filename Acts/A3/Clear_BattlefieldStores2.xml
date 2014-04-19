@@ -7,7 +7,7 @@
   <Order>
     <If condition="HasQuest(349204)">
 
-      <While condition="CurrentWorldId != 95804 and CurrentWorldId != 174560 and CurrentWorldId != 221750">
+      <While condition="CurrentLevelAreaId != 154644 and CurrentWorldId != 174560 and CurrentWorldId != 221750">
         <UseWaypoint questId="1" waypointNumber="31" />
         <WaitTimer questId="1" stepId="1" waitTime="2500"/>
       </While>
@@ -27,19 +27,10 @@
       </If>
 
       <If condition="CurrentWorldId == 174560">
-        <TrinityExploreDungeon questId="349204" stepId="2" until="ExitFound" exitNameHash="-1626182728" actorId="175482" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
-          <AlternateActors>
-            <AlternateActor actorId="0" objectDistance="45" />
-          </AlternateActors>
+        <TrinityExploreDungeon questId="349204" stepId="2" until="ExitFound" exitNameHash="-1626182728" actorId="175482" pathPrecision="25" boxSize="25" boxTolerance="0.4" objectDistance="45">
           <PriorityScenes>
             <PriorityScene sceneName="Exit" />
           </PriorityScenes>
-          <IgnoreScenes>
-            <IgnoreScene sceneName="_N_" />
-            <IgnoreScene sceneName="_S_" />
-            <IgnoreScene sceneName="_E_" />
-            <IgnoreScene sceneName="_W_" />
-          </IgnoreScenes>
         </TrinityExploreDungeon>
         <MoveToMapMarker questId="349204" stepId="2" markerNameHash="-1626182728" actorId="175482" interactRange="20"
 pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="221750" />
@@ -48,7 +39,7 @@ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="22175
       </If>
       <If condition="CurrentWorldId == 221750">
 		<TrinitySetQuesting />
-        <TrinityExploreDungeon questId="349204" stepId="2" until="BountyComplete" boxTolerance="0.1" boxSize="20" ignoreMarkers="False" />
+        <TrinityExploreDungeon questId="349204" stepId="2" until="BountyComplete" boxTolerance="0.1" boxSize="20" ignoreMarkers="False"  />
       </If>
     </If>
 

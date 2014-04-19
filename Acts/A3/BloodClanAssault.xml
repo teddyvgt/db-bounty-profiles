@@ -14,7 +14,7 @@
       </While>
 
       <If condition="CurrentWorldId == 81934">
-	  <TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.01" boxSize="25" until="ObjectFound" actorId="364601" ignoreMarkers="False" />
+	  <TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.1" boxSize="20" until="ObjectFound" actorId="364601" ignoreMarkers="False" objectDistance="70"/>
 	  <MoveToActor questId="369868" stepId="2" actorId="364601" interactRange="11" name="x1_Event_CursedShrine-8564" pathPrecision="5" pathPointLimit="250" statusText="" />
 	  
 	  <!-- Waves are pretty quick but throw in a wait just in case -->

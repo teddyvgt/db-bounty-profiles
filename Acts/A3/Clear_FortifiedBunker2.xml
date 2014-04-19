@@ -22,9 +22,6 @@
 
       <If condition="CurrentWorldId == 174516">
         <TrinityExploreDungeon questId="349202" stepId="2" until="ExitFound" exitNameHash="-1761785482" actorId="175482" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
-          <AlternateActors>
-            <AlternateActor actorId="0" objectDistance="45" />
-          </AlternateActors>
           <PriorityScenes>
             <PriorityScene sceneName="Exit" />
           </PriorityScenes>
@@ -43,7 +40,7 @@ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="22174
       
         <If condition="CurrentWorldId == 221748">
 		<TrinitySetQuesting />
-        <TrinityExploreDungeon questId="349202" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
+        <TrinityExploreDungeon questId="349202" stepId="2" until="BountyComplete" boxTolerance="0.1" boxSize="15" ignoreMarkers="False" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
 

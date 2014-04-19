@@ -7,16 +7,19 @@
   <Order>
     <If condition="HasQuest(356417)">
 
-      <While condition="CurrentWorldId != 95804">
+      <While condition="CurrentLevelAreaId != 112565">
         <UseWaypoint questId="1" waypointNumber="33" />
         <WaitTimer questId="1" stepId="1" waitTime="2500"/>
       </While>
 
       <If condition="CurrentWorldId == 95804">
-        <SafeMoveTo questId="312429" stepId="2" x="2502" y="620" z="0" pathPrecision="5" pathPointLimit="250" />
-        <TrinityExploreDungeon questId="356417" stepId="2" until="ObjectFound" actorId="220377" sceneName="Exit" boxTolerance="0.70" boxSize="15">
+        <If condition="HasQuest(356417)">
+          <SafeMoveTo questId="312429" stepId="2" x="2502" y="620" z="0" pathPrecision="5" pathPointLimit="250" />
+        </If>
+        <TrinityExploreDungeon questId="356417" stepId="2" until="ObjectFound" actorId="220377" boxTolerance="0.30" boxSize="30">
           <IgnoreScenes>
-            <IgnoreScene sceneName="a3_Battlefield_ChokepointB_E02_S01" />
+            <IgnoreScene sceneName="a3_Battlefield_" />
+            <IgnoreScene sceneName="_E02_S01" />
           </IgnoreScenes>
 
         </TrinityExploreDungeon>
@@ -24,7 +27,12 @@
         <!-- If not completed, keep killing things until it is complete-->
         <If condition="HasQuest(356417)">
           <LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
-          <TrinityExploreDungeon questId="356417" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" />
+          <TrinityExploreDungeon questId="356417" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15"  >
+            <IgnoreScenes>
+              <IgnoreScene sceneName="a3_Battlefield_" />
+              <IgnoreScene sceneName="_E02_S01" />
+            </IgnoreScenes>
+          </TrinityExploreDungeon>
         </If>
       </If>
     </If>

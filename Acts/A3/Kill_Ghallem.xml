@@ -7,22 +7,28 @@
   <Order>
     <If condition="HasQuest(349214)">
 
-      <While condition="CurrentWorldId != 95804">
+      <While condition="CurrentLevelAreaId != 155048">
         <UseWaypoint questId="1" waypointNumber="32" />
         <WaitTimer questId="1" stepId="1" waitTime="2500"/>
       </While>
 
       <If condition="CurrentWorldId == 95804">
-        <TrinityExploreDungeon questId="349214" stepId="1" until="ObjectFound" actorId="220705" boxTolerance="0.10" boxSize="15" >
+        <TrinityExploreDungeon questId="349214" stepId="1" until="ObjectFound" actorId="220705" boxTolerance="0.30" boxSize="40" objectDistance="40" pathPrecision="20">
 		<IgnoreScenes>
 			<IgnoreScene sceneName="_Chokepoint" />
+      <IgnoreScene sceneName="a3dun_Bridge" />
 		</IgnoreScenes>	
 		</TrinityExploreDungeon>
         <WaitTimer questId="1" stepId="2" waitTime="1000" />
         <!-- If not completed, keep killing things until it is complete-->
         <If condition="HasQuest(349214)">
           <LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
-          <TrinityExploreDungeon questId="349214" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" />
+          <TrinityExploreDungeon questId="349214" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="25" >
+            <IgnoreScenes>
+              <IgnoreScene sceneName="_Chokepoint" />
+              <IgnoreScene sceneName="a3dun_Bridge" />
+            </IgnoreScenes>
+          </TrinityExploreDungeon>
         </If>
       </If>
     </If>
