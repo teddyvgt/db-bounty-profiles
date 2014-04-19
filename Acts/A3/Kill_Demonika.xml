@@ -7,21 +7,12 @@
   <Order>
     <If condition="HasQuest(346230)">
 
-      <While condition="CurrentWorldId != 79401 and CurrentWorldId != 80763">
+      <While condition="CurrentWorldId != 79401">
         <UseWaypoint questId="1" waypointNumber="35" />
         <WaitTimer questId="1" stepId="1" waitTime="2500"/>
       </While>
 
       <If condition="CurrentWorldId == 79401">
-        <SafeMoveTo questId="346230" stepId="2" x="1007" y="1149" z="-30" pathPrecision="5" pathPointLimit="250"  />
-        <SafeMoveTo questId="346230" stepId="2" x="1104" y="1046" z="-79" pathPrecision="5" pathPointLimit="250"  />
-
-        <MoveToMapMarker  questId="1" stepId="2" actorId="176001" isPortal="True" markerNameHash="2083727833" destinationWorldId="80763" />
-        <WaitTimer questId="1" stepId="2" waitTime="500" />
-
-      </If>
-
-      <If condition="CurrentWorldId == 80763">
           <TrinityExploreDungeon questId="346230" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" />
       </If>
     </If>
