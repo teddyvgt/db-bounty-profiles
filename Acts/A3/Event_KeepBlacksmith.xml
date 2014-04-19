@@ -15,7 +15,7 @@
       </While>
 
       <If condition="CurrentWorldId == 93104">
-        <TrinityExploreDungeon questId="346146" stepId="1" until="ObjectFound" actorId="149331" boxTolerance="0.30" boxSize="40" objectDistance="100"/>
+        <TrinityExploreDungeon questId="346146" stepId="1" until="ObjectFound" actorId="149331" boxTolerance="0.30" boxSize="40" objectDistance="50"/>
         <!--<WaitTimer questId="1" stepId="2" waitTime="1000" />-->
         <MoveToActor questId="346146" stepId="1"  actorId="149331" interactRange="8" name="A3_UniqueVendor_Weaponsmith-13932"  pathPrecision="10" pathPointLimit="250"  />
         <!--<WaitTimer questId="1" stepId="2" waitTime="60000" />-->

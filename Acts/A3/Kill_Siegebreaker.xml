@@ -7,7 +7,7 @@
   <Order>
     <If condition="HasQuest(349242)">
 
-      <While condition="CurrentWorldId != 95804 and CurrentWorldId != 226713">
+      <While condition="CurrentLevelAreaId != 112565 and CurrentWorldId != 226713">
         <UseWaypoint questId="1" waypointNumber="33" />
         <WaitTimer questId="1" stepId="1" waitTime="2500"/>
       </While>
