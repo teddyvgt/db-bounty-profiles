@@ -13,7 +13,7 @@
       </While>
 
       <If condition="CurrentWorldId == 119641">
-        <TrinityExploreDungeon questId="346217" stepId="2" until="ExitFound" exitNameHash="43541819" actorId="176001" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <TrinityExploreDungeon questId="346217" stepId="2" until="ExitFound" exitNameHash="43541819" actorId="176001" pathPrecision="15" boxSize="15" boxTolerance="0.01" objectDistance="45">
         </TrinityExploreDungeon>
         <MoveToMapMarker questId="346217" stepId="2" markerNameHash="43541819" actorId="176001" interactRange="20"
  pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="139272" />

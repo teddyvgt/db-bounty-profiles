@@ -15,14 +15,17 @@
       </While>
 
       <If condition="CurrentWorldId == 95804">
-        <TrinityExploreDungeon questId="346180" stepId="1" until="ObjectFound" actorId="205468" boxTolerance="0.40" boxSize="15">
+        <TrinityExploreDungeon questId="346180" stepId="1" until="ObjectFound" actorId="205468" boxTolerance="0.40" boxSize="15" pathPrecision="15">
           <IgnoreScenes>
+            <IgnoreScene sceneName="a3dun_Bridge_" />
+          </IgnoreScenes>
+        </TrinityExploreDungeon>
+        <!--
             <IgnoreScene sceneName="a3dun_Bridge_NS_01_Chokepoint" />
             <IgnoreScene sceneName="a3_Battlefield_Chokepoint_B" />
             <IgnoreScene sceneName="a3dun_Bridge_NS_04_Chokepoint" />
             <IgnoreScene sceneName="a3_Battlefield_ChokepointB_E02_S01" />
-          </IgnoreScenes>
-        </TrinityExploreDungeon>
+            -->
         <WaitTimer questId="1" stepId="2" waitTime="500" />
         <MoveToActor questId="346180" stepId="1" actorId="205312" interactRange="8" name="bastionsKeepGuard_Melee_A_01_snatched-13068"  pathPrecision="5" pathPointLimit="250"  />
         <ToggleTargeting questId="1" combat="true" looting="true" killRadius="60" />

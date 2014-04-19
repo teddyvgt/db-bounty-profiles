@@ -19,7 +19,7 @@
 
       <!-- Explore The Barracks Level 1 -->
       <If condition="CurrentWorldId == 174555">
-        <TrinityExploreDungeon questId="349210" stepId="2" until="ExitFound" boxSize="20" boxTolerance="0.70" exitNameHash="-1693984105" pathPrecision="40">
+        <TrinityExploreDungeon questId="349210" stepId="2" until="ExitFound" boxSize="15" boxTolerance="0.50" exitNameHash="-1693984105" pathPrecision="15" objectDistance="45">
           <PrioritizeScenes>
             <PriorityScene sceneName="Exit" />
           </PrioritizeScenes>

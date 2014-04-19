@@ -11,12 +11,6 @@
     <LogMessage quest="1" step="1" output="Act 3 Bounties" />
 
 
-    <!--bugggy-->
-    <!--
-      <If condition="HasQuest(369825)">
-        <LoadProfile file="Event_InfernalSky.xml" />
-      </If>-->
-
     <!--WAYPOINT [27] a3Dun_rmpt_Level02        -->
 
 
@@ -115,8 +109,7 @@
     <If condition="HasQuest(349119)">
       <LoadProfile file="Kill_TheKeepDeathsLevel2.xml" />
     </If>
-
-    <!--Kill_Axegrave-->
+     <!--Kill_Axegrave-->
     <If condition="HasQuest(349115)">
       <LoadProfile file="Kill_TheKeepDeathsLevel2.xml" />
     </If>
@@ -197,6 +190,11 @@
     <!--state: -->
     <If condition="HasQuest(346182)">
       <LoadProfile file="Event_TideOfBattle.xml" />
+    </If>
+    <!--Event_InfernalSky-->
+    <!--state: -->
+    <If condition="HasQuest(369825)">
+      <LoadProfile file="Event_InfernalSky.xml" />
     </If>
 
 

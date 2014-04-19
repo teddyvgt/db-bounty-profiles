@@ -13,8 +13,8 @@
       </While>
 
       <If condition="CurrentWorldId == 93099">
-        <SafeMoveTo questId="346132" stepId="2" x="4264" y="4187" z="-25" pathPrecision="5" pathPointLimit="250" />
-        <MoveToMapMarker questId="346132" stepId="2" markerNameHash="-1078336204" actorId="176002" interactRange="20"
+        <SafeMoveTo questId="1" stepId="1" x="4264" y="4187" z="-25" pathPrecision="5" pathPointLimit="250" />
+        <MoveToMapMarker questId="1" stepId="2" markerNameHash="-1078336204" actorId="176002" interactRange="20"
         pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="81019" />
       </If>
 
@@ -26,22 +26,22 @@
 		
 		<!-- Move South in Skycrown -->
 		<If condition="CurrentWorldId == 81019 and ActorExistsAt(Me.ActorSNO, 2711, 2677, 25, 300) and ZetaDia.ActInfo.ActiveBounty">
-			<SafeMoveTo questId="101758" stepId="1" x="2779" y="3211" z="0" statusText="Clearing Skycrown pt 1" pathPrecision="50" unsafeRandomDistance="15" pathPointLimit="50" />
+			<SafeMoveTo questId="1" stepId="1" x="2779" y="3211" z="0" statusText="Clearing Skycrown pt 1" pathPrecision="50" unsafeRandomDistance="15" pathPointLimit="50" />
 		</If>
 		<If condition="CurrentWorldId == 81019 and ActorExistsAt(Me.ActorSNO, 2779, 3211, 0, 300) and ZetaDia.ActInfo.ActiveBounty">
-			<SafeMoveTo questId="101758" stepId="1" x="3025" y="3214" z="25" statusText="Clearing Skycrown pt 2" pathPrecision="50" unsafeRandomDistance="15" pathPointLimit="50"  />
+			<SafeMoveTo questId="1" stepId="1" x="3025" y="3214" z="25" statusText="Clearing Skycrown pt 2" pathPrecision="50" unsafeRandomDistance="15" pathPointLimit="50"  />
 		</If>
 		<If condition="CurrentWorldId == 81019 and ActorExistsAt(Me.ActorSNO, 3025, 3214, 25, 300) and ZetaDia.ActInfo.ActiveBounty">
-			<SafeMoveTo questId="101758" stepId="1" x="3012" y="3503" z="25" statusText="Clearing Skycrown pt 3" pathPrecision="50" unsafeRandomDistance="15" pathPointLimit="150" />
+			<SafeMoveTo questId="1" stepId="1" x="3012" y="3503" z="25" statusText="Clearing Skycrown pt 3" pathPrecision="50" unsafeRandomDistance="15" pathPointLimit="150" />
 		</If>
 		<If condition="CurrentWorldId == 81019 and ActorExistsAt(Me.ActorSNO, 3012, 3503, 25, 300) and ZetaDia.ActInfo.ActiveBounty">
-			<SafeMoveTo questId="101758" stepId="1" x="3474" y="3511" z="0" statusText="Clearing Skycrown pt 4" pathPrecision="50" unsafeRandomDistance="15" pathPointLimit="50" />
+			<SafeMoveTo questId="1" stepId="1" x="3474" y="3511" z="0" statusText="Clearing Skycrown pt 4" pathPrecision="50" unsafeRandomDistance="15" pathPointLimit="50" />
 		</If>
 		<If condition="CurrentWorldId == 81019 and ActorExistsAt(Me.ActorSNO, 3474, 3511, 0, 300) and ZetaDia.ActInfo.ActiveBounty">
-			<SafeMoveTo questId="101758" stepId="1" x="3478" y="3695" z="25" statusText="Clearing Skycrown pt 5" pathPrecision="50" unsafeRandomDistance="15" pathPointLimit="50"  />
+			<SafeMoveTo questId="1" stepId="1" x="3478" y="3695" z="25" statusText="Clearing Skycrown pt 5" pathPrecision="50" unsafeRandomDistance="15" pathPointLimit="50"  />
 		</If>
 		<If condition="CurrentWorldId == 81019 and ActorExistsAt(Me.ActorSNO, 3478, 3695, 0, 300) and ZetaDia.ActInfo.ActiveBounty">
-			<SafeMoveTo questId="101758" stepId="1" x="3804" y="3787" z="-24" statusText="Clearing Skycrown pt 6" pathPrecision="15" unsafeRandomDistance="5" pathPointLimit="50"  />
+			<SafeMoveTo questId="1" stepId="1" x="3804" y="3787" z="-24" statusText="Clearing Skycrown pt 6" pathPrecision="15" unsafeRandomDistance="5" pathPointLimit="50"  />
 		</If>
 		<!-- sure is sure ;) -->
 		<If condition="ZetaDia.ActInfo.ActiveBounty">
