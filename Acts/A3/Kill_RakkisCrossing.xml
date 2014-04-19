@@ -7,17 +7,17 @@
   <Order>
     <If condition="HasQuest(356417) or HasQuest(349218) or HasQuest(349216) or HasQuest(346204)">
 
-      <While condition="CurrentLevelAreaId != 112565">
+      <While condition="CurrentLevelAreaId != 112565 or CurrentLevelAreaId != 69504 ">
         <UseWaypoint questId="1" waypointNumber="33" />
         <WaitTimer questId="1" stepId="1" waitTime="2500"/>
       </While>
 
       <If condition="CurrentWorldId == 95804">
-        <If condition="HasQuest(356417)">
-          <SafeMoveTo questId="312429" stepId="2" x="2502" y="620" z="0" pathPrecision="5" pathPointLimit="250" />
+        <If condition="HasQuest(356417) or HasQuest(349218) or HasQuest(349216) or HasQuest(346204)">
+          <SafeMoveTo questId="1" stepId="2" x="2502" y="620" z="0" pathPrecision="5" pathPointLimit="250" />
         </If>
         <LogMessage quest="1" step="2" output="Search mobs to complete the quest..." />
-        <TrinityExploreDungeon questId="356417" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" pathPrecision="15"  >
+        <TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" pathPrecision="15"  >
           <PrioritizeScenes>
             <PriorityScene sceneName="Exit" />
           </PrioritizeScenes>
