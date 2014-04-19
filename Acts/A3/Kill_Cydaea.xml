@@ -25,20 +25,20 @@
             <PriorityScene sceneName="Exit" />
           </PriorityScenes>
         </TrinityExploreDungeon>-->
-        <SafeMoveTo questId="312429" stepId="2" x="957" y="1024" z="-10" pathPrecision="5" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1032" y="959" z="-17" pathPrecision="5" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1039" y="954" z="-20" pathPrecision="5" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1122" y="896" z="-30" pathPrecision="5" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1236" y="969" z="-40" pathPrecision="5" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1275" y="1091" z="-50" pathPrecision="5" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1273" y="1096" z="-50" pathPrecision="5" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1237" y="1202" z="-49" pathPrecision="5" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1146" y="1262" z="-59" pathPrecision="5" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1040" y="1227" z="-60" pathPrecision="5" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1043" y="1221" z="-60" pathPrecision="5" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1046" y="1147" z="-70" pathPrecision="5" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1121" y="1084" z="-101" pathPrecision="5" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1087" y="1042" z="-122" pathPrecision="5" pathPointLimit="250" />
+        <SafeMoveTo questId="312429" stepId="2" x="957" y="1024" z="-10" pathPrecision="20" pathPointLimit="250" />
+        <SafeMoveTo questId="312429" stepId="2" x="1032" y="959" z="-17" pathPrecision="20" pathPointLimit="250" />
+        <SafeMoveTo questId="312429" stepId="2" x="1039" y="954" z="-20" pathPrecision="20" pathPointLimit="250" />
+        <SafeMoveTo questId="312429" stepId="2" x="1122" y="896" z="-30" pathPrecision="20" pathPointLimit="250" />
+        <SafeMoveTo questId="312429" stepId="2" x="1236" y="969" z="-40" pathPrecision="20" pathPointLimit="250" />
+        <SafeMoveTo questId="312429" stepId="2" x="1275" y="1091" z="-50" pathPrecision="20" pathPointLimit="250" />
+        <SafeMoveTo questId="312429" stepId="2" x="1273" y="1096" z="-50" pathPrecision="20" pathPointLimit="250" />
+        <SafeMoveTo questId="312429" stepId="2" x="1237" y="1202" z="-49" pathPrecision="20" pathPointLimit="250" />
+        <SafeMoveTo questId="312429" stepId="2" x="1146" y="1262" z="-59" pathPrecision="20" pathPointLimit="250" />
+        <SafeMoveTo questId="312429" stepId="2" x="1040" y="1227" z="-60" pathPrecision="20" pathPointLimit="250" />
+        <SafeMoveTo questId="312429" stepId="2" x="1043" y="1221" z="-60" pathPrecision="20" pathPointLimit="250" />
+        <SafeMoveTo questId="312429" stepId="2" x="1046" y="1147" z="-70" pathPrecision="20" pathPointLimit="250" />
+        <SafeMoveTo questId="312429" stepId="2" x="1121" y="1084" z="-101" pathPrecision="15" pathPointLimit="250" />
+        <SafeMoveTo questId="312429" stepId="2" x="1087" y="1042" z="-122" pathPrecision="10" pathPointLimit="250" />
 
         <MoveToMapMarker questId="349224" stepId="2" markerNameHash="43541819" actorId="176001" interactRange="20"
  pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="139272"  />
