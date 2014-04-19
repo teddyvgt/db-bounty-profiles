@@ -32,17 +32,18 @@
         <!-- hier ist die höhle-->
         <!--
         <SafeMoveTo questId="349242" stepId="2" x="583" y="602" z="0" pathPrecision="5" pathPointLimit="250"  />-->
-       
-        <SafeMoveTo questId="349242" stepId="2" x="2649" y="618" z="0" /> 
+
+        <SafeMoveTo questId="349242" stepId="2" x="2649" y="618" z="0" />
         <!--<SafeMoveTo questId="349242" stepId="2" x="2570" y="634" z="0" pathPrecision="5" pathPointLimit="250" />-->
-        <TrinityExploreDungeon questId="349242" stepId="1" until="ExitFound" exitNameHash="-443762283"  actorId="226784" sceneName="Exit" boxTolerance="0.70" boxSize="15">
-				<IgnoreScenes>
-					<IgnoreScene sceneName="a3_Battlefield_" />	  
-				</IgnoreScenes>
+        <TrinityExploreDungeon questId="349242" stepId="1" until="ExitFound" exitNameHash="-443762283"  actorId="226784" sceneName="Exit" boxTolerance="0.70" boxSize="15" objectDistance="50">
+          <IgnoreScenes>
+            <IgnoreScene sceneName="a3_Battlefield_" />
+            <IgnoreScene sceneName="_E02_S01" />
+          </IgnoreScenes>
         </TrinityExploreDungeon>
-        
-        
-        <MoveToMapMarker questId="349242" stepId="2" markerNameHash="-443762283" actorId="226784" interactRange="20"
+
+
+        <MoveToMapMarker questId="349242" stepId="2" markerNameHash="-443762283" actorId="226784" interactRange="15"
 pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="226713" />
 
         <!--<UsePortal questId="349242" stepId="1" actorId="226784" destinationWorldId="226713" interactRange="40" portalMarkerHash="-443762283" />-->

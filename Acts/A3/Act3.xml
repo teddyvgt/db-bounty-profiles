@@ -23,48 +23,48 @@
     <!--Kill_Allucayrd-->
     <!--state: maybe static route -->
     <If condition="HasQuest(369329)">
-      <LoadProfile file="Kill_Allucayrd.xml" />
+      <LoadProfile file="Kill_Stonefort.xml" />
+    </If>
+    <!--Kill_Bricktop-->
+    <!--state: -->
+    <If condition="HasQuest(346128)">
+      <LoadProfile file="Kill_Stonefort.xml" />
+    </If>
+    <!--Kill_Barrucus-->
+    <!--state: -->
+    <If condition="HasQuest(369326)">
+      <LoadProfile file="Kill_Stonefort.xml" />
     </If>
     <!--Kill_Bashface-->
     <!--state: maybe static route-->
     <If condition="HasQuest(346130)">
-      <LoadProfile file="Kill_Bashface.xml" />
-    </If>
-    <!--Kill_Ganthar-->
-    <!--state: -->
-    <If condition="HasQuest(369319)">
-      <LoadProfile file="Kill_Ganthar.xml" />
+      <LoadProfile file="Kill_Stonefort.xml" />
     </If>
     <!--Kill_Greelode-->
     <!--state: -->
     <If condition="HasQuest(369323)">
       <!--state: -->
-      <LoadProfile file="Kill_Greelode.xml" />
+      <LoadProfile file="Kill_Stonefort.xml" />
     </If>
     <!--Kill_Thromp-->
     <!--state: -->
     <If condition="HasQuest(369312)">
-      <LoadProfile file="Kill_Thromp.xml" />
+      <LoadProfile file="Kill_SkyCrownBattlements.xml" />
+    </If>
+    <!--Kill_Ganthar-->
+    <!--state: -->
+    <If condition="HasQuest(369319)">
+      <LoadProfile file="Kill_SkyCrownBattlements.xml" />
     </If>
     <!--Kill_Marchocyas-->
     <!--state: -->
     <If condition="HasQuest(346132)">
-      <LoadProfile file="Kill_Marchocyas.xml" />
-    </If>
-    <!--Kill_Barrucus-->
-    <!--state: -->
-    <If condition="HasQuest(369326)">
-      <LoadProfile file="Kill_Barrucus.xml" />
+      <LoadProfile file="Kill_SkyCrownBattlements.xml" />
     </If>
     <!--Kill_Obis-->
     <!--state: -->
     <If condition="HasQuest(369316)">
-      <LoadProfile file="Kill_Obis.xml" />
-    </If>
-    <!--Kill_Bricktop-->
-    <!--state: -->
-    <If condition="HasQuest(346128)">
-      <LoadProfile file="Kill_Bricktop.xml" />
+      <LoadProfile file="Kill_SkyCrownBattlements.xml" />
     </If>
 
 
@@ -79,52 +79,50 @@
     <!--Kill_CaptainDale-->
     <!--state: testing-->
     <If condition="HasQuest(346157)">
-      <LoadProfile file="Kill_CaptainDale.xml" />
+      <LoadProfile file="Kill_TheKeepDepthsLevel1.xml" />
     </If>
     <!--Kill_Lashtongue-->
     <!--state: -->
     <If condition="HasQuest(349117)">
-      <LoadProfile file="Kill_Lashtongue.xml"/>
+      <LoadProfile file="Kill_TheKeepDepthsLevel1.xml"/>
     </If>
     <!--Kill_CaptainDonnAdams-->
     <!--state: -->
     <If condition="HasQuest(346154)">
-      <LoadProfile file="Kill_CaptainDonnAdams.xml"/>
+      <LoadProfile file="Kill_TheKeepDepthsLevel1.xml"/>
     </If>
     <!--Kill_Thornback-->
     <!--state: -->
     <If condition="HasQuest(346148)">
-      <LoadProfile file="Kill_Thornback.xml" />
+      <LoadProfile file="Kill_TheKeepDepthsLevel1.xml" />
     </If>
 
 
     <!--WAYPOINT [29] a3Dun_Keep_Level04        -->
 
 
-    <!--Kill_TheCrusher-->
-    <!--state: testing-->
-    <If condition="HasQuest(346160)">
-      <LoadProfile file="Kill_TheCrusher.xml" />
-    </If>
-    <!--Kill_Aloysius-->
-    <!--state: -->
-    <If condition="HasQuest(349119)">
-      <LoadProfile file="Kill_Aloysius.xml" />
-    </If>
     <!--Event_ForsakenSoldiers-->
     <!--state: -->
     <If condition="HasQuest(369853)">
       <LoadProfile file="Event_ForsakenSoldiers.xml" />
     </If>
+    <!--Kill_TheCrusher-->
+    <!--state: testing-->
+    <If condition="HasQuest(346160)">
+      <LoadProfile file="Kill_TheKeepDeathsLevel2.xml" />
+    </If>
+    <!--Kill_Aloysius-->
+    <If condition="HasQuest(349119)">
+      <LoadProfile file="Kill_TheKeepDeathsLevel2.xml" />
+    </If>
+
     <!--Kill_Axegrave-->
-    <!--state: -->
     <If condition="HasQuest(349115)">
-      <LoadProfile file="Kill_Axegrave.xml" />
+      <LoadProfile file="Kill_TheKeepDeathsLevel2.xml" />
     </If>
     <!--Kill_Bholen-->
-    <!--state: -->
     <If condition="HasQuest(349301)">
-      <LoadProfile file="Kill_Bholen.xml" />
+      <LoadProfile file="Kill_TheKeepDeathsLevel2.xml" />
     </If>
 
 
@@ -136,20 +134,19 @@
     <If condition="HasQuest(346166)">
       <LoadProfile file="kill_ghom.xml"/>
     </If>
-    <!--Kill_ViciousGrayTurkey-->
-    <!--state: -->
-    <If condition="HasQuest(349121)">
-      <LoadProfile file="Kill_ViciousGrayTurkey.xml"/>
-    </If>
     <!--Kill_Belagg-->
     <!--state: -->
     <If condition="HasQuest(346162)">
       <LoadProfile file="Kill_Belagg.xml" />
     </If>
+    <!--Kill_ViciousGrayTurkey-->
+    <!--state: testing-->
+    <If condition="HasQuest(349121)">
+      <LoadProfile file="Kill_TheKeepDeathsLevel3.xml"/>
+    </If>
     <!--Kill_Gugyn-->
-    <!--state: -->
     <If condition="HasQuest(346164)">
-      <LoadProfile file="Kill_Gugyn.xml" />
+      <LoadProfile file="Kill_TheKeepDeathsLevel3.xml" />
     </If>
 
 
@@ -206,11 +203,6 @@
     <!--WAYPOINT [32] A3_Battlefields_02        -->
 
 
-    <!--Kill_Ghallem-->
-    <!--state: testing-->
-    <If condition="HasQuest(349214)">
-      <LoadProfile file="Kill_Ghallem.xml" />
-    </If>
     <!--Clear_CavernsOfFrost2-->
     <!--state: testing-->
     <If condition="HasQuest(346190)">
@@ -226,45 +218,51 @@
     <If condition="HasQuest(369851)">
       <LoadProfile file="Event_DeathChill.xml" />
     </If>
+    <!--Kill_Ghallem-->
+    <!--state: testing-->
+    <If condition="HasQuest(349214)">
+      <LoadProfile file="Kill_TheBridgeOfKorsikk.xml" />
+    </If>
+    <!--Kill_Shertik-->
+    <If condition="HasQuest(346200)">
+      <LoadProfile file="Kill_TheBridgeOfKorsikk.xml" />
+    </If>
 
 
     <!--WAYPOINT [33] A3_Battlefields_02        -->
 
 
-    <!--Kill_Lummock-->
+    <!--Kill_Siegebreaker-->
     <!--state: -->
-    <If condition="HasQuest(356417)">
-      <LoadProfile file="Kill_Lummock.xml" />
+    <If condition="HasQuest(349242)">
+      <LoadProfile file="Kill_Siegebreaker.xml" />
     </If>
     <!--Event_BlazeOfGlory-->
     <!--state: -->
     <If condition="HasQuest(346184)">
       <LoadProfile file="Event_BlazeOfGlory.xml" />
     </If>
-    <!--Kill_ShandraHar-->
-    <!--state: -->
-    <If condition="HasQuest(349218)">
-      <LoadProfile file="Kill_ShandraHar.xml" />
-    </If>
     <!--Clear_TheUnderbridge-->
     <!--state: -->
     <If condition="HasQuest(349208)">
       <LoadProfile file="Clear_TheUnderbridge.xml" />
     </If>
-    <!--Kill_Siegebreaker-->
+    <!--Kill_Lummock-->
     <!--state: -->
-    <If condition="HasQuest(349242)">
-      <LoadProfile file="Kill_Siegebreaker.xml" />
+    <If condition="HasQuest(356417)">
+      <LoadProfile file="Kill_RakkisCrossing.xml" />
+    </If>
+    <!--Kill_ShandraHar-->
+    <If condition="HasQuest(349218)">
+      <LoadProfile file="Kill_RakkisCrossing.xml" />
     </If>
     <!--Kill_Direclaw-->
-    <!--state: -->
     <If condition="HasQuest(349216)">
-      <LoadProfile file="Kill_Direclaw.xml" />
+      <LoadProfile file="Kill_RakkisCrossing.xml" />
     </If>
     <!--Kill_Garganug-->
-    <!--state: -->
     <If condition="HasQuest(346204)">
-      <LoadProfile file="Kill_Garganug.xml" />
+      <LoadProfile file="Kill_RakkisCrossing.xml" />
     </If>
 
 
@@ -272,59 +270,52 @@
 
 
     <!--Kill_Growlfang-->
-    <!--state: -->
+    <!--state: testing-->
     <If condition="HasQuest(356422)">
-      <LoadProfile file="Kill_Growlfang.xml"/>
+      <LoadProfile file="Kill_ArenaCraterLevel1.xml"/>
     </If>
     <!--Kill_Valifahr-->
-    <!--state: -->
     <If condition="HasQuest(346228)">
-      <LoadProfile file="Kill_Valifahr.xml"/>
+      <LoadProfile file="Kill_ArenaCraterLevel1.xml"/>
     </If>
     <!--Kill_Severclaw-->
-    <!--state: -->
     <If condition="HasQuest(346225)">
-      <LoadProfile file="Kill_Severclaw.xml" />
+      <LoadProfile file="Kill_ArenaCraterLevel1.xml" />
     </If>
     <!--Kill_Gormungandr-->
-    <!--state: -->
     <If condition="HasQuest(349232)">
-      <LoadProfile file="Kill_Gormungandr.xml" />
+      <LoadProfile file="Kill_ArenaCraterLevel1.xml" />
     </If>
 
 
     <!--WAYPOINT [35] a3dun_Crater_ST_Level01   -->
 
 
+    <!--Kill_Haxxor-->
+    <!--state: testing-->
+    <If condition="HasQuest(349240)">
+      <LoadProfile file="Kill_TowerOfTheDamedLevel1.xml" />
+    </If>
+    <!--Kill_Gholash-->
+    <If condition="HasQuest(349238)">
+      <LoadProfile file="Kill_TowerOfTheDamedLevel1.xml" />
+    </If>
+    <!--Kill_Demonika-->
+    <If condition="HasQuest(346230)">
+      <LoadProfile file="Kill_TowerOfTheDamedLevel1.xml" />
+    </If>
     <!--Kill_Crabbs-->
     <!--state: -->
     <If condition="HasQuest(349234)">
-      <LoadProfile file="Kill_Crabbs.xml" />
+      <LoadProfile file="Kill_TowerOfTheDamnedLevel2.xml" />
     </If>
     <!--Kill_Brimstone-->
-    <!--state: -->
     <If condition="HasQuest(346235)">
-      <LoadProfile file="Kill_Brimstone.xml" />
-    </If>
-    <!--Kill_Gholash-->
-    <!--state: -->
-    <If condition="HasQuest(349238)">
-      <LoadProfile file="Kill_Gholash.xml" />
-    </If>
-    <!--Kill_Demonika-->
-    <!--state: -->
-    <If condition="HasQuest(346230)">
-      <LoadProfile file="Kill_Demonika.xml" />
+      <LoadProfile file="Kill_TowerOfTheDamnedLevel2.xml" />
     </If>
     <!--Kill_Riplash-->
-    <!--state: -->
     <If condition="HasQuest(349236)">
-      <LoadProfile file="Kill_Riplash.xml" />
-    </If>
-    <!--Kill_Haxxor-->
-    <!--state: -->
-    <If condition="HasQuest(349240)">
-      <LoadProfile file="Kill_Haxxor.xml" />
+      <LoadProfile file="Kill_TowerOfTheDamnedLevel2.xml" />
     </If>
 
 
@@ -339,17 +330,15 @@
     <!--Kill_Sawtooth-->
     <!--state: -->
     <If condition="HasQuest(349230)">
-      <LoadProfile file="Kill_Sawtooth.xml"/>
+      <LoadProfile file="Kill_ArreatCraterLevel2.xml"/>
     </If>
     <!--Kill_Snitchley-->
-    <!--state: -->
     <If condition="HasQuest(349298)">
-      <LoadProfile file="Kill_Snitchley.xml" />
+      <LoadProfile file="Kill_ArreatCraterLevel2.xml" />
     </If>
     <!--Kill_Mhawgann-->
-    <!--state: -->
     <If condition="HasQuest(346222)">
-      <LoadProfile file="Kill_Mhawgann.xml" />
+      <LoadProfile file="Kill_ArreatCraterLevel2.xml" />
     </If>
 
 
@@ -361,25 +350,18 @@
     <If condition="HasQuest(349224)">
       <LoadProfile file="Kill_Cydaea.xml" />
     </If>
-    <!--Kill_Brutu-->
-    <!--state: -->
-    <If condition="HasQuest(349222)">
-      <LoadProfile file="Kill_Brutu.xml" />
-    </If>
-    <!--Kill_Hyrug-->
-    <!--state: -->
-    <If condition="HasQuest(346200)">
-      <LoadProfile file="Kill_Shertik.xml" />
-    </If>
     <!--Kill_Hyrug-->
     <!--state: -->
     <If condition="HasQuest(346215)">
       <LoadProfile file="Kill_Hyrug.xml" />
     </If>
+    <!--Kill_Brutu-->
+    <If condition="HasQuest(349222)">
+      <LoadProfile file="Kill_TowerOfCursedLevel2.xml" />
+    </If>
     <!--Kill_Maggrus-->
-    <!--state: -->
     <If condition="HasQuest(346217)">
-      <LoadProfile file="Kill_Maggrus.xml" />
+      <LoadProfile file="Kill_TowerOfCursedLevel2.xml" />
     </If>
 
 
@@ -394,19 +376,17 @@
     <!--Kill_Axgore-->
     <!--state: testing-->
     <If condition="HasQuest(346232)">
-      <LoadProfile file="Kill_Axgore.xml" />
+      <LoadProfile file="Kill_TheCoreOfArreat.xml" />
     </If>
     <!--Kill_Gorog-->
-    <!--state: -->
     <If condition="HasQuest(349228)">
-      <LoadProfile file="Kill_Gorog.xml" />
+      <LoadProfile file="Kill_TheCoreOfArreat.xml" />
     </If>
     <!--Kill_Scorpitox-->
-    <!--state: -->
     <If condition="HasQuest(349226)">
-      <LoadProfile file="Kill_Scorpitox.xml" />
+      <LoadProfile file="Kill_TheCoreOfArreat.xml" />
     </If>
-    
+
 
     <LogMessage quest="1" step="1" output="Checking if we have all bounties complete" />
     <ActBountiesComplete act="A3">

@@ -1,11 +1,11 @@
 <Profile>
-  <Name>Kill Sawtooth</Name>
+  <Name>Kill_ArreatCraterLevel2</Name>
   <KillMonsters>True</KillMonsters>
   <PickupLoot>true</PickupLoot>
   <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 
   <Order>
-    <If condition="HasQuest(349230)">
+    <If condition="HasQuest(349230) or HasQuest(349298) or HasQuest(346222)">
 
       <!-- Checking we are in Keep Death 1 -->
       <While condition="CurrentWorldId != 81934">
@@ -14,7 +14,8 @@
       </While>
 
       <If condition="CurrentWorldId == 81934">
-        <TrinityExploreDungeon questId="349230" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" />
+        <LogMessage quest="1" step="2" output="Search mobs to complete the quest..." />
+        <TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False" pathPrecision="15"/>
       </If>
     </If>
 

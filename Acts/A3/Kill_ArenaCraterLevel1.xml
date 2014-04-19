@@ -1,0 +1,24 @@
+<Profile>
+  <Name>Kill Kill_ArenaCraterLevel1</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>true</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+
+  <Order>
+    <If condition="HasQuest(356422) or HasQuest(346228) or HasQuest(346225) or HasQuest(349232)">
+
+      <!-- Checking we are in Keep Death 1 -->
+      <While condition="CurrentWorldId != 81049">
+        <UseWaypoint questId="1" waypointNumber="34" />
+        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+      </While>
+
+      <If condition="CurrentWorldId == 81049">
+        <LogMessage quest="1" step="2" output="Search mobs to complete the quest..." />
+        <TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False" pathPrecision="15"/>
+      </If>
+    </If>
+
+    <LoadProfile file="act3.xml" />
+  </Order>
+</Profile>

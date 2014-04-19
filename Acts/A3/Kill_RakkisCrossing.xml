@@ -1,11 +1,11 @@
 <Profile>
-  <Name>Kill_Lummock</Name>
+  <Name>Kill_RakkisCrossing</Name>
   <KillMonsters>True</KillMonsters>
   <PickupLoot>true</PickupLoot>
   <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 
   <Order>
-    <If condition="HasQuest(356417)">
+    <If condition="HasQuest(356417) or HasQuest(349218) or HasQuest(349216) or HasQuest(346204)">
 
       <While condition="CurrentLevelAreaId != 112565">
         <UseWaypoint questId="1" waypointNumber="33" />
@@ -16,24 +16,13 @@
         <If condition="HasQuest(356417)">
           <SafeMoveTo questId="312429" stepId="2" x="2502" y="620" z="0" pathPrecision="5" pathPointLimit="250" />
         </If>
-        <TrinityExploreDungeon questId="356417" stepId="2" until="ObjectFound" actorId="220377" boxTolerance="0.30" boxSize="30">
+        <LogMessage quest="1" step="2" output="Search mobs to complete the quest..." />
+        <TrinityExploreDungeon questId="356417" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" pathPrecision="15"  >
           <IgnoreScenes>
             <IgnoreScene sceneName="a3_Battlefield_" />
             <IgnoreScene sceneName="_E02_S01" />
           </IgnoreScenes>
-
         </TrinityExploreDungeon>
-        <WaitTimer questId="1" stepId="2" waitTime="1000" />
-        <!-- If not completed, keep killing things until it is complete-->
-        <If condition="HasQuest(356417)">
-          <LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
-          <TrinityExploreDungeon questId="356417" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15"  >
-            <IgnoreScenes>
-              <IgnoreScene sceneName="a3_Battlefield_" />
-              <IgnoreScene sceneName="_E02_S01" />
-            </IgnoreScenes>
-          </TrinityExploreDungeon>
-        </If>
       </If>
     </If>
 

@@ -1,11 +1,11 @@
 <Profile>
-  <Name>Kill_BMaggrus</Name>
+  <Name>Kill_TowerOfCursedLevel2</Name>
   <KillMonsters>True</KillMonsters>
   <PickupLoot>true</PickupLoot>
   <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 
   <Order>
-    <If condition="HasQuest(346217)">
+    <If condition="HasQuest(346217) or HasQuest(349222)">
 
       <While condition="CurrentWorldId != 119641 and CurrentWorldId != 139272">
         <UseWaypoint questId="1" waypointNumber="37" />
@@ -13,8 +13,8 @@
       </While>
 
       <If condition="CurrentWorldId == 119641">
-<TrinityExploreDungeon questId="346217" stepId="2" until="ExitFound" exitNameHash="43541819" actorId="176001" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
-</TrinityExploreDungeon>
+        <TrinityExploreDungeon questId="346217" stepId="2" until="ExitFound" exitNameHash="43541819" actorId="176001" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        </TrinityExploreDungeon>
         <MoveToMapMarker questId="346217" stepId="2" markerNameHash="43541819" actorId="176001" interactRange="20"
  pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="139272" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
@@ -22,14 +22,8 @@
       </If>
 
       <If condition="CurrentWorldId == 139272">
-        <TrinityExploreDungeon questId="346217" stepId="2" until="ObjectFound" actorId="220862" boxTolerance="0.10" boxSize="15" />
-        <WaitTimer questId="1" stepId="3" waitTime="1000" />
-        <If condition="HasQuest(346217)">
-
-          <TrinityExploreDungeon questId="346217" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" />
-        </If>
-
-
+        <LogMessage quest="1" step="2" output="Search mobs to complete the quest..." />
+        <TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False" pathPrecision="15"/>
       </If>
     </If>
 
