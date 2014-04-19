@@ -1,0 +1,270 @@
+﻿<Profile>
+  <Name>Westmarch Commons Explore</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>True</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+  <Order>
+    <LogMessage output="Westmarch Commons Explore" />
+
+    <If condition="not (Me.IsInTown) and not (
+           CurrentWorldId == 261712
+        or CurrentWorldId == 246369
+        or CurrentWorldId == 338930
+        or CurrentWorldId == 338968
+        or CurrentWorldId == 321968
+        or CurrentWorldId == 306915
+        or CurrentWorldId == 302876
+        or CurrentWorldId == 336852
+        or CurrentWorldId == 294633
+        or CurrentWorldId == 336844)">
+      <TrinityTownPortal questId="1" waitTime="5000" />
+    </If>
+
+
+    <!-- In Town: World: X1_Westmarch_Hub (304235) LevelArea: x1_Westm_Hub (270011) -->
+    <If condition="CurrentWorldId==304235 and CurrentLevelAreaId==270011">
+      <UseWaypoint questId="1" waypointNumber="47" />
+    </If>
+
+    <If condition="not (ZetaDia.ActInfo.ActiveBounty) and CurrentWorldId==261712">
+      <WaitTimer questId="1" waitTime="1500" />
+    </If>
+
+    <!-- Quest: X1_Bounty_A5_Westmarch_Event_TheMiser (368433) World: X1_WESTM_ZONE_01 (261712) LevelArea: X1_WESTM_ZONE_01 (261758) -->
+    <If condition="HasQuest(368433) and CurrentWorldId==261712 and CurrentLevelAreaId==261758">
+      <TrinityExploreDungeon questId="368433" until="ExitFound" exitNameHash="2043324508" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Exit" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <MoveToMapMarker questId="368433" markerNameHash="2043324508" actorId="333736" interactRange="8.464922"
+                         pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_Westmarch_Event_TheMiser (368433) World: x1_WestM_Int_Gen_C_Miser (246369) LevelArea: x1_WestM_Int_Gen_C_Miser (246663) -->
+    <While condition="HasQuest(368433) and CurrentWorldId==246369 and CurrentLevelAreaId==246663">
+      <SafeMoveTo questId="312429" stepId="2" x="154" y="147" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
+      <WaitTimer questId="312429" stepId="2" waitTime="500" />
+    </While>
+    
+    
+    
+    
+
+    <!-- Quest: X1_Bounty_A5_Westmarch_Event_AbattoirFurnace (375350) World: X1_WESTM_ZONE_01 (261712) LevelArea: X1_WESTM_ZONE_01_A (314782) -->
+    <If condition="HasQuest(375350) and CurrentWorldId==261712 and CurrentLevelAreaId==314782">
+      <TrinityExploreDungeon questId="375350" until="ExitFound" exitNameHash="-660641889" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Exit" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <MoveToMapMarker questId="375350" markerNameHash="-660641889" actorId="376027" interactRange="9.376984"
+                       pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_Westmarch_Event_AbattoirFurnace (375350) World: X1_Abattoir_Random01 (338930) LevelArea: X1_Abattoir_Random01 (338931) -->
+    <If condition="HasQuest(375350) and CurrentWorldId==338930 and CurrentLevelAreaId==338931">
+      <TrinityExploreDungeon questId="375350" until="PortalExitFound" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Exit" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <MoveToMapMarker questId="375350" markerNameHash="2115491808" actorId="176001" interactRange="9.549969"
+                           pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_Westmarch_Event_AbattoirFurnace (375350) World: X1_Abattoir_Random01_B (338968) LevelArea: X1_Abattoir_Random01_B (338970) -->
+    <While condition="HasQuest(375350) and CurrentWorldId==338968 and CurrentLevelAreaId==338970">
+      <TrinityExploreDungeon questId="375350" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+    </While>
+
+
+
+    <!-- Quest: X1_Bounty_A5_Westmarch_Event_CaptainStokely (368445) World: X1_WESTM_ZONE_01 (261712) LevelArea: X1_WESTM_ZONE_01 (261758) -->
+    <If condition="HasQuest(368445) and CurrentWorldId==261712">
+      <TrinityExploreDungeon questId="368445" until="ExitFound" exitNameHash="1775330885" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+      <MoveToMapMarker questId="368445" markerNameHash="1775330885" actorId="333736" interactRange="8.464922"
+                           pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_Westmarch_Event_CaptainStokely (368445) World: x1_westm_Int_Gen_A_01_CaptainStokely (321968) LevelArea: x1_westm_Int_Gen_A_01_CaptainStokely (321983) -->
+    <While condition="HasQuest(368445) and CurrentWorldId==321968 and CurrentLevelAreaId==321983">
+      <MoveToActor questId="368445" x="335" y="420" z="0"  actorId="321930" interactRange="8" name="x1_westmarchGuard_CaptainStokely_Event-61322"  pathPrecision="5" pathPointLimit="250" statusText="" />
+      <WaitTimer questId="312429" stepId="2" waitTime="5000" />
+      <TrinityExploreDungeon questId="368445" until="BountyComplete" exitNameHash="1775330885" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+    </While>
+
+
+
+    <!-- Quest: X1_Bounty_A5_Westmarch_Event_TustinesBrewery (368543) World: X1_WESTM_ZONE_01 (261712) LevelArea: X1_WESTM_ZONE_01_A (314782) -->
+    <If condition="HasQuest(368543) and CurrentWorldId==261712">
+      <TrinityExploreDungeon questId="368543" until="ExitFound" exitNameHash="-178461554" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+      <MoveToMapMarker questId="368543" markerNameHash="-178461554" actorId="333736" interactRange="8.464922"
+                       pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_Westmarch_Event_TustinesBrewery (368543) World: X1_WESTM_INT_RESCUE_GUARDS_02 (306915) LevelArea: X1_WESTM_INT_RESCUE_GUARDS_02 (306916) -->
+    <While condition="HasQuest(368543) and CurrentWorldId==306915">
+      <MoveToActor questId="312429" stepId="2" x="303" y="363" z="10" actorId="306914" interactRange="8" name="x1_SurvivorCaptain_Rescue_Guards_02-43120"  pathPrecision="5" pathPointLimit="250" statusText="" />
+      <SafeMoveTo questId="357198" stepId="3" x="327" y="295" z="10" pathPrecision="5" pathPointLimit="250" statusText="" />
+      <WaitTimer questId="357198" stepId="3" waitTime="30000" />
+      <MoveToActor questId="312429" stepId="2" x="303" y="363" z="10" actorId="306914" interactRange="8" name="x1_SurvivorCaptain_Rescue_Guards_02-43120"  pathPrecision="5" pathPointLimit="250" statusText="" />
+    </While>
+
+
+
+
+
+    <!-- Quest: X1_Bounty_A5_Westmarch_Event_MagicMisfire (368564) World: X1_WESTM_ZONE_01 (261712) LevelArea: X1_WESTM_ZONE_01_A (314782) -->
+    <If condition="HasQuest(368564) and CurrentWorldId==261712 and CurrentLevelAreaId==314782">
+      <TrinityExploreDungeon questId="368564" until="ExitFound" exitNameHash="-1750959668" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45"/>
+      <MoveToMapMarker questId="368564" markerNameHash="-1750959668" actorId="333736" interactRange="8.464922"
+                       pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_Westmarch_Event_MagicMisfire (368564) World: x1_westm_Int_Gen_A_01ZombieSorcerer (302876) LevelArea: X1_Westm_Int_ZombieSorcerer (303053) -->
+    <If condition="HasQuest(368564) and CurrentWorldId==302876 and CurrentLevelAreaId==303053">
+      <TrinityExploreDungeon questId="368564" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45"/>
+    </If>
+
+
+
+    <!-- Quest: X1_Bounty_A5_Westmarch_Event_KingEvent02 (368536) World: X1_WESTM_ZONE_01 (261712) LevelArea: X1_WESTM_ZONE_01_A (314782) -->
+    <If condition="HasQuest(368536) and CurrentWorldId==261712">
+      <SafeMoveTo questId="368536" x="433" y="439" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
+      <TrinityExploreDungeon questId="368536" until="ExitFound" exitNameHash="-752748508" actorId="0" pathPrecision="25" boxSize="15" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Exit" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <MoveToMapMarker questId="368536" markerNameHash="-752748508" actorId="333736" interactRange="8.464922"
+                       pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_Westmarch_Event_KingEvent02 (368536) World: x1_westm_Int_Gen_B_02_KingEvent02 (336852) LevelArea: x1_westm_KingEvent02 (336847) -->
+    <If condition="HasQuest(368536) and CurrentWorldId==336852">
+      <SafeMoveTo questId="368536" x="433" y="439" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
+      <TrinityExploreDungeon questId="368536" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="15" boxTolerance="0.01" objectDistance="45" />
+    </If>
+
+
+
+
+    <!-- Quest: X1_Bounty_A5_Westmarch_Event_TheLastStand (X1_WESTM_ZONE_01) World: X1_WESTM_ZONE_01 (261712) LevelArea: X1_WESTM_ZONE_01 (261758) -->
+    <If condition="HasQuest(368525) and CurrentWorldId==261712">
+      <LogMessage output="Find The Last Stand" />
+      <!-- Quest: X1_Bounty_A5_Westmarch_Event_TheLastStand (368525) World: X1_WESTM_ZONE_01 (261712) LevelArea: X1_WESTM_ZONE_01 (261758) -->
+      <TrinityExploreDungeon questId="368525" until="ExitFound" exitNameHash="-178461555" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Exit" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <!-- Quest: X1_Bounty_A5_Westmarch_Event_TheLastStand (368525) World: X1_WESTM_ZONE_01 (261712) LevelArea: X1_WESTM_ZONE_01 (261758) -->
+      <MoveToMapMarker questId="368525" markerNameHash="-178461555" actorId="333736" interactRange="8.464922"
+                       pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="294633" statusText="" />
+
+
+    </If>
+
+    <!-- Quest: X1_Bounty_A5_Westmarch_Event_TheLastStand (368525) World: X1_WESTM_INT_RESCUE_GUARDS_01 (294633) LevelArea: X1_WESTM_INT_RESCUE_GUARDS_01 (294634) -->
+    <While condition="HasQuest(368525) and CurrentWorldId==294633 and CurrentLevelAreaId==294634">
+      <LogMessage output="Clear The Last Stand" />
+      <WaitTimer questId="312429" stepId="2" waitTime="1500" />
+      <SafeMoveTo questId="312429" stepId="2" x="405" y="332" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
+      <!-- Quest: X1_Bounty_A5_Westmarch_Event_TheLastStand (368525) World: X1_WESTM_INT_RESCUE_GUARDS_01 (294633) LevelArea: X1_WESTM_INT_RESCUE_GUARDS_01 (294634) -->
+      <TrinityExploreDungeon questId="368525" until="FullyExplored" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Exit" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <MoveToActor questId="322261" stepId="3" x="353" y="358" z="20" actorId="295471" interactRange="8" name="x1_SurvivorCaptain_Rescue_Guards-88585"  pathPrecision="5" pathPointLimit="250" statusText="" />
+    </While>
+
+    <!-- Quest: X1_Bounty_A5_Westmarch_Event_KingEvent01 (368532) World: X1_WESTM_ZONE_01 (261712) LevelArea: X1_WESTM_ZONE_01 (261758) -->
+    <If condition="HasQuest(368532) and CurrentWorldId==261712 and CurrentLevelAreaId==261758">
+      <TrinityExploreDungeon questId="368532" until="ExitFound" exitNameHash="-752748509" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Exit" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <MoveToMapMarker questId="368532" markerNameHash="-752748509" actorId="333736" interactRange="8.464922"
+                       pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+    </If>
+
+    <!-- Quest: X1_Bounty_A5_Westmarch_Event_KingEvent01 (368532) World: X1_Westm_Int_Gen_A_03_KingEvent01 (336844) LevelArea: x1_westm_KingEvent01 (336846) -->
+    <While condition="HasQuest(368532) and CurrentWorldId==336844 and CurrentLevelAreaId==336846">
+      <WaitTimer questId="312429" stepId="2" waitTime="1500" />
+      <TrinityExploreDungeon questId="336583" stepId="1" until="FullyExplored" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+      <TrinityExploreDungeon questId="336583" stepId="3" until="ObjectFound" actorId="336222" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+      <MoveToActor questId="336583" stepId="3" actorId="336222" interactRange="8" name="x1_NPC_Westmarch_Male_A_Severin-27935"  pathPrecision="5" pathPointLimit="250" statusText="" />
+    </While>
+
+    <If condition="CurrentWorldId==261712">
+      <WaitTimer questId="1" waitTime="1000" />
+      <!-- Start Explore -->
+      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+    </If>
+
+    <If condition="not (ZetaDia.ActInfo.ActiveBounty)">
+      <LogMessage output="Bounty is Finished" />
+      <TrinityTownPortal questId="1" waitTime="5000" />
+      <LoadProfile profile="Act5.xml" />
+    </If>
+  </Order>
+</Profile>

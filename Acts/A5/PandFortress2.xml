@@ -1,0 +1,106 @@
+﻿<Profile>
+  <Name>Pandemonium Fortress Level 2 Explore</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>True</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+  <Order>
+    <LogMessage output="Pandemonium Fortress Level 2 Explore" />
+
+    <If condition="not (Me.IsInTown) and not (
+           CurrentWorldId == 271235
+        or CurrentWorldId == 346410
+        or CurrentWorldId == 328484)">
+      <TrinityTownPortal questId="1" waitTime="5000" />
+    </If>
+
+
+    <!-- In Town: World: X1_Westmarch_Hub (304235) LevelArea: x1_Westm_Hub (270011) -->
+    <If condition="CurrentWorldId==304235 and CurrentLevelAreaId==270011">
+      <UseWaypoint questId="1" waypointNumber="54" />
+    </If>
+
+    <If condition="not (ZetaDia.ActInfo.ActiveBounty) and CurrentWorldId==271235">
+      <WaitTimer questId="1" waitTime="1500" />
+    </If>
+
+
+    <!-- Quest: X1_Bounty_A5_PandFortress_Event_ChronoPrison (374571) World: x1_fortress_level_02 (271235) LevelArea: x1_fortress_level_02 (271271) -->
+    <If condition="HasQuest(374571) and CurrentWorldId==271235 and CurrentLevelAreaId==271271">
+      <TrinityExploreDungeon questId="374571" until="BountyComplete" sceneName="x1_fortress_NSEW_02" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="x1_fortress_NSEW_02" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="x1_fortress_soul_grinder_A_W01_S01" />
+          <IgnoreScene sceneName="x1_fortress_soul_grinder_A_E01_S01" />
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <TrinityMoveToScene questId="374571" sceneName="x1_fortress_NSEW_02" />
+    </If>
+
+    <!-- Quest: X1_Bounty_A5_PandFortress_Kill_Malthael (359927) World: x1_fortress_level_02 (271235) LevelArea: x1_fortress_level_02_Intro (360494) -->
+    <If condition="HasQuest(359927) and CurrentWorldId==271235">
+      <LogMessage output="Pandemonium Fortress Level 1 Explore for Malthael" />
+      <WaitTimer questId="359927" stepId="2" waitTime="500" />
+      <TrinityExploreDungeon questId="359927" until="ExitFound" exitNameHash="1012176886" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Island" />
+          <PriorityScene sceneName="Exit" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="x1_fortress_soul_grinder_A_W01_S01" />
+          <IgnoreScene sceneName="x1_fortress_soul_grinder_A_E01_S01" />
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+
+      <MoveToMapMarker questId="359927" markerNameHash="1012176886" actorId="176002" interactRange="28.36722"
+                             pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="346410" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_PandFortress_Kill_Malthael (359927) World: X1_fortress_malthael_entrance (346410) LevelArea: X1_fortress_malthael_entrance (349787) -->
+    <If condition="HasQuest(359927) and CurrentWorldId==346410 and CurrentLevelAreaId==349787">
+      <MoveToMapMarker questId="359927" x="420" y="413" z="-28" markerNameHash="-144918420" actorId="374257" interactRange="12.64744"
+                             pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_PandFortress_Kill_Malthael (359927) World: X1_Malthael_Boss_Arena (328484) LevelArea: X1_Malthael_Boss_Arena (330576) -->
+    <While condition="HasQuest(359927) and CurrentWorldId==328484 and CurrentLevelAreaId==330576">
+      <WaitTimer questId="312429" stepId="2" waitTime="500" />
+
+    </While>
+    <!-- Wait For Malthael Death Animation-->
+    <If condition="CurrentWorldId==328484">
+      <WaitTimer questId="1" waitTime="10000" />
+
+    </If>
+
+
+    <While condition="ZetaDia.ActInfo.ActiveBounty and CurrentWorldId==271235">
+      <WaitTimer questId="1" waitTime="1000" />
+      <!-- Start Explore -->
+      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <IgnoreScenes>
+          <IgnoreScene sceneName="x1_fortress_soul_grinder_A_W01_S01" />
+          <IgnoreScene sceneName="x1_fortress_soul_grinder_A_E01_S01" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+    </While>
+
+    <If condition="not (ZetaDia.ActInfo.ActiveBounty)">
+      <TrinityTownPortal questId="1" waitTime="5000" />
+      <LoadProfile profile="Act5.xml" />
+    </If>
+  </Order>
+</Profile>

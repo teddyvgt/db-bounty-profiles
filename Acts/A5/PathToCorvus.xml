@@ -1,0 +1,37 @@
+﻿<Profile>
+  <Name>Path to Corvus Explore</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>True</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+  <Order>
+    <LogMessage output="Path to Corvus Explore" />
+
+    <If condition="not (Me.IsInTown) and not (
+           CurrentWorldId == 283552)">
+      <TrinityTownPortal questId="1" waitTime="5000" />
+    </If>
+
+
+    <!-- In Town: World: X1_Westmarch_Hub (304235) LevelArea: x1_Westm_Hub (270011) -->
+    <If condition="CurrentWorldId==304235 and CurrentLevelAreaId==270011">
+      <UseWaypoint questId="1" waypointNumber="51" />
+    </If>
+
+    <If condition="not (ZetaDia.ActInfo.ActiveBounty) and CurrentWorldId==283552">
+      <WaitTimer questId="1" waitTime="1500" />
+    </If>
+
+    <If condition="ZetaDia.ActInfo.ActiveBounty">
+      <LogMessage output="Exploring for Bounty" />
+      <WaitTimer questId="1" waitTime="1000" />
+      <!-- Start Explore -->
+      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+    </If>
+
+    <If condition="not (ZetaDia.ActInfo.ActiveBounty)">
+      <LogMessage output="Bounty is Finished" />
+      <TrinityTownPortal questId="1" waitTime="5000" />
+      <LoadProfile profile="Act5.xml" />
+    </If>
+  </Order>
+</Profile>

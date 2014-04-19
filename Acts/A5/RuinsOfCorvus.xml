@@ -1,0 +1,65 @@
+﻿<Profile>
+  <Name>Ruins of Corvus Explore</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>True</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+  <Order>
+    <LogMessage output="Ruins of Corvus Explore" />
+
+    <If condition="not (Me.IsInTown) and not (
+           CurrentWorldId == 283566
+        or CurrentWorldId == 297771)">
+      <TrinityTownPortal questId="1" waitTime="5000" />
+    </If>
+
+
+    <!-- In Town: World: X1_Westmarch_Hub (304235) LevelArea: x1_Westm_Hub (270011) -->
+    <If condition="CurrentWorldId==304235 and CurrentLevelAreaId==270011">
+      <UseWaypoint questId="1" waypointNumber="52" />
+    </If>
+    <If condition="not (ZetaDia.ActInfo.ActiveBounty) and CurrentWorldId==283566">
+      <WaitTimer questId="1" waitTime="1500" />
+    </If>
+
+    <!-- Quest: X1_Bounty_A5_RuinsOfCorvus_Kill_Adria (x1_Catacombs_Level02) World: x1_Catacombs_Level02 (283566) LevelArea: x1_Catacombs_Level02 (283567) -->
+    <HaveBounty questId="359915">
+      <If condition="CurrentWorldId==283566">
+        <LogMessage output="Kill Adria - Exploring for Great Hall" />
+        <WaitTimer questId="359915" waitTime="1000" />
+        <!-- Start Explore -->
+        <TrinityExploreDungeon questId="359915" until="PortalExitFound" exitNameHash="-131340091" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+          <AlternateActors>
+            <AlternateActor actorId="0" objectDistance="45" />
+          </AlternateActors>
+          <PriorityScenes>
+            <PriorityScene sceneName="Exit" />
+          </PriorityScenes>
+          <IgnoreScenes>
+            <IgnoreScene sceneName="_N_" />
+            <IgnoreScene sceneName="_S_" />
+            <IgnoreScene sceneName="_E_" />
+            <IgnoreScene sceneName="_W_" />
+          </IgnoreScenes>
+        </TrinityExploreDungeon>
+        <MoveToMapMarker questId="359915" markerNameHash="-131340091" actorId="293005" interactRange="20"
+              pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="297771" statusText="" />
+      </If>
+      <!-- Quest: X1_Bounty_A5_RuinsOfCorvus_Kill_Adria (x1_Adria_Boss_Arena) World: x1_Adria_Boss_Arena_02 (297771) LevelArea: x1_Adria_Boss_Arena (287220) -->
+      <While condition="ZetaDia.ActInfo.ActiveBounty and CurrentWorldId==297771">
+        <WaitTimer questId="1" waitTime="10000" />
+      </While>
+    </HaveBounty>
+
+    <If condition="ZetaDia.ActInfo.ActiveBounty and CurrentWorldId==283566">
+      <WaitTimer questId="1" waitTime="1000" />
+      <!-- Start Explore -->
+      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="35" boxTolerance="0.01" objectDistance="45" />
+    </If>
+
+    <If condition="not (ZetaDia.ActInfo.ActiveBounty)">
+      <LogMessage output="Bounty is Finished" />
+      <TrinityTownPortal questId="1" waitTime="5000" />
+      <LoadProfile profile="Act5.xml" />
+    </If>
+  </Order>
+</Profile>

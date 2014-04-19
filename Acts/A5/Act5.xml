@@ -1,23 +1,588 @@
-<Profile>
-<Name>Act 5</Name>
-<KillMonsters>True</KillMonsters>
-<PickupLoot>true</PickupLoot>
-<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" maxDeaths="5" numGames="-1" />
-<Order>
+﻿<Profile>
+  <Name>Act 5 Bounties</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>true</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+  <Order>
+    <LogMessage output="Act 5 Bounties" />
 
-	<LogMessage quest="1" step="1" output=">> ACT 5 IS NOT SUPPORTED" />
-	<WaitTimer questId="1" stepId="1" waitTime="500"/>
-	
-	
-	
-	<!-- should we move onto to the next act? -->
-	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('All_Redirect')">
-		<TrinityLoadProfile file="../All_Distributor.xml" />			
-	</If>		
-	
-	<!-- nope repeating the same act. gooo! -->
-	<LeaveGame quest="1" step="1" reason="done." stayInParty="False" />		
-	<ReloadProfile />	
-	
-</Order>
+    <!-- Act1 Hub -->
+    <If condition="CurrentLevelAreaId == 332339">
+      <UseWaypoint questId="312429" stepId="2" waypointNumber="46" name="A5 Hub" statusText="" />
+    </If>
+    <!-- Act2 Hub -->
+    <If condition="CurrentLevelAreaId == 168314">
+      <UseWaypoint questId="312429" stepId="2" waypointNumber="46" name="A5 Hub" statusText="" />
+    </If>
+    <!-- Act3 Hub -->
+    <If condition="CurrentLevelAreaId == 92945">
+      <UseWaypoint questId="312429" stepId="2" waypointNumber="46" name="A5 Hub" statusText="" />
+    </If>
+    <!-- Act4 Hub -->
+    <If condition="CurrentLevelAreaId == 92945">
+      <UseWaypoint questId="312429" stepId="2" waypointNumber="46" name="A5 Hub" statusText="" />
+    </If>
+
+    <!--<HaveBounty questId="367935">
+      <LoadProfile profile="X1_Bounty_A5_PandExt_Kill_Muilliuqs.xml" />
+    </HaveBounty>
+
+    <HaveBounty questId="363204">
+      <LoadProfile profile="X1_Bounty_A5_PandExt_Kill_Baethus.xml" />
+    </HaveBounty>
+
+    <HaveBounty questId="363342">
+      <LoadProfile profile="X1_Bounty_A5_PandExt_Event_SiegeDistraction.xml" />
+    </HaveBounty>-->
+
+
+
+    <!-- Bog -->
+
+    <!-- X1_Bounty_A5_Bog_Clear_PerilousCave2 -->
+    <If condition="HasQuest(369348)">
+      <LoadProfile profile="Bog.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Bog_Event_3Boggits -->
+    <If condition="HasQuest(367872)">
+      <LoadProfile profile="Bog.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Bog_Event_AncientEvils -->
+    <If condition="HasQuest(369952)">
+      <LoadProfile profile="Bog.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Bog_Event_AngryBats -->
+    <If condition="HasQuest(359310)">
+      <LoadProfile profile="Bog.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Bog_Event_HunterKillers -->
+    <If condition="HasQuest(375278)">
+      <LoadProfile profile="Bog.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Bog_Event_KingOfTheHill -->
+    <If condition="HasQuest(359319)">
+      <LoadProfile profile="Bog.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Bog_Event_LordOfFools -->
+    <If condition="HasQuest(359314)">
+      <LoadProfile profile="Bog.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Bog_Event_Wickerman -->
+    <If condition="HasQuest(359280)">
+      <LoadProfile profile="Bog.xml" />
+
+    </If>
+    <!-- X1_Bounty_A5_Bog_Kill_Almash -->
+    <If condition="HasQuest(362923)">
+      <LoadProfile profile="Bog.xml" />
+
+    </If>
+    <!-- X1_Bounty_A5_Bog_Kill_Corellus -->
+    <If condition="HasQuest(362897)">
+      <LoadProfile profile="Bog.xml" />
+
+    </If>
+    <!-- X1_Bounty_A5_Bog_Kill_Fangbite -->
+    <If condition="HasQuest(362915)">
+      <LoadProfile profile="Bog.xml" />
+
+    </If>
+    <!-- X1_Bounty_A5_Bog_Kill_Luca -->
+    <If condition="HasQuest(367870)">
+      <LoadProfile profile="Bog.xml" />
+
+    </If>
+    <!-- X1_Bounty_A5_Bog_Kill_Lurk -->
+    <If condition="HasQuest(359326)">
+      <LoadProfile profile="Bog.xml" />
+
+    </If>
+    <!-- X1_Bounty_A5_Bog_Kill_Morghum -->
+    <If condition="HasQuest(362913)">
+      <LoadProfile profile="Bog.xml" />
+
+    </If>
+    <!-- X1_Bounty_A5_Bog_Kill_Slinger -->
+    <If condition="HasQuest(362921)">
+      <LoadProfile profile="Bog.xml" />
+
+    </If>
+    <!-- X1_Bounty_A5_Bog_Kill_Tadardya -->
+    <If condition="HasQuest(362925)">
+      <LoadProfile profile="Bog.xml" />
+
+    </If>
+    <!-- X1_Bounty_A5_Bog_Kill_Vilepaw -->
+    <If condition="HasQuest(355282)">
+      <LoadProfile profile="Bog.xml" />
+
+    </If>
+
+    <!-- Graveyard -->
+
+    <!-- X1_Bounty_A5_Graveyard_Event_AltarOfSadness -->
+    <If condition="HasQuest(359116)">
+      <LoadProfile profile="Graveyard.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Graveyard_Event_Cryptology -->
+    <If condition="HasQuest(359079)">
+      <LoadProfile profile="Graveyard.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Graveyard_Event_GraveRobert -->
+    <If condition="HasQuest(359112)">
+      <LoadProfile profile="Graveyard.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Graveyard_Event_SoldierHoldout -->
+    <If condition="HasQuest(359101)">
+      <LoadProfile profile="Graveyard.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Graveyard_Event_UndeadHusband -->
+    <If condition="HasQuest(359096)">
+      <LoadProfile profile="Graveyard.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Graveyard_Kill_Erdith -->
+    <If condition="HasQuest(359233)">
+      <LoadProfile profile="Graveyard.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Graveyard_Kill_Necrosys -->
+    <If condition="HasQuest(363086)">
+      <LoadProfile profile="Graveyard.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Graveyard_Kill_Purah -->
+    <If condition="HasQuest(363090)">
+      <LoadProfile profile="Graveyard.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Graveyard_Kill_Targerious -->
+    <If condition="HasQuest(363092)">
+      <LoadProfile profile="Graveyard.xml" />
+    </If>
+
+    <!-- Battlefields -->
+
+    <!-- X1_Bounty_A5_PandExt_Event_ChronoTrigger -->
+    <If condition="HasQuest(363417)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandExt_Event_CursedCrystals -->
+    <If condition="HasQuest(367904)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandExt_Event_DemonCache -->
+    <If condition="HasQuest(367888)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandExt_Event_ForgottenWar -->
+    <If condition="HasQuest(363415)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandExt_Event_HostileRealm -->
+    <If condition="HasQuest(369908)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandExt_Event_LostLegion -->
+    <If condition="HasQuest(367926)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandExt_Event_Resurrection -->
+    <If condition="HasQuest(367884)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandExt_Event_SiegeDistraction -->
+    <If condition="HasQuest(363342)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandExt_Event_TheDemonicPrisoner -->
+    <If condition="HasQuest(363412)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandExt_Event_TheGreatWeapon -->
+    <If condition="HasQuest(363344)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandExt_Event_TheHive -->
+    <If condition="HasQuest(363346)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandExt_Kill_Baethus -->
+    <If condition="HasQuest(363204)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandExt_Kill_Burrask -->
+    <If condition="HasQuest(363200)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandExt_Kill_Muilliuqs -->
+    <If condition="HasQuest(367935)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandExt_Kill_Obsidious -->
+    <If condition="HasQuest(363196)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandExt_Kill_Rockulus -->
+    <If condition="HasQuest(363194)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandExt_Kill_Sartor -->
+    <If condition="HasQuest(359543)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandExt_Kill_Slarth -->
+    <If condition="HasQuest(363198)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandExt_Kill_Watareus -->
+    <If condition="HasQuest(363202)">
+      <LoadProfile profile="PandExt.xml" />
+    </If>
+
+    <!-- Pandemonium Fortress -->
+
+    <!-- X1_Bounty_A5_PandFortress_Event_AncientPrison -->
+    <If condition="HasQuest(363392)">
+      <LoadProfile profile="PandFortress.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandFortress_Event_BrutalAssault -->
+    <If condition="HasQuest(359939)">
+      <LoadProfile profile="PandFortress.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandFortress_Event_ChronoPrison -->
+    <If condition="HasQuest(374571)">
+      <LoadProfile profile="PandFortress2.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandFortress_Event_CourtOfInsanity -->
+    <If condition="HasQuest(363405)">
+      <LoadProfile profile="PandFortress.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandFortress_Event_DemonPrison -->
+    <If condition="HasQuest(363394)">
+      <LoadProfile profile="PandFortress.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandFortress_Event_FlyingAssasins -->
+    <If condition="HasQuest(375275)">
+      <LoadProfile profile="PandFortress.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandFortress_Event_Fortified -->
+    <If condition="HasQuest(363390)">
+      <LoadProfile profile="PandFortress.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandFortress_Event_LeapOfFaith -->
+    <If condition="HasQuest(363407)">
+      <LoadProfile profile="PandFortress.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandFortress_Event_LostHost -->
+    <If condition="HasQuest(363402)">
+      <LoadProfile profile="PandFortress.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandFortress_Event_SoulsOfAngels -->
+    <If condition="HasQuest(363409)">
+      <LoadProfile profile="PandFortress.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandFortress_Kill_Ballartrask -->
+    <If condition="HasQuest(363559)">
+      <LoadProfile profile="PandFortress2.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandFortress_Kill_Lograth -->
+    <If condition="HasQuest(363552)">
+      <LoadProfile profile="PandFortress1.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandFortress_Kill_Malthael -->
+    <If condition="HasQuest(359927)">
+      <LoadProfile profile="PandFortress2.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandFortress_Kill_Scythys -->
+    <If condition="HasQuest(363557)">
+      <LoadProfile profile="PandFortress1.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandFortress_Kill_Valtesk -->
+    <If condition="HasQuest(363555)">
+      <LoadProfile profile="PandFortress1.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandFortress_Kill_Xaphane -->
+    <If condition="HasQuest(363563)">
+      <LoadProfile profile="PandFortress2.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PandFortress_Kill_Zorrus -->
+    <If condition="HasQuest(363561)">
+      <LoadProfile profile="PandFortress.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Pand_HexMaze_Kill_Bloone -->
+    <If condition="HasQuest(368917)">
+      <LoadProfile profile="PandFortress.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Pand_HexMaze_Kill_Borgoth -->
+    <If condition="HasQuest(368912)">
+      <LoadProfile profile="PandFortress.xml" />
+    </If>
+
+    <!-- Pand HexMaze -->
+
+    <!-- X1_Bounty_A5_Pand_HexMaze_Kill_Grotescor -->
+    <If condition="HasQuest(368919)">
+      <LoadProfile profile="Pand_HexMaze.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Pand_HexMaze_Kill_Haziael -->
+    <If condition="HasQuest(368921)">
+      <LoadProfile profile="Pand_HexMaze.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Pand_HexMaze_Kill_Magrethar -->
+    <If condition="HasQuest(368796)">
+      <LoadProfile profile="Pand_HexMaze.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Pand_HexMaze_Kill_Severag -->
+    <If condition="HasQuest(368915)">
+      <LoadProfile profile="Pand_HexMaze.xml" />
+    </If>
+
+    <!-- Path To Corvus -->
+
+    <!-- X1_Bounty_A5_PathToCorvus_Event_ScarabHatchery -->
+    <If condition="HasQuest(363431)">
+      <LoadProfile profile="PathToCorvus.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PathToCorvus_Event_TreasureRoom -->
+    <If condition="HasQuest(359911)">
+      <LoadProfile profile="PathToCorvus.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PathToCorvus_Kill_Kalmor -->
+    <If condition="HasQuest(359913)">
+      <LoadProfile profile="PathToCorvus.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PathToCorvus_Kill_VekMarru -->
+    <If condition="HasQuest(363000)">
+      <LoadProfile profile="PathToCorvus.xml" />
+    </If>
+    <!-- X1_Bounty_A5_PathToCorvus_Kill_VekTabok -->
+    <If condition="HasQuest(362996)">
+      <LoadProfile profile="PathToCorvus.xml" />
+    </If>
+
+    <!-- Ruins of Corvus -->
+
+    <!-- X1_Bounty_A5_RuinsOfCorvus_Event_NephalemTreasure -->
+    <If condition="HasQuest(359839)">
+      <LoadProfile profile="RuinsOfCorvus.xml" />
+    </If>
+    <!-- X1_Bounty_A5_RuinsOfCorvus_Event_TheGoldenChamber -->
+    <If condition="HasQuest(359907)">
+      <LoadProfile profile="RuinsOfCorvus.xml" />
+    </If>
+    <!-- X1_Bounty_A5_RuinsOfCorvus_Kill_Adria -->
+    <If condition="HasQuest(359915)">
+      <LoadProfile profile="RuinsOfCorvus.xml" />
+    </If>
+    <!-- X1_Bounty_A5_RuinsOfCorvus_Kill_BariHattar -->
+    <If condition="HasQuest(363019)">
+      <LoadProfile profile="RuinsOfCorvus.xml" />
+    </If>
+    <!-- X1_Bounty_A5_RuinsOfCorvus_Kill_BariMoqqu -->
+    <If condition="HasQuest(363021)">
+      <LoadProfile profile="RuinsOfCorvus.xml" />
+    </If>
+    <!-- X1_Bounty_A5_RuinsOfCorvus_Kill_NakQujin -->
+    <If condition="HasQuest(363016)">
+      <LoadProfile profile="RuinsOfCorvus.xml" />
+    </If>
+    <!-- X1_Bounty_A5_RuinsOfCorvus_Kill_NakSarugg -->
+    <If condition="HasQuest(363013)">
+      <LoadProfile profile="RuinsOfCorvus.xml" />
+    </If>
+
+
+    <!-- X1_Bounty_A5_WestmarchFire_Clear_RepositoryOfBones2 -->
+    <If condition="HasQuest(369383)">
+      <LoadProfile profile="WestmarchFire.xml" />
+    </If>
+    <!-- X1_Bounty_A5_WestmarchFire_Event_Bonepit -->
+    <If condition="HasQuest(375348)">
+      <LoadProfile profile="WestmarchFire.xml" />
+    </If>
+    <!-- X1_Bounty_A5_WestmarchFire_Event_BrutelyUnfortunate -->
+    <If condition="HasQuest(359758)">
+      <LoadProfile profile="WestmarchFire.xml" />
+    </If>
+    <!-- X1_Bounty_A5_WestmarchFire_Event_Corpsefinder -->
+    <If condition="HasQuest(368611)">
+      <LoadProfile profile="WestmarchFire.xml" />
+    </If>
+    <!-- X1_Bounty_A5_WestmarchFire_Event_HideAndSeek -->
+    <If condition="HasQuest(368607)">
+      <LoadProfile profile="WestmarchFire.xml" />
+    </If>
+    <!-- X1_Bounty_A5_WestmarchFire_Event_KingEvent03 -->
+    <If condition="HasQuest(368601)">
+      <LoadProfile profile="WestmarchFire.xml" />
+    </If>
+    <!-- X1_Bounty_A5_WestmarchFire_Event_PestProblems -->
+    <If condition="HasQuest(368613)">
+      <LoadProfile profile="WestmarchFire.xml" />
+    </If>
+    <!-- X1_Bounty_A5_WestmarchFire_Kill_Ghrentuloth -->
+    <If condition="HasQuest(359722)">
+      <LoadProfile profile="WestmarchFire.xml" />
+    </If>
+    <!-- X1_Bounty_A5_WestmarchFire_Kill_GigaPlagueBearer -->
+    <If condition="HasQuest(359765)">
+      <LoadProfile profile="WestmarchFire.xml" />
+    </If>
+    <!-- X1_Bounty_A5_WestmarchFire_Kill_LurkingSkeletalCaptain -->
+    <If condition="HasQuest(359661)">
+      <LoadProfile profile="WestmarchFire.xml" />
+    </If>
+    <!-- X1_Bounty_A5_WestmarchFire_Kill_Micheboar -->
+    <If condition="HasQuest(363177)">
+      <LoadProfile profile="WestmarchFire.xml" />
+    </If>
+    <!-- X1_Bounty_A5_WestmarchFire_Kill_PanFezbane -->
+    <If condition="HasQuest(368789)">
+      <LoadProfile profile="WestmarchFire.xml" />
+    </If>
+    <!-- X1_Bounty_A5_WestmarchFire_Kill_Sumaryss -->
+    <If condition="HasQuest(363185)">
+      <LoadProfile profile="WestmarchFire.xml" />
+    </If>
+    <!-- X1_Bounty_A5_WestmarchFire_Kill_Theodosia -->
+    <If condition="HasQuest(363180)">
+      <LoadProfile profile="WestmarchFire.xml" />
+    </If>
+    <!-- X1_Bounty_A5_WestmarchFire_Kill_Urzael -->
+    <If condition="HasQuest(359919)">
+      <LoadProfile profile="WestmarchFire.xml" />
+    </If>
+
+
+
+    <!-- X1_Bounty_A5_Westmarch_Clear_PlagueTunnels2 -->
+    <If condition="HasQuest(369377)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Event_AbattoirFurnace -->
+    <If condition="HasQuest(375350)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Event_CaptainStokely -->
+    <If condition="HasQuest(368445)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Event_GuardSlaughter -->
+    <If condition="HasQuest(375268)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Event_HomeInvasion -->
+    <If condition="HasQuest(368555)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Event_KingEvent01 -->
+    <If condition="HasQuest(368532)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Event_KingEvent02 -->
+    <If condition="HasQuest(368536)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Event_MagicMisfire -->
+    <If condition="HasQuest(368564)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Event_NecromancersChoice -->
+    <If condition="HasQuest(368420)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Event_ReformedCultist -->
+    <If condition="HasQuest(368559)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Event_TheAngeredDead -->
+    <If condition="HasQuest(359394)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Event_TheHarvest -->
+    <If condition="HasQuest(359396)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Event_TheLastStand -->
+    <If condition="HasQuest(368525)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Event_TheMiser -->
+    <If condition="HasQuest(368433)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Event_TollifersLastStand -->
+    <If condition="HasQuest(359426)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Event_TouchOfDeath -->
+    <If condition="HasQuest(359399)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Event_TustinesBrewery -->
+    <If condition="HasQuest(368543)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Event_WalkInThePark -->
+    <If condition="HasQuest(359403)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Kill_CaptainGerber -->
+    <If condition="HasQuest(368783)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Kill_DaleHawthorne -->
+    <If condition="HasQuest(368781)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Kill_Getzlord -->
+    <If condition="HasQuest(363075)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Kill_IgorStalfos -->
+    <If condition="HasQuest(368785)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Kill_Kago -->
+    <If condition="HasQuest(359430)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Kill_KatherineBatts -->
+    <If condition="HasQuest(363080)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Kill_Matanzas -->
+    <If condition="HasQuest(363082)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Kill_Pontius -->
+    <If condition="HasQuest(359428)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+    <!-- X1_Bounty_A5_Westmarch_Kill_Yergacheph -->
+    <If condition="HasQuest(363078)">
+      <LoadProfile profile="Westmarch.xml" />
+    </If>
+
+    <LogMessage quest="1" output="Checking if we have all bounties complete" />
+
+    <ActBountiesComplete act="A5">
+      <LogMessage quest="1" output="Seems like we have 5 complete" />
+      <If condition="Me.IsInTown==False">
+        <LogMessage quest="1" output="Going back to town to turn it in." />
+        <TrinityTownPortal questId="1" />
+      </If>
+      <WaitTimer questId="1" waitTime="1000"/>
+      <LogMessage quest="1" output="Lets make sure we are actually in the right town" />
+      <While condition="CurrentWorldId != 304235">
+        <LogMessage quest="1" output="Doesn't look like we are! using the waypoint" />
+        <UseWaypoint questId="312429" stepId="2" waypointNumber="46" name="Waypoint-89710" statusText="" />
+        <WaitTimer questId="1" waitTime="3500"/>
+      </While>
+      <LogMessage quest="357001" output="Attempting to interact with Tyrael" />
+      <MoveToActor questId="357001" stepId="1" x="572" y="499" z="3" actorId="114622" interactRange="8" name="Tyrael_Heaven-28202"  pathPrecision="5" pathPointLimit="250" statusText="" />
+
+    </ActBountiesComplete>
+
+    <!--<WaitTimer questId="1" waitTime="60000"/>-->
+    <WaitTimer questId="1" waitTime="5000"/>
+    <LeaveGame reason="All Act 5 Bounties Complete!" />
+  </Order>
 </Profile>

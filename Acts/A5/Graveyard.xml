@@ -1,0 +1,70 @@
+﻿<Profile>
+  <Name>Graveyard Explore</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>True</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+  <Order>
+    <LogMessage output="Graveyard Explore" />
+
+    <If condition="not (Me.IsInTown) and not (
+        CurrentWorldId == 338944)">
+      <TrinityTownPortal questId="1" waitTime="5000" />
+    </If>
+
+
+    <!-- In Town: World: X1_Westmarch_Hub (304235) LevelArea: x1_Westm_Hub (270011) -->
+    <If condition="CurrentWorldId==304235 and CurrentLevelAreaId==270011">
+      <UseWaypoint questId="1" waypointNumber="48" />
+    </If>
+
+
+    <If condition="not (ZetaDia.ActInfo.ActiveBounty) and CurrentWorldId==338944">
+      <WaitTimer questId="1" waitTime="1500" />
+    </If>
+
+
+    <!-- Quest: X1_Bounty_A5_Graveyard_Event_Cryptology (359079) World: x1_westm_Graveyard_DeathOrb (338944) LevelArea: X1_Westm_Graveyard_DeathOrb (338946) -->
+    <While condition="HasQuest(359079) and CurrentWorldId==338944 and CurrentLevelAreaId==338946">
+      <TrinityExploreDungeon questId="359079" until="SceneFound" sceneName="x1_westm_graveyard_NSEW_06" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="x1_westm_graveyard_NSEW_06" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <TrinityMoveToScene questId="359079" sceneName="x1_westm_graveyard_NSEW_06"/>
+      <WaitTimer questId="359079" waitTime="1500" />
+    </While>
+
+
+    <!-- Quest: X1_Bounty_A5_Graveyard_Event_GraveRobert (359112) World: x1_westm_Graveyard_DeathOrb (338944) LevelArea: X1_Westm_Graveyard_DeathOrb (338946) -->
+    <While condition="HasQuest(359112) and CurrentWorldId==338944 and CurrentLevelAreaId==338946">
+      <TrinityExploreDungeon questId="359112" until="ObjectFound" exitNameHash="0" actorId="351621" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <PriorityScenes>
+          <PriorityScene sceneName="x1_westm_graveyard_NSEW_14" />
+        </PriorityScenes>
+      </TrinityExploreDungeon>
+      <If condition="HasQuest(359112) and IsSceneLoaded(341945)">
+        <TrinityMoveToScene questId="359112" sceneName="x1_westm_graveyard_NSEW_14" />
+      </If>
+      <MoveToActor questId="359112" actorId="351621" />
+      <WaitTimer questId="359112" waitTime="1500" />
+    </While>
+
+    <If condition="CurrentWorldId==338944">
+      <WaitTimer questId="1" waitTime="1000" />
+      <!-- Start Explore -->
+      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+    </If>
+
+    <TrinityTownPortal questId="1" waitTime="5000" />
+    <LoadProfile profile="Act5.xml" />
+  </Order>
+</Profile>

@@ -1,0 +1,11 @@
+﻿<Profile>
+  <Name>Default Pandemonium Profile</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>True</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+  <Order>
+    <LogMessage output="Default Pandemonium Profile" />
+    <WaitTimer questId="1" waitTime="600000" />
+
+  </Order>
+</Profile>

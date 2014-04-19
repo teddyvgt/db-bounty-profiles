@@ -1,0 +1,40 @@
+﻿<Profile>
+  <Name>Pandemonium Fortress Level 1 Explore</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>True</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+  <Order>
+    <LogMessage output="Pandemonium Fortress Level 1 Explore" />
+
+    <If condition="not (Me.IsInTown) and not (
+           CurrentWorldId == 271233)">
+      <TrinityTownPortal questId="1" waitTime="5000" />
+    </If>
+
+
+    <!-- In Town: World: X1_Westmarch_Hub (304235) LevelArea: x1_Westm_Hub (270011) -->
+    <If condition="CurrentWorldId==304235 and CurrentLevelAreaId==270011">
+      <UseWaypoint questId="1" waypointNumber="53" />
+    </If>
+    <If condition="not (ZetaDia.ActInfo.ActiveBounty) and CurrentWorldId==271233">
+      <WaitTimer questId="1" waitTime="1500" />
+    </If>
+
+    <While condition="ZetaDia.ActInfo.ActiveBounty and CurrentWorldId==271233">
+      <LogMessage output="Exploring for Bounty" />
+      <WaitTimer questId="1" waitTime="1000" />
+      <!-- Start Explore -->
+      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <IgnoreScenes>
+          <IgnoreScene sceneName="Entrance" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+    </While>
+
+    <If condition="not (ZetaDia.ActInfo.ActiveBounty)">
+      <LogMessage output="Bounty is Finished" />
+      <TrinityTownPortal questId="1" waitTime="5000" />
+      <LoadProfile profile="Act5.xml" />
+    </If>
+  </Order>
+</Profile>

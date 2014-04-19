@@ -1,0 +1,87 @@
+﻿<Profile>
+  <Name>Pand_HexMaze Explore</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>True</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+  <Order>
+    <LogMessage output="Battlefields Explore" />
+
+    <!-- In Town: World: X1_Westmarch_Hub (304235) LevelArea: x1_Westm_Hub (270011) -->
+    <If condition="CurrentWorldId==304235 and CurrentLevelAreaId==270011">
+      <UseWaypoint questId="1" waypointNumber="55" />
+    </If>
+
+    <If condition="not (ZetaDia.ActInfo.ActiveBounty) and CurrentWorldId==338600">
+      <WaitTimer questId="1" waitTime="1500" />
+    </If>
+
+
+    <!-- Quest: X1_Bounty_A5_Pand_HexMaze_Kill_Haziael (368921) World: X1_Pand_Ext_2_Battlefields (338600) LevelArea: X1_Pand_Ext_2_Battlefields (338602) -->
+    <While condition="HasQuest(368921) and CurrentWorldId==338600">
+      <TrinityExploreDungeon questId="368921" until="ObjectFound" exitNameHash="0" actorId="374764" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="374768" objectDistance="45" />
+        </AlternateActors>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <MoveToActor questId="368921" actorId="374768" interactRange="8" name="x1_Pand_Maze_PortalTest_OnDeathPortal_Haziael"  pathPrecision="5" pathPointLimit="250" statusText="" />
+    </While>
+    <!-- Quest: X1_Bounty_A5_Pand_HexMaze_Kill_Haziael (368921) World: X1_Pand_HexMaze_Haziael (374770) LevelArea: X1_Pand_HexMaze_Haziael (374769) -->
+    <If condition="HasQuest(368921) and CurrentWorldId==374770 and CurrentLevelAreaId==374769">
+      <TrinityExploreDungeon questId="368921" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+    </If>
+
+
+
+
+
+
+    <!-- Quest: X1_Bounty_A5_Pand_HexMaze_Kill_Grotescor (368919) World: X1_Pand_Ext_2_Battlefields (338600) LevelArea: X1_Pand_Ext_2_Battlefields (338602) -->
+    <If condition="HasQuest(368919) and CurrentWorldId==338600">
+      <LogMessage output="Find and Kill Grotescor - Battlefields" />
+      <WaitTimer questId="312429" stepId="2" waitTime="500" />
+      <!-- Portal Actor -->
+      <TrinityExploreDungeon questId="368919" until="ObjectFound" exitNameHash="0" actorId="374764" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <!-- Portal Guardian Actor -->
+          <AlternateActor actorId="374751" objectDistance="45" />
+        </AlternateActors>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <MoveToActor questId="368919" actorId="374764" interactRange="22" name="x1_Pand_Maze_PortalTest_OnDeathPortal_Grotescor-20974"
+                   isPortal="True" destinationWorldId="-1" pathPrecision="5" pathPointLimit="250" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_Pand_HexMaze_Kill_Grotescor (368919) World: X1_Pand_HexMaze_Grotescor (374766) LevelArea: X1_Pand_HexMaze_Grotescor (374765) -->
+    <If condition="HasQuest(368919) and CurrentWorldId==374766">
+      <LogMessage output="Find and Kill Grotescor - Inside Realm of the Banished" />
+      <WaitTimer questId="312429" stepId="2" waitTime="500" />
+      <TrinityExploreDungeon questId="368919" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+      </TrinityExploreDungeon>
+    </If>
+
+
+    <While condition="ZetaDia.ActInfo.ActiveBounty and CurrentWorldId==338600">
+      <WaitTimer questId="1" waitTime="1000" />
+      <!-- Start Explore -->
+      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="35" boxTolerance="0.01" objectDistance="45" />
+    </While>
+
+    <If condition="not (ZetaDia.ActInfo.ActiveBounty)">
+      <TrinityTownPortal questId="1" waitTime="5000" />
+      <LoadProfile profile="Act5.xml" />
+    </If>
+  </Order>
+</Profile>

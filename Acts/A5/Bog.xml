@@ -1,0 +1,198 @@
+﻿<Profile>
+  <Name>Bog Explore</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>True</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+  <Order>
+    <LogMessage output="Bog Explore" />
+
+    <If condition="not (Me.IsInTown) and not (
+           CurrentWorldId == 267412
+        or CurrentWorldId == 341040
+        or CurrentWorldId == 269874
+        or CurrentWorldId == 271533
+        or CurrentWorldId == 341040)">
+      <TrinityTownPortal questId="1" waitTime="5000" />
+    </If>
+    
+    <!-- In Town: World: X1_Westmarch_Hub (304235) LevelArea: x1_Westm_Hub (270011) -->
+    <If condition="CurrentWorldId==304235 and CurrentLevelAreaId==270011">
+      <UseWaypoint questId="1" waypointNumber="50" />
+    </If>
+
+    <If condition="not (ZetaDia.ActInfo.ActiveBounty) and CurrentWorldId==267412">
+      <WaitTimer questId="1" waitTime="1500" />
+    </If>
+
+
+    <!-- Quest: X1_Bounty_A5_Bog_Event_AncientEvils (369952) World: x1_Bog_01 (267412) LevelArea: x1_Bog_01_Part2 (258142) -->
+    <If condition="HasQuest(369952) and CurrentWorldId==267412">
+      <!-- Quest: X1_Bounty_A5_Bog_Event_AncientEvils (369952) World: x1_Bog_01 (267412) LevelArea: x1_Bog_01_Part2 (258142) -->
+      <TrinityExploreDungeon questId="369952" until="ExitFound" exitNameHash="1649975402" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Exit" />
+        </PriorityScenes>
+      </TrinityExploreDungeon>
+      <MoveToMapMarker questId="369952" markerNameHash="1649975402" actorId="342003" interactRange="12.50264"
+                             pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_Bog_Event_AncientEvils (369952) World: x1_Catacombs_FakeEntrance_04 (341040) LevelArea: x1_Catacombs_FakeEntrance_04 (341041) -->
+    <If condition="HasQuest(369952) and CurrentWorldId==341040">
+      <TrinityExploreDungeon questId="369952" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+    </If>
+
+
+
+    <!-- Quest: X1_Bounty_A5_Bog_Event_3Boggits (367872) World: x1_Bog_01 (267412) LevelArea: x1_Bog_01_Part2 (258142) -->
+    <If condition="HasQuest(367872) and CurrentWorldId==267412">
+      <TrinityExploreDungeon questId="367872" until="ExitFound" exitNameHash="-1947203375" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Family_Entrance" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <MoveToMapMarker questId="367872" markerNameHash="-1947203375" actorId="359453" interactRange="9.577682"
+                       pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_Bog_Event_3Boggits (367872) World: x1_Bog_BogPeople_Cellar_D (271533) LevelArea: x1_Bog_BogPeople_Cellar_D (337313) -->
+    <If condition="HasQuest(367872) and CurrentWorldId==271533 and CurrentLevelAreaId==337313">
+      <TrinityExploreDungeon questId="367872" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+    </If>
+
+
+    <!-- Quest: X1_Bounty_A5_Bog_Event_Wickerman (359280) World: x1_Bog_01 (267412) LevelArea: x1_Bog_01_Part2 (258142) -->
+    <If condition="HasQuest(359280) and CurrentWorldId==267412">
+      <TrinityExploreDungeon questId="359280" until="SceneFound" sceneName="Wickerman" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="35" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Wickerman" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <TrinityMoveToScene questId="359280" sceneName="Wickerman" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_Bog_Event_Wickerman (359280) World: x1_Bog_BogPeople_Cellar_C (269874) LevelArea: x1_Bog_BogPeople_Cellar_C (335815) -->
+    <If condition="HasQuest(359280) and CurrentWorldId==269874">
+      <TrinityExploreDungeon questId="359280" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+    </If>
+
+
+
+    <!-- Quest: X1_Bounty_A5_Bog_Kill_Luca (367870) World: x1_Bog_01 (267412) LevelArea: x1_Bog_01_Part2 (258142) -->
+    <If condition="HasQuest(367870) and CurrentWorldId==267412">
+      <TrinityExploreDungeon questId="367870" until="ExitFound" exitNameHash="-1947203376" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Family_Entrance" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <MoveToMapMarker questId="367870" markerNameHash="-1947203376" actorId="359453" interactRange="9.577682"
+                       pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_Bog_Kill_Luca (367870) World: x1_Bog_BogPeople_Cellar_C (269874) LevelArea: x1_Bog_BogPeople_Cellar_C (335815) -->
+    <If condition="HasQuest(367870) and CurrentWorldId==269874">
+      <TrinityExploreDungeon questId="367870" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+    </If>
+
+
+
+    <!-- Quest: X1_Bounty_A5_Bog_Event_LordOfFools (359314) World: x1_Bog_01 (267412) LevelArea: x1_Bog_01_Part2 (258142) -->
+    <While condition="HasQuest(359314) and CurrentWorldId==267412">
+      <LogMessage output="Lord of Fools" />
+      <TrinityExploreDungeon questId="359314" until="SceneFound" sceneName="LordOfFools" exitNameHash="289392" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <PriorityScenes>
+          <PriorityScene sceneName="LordOfFools" />
+        </PriorityScenes>
+      </TrinityExploreDungeon>
+      <TrinityMoveToScene questId="359314" sceneName="LordOfFools" />
+      <WaitTimer questId="359314" waitTime="5000" />
+    </While>
+
+
+    <!-- Quest: X1_Bounty_A5_Bog_Event_KingOfTheHill (359319) World: x1_Bog_01 (267412) LevelArea: x1_Bog_01_Part2 (258142) -->
+    <If condition="HasQuest(359319) and CurrentWorldId==267412">
+      <TrinityExploreDungeon questId="359319" until="ObjectFound" exitNameHash="289392" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <PriorityScenes>
+          <PriorityScene sceneName="KingOfTheHill" />
+        </PriorityScenes>
+      </TrinityExploreDungeon>
+      <TrinityMoveToScene questId="359319" sceneName="KingOfTheHill" />
+    </If>
+
+    <!-- Quest: X1_Bounty_A5_Bog_Event_AncientEvils (369952) World: x1_Bog_01 (267412) LevelArea: x1_Bog_01_Part2 (258142) -->
+    <If condition="HasQuest(369952) and CurrentWorldId==267412">
+      <TrinityExploreDungeon questId="369952" until="ExitFound" exitNameHash="1649975400" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Exit" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <MoveToMapMarker questId="369952" markerNameHash="1649975400" actorId="342003" interactRange="12.50264"
+                             pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_Bog_Event_AncientEvils (369952) World: x1_Catacombs_FakeEntrance_04 (341040) LevelArea: x1_Catacombs_FakeEntrance_04 (341041) -->
+    <If condition="HasQuest(369952) and CurrentWorldId==341040">
+      <TrinityExploreDungeon questId="369952" until="ExitFound" exitNameHash="341040" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Exit" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+
+    </If>
+
+    <While condition="ZetaDia.ActInfo.ActiveBounty and CurrentWorldId==267412">
+      <LogMessage output="Generic Bounty Explore" />
+      <WaitTimer questId="1" waitTime="1000" />
+      <!-- Start Explore -->
+      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+    </While>
+
+    <If condition="not (ZetaDia.ActInfo.ActiveBounty)">
+      <TrinityTownPortal questId="1" waitTime="5000" />
+      <LoadProfile profile="Act5.xml" />
+    </If>
+  </Order>
+</Profile>

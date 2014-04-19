@@ -1,0 +1,184 @@
+﻿<Profile>
+  <Name>Battlefields Explore</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>True</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+  <Order>
+    <LogMessage output="Battlefields Explore" />
+
+    <If condition="not (Me.IsInTown) and not (
+           CurrentWorldId == 338600
+        or CurrentWorldId == 322531)">
+      <TrinityTownPortal questId="1" waitTime="5000" />
+    </If>
+
+
+    <!-- In Town: World: X1_Westmarch_Hub (304235) LevelArea: x1_Westm_Hub (270011) -->
+    <If condition="CurrentWorldId==304235 and CurrentLevelAreaId==270011">
+      <UseWaypoint questId="1" waypointNumber="55" />
+    </If>
+
+    <If condition="not (ZetaDia.ActInfo.ActiveBounty) and CurrentWorldId==338600">
+      <WaitTimer questId="1" waitTime="1500" />
+    </If>
+    
+    
+    
+
+    <!-- Quest: X1_Bounty_A5_PandExt_Kill_Muilliuqs (367935) World: X1_Pand_Ext_2_Battlefields (338600) LevelArea: X1_Pand_Ext_2_Battlefields (338602) -->
+    <If condition="HasQuest(367935) and CurrentWorldId==338600 and CurrentLevelAreaId==338602">
+      <TrinityExploreDungeon questId="367935" until="ExitFound" exitNameHash="-1551729971" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Cellar_Entrance" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <MoveToMapMarker questId="367935" markerNameHash="-1551729971" actorId="176002" interactRange="14.63835"
+                       pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_PandExt_Kill_Muilliuqs (367935) World: X1_Pand_Ext_Cellar_A (322531) LevelArea: X1_Pand_Ext_Cellar_A (322645) -->
+    <If condition="HasQuest(367935) and CurrentWorldId==322531 and CurrentLevelAreaId==322645">
+      <TrinityExploreDungeon questId="367935" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Exit" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+    </If>
+    
+    
+    
+    
+    
+    <!-- Quest: X1_Bounty_A5_PandExt_Event_TheGreatWeapon (363344) World: X1_Pand_Ext_2_Battlefields (338600) LevelArea: X1_Pand_Ext_2_Battlefields (338602) -->
+    <While condition="HasQuest(363344) and CurrentWorldId==338600 and CurrentLevelAreaId==338602">
+      <TrinityExploreDungeon questId="363344" until="SceneFound" sceneName="GreatWeapon" exitNameHash="0" actorId="0" pathPrecision="45" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Exit" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <TrinityMoveToScene questId="363344" sceneName="GreatWeapon" />
+      <WaitTimer questId="363344" waitTime="10000" />
+    </While>
+
+
+
+    <!-- Quest: X1_Bounty_A5_PandExt_Event_TheHive (363346) World: X1_Pand_Ext_2_Battlefields (338600) LevelArea: X1_Pand_Ext_2_Battlefields (338602) -->
+    <If condition="HasQuest(363346) and CurrentWorldId==338600">
+      <TrinityExploreDungeon questId="363346" until="SceneFound" sceneName="RockHive" exitNameHash="0" actorId="0" pathPrecision="45" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="RockHive" />
+        </PriorityScenes>
+      </TrinityExploreDungeon>
+      <TrinityMoveToScene questId="363346" sceneName="RockHive" />
+      <WaitTimer questId="363346" waitTime="5000" />
+    </If>
+
+
+
+    <!-- Quest: X1_Bounty_A5_PandExt_Event_SiegeDistraction (363342) World: [sno unknown] LevelArea: X1_Pand_Ext_2_Battlefields -->
+    <If condition="HasQuest(363342) and CurrentWorldId==338600 and CurrentLevelAreaId==338602">
+      <!-- Start Explore -->
+      <TrinityExploreDungeon questId="363342" until="ObjectFound" exitNameHash="0" actorId="351967" pathPrecision="25" boxSize="35" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="NSEW_Event_Ballista" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+
+    </If>
+    <!-- Quest: X1_Bounty_A5_PandExt_Event_SiegeDistraction (363342) World: [sno unknown] LevelArea: X1_Pand_Ext_2_Battlefields -->
+    <While condition="HasQuest(363342) and CurrentWorldId==338600 and CurrentLevelAreaId==338602 and ActorExistsAt(351967, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+      <MoveToActor questId="363342" actorId="351967" interactRange="9" name="X1_Angel_Trooper_Event_Ballistae"
+                   pathPrecision="5" pathPointLimit="250" statusText="" />
+
+    </While>
+
+
+
+    <!-- Quest: X1_Bounty_A5_PandExt_Kill_Baethus (363204) World: X1_Pand_Ext_2_Battlefields LevelArea: X1_Pand_Ext_2_Battlefields -->
+    <If condition="HasQuest(363204) and CurrentWorldId==338600">
+      <!-- Start Explore -->
+      <TrinityExploreDungeon questId="363204" until="ExitFound" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="35" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Exit" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <MoveToMapMarker questId="363204"  x="418" y="797" z="-18" markerNameHash="-1551729971" actorId="176002" interactRange="20"
+            pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="322531" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_PandExt_Kill_Baethus (363204) World: X1_Pand_Ext_Cellar_A LevelArea: X1_Pand_Ext_Cellar_A -->
+    <If condition="HasQuest(363204) and CurrentWorldId==322531">
+      <TrinityExploreDungeon questId="363204"  until="ObjectFound" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Exit" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+    </If>
+
+    <While condition="ZetaDia.ActInfo.ActiveBounty and CurrentWorldId==338600">
+      <WaitTimer questId="1" waitTime="1000" />
+      <!-- Start Explore -->
+      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="20" boxSize="40" boxTolerance="0.01" objectDistance="45" />>
+    </While>
+
+    <If condition="not (ZetaDia.ActInfo.ActiveBounty)">
+      <TrinityTownPortal questId="1" waitTime="5000" />
+      <LoadProfile profile="Act5.xml" />
+    </If>
+  </Order>
+</Profile>
