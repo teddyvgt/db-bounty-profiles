@@ -43,6 +43,10 @@
 		<If condition="CurrentWorldId == 81019 and ActorExistsAt(Me.ActorSNO, 3478, 3695, 0, 300) and ZetaDia.ActInfo.ActiveBounty">
 			<SafeMoveTo questId="101758" stepId="1" x="3804" y="3787" z="-24" statusText="Clearing Skycrown pt 6" pathPrecision="15" unsafeRandomDistance="5" pathPointLimit="50"  />
 		</If>
+		<!-- sure is sure ;) -->
+		<If condition="ZetaDia.ActInfo.ActiveBounty">
+			<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False" pathPrecision="15"/>
+		</If>
       </If>
 
     </If>
