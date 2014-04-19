@@ -16,7 +16,8 @@
         <SafeMoveTo questId="349216" stepId="2" x="2570" y="634" z="0" pathPrecision="5" pathPointLimit="250" />
         <TrinityExploreDungeon questId="349216" stepId="1" until="ObjectFound" actorId="220775" sceneName="Exit"  boxTolerance="0.70" boxSize="15">
           <IgnoreScenes>
-            <IgnoreScene sceneName="a3_Battlefield_ChokepointB_E02_S01" />
+            <IgnoreScene sceneName="a3_Battlefield_" />
+            <IgnoreScene sceneName="_E02_S01" />
           </IgnoreScenes>
         </TrinityExploreDungeon>
         <!--<TrinityExploreDungeon questId="349216" stepId="1" until="ObjectFound" actorId="220775" boxTolerance="0.10" boxSize="15" />-->
@@ -24,7 +25,12 @@
         <!-- If not completed, keep killing things until it is complete-->
         <If condition="HasQuest(349216)">
           <LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
-          <TrinityExploreDungeon questId="349216" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" />
+          <TrinityExploreDungeon questId="349216" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" >
+            <IgnoreScenes>
+              <IgnoreScene sceneName="a3_Battlefield_" />
+              <IgnoreScene sceneName="_E02_S01" />
+            </IgnoreScenes>
+          </TrinityExploreDungeon>
         </If>
       </If>
     </If>

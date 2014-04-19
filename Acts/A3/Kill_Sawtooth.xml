@@ -14,15 +14,7 @@
       </While>
 
       <If condition="CurrentWorldId == 81934">
-        <TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="220851 " boxTolerance="0.10" boxSize="15" />
-        <WaitTimer questId="1" stepId="2" waitTime="1000" />
-        <!-- If not completed, keep killing things until it is complete-->
-        <If condition="HasQuest(349230)">
-          <LogMessage quest="1" step="1" output="Found named but still not done, clearing some more." />
-          <TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" />
-        </If>
-        <MoveToActor questId="1" stepId="2" actorId="176003" />
-        <WaitTimer questId="1" stepId="2" waitTime="20000" />
+        <TrinityExploreDungeon questId="349230" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" />
       </If>
     </If>
 
