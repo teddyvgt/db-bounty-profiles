@@ -1,0 +1,36 @@
+<Profile>
+  <Name>Kill_TheBattlefields</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>true</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+
+  <Order>
+    <If condition="HasQuest(349212)">
+
+      <While condition="CurrentWorldId != 95804">
+        <UseWaypoint questId="1" waypointNumber="31" />
+        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+      </While>
+
+      <If condition="CurrentWorldId == 95804">
+        <LogMessage quest="1" step="2" output="Search mobs to complete the quest..." />
+        <If condition="CurrentLevelAreaId == 154644">
+          <SafeMoveTo questId="1" stepId="2" x="4175" y="394" z="-2" pathPrecision="5" pathPointLimit="250" statusText="" />
+          <SafeMoveTo questId="1" stepId="2" x="4105" y="466" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
+        </If>
+
+        <WaitTimer questId="1" stepId="1" waitTime="500"/>
+        <TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="25" pathPrecision="25" >
+          <IgnoreScenes>
+            <IgnoreScene sceneName="a3dun_Bridge" />
+            <IgnoreScene sceneName="a3_Battlefield_EntranceA_E01_S02" />
+            <IgnoreScene sceneName="a3_Battlefield_EntranceA_E02_S02" />
+            <IgnoreScene sceneName="a3_Battlefield_EntranceA_E02_S01" />
+          </IgnoreScenes>
+        </TrinityExploreDungeon>
+      </If>
+    </If>
+
+    <LoadProfile file="act3.xml" />
+  </Order>
+</Profile>

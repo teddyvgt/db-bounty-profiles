@@ -196,6 +196,11 @@
     <If condition="HasQuest(369825)">
       <LoadProfile file="Event_InfernalSky.xml" />
     </If>
+    <!--Kill_Dreadgrasp-->
+    <!--state: -->
+    <If condition="HasQuest(349212)">
+      <LoadProfile file="Kill_TheBattlefields.xml" />
+    </If>
 
 
     <!--WAYPOINT [32] A3_Battlefields_02        -->

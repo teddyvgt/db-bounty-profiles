@@ -16,6 +16,9 @@
 
       <If condition="CurrentWorldId == 95804">
         <TrinityExploreDungeon questId="346180" stepId="1" until="ObjectFound" actorId="205468" boxTolerance="0.40" boxSize="15" pathPrecision="15">
+          <PrioritizeScenes>
+            <PriorityScene sceneName="HumanGenericE" />
+          </PrioritizeScenes>
           <IgnoreScenes>
             <IgnoreScene sceneName="a3dun_Bridge_" />
           </IgnoreScenes>
@@ -28,12 +31,12 @@
             -->
         <WaitTimer questId="1" stepId="2" waitTime="500" />
         <MoveToActor questId="346180" stepId="1" actorId="205312" interactRange="8" name="bastionsKeepGuard_Melee_A_01_snatched-13068"  pathPrecision="5" pathPointLimit="250"  />
-        <ToggleTargeting questId="1" combat="true" looting="true" killRadius="60" />
+        <!--<ToggleTargeting questId="1" combat="true" looting="true" killRadius="60" />-->
         <While condition="ActorExistsAt(205468, Me.Position.X, Me.Position.Y, Me.Position.Z, 150) and HasQuest(346180)">
           <MoveToActor questId="346180" stepId="2" actorId="205468" />
           <WaitTimer questId="1" stepId="2" waitTime="500" />
         </While>
-        <ToggleTargeting questId="1" combat="true" looting="true" killRadius="20" />
+        <!--<ToggleTargeting questId="1" combat="true" looting="true" killRadius="20" />-->
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
     </If>

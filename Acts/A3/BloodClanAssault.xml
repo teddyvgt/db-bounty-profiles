@@ -14,16 +14,20 @@
       </While>
 
       <If condition="CurrentWorldId == 81934">
-	  <TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.1" boxSize="20" until="ObjectFound" actorId="364601" ignoreMarkers="False" objectDistance="70"/>
-	  <MoveToActor questId="369868" stepId="2" actorId="364601" interactRange="11" name="x1_Event_CursedShrine-8564" pathPrecision="5" pathPointLimit="250" statusText="" />
-	  
-	  <!-- Waves are pretty quick but throw in a wait just in case -->
-		<HaveBounty questId="369868">
-			<WaitTimer questId="1" stepId="1" waitTime="4000" />
-		</HaveBounty>
-		<HaveBounty questId="369868">
-			<WaitTimer questId="1" stepId="1" waitTime="4000" />
-		</HaveBounty>
+        <TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.1" boxSize="20" until="ObjectFound" actorId="364601" ignoreMarkers="False" objectDistance="120" pathPrecision="20">
+          <PrioritizeScenes>
+            <PriorityScene sceneName="a3dun_Crater_NSW_01_W01_S01" />
+          </PrioritizeScenes>
+        </TrinityExploreDungeon>
+        <MoveToActor questId="369868" stepId="2" actorId="364601" interactRange="11" name="x1_Event_CursedShrine-8564" pathPrecision="5" pathPointLimit="250" statusText="" />
+
+        <!-- Waves are pretty quick but throw in a wait just in case -->
+        <HaveBounty questId="369868">
+          <WaitTimer questId="1" stepId="1" waitTime="4000" />
+        </HaveBounty>
+        <HaveBounty questId="369868">
+          <WaitTimer questId="1" stepId="1" waitTime="4000" />
+        </HaveBounty>
       </If>
     </If>
 
