@@ -23,7 +23,7 @@
           <IgnoreScenes>
             <IgnoreScene sceneName="_Chokepoint" />
             <IgnoreScene sceneName="a3dun_Bridge_" />
-            <IgnoreScene sceneName="_03" />
+            <!--<IgnoreScene sceneName="_03" />-->
           </IgnoreScenes>
         </TrinityExploreDungeon>
 
