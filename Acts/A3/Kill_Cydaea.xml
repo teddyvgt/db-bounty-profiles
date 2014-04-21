@@ -16,20 +16,20 @@
 
       <If condition="CurrentWorldId == 119641">
         <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1036" y="954" z="-19"  />
-      <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1073" y="878" z="-19"  />
+        <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1073" y="878" z="-19"  />
 
-      <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1159" y="885" z="-28" />
-      <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1233" y="936" z="-32" />
-      <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1226" y="944" z="-33"  />
+        <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1159" y="885" z="-28" />
+        <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1233" y="936" z="-32" />
+        <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1226" y="944" z="-33"  />
 
 
-      <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1281" y="1035" z="-39"  />
-      <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1256" y="1101" z="-49" />
-      <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1221" y="1224" z="-50"  />
-      <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1061" y="1253" z="-59"  />
-      <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1048" y="1157" z="-67"  />
-      <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1122" y="1102" z="-93"  />
-      <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1098" y="1033" z="-119"  />
+        <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1281" y="1035" z="-39"  />
+        <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1256" y="1101" z="-49" />
+        <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1221" y="1224" z="-50"  />
+        <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1061" y="1253" z="-59"  />
+        <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1048" y="1157" z="-67"  />
+        <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1122" y="1102" z="-93"  />
+        <SafeMoveTo questId="1" stepId="29" pathPrecision="10" x="1098" y="1033" z="-119"  />
 
         <MoveToMapMarker questId="349224" stepId="2" markerNameHash="43541819" actorId="176001" interactRange="20"
  pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="139272"  />
@@ -37,26 +37,53 @@
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
 
+      
       <If condition="CurrentWorldId == 139272">
         <WaitTimer questId="1" stepId="2" waitTime="500" />
-        <!--<TrinityExploreDungeon questId="349224" stepId="2" until="ObjectFound" exitNameHash="43541885" actorId="161278" pathPrecision="25" boxSize="25" boxTolerance="0.3" objectDistance="80">
-          <PriorityScenes>
-            <PriorityScene sceneName="Exit" />
-          </PriorityScenes>
-        </TrinityExploreDungeon>
-        <WaitTimer questId="1" stepId="2" waitTime="500" />-->
-		
-		<SafeMoveTo questId="1" stepId="29" pathprecision="10" x="1256" y="1169" z="20" />
+        <!-- Tower of the Cursed Level 2 Version 1 
+		x="860" y="1119" z="71" 
+		LevelAreaId=139274
+		SceneId=141803
+		SceneName=a3dun_Crater_ST_Level02B -->
+        <If condition="IsSceneLoaded(141803)">
 
-      <SafeMoveTo questId="1" stepId="29" pathprecision="10" x="1174" y="1264" z="30"  />
-      <SafeMoveTo questId="1" stepId="29" pathprecision="10" x="1218" y="1019" z="10"  />
-      <SafeMoveTo questId="1" stepId="29" pathprecision="10" x="1040" y="1158" z="-19" />
-      <SafeMoveTo questId="1" stepId="29" pathprecision="10" x="1030" y="1049" z="0"  />
-      <SafeMoveTo questId="1" stepId="29" pathprecision="10" x="1125" y="1087" z="-51" />
-		
-        <MoveToMapMarker questId="1" markerNameHash="43541885" actorId="161278" interactRange="20"
+          <SafeMoveTo questId="1" stepId="29" pathprecision="10" x="1256" y="1169" z="20" />
+
+          <SafeMoveTo questId="1" stepId="29" pathprecision="10" x="1174" y="1264" z="30"  />
+          <SafeMoveTo questId="1" stepId="29" pathprecision="10" x="1218" y="1019" z="10"  />
+          <SafeMoveTo questId="1" stepId="29" pathprecision="10" x="1040" y="1158" z="-19" />
+          <SafeMoveTo questId="1" stepId="29" pathprecision="10" x="1030" y="1049" z="0"  />
+          <SafeMoveTo questId="1" stepId="29" pathprecision="10" x="1125" y="1087" z="-51" />
+
+          <MoveToMapMarker questId="1" markerNameHash="43541885" actorId="161278" interactRange="20"
                        pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="119650" statusText="" />
-        <WaitTimer questId="1" stepId="2" waitTime="500" />
+          <WaitTimer questId="1" stepId="2" waitTime="500" />
+        </If>
+        <!-- Tower of the Cursed Level 2 Version 2 
+		WorldId=139272, 
+		LevelAreaId=139274, 
+		SceneId=131458, 
+		SceneName=a3dun_Crater_ST_Level02B
+		-->
+        <If condition="IsSceneLoaded(131458)">
+
+          <SafeMoveTo questId="1" stepId="29" pathPrecision="20" x="1145" y="1227" z="0"  />
+          <SafeMoveTo questId="1" stepId="29" pathPrecision="20" x="1018" y="1240" z="-9"  />
+          <SafeMoveTo questId="1" stepId="29" pathPrecision="20" x="920" y="1104" z="-9"  />
+          <SafeMoveTo questId="1" stepId="29" pathPrecision="20" x="922" y="955" z="-20"  />
+          <SafeMoveTo questId="1" stepId="29" pathPrecision="20" x="1035" y="897" z="-29"  />
+          <SafeMoveTo questId="1" stepId="29" pathPrecision="20" x="1117" y="1049" z="-29"  />
+          <SafeMoveTo questId="1" stepId="29" pathPrecision="20" x="1250" y="986" z="-49"  />
+          <SafeMoveTo questId="1" stepId="29" pathPrecision="20" x="1165" y="889" z="-59"  />
+
+          <SafeMoveTo questId="1" stepId="29" pathPrecision="20" x="1035" y="897" z="-29"  />
+          <SafeMoveTo questId="1" stepId="29" pathPrecision="20" x="1104" y="879" z="-82"  />
+
+          <MoveToMapMarker questId="1" markerNameHash="43541885" actorId="161278" interactRange="20"
+                       pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="119650" statusText="" />
+          <WaitTimer questId="1" stepId="2" waitTime="500" />
+        </If>
+          
       </If>
 
       <If condition="CurrentWorldId == 119650">
