@@ -14,7 +14,7 @@
 
       <If condition="CurrentWorldId == 95804">
         <LogMessage quest="1" step="2" output="Search mobs to complete the quest..." />
-        <TrinityExploreDungeon questId="349214" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="25" pathPrecision="25" >
+        <TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="25" pathPrecision="25" >
           <IgnoreScenes>
             <IgnoreScene sceneName="_Chokepoint" />
             <IgnoreScene sceneName="a3dun_Bridge" />
