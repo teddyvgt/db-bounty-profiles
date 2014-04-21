@@ -13,11 +13,30 @@
       </While>
 
       <If condition="CurrentWorldId == 119641">
-        <TrinityExploreDungeon questId="1" stepId="2" until="ExitFound" exitNameHash="43541819" actorId="176001" pathPrecision="15" boxSize="15" boxTolerance="0.01" objectDistance="45">
+        <!--<TrinityExploreDungeon questId="1" stepId="2" until="ExitFound" exitNameHash="43541819" actorId="176001" pathPrecision="15" boxSize="15" boxTolerance="0.01" objectDistance="45">
         </TrinityExploreDungeon>
         <MoveToMapMarker questId="1" stepId="2" markerNameHash="43541819" actorId="176001" interactRange="20"
  pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="139272" />
-        <WaitTimer questId="1" stepId="2" waitTime="500" />
+        <WaitTimer questId="1" stepId="2" waitTime="500" />-->
+
+        <SafeMoveTo questId="1" stepId="1" pathPrecision="10" x="1036" y="954" z="-19"  />
+        <SafeMoveTo questId="1" stepId="1" pathPrecision="10" x="1073" y="878" z="-19"  />
+
+        <SafeMoveTo questId="1" stepId="1" pathPrecision="10" x="1159" y="885" z="-28" />
+        <SafeMoveTo questId="1" stepId="1" pathPrecision="10" x="1233" y="936" z="-32" />
+        <SafeMoveTo questId="1" stepId="1" pathPrecision="10" x="1226" y="944" z="-33"  />
+
+
+        <SafeMoveTo questId="1" stepId="1" pathPrecision="10" x="1281" y="1035" z="-39"  />
+        <SafeMoveTo questId="1" stepId="1" pathPrecision="10" x="1256" y="1101" z="-49" />
+        <SafeMoveTo questId="1" stepId="1" pathPrecision="10" x="1221" y="1224" z="-50"  />
+        <SafeMoveTo questId="1" stepId="1" pathPrecision="10" x="1061" y="1253" z="-59"  />
+        <SafeMoveTo questId="1" stepId="1" pathPrecision="10" x="1048" y="1157" z="-67"  />
+        <SafeMoveTo questId="1" stepId="1" pathPrecision="10" x="1122" y="1102" z="-93"  />
+        <SafeMoveTo questId="1" stepId="1" pathPrecision="10" x="1098" y="1033" z="-119"  />
+
+        <MoveToMapMarker questId="349224" stepId="2" markerNameHash="43541819" actorId="176001" interactRange="20"
+ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="139272"  />
 
       </If>
 

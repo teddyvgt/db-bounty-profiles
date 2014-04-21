@@ -25,7 +25,7 @@
 		-->
 		
 		<!-- Move South in Skycrown -->
-		<If condition="CurrentWorldId == 81019 and ActorExistsAt(Me.ActorSNO, 2711, 2677, 25, 300) and ZetaDia.ActInfo.ActiveBounty">
+		<!--<If condition="CurrentWorldId == 81019 and ActorExistsAt(Me.ActorSNO, 2711, 2677, 25, 300) and ZetaDia.ActInfo.ActiveBounty">
 			<SafeMoveTo questId="1" stepId="1" x="2779" y="3211" z="0" statusText="Clearing Skycrown pt 1" pathPrecision="50" unsafeRandomDistance="15" pathPointLimit="50" />
 		</If>
 		<If condition="CurrentWorldId == 81019 and ActorExistsAt(Me.ActorSNO, 2779, 3211, 0, 300) and ZetaDia.ActInfo.ActiveBounty">
@@ -42,7 +42,7 @@
 		</If>
 		<If condition="CurrentWorldId == 81019 and ActorExistsAt(Me.ActorSNO, 3478, 3695, 0, 300) and ZetaDia.ActInfo.ActiveBounty">
 			<SafeMoveTo questId="1" stepId="1" x="3804" y="3787" z="-24" statusText="Clearing Skycrown pt 6" pathPrecision="15" unsafeRandomDistance="5" pathPointLimit="50"  />
-		</If>
+		</If>-->
 		<!-- sure is sure ;) -->
 		<If condition="ZetaDia.ActInfo.ActiveBounty">
 			<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="20" stayAfterBounty="False" pathPrecision="20"/>
