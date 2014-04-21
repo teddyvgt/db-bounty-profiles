@@ -19,6 +19,7 @@
             <PriorityScene sceneName="a3dun_Crater_NSW_01_W01_S01" />
           </PrioritizeScenes>
           <IgnoreScenes>
+            <IgnoreScene sceneName="Exit" />
             <IgnoreScene sceneName="_N_" />
             <IgnoreScene sceneName="_S_" />
             <IgnoreScene sceneName="_W_" />
