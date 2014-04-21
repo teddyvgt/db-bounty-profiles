@@ -39,13 +39,22 @@
 
       <If condition="CurrentWorldId == 139272">
         <WaitTimer questId="1" stepId="2" waitTime="500" />
-        <TrinityExploreDungeon questId="349224" stepId="2" until="ObjectFound" exitNameHash="43541885" actorId="161278" pathPrecision="25" boxSize="25" boxTolerance="0.3" objectDistance="80">
+        <!--<TrinityExploreDungeon questId="349224" stepId="2" until="ObjectFound" exitNameHash="43541885" actorId="161278" pathPrecision="25" boxSize="25" boxTolerance="0.3" objectDistance="80">
           <PriorityScenes>
             <PriorityScene sceneName="Exit" />
           </PriorityScenes>
         </TrinityExploreDungeon>
-        <WaitTimer questId="1" stepId="2" waitTime="500" />
-        <MoveToMapMarker questId="1" markerNameHash="43541885" actorId="161278" interactRange="30"
+        <WaitTimer questId="1" stepId="2" waitTime="500" />-->
+		
+		<SafeMoveTo questId="1" stepId="29" pathprecision="10" x="1256" y="1169" z="20" />
+
+      <SafeMoveTo questId="1" stepId="29" pathprecision="10" x="1174" y="1264" z="30"  />
+      <SafeMoveTo questId="1" stepId="29" pathprecision="10" x="1218" y="1019" z="10"  />
+      <SafeMoveTo questId="1" stepId="29" pathprecision="10" x="1040" y="1158" z="-19" />
+      <SafeMoveTo questId="1" stepId="29" pathprecision="10" x="1030" y="1049" z="0"  />
+      <SafeMoveTo questId="1" stepId="29" pathprecision="10" x="1125" y="1087" z="-51" />
+		
+        <MoveToMapMarker questId="1" markerNameHash="43541885" actorId="161278" interactRange="20"
                        pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="119650" statusText="" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
