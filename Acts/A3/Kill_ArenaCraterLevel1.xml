@@ -15,7 +15,7 @@
 
       <If condition="CurrentWorldId == 81049">
         <LogMessage quest="1" step="2" output="Search mobs to complete the quest..." />
-        <TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="20" stayAfterBounty="False" pathPrecision="15"/>
+        <TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.01" boxSize="15" stayAfterBounty="False" pathPrecision="15"/>
       </If>
     </If>
 
