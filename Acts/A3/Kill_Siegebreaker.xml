@@ -16,37 +16,51 @@
 
       <If condition="CurrentWorldId == 95804">
         <!--<SafeMoveTo questId="349242" stepId="2" x="2579" y="631" z="0" pathPrecision="5" pathPointLimit="250"  />-->
-        <SafeMoveTo questId="349242" stepId="2" x="2649" y="618" z="0" />
-        <SafeMoveTo questId="349242" stepId="2" x="2373" y="640" z="0" pathPrecision="5" pathPointLimit="250"  />
-        <SafeMoveTo questId="349242" stepId="2" x="2371" y="640" z="0" pathPrecision="5" pathPointLimit="250"  />
-        <SafeMoveTo questId="349242" stepId="2" x="2237" y="575" z="-25" pathPrecision="5" pathPointLimit="250"  />
-        <SafeMoveTo questId="349242" stepId="2" x="2046" y="607" z="0" pathPrecision="5" pathPointLimit="250"  />
+        <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 2633, 608, 0, 300)">
+          <SafeMoveTo questId="349242" stepId="2" x="2649" y="618" z="0" />
+        </If>
+        <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 2649, 618, 0, 300)">
+          <SafeMoveTo questId="349242" stepId="2" x="2373" y="640" z="0" pathPrecision="5" pathPointLimit="250"  />
+        </If>
+        <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 2373, 640, 0, 300)">
+          <SafeMoveTo questId="349242" stepId="2" x="2371" y="640" z="0" pathPrecision="5" pathPointLimit="250"  />
+        </If>
+        <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 2371, 640, 0, 300)">
+          <SafeMoveTo questId="349242" stepId="2" x="2237" y="575" z="-25" pathPrecision="5" pathPointLimit="250"  />
+        </If>
+        <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 2237, 575, -25, 300)">
+          <SafeMoveTo questId="349242" stepId="2" x="2046" y="607" z="0" pathPrecision="5" pathPointLimit="250"  />
+        </If>
+
         -->
         <!-- hier ist die quest-->
+        <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 2046, 607, 0, 300)">
+          <SafeMoveTo questId="349242" stepId="2" x="1813" y="622" z="0" pathPrecision="5" pathPointLimit="250"  />
+        </If>
+        <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 1813, 622, 0, 300)">
+          <SafeMoveTo questId="349242" stepId="2" x="1625" y="565" z="1" pathPrecision="5" pathPointLimit="250"  />
+        </If>
+        <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 1625, 565, 1, 300)">
+          <SafeMoveTo questId="349242" stepId="2" x="1491" y="600" z="-25" pathPrecision="5" pathPointLimit="250"  />
+        </If>
+        <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 1491, 600, -25, 300)">
+          <SafeMoveTo questId="349242" stepId="2" x="1202" y="600" z="-25" pathPrecision="5" pathPointLimit="250"  />
+        </If>
+        <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 1202, 600, -25, 300)">
+          <SafeMoveTo questId="349242" stepId="2" x="1047" y="566" z="-24" pathPrecision="5" pathPointLimit="250"  />
+        </If>
+        <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 1047, 566, 0, -24)">
+          <SafeMoveTo questId="349242" stepId="2" x="801" y="616" z="-25" pathPrecision="5" pathPointLimit="250"  />
+        </If>
+        <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 801, 616, -25, 300)">
+          <SafeMoveTo questId="349242" stepId="2" x="721" y="586" z="0" pathPrecision="5" pathPointLimit="250"  />
+        </If>
 
-        <SafeMoveTo questId="349242" stepId="2" x="1813" y="622" z="0" pathPrecision="5" pathPointLimit="250"  />
-        <SafeMoveTo questId="349242" stepId="2" x="1625" y="565" z="1" pathPrecision="5" pathPointLimit="250"  />
-        <SafeMoveTo questId="349242" stepId="2" x="1491" y="600" z="-25" pathPrecision="5" pathPointLimit="250"  />
-        <SafeMoveTo questId="349242" stepId="2" x="1202" y="600" z="-25" pathPrecision="5" pathPointLimit="250"  />
-        <SafeMoveTo questId="349242" stepId="2" x="1047" y="566" z="-24" pathPrecision="5" pathPointLimit="250"  />
-        <SafeMoveTo questId="349242" stepId="2" x="801" y="616" z="-25" pathPrecision="5" pathPointLimit="250"  />
-        <SafeMoveTo questId="349242" stepId="2" x="721" y="586" z="0" pathPrecision="5" pathPointLimit="250"  />
         -->
         <!-- hier ist die höhle-->
-
-        <SafeMoveTo questId="349242" stepId="2" x="583" y="602" z="0" pathPrecision="5" pathPointLimit="250"  />
-
-        <!--<SafeMoveTo questId="349242" stepId="2" x="2649" y="618" z="0" />
-        <TrinityExploreDungeon questId="349242" stepId="1" until="ExitFound" exitNameHash="-443762283"  actorId="226784" sceneName="Exit" boxTolerance="0.70" boxSize="15" objectDistance="90" pathPrecision="15" >
-                     <PrioritizeScenes>
-          <PriorityScene sceneName="Exit" />
-        </PrioritizeScenes>
-          <IgnoreScenes>
-            <IgnoreScene sceneName="_ChokepointB_" />
-            --><!--<IgnoreScene sceneName="_E02_S01" />--><!--
-          </IgnoreScenes>
-        </TrinityExploreDungeon>-->
-
+        <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 721, 586, 0, 300)">
+          <SafeMoveTo questId="349242" stepId="2" x="583" y="602" z="0" pathPrecision="5" pathPointLimit="250"  />
+        </If>
 
         <MoveToMapMarker questId="349242" stepId="2" markerNameHash="-443762283" actorId="226784" interactRange="15"
 pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="226713" />
@@ -54,8 +68,8 @@ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="22671
       </If>
       <If condition="CurrentWorldId == 226713">
         <WaitTimer questId="1" waitTime="1000" stepId="2"/>
-        <While condition="Me.IsInBossEncounter">
-          <WaitTimer questId="1" stepId="2" waitTime="1000" />
+        <While condition="HasQuest(349242)">
+          <WaitTimer questId="1" stepId="2" waitTime="2000" />
         </While>
       </If>
     </If>

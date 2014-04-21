@@ -16,37 +16,37 @@
 
         <While condition="CurrentLevelAreaId != 191078 and CurrentLevelAreaId != 189345">
           <TrinityMoveTo questId="1" x="3323.488" y="551.1579" z="-2.377436" pathPrecision="8" name="Checking Cave #1" statusText="Checking Cave #1"/>
-          <If condition="ActorExistsAt(176003, 3308, 549, -2, 40)">
+          <If condition="ActorExistsAt(176003, 3308, 549, -2, 100)">
             <LogMessage output="==== Found a Cave ===="/>
             <UseObject questId="1" stepId="1" actorId="176003" interactRange="40"/>
             <WaitTimer questId="1" stepId="1" waitTime="200"/>
           </If>
           <TrinityMoveTo questId="1" x="3320.75" y="410.0144" z="-3.845823" pathPrecision="8" name="Checking Cave #2" statusText="Checking Cave #2"/>
-          <If condition="ActorExistsAt(176003, 3307, 411, -4, 40)">
+          <If condition="ActorExistsAt(176003, 3307, 411, -4, 100)">
             <LogMessage output="==== Found a Cave ===="/>
             <UseObject questId="1" stepId="1" actorId="176003" interactRange="40"/>
             <WaitTimer questId="1" stepId="1" waitTime="200"/>
           </If>
           <TrinityMoveTo questId="1" x="3465.353" y="369.0619" z="-0.4137125" pathPrecision="8" name="Checking Cave #3" statusText="Checking Cave #3"/>
-          <If condition="ActorExistsAt(176003, 3447, 366, -4, 40)">
+          <If condition="ActorExistsAt(176003, 3447, 366, -4, 100)">
             <LogMessage output="==== Found a Cave ===="/>
             <UseObject questId="1" stepId="1" actorId="176003" interactRange="40"/>
             <WaitTimer questId="1" stepId="1" waitTime="200"/>
           </If>
           <TrinityMoveTo questId="1" x="3035.214" y="408.7432" z="-4.10374" pathPrecision="8" name="Checking Cave #4" statusText="Checking Cave #4"/>
-          <If condition="ActorExistsAt(176003, 3023, 409, -2, 40)">
+          <If condition="ActorExistsAt(176003, 3023, 409, -2, 100)">
             <LogMessage output="==== Found a Cave ===="/>
             <UseObject questId="1" stepId="1" actorId="176003" interactRange="40"/>
             <WaitTimer questId="1" stepId="1" waitTime="200"/>
           </If>
           <TrinityMoveTo questId="1" x="3030.403" y="790.0083" z="-3.980673" pathPrecision="8" name="Checking Cave #5" statusText="Checking Cave #5"/>
-          <If condition="ActorExistsAt(176003, 3018, 789, -2, 40)">
+          <If condition="ActorExistsAt(176003, 3018, 789, -2, 100)">
             <LogMessage output="==== Found a Cave ===="/>
             <UseObject questId="1" stepId="1" actorId="176003" interactRange="40"/>
             <WaitTimer questId="1" stepId="1" waitTime="200"/>
           </If>
           <TrinityMoveTo questId="1" x="3272.278" y="790.381" z="-3.124261" pathPrecision="8" name="Checking Cave #6" statusText="Checking Cave #6"/>
-          <If condition="ActorExistsAt(176003, 3258, 789, -2, 40)">
+          <If condition="ActorExistsAt(176003, 3258, 789, -2, 100)">
             <LogMessage output="==== Found a Cave ===="/>
             <UseObject questId="1" stepId="1" actorId="176003" interactRange="40"/>
             <WaitTimer questId="1" stepId="1" waitTime="200"/>

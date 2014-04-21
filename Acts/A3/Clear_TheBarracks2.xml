@@ -19,16 +19,25 @@
 
       <!-- Explore The Barracks Level 1 -->
       <If condition="CurrentWorldId == 174555">
-        <TrinityExploreDungeon questId="349210" stepId="2" until="ExitFound" boxSize="15" boxTolerance="0.50" exitNameHash="-1693984105" pathPrecision="15" objectDistance="45">
+        <TrinityExploreDungeon questId="349210" stepId="2" until="ExitFound" boxSize="25" boxTolerance="0.1" exitNameHash="-1693984105" pathPrecision="25" objectDistance="45">
           <PrioritizeScenes>
             <PriorityScene sceneName="Exit" />
+            <PriorityScene sceneName="_NS_" />
+            <PriorityScene sceneName="_EW_" />
           </PrioritizeScenes>
+          <IgnoreScenes>
+            <IgnoreScene sceneName="_N_" />
+            <IgnoreScene sceneName="_S_" />
+            <IgnoreScene sceneName="_E_" />
+            <IgnoreScene sceneName="_W_" />
+          </IgnoreScenes>
         </TrinityExploreDungeon>
-        <MoveToMapMarker questId="349210" stepId="2" markerNameHash="-1693984105" interactRange="10" actorId="175482" />
+        <MoveToMapMarker questId="349210" markerNameHash="-1693984105" actorId="175482" interactRange="12.26449"
+                       pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="221749" statusText="" />
       </If>
       <!-- Explore The Barracks Level 2 -->
       <If condition="CurrentWorldId == 221749">
-		<TrinitySetQuesting />
+        <TrinitySetQuesting />
         <TrinityExploreDungeon questId="349210" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
       </If>
     </If>

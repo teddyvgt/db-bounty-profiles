@@ -7,12 +7,12 @@
   <Order>
     <If condition="HasQuest(349208)">
 
-      <While condition="CurrentLevelAreaId != 112565 and CurrentWorldId != 197622 ">
+      <While condition="CurrentLevelAreaId != 112565 and CurrentLevelAreaId != 69504 and CurrentWorldId != 197622 ">
         <UseWaypoint questId="1" waypointNumber="33" />
         <WaitTimer questId="1" stepId="1" waitTime="2500"/>
       </While>
 
-	  <!--
+      <!--
       <If condition="CurrentWorldId == 95804">
         <SafeMoveTo questId="349208" stepId="2" x="2570" y="634" z="0" pathPrecision="5" pathPointLimit="250" />
         <TrinityExploreDungeon questId="349208" stepId="1" until="ExitFound" actorId="176001" exitNameHash="211059666" sceneName="Exit" boxTolerance="0.70" boxSize="15">
@@ -25,29 +25,26 @@
 pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="197622"  />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>-->
-		<If condition="CurrentWorldId == 95804">
-			<SafeMoveTo questId="349208" stepId="1" x="2663" y="608" z="0" pathPrecision="50" unsafeRandomDistance="15" allowLongDistance="True" timeout="600" />
-		</If>
-		<If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 2633, 608, 0, 300)">
-			<SafeMoveTo questId="349208" stepId="1" x="2663" y="608" z="0" pathPrecision="50" unsafeRandomDistance="15" allowLongDistance="True" timeout="600" />
-		</If>
-		<If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 2663, 608, 0, 300)">
-			<SafeMoveTo questId="349208" stepId="1" x="947" y="602" z="0" pathPrecision="50" unsafeRandomDistance="15" allowLongDistance="True" timeout="600" />
-		</If>
-		<If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 947, 602, 0, 300)">
-			<SafeMoveTo questId="349208" stepId="1" x="721" y="597" z="0" pathPrecision="50" unsafeRandomDistance="15" allowLongDistance="True" timeout="600" />
-		</If>
+      <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 2633, 608, 0, 300)">
+        <SafeMoveTo questId="349208" stepId="1" x="2663" y="608" z="0" pathPrecision="50" unsafeRandomDistance="15" allowLongDistance="True" timeout="600" />
+      </If>
+      <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 2663, 608, 0, 300)">
+        <SafeMoveTo questId="349208" stepId="1" x="947" y="602" z="0" pathPrecision="50" unsafeRandomDistance="15" allowLongDistance="True" timeout="600" />
+      </If>
       <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 947, 602, 0, 300)">
+        <SafeMoveTo questId="349208" stepId="1" x="721" y="597" z="0" pathPrecision="50" unsafeRandomDistance="15" allowLongDistance="True" timeout="600" />
+      </If>
+      <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 721, 597, 0, 300)">
         <SafeMoveTo questId="349208" stepId="1" x="715" y="570" z="0" pathPrecision="50" unsafeRandomDistance="15" allowLongDistance="True" timeout="600" />
       </If>
-		<If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 721, 597, 0, 300)">
-      <WaitTimer questId="1" stepId="2" waitTime="500" />
-      <MoveToMapMarker questId="349208" stepId="1" markerNameHash="211059666" actorId="176001" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="197622"  />
-			<WaitTimer questId="1" stepId="2" waitTime="500" />
-		</If>
+      <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 715, 570, 0, 300)">
+        <WaitTimer questId="1" stepId="2" waitTime="500" />
+        <MoveToMapMarker questId="349208" stepId="1" markerNameHash="211059666" actorId="176001" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="197622"  />
+        <WaitTimer questId="1" stepId="2" waitTime="500" />
+      </If>
       <If condition="CurrentWorldId == 197622">
-		<TrinitySetQuesting />
-        <TrinityExploreDungeon questId="349208" stepId="2" until="BountyComplete" boxTolerance="0.45" boxSize="15" ignoreMarkers="False" />
+        <TrinitySetQuesting />
+        <TrinityExploreDungeon questId="349208" stepId="2" until="BountyComplete" boxTolerance="0.1" boxSize="15" ignoreMarkers="False" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
 

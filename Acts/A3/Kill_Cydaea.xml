@@ -15,16 +15,7 @@
       </While>
 
       <If condition="CurrentWorldId == 119641">
-        <!-- <TrinityExploreDungeon questId="346190" stepId="1" until="ObjectFound" actorId="176003" boxTolerance="0.10" boxSize="15" />-->
-
-        <!--<TrinityExploreDungeon questId="349224" stepId="2" until="ExitFound" exitNameHash="43541819" actorId="176001" pathPrecision="25" boxSize="20" boxTolerance="0.4" objectDistance="45">
-          <AlternateActors>
-            <AlternateActor actorId="0" objectDistance="45" />
-          </AlternateActors>
-          <PriorityScenes>
-            <PriorityScene sceneName="Exit" />
-          </PriorityScenes>
-        </TrinityExploreDungeon>-->
+          
         <SafeMoveTo questId="312429" stepId="2" x="957" y="1024" z="-10" pathPrecision="20" pathPointLimit="250" />
         <SafeMoveTo questId="312429" stepId="2" x="1032" y="959" z="-17" pathPrecision="20" pathPointLimit="250" />
         <SafeMoveTo questId="312429" stepId="2" x="1039" y="954" z="-20" pathPrecision="20" pathPointLimit="250" />
@@ -47,32 +38,24 @@
       </If>
 
       <If condition="CurrentWorldId == 139272">
-        <TrinityExploreDungeon questId="349224" stepId="2" until="ExitFound" exitNameHash="43541885" actorId="161278" pathPrecision="25" boxSize="20" boxTolerance="0.2" objectDistance="45">
-          <AlternateActors>
-            <AlternateActor actorId="0" objectDistance="45" />
-          </AlternateActors>
+        <WaitTimer questId="1" stepId="2" waitTime="500" />
+        <TrinityExploreDungeon questId="349224" stepId="2" until="ObjectFound" exitNameHash="43541885" actorId="161278" pathPrecision="25" boxSize="25" boxTolerance="0.3" objectDistance="80">
           <PriorityScenes>
             <PriorityScene sceneName="Exit" />
           </PriorityScenes>
-          <IgnoreScenes>
-            <IgnoreScene sceneName="_N_" />
-            <IgnoreScene sceneName="_S_" />
-            <IgnoreScene sceneName="_E_" />
-            <IgnoreScene sceneName="_W_" />
-          </IgnoreScenes>
         </TrinityExploreDungeon>
         <WaitTimer questId="1" stepId="2" waitTime="500" />
-        <MoveToMapMarker questId="1" markerNameHash="43541885" actorId="161278" interactRange="50"
+        <MoveToMapMarker questId="1" markerNameHash="43541885" actorId="161278" interactRange="30"
                        pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="119650" statusText="" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
 
       <If condition="CurrentWorldId == 119650">
-        <SafeMoveTo questId="349224" stepId="2" x="1110" y="1281" z="41" pathPrecision="5" pathPointLimit="250" />
-        <SafeMoveTo questId="349224" stepId="2" x="1271" y="1094" z="41" pathPrecision="5" pathPointLimit="250" />
-        <SafeMoveTo questId="349224" stepId="2" x="1152" y="1093" z="0" pathPrecision="5" pathPointLimit="250" />
+        <SafeMoveTo questId="349224" stepId="2" x="1110" y="1281" z="41" pathPrecision="20" pathPointLimit="250" />
+        <SafeMoveTo questId="349224" stepId="2" x="1271" y="1094" z="41" pathPrecision="20" pathPointLimit="250" />
+        <SafeMoveTo questId="349224" stepId="2" x="1152" y="1093" z="0" pathPrecision="20" pathPointLimit="250" />
         <While condition="HasQuest(349224)">
-          <WaitTimer questId="1" stepId="2" waitTime="1000" />
+          <WaitTimer questId="1" stepId="2" waitTime="2000" />
         </While>
       </If>
     </If>

@@ -130,7 +130,7 @@
     <!--Kill_Belagg-->
     <!--state: -->
     <If condition="HasQuest(346162)">
-      <LoadProfile file="Kill_Belagg.xml" />
+      <LoadProfile file="Kill_TheKeepDeathsLevel3.xml" />
     </If>
     <!--Kill_ViciousGrayTurkey-->
     <!--state: testing-->

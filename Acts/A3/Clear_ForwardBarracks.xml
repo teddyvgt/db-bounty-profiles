@@ -12,22 +12,26 @@
         <WaitTimer questId="1" stepId="1" waitTime="2500"/>
       </While>
       <If condition="CurrentWorldId == 95804">
-		<!-- Attempt to move to first known spot -->
-		 <SafeMoveTo questId="1" stepId="1" x="4135" y="601" z="-6" />
-		 <If condition="ActorExistsAt(185156, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
-			<MoveToActor questId="1" stepId="1" name="ForwardBarracks Entrance" actorId="185156" interactRange="10" x="4135" y="601" z="-6" isPortal="True" destinationWorldId="185247" />
-			<WaitTimer questId="1" stepId="1" waitTime="500" />
-			</If>
+        <!-- Attempt to move to first known spot -->
+        <SafeMoveTo questId="1" stepId="1" x="4135" y="601" z="-6" />
+        <If condition="ActorExistsAt(185156, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+          <MoveToActor questId="1" stepId="1" name="ForwardBarracks Entrance" actorId="185156" interactRange="10" x="4135" y="601" z="-6" isPortal="True" destinationWorldId="185247" />
+          <WaitTimer questId="1" stepId="1" waitTime="500" />
+        </If>
       </If>
-	  <!-- General search -->
-	  <If condition="CurrentWorldId == 95804">
-		<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="185156" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" />
-		<MoveToActor questId="1" stepId="1" name="ForwardBarracks Entrance" actorId="185156" interactRange="10" isPortal="True" destinationWorldId="185247" />
-		<WaitTimer questId="1" stepId="1" waitTime="500" />
-	  </If>
-	  
+      <!-- General search -->
+      <If condition="CurrentWorldId == 95804">
+        <TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="185156" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" pathPrecision="25">
+          <PrioritizeScenes>
+            <PriorityScene sceneName="HumanGenericD" />
+          </PrioritizeScenes>
+        </TrinityExploreDungeon>
+        <MoveToActor questId="1" stepId="1" name="ForwardBarracks Entrance" actorId="185156" interactRange="10" isPortal="True" destinationWorldId="185247" />
+        <WaitTimer questId="1" stepId="1" waitTime="500" />
+      </If>
+
       <If condition="CurrentWorldId == 185247">
-		<TrinitySetQuesting />
+        <TrinitySetQuesting />
         <TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
         <WaitTimer questId="1" stepId="1" waitTime="500" />
       </If>

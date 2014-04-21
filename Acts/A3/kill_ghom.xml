@@ -18,6 +18,7 @@
         <TrinityExploreDungeon questId="1" stepId="2" until="ExitFound" exitNameHash="2102427919" pathPrecision="25" boxTolerance="0.70" boxSize="10">
           <PriorityScenes>
             <PriorityScene sceneName="Exit" />
+            <PriorityScene sceneName="Gluttony" />
           </PriorityScenes>
           <IgnoreScenes>
             <IgnoreScene sceneName="_N_" />
@@ -31,11 +32,14 @@
       </If>
       <!-- END: Finde die Speisekammer -->
 
-      <If condition="CurrentWorldId != 136415 and CurrentWorldId == 103209">
+      <If condition="CurrentWorldId == 103209">
         <!-- START: Kill Ghom -->
         <LogMessage output="Moving to Ghom 3" />
         <SafeMoveTo questId="1" stepId="2" name="Ghom" pathPrecision="10" x="380" y="360" z="0" straightLinePathing="True" />
-        <WaitTimer questId="93697" stepId="1" waitTime="225000" />
+        <While condition="HasQuest(346166)">
+          <WaitTimer questId="1" stepId="2" waitTime="2000" />
+        </While>
+        <!--<WaitTimer questId="1" stepId="1" waitTime="225000" />-->
         <!-- END: Kill Ghom -->
       </If>
     </If>

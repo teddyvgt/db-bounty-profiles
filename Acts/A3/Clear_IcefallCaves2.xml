@@ -7,24 +7,26 @@
   <Order>
     <If condition="HasQuest(346192)">
 
-      <While condition="CurrentLevelAreaId != 155048 and CurrentWorldId != 189910 and CurrentWorldId != 221689">
+      <While condition="CurrentLevelAreaId != 155048 and CurrentLevelAreaId != 112565 and CurrentLevelAreaId != 112565 and CurrentWorldId != 189910 and CurrentWorldId != 221689">
         <UseWaypoint questId="1" waypointNumber="32" />
         <WaitTimer questId="1" stepId="1" waitTime="2500"/>
       </While>
 
       <If condition="CurrentWorldId == 95804">
-        <!-- <TrinityExploreDungeon questId="346190" stepId="1" until="ObjectFound" actorId="176003" boxTolerance="0.10" boxSize="15" />-->
-        <TrinityExploreDungeon questId="346192" stepId="2" until="ExitFound" exitNameHash="942020622" actorId="5502" pathPrecision="25" boxSize="25" boxTolerance="0.4" objectDistance="45">
+        <If condition="CurrentLevelAreaId == 155048">
+          <SafeMoveTo questId="1" stepId="2" x="3331" y="597" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
+        </If>
+          <TrinityExploreDungeon questId="369851" stepId="2" until="ObjectFound" exitNameHash="942020622" actorId="176003" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+          <PrioritizeScenes>
+            <PriorityScene sceneName="Entrance" />
+          </PrioritizeScenes>
           <IgnoreScenes>
             <IgnoreScene sceneName="_Chokepoint" />
-			<IgnoreScene sceneName="a3dun_Bridge_" />
-			<IgnoreScene sceneName="_03" />
+            <IgnoreScene sceneName="a3dun_Bridge_" />
+            <IgnoreScene sceneName="_03" />
           </IgnoreScenes>
         </TrinityExploreDungeon>
-        <!--<SafeMoveTo questId="312429" stepId="2" x="3372" y="684" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
-        <SafeMoveTo questId="312429" stepId="2" x="3297" y="781" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
-        <SafeMoveTo questId="312429" stepId="2" x="3292" y="783" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
-        <SafeMoveTo questId="312429" stepId="2" x="3280" y="787" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />-->
+
         <WaitTimer questId="1" stepId="2" waitTime="500" />
         <MoveToMapMarker questId="346192" stepId="2" markerNameHash="942020622" actorId="176003" interactRange="20"
 pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="189910" />
@@ -33,9 +35,6 @@ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="18991
 
       <If condition="CurrentWorldId == 189910">
         <TrinityExploreDungeon questId="346192" stepId="2" until="ExitFound" exitNameHash="-802596186" actorId="176038" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
-          <AlternateActors>
-            <AlternateActor actorId="0" objectDistance="45" />
-          </AlternateActors>
           <PriorityScenes>
             <PriorityScene sceneName="Exit" />
           </PriorityScenes>
@@ -52,7 +51,7 @@ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="22168
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
       <If condition="CurrentWorldId == 221689">
-		<TrinitySetQuesting />
+        <TrinitySetQuesting />
         <TrinityExploreDungeon questId="346192" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
       </If>
     </If>

@@ -17,14 +17,12 @@
           <UseWaypoint questId="1" waypointNumber="31" />
           <WaitTimer questId="1" stepId="1" waitTime="2500"/>
         </While>
-        <!-- <TrinityExploreDungeon questId="346190" stepId="1" until="ObjectFound" actorId="176003" boxTolerance="0.10" boxSize="15" />-->
-        <!--<TrinityExploreDungeon questId="349206" stepId="2" until="ObjectFound" actorId="54882" boxTolerance="0.40" boxSize="15" />-->
-        <SafeMoveTo questId="312429" stepId="2" x="4183" y="393" z="-2" pathPrecision="5" pathPointLimit="250" statusText="" />
-        <SafeMoveTo questId="312429" stepId="2" x="4089" y="519" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
-        <SafeMoveTo questId="312429" stepId="2" x="4027" y="600" z="-23" pathPrecision="5" pathPointLimit="250" statusText="" />
-        <MoveToActor questId="54882" stepId="2" actorId="5502" interactRange="8" name="a3dun_Keep_Door_Wooden_A-26598"  pathPrecision="5" pathPointLimit="250"  />
+        <SafeMoveTo questId="1" stepId="2" x="4183" y="393" z="-2" pathPrecision="5" pathPointLimit="250" statusText="" />
+        <SafeMoveTo questId="1" stepId="2" x="4089" y="519" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
+        <SafeMoveTo questId="1" stepId="2" x="4027" y="600" z="-23" pathPrecision="5" pathPointLimit="250" statusText="" />
+        <MoveToActor questId="1" stepId="2" actorId="5502" interactRange="8" name="a3dun_Keep_Door_Wooden_A-26598"  pathPrecision="5" pathPointLimit="250"  />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
-        <MoveToMapMarker questId="349206" stepId="2" markerNameHash="-1049649951" actorId="176001" interactRange="20"
+        <MoveToMapMarker questId="1" stepId="2" markerNameHash="-1049649951" actorId="176001" interactRange="20"
  pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="174665" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
@@ -50,7 +48,7 @@
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
       <If condition="CurrentWorldId == 221751">
-		<TrinitySetQuesting />
+        <TrinitySetQuesting />
         <TrinityExploreDungeon questId="349206" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
       </If>
     </If>

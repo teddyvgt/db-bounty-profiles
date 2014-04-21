@@ -17,7 +17,7 @@
           <SafeMoveTo questId="1" stepId="2" x="2502" y="620" z="0" pathPrecision="5" pathPointLimit="250" />
         </If>
         <LogMessage quest="1" step="2" output="Search mobs to complete the quest..." />
-        <TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" pathPrecision="15"  >
+        <TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="20" pathPrecision="20"  >
           <PrioritizeScenes>
             <PriorityScene sceneName="Exit" />
           </PrioritizeScenes>
