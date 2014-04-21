@@ -15,21 +15,21 @@
       </While>
 
       <If condition="CurrentWorldId == 119641">
-          
-        <SafeMoveTo questId="312429" stepId="2" x="957" y="1024" z="-10" pathPrecision="20" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1032" y="959" z="-17" pathPrecision="20" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1039" y="954" z="-20" pathPrecision="20" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1122" y="896" z="-30" pathPrecision="20" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1236" y="969" z="-40" pathPrecision="20" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1275" y="1091" z="-50" pathPrecision="20" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1273" y="1096" z="-50" pathPrecision="20" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1237" y="1202" z="-49" pathPrecision="20" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1146" y="1262" z="-59" pathPrecision="20" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1040" y="1227" z="-60" pathPrecision="20" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1043" y="1221" z="-60" pathPrecision="20" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1046" y="1147" z="-70" pathPrecision="20" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1121" y="1084" z="-101" pathPrecision="15" pathPointLimit="250" />
-        <SafeMoveTo questId="312429" stepId="2" x="1087" y="1042" z="-122" pathPrecision="10" pathPointLimit="250" />
+        <SafeMoveTo questId="101758" stepId="29" pathPrecision="10" x="1036" y="954" z="-19"  />
+      <SafeMoveTo questId="101758" stepId="29" pathPrecision="10" x="1073" y="878" z="-19"  />
+
+      <SafeMoveTo questId="101758" stepId="29" pathPrecision="10" x="1159" y="885" z="-28" />
+      <SafeMoveTo questId="101758" stepId="29" pathPrecision="10" x="1233" y="936" z="-32" />
+      <SafeMoveTo questId="101758" stepId="29" pathPrecision="10" x="1226" y="944" z="-33"  />
+
+
+      <SafeMoveTo questId="101758" stepId="29" pathPrecision="10" x="1281" y="1035" z="-39"  />
+      <SafeMoveTo questId="101758" stepId="29" pathPrecision="10" x="1256" y="1101" z="-49" />
+      <SafeMoveTo questId="101758" stepId="29" pathPrecision="10" x="1221" y="1224" z="-50"  />
+      <SafeMoveTo questId="101758" stepId="29" pathPrecision="10" x="1061" y="1253" z="-59"  />
+      <SafeMoveTo questId="101758" stepId="29" pathPrecision="10" x="1048" y="1157" z="-67"  />
+      <SafeMoveTo questId="101758" stepId="29" pathPrecision="10" x="1122" y="1102" z="-93"  />
+      <SafeMoveTo questId="101758" stepId="29" pathPrecision="10" x="1098" y="1033" z="-119"  />
 
         <MoveToMapMarker questId="349224" stepId="2" markerNameHash="43541819" actorId="176001" interactRange="20"
  pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="139272"  />
