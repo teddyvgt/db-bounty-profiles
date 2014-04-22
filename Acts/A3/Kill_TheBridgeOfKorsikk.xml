@@ -7,13 +7,21 @@
   <Order>
     <If condition="HasQuest(349214) or HasQuest(346200)">
 
-      <While condition="CurrentLevelAreaId != 155048">
+      <While condition="CurrentLevelAreaId != 155048 and CurrentLevelAreaId != 112565">
         <UseWaypoint questId="1" waypointNumber="32" />
+        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+      </While>
+      <While condition="CurrentLevelAreaId == 155048 and not (ActorExistsAt(6442, Me.Position.X, Me.Position.Y, Me.Position.Z, 40))">
+        <WaitTimer questId="1" stepId="1" waitTime="500"/>
+        <UseWaypoint questId="1" waypointNumber="33" />
         <WaitTimer questId="1" stepId="1" waitTime="2500"/>
       </While>
 
       <If condition="CurrentWorldId == 95804">
         <LogMessage quest="1" step="2" output="Search mobs to complete the quest..." />
+        <If condition="CurrentLevelAreaId == 155048">
+          <SafeMoveTo questId="1" stepId="2" x="3300" y="609" z="0" pathPrecision="5" pathPointLimit="250" />
+        </If>
         <TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="25" pathPrecision="25" >
           <IgnoreScenes>
             <IgnoreScene sceneName="_Chokepoint" />

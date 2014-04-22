@@ -343,6 +343,10 @@
     <If condition="HasQuest(346222)">
       <LoadProfile file="Kill_ArreatCraterLevel2.xml" />
     </If>
+    <!--Kill_Charuch-->
+    <If condition="HasQuest(346219)">
+      <LoadProfile file="Kill_ArreatCraterLevel2.xml" />
+    </If>
 
 
     <!--WAYPOINT [37] a3dun_Crater_ST_Level01B  -->

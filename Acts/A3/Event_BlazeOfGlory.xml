@@ -11,6 +11,11 @@
         <UseWaypoint questId="1" waypointNumber="33" />
         <WaitTimer questId="1" stepId="1" waitTime="2500"/>
       </While>
+      <While condition="CurrentLevelAreaId == 112565 and not (ActorExistsAt(6442, Me.Position.X, Me.Position.Y, Me.Position.Z, 40))">
+        <WaitTimer questId="1" stepId="1" waitTime="500"/>
+        <UseWaypoint questId="1" waypointNumber="33" />
+        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+      </While>
 
       <If condition="CurrentWorldId == 95804">
         <!--until="ObjectFound" actorId="152145"-->

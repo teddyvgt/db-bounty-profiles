@@ -13,6 +13,11 @@
         <UseWaypoint questId="1" waypointNumber="33" />
         <WaitTimer questId="1" stepId="1" waitTime="2500"/>
       </While>
+      <While condition="CurrentLevelAreaId == 112565 and not (ActorExistsAt(6442, Me.Position.X, Me.Position.Y, Me.Position.Z, 40))">
+        <WaitTimer questId="1" stepId="1" waitTime="500"/>
+        <UseWaypoint questId="1" waypointNumber="33" />
+        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+      </While>
 
       <If condition="CurrentWorldId == 95804">
         <!--<SafeMoveTo questId="349242" stepId="2" x="2579" y="631" z="0" pathPrecision="5" pathPointLimit="250"  />-->

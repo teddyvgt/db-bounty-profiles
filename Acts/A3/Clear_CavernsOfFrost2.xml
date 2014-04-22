@@ -7,60 +7,37 @@
   <Order>
     <If condition="HasQuest(346190)">
 
-      <While condition="CurrentLevelAreaId != 155048 and CurrentWorldId != 189259 and CurrentWorldId != 221688">
+      <While condition="CurrentLevelAreaId != 155048 and CurrentLevelAreaId != 112565 and CurrentWorldId != 189259 and CurrentWorldId != 221688">
         <UseWaypoint questId="1" waypointNumber="32" />
+        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+      </While>
+      <While condition="CurrentLevelAreaId == 155048 and not (ActorExistsAt(6442, Me.Position.X, Me.Position.Y, Me.Position.Z, 40))">
+        <WaitTimer questId="1" stepId="1" waitTime="500"/>
+        <UseWaypoint questId="1" waypointNumber="33" />
         <WaitTimer questId="1" stepId="1" waitTime="2500"/>
       </While>
 
       <If condition="CurrentWorldId == 95804">
 
-        <While condition="CurrentLevelAreaId != 191078 and CurrentLevelAreaId != 189345">
-          <TrinityMoveTo questId="1" x="3323.488" y="551.1579" z="-2.377436" pathPrecision="8" name="Checking Cave #1" statusText="Checking Cave #1"/>
-          <If condition="ActorExistsAt(176003, 3308, 549, -2, 100)">
-            <LogMessage output="==== Found a Cave ===="/>
-            <UseObject questId="1" stepId="1" actorId="176003" interactRange="40"/>
-            <WaitTimer questId="1" stepId="1" waitTime="200"/>
-          </If>
-          <TrinityMoveTo questId="1" x="3320.75" y="410.0144" z="-3.845823" pathPrecision="8" name="Checking Cave #2" statusText="Checking Cave #2"/>
-          <If condition="ActorExistsAt(176003, 3307, 411, -4, 100)">
-            <LogMessage output="==== Found a Cave ===="/>
-            <UseObject questId="1" stepId="1" actorId="176003" interactRange="40"/>
-            <WaitTimer questId="1" stepId="1" waitTime="200"/>
-          </If>
-          <TrinityMoveTo questId="1" x="3465.353" y="369.0619" z="-0.4137125" pathPrecision="8" name="Checking Cave #3" statusText="Checking Cave #3"/>
-          <If condition="ActorExistsAt(176003, 3447, 366, -4, 100)">
-            <LogMessage output="==== Found a Cave ===="/>
-            <UseObject questId="1" stepId="1" actorId="176003" interactRange="40"/>
-            <WaitTimer questId="1" stepId="1" waitTime="200"/>
-          </If>
-          <TrinityMoveTo questId="1" x="3035.214" y="408.7432" z="-4.10374" pathPrecision="8" name="Checking Cave #4" statusText="Checking Cave #4"/>
-          <If condition="ActorExistsAt(176003, 3023, 409, -2, 100)">
-            <LogMessage output="==== Found a Cave ===="/>
-            <UseObject questId="1" stepId="1" actorId="176003" interactRange="40"/>
-            <WaitTimer questId="1" stepId="1" waitTime="200"/>
-          </If>
-          <TrinityMoveTo questId="1" x="3030.403" y="790.0083" z="-3.980673" pathPrecision="8" name="Checking Cave #5" statusText="Checking Cave #5"/>
-          <If condition="ActorExistsAt(176003, 3018, 789, -2, 100)">
-            <LogMessage output="==== Found a Cave ===="/>
-            <UseObject questId="1" stepId="1" actorId="176003" interactRange="40"/>
-            <WaitTimer questId="1" stepId="1" waitTime="200"/>
-          </If>
-          <TrinityMoveTo questId="1" x="3272.278" y="790.381" z="-3.124261" pathPrecision="8" name="Checking Cave #6" statusText="Checking Cave #6"/>
-          <If condition="ActorExistsAt(176003, 3258, 789, -2, 100)">
-            <LogMessage output="==== Found a Cave ===="/>
-            <UseObject questId="1" stepId="1" actorId="176003" interactRange="40"/>
-            <WaitTimer questId="1" stepId="1" waitTime="200"/>
-          </If>
-        </While>
-
-        <WaitTimer questId="1" stepId="2" waitTime="500" />
-        <MoveToMapMarker questId="346190" stepId="2" markerNameHash="1029056444" actorId="176003" interactRange="20"
-        pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="189259"  />
+        <If condition="CurrentLevelAreaId == 155048">
+          <SafeMoveTo questId="1" stepId="2" x="3331" y="597" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
+        </If>
+        <TrinityExploreDungeon questId="346190" stepId="2" until="ObjectFound" exitNameHash="942020622" actorId="176003" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="80">
+          <PrioritizeScenes>
+            <PriorityScene sceneName="Entrance" />
+          </PrioritizeScenes>
+          <IgnoreScenes>
+            <IgnoreScene sceneName="_Chokepoint" />
+            <IgnoreScene sceneName="a3dun_Bridge_" />
+            <!--<IgnoreScene sceneName="_03" />-->
+          </IgnoreScenes>
+        </TrinityExploreDungeon>
+        <MoveToMapMarker questId="346190" markerNameHash="1029056444" actorId="176003" interactRange="20"
+                     pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="189259" statusText="" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
 
       <If condition="CurrentWorldId == 189259">
-        <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="40" killRadius="20"/>
         <TrinityExploreDungeon questId="346190" stepId="2" until="ExitFound" exitNameHash="151580180" actorId="176038" pathPrecision="25" boxSize="25" boxTolerance="0.1" objectDistance="45">
           <PriorityScenes>
             <PriorityScene sceneName="Exit" />
@@ -72,9 +49,8 @@
             <IgnoreScene sceneName="_W_" />
           </IgnoreScenes>
         </TrinityExploreDungeon>
-        <!--<TrinityExploreDungeon questId="346190" stepId="1" until="ObjectFound" actorId="176038" boxTolerance="0.10" boxSize="15" />-->
         <MoveToMapMarker questId="346190" stepId="2" markerNameHash="151580180" actorId="176038" interactRange="15"
-        pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="221688"  />
+  pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="221688"  />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
       <If condition="CurrentWorldId == 221688">
