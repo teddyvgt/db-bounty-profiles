@@ -56,7 +56,7 @@
           <SafeMoveTo questId="1" stepId="1" pathprecision="10" x="1040" y="1158" z="-19" />
           <SafeMoveTo questId="1" stepId="1" pathprecision="10" x="1125" y="1087" z="-51" />
 
-          <MoveToMapMarker questId="1" markerNameHash="43541885" actorId="161278" interactRange="30"
+          <MoveToMapMarker questId="1" markerNameHash="43541885" actorId="161278" interactRange="40"
                        pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="119650" statusText="" />
           <WaitTimer questId="1" stepId="2" waitTime="500" />
         </If>
@@ -76,7 +76,7 @@
           <SafeMoveTo questId="1" stepId="1" pathPrecision="20" x="1248" y="985" z="-50"  />
           <SafeMoveTo questId="1" stepId="1" pathPrecision="20" x="1134" y="888" z="-69"  />
   
-          <MoveToMapMarker questId="1" markerNameHash="43541885" actorId="161278" interactRange="30"
+          <MoveToMapMarker questId="1" markerNameHash="43541885" actorId="161278" interactRange="40"
                        pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="119650" statusText="" />
           <WaitTimer questId="1" stepId="2" waitTime="500" />
         </If>
