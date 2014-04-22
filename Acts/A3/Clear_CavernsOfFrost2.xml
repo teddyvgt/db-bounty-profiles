@@ -22,7 +22,7 @@
         <If condition="CurrentLevelAreaId == 155048">
           <SafeMoveTo questId="1" stepId="2" x="3331" y="597" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
         </If>
-        <TrinityExploreDungeon questId="346190" stepId="2" until="ObjectFound" exitNameHash="942020622" actorId="176003" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="80">
+        <TrinityExploreDungeon questId="346190" stepId="2" until="ObjectFound" exitNameHash="942020622" actorId="176003" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="50">
           <PrioritizeScenes>
             <PriorityScene sceneName="Entrance" />
           </PrioritizeScenes>
