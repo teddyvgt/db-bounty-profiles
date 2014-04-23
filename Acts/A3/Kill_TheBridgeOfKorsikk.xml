@@ -5,7 +5,7 @@
   <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 
   <Order>
-    <If condition="HasQuest(349214) or HasQuest(346200)">
+    <If condition="HasQuest(349214) or HasQuest(346200) or HasQuest(346202)">
 
       <While condition="CurrentLevelAreaId != 155048 and CurrentLevelAreaId != 112565">
         <UseWaypoint questId="1" waypointNumber="32" />

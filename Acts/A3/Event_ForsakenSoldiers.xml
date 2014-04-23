@@ -14,6 +14,7 @@
       </While>
 
       <If condition="CurrentWorldId == 75434">
+        <WaitTimer questId="1" stepId="1" waitTime="500"/>
         <TrinityExploreDungeon questId="369853" stepId="2" until="ObjectFound" objectDistance="100" actorId="364601" boxTolerance="0.01" boxSize="20" ignoreMarkers="False" pathPrecision="20">
           <PrioritizeScenes>
             <PriorityScene sceneName="a3dun_Keep_NSEW_03_War" />

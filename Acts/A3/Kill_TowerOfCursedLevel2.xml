@@ -35,7 +35,7 @@
         <SafeMoveTo questId="1" stepId="1" pathPrecision="10" x="1122" y="1102" z="-93"  />
         <SafeMoveTo questId="1" stepId="1" pathPrecision="10" x="1098" y="1033" z="-119"  />
 
-        <MoveToMapMarker questId="349224" stepId="2" markerNameHash="43541819" actorId="176001" interactRange="20"
+        <MoveToMapMarker questId="1" stepId="2" markerNameHash="43541819" actorId="176001" interactRange="20"
  pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="139272"  />
 
       </If>

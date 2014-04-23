@@ -230,6 +230,10 @@
     <If condition="HasQuest(346200)">
       <LoadProfile file="Kill_TheBridgeOfKorsikk.xml" />
     </If>
+    <!--Kill_Emberwing-->
+    <If condition="HasQuest(346202)">
+      <LoadProfile file="Kill_TheBridgeOfKorsikk.xml" />
+    </If>
 
 
     <!--WAYPOINT [33] A3_Battlefields_02        -->

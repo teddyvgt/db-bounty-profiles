@@ -22,7 +22,12 @@
         <SafeMoveTo questId="346184" stepId="2" x="2570" y="634" z="0" pathPrecision="5" pathPointLimit="250" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
         <TrinityExploreDungeon questId="346184" stepId="1" until="ObjectFound" actorId="152145" boxTolerance="0.70" boxSize="20" pathPrecision="20" objectDistance="45">
+          <PrioritizeScenes>
+            <PriorityScene sceneId="68283" />
+            <PriorityScene sceneName="a3dun_Bridge" />
+          </PrioritizeScenes>
           <IgnoreScenes>
+            <IgnoreScene sceneId="70501" />
             <IgnoreScene sceneName="_E02_S01" />
             <IgnoreScene sceneName="a3_Battlefield_" />
           </IgnoreScenes>

@@ -25,6 +25,7 @@
         <TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="20" pathPrecision="20"  >
           <PrioritizeScenes>
             <PriorityScene sceneName="Exit" />
+            <PriorityScene sceneName="a3dun_Bridge" />
           </PrioritizeScenes>
           <IgnoreScenes>
             <IgnoreScene sceneName="_Chokepoint" />
