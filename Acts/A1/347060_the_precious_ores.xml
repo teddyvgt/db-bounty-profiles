@@ -90,7 +90,7 @@
 				<WaitTimer questId="1" stepId="2" waitTime="10000" />
 			</If>	
 			<If condition="HasQuest(347060)">
-				<MoveToActor questId="1" timeout="5000"stepId="2" actorId="107076" />
+				<MoveToActor questId="1" timeout="5000" stepId="2" actorId="107076" />
 			</If>	
 			<If condition="HasQuest(347060)">
 				<WaitTimer questId="1" stepId="2" waitTime="7000" />
