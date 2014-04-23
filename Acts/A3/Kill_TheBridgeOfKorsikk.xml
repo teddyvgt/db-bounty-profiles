@@ -23,6 +23,9 @@
           <SafeMoveTo questId="1" stepId="2" x="3300" y="609" z="0" pathPrecision="5" pathPointLimit="250" />
         </If>
         <TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="25" pathPrecision="25" >
+          <PrioritizeScenes>
+            <PriorityScene sceneName="a3_Battlefield" />
+          </PrioritizeScenes>
           <IgnoreScenes>
             <IgnoreScene sceneName="_Chokepoint" />
             <IgnoreScene sceneName="a3dun_Bridge" />
