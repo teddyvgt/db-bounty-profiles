@@ -20,7 +20,7 @@
 		<!--Enter Lyceum 1-->
 		<If condition="CurrentWorldId == 71150">
 		  <MoveToActor questId="1" stepId="2" actorId="176001" isPortal="True" destinationWorldId="80057"/>
-		</If>    
+		</If>
 		
 		<!--Explore for Caves-->
 		<If condition="CurrentWorldId == 71150">
@@ -30,6 +30,9 @@
 		
 		<If condition="CurrentWorldId == 80057">
 			<TrinitySetQuesting />
+			<SafeMoveTo questId="1" stepId="2" x="1834.91" y="2064.556" z="-22.92601" /> <!-- kyriakos - set 1 -->
+			<SafeMoveTo questId="1" stepId="2" x="1767.882" y="2492.156" z="32.57983" /> <!-- kyriakos - set 2 -->		
+			
 			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15"  stayAfterBounty="False"/>
 			<WaitTimer questId="1" stepId="2" waitTime="2000" />
 		</If>
