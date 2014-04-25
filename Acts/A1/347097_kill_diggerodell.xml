@@ -5,34 +5,47 @@
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
-
-	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
 	<UseWaypoint waypointNumber="7" questId="1"/>
-	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
-	<If condition="HasQuest(347097)">
+	<WaitTimer questId="1" stepId="2" waitTime="5000" />
 	
-		<!--  Cemetery of the Forsaken  -->
-		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="1" stepId="2" x="2174.779" y="1944.55" z="-4.339898" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location #1" /> 
-			<!-- new --> <MoveToActor questId="1" stepId="2"  actorId="176002" isPortal="True" destinationWorldId="72637" interactRange="20"  /> <!-- /new -->
-		</If>
-		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="1" stepId="1" x="2063.645" y="1950.432" z="-4.900005" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location #2" /> 
-			<!-- new --> <MoveToActor questId="1" stepId="2"  actorId="176002" isPortal="True" destinationWorldId="72637" interactRange="20"  /> <!-- /new -->
-		</If>			
-		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="1" stepId="2" x="2037.006" y="1777.551" z="0.4002258" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location #3" />
-			<!-- new --> <MoveToActor questId="1" stepId="2"  actorId="176002" isPortal="True" destinationWorldId="72637" interactRange="20"  /> <!-- /new -->
-		</If>
-		<If condition="CurrentWorldId == 71150">			
-			<SafeMoveTo questId="1" stepId="2" x="2235.238" y="1800.816" z="6.160124" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location #4" />
-			<!-- new --> <MoveToActor questId="1" stepId="2"  actorId="176002" isPortal="True" destinationWorldId="72637" interactRange="20"  /> <!-- /new -->
+	<If condition="HasQuest(347097)">
+		<LogMessage message="looking for marker" />
+		<If condition="CurrentWorldId == 71150">
+		
+			<SafeMoveTo questId="1" stepId="2" x="2032" y="1776" z="1" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location North"/>
+			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(-1965109037, 2032.983, 1776.411, 1.434785, 30)">
+				<LogMessage message="found marker in North (2032, 1776) - moving there" />
+				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="72637" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="2000" />
+			</If>
+			
+			<SafeMoveTo questId="1" stepId="2" x="2233" y="1793" z="-4" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location South"/>	
+			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(-1965109037, 2233, 1793, 6, 30)">
+				<LogMessage message="found marker in West (2233, 1793) - moving there" />
+				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="72637" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="2000" />
+			</If>		
+			
+			<SafeMoveTo questId="1" stepId="2" x="2062" y="1950" z="-5" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location East"/>
+			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(-1965109037, 2062, 1950, -5, 30)">
+				<LogMessage message="found marker in East (2062, 1950) - moving there" />
+				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="72637" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="2000" />
+			</If>		
+			
+			<SafeMoveTo questId="1" stepId="2" x="2173" y="1941" z="6" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location West"/> 
+			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(-1965109037, 2173, 1941, -4, 30)">
+				<LogMessage message="found marker in South (2173, 1941) - moving there" />
+				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="72637" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="2000" />
+			</If>
 		</If>
 
 		<!--  Defiled Crypt -->
 		<If condition="CurrentLevelAreaId == 83265">
 			<WaitTimer questId="1" stepId="2" waitTime="2000" />
-			<!-- Kill -->
+			<!-- make sure bounty is complete! -->
 			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" pathPrecision="20" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>	
 			<WaitTimer questId="1" stepId="2" waitTime="2000" />
 		</If>

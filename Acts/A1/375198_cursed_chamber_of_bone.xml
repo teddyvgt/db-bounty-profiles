@@ -8,26 +8,19 @@
 	<TargetBlacklist actorId="5747" /> <!-- trDun_Cath_Chandelier_Trap_Switch2-15223 -->
 </TargetBlacklists>
 <Order>
-
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
 	<UseWaypoint waypointNumber="2" questId="1"/>
-	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />
 	<If condition="HasQuest(375198)">
-
 		<If condition="CurrentLevelAreaId == 19780">
-		
-			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="364601" boxTolerance="0.10" boxSize="15" />
-		  
-			<While condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
-				<MoveToActor questId="1" stepId="1" actorId="364601"/>
-			</While>			  
-		  
-			<WaitTimer questId="375198" stepId="4" waitTime="3000" />
-			
-		</If>
-	
+			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="364601" boxTolerance="0.10" objectDistance="40" boxSize="15" />
+			<MoveToActor questId="1" stepId="2" actorId="364601" interactRange="10"/>
+			<WaitTimer questId="1" stepId="2" waitTime="50000" /> <!-- wait 50 seconds while shrine is cleaned -->
+			<!-- make sure bounty is complete! -->
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" pathPrecision="20" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>	
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+		</If>	
 	</If>
-	<LoadProfile file="act1.xml" />
-	
+	<LoadProfile file="act1.xml" />	
 </Order>
 </Profile>

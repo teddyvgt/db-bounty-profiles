@@ -118,7 +118,11 @@
 	</If>	
 			
 	<!-- Wait for Loot -->
-	<WaitTimer questId="1" stepId="1" waitTime="4000" />	
+	<WaitTimer questId="1" stepId="2" waitTime="4000" />
+	<!-- make sure bounty is complete! -->
+	<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" pathPrecision="20" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>	
+	<WaitTimer questId="1" stepId="2" waitTime="1000" />
+	
 	<LoadProfile file="act1.xml" />
 	
 </Order>
