@@ -15,30 +15,49 @@
       <WaitTimer questId="1" waitTime="1500" />
     </If>
 
+    <!-- Quest: X1_Bounty_A5_Pand_HexMaze_Kill_Bloone (368917) World: [sno unknown] (338600) LevelArea: X1_Pand_Ext_2_Battlefields (338602) -->
+    <If condition="HasQuest(368917) and CurrentWorldId==338600 and CurrentLevelAreaId==338602">
+      <TrinityExploreDungeon questId="368917" until="ObjectFound" exitNameHash="0" actorId="374756" pathPrecision="25" boxSize="35" boxTolerance="0.01" objectDistance="45" />
+      <MoveToActor questId="368917" actorId="374756" interactRange="22" name="x1_Pand_Maze_PortalTest_OnDeathPortal_Bloone-262091"
+                   isPortal="True" destinationWorldId="-1" pathPrecision="5" pathPointLimit="250" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_Pand_HexMaze_Kill_Bloone (368917) World: X1_Pand_HexMaze_Bloone (374758) LevelArea: X1_Pand_HexMaze_Bloone (374757) -->
+    <If condition="HasQuest(368917) and CurrentWorldId==374758 and CurrentLevelAreaId==374757">
+      <TrinityExploreDungeon questId="368917" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+    </If>
 
-    <!-- Quest: X1_Bounty_A5_Pand_HexMaze_Kill_Haziael (368921) World: X1_Pand_Ext_2_Battlefields (338600) LevelArea: X1_Pand_Ext_2_Battlefields (338602) -->
-    <While condition="HasQuest(368921) and CurrentWorldId==338600">
-      <TrinityExploreDungeon questId="368921" until="ObjectFound" exitNameHash="0" actorId="374764" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+    
+    
+    <!-- Quest: X1_Bounty_A5_Pand_HexMaze_Kill_Magrethar (368796) World: X1_Pand_Ext_2_Battlefields (338600) LevelArea: X1_Pand_Ext_2_Battlefields (338602) -->
+    <While condition="HasQuest(368796) and CurrentWorldId==338600 and CurrentLevelAreaId==338602">
+      <TrinityExploreDungeon questId="368796" until="ObjectFound" exitNameHash="0" actorId="374772" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
         <AlternateActors>
-          <AlternateActor actorId="374768" objectDistance="45" />
+          <AlternateActor actorId="374772" objectDistance="45" />
         </AlternateActors>
-        <IgnoreScenes>
-          <IgnoreScene sceneName="_N_" />
-          <IgnoreScene sceneName="_S_" />
-          <IgnoreScene sceneName="_E_" />
-          <IgnoreScene sceneName="_W_" />
-        </IgnoreScenes>
       </TrinityExploreDungeon>
-      <MoveToActor questId="368921" actorId="374768" interactRange="8" name="x1_Pand_Maze_PortalTest_OnDeathPortal_Haziael"  pathPrecision="5" pathPointLimit="250" statusText="" />
+      <MoveToActor questId="368796" actorId="374772" interactRange="22" name="x1_Pand_Maze_PortalTest_OnDeathPortal_Magrethar-41349"  isPortal="True" destinationWorldId="-1" pathPrecision="5" pathPointLimit="250" statusText="" />
     </While>
-    <!-- Quest: X1_Bounty_A5_Pand_HexMaze_Kill_Haziael (368921) World: X1_Pand_HexMaze_Haziael (374770) LevelArea: X1_Pand_HexMaze_Haziael (374769) -->
-    <If condition="HasQuest(368921) and CurrentWorldId==374770 and CurrentLevelAreaId==374769">
-      <TrinityExploreDungeon questId="368921" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+    <!-- Quest: X1_Bounty_A5_Pand_HexMaze_Kill_Magrethar (368796) World: X1_Pand_HexMaze_Magrethar (374774) LevelArea: X1_Pand_HexMaze_Magrethar (374773) -->
+    <If condition="HasQuest(368796) and CurrentWorldId==374774 and CurrentLevelAreaId==374773">
+      <TrinityExploreDungeon questId="368796" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
     </If>
 
 
 
-
+    <!-- Quest: X1_Bounty_A5_Pand_HexMaze_Kill_Haziael (368921) World: X1_Pand_Ext_2_Battlefields (338600) LevelArea: X1_Pand_Ext_2_Battlefields (338602) -->
+    <While condition="HasQuest(368921) and CurrentWorldId==338600 and CurrentLevelAreaId==338602">
+      <!-- Quest: X1_Bounty_A5_Pand_HexMaze_Kill_Haziael (368921) World: X1_Pand_Ext_2_Battlefields (338600) LevelArea: X1_Pand_Ext_2_Battlefields (338602) -->
+      <TrinityExploreDungeon questId="368921" until="ObjectFound" actorId="374752" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="374768" objectDistance="45" />
+        </AlternateActors>
+      </TrinityExploreDungeon>
+      <MoveToActor questId="368921" actorId="374768" interactRange="22" name="x1_Pand_Maze_PortalTest_OnDeathPortal_Haziael-16286"  isPortal="True" destinationWorldId="-1" pathPrecision="5" pathPointLimit="250" statusText="" />
+    </While>
+    <!-- Quest: X1_Bounty_A5_Pand_HexMaze_Kill_Haziael (368921) World: X1_Pand_HexMaze_Haziael (374770) LevelArea: X1_Pand_HexMaze_Haziael (374769) -->
+    <While condition="HasQuest(368921) and CurrentWorldId==374770 and CurrentLevelAreaId==374769">
+      <TrinityExploreDungeon questId="368921" until="BountyComplete" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+    </While>
 
 
     <!-- Quest: X1_Bounty_A5_Pand_HexMaze_Kill_Grotescor (368919) World: X1_Pand_Ext_2_Battlefields (338600) LevelArea: X1_Pand_Ext_2_Battlefields (338602) -->

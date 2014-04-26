@@ -14,7 +14,7 @@
         or CurrentWorldId == 341040)">
       <TrinityTownPortal questId="1" waitTime="5000" />
     </If>
-    
+
     <!-- In Town: World: X1_Westmarch_Hub (304235) LevelArea: x1_Westm_Hub (270011) -->
     <If condition="CurrentWorldId==304235 and CurrentLevelAreaId==270011">
       <UseWaypoint questId="1" waypointNumber="50" />
@@ -22,6 +22,34 @@
 
     <If condition="not (ZetaDia.ActInfo.ActiveBounty) and CurrentWorldId==267412">
       <WaitTimer questId="1" waitTime="1500" />
+    </If>
+
+    <!-- Quest: X1_Bounty_A5_Bog_Event_AncientEvils (369952) World: x1_Bog_01 (267412) LevelArea: x1_Bog_01_Part2 (258142) -->
+    <If condition="HasQuest(369952) and CurrentWorldId==267412 and CurrentLevelAreaId==258142">
+      <TrinityExploreDungeon questId="369952" until="ExitFound" exitNameHash="1649975401" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="0" objectDistance="45" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="Exit" />
+        </PriorityScenes>
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_N_" />
+          <IgnoreScene sceneName="_S_" />
+          <IgnoreScene sceneName="_E_" />
+          <IgnoreScene sceneName="_W_" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
+      <MoveToMapMarker questId="369952" markerNameHash="1649975401" actorId="342003" interactRange="12.50264"
+                           pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_Bog_Event_AncientEvils (369952) World: x1_Catacombs_FakeEntrance_04 (341040) LevelArea: x1_Catacombs_FakeEntrance_04 (341041) -->
+    <If condition="HasQuest(369952) and CurrentWorldId==341040 and CurrentLevelAreaId==341041">
+      <TrinityExploreDungeon questId="369952" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <PriorityScenes>
+          <PriorityScene sceneName="x1_Catacombs_NSEW_02" />
+        </PriorityScenes>
+      </TrinityExploreDungeon>
     </If>
 
 

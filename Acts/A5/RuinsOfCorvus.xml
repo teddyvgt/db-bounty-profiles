@@ -27,19 +27,10 @@
         <LogMessage output="Kill Adria - Exploring for Great Hall" />
         <WaitTimer questId="359915" waitTime="1000" />
         <!-- Start Explore -->
-        <TrinityExploreDungeon questId="359915" until="PortalExitFound" exitNameHash="-131340091" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
-          <AlternateActors>
-            <AlternateActor actorId="0" objectDistance="45" />
-          </AlternateActors>
+        <TrinityExploreDungeon questId="359915" until="ExitFound" exitNameHash="-131340091" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
           <PriorityScenes>
             <PriorityScene sceneName="Exit" />
           </PriorityScenes>
-          <IgnoreScenes>
-            <IgnoreScene sceneName="_N_" />
-            <IgnoreScene sceneName="_S_" />
-            <IgnoreScene sceneName="_E_" />
-            <IgnoreScene sceneName="_W_" />
-          </IgnoreScenes>
         </TrinityExploreDungeon>
         <MoveToMapMarker questId="359915" markerNameHash="-131340091" actorId="293005" interactRange="20"
               pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="297771" statusText="" />

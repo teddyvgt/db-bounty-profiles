@@ -5,6 +5,7 @@
   <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
   <Order>
     <LogMessage output="Pandemonium Fortress Level 2 Explore" />
+    <TrinityMaxDeaths max="10" />
 
     <If condition="not (Me.IsInTown) and not (
            CurrentWorldId == 271235
@@ -25,13 +26,13 @@
 
 
     <!-- Quest: X1_Bounty_A5_PandFortress_Event_ChronoPrison (374571) World: x1_fortress_level_02 (271235) LevelArea: x1_fortress_level_02 (271271) -->
-    <If condition="HasQuest(374571) and CurrentWorldId==271235 and CurrentLevelAreaId==271271">
-      <TrinityExploreDungeon questId="374571" until="BountyComplete" sceneName="x1_fortress_NSEW_02" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+    <While condition="HasQuest(374571) and CurrentWorldId==271235 and CurrentLevelAreaId==271271">
+      <TrinityExploreDungeon questId="374571" until="SceneFound" sceneName="x1_fortress_NSEW_02" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="15" boxTolerance="0.01" objectDistance="45">
         <AlternateActors>
           <AlternateActor actorId="0" objectDistance="45" />
         </AlternateActors>
         <PriorityScenes>
-          <PriorityScene sceneName="x1_fortress_NSEW_02" />
+          <PriorityScene sceneName="x1_fortress_NSEW_02" />          
         </PriorityScenes>
         <IgnoreScenes>
           <IgnoreScene sceneName="x1_fortress_soul_grinder_A_W01_S01" />
@@ -43,13 +44,13 @@
         </IgnoreScenes>
       </TrinityExploreDungeon>
       <TrinityMoveToScene questId="374571" sceneName="x1_fortress_NSEW_02" />
-    </If>
+    </While>
 
     <!-- Quest: X1_Bounty_A5_PandFortress_Kill_Malthael (359927) World: x1_fortress_level_02 (271235) LevelArea: x1_fortress_level_02_Intro (360494) -->
     <If condition="HasQuest(359927) and CurrentWorldId==271235">
       <LogMessage output="Pandemonium Fortress Level 1 Explore for Malthael" />
       <WaitTimer questId="359927" stepId="2" waitTime="500" />
-      <TrinityExploreDungeon questId="359927" until="ExitFound" exitNameHash="1012176886" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+      <TrinityExploreDungeon questId="359927" until="ExitFound" exitNameHash="1012176886" actorId="328830" pathPrecision="15" boxSize="15" boxTolerance="0.01" objectDistance="15">
         <AlternateActors>
           <AlternateActor actorId="0" objectDistance="45" />
         </AlternateActors>
@@ -90,7 +91,7 @@
     <While condition="ZetaDia.ActInfo.ActiveBounty and CurrentWorldId==271235">
       <WaitTimer questId="1" waitTime="1000" />
       <!-- Start Explore -->
-      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="15" boxTolerance="0.01" objectDistance="45">
         <IgnoreScenes>
           <IgnoreScene sceneName="x1_fortress_soul_grinder_A_W01_S01" />
           <IgnoreScene sceneName="x1_fortress_soul_grinder_A_E01_S01" />

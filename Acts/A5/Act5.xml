@@ -260,7 +260,7 @@
     </If>
     <!-- X1_Bounty_A5_PandFortress_Event_FlyingAssasins -->
     <If condition="HasQuest(375275)">
-      <LoadProfile profile="PandFortress.xml" />
+      <LoadProfile profile="PandFortress1.xml" />
     </If>
     <!-- X1_Bounty_A5_PandFortress_Event_Fortified -->
     <If condition="HasQuest(363390)">
@@ -304,18 +304,19 @@
     </If>
     <!-- X1_Bounty_A5_PandFortress_Kill_Zorrus -->
     <If condition="HasQuest(363561)">
-      <LoadProfile profile="PandFortress.xml" />
+      <LoadProfile profile="PandFortress2.xml" />
     </If>
+    
+    <!-- Pand HexMaze -->
+    
     <!-- X1_Bounty_A5_Pand_HexMaze_Kill_Bloone -->
     <If condition="HasQuest(368917)">
-      <LoadProfile profile="PandFortress.xml" />
+      <LoadProfile profile="Pand_HexMaze.xml" />
     </If>
     <!-- X1_Bounty_A5_Pand_HexMaze_Kill_Borgoth -->
     <If condition="HasQuest(368912)">
-      <LoadProfile profile="PandFortress.xml" />
+      <LoadProfile profile="Pand_HexMaze.xml" />
     </If>
-
-    <!-- Pand HexMaze -->
 
     <!-- X1_Bounty_A5_Pand_HexMaze_Kill_Grotescor -->
     <If condition="HasQuest(368919)">

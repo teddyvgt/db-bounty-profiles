@@ -112,7 +112,11 @@
     </If>
     <!-- Quest: X1_Bounty_A5_WestmarchFire_Event_Bonepit (375348) World: X1_Abattoir_Random02 (338976) LevelArea: X1_Abattoir_Random02 (338932) -->
     <If condition="HasQuest(375348) and CurrentWorldId==338976 and CurrentLevelAreaId==338932">
-      <TrinityExploreDungeon questId="375348" until="ExitFound" exitNameHash="2115492897" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+      <TrinityExploreDungeon questId="375348" until="ExitFound" exitNameHash="2115492897" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <IgnoreScenes>
+          <IgnoreScene sceneName="_E_01" />
+        </IgnoreScenes>
+      </TrinityExploreDungeon>
       <MoveToMapMarker questId="375348" markerNameHash="2115492897" actorId="176001" interactRange="9.549969"
                             pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
     </If>
