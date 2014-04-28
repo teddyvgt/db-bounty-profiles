@@ -11,28 +11,21 @@
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
 	<If condition="HasQuest(344482)">
 	
-		<!--Find lyceum-->
+		<!--Find and Enter Lyceum-->
 		<If condition="CurrentWorldId == 71150">
 		  <SafeMoveTo questId="1" stepId="2" x="2114.882" y="4342.156" z="10.57983" />
 		  <SafeMoveTo questId="1" stepId="2" x="2114.882" y="4342.156" z="10.57983" />
-		</If>
-		
-		<!--Enter Lyceum 1-->
-		<If condition="CurrentWorldId == 71150">
 		  <MoveToActor questId="1" stepId="2" actorId="176001" isPortal="True" destinationWorldId="80057"/>
 		</If>
 		
-		<!--Explore for Caves-->
+		<!--Explore for Caves - does this ever get hit? -->
 		<If condition="CurrentWorldId == 71150">
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.01" boxSize="25" until="ExitFound" exitNameHash="-1187439574" ignoreMarkers="False"/>
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="25" until="ExitFound" exitNameHash="-1187439574" ignoreMarkers="False"/>
 			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1187439574" destinationWorldId="80057" interactRange="20"  />
-		</If>	
+		</If>
 		
 		<If condition="CurrentWorldId == 80057">
-			<TrinitySetQuesting />
-			<SafeMoveTo questId="1" stepId="2" x="1834.91" y="2064.556" z="-22.92601" /> <!-- kyriakos - set 1 -->
-			<SafeMoveTo questId="1" stepId="2" x="1767.882" y="2492.156" z="32.57983" /> <!-- kyriakos - set 2 -->		
-			
+			<TrinitySetQuesting />			
 			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15"  stayAfterBounty="False"/>
 			<WaitTimer questId="1" stepId="2" waitTime="2000" />
 		</If>

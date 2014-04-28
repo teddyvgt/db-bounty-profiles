@@ -1,4 +1,5 @@
 <!-- X1_Bounty_A1_FesteringWoods_Event_Last_Stand (345502) -->
+<!-- 20140428 - got stuck trying to loot legendary craft item - it was on a different Z-axis, due to stairs. Maybe that's the cause? -->
 <Profile>
 <Name>Last Stand of the Ancients</Name>
 <KillMonsters>True</KillMonsters>

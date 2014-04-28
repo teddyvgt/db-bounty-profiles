@@ -50,14 +50,14 @@
 			</If>
 		</If>
 
-		<!--  Defiled Crypt -->
-		<If condition="CurrentLevelAreaId == 83265">
-			<WaitTimer questId="1" stepId="2" waitTime="3000" />
+		  <!--  Defiled Crypt -->
+		  <If condition="CurrentWorldId == 72636 and HasQuest(347097)">
+		   <WaitTimer questId="1" stepId="2" waitTime="3000" />
 			<!-- make sure bounty is complete! -->
-			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="218206" pathPrecision="20" boxTolerance="0.10" boxSize="35" stayAfterBounty="False"/>	
-			<MoveToActor questId="1" stepId="2" actorId="218206" interactRange="20"  />
-			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="15" />
-			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" pathPrecision="20" boxSize="45" boxTolerance="0.10" stayAfterBounty="False"/>
+			<!--<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="218206" pathPrecision="20" boxTolerance="0.10" boxSize="25" stayAfterBounty="False"/>	-->
+			<!--<MoveToActor questId="1" stepId="2" actorId="218206" interactRange="20"  />-->
+			<ToggleTargeting questId="1" stepId="2" killRadius="15" />
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" pathPrecision="20" boxSize="25" boxTolerance="0.10" stayAfterBounty="False"/>
 		</If>
 	
 	</If>

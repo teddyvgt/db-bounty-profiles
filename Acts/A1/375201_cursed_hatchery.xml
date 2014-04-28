@@ -17,12 +17,12 @@
 	<TargetBlacklist actorId="116063" /> <!-- Spider 'spawner' -->	
 </TargetBlacklists>
 <Order>
-		<ToggleTargeting questId="1" stepId="2" killRadius="15" />
+	<ToggleTargeting questId="1" stepId="2" killRadius="15" />
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
 	<WaitTimer questId="1" stepId="2" waitTime="4000" />		
 	<UseWaypoint waypointNumber="12" questId="1"/>
-	<WaitTimer questId="1" stepId="2" waitTime="4000" />	
-	<If condition="HasQuest(375201)">
+	<WaitTimer questId="1" stepId="2" waitTime="4000" />
+	<While condition="HasQuest(375201)">
 <!-- Keep kill range tight to speed bounties up -->
 <!-- Just in case we didn't find the object -->
 		<If condition="HasQuest(375201)">
@@ -39,10 +39,10 @@
 			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="15" />
 		</If>
 <!-- Just in case we have roamed too far -->
-		<If condition="HasQuest(375201)">
-			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="True" statusText="Cleaning Up..."/>
+		<If condition="HasQuest(375201)" timeout="25">
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False" statusText="Cleaning Up..."/>
 		</If>
-	</If>
+	</While>
 	<!-- give legendaries a moment to fall from the heavens... -->
 	<WaitTimer questId="1" stepId="2" waitTime="3000" />
 	<LoadProfile file="act1.xml" />	

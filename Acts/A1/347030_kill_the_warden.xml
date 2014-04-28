@@ -36,16 +36,14 @@
 			
 			<!-- Kill Warden -->
 			<SafeMoveTo questId="1" stepId="1" x="351" y="600" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-			<MoveToActor questId="1" stepId="1" x="345" y="598" z="1" actorId="4203" interactRange="10" name="Ghoul_C-22903"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			
+			<MoveToActor questId="1" stepId="1" x="345" y="598" z="1" actorId="4203" interactRange="10" name="Ghoul_C-22903" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
 			<WaitTimer questId="1" stepId="1" waitTime="1000" />
 						
 			<!-- Hack to make sure we found him -->		
-			<If condition="HasQuest(345502)">
+			<If condition="HasQuest(347030)">
 				<LogMessage quest="1" step="1" output="hmmm.. something went wrong, fully exploring area" />	
-				<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
-				<MoveToActor questId="1" stepId="2" actorId="188119" />
-			</If>					
-						
+				<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
+			</If>						
 		</If>
 		
 	</If>

@@ -39,6 +39,8 @@
     <TargetBlacklist actorId="116752" />
     <TargetBlacklist actorId="108882" />
     <TargetBlacklist actorId="206461" />
+	<TargetBlacklist actorId="365097" /> <!-- Cursed Chest -->
+	<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->
   </TargetBlacklists>
 <Order>
 

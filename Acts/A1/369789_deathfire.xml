@@ -15,15 +15,9 @@
 		<If condition="CurrentLevelAreaId == 19776">
 
 			<!-- Find the chest -->				
-			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="364559" pathPrecision="40" boxSize="15" boxTolerance="0.50" />				
-			<UseObject questId="1" stepId="1" actorId="364559" isPortal="False" />
+			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="365097" pathPrecision="40" boxSize="15" boxTolerance="0.50" />				
+			<MoveToActor questId="1" stepId="1" actorId="365097" />
 			<WaitTimer questId="1" stepId="1" waitTime="5000" />	
-			
-			<!-- Hack to make sure we found the shrine -->
-			<If condition="HasQuest(369789)">
-				<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
-				<MoveToActor questId="1" stepId="2" actorId="89578" />
-			</If>			
 			
 		</If>
 	
