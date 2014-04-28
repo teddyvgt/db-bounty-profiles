@@ -11,6 +11,8 @@
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
 	<If condition="HasQuest(369273)">	
 	
+		<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="30" />
+	
 		<!-- Use waypoints instead of DungeonExplore to avoid wandering into southern highlands -->
 		<SafeMoveTo questId="312429" stepId="2" x="1703" y="4130" z="41" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 		<SafeMoveTo questId="312429" stepId="2" x="1612" y="4197" z="32" pathPrecision="5" pathPointLimit="250" statusText="" />

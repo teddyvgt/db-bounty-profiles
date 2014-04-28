@@ -42,7 +42,12 @@
 		
 		<!-- Search Everywhere -->
 		<If condition="HasQuest(369249)">			
-			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>	
+		  <TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="25" >
+			<IgnoreScenes>
+			  <IgnoreScene sceneName="_ExitA_E01" />
+			  <IgnoreScene sceneName="_ExitA_E02" />		  
+			</IgnoreScenes>
+		  </TrinityExploreDungeon>
 		</If>
 	
 	</If>

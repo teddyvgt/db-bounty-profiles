@@ -32,44 +32,44 @@
       <SafeMoveTo questId="312429" stepId="2" x="1731" y="4172" z="40" pathPrecision="5" pathPointLimit="250" statusText="" />
     </If>
     <If condition="HasQuest(369257)">
-      <SafeMoveTo questId="312429" stepId="2" x="1608" y="4207" z="32" pathPrecision="5" pathPointLimit="250" statusText="" />
+      <SafeMoveTo questId="312429" stepId="2" timeout="30000" x="1608" y="4207" z="32" pathPrecision="5" pathPointLimit="250" statusText="" />
     </If>
     <If condition="HasQuest(369257)">
-      <SafeMoveTo questId="312429" stepId="2" x="1579" y="4041" z="38" pathPrecision="5" pathPointLimit="250" statusText="" />
+      <SafeMoveTo questId="312429" stepId="2" timeout="30000" x="1579" y="4041" z="38" pathPrecision="5" pathPointLimit="250" statusText="" />
     </If>
     <If condition="HasQuest(369257)">
-      <SafeMoveTo questId="312429" stepId="2" x="1449" y="4162" z="40" pathPrecision="5" pathPointLimit="250" statusText="" />
+      <SafeMoveTo questId="312429" stepId="2" timeout="30000" x="1449" y="4162" z="40" pathPrecision="5" pathPointLimit="250" statusText="" />
     </If>
     <If condition="HasQuest(369257)">
-      <SafeMoveTo questId="312429" stepId="2" x="1379" y="4087" z="40" pathPrecision="5" pathPointLimit="250" statusText="" />
+      <SafeMoveTo questId="312429" stepId="2" timeout="30000" x="1379" y="4087" z="40" pathPrecision="5" pathPointLimit="250" statusText="" />
     </If>
     <If condition="HasQuest(369257)">
-      <SafeMoveTo questId="312429" stepId="2" x="1433" y="4019" z="38" pathPrecision="5" pathPointLimit="250" statusText="" />
+      <SafeMoveTo questId="312429" stepId="2" timeout="30000" x="1433" y="4019" z="38" pathPrecision="5" pathPointLimit="250" statusText="" />
     </If>
     <If condition="HasQuest(369257)">			
-			<SafeMoveTo questId="312429" stepId="2" x="1334" y="3958" z="61" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		</If>	
-		<If condition="HasQuest(369257)">		
-			<SafeMoveTo questId="312429" stepId="2" x="1274" y="3887" z="78" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		</If>			
-		<If condition="HasQuest(369257)">
-			<SafeMoveTo questId="312429" stepId="2" x="1124" y="3716" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		</If>			
-		<If condition="HasQuest(369257)">			
-			<SafeMoveTo questId="312429" stepId="2" x="1041" y="3865" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		</If>	
-		<If condition="HasQuest(369257)">	
-			<SafeMoveTo questId="312429" stepId="2" x="1147" y="3843" z="80" pathPrecision="5" pathPointLimit="250" statusText="" />
-		</If>		
-		<If condition="HasQuest(369257)">
-			<SafeMoveTo questId="312429" stepId="2" x="912" y="3957" z="80" pathPrecision="5" pathPointLimit="250" statusText="" />
-		</If>			
-		<If condition="HasQuest(369257)">			
-			<SafeMoveTo questId="312429" stepId="2" x="1226" y="3958" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		</If>			
-		<If condition="HasQuest(369257)">			
-			<SafeMoveTo questId="312429" stepId="2" x="1156" y="3960" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		</If>	
+		<SafeMoveTo questId="312429" stepId="2" timeout="30000" x="1334" y="3958" z="61" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	</If>	
+	<If condition="HasQuest(369257)">		
+		<SafeMoveTo questId="312429" stepId="2" timeout="30000" x="1274" y="3887" z="78" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	</If>			
+	<If condition="HasQuest(369257)">
+		<SafeMoveTo questId="312429" stepId="2" timeout="30000" x="1124" y="3716" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	</If>			
+	<If condition="HasQuest(369257)">			
+		<SafeMoveTo questId="312429" stepId="2" timeout="30000" x="1041" y="3865" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	</If>	
+	<If condition="HasQuest(369257)">	
+		<SafeMoveTo questId="312429" stepId="2" timeout="30000" x="1147" y="3843" z="80" pathPrecision="5" pathPointLimit="250" statusText="" />
+	</If>		
+	<If condition="HasQuest(369257)">
+		<SafeMoveTo questId="312429" stepId="2" timeout="30000" x="912" y="3957" z="80" pathPrecision="5" pathPointLimit="250" statusText="" />
+	</If>			
+	<If condition="HasQuest(369257)">			
+		<SafeMoveTo questId="312429" stepId="2" timeout="30000" x="1226" y="3958" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	</If>			
+	<If condition="HasQuest(369257)">			
+		<SafeMoveTo questId="312429" stepId="2" timeout="30000" x="1156" y="3960" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	</If>	
 		
 		<!-- Search Everywhere -->
 		<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">			

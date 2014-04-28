@@ -13,7 +13,7 @@
 	
 		<!-- Look for him -->
 		<LogMessage quest="1" step="2" output="We're roaming for the Growly monster..." />
-		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">
+		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="25" stayAfterBounty="False">
 			<IgnoreScenes>
 				<!-- Block path to Cemetery -->
 				<IgnoreScene sceneName="_EntranceA_" />

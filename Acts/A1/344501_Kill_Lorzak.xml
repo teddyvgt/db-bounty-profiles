@@ -16,9 +16,20 @@
 	
 		<!-- Look for him -->
 		<LogMessage quest="1" step="2" output="We're hunting for the creature known as Lorzak..." />
-		<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">
+		<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.15" boxSize="30" stayAfterBounty="False">
+			<PriorityScenes>
+				 <PriorityScene sceneName="_Roads_" />			 
+			</PriorityScenes>			
 			<IgnoreScenes>
 				 <IgnoreScene sceneName="_Chokepoint_" />
+				 <IgnoreScene sceneName="_E02_S01" />
+				 <IgnoreScene sceneName="_E01_S01_" />
+				 <IgnoreScene sceneName="_E03_N01_" />
+				 <IgnoreScene sceneName="_E02_N01_" />
+				 <IgnoreScene sceneName="_E01_N01_" />
+				 <IgnoreScene sceneName="_E01_N01_" />
+				 <IgnoreScene sceneName="_W01_S01_" />
+				 <IgnoreScene sceneName="_W01_N01_" />				 
 			</IgnoreScenes>
 		</TrinityExploreDungeon>			
 

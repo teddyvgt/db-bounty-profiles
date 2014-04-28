@@ -4,58 +4,117 @@
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<TargetBlacklists>
+	<TargetBlacklist actorId="365097" /> <!-- Cursed Chest -->
+	<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->
+</TargetBlacklists>
 <Order>
-
-	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<ToggleTargeting questId="1" stepId="2" killRadius="5" combat="True" />
+	<WaitTimer questId="1" stepId="2" waitTime="3800" /><If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
 	<UseWaypoint waypointNumber="8" questId="1"/>
-	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />
 	<If condition="HasQuest(345496)">
-
-		<ToggleTargeting questId="1" stepId="1" killRadius="15" />
-	
-		<!-- Middle Cave Location 1 -->
-		<If condition="CurrentWorldId == 71150">			
-			<SafeMoveTo questId="312429" stepId="2" x="2068" y="896" z="0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Middle Cave Location #1" /> 
-			<MoveToMapMarker questId="312429" stepId="2" markerNameHash="925091454" actorId="175501" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="81163" statusText="Entering Cave" />
-		</If>	
-		
-		<!-- Middle Cave Location 2 -->
-		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="312429" stepId="2" x="2120" y="612" z="0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Middle Cave Location #2" /> 
-			<MoveToMapMarker questId="312429" stepId="2" markerNameHash="925091454" actorId="175501" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="81163" statusText="Entering Cave" />
-		</If>	
-		
-		<!-- Bottom Cave Location -->
-		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="312429" stepId="2" x="2242" y="1054" z="0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Bottom Cave Location" /> 
-			<MoveToMapMarker questId="312429" stepId="2" markerNameHash="925091454" actorId="175501" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="81163" statusText="Entering Cave" />
-		</If>	
-		
 		<!-- Top Cave Location -->
-		<If condition="CurrentWorldId == 71150">			
-			<SafeMoveTo questId="312429" stepId="2" x="1770" y="369" z="0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Top Cave Location" /> 
-			<MoveToMapMarker questId="312429" stepId="2" markerNameHash="925091454" actorId="175501" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="81163" statusText="Entering Cave" />
-		</If>	
-		
+		<If condition="HasQuest(345496) and CurrentWorldId == 71150">
+			<SafeMoveTo questId="1" stepId="2" x="1770" y="369" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Top Cave Location 1 of 5" /> 
+			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(925091454, 1770, 369, -0, 30)">			
+				<MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" interactRange="20"  />
+			</If>
+		</If>
+		<If condition="HasQuest(345496) and CurrentWorldId == 71150">
+		<!-- Middle Cave Location 2 -->
+			<SafeMoveTo questId="1" stepId="2" x="2120" y="612" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Middle Cave Location 3 of 5" /> 
+			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(925091454, 2120, 612, -0, 30)">		
+				<MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" interactRange="20"  />
+			</If>
+		</If>
+		<If condition="HasQuest(345496) and CurrentWorldId == 71150">
+		<!-- Middle Cave Location 1 -->
+			<SafeMoveTo questId="1" stepId="2" x="2068" y="896" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Middle Cave Location 2 of 5" /> 		
+			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(925091454, 2068, 896, -0, 30)">				
+				<MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" interactRange="20"  />
+			</If>
+		</If>
+		<If condition="HasQuest(345496) and CurrentWorldId == 71150">
+		<!-- Bottom Cave Location 1 -->
+			<SafeMoveTo questId="1" stepId="2" x="2242" y="1054" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Bottom Cave Location 4 of 5" /> 
+			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(925091454, 2242, 1054, -0, 30)">	
+				<MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" interactRange="20"  />
+			</If>
+		</If>
+		<If condition="HasQuest(345496) and CurrentWorldId == 71150">
+		<!-- Bottom Cave Location 2 -->
+			<SafeMoveTo questId="1" stepId="2" x="2236" y="1053" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Bottom Cave Location 5 of 5" /> 
+			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(925091454, 2236, 1053, -0, 30)">	
+				<MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" interactRange="20"  />
+			</If>		
+		</If>
 		<!-- Inside Scavenger's Den Level 1-->
-		<If condition="CurrentWorldId == 81163">
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="925091455" ignoreMarkers="False">
+		<If condition="HasQuest(345496) and CurrentWorldId == 81163">		
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="925091455" ignoreMarkers="False" objectDistance="150">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
 			</TrinityExploreDungeon>
-			<MoveToMapMarker questId="1" stepId="2" exitNameHash="925091455" destinationWorldId="81164" interactRange="20"  />
+			<MoveToActor questId="1" stepId="2" actorId="176038" isPortal="True" destinationWorldId="81164" interactRange="20"  />
+			<WaitTimer questId="1" stepId="2" waitTime="3000" />
 		</If>
-
 		<!-- Inside Scavenger's Den Level 2-->
-		<If condition="CurrentWorldId == 81164">
-			<TrinitySetQuesting />
-			<ToggleTargeting questId="1" stepId="1" killRadius="80" />			
-			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance=".10" boxSize="9" stayAfterBounty="False"/>
+		<If condition="HasQuest(345496) and CurrentWorldId == 81164">
+			<ToggleTargeting questId="1" stepId="2" killRadius="80" combat="True" />
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="614" y="495" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="546" y="585" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="437" y="627" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="402" y="664" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="318" y="656" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="319" y="549" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="364" y="474" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="603" y="510" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="614" y="435" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="543" y="416" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="502" y="372" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="543" y="416" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="614" y="435" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="684" y="381" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="800" y="382" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="926" y="368" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="651" y="897" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="501" y="852" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="442" y="862" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="411" y="904" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="326" y="896" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="308" y="836" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="331" y="763" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="384" y="689" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="348" y="636" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="326" y="588" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="385" y="536" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="287" y="615" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="325" y="577" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="283" y="560" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+			
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="515" y="371" z="0" pathPrecision="5" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="427" y="373" z="0" pathPrecision="5" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="311" y="568" z="0" pathPrecision="5" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="310" y="637" z="0" pathPrecision="5" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="344" y="660" z="0" pathPrecision="5" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="408" y="662" z="0" pathPrecision="5" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="445" y="621" z="0" pathPrecision="5" pathPointLimit="250" timeout="15" /></If>
+			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="469" y="611" z="0" pathPrecision="5" pathPointLimit="250" timeout="15" /></If>
 		</If>
-		
+		<If condition="HasQuest(345496) and CurrentWorldId == 81164">
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance=".1" boxSize="5" stayAfterBounty="False">
+				<IgnoreScenes>
+					<IgnoreScene sceneName="_Exit_" />
+					<IgnoreScene sceneName="_Filler" />
+				</IgnoreScenes>
+			</TrinityExploreDungeon>
+		</If>
 	</If>
-	<LoadProfile file="act1.xml" />
-	
+	<!-- give legendaries a moment to fall from the heavens... -->
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />
+	<LoadProfile file="act1.xml" />	
 </Order>
 </Profile>

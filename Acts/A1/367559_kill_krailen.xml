@@ -17,14 +17,8 @@
 			<SafeMoveTo questId="1" stepId="2" x="1080.303" y="3401.695" z="65.4789" />
 			<MoveToActor questId="1" stepId="2" actorId="176001" isPortal="True" destinationWorldId="75049" />
 			<WaitTimer questId="1" stepId="2" waitTime="2000" />
-			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="218664" boxTolerance="0.10" boxSize="15" />
-
-			<!-- Search Everywhere -->
-			<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">			
-				<IgnoreScenes>        
-					<IgnoreScene sceneName="_N01" /><!-- Southern Highlands--> 	  
-				</IgnoreScenes>
-			</TrinityExploreDungeon>			
+			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="218664" boxTolerance="0.10" boxSize="15" objectDistance="150" />
+			<MoveToActor questId="1" stepId="2" actorId="218664" isPortal="True" timeout="8000" destinationWorldId="75049" />				
 
 		</If>
 		

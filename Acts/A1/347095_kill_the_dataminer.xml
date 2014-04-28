@@ -5,6 +5,7 @@
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
+	<ToggleTargeting questId="1" stepId="2" killRadius="25" />
 
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
 	<UseWaypoint waypointNumber="7" questId="1"/>
@@ -27,7 +28,7 @@
 				<LogMessage message="found marker in West (2233, 1793) - moving there" />
 				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="72636" interactRange="20"  />
 				<WaitTimer questId="1" stepId="2" waitTime="2000" />
-			</If>		
+			</If>
 			
 			<SafeMoveTo questId="1" stepId="2" x="2062" y="1950" z="-5" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location East"/>
 			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(-1965109038, 2062, 1950, -5, 30)">
@@ -46,10 +47,15 @@
 
 		<!--  Defiled Crypt -->
 		<If condition="CurrentWorldId == 72636">			
-			<WaitTimer questId="1" stepId="2" waitTime="2000" />
-			<!-- make sure bounty is complete! -->
-			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" pathPrecision="20" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>	
-			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="30" until="ObjectFound" actorId="225502" objectDistance="50" ignoreMarkers="False">
+				<IgnoreScenes>
+					<IgnoreScene sceneName="Exit" />
+				</IgnoreScenes>
+			</TrinityExploreDungeon>
+			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="5" />
+			<MoveToActor questId="1" stepId="2" actorId="225502" interactRange="20"  />	<!-- make sure bounty is complete! -->
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" pathPrecision="20" boxSize="45" boxTolerance="0.10" stayAfterBounty="False"/>					
 		</If>
 	
 	</If>

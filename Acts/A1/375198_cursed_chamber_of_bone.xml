@@ -13,12 +13,11 @@
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />
 	<If condition="HasQuest(375198)">
 		<If condition="CurrentLevelAreaId == 19780">
-			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="364601" boxTolerance="0.10" objectDistance="40" boxSize="15" />
-			<MoveToActor questId="1" stepId="2" actorId="364601" interactRange="10"/>
-			<WaitTimer questId="1" stepId="2" waitTime="50000" /> <!-- wait 50 seconds while shrine is cleaned -->
-			<!-- make sure bounty is complete! -->
+			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="364601" boxTolerance="0.10" objectDistance="70" boxSize="15" />
+			<While condition="HasQuest(375198)">
+				<MoveToActor questId="1" stepId="2" actorId="364601" interactRange="10"/>
+			</While>
 			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" pathPrecision="20" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>	
-			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</If>	
 	</If>
 	<LoadProfile file="act1.xml" />	

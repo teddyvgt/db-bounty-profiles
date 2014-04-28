@@ -581,9 +581,17 @@
       <MoveToActor questId="357001" stepId="1" x="572" y="499" z="3" actorId="114622" interactRange="8" name="Tyrael_Heaven-28202"  pathPrecision="5" pathPointLimit="250" statusText="" />
 
     </ActBountiesComplete>
+	
+	<!-- should we move onto to the next act? -->
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('All_Redirect')">
+		<TrinityLoadProfile file="../All_Distributor.xml" />			
+	</If>		
 
-    <!--<WaitTimer questId="1" waitTime="60000"/>-->
     <WaitTimer questId="1" waitTime="5000"/>
-    <LeaveGame reason="All Act 5 Bounties Complete!" />
+	
+	<!-- nope repeating the same act. gooo! -->
+	<LeaveGame quest="1" step="1" reason="done." stayInParty="False" />		
+	<ReloadProfile />
+	
   </Order>
 </Profile>

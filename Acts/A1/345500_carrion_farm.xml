@@ -5,6 +5,7 @@
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
+	<ToggleTargeting questId="1" stepId="2" killRadius="15" />
 
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
 	<UseWaypoint waypointNumber="8" questId="1"/>	
@@ -13,11 +14,12 @@
 
 		<!-- Location #1 -->
 	
-		<SafeMoveTo questId="312429" stepId="2" x="1793" y="560" z="5" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
+		<SafeMoveTo questId="1" stepId="2" x="1793" y="560" z="5" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
 		<If condition="ActorExistsAt(81980, 1793, 560, 5, 300)">
+			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="75" />
 		
 			<!-- talk to the farmer -->					
-			<MoveToActor questId="312429" stepId="2" x="1768" y="556" z="0" actorId="81980" interactRange="7" name="NPC_Human_Male_Event_FarmAmbush-16778"  pathPrecision="5" pathPointLimit="250" statusText="" /> 	
+			<MoveToActor questId="1" actorId="81980" interactRange="7" name="NPC_Human_Male_Event_FarmAmbush-16778"  pathPrecision="5" pathPointLimit="250" statusText="" /> 	
 			<WaitTimer questId="1" stepId="2" waitTime="6000" />
 			
 			<!-- Kill all the Plague Nests  -->
@@ -51,9 +53,10 @@
 
 			<SafeMoveTo questId="312429" stepId="2" x="2260" y="802" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 	
 			<If condition="ActorExistsAt(81980, 2260, 802, 5, 300)">
+			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="75" />
 
 				<!-- talk to the farmer -->								
-				<MoveToActor questId="312429" stepId="2" x="2248" y="796" z="0" actorId="81980" interactRange="7" name="NPC_Human_Male_Event_FarmAmbush-4506"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			
+				<MoveToActor questId="312429" stepId="2" actorId="81980" interactRange="7" name="NPC_Human_Male_Event_FarmAmbush-4506"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			
 				<WaitTimer questId="1" stepId="2" waitTime="6000" />			
 				
 				<!-- Kill all the Plague Nests  -->

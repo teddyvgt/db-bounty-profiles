@@ -1,255 +1,290 @@
+<!-- test bounties  -->
+<!-- mod by kyriakos -->
 <Profile>
-<Name>Act 1 - Loader</Name>
+<Name>Act 1</Name>
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+  <TargetBlacklists>
+    <TargetBlacklist actorId="168875" />
+    <TargetBlacklist actorId="105361" />
+    <TargetBlacklist actorId="79421" />
+    <TargetBlacklist actorId="177439" />
+    <TargetBlacklist actorId="167185" />
+    <TargetBlacklist actorId="144149" />
+    <TargetBlacklist actorId="92387" />
+    <TargetBlacklist actorId="104545" />
+    <TargetBlacklist actorId="108266" />
+    <TargetBlacklist actorId="109209" />
+    <TargetBlacklist actorId="5723" />
+    <TargetBlacklist actorId="156058" />
+    <TargetBlacklist actorId="90419" />
+    <TargetBlacklist actorId="105321" />
+    <TargetBlacklist actorId="102711" />
+    <TargetBlacklist actorId="105323" />
+    <TargetBlacklist actorId="58568" />
+    <TargetBlacklist actorId="3949" />
+    <TargetBlacklist actorId="5717" />
+    <TargetBlacklist actorId="58568" />
+    <TargetBlacklist actorId="5740" />
+    <TargetBlacklist actorId="158944" />
+    <TargetBlacklist actorId="167311" />
+    <TargetBlacklist actorId="89579" />
+    <TargetBlacklist actorId="89578" />
+    <TargetBlacklist actorId="170913" />
+    <TargetBlacklist actorId="5895" />
+    <TargetBlacklist actorId="5896" />
+    <TargetBlacklist actorId="5898" />
+    <TargetBlacklist actorId="5900" />
+    <TargetBlacklist actorId="116752" />
+    <TargetBlacklist actorId="108882" />
+    <TargetBlacklist actorId="206461" />
+  </TargetBlacklists>
 <Order>
 
-	<!-- Act 1 Bounties -->
-	<LogMessage quest="1" step="1" output="Act 1 Bounties" /> 	
-
+	<ToggleTargeting questId="1" stepId="1" killRadius="80" lootRadius="100" />	
+	
 	<!-- 1	The Old Ruins =============================================================-->
 	
 		<!-- The Cursed Cellar -->
+		<!-- Status: Zerg -->
 		<If condition="HasQuest(369944)">
 			<LoadProfile file="369944_the_cursed_cellar.xml" />
-		</If>	
+		</If>
 	
 	<!-- 2	Cathedral Level 1 =========================================================-->
 	
 		<!-- The Cursed Chamber of Bones -->
-		<!-- Status: OK -->			
+		<!-- Status: Zerg -->			
 		<If condition="HasQuest(375198)">
 			<LoadProfile file="375198_cursed_chamber_of_bone.xml" />
 		</If>	
 		
 		<!-- Kill Glidewing-->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: Zerg -->			
 		<If condition="HasQuest(361331)">
 			<LoadProfile file="kill_cathedral_level_1.xml" />
 		</If>		
 		
 		<!-- Kill Braluk Grimlow -->
+		<!-- Status: Zerg -->	
 		<If condition="HasQuest(361327)">
 			<LoadProfile file="kill_cathedral_level_1.xml" />
 		</If>		
 		
 		<!-- Kill Ragus Grimlow -->
+		<!-- Status: Zerg -->	
 		<If condition="HasQuest(361320)">
 			<LoadProfile file="kill_cathedral_level_1.xml" />
-		</If>		
+		</If>			
 	
 	<!-- 3	Cathedral Level 2 =========================================================-->
 	
 		<!-- Kill Merrium Skullthorn-->
-		<!-- Status: OK -->			
+		<!-- Status: Zerg -->	
 		<If condition="HasQuest(361334)">
 			<LoadProfile file="kill_cathedral_level_2.xml" />
 		</If>	
 	
 		<!-- Kill Firestarter -->
-		<!-- Status: OK -->		
+		<!-- Status: Zerg -->	
 		<If condition="HasQuest(361339)">
 			<LoadProfile file="kill_cathedral_level_2.xml" />
 		</If>		
 		
 		<!-- Kill Cudgelarm -->
-		<!-- Status: OK -->			
+		<!-- Status: Needs Tweaking -->	
 		<If condition="HasQuest(361336)">
 			<LoadProfile file="kill_cathedral_level_2.xml" />
-		</If>			
+		</If>
 		
 		<!-- The Cursed Court -->
-		<!-- Status: GOOD -->			
+		<!-- Status: Zerg -->
 		<If condition="HasQuest(375191)">
 			<LoadProfile file="375191_cursed_court.xml" />
-		</If>		
+		</If>
 	
 	<!-- 4	Cathedral Level 4 =========================================================-->
 	
 		<!-- Kill Killian Damort -->
-		<!-- Status: OK -->			
+		<!-- Status: Zerg -->	
 		<If condition="HasQuest(361343)">
 			<LoadProfile file="kill_cathedral_level_4.xml" />
 		</If>	
 		
 		<!-- Kill Captain Cage -->
-		<!-- Status: OK -->	
+		<!-- Status: Zerg -->	
 		<If condition="HasQuest(361341)">
 			<LoadProfile file="kill_cathedral_level_4.xml" />
 		</If>	
 
 		<!-- Kill Bellybloat the Scarred -->
-		<!-- Status: OK -->		
+		<!-- Status: Zerg -->	
 		<If condition="HasQuest(361345)">
 			<LoadProfile file="kill_cathedral_level_4.xml" />
 		</If>	
+		
 
 	
 	<!-- 5	The Royal Crypts ==========================================================-->
 	
 		<!-- Kill Skeleton King-->
-		<!-- Status: EXCELLENT -->		
+		<!-- Status: Zerg -->		
 		<If condition="HasQuest(361234)">
 			<LoadProfile file="361234_kill_skeleton_king.xml" />
 		</If>	
 		
 		<!-- Kill Rad'noj-->
-		<!-- Status: Needs Testing -->		
+		<!-- Status: Needs Tweaking -->		
 		<If condition="HasQuest(361352)">
 			<LoadProfile file="kill_the_royal_crypts.xml" />
 		</If>	
 		
 		<!-- Kill Captain Clegg -->
-		<!-- Status: OK -->			
+		<!-- Status: Needs Tweaking -->	
 		<If condition="HasQuest(361354)">
 			<LoadProfile file="kill_the_royal_crypts.xml" />
-		</If>			
+		</If>		
 	
 	<!-- 6	The Weeping Hollow ========================================================-->
 	
 		<!-- Clear the Den of the Fallen -->
-		<!-- Status: GOOD -->			
+		<!-- Status: Needs Tweaking -->	
 		<If condition="HasQuest(345488)">
 			<LoadProfile file="345488_clear_den_of_the_fallen.xml" />
-		</If>	
+		</If>
 		
 		<!-- Kill Mange -->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: Needs Tweaking -->	
 		<If condition="HasQuest(345490)">
 			<LoadProfile file="345490_kill_mange.xml" />
 		</If>			
 		
-		<!-- Kill Horrus -->
-		<!-- Status: Needs Testing -->			
+		<!-- Kill Horrus/Kankerrot (same questid) -->
+		<!-- Status: Zerg -->	
 		<If condition="HasQuest(369399)">
-			<LoadProfile file="369399_kill_horrus.xml" />
-		</If>	
-
-		<!-- Kill Horrus (Kankerrot) -->
-		<!-- Status: OK too slow at finding target :( -->			
-		<If condition="HasQuest(369404)">
 			<LoadProfile file="369399_kill_horrus.xml" />
 		</If>
 
 		<!-- Kill Mira Eamon -->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: Zerg -->	
 		<If condition="HasQuest(347099)">
 			<LoadProfile file="347099_kill_mira_eamon.xml" />
 		</If>	
 
+		
 	
 	<!-- 7	Cemetery of the Forsaken ==================================================-->
 
 		<!-- The Matriarchs Bones -->
-		<!-- Status: OK -->			
+		<!-- Status: Zerg -->
+		<!-- Test1 - Success -->
 		<If condition="HasQuest(349020)">
 			<LoadProfile file="349020_matriarchs_bones.xml" />
 		</If>		
 		
 		<!-- Jar of Souls -->
-		<!-- Status: OK -->			
+		<!-- Status: Needs Tweaking -->	
 		<If condition="HasQuest(349016)">
 			<LoadProfile file="349016_jar_of_souls.xml" />
 		</If>			
 	
 		<!-- Kill Digger'O'Dell -->
-		<!-- Status: OK -->				
+		<!-- Status: Zerg -->	
 		<If condition="HasQuest(347097)">
 			<LoadProfile file="347097_kill_diggerodell.xml" />
 		</If>		
 		
 		<!-- The Dataminer -->
-		<!-- Status: Needs Testing, timed out in cemetary -->			
+		<!-- Status: Zerg -->		
 		<If condition="HasQuest(347095)">
 			<LoadProfile file="347095_kill_the_dataminer.xml" />
 		</If>	
+		
+<!--	<LogMessage quest="1" step="2" output="These aren't the quests you're looking for."/>-->
+<!--	<WaitTimer questId="1" stepId="2" waitTime="3200" />-->
+<!--	<LeaveGame quest="1" step="1" reason="done." stayInParty="False" />		-->
+<!--	<ReloadProfile />	-->
 				
 		
 	<!-- 8	Fields of Misery ==========================================================-->
 			
 		<!-- The Precious Ores -->
-		<!-- Status: OK - has issues with the final ore the NPC does something to it before Trinity registers tag complete -->		
+		<!-- Status: Needs Tweaking -->	
 		<If condition="HasQuest(347060)">
 			<LoadProfile file="347060_the_precious_ores.xml" />
 		</If>		
 		
 		<!-- The family of Rathe -->
-		<!-- Status: OK, seemed to have a 10s wait after everything was done -->			
+		<!-- Status: Needs Tweaking -->	
 		<If condition="HasQuest(347058)">
 			<LoadProfile file="347058_the_family_of_rathe.xml" />
 		</If>		
 
 		<!-- Farm Besieged -->
-		<!-- Status: OK -->			
+		<!-- Status: Needs Tweaking -->	
 		<If condition="HasQuest(347062)">
 			<LoadProfile file="347062_farm_besieged.xml" />
 		</If>	
 		
 		<!-- Carrion Farm-->
-		<!-- Status: OK  -->		
+		<!-- Status: Needs Tweaking -->	
 		<If condition="HasQuest(345500)">
 			<LoadProfile file="345500_carrion_farm.xml" />
 		</If>		
 		
 		<!-- Clear the Scavenger's Den -->
-		<!-- Status: OK -->			
+		<!-- Status: Zerg -->			
 		<If condition="HasQuest(345496)">
 			<LoadProfile file="345496_clear_the_scavengers_den.xml" />
 		</If>		
 		
 		<!-- Kill Melmak -->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: Needs Tweaking -->	
 		<If condition="HasQuest(345498)">
 			<LoadProfile file="345498_kill_melmak.xml" />
 		</If>			
 		
 		<!-- Kill Krelm the Flagitious -->
-		<!-- Status: Needs Testing -->		
+		<!-- Status: Needs Tweaking -->	
 		<If condition="HasQuest(369246)">
 			<LoadProfile file="kill_fields_of_misery.xml" />
 		</If>		
 		
 		<!-- The Cursed Grove-->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: Zerg -->			
 		<If condition="HasQuest(365381)">
 			<LoadProfile file="365381_the_cursed_grove.xml" />
 		</If>		
 		
 		<!-- Clear Khazra Den -->
-		<!-- Status: OK -->			
+		<!-- Status: Needs Tweaking -->	
 		<If condition="HasQuest(347065)">
 			<LoadProfile file="347065_clear_khazra_den.xml" />
 		</If>		
 		
 		<!-- Kill Dreadclaw -->
-		<!-- Status: OK -->				
+		<!-- Status: Needs Tweaking -->	
 		<If condition="HasQuest(347073)">
 			<LoadProfile file="347073_kill_dreadclaw.xml" />
 		</If>			
 
 		<!-- Kill Charger -->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: Needs Tweaking -->	
 		<If condition="HasQuest(347070)">
 			<LoadProfile file="347070_kill_charger.xml" />
 		</If>				
-		
-		<!-- The Cursed Grove -->
-		<!-- Status: Needs Testing -->			
-		<If condition="HasQuest(365381)">
-			<LoadProfile file="365381_the_cursed_grove.xml" />
-		</If>				
-		
+				
 		<!-- Kill Growler -->
-		<!-- Status: Needs Testing -->	
+		<!-- Status: Needs Tweaking -->	
 		<If condition="HasQuest(369243)">
-			<LoadProfile file="347073_kill_growler.xml" />
+			<LoadProfile file="369243_kill_growler.xml" />
 		</If>		
 
 	<!-- 9 Drowned Temple ===========================================================-->		
 		
 		<!-- The Cursed Mill -->
-		<!-- Status: Needs Testing -->	
+		<!-- Status: Zerg -->	
 		<If condition="HasQuest(365401)">
 			<LoadProfile file="365401_the_cursed_mill.xml" />
 		</If>			
@@ -319,7 +354,7 @@
 	<!-- 12	Caverns of Araneae ========================================================-->
 	
 		<!-- Kill Queen Araneae -->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: Zerg -->			
 		<If condition="HasQuest(345528)">
 			<LoadProfile file="345528_kill_queen_araneae.xml" />
 		</If>	
@@ -331,7 +366,7 @@
 		</If>		
 		
 		<!-- Cursed Hatchery / Spider Trap -->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: Zerg -->			
 		<If condition="HasQuest(375201)">
 			<LoadProfile file="375201_cursed_hatchery.xml" />
 		</If>			
@@ -349,7 +384,7 @@
 		</If>
 		
 		<!--Kill Zhelobb -->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: Zerg -->			
 		<If condition="HasQuest(345522)">
 			<LoadProfile file="kill_caverns_of_araneae.xml" />
 		</If>
@@ -378,7 +413,7 @@
 		<!-- Vendor Armorer / Scavenged Scabbard -->
 		<!-- Status: Needs Testing -->		
 		<If condition="HasQuest(344488)">
-			<LoadProfile file="344488_vendor_armorer.xml" />
+			<LoadProfile file="344488_scavenged_scabbard.xml" />
 		</If>	
 
 		<!-- Kill Cadhul the Deathcaller -->
@@ -469,7 +504,7 @@
 		</If>		
 		
 		<!-- Kill Battlerage the Plagued -->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: Zerg -->			
 		<If condition="HasQuest(347011)">
 			<LoadProfile file="kill_halls_of_agony_level_1.xml" />
 		</If>		
@@ -536,7 +571,7 @@
 		
 	<!--===============================================================================-->
 		
-	<ToggleTargeting questId="1" stepId="1" killRadius="80" />			
+		
 		
 	<LogMessage quest="1" step="1" output="Checking if we have all bounties complete" /> 
 	<ActBountiesComplete act="A1">
@@ -569,7 +604,6 @@
 	
 	<!-- nope repeating the same act. gooo! -->
 	<LeaveGame quest="1" step="1" reason="done." stayInParty="False" />		
-	<ReloadProfile />	
-	
+	<ReloadProfile />
 </Order>
 </Profile>

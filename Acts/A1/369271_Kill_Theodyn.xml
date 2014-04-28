@@ -47,6 +47,12 @@
 			<SafeMoveTo questId="312429" stepId="2" x="1156" y="3960" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 		</If>		
 		
+		<If condition="HasQuest(369271)"><SafeMoveTo questId="312429" stepId="2" x="999" y="4034" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> </If>	
+		<If condition="HasQuest(369271)"><SafeMoveTo questId="312429" stepId="2" x="920" y="3973" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> </If>	
+		<If condition="HasQuest(369271)"><SafeMoveTo questId="312429" stepId="2" x="907" y="3907" z="90" pathPrecision="5" pathPointLimit="250" statusText="" /> </If>	
+		<If condition="HasQuest(369271)"><SafeMoveTo questId="312429" stepId="2" x="900" y="3826" z="90" pathPrecision="5" pathPointLimit="250" statusText="" /> </If>	
+		<If condition="HasQuest(369271)"><SafeMoveTo questId="312429" stepId="2" x="946" y="3692" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> </If>			
+		
 		<!-- Search Everywhere -->
 		<If condition="HasQuest(369271)">				
 			<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False">			

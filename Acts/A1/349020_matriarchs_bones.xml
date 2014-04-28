@@ -1,5 +1,4 @@
 <!-- X1_Bounty_A1_Cemetery_Event_MatriarchsBones (349020)  -->
-<!-- mod by kyriakos -->
 <Profile>
 <Name>The Matriarchs Bones (349020)</Name>
 <KillMonsters>True</KillMonsters>
@@ -9,12 +8,13 @@
 	<TargetBlacklist actorId="3892" /> <!-- Lady Dunhyld -->
 </TargetBlacklists>
 <Order>
-	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
-	<UseWaypoint waypointNumber="7" questId="1"/>
-	<WaitTimer questId="1" stepId="2" waitTime="5000" />
+
+  <If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
+  <UseWaypoint waypointNumber="7" questId="1"/>
+  <WaitTimer questId="1" stepId="2" waitTime="2000" />
 	
 	<If condition="HasQuest(349020)">
-		<LogMessage message="looking for marker" />
+	
 		<If condition="CurrentWorldId == 71150">
 		
 			<SafeMoveTo questId="1" stepId="2" x="2032" y="1776" z="1" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location North"/>
@@ -44,85 +44,106 @@
 				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="72636" interactRange="20"  />
 				<WaitTimer questId="1" stepId="2" waitTime="2000" />
 			</If>
-		</If>
-	
-	<!--  Defiled Crypt -->
-	<If condition="CurrentLevelAreaId == 83264">
-		<WaitTimer questId="1" stepId="2" waitTime="2000" />
-
-		<!-- Find and talk to Lady Dunhyld -->
-			<TrinityUseOnce id="999">
-				<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ObjectFound" actorId="103772" objectDistance="150" ignoreMarkers="True">
-					<PriorityScenes>
-						<PriorityScene sceneName="_1000dead_"/> <!-- Event Area -->
-					</PriorityScenes>
-					<IgnoreScenes>
-						<IgnoreScene sceneName="_N_0" />
-						<IgnoreScene sceneName="_S_0" />
-						<IgnoreScene sceneName="_E_0" />
-						<IgnoreScene sceneName="_W_0" />
-					</IgnoreScenes>	
-				</TrinityExploreDungeon>
-				<TrinityMoveToSNO questId="1" snoid="103772" pathPrecision="8" />			
-				<TrinityLog questId="1" output="Found Lady Dunhyld, interacting with her." />
-				<TrinityMoveToSNO questId="1" snoid="3892" pathPrecision="8" />
-				<TrinityInteract questID="1" snoid="3892" />
-				<WaitTimer questId="1" stepId="2" waitTime="3000" />
-			</TrinityUseOnce>
-		
-		<!-- bowl 1 -->
-		<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ObjectFound" actorId="102079" objectDistance="30" ignoreMarkers="False"/>
-		<MoveToActor questId="1" stepId="2"  actorId="102079" interactRange="8" />
-		<TrinityMoveToSNO questId="1" snoid="102079 " pathPrecision="8" />
-		<TrinityIfSNOInRange snoid="102079 " range="8">
-			<TrinityUseOnce id="998">
-				<TrinityLog questId="1" output="Interact with bowl 1." />
-				<TrinityInteract questID="1" snoid="102079 " />
-			</TrinityUseOnce>
-		</TrinityIfSNOInRange>
-		
-		<!-- bowl 2 -->
-		<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ObjectFound" actorId="174753" objectDistance="30" ignoreMarkers="False"/>
-		<MoveToActor questId="1" stepId="2"  actorId="174753" interactRange="8" />
-		<TrinityMoveToSNO questId="1" snoid="174753 " pathPrecision="8" />
-		<TrinityIfSNOInRange snoid="174753 " range="8">
-			<TrinityUseOnce id="997">
-				<TrinityLog questId="1" output="Interact with bowl 2." />
-				<TrinityInteract questID="1" snoid="174753 " />
-			</TrinityUseOnce>
-		</TrinityIfSNOInRange>
-		
-		<!-- bowl 3 -->
-		<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ObjectFound" actorId="174754" objectDistance="30" ignoreMarkers="False"/>
-		<MoveToActor questId="1" stepId="2"  actorId="174754" interactRange="8" />
-		<TrinityMoveToSNO questId="1" snoid="174754 " pathPrecision="8" />
-		<TrinityIfSNOInRange snoid="174754 " range="8">
-			<TrinityUseOnce id="996">
-				<TrinityLog questId="1" output="Interact with bowl 3." />
-				<TrinityInteract questID="1" snoid="174754 " />
-			</TrinityUseOnce>
-		</TrinityIfSNOInRange>
-		
-		<!-- Coffin -->
-		<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ObjectFound" actorId="105754" objectDistance="30" ignoreMarkers="False"/>
-		<MoveToActor questId="1" stepId="2"  actorId="105754" interactRange="8" />
-		<TrinityMoveToSNO questId="1" snoid="105754 " pathPrecision="8" />
-		<TrinityIfSNOInRange snoid="105754 " range="8">
-			<TrinityUseOnce id="995">
-				<TrinityLog questId="1" output="Interact with coffin." />
-				<TrinityInteract questID="1" snoid="105754 " />
-			</TrinityUseOnce>
-		</TrinityIfSNOInRange>		
-	</If>
-				
-	</If>	
 			
-	<!-- Wait for Loot -->
-	<WaitTimer questId="1" stepId="2" waitTime="4000" />
-	<!-- make sure bounty is complete! -->
-	<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" pathPrecision="20" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>	
-	<WaitTimer questId="1" stepId="2" waitTime="1000" />
+		</If>
+
+		<!--  Defiled Crypt -->
+		<If condition="CurrentLevelAreaId == 83264">
+
+			<!-- Find Lady Dunhyld -->
+			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="3892" pathPrecision="2" boxSize="5" boxTolerance="0.10" objectDistance="70" statusText="Looking for the Lady" >
+				<PriorityScenes>
+					<PriorityScene sceneName="_1000dead_"/> <!-- Event Area -->
+				</PriorityScenes>
+			</TrinityExploreDungeon>	
+			
+			<!-- Talk to Lady Dunhyld -->	
+			<MoveToActor questId="1" stepId="1" actorId="3892" interactRange="8" name="CryingGhost_Female_01_A-1573"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<WaitTimer questId="1" stepId="1" waitTime="2000" />				
+
+			<!-- we need to reveal the area near the coffin so that we can find it again later -->
+			<TrinityOffsetMove questId="1" stepId="1" offsetX="93" offsetY="0" />			
+
+			<!-- Bowl 1 -->
+			
+				<If condition="not ActorExistsAt(174754, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+					<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="174754" pathPrecision="2" boxSize="10" boxTolerance="0.70" objectDistance="40" >
+						<PriorityScenes>
+							<PriorityScene sceneName="_1000dead_"/>
+						</PriorityScenes>
+					</TrinityExploreDungeon>
+				</If>						
+			
+				<MoveToActor questId="1" stepId="1" actorId="174754" interactRange="15" name="a1dun_Crypts_Bowl_of_Bones_03-1762"  pathPrecision="2" pathPointLimit="250" statusText="" /> 
+				<WaitTimer questId="1" stepId="1" waitTime="2000" />
+
+			<!-- Bowl 2 -->
+			
+				<If condition="not ActorExistsAt(174753, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+					<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="174753" pathPrecision="2" boxSize="10" boxTolerance="0.70" objectDistance="40" >
+						<PriorityScenes>
+							<PriorityScene sceneName="_1000dead_"/>
+						</PriorityScenes>
+					</TrinityExploreDungeon>
+				</If>
+		
+				<MoveToActor questId="1" stepId="1" actorId="174753" interactRange="15" name="a1dun_Crypts_Bowl_of_Bones_02-1566"  pathPrecision="2" pathPointLimit="250" statusText="" /> 			 
+				<WaitTimer questId="1" stepId="1" waitTime="2000" />		
+			
+			<!-- Bowl 3 -->	
+			
+				<If condition="not ActorExistsAt(102079, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">			
+					<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="102079" pathPrecision="2" boxSize="10" boxTolerance="0.70" objectDistance="40" >
+						<PriorityScenes>
+							<PriorityScene sceneName="_1000dead_"/>
+						</PriorityScenes>
+					</TrinityExploreDungeon>	
+				</If>
+				
+				<MoveToActor questId="1" stepId="1" actorId="102079" interactRange="15" name="a1dun_Crypts_Bowl_of_Bones_01-1651"  pathPrecision="2" pathPointLimit="250" statusText="" /> 
+				<WaitTimer questId="1" stepId="1" waitTime="2000" />								
+		
+			<!-- move from the top-left of _1000_dead scene to the bottom-left near the casket -->
+			<TrinityOffsetMove questId="1" stepId="1" offsetX="0" offsetY="35" />		
+			<TrinityOffsetMove questId="1" stepId="1" offsetX="93" offsetY="0" />		
+		
+			<!-- Interact with the Casket -->			
+			<MoveToActor questId="1" stepId="1" actorId="105754" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToActor questId="1" stepId="1" actorId="203608" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" />			
+			
+			
+			<If condition="HasQuest(349020)">
+				
+				<!-- Nope? Look harder for the casket -->
+				<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="105754" pathPrecision="15" boxSize="10" boxTolerance="0.10" objectDistance="20">				
+					<PriorityScenes>
+						<PriorityScene sceneName="_1000dead_"/>
+					</PriorityScenes>		
+				</TrinityExploreDungeon>	
+			
+				<!-- Interact with the Casket -->			
+				<MoveToActor questId="1" stepId="1" actorId="105754" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<MoveToActor questId="1" stepId="1" actorId="203608" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" />
+			</If>
+
+			<!-- Backup Plan -->
+			<If condition="HasQuest(349020)">
+				<LogMessage quest="1" step="1" output="Maybe something went wrong..." />	
+				<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
+				<MoveToActor questId="1" stepId="1" actorId="3892" interactRange="8" name="CryingGhost_Female_01_A-1573"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<MoveToActor questId="1" stepId="1" actorId="174754" interactRange="7" name="a1dun_Crypts_Bowl_of_Bones_03-1762"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<MoveToActor questId="1" stepId="1" actorId="174753" interactRange="7" name="a1dun_Crypts_Bowl_of_Bones_02-1566"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			 
+				<MoveToActor questId="1" stepId="1" actorId="102079" interactRange="7" name="a1dun_Crypts_Bowl_of_Bones_01-1651"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<MoveToActor questId="1" stepId="1" actorId="105754" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<MoveToActor questId="1" stepId="1" actorId="203608" interactRange="15" name="a1dun_Crypts_Dual_Sarcophagus-2955"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			</If>	
+
+		</If>
+		
+		<!-- Wait for Loot -->
+		<WaitTimer questId="1" stepId="1" waitTime="4000" />								
 	
+	</If>
 	<LoadProfile file="act1.xml" />
 	
 </Order>
