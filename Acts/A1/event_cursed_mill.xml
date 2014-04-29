@@ -1,0 +1,84 @@
+<!-- X1_Bounty_A1_Fields_Event_CultistLegion (365401) -->
+<Profile>
+<Name>The Cursed Mill (365401)</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<TargetBlacklists>
+	<TargetBlacklist actorId="81982" /> <!-- Event_Farm_Ambush - gets us stuck sometimes... -->
+	<TargetBlacklist actorId="4157" /> <!-- Flesh Pit Flyer - seems to hinder our progress... -->
+	<TargetBlacklist actorId="365097" /> <!-- Cursed Chest -->
+	<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->
+</TargetBlacklists>
+<Order>
+	<ToggleTargeting questId="1" stepId="2" killRadius="31" />	
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
+	<UseWaypoint waypointNumber="9" questId="1"/>
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
+	<If condition="HasQuest(365401)">
+		<If condition="HasQuest(365401)">
+			<SafeMoveTo questId="1" stepId="2" x="1489" y="765" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to location 1 of 6" />
+			<If condition="CurrentWorldId == 71150 and ActorExistsAt(364601, 1498, 757, -0, 50)">
+				<MoveToActor questId="1" stepId="2" actorId="364601" interactRange="20" />
+				<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />			
+			</If>
+		</If>			
+		<If condition="HasQuest(365401)">
+			<SafeMoveTo questId="1" stepId="2" x="1492" y="770" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to location 2 of 6" /> 
+			<If condition="CurrentWorldId == 71150 and ActorExistsAt(364601, 1492, 770, -0, 50)">		
+				<MoveToActor questId="1" stepId="2" actorId="364601" interactRange="20"  />
+				<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />			
+			</If>
+		</If>			
+		<If condition="HasQuest(365401)">
+			<SafeMoveTo questId="1" stepId="2" x="1829" y="1011" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to location 3 of 6" /> 
+			<If condition="CurrentWorldId == 71150 and ActorExistsAt(364601, 1829, 1011, -0, 50)">		
+				<MoveToActor questId="1" stepId="2" actorId="364601" interactRange="20"  />
+				<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />			
+			</If>
+		</If>			
+		<If condition="HasQuest(365401)">
+			<SafeMoveTo questId="1" stepId="2" x="1916" y="729" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to location 4 of 6" /> 
+			<If condition="CurrentWorldId == 71150 and ActorExistsAt(364601, 1916, 729, -0, 50)">		
+				<MoveToActor questId="1" stepId="2" actorId="364601" interactRange="20"  />
+				<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />			
+			</If>
+		</If>			
+		<If condition="HasQuest(365401)">
+			<SafeMoveTo questId="1" stepId="2" x="1940" y="378" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to location 5 of 6" /> 
+			<If condition="CurrentWorldId == 71150 and ActorExistsAt(364601, 1940, 378, -0, 30)">		
+				<MoveToActor questId="1" stepId="2" actorId="364601" interactRange="20"  />
+				<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />			
+			</If>
+		</If>			
+		<If condition="HasQuest(365401)">
+			<SafeMoveTo questId="1" stepId="2" x="2191" y="621" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to location 6 of 6" /> 
+			<If condition="CurrentWorldId == 71150 and ActorExistsAt(364601, 2191, 621, -0, 30)">
+				<MoveToActor questId="1" stepId="2" actorId="364601" interactRange="20"  />
+				<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />			
+			</If>
+		</If>
+<!-- Just in case we didn't find the object -->
+<!--		<If condition="HasQuest(365401)">-->
+<!--			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="15" until="ObjectFound" actorId="364601" ignoreMarkers="False" objectDistance="50" timeout="120">-->
+<!--				<PrioritizeScenes>-->
+<!--					<PriorityScene sceneName="_Edge_SW_02" />-->
+<!--				</PrioritizeScenes>-->
+<!--				<IgnoreScenes>-->
+<!--					<IgnoreScene sceneName="Fields_EntranceA"/>-->
+<!--					<IgnoreScene sceneName="Exit"/>-->
+<!--				</IgnoreScenes>-->
+<!--			</TrinityExploreDungeon>-->
+<!--			<MoveToActor questId="1" stepId="2" actorId="364601" interactRange="8"/>-->
+<!--			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />-->
+<!--		</If>		-->
+<!-- Just in case we have roamed too far, start over and clean up the mobs at shrine -->
+		<If condition="HasQuest(365401)">					
+			<ReloadProfile />
+		</If>
+	</If>
+	<!-- give legendaries a moment to fall from the heavens... -->
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />
+	<LoadProfile file="act1.xml" />	
+</Order>
+</Profile>

@@ -1,0 +1,160 @@
+<Profile>
+<Name>Fixed Path Kill on Southern Highlands</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
+	<UseWaypoint waypointNumber="13" questId="1"/>	
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />	
+				
+	<!-- Kill Logrut the warrior -->
+	<If condition="HasQuest(344497)">
+		<SafeMoveTo questId="344497" x="2383" y="4904" />
+		<SafeMoveTo questId="344497" x="2439" y="4569" />
+		<SafeMoveTo questId="344497" x="1900" y="4507" />
+		<SafeMoveTo questId="344497" x="1911" y="4367" />
+		<SafeMoveTo questId="344497" x="2364" y="4481" />
+		<SafeMoveTo questId="344497" x="2240" y="4185" />
+		<SafeMoveTo questId="344497" x="2525" y="4402" />
+		<SafeMoveTo questId="344497" x="2487" y="3938" />
+		<SafeMoveTo questId="344497" x="2331" y="4194" />
+		<SafeMoveTo questId="344497" x="2298" y="3975" />
+		<SafeMoveTo questId="344497" x="2001" y="3963" />
+		<SafeMoveTo questId="344497" x="1973" y="4303" />
+		<SafeMoveTo questId="344497" x="2212" y="4128" />
+		<SafeMoveTo questId="344497" x="2102" y="4060" />
+		<SafeMoveTo questId="344497" x="1918" y="4068" />
+		<SafeMoveTo questId="344497" x="1873" y="3867" z="10" />
+		<SafeMoveTo questId="344497" x="1837" y="3947" z="20" />
+		<SafeMoveTo questId="344497" x="1828" y="4135" z="20" />
+		<SafeMoveTo questId="344497" x="1814" y="4085" z="20" />
+	</If>
+	
+	<!-- Kill Cadhul the Deathcaller -->
+	<If condition="HasQuest(344490)">
+		<SafeMoveTo questId="344490" x="2383" y="4904" />
+		<SafeMoveTo questId="344490" x="2439" y="4569" />
+		<SafeMoveTo questId="344490" x="1900" y="4507" />
+		<SafeMoveTo questId="344490" x="1911" y="4367" />
+		<SafeMoveTo questId="344490" x="2364" y="4481" />
+		<SafeMoveTo questId="344490" x="2240" y="4185" />
+		<SafeMoveTo questId="344490" x="2525" y="4402" />
+		<SafeMoveTo questId="344490" x="2487" y="3938" />
+		<SafeMoveTo questId="344490" x="2331" y="4194" />
+		<SafeMoveTo questId="344490" x="2298" y="3975" />
+		<SafeMoveTo questId="344490" x="2001" y="3963" />
+		<SafeMoveTo questId="344490" x="1973" y="4303" />
+		<SafeMoveTo questId="344490" x="2212" y="4128" />
+		<SafeMoveTo questId="344490" x="2102" y="4060" />
+		<SafeMoveTo questId="344490" x="1918" y="4068" />
+		<SafeMoveTo questId="344490" x="1873" y="3867" z="10" />
+		<SafeMoveTo questId="344490" x="1837" y="3947" z="20" />
+		<SafeMoveTo questId="344490" x="1828" y="4135" z="20" />
+		<SafeMoveTo questId="344490" x="1814" y="4085" z="20" />
+	</If>	
+		
+	<!-- Kill Lorzak -->
+	<If condition="HasQuest(344501)">
+		<SafeMoveTo questId="344501" x="2383" y="4904" />
+		<SafeMoveTo questId="344501" x="2439" y="4569" />
+		<SafeMoveTo questId="344501" x="1900" y="4507" />
+		<SafeMoveTo questId="344501" x="1911" y="4367" />
+		<SafeMoveTo questId="344501" x="2364" y="4481" />
+		<SafeMoveTo questId="344501" x="2240" y="4185" />
+		<SafeMoveTo questId="344501" x="2525" y="4402" />
+		<SafeMoveTo questId="344501" x="2487" y="3938" />
+		<SafeMoveTo questId="344501" x="2331" y="4194" />
+		<SafeMoveTo questId="344501" x="2298" y="3975" />
+		<SafeMoveTo questId="344501" x="2001" y="3963" />
+		<SafeMoveTo questId="344501" x="1973" y="4303" />
+		<SafeMoveTo questId="344501" x="2212" y="4128" />
+		<SafeMoveTo questId="344501" x="2102" y="4060" />
+		<SafeMoveTo questId="344501" x="1918" y="4068" />
+		<SafeMoveTo questId="344501" x="1873" y="3867" z="10" />
+		<SafeMoveTo questId="344501" x="1837" y="3947" z="20" />
+		<SafeMoveTo questId="344501" x="1828" y="4135" z="20" />
+		<SafeMoveTo questId="344501" x="1814" y="4085" z="20" />
+	</If>	
+	
+	<!-- Kill Red Rock -->
+	<If condition="HasQuest(344503)">
+		<SafeMoveTo questId="344503" x="2383" y="4904" />
+		<SafeMoveTo questId="344503" x="2439" y="4569" />
+		<SafeMoveTo questId="344503" x="1900" y="4507" />
+		<SafeMoveTo questId="344503" x="1911" y="4367" />
+		<SafeMoveTo questId="344503" x="2364" y="4481" />
+		<SafeMoveTo questId="344503" x="2240" y="4185" />
+		<SafeMoveTo questId="344503" x="2525" y="4402" />
+		<SafeMoveTo questId="344503" x="2487" y="3938" />
+		<SafeMoveTo questId="344503" x="2331" y="4194" />
+		<SafeMoveTo questId="344503" x="2298" y="3975" />
+		<SafeMoveTo questId="344503" x="2001" y="3963" />
+		<SafeMoveTo questId="344503" x="1973" y="4303" />
+		<SafeMoveTo questId="344503" x="2212" y="4128" />
+		<SafeMoveTo questId="344503" x="2102" y="4060" />
+		<SafeMoveTo questId="344503" x="1918" y="4068" />
+		<SafeMoveTo questId="344503" x="1873" y="3867" z="10" />
+		<SafeMoveTo questId="344503" x="1837" y="3947" z="20" />
+		<SafeMoveTo questId="344503" x="1828" y="4135" z="20" />
+		<SafeMoveTo questId="344503" x="1814" y="4085" z="20" />
+	</If>
+		
+	<!-- Kill Buras the Impaler -->			
+	<If condition="HasQuest(344499)">
+		<SafeMoveTo questId="344499" x="2383" y="4904" />
+		<SafeMoveTo questId="344499" x="2439" y="4569" />
+		<SafeMoveTo questId="344499" x="1900" y="4507" />
+		<SafeMoveTo questId="344499" x="1911" y="4367" />
+		<SafeMoveTo questId="344499" x="2364" y="4481" />
+		<SafeMoveTo questId="344499" x="2240" y="4185" />
+		<SafeMoveTo questId="344499" x="2525" y="4402" />
+		<SafeMoveTo questId="344499" x="2487" y="3938" />
+		<SafeMoveTo questId="344499" x="2331" y="4194" />
+		<SafeMoveTo questId="344499" x="2298" y="3975" />
+		<SafeMoveTo questId="344499" x="2001" y="3963" />
+		<SafeMoveTo questId="344499" x="1973" y="4303" />
+		<SafeMoveTo questId="344499" x="2212" y="4128" />
+		<SafeMoveTo questId="344499" x="2102" y="4060" />
+		<SafeMoveTo questId="344499" x="1918" y="4068" />
+		<SafeMoveTo questId="344499" x="1873" y="3867" z="10" />
+		<SafeMoveTo questId="344499" x="1837" y="3947" z="20" />
+		<SafeMoveTo questId="344499" x="1828" y="4135" z="20" />
+		<SafeMoveTo questId="344499" x="1814" y="4085" z="20" />			
+	</If>	
+	
+	
+	<!-- Check if we still have a bounty -->
+	<If condition="
+		HasQuest(344497) or
+		HasQuest(344490) or 
+		HasQuest(344501) or
+		HasQuest(344503) or 
+		HasQuest(344499)
+	">		
+		
+		<LogMessage quest="1" step="2" output=">>"/>
+		<LogMessage quest="1" step="2" output=">> FAILSAFE PROTOCOL INITIATED"/>
+		<LogMessage quest="1" step="2" output=">> Please Report to Community Bounty Thread "/>
+		<LogMessage quest="1" step="2" output=">> that 'path_kill_southern_highlands' failed. "/>
+		<LogMessage quest="1" step="2" output=">>"/>		
+		
+		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.15" boxSize="15" >
+			<IgnoreScenes>
+				 <IgnoreScene sceneName="_Chokepoint_" />
+			</IgnoreScenes>
+		</TrinityExploreDungeon>			
+		
+	</If>
+	
+	<!-- was this called from a debug profile? -->
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('debug')">
+		<LoadProfile file="debug/debug_all.xml" />	
+	</If>				
+	
+	<LoadProfile file="act1.xml" />
+	
+</Order>
+</Profile>
+

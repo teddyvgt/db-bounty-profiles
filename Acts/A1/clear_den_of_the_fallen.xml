@@ -1,0 +1,98 @@
+<!-- X1_Bounty_A1_Wilderness_Clear_DenOfTheFallen2 (345488) -->
+<!-- mod by kyriaqos -->
+<Profile>
+<Name>Clear the Den of the Fallen (345488)</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<TargetBlacklists>
+	<TargetBlacklist actorId="5747" /> <!-- trDun_Cath_Chandelier_Trap_Switch2-15223 -->
+	<TargetBlacklist actorId="5744" /> <!-- trDun_Cath_Chandelier_Trap-3150 -->
+	<TargetBlacklist actorId="3948" /> <!-- destructibleCandles-4564 -->
+	<TargetBlacklist actorId="365097" /> <!-- Cursed Chest -->
+	<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->
+</TargetBlacklists>
+<Order>
+	<ToggleTargeting questId="1" stepId="2" killRadius="31" />
+
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<UseWaypoint waypointNumber="6" questId="1"/>
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />
+	<!-- Den of the Fallen -->
+	<If condition="HasQuest(345488)">
+	
+		<!-- We are in The Weeping Hollow? -->		
+		<If condition="CurrentWorldId == 71150">
+			<LogMessage message="Moving to spot #1"/>
+			<WaitTimer questId="1" stepId="2" waitTime="3000" />
+			<SafeMoveTo questId="1" stepId="2" x="2883" y="2217" z="-4" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToActor questId="1" stepId="2"  actorId="176003" isPortal="True" destinationWorldId="135193" interactRange="20"  />
+		</If>	
+		<If condition="CurrentWorldId == 71150">
+			<LogMessage message="Moving to spot #2"/>
+			<SafeMoveTo questId="1" stepId="2" x="2848" y="1986" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToActor questId="1" stepId="2"  actorId="176003" isPortal="True" destinationWorldId="135193" interactRange="20"  />
+		</If>
+		<If condition="CurrentWorldId == 71150">
+			<LogMessage message="Moving to spot #3"/>
+			<SafeMoveTo questId="1" stepId="2" x="2814" y="1914" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToActor questId="1" stepId="2"  actorId="176003" isPortal="True" destinationWorldId="135193" interactRange="20"  />
+		</If>
+		<If condition="CurrentWorldId == 71150">						
+			<LogMessage message="Moving to spot #4"/>
+			<SafeMoveTo questId="1" stepId="2" x="2765" y="2003" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToActor questId="1" stepId="2"  actorId="176003" isPortal="True" destinationWorldId="135193" interactRange="20"  />	
+		</If>
+		<If condition="CurrentWorldId == 71150">			
+			<LogMessage message="Moving to spot #5"/>
+			<SafeMoveTo questId="1" stepId="2" x="2541" y="2107" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToActor questId="1" stepId="2"  actorId="176003" isPortal="True" destinationWorldId="135193" interactRange="20"  />
+		</If>
+		<If condition="CurrentWorldId == 71150">				
+			<LogMessage message="Moving to spot #6"/>
+			<SafeMoveTo questId="1" stepId="2" x="2410" y="2051" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToActor questId="1" stepId="2"  actorId="176003" isPortal="True" destinationWorldId="135193" interactRange="20"  />
+		</If>
+		<If condition="CurrentWorldId == 71150">			
+			<LogMessage message="Moving to spot #7"/>
+			<SafeMoveTo questId="1" stepId="2" x="2462" y="1779" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<MoveToActor questId="1" stepId="2"  actorId="176003" isPortal="True" destinationWorldId="135193" interactRange="20"  />
+		</If>
+		<If condition="CurrentWorldId == 71150">			
+			<LogMessage message="Moving to spot #8"/>
+			<SafeMoveTo questId="1" stepId="2" x="2632" y="1895" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 	
+			<MoveToActor questId="1" stepId="2"  actorId="176003" isPortal="True" destinationWorldId="135193" interactRange="20"  />
+		</If>			
+		<If condition="CurrentWorldId == 71150">			
+			<!-- Explore for other caves if not found above -->
+			<LogMessage message="hail mary -- not found above, but searching nonetheless..." />
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-2043651426" ignoreMarkers="False"/>
+			<MoveToActor questId="1" stepId="2"  actorId="176003" isPortal="True" destinationWorldId="135193" interactRange="20"  />
+		</If>		
+		
+		<!-- Den of the Fallen Level 1 -->
+		<If condition="CurrentLevelAreaId == 135237">
+			<WaitTimer questId="1" stepId="2" waitTime="3000" />
+			<LogMessage message="In the Den1" />
+			<!--<SafeMoveTo questId="1" stepId="2" x="401.3363" y="359.3021" z="0.1" pathPrecision="5" pathPointLimit="2500" statusText="" /> 	-->
+			<!--<MoveToActor questId="1" stepId="2"  actorId="176038" isPortal="True" destinationWorldId="194231" interactRange="20"  />-->
+			<TrinityExploreDungeon questId="1" stepId="2"  until="ExitFound" exitNameHash="-711350153" ignoreMarkers="False" objectDistance="50" actorId="176038" boxTolerance="0.7" boxSize="10" pathPrecision="40" stayAfterBounty="False" />
+			<MoveToActor questId="1" stepId="2"  actorId="176038" isPortal="True" destinationWorldId="194231" interactRange="20"  />
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+		</If>	
+		
+		<!-- Den of the Fallen Level 2 -->		
+		<If condition="CurrentLevelAreaId == 194232">
+			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance=".10" boxSize="9" stayAfterBounty="False"/>
+			<WaitTimer questId="1" stepId="2" waitTime="2000" />
+			<LogMessage message="Bounty - Den of the Fallen Complete" />
+		</If>
+
+	</If>	
+		
+	<!-- give legendaries a moment to fall from the heavens... -->
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />
+	<LoadProfile file="act1.xml" />	
+</Order>
+</Profile>

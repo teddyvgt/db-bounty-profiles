@@ -1,0 +1,50 @@
+<!-- X1_Bounty_A1_SpiderCaves_Event_SpiderTrap (375201) -->
+<Profile>
+<Name>The Cursed Hatchery / Spider Trap </Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<TargetBlacklists>
+	<TargetBlacklist actorId="365097" /> <!-- Cursed Chest -->
+	<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->
+	<TargetBlacklist actorId="210591" /> <!-- Egg Sack Cluster -->
+	<TargetBlacklist actorId="172010" /> <!-- Egg Sack Cluster -->
+	<TargetBlacklist actorId="171998" /> <!-- Egg Sack Cluster -->
+	<TargetBlacklist actorId="179989" /> <!-- Egg Sack Cluster -->
+	<TargetBlacklist actorId="179998" /> <!-- Egg Sack Cluster -->
+	<TargetBlacklist actorId="179987" /> <!-- Egg Sack Cluster -->
+	<TargetBlacklist actorId="171527" /> <!-- Egg Sack Cluster -->
+	<TargetBlacklist actorId="116063" /> <!-- Spider 'spawner' -->	
+</TargetBlacklists>
+<Order>
+	<ToggleTargeting questId="1" stepId="2" killRadius="31" />
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<WaitTimer questId="1" stepId="2" waitTime="4000" />		
+	<UseWaypoint waypointNumber="12" questId="1"/>
+	<WaitTimer questId="1" stepId="2" waitTime="4000" />
+	<While condition="HasQuest(375201)">
+<!-- Keep kill range tight to speed bounties up -->
+<!-- Just in case we didn't find the object -->
+		<If condition="HasQuest(375201)">
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.1" boxSize="30" until="ObjectFound" actorId="365097" ignoreMarkers="False" objectDistance="300" statusText="looking for that booty!">
+				<PrioritizeScenes>
+					<!--<PriorityScene sceneName="_CaveEntrance_" />-->
+				</PrioritizeScenes>
+				<IgnoreScenes>
+					<IgnoreScene sceneName="_W_"/>
+					<IgnoreScene sceneName="_Filler"/>
+				</IgnoreScenes>
+			</TrinityExploreDungeon>
+			<MoveToActor questId="1" stepId="2" actorId="365097" interactRange="8"/>
+			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
+		</If>
+<!-- Just in case we have roamed too far -->
+		<If condition="HasQuest(375201)" timeout="25">
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False" statusText="Cleaning Up..."/>
+		</If>
+	</While>
+	<!-- give legendaries a moment to fall from the heavens... -->
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />
+	<LoadProfile file="act1.xml" />	
+</Order>
+</Profile>
