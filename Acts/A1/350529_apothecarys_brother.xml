@@ -12,7 +12,7 @@
 	<If condition="HasQuest(350529)">
 
 		<!-- Pathing to Known Locations -->
-		<ToggleTargeting questId="1" stepId="1" killRadius="15" />
+		<ToggleTargeting questId="1" stepId="1" killRadius="31" />
 		<If condition="CurrentWorldId == 71150">
 			<SafeMoveTo questId="312429" stepId="2" x="1461" y="4054" z="40" pathPrecision="5" pathPointLimit="250" statusText="Checking location #1" /> 
 			<SafeMoveTo questId="312429" stepId="2" x="1418" y="3955" z="50" pathPrecision="5" pathPointLimit="250" statusText="Checking location #1" /> 

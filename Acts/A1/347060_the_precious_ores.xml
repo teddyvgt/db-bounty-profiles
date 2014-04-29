@@ -12,7 +12,7 @@
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />	
 	<If condition="HasQuest(347060)">
 	
-		<ToggleTargeting questId="1" stepId="1" killRadius="15" />	
+		<ToggleTargeting questId="1" stepId="1" killRadius="31" />	
 	
 		<!-- Middle Cave Location 1 -->
 		<If condition="CurrentWorldId == 71150">			

@@ -23,7 +23,7 @@
 			</IgnoreScenes>
 		</TrinityExploreDungeon>		
 		
-		<ToggleTargeting questId="1" stepId="2" killRadius="15" />		
+		<ToggleTargeting questId="1" stepId="2" killRadius="31" />		
 		
 <!-- Kill Battlerage the Plagued -->
 		<!-- Status: Zerg -->			

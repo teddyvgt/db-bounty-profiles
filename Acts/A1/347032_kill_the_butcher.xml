@@ -13,7 +13,7 @@
 </TargetBlacklists>
 <LogMessage quest="1" step="1" output="--> Bounty X1_Bounty_A1_LeoricsDungeon_Kill_Butcher (347032) Started" />	
 <Order>
-		<ToggleTargeting questId="1" stepId="2" killRadius="15" />
+		<ToggleTargeting questId="1" stepId="2" killRadius="31" />
 
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
 	<UseWaypoint waypointNumber="17" questId="1"/>
@@ -32,7 +32,7 @@
 			
 		<!-- this MoveToMapMarker is unreliable, gets stuck sometimes -->
 		<MoveToActor questId="1" stepId="1" actorId="158944" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="78839" />
-		<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="15" /> 			
+		<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" /> 			
 		<WaitTimer questId="1" stepId="1" waitTime="16000" />
 		
 		<!-- bot is having issues picking up loot in this room -->

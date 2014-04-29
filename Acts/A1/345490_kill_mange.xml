@@ -13,7 +13,7 @@
 	<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->
 </TargetBlacklists>
 <Order>
-	<ToggleTargeting questId="1" stepId="2" killRadius="15" />
+	<ToggleTargeting questId="1" stepId="2" killRadius="31" />
 
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
 	<UseWaypoint waypointNumber="6" questId="1"/>
@@ -37,7 +37,7 @@
 		</TrinityExploreDungeon>
 		
 		<If condition="HasQuest(345490)">
-			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="15" />
+			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
 			<MoveToActor questId="1" stepId="2" actorId="218441" interactRange="20"  />		
 		</If>
 		

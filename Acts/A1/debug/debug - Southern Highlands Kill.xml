@@ -42,7 +42,26 @@
   </TargetBlacklists>
 <Order>
 
-	<LoadProfile file="../path_kill_southern_highlands.xml" />
+		<!-- 
+		344497: Kill Logrut
+		344490: Kill Cadhul
+		344501: Kill Lorzak
+		344503: Kill Red Rock
+		344499: Kill Buras
+		-->
+		<If condition="
+			HasQuest(344497) or
+			HasQuest(344490) or 
+			HasQuest(344501) or
+			HasQuest(344503) or 
+			HasQuest(344499)
+		">	
+			<LoadProfile file="../path_kill_southern_highlands.xml" />
+		</If>	
+		
+		<WaitTimer questId="1" stepId="1" waitTime="4000"/>		
+		
+		<LeaveGame quest="1" step="1" reason="didn't get any of the bounties we're looking for" stayInParty="False" />	
 
 </Order>
 </Profile>

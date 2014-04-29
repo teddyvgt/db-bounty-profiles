@@ -20,7 +20,7 @@
 				<SafeMoveTo questId="1" stepId="2" x="2113" y="4321" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to location 1 of 1" />
 				<If condition="CurrentWorldId == 71150 and ActorExistsAt(364601, 2113, 4321, -0, 30)">	
 					<MoveToActor questId="1" stepId="2" actorId="364601" interactRange="20"  />	
-					<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="15" />			
+					<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />			
 				</If>
 			</While>
 <!-- Just in case we didn't find the object -->
@@ -31,7 +31,7 @@
 				</PrioritizeScenes>
 			</TrinityExploreDungeon>
 			<MoveToActor questId="1" stepId="2" actorId="364601" interactRange="8"/>
-			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="15" />
+			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
 		</If>
 <!-- Just in case we have roamed too far -->
 		<If condition="HasQuest(369763)">

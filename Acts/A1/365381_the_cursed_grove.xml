@@ -44,7 +44,7 @@
 				</PrioritizeScenes>
 			</TrinityExploreDungeon>
 			<MoveToActor questId="1" stepId="2" actorId="365097" interactRange="8"/>
-			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="15" />
+			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
 		</If>
 <!-- Just in case we have roamed too far -->
 		<If condition="HasQuest(365381)">

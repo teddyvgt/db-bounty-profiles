@@ -5,7 +5,7 @@
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
-	<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="15" />
+	<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
 
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
 	<UseWaypoint waypointNumber="7" questId="1"/>

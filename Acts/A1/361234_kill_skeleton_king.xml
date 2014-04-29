@@ -12,7 +12,7 @@
 	<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->
 </TargetBlacklists>
 <Order>
-		<ToggleTargeting questId="1" stepId="2" killRadius="15" />
+		<ToggleTargeting questId="1" stepId="2" killRadius="31" />
 
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
 	<UseWaypoint waypointNumber="5" questId="1"/>
@@ -46,7 +46,7 @@
 		</If>
 		
 		<If condition="CurrentWorldId == 73261">
-						<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="15" /> 			
+						<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" /> 			
 		  <!-- Place Leoric's crown on the Skeleton King -->
 		  <MoveToActor questId="1" stepId="2" actorId="5354" x="340" y="262" z="18" />
 		  <WaitTimer questId="1" stepId="2" waitTime="1000" />

@@ -14,7 +14,7 @@
 	<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->
 </TargetBlacklists>
 <Order>
-	<ToggleTargeting questId="1" stepId="2" killRadius="25" />
+	<ToggleTargeting questId="1" stepId="2" killRadius="31" />
 
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
 	<UseWaypoint waypointNumber="6" questId="1"/>

@@ -31,7 +31,7 @@
 		<If condition="HasQuest(375191)">
 			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False" statusText="Cleaning Up..."/>
 		</If>		
-	<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="15" />	
+	<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />	
 	<!-- give legendaries a moment to fall from the heavens... -->
 	<WaitTimer questId="1" stepId="2" waitTime="3000" />
 	<LoadProfile file="act1.xml" />	

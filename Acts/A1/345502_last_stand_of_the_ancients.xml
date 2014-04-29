@@ -6,7 +6,7 @@
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
-	<ToggleTargeting questId="1" stepId="2" killRadius="15" />
+	<ToggleTargeting questId="1" stepId="2" killRadius="31" />
 
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
 	<UseWaypoint waypointNumber="10" questId="1"/>
@@ -19,7 +19,7 @@
 			<SafeMoveTo questId="312429" stepId="2" x="456" y="733" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 			<SafeMoveTo questId="312429" stepId="2" x="441" y="809" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /> 	
 			<If condition="ActorExistsAt(102008, Me.Position.X, Me.Position.Y, Me.Position.Z, 120)">		
-				<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="25" />
+				<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
 				<MoveToActor questId="312429" stepId="2" actorId="102008" interactRange="11" pathPrecision="5" pathPointLimit="250" statusText="" /> 					
 				<WaitTimer questId="1" stepId="1" waitTime="20000" />				
 				<If condition="HasQuest(345502)"><SafeMoveTo questId="312429" stepId="2" x="456" y="733" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /></If>
@@ -36,7 +36,7 @@
 			<SafeMoveTo questId="312429" stepId="2" x="675" y="801" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 			<SafeMoveTo questId="312429" stepId="2" x="684" y="720" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /> 	
 			<If condition="ActorExistsAt(102008, Me.Position.X, Me.Position.Y, Me.Position.Z, 120)">		
-				<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="25" />
+				<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
 				<MoveToActor questId="312429" stepId="2" actorId="102008" interactRange="11" pathPrecision="5" pathPointLimit="250" statusText="" /> 					
 				<WaitTimer questId="1" stepId="1" waitTime="20000" />							
 				<If condition="HasQuest(345502)"><SafeMoveTo questId="312429" stepId="2" x="675" y="801" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /></If> 
@@ -53,7 +53,7 @@
 			<SafeMoveTo questId="312429" stepId="2" x="365" y="725" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 			<SafeMoveTo questId="312429" stepId="2" x="318" y="841" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /> 	
 			<If condition="ActorExistsAt(102008, Me.Position.X, Me.Position.Y, Me.Position.Z, 120)">		
-				<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="25" />
+				<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
 				<MoveToActor questId="312429" stepId="2" actorId="102008" interactRange="11" pathPrecision="5" pathPointLimit="250" statusText="" /> 					
 				<WaitTimer questId="1" stepId="1" waitTime="20000" />							
 				<If condition="HasQuest(345502)"><SafeMoveTo questId="312429" stepId="2" x="365" y="725" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /></If> 

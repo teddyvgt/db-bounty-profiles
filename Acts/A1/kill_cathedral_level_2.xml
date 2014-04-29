@@ -24,7 +24,7 @@
 			</IgnoreScenes>
 		</TrinityExploreDungeon>		
 		
-		<ToggleTargeting questId="1" stepId="2" killRadius="15" />		
+		<ToggleTargeting questId="1" stepId="2" killRadius="31" />		
 	
 			<!-- Kill Merrium Skullthorn-->
 		<!-- Status: Zerg -->	
@@ -32,7 +32,7 @@
 			<!-- Look for him -->
 			<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="30" until="ObjectFound" actorId="218364" objectDistance="50" ignoreMarkers="False"/>
-			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="25" />
+			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
 			<MoveToActor questId="1" stepId="2" actorId="218364" interactRange="20"  />		
 			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="25" >
 				<IgnoreScenes>
@@ -47,7 +47,7 @@
 			<!-- Look for him -->
 			<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="30" until="ObjectFound" actorId="218362" objectDistance="50" ignoreMarkers="False"/>
-			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="25" />
+			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
 			<MoveToActor questId="1" stepId="2" actorId="218362" interactRange="20"  />		
 			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="25" >
 				<IgnoreScenes>
@@ -62,7 +62,7 @@
 			<!-- Look for him -->
 			<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="30" until="ObjectFound" actorId="218307" objectDistance="50" ignoreMarkers="False"/>
-			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="25" />
+			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
 			<MoveToActor questId="1" stepId="2" actorId="218307" interactRange="20"  />		
 			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="25" >
 				<IgnoreScenes>

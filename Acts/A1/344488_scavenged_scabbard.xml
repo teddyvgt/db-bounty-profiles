@@ -12,7 +12,7 @@
 	<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->
 </TargetBlacklists>
 <Order>
-		<ToggleTargeting questId="1" stepId="2" killRadius="15" />
+		<ToggleTargeting questId="1" stepId="2" killRadius="31" />
 
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
 	<UseWaypoint waypointNumber="13" questId="1"/>	
@@ -68,7 +68,7 @@
 					<AlternateActor actorId="222404" objectDistance="10" /> <!-- scabbard -->
 				</AlternateActors>	
 			</TrinityExploreDungeon>			 
-						<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="15" />
+						<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
 			<WaitTimer questId="1" stepId="1" waitTime="500" />	
 			
 			<!-- Pick up the scabbard -->

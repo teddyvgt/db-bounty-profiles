@@ -11,7 +11,7 @@
 	
 		<If condition="CurrentLevelAreaId == 19953">
 
-			<ToggleTargeting questId="1" stepId="1" killRadius="15" />		
+			<ToggleTargeting questId="1" stepId="1" killRadius="31" />		
 		
 			<!--  Warriors Rest #1 -->
 			<If condition="CurrentLevelAreaId == 19953">

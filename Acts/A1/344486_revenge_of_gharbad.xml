@@ -13,18 +13,17 @@
 	
 		<If condition="CurrentWorldId == 71150">
 			<ToggleTargeting questId="1" stepId="1" killRadius="15" />
+			<SafeMoveTo questId="1" stepId="2" x="2230" y="4320" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 			<SafeMoveTo questId="1" stepId="2" x="2136.469" y="4327.496" z="-28.8857"/>
 			<ToggleTargeting questId="1" stepId="1" killRadius="80" />			
 			<MoveToActor questId="1" stepId="2" actorId="81068"/>
-			<WaitTimer questId="1" stepId="2" waitTime="5000" />
-			<While timeout="20000" condition="ActorExistsAt(102008, Me.Position.X, Me.Position.Y, Me.Position.Z, 120)">
-				<MoveToActor questId="1" stepId="2" actorId="225252"/>
-				<TrinityInteract questId="1" stepId="2" timeout="1000" actorId="225252"/>
-				<WaitTimer questId="1" stepId="2" waitTime="200" />
-			</While>
+			<WaitTimer questId="1" stepId="2" waitTime="10000" />
+			<MoveToActor questId="1" stepId="2" actorId="225252" timeout="15"/> <!-- first totem -->
+			<WaitTimer questId="1" stepId="2" waitTime="2000" />
+			<MoveToActor questId="1" stepId="2" actorId="225252" timeout="15"/> <!-- second totem -->
 			<WaitTimer questId="1" stepId="2" waitTime="2000" />
 			<MoveToActor questId="1" stepId="2" actorId="81068"/>
-			<WaitTimer questId="1" stepId="2" waitTime="8000" />
+			<WaitTimer questId="1" stepId="2" waitTime="6000" />
 			
 			<!-- Backup -->
 			<If condition="HasQuest(344486) and CurrentWorldId == 71150">
@@ -32,7 +31,7 @@
 					<IgnoreScenes>
 					</IgnoreScenes>
 				</TrinityExploreDungeon>
-			</If>			
+			</If>
 			
 			<!-- If not completed, keep killing things until it is complete-->
 		</If>

@@ -399,13 +399,7 @@
 		<If condition="HasQuest(344482)">
 			<LoadProfile file="344482_crumbling_tower.xml" />
 		</If>	
-		
-		<!-- Kill Logrut the warrior -->
-		<!-- Status: Needs Testing -->			
-		<If condition="HasQuest(344497)">
-			<LoadProfile file="344497_kill_logrut.xml" />
-		</If>			
-		
+
 		<!-- Revenge of Gharbad -->
 		<!-- Status: OK -->		
 		<If condition="HasQuest(344486)">
@@ -418,41 +412,34 @@
 			<LoadProfile file="344488_scavenged_scabbard.xml" />
 		</If>	
 
-		<!-- Kill Cadhul the Deathcaller -->
-		<!-- Status: OK - we need priority targeting on the summoners to bring down cadhuls force field -->			
-		<If condition="HasQuest(344490)">
-			<LoadProfile file="344490_kill_cadhul.xml" />
-		</If>	
-		
-		<!-- Kill Lorzak -->
-		<!-- Status: Needs Testing -->				
-		<If condition="HasQuest(344501)">
-			<LoadProfile file="344501_Kill_Lorzak.xml" />
-		</If>	
-
 		<!-- Clear the Clan of the Moon Cave -->
 		<!-- Status: GOOD -->						
 		<If condition="HasQuest(344547)">
 			<LoadProfile file="344547_clan_of_the_mooncave.xml" />
 		</If>
-		
-		<!-- Kill Red Rock -->
-		<!-- Status: Needs Testing -->			
-		<If condition="HasQuest(344503)">
-			<LoadProfile file="kill_southern_highlands.xml" />
-		</If>
-		
-		<!-- Kill Buras the Impaler -->
-		<!-- Status: Needs Testing -->			
-		<If condition="HasQuest(344499)">
-			<LoadProfile file="kill_southern_highlands.xml" />
-		</If>	
 
 		<!-- Cursed Camp -->
 		<!-- Status: GOOD -->			
 		<If condition="HasQuest(369763)">
 			<LoadProfile file="369763_the_cursed_camp.xml" />
 		</If>	
+	
+		<!-- 
+		344497: Kill Logrut
+		344490: Kill Cadhul
+		344501: Kill Lorzak
+		344503: Kill Red Rock
+		344499: Kill Buras
+		-->
+		<If condition="
+			HasQuest(344497) or
+			HasQuest(344490) or 
+			HasQuest(344501) or
+			HasQuest(344503) or 
+			HasQuest(344499)
+		">	
+			<LoadProfile file="path_kill_southern_highlands.xml" />
+		</If>			
 	
 	<!-- 14	Northern Highlands ========================================================-->
 	
