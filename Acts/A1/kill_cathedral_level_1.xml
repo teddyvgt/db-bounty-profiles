@@ -24,10 +24,8 @@
 			</TrinityExploreDungeon>		
 		
 		
-			<!-- Kill Glidewing-->
-			<!-- Status: Zerg -->			
+			<!-- Kill Glidewing 		
 			<If condition="HasQuest(361331)">
-				<!-- Look for him -->
 				<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
 				<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="30" until="ObjectFound" actorId="218674" objectDistance="50" ignoreMarkers="False"/>
 				<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="75" />
@@ -38,15 +36,13 @@
 					</IgnoreScenes>
 				</TrinityExploreDungeon>
 			</If>
-			
+			-->
 			<!-- Kill Braluk Grimlow -->
-			<!-- Status: Zerg -->	
+			<!-- Status: Zerg 
 			<If condition="HasQuest(361327)">
-				<!-- Look for him -->
 				<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />					
 				<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="30" until="ObjectFound" actorId="218308" objectDistance="50" ignoreMarkers="False">
 					<AlternateActors>
-						<!--<AlternateActor actorId="0" objectDistance="45" />-->
 					</AlternateActors>						
 				</TrinityExploreDungeon>
 				<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="75" />
@@ -59,11 +55,10 @@
 					</IgnoreScenes>
 				</TrinityExploreDungeon>			
 			</If>		
-			
+			-->	
 			<!-- Kill Ragus Grimlow -->
-			<!-- Status: Zerg -->	
+			<!-- Status: Zerg	
 			<If condition="HasQuest(361320)">
-				<!-- Look for him -->
 				<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
 				<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="30" until="ObjectFound" actorId="218307" objectDistance="50" ignoreMarkers="False"/>
 				<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="75" />
@@ -73,7 +68,7 @@
 						<IgnoreScene sceneName="Exit" />
 					</IgnoreScenes>
 				</TrinityExploreDungeon>
-			</If>
+			</If> -->
 
     <!-- Look for him -->
 	<LoadProfile file="act1.xml" />	
