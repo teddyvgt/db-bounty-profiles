@@ -1,68 +1,79 @@
 <!-- Bounty X1_Bounty_A1_Cemetery_Kill_DiggerODell (347097)  -->
 <Profile>
-<Name>Kill the DiggerODell (347097)</Name>
-<KillMonsters>True</KillMonsters>
-<PickupLoot>true</PickupLoot>
-<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
-<TargetBlacklists>
-	<TargetBlacklist actorId="5747" /> <!-- trDun_Cath_Chandelier_Trap_Switch2-15223 -->
-	<TargetBlacklist actorId="5744" /> <!-- trDun_Cath_Chandelier_Trap-3150 -->
-	<TargetBlacklist actorId="3948" /> <!-- destructibleCandles-4564 -->
-	<TargetBlacklist actorId="365097" /> <!-- Cursed Chest -->
-	<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->
-</TargetBlacklists>
-<Order>
-		<ToggleTargeting questId="1" stepId="2" killRadius="31" />
-	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
-	<UseWaypoint waypointNumber="7" questId="1"/>
-	<WaitTimer questId="1" stepId="2" waitTime="5000" />
-	
-	<If condition="HasQuest(347097)">
-		<LogMessage message="looking for marker" />
-		<If condition="CurrentWorldId == 71150">
-		
-			<SafeMoveTo questId="1" stepId="2" x="2032" y="1776" z="1" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location North"/>
-			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(-1965109037, 2032.983, 1776.411, 1.434785, 30)">
-				<LogMessage message="found marker in North (2032, 1776) - moving there" />
-				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="72637" interactRange="20"  />
-				<WaitTimer questId="1" stepId="2" waitTime="2000" />
-			</If>
-			
-			<SafeMoveTo questId="1" stepId="2" x="2233" y="1793" z="-4" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location South"/>	
-			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(-1965109037, 2233, 1793, 6, 30)">
-				<LogMessage message="found marker in West (2233, 1793) - moving there" />
-				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="72637" interactRange="20"  />
-				<WaitTimer questId="1" stepId="2" waitTime="2000" />
-			</If>		
-			
-			<SafeMoveTo questId="1" stepId="2" x="2062" y="1950" z="-5" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location East"/>
-			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(-1965109037, 2062, 1950, -5, 30)">
-				<LogMessage message="found marker in East (2062, 1950) - moving there" />
-				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="72637" interactRange="20"  />
-				<WaitTimer questId="1" stepId="2" waitTime="2000" />
-			</If>		
-			
-			<SafeMoveTo questId="1" stepId="2" x="2173" y="1941" z="6" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location West"/> 
-			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(-1965109037, 2173, 1941, -4, 30)">
-				<LogMessage message="found marker in South (2173, 1941) - moving there" />
-				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="72637" interactRange="20"  />
-				<WaitTimer questId="1" stepId="2" waitTime="2000" />
-			</If>
-		</If>
+  <Name>Kill the DiggerODell (347097)</Name>
+  <KillMonsters>True</KillMonsters>
+  <PickupLoot>true</PickupLoot>
+  <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+  <TargetBlacklists>
+    <TargetBlacklist actorId="5747" />
+    <!-- trDun_Cath_Chandelier_Trap_Switch2-15223 -->
+    <TargetBlacklist actorId="5744" />
+    <!-- trDun_Cath_Chandelier_Trap-3150 -->
+    <TargetBlacklist actorId="3948" />
+    <!-- destructibleCandles-4564 -->
+    <TargetBlacklist actorId="365097" />
+    <!-- Cursed Chest -->
+    <TargetBlacklist actorId="364601" />
+    <!-- Cursed Shrine -->
+  </TargetBlacklists>
+  <Order>
+    <ToggleTargeting questId="1" stepId="2" killRadius="31" />
+    <If condition="Me.IsInTown==False">
+      <TrinityTownPortal questId="1" />
+    </If>
+    <UseWaypoint waypointNumber="7" questId="1"/>
+    <WaitTimer questId="1" stepId="2" waitTime="5000" />
 
-		  <!--  Defiled Crypt -->
-		  <If condition="CurrentWorldId == 72636 and HasQuest(347097)">
-		   <WaitTimer questId="1" stepId="2" waitTime="3000" />
-			<!-- make sure bounty is complete! -->
-			<!--<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="218206" pathPrecision="20" boxTolerance="0.10" boxSize="25" stayAfterBounty="False"/>	-->
-			<!--<MoveToActor questId="1" stepId="2" actorId="218206" interactRange="20"  />-->
-			<ToggleTargeting questId="1" stepId="2" killRadius="31" />
-			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" pathPrecision="20" boxSize="25" boxTolerance="0.10" stayAfterBounty="False"/>
-		</If>
-	
-	</If>
-	<!-- give legendaries a moment to fall from the heavens... -->
-	<WaitTimer questId="1" stepId="2" waitTime="3000" />
-	<LoadProfile file="act1.xml" />	
-</Order>
+    <If condition="HasQuest(347097)">
+      <LogMessage message="looking for marker" />
+      <If condition="CurrentWorldId == 71150">
+
+        <SafeMoveTo questId="1" stepId="2" x="2032" y="1776" z="1" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location North"/>
+        <If condition="CurrentWorldId == 71150 and MarkerExistsAt(-1965109037, 2032.983, 1776.411, 1.434785, 30)">
+          <LogMessage message="found marker in North (2032, 1776) - moving there" />
+          <MoveToMapMarker questId="312429" stepId="2" x="2033" y="1776" z="1" markerNameHash="-1965109037" actorId="176002" interactRange="7.766416"
+                                 pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+          <WaitTimer questId="1" stepId="2" waitTime="2000" />
+        </If>
+
+        <SafeMoveTo questId="1" stepId="2" x="2233" y="1793" z="-4" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location South"/>
+        <If condition="CurrentWorldId == 71150 and MarkerExistsAt(-1965109037, 2233, 1793, 6, 30)">
+          <LogMessage message="found marker in West (2233, 1793) - moving there" />
+          <MoveToMapMarker questId="312429" stepId="2" x="2033" y="1776" z="1" markerNameHash="-1965109037" actorId="176002" interactRange="7.766416"
+                                 pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+          <WaitTimer questId="1" stepId="2" waitTime="2000" />
+        </If>
+
+        <SafeMoveTo questId="1" stepId="2" x="2062" y="1950" z="-5" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location East"/>
+        <If condition="CurrentWorldId == 71150 and MarkerExistsAt(-1965109037, 2062, 1950, -5, 30)">
+          <LogMessage message="found marker in East (2062, 1950) - moving there" />
+          <MoveToMapMarker questId="312429" stepId="2" x="2033" y="1776" z="1" markerNameHash="-1965109037" actorId="176002" interactRange="7.766416"
+                                 pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+          <WaitTimer questId="1" stepId="2" waitTime="2000" />
+        </If>
+
+        <SafeMoveTo questId="1" stepId="2" x="2173" y="1941" z="6" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location West"/>
+        <If condition="CurrentWorldId == 71150 and MarkerExistsAt(-1965109037, 2173, 1941, -4, 30)">
+          <LogMessage message="found marker in South (2173, 1941) - moving there" />
+          <MoveToMapMarker questId="312429" stepId="2" x="2033" y="1776" z="1" markerNameHash="-1965109037" actorId="176002" interactRange="7.766416"
+                                 pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+          <WaitTimer questId="1" stepId="2" waitTime="2000" />
+        </If>
+      </If>
+
+      <!--  Defiled Crypt -->
+      <If condition="(CurrentWorldId == 72636 or CurrentWorldId == 72637) and HasQuest(347097)">
+        <WaitTimer questId="1" stepId="2" waitTime="3000" />
+        <!-- make sure bounty is complete! -->
+        <!--<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="218206" pathPrecision="20" boxTolerance="0.10" boxSize="25" stayAfterBounty="False"/>	-->
+        <!--<MoveToActor questId="1" stepId="2" actorId="218206" interactRange="20"  />-->
+        <ToggleTargeting questId="1" stepId="2" killRadius="31" />
+        <TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" pathPrecision="20" boxSize="25" boxTolerance="0.10" stayAfterBounty="False"/>
+      </If>
+
+    </If>
+    <!-- give legendaries a moment to fall from the heavens... -->
+    <WaitTimer questId="1" stepId="2" waitTime="3000" />
+    <LoadProfile file="act1.xml" />
+  </Order>
 </Profile>
