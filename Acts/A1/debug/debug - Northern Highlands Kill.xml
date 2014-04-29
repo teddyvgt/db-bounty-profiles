@@ -1,5 +1,3 @@
-<!-- test bounties  -->
-<!-- mod by kyriakos -->
 <Profile>
 <Name>Act 1</Name>
 <KillMonsters>True</KillMonsters>
@@ -44,45 +42,7 @@
   </TargetBlacklists>
 <Order>
 
-	<ToggleTargeting questId="1" stepId="1" killRadius="80" lootRadius="100" />	
-	
-
-	<!-- 13	Southern Highlands ========================================================-->
-
-		
-		<!-- Kill Logrut the warrior -->
-		<!-- Status: Needs Testing -->			
-		<If condition="HasQuest(344497)">
-			<LoadProfile file="path_kill_southern_highlands.xml" />
-		</If>			
-		
-		<!-- Kill Cadhul the Deathcaller -->
-		<If condition="HasQuest(344490)">
-			<LoadProfile file="path_kill_southern_highlands.xml" />
-		</If>	
-		
-		<!-- Kill Lorzak -->
-		<!-- Status: Needs Testing -->				
-		<If condition="HasQuest(344501)">
-			<LoadProfile file="path_kill_southern_highlands.xml" />
-		</If>	
-
-		<!-- Kill Red Rock -->
-		<!-- Status: Needs Testing -->			
-		<If condition="HasQuest(344503)">
-			<LoadProfile file="path_kill_southern_highlands.xml" />
-		</If>
-		
-		<!-- Kill Buras the Impaler -->
-		<!-- Status: Needs Testing -->			
-		<If condition="HasQuest(344499)">
-			<LoadProfile file="path_kill_southern_highlands.xml" />
-		</If>	
-
-
-	<!-- nope repeating the same act. gooo! -->
-	<LeaveGame quest="1" step="1" reason="done." stayInParty="False" />		
-	<ReloadProfile />
+	<LoadProfile file="path_kill_northern_highlands.xml" />
 	
 </Order>
 </Profile>
