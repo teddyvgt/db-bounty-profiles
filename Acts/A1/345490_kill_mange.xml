@@ -22,7 +22,7 @@
 
 		<!-- Look for him -->
 		<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
-		<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="40" until="ObjectFound" actorId="218441" objectDistance="50" ignoreMarkers="False">
+		<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="40" until="ObjectFound" actorId="218332" objectDistance="50" ignoreMarkers="False">
 			<IgnoreScenes>
 					<IgnoreScene sceneName="Exit" />
 					<IgnoreScene sceneName="Graveyard" />
@@ -32,14 +32,9 @@
 					<IgnoreScene sceneName="_E03_S02" />
 					<IgnoreScene sceneName="_ExitA_E01" />
 					<IgnoreScene sceneName="_ExitA_E02" />		  
-					<IgnoreScene sceneName="_EntrancetA_" />	
+					<IgnoreScene sceneName="_EntranceA_" />	
 			</IgnoreScenes>
 		</TrinityExploreDungeon>
-		
-		<If condition="HasQuest(345490)">
-			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
-			<MoveToActor questId="1" stepId="2" actorId="218441" interactRange="20"  />		
-		</If>
 		
 		<If condition="HasQuest(345490)">	
 			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="25" >
