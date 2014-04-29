@@ -1,0 +1,78 @@
+<Profile>
+
+<Name>Fixed Path Northern Highlands Bounty</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
+	<UseWaypoint waypointNumber="14" questId="1"/>	
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+
+
+	<SafeMoveTo questId="312429" stepId="2" x="1554" y="3942" z="40" pathPrecision="5" pathPointLimit="250" statusText="" />  
+	<SafeMoveTo questId="312429" stepId="2" x="1511" y="3921" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1518" y="3864" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1470" y="3825" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1514" y="3793" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1720" y="3842" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1818" y="3810" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1745" y="3842" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1728" y="3891" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1727" y="3964" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1724" y="4066" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1735" y="4174" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1684" y="4168" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1636" y="4164" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1622" y="4228" z="32" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1578" y="4160" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1521" y="4156" z="40" pathPrecision="5" pathPointLimit="250" statusText="" />  
+	<SafeMoveTo questId="312429" stepId="2" x="1404" y="4084" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1496" y="4082" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1618" y="4097" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1645" y="3972" z="41" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1595" y="4005" z="39" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1479" y="4020" z="38" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1425" y="4024" z="39" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1433" y="3955" z="50" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1257" y="3783" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1257" y="3783" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1198" y="3869" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1197" y="3944" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1190" y="4002" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1225" y="4028" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1186" y="4076" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1127" y="4073" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1064" y="4055" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1018" y="4035" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="953" y="4029" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="928" y="3969" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="938" y="3940" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="896" y="3913" z="90" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="936" y="3857" z="90" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="937" y="3782" z="90" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="941" y="3722" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1013" y="3735" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1106" y="3736" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1142" y="3771" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1208" y="3711" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1133" y="3789" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1106" y="3871" z="79" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1141" y="3970" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1057" y="3960" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1027" y="3980" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1010" y="3890" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<SafeMoveTo questId="312429" stepId="2" x="1033" y="3839" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	
+	
+	<!-- was this called from a debug profile -->
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Debug')">
+		<LeaveGame quest="1" step="1" reason="done." stayInParty="False" />				
+	</If>			
+	
+	<LoadProfile file="act1.xml" />
+	
+</Order>
+</Profile>

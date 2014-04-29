@@ -1,0 +1,88 @@
+<!-- test bounties  -->
+<!-- mod by kyriakos -->
+<Profile>
+<Name>Act 1</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+  <TargetBlacklists>
+    <TargetBlacklist actorId="168875" />
+    <TargetBlacklist actorId="105361" />
+    <TargetBlacklist actorId="79421" />
+    <TargetBlacklist actorId="177439" />
+    <TargetBlacklist actorId="167185" />
+    <TargetBlacklist actorId="144149" />
+    <TargetBlacklist actorId="92387" />
+    <TargetBlacklist actorId="104545" />
+    <TargetBlacklist actorId="108266" />
+    <TargetBlacklist actorId="109209" />
+    <TargetBlacklist actorId="5723" />
+    <TargetBlacklist actorId="156058" />
+    <TargetBlacklist actorId="90419" />
+    <TargetBlacklist actorId="105321" />
+    <TargetBlacklist actorId="102711" />
+    <TargetBlacklist actorId="105323" />
+    <TargetBlacklist actorId="58568" />
+    <TargetBlacklist actorId="3949" />
+    <TargetBlacklist actorId="5717" />
+    <TargetBlacklist actorId="58568" />
+    <TargetBlacklist actorId="5740" />
+    <TargetBlacklist actorId="158944" />
+    <TargetBlacklist actorId="167311" />
+    <TargetBlacklist actorId="89579" />
+    <TargetBlacklist actorId="89578" />
+    <TargetBlacklist actorId="170913" />
+    <TargetBlacklist actorId="5895" />
+    <TargetBlacklist actorId="5896" />
+    <TargetBlacklist actorId="5898" />
+    <TargetBlacklist actorId="5900" />
+    <TargetBlacklist actorId="116752" />
+    <TargetBlacklist actorId="108882" />
+    <TargetBlacklist actorId="206461" />
+	<TargetBlacklist actorId="365097" /> <!-- Cursed Chest -->
+	<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->
+  </TargetBlacklists>
+<Order>
+
+	<ToggleTargeting questId="1" stepId="1" killRadius="80" lootRadius="100" />	
+	
+
+	<!-- 13	Southern Highlands ========================================================-->
+
+		
+		<!-- Kill Logrut the warrior -->
+		<!-- Status: Needs Testing -->			
+		<If condition="HasQuest(344497)">
+			<LoadProfile file="path_kill_southern_highlands.xml" />
+		</If>			
+		
+		<!-- Kill Cadhul the Deathcaller -->
+		<If condition="HasQuest(344490)">
+			<LoadProfile file="path_kill_southern_highlands.xml" />
+		</If>	
+		
+		<!-- Kill Lorzak -->
+		<!-- Status: Needs Testing -->				
+		<If condition="HasQuest(344501)">
+			<LoadProfile file="path_kill_southern_highlands.xml" />
+		</If>	
+
+		<!-- Kill Red Rock -->
+		<!-- Status: Needs Testing -->			
+		<If condition="HasQuest(344503)">
+			<LoadProfile file="path_kill_southern_highlands.xml" />
+		</If>
+		
+		<!-- Kill Buras the Impaler -->
+		<!-- Status: Needs Testing -->			
+		<If condition="HasQuest(344499)">
+			<LoadProfile file="path_kill_southern_highlands.xml" />
+		</If>	
+
+
+	<!-- nope repeating the same act. gooo! -->
+	<LeaveGame quest="1" step="1" reason="done." stayInParty="False" />		
+	<ReloadProfile />
+	
+</Order>
+</Profile>
