@@ -1,5 +1,5 @@
 <Profile>
-<Name>Debug Northern Highlands Kill Looop</Name>
+<Name>Debug ALL Fixed path Loop</Name>
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
@@ -42,17 +42,30 @@
   </TargetBlacklists>
 <Order>
 
+		<LogMessage quest="1" step="2" output="
+			\n>>
+			\n>> DEBUG ALL LOOP
+			\n>> 
+		"/>
+
 		<!-- 
-		367561: Kill jezeb
-		367559: Kill Krailen
+		369249: Kill Brone		
+		369251: Kill Galush
+		345507: Kill Grimsmack
+		347054: Kill Hawthorne	
+		347056: Kill Fecklar
 		-->
 		<If condition="
-			HasQuest(367561) or
-			HasQuest(367559)">				
-			<LoadProfile file="../kill_leorics_manor.xml" />
-		</If>	
-		
-		<!-- 
+			HasQuest(369249) or
+			HasQuest(369251) or 
+			HasQuest(345507) or
+			HasQuest(347054) or
+			HasQuest(347056)">				
+			<LoadProfile file="../path_kill_festering_woods.xml" />
+		</If>			
+				
+
+						<!-- 
 		369271: Kill Theodyn
 		369253: Kill Reggrel
 		369273: Kill Percepeus
@@ -66,6 +79,53 @@
 			<LoadProfile file="../path_kill_northern_highlands.xml" />
 		</If>		
 					
+					
+					
+		<!-- 
+		344497: Kill Logrut
+		344490: Kill Cadhul
+		344501: Kill Lorzak
+		344503: Kill Red Rock
+		344499: Kill Buras
+		-->
+		<If condition="
+			HasQuest(344497) or
+			HasQuest(344490) or 
+			HasQuest(344501) or
+			HasQuest(344503) or 
+			HasQuest(344499)">	
+			<LoadProfile file="../path_kill_southern_highlands.xml" />
+		</If>	
+
+				<!-- 
+		369243: Kill Growler		
+		347070: Kill Charger
+		347073: Kill Dreadclaw
+		369246: Kill Krelm	
+		345498: Kill Melmak
+		-->
+		<If condition="
+			HasQuest(369243) or
+			HasQuest(347070) or 
+			HasQuest(347073) or
+			HasQuest(369246) or
+			HasQuest(345498)">				
+			<LoadProfile file="../path_kill_fields_of_misery.xml" />
+		</If>	
+		
+		<!-- 
+		347099: Kill Mira		
+		369399: Kill Horrus
+		369404: Kill Kankerrot
+		345490: Kill Mange	
+		-->
+		<If condition="
+			HasQuest(347099) or
+			HasQuest(369399) or 
+			HasQuest(369404) or
+			HasQuest(345490)">				
+			<LoadProfile file="../path_kill_weeping_hollow.xml" />
+		</If>				
 		
 		<WaitTimer questId="1" stepId="1" waitTime="4000"/>		
 		

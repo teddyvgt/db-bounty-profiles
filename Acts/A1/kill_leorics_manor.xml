@@ -17,7 +17,7 @@
 		<WaitTimer questId="1" stepId="2" waitTime="2000" />
 		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.12" boxSize="12" />
 
-	</If>		
+	</If>			
 	
 	<!-- give legendaries a moment to fall from the heavens... -->
 	<WaitTimer questId="1" stepId="2" waitTime="3000" />

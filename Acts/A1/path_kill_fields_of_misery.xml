@@ -1,0 +1,180 @@
+<Profile>
+<Name>Fixed Path Kill on Fields of Misery</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
+	<UseWaypoint waypointNumber="8" questId="1"/>	
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+
+	<!-- 369243: Kill Growler -->
+	<If condition="HasQuest(369243)">	
+		<SafeMoveTo questId="369243" x="2219" y="1094" />
+		<SafeMoveTo questId="369243" x="2193" y="1360" />
+		<SafeMoveTo questId="369243" x="2081" y="1476" />
+		<SafeMoveTo questId="369243" x="2084" y="1098" />
+		<SafeMoveTo questId="369243" x="1904" y="1059" />
+		<SafeMoveTo questId="369243" x="1834" y="873" />
+		<SafeMoveTo questId="369243" x="1951" y="795" />
+		<SafeMoveTo questId="369243" x="2056" y="652" />
+		<SafeMoveTo questId="369243" x="1639" y="789" />
+		<SafeMoveTo questId="369243" x="1673" y="834" />
+		<SafeMoveTo questId="369243" x="1654" y="225" />
+		<SafeMoveTo questId="369243" x="1816" y="240" />
+		<SafeMoveTo questId="369243" x="1825" y="612" />
+		<SafeMoveTo questId="369243" x="2167" y="530" />
+		<SafeMoveTo questId="369243" x="1901" y="375" />
+		<SafeMoveTo questId="369243" x="1915" y="245" />
+		<SafeMoveTo questId="369243" x="2396" y="742" />
+		<SafeMoveTo questId="369243" x="2414" y="998" />
+		<SafeMoveTo questId="369243" x="2287" y="1060" />
+		<SafeMoveTo questId="369243" x="2001" y="911" />
+		<SafeMoveTo questId="369243" x="2151" y="700" />
+		<SafeMoveTo questId="369243" x="2177" y="739" />
+		<SafeMoveTo questId="369243" x="2285" y="848" />
+	</If>
+	
+	<!-- 347070: Kill Charger -->
+	<If condition="HasQuest(347070)">	
+		<SafeMoveTo questId="347070" x="2219" y="1094" />
+		<SafeMoveTo questId="347070" x="2193" y="1360" />
+		<SafeMoveTo questId="347070" x="2081" y="1476" />
+		<SafeMoveTo questId="347070" x="2084" y="1098" />
+		<SafeMoveTo questId="347070" x="1904" y="1059" />
+		<SafeMoveTo questId="347070" x="1834" y="873" />
+		<SafeMoveTo questId="347070" x="1951" y="795" />
+		<SafeMoveTo questId="347070" x="2056" y="652" />
+		<SafeMoveTo questId="347070" x="1639" y="789" />
+		<SafeMoveTo questId="347070" x="1673" y="834" />
+		<SafeMoveTo questId="347070" x="1654" y="225" />
+		<SafeMoveTo questId="347070" x="1816" y="240" />
+		<SafeMoveTo questId="347070" x="1825" y="612" />
+		<SafeMoveTo questId="347070" x="2167" y="530" />
+		<SafeMoveTo questId="347070" x="1901" y="375" />
+		<SafeMoveTo questId="347070" x="1915" y="245" />
+		<SafeMoveTo questId="347070" x="2396" y="742" />
+		<SafeMoveTo questId="347070" x="2414" y="998" />
+		<SafeMoveTo questId="347070" x="2287" y="1060" />
+		<SafeMoveTo questId="347070" x="2001" y="911" />
+		<SafeMoveTo questId="347070" x="2151" y="700" />
+		<SafeMoveTo questId="347070" x="2177" y="739" />
+		<SafeMoveTo questId="347070" x="2285" y="848" />
+	</If>
+
+	<!-- 347073: Kill Dreadclaw -->
+	<If condition="HasQuest(347073)">	
+		<SafeMoveTo questId="347073" x="2219" y="1094" />
+		<SafeMoveTo questId="347073" x="2193" y="1360" />
+		<SafeMoveTo questId="347073" x="2081" y="1476" />
+		<SafeMoveTo questId="347073" x="2084" y="1098" />
+		<SafeMoveTo questId="347073" x="1904" y="1059" />
+		<SafeMoveTo questId="347073" x="1834" y="873" />
+		<SafeMoveTo questId="347073" x="1951" y="795" />
+		<SafeMoveTo questId="347073" x="2056" y="652" />
+		<SafeMoveTo questId="347073" x="1639" y="789" />
+		<SafeMoveTo questId="347073" x="1673" y="834" />
+		<SafeMoveTo questId="347073" x="1654" y="225" />
+		<SafeMoveTo questId="347073" x="1816" y="240" />
+		<SafeMoveTo questId="347073" x="1825" y="612" />
+		<SafeMoveTo questId="347073" x="2167" y="530" />
+		<SafeMoveTo questId="347073" x="1901" y="375" />
+		<SafeMoveTo questId="347073" x="1915" y="245" />
+		<SafeMoveTo questId="347073" x="2396" y="742" />
+		<SafeMoveTo questId="347073" x="2414" y="998" />
+		<SafeMoveTo questId="347073" x="2287" y="1060" />
+		<SafeMoveTo questId="347073" x="2001" y="911" />
+		<SafeMoveTo questId="347073" x="2151" y="700" />
+		<SafeMoveTo questId="347073" x="2177" y="739" />
+		<SafeMoveTo questId="347073" x="2285" y="848" />
+	</If>
+
+	<!-- 369246: Kill Krelm -->
+	<If condition="HasQuest(369246)">	
+		<SafeMoveTo questId="369246" x="2219" y="1094" />
+		<SafeMoveTo questId="369246" x="2193" y="1360" />
+		<SafeMoveTo questId="369246" x="2081" y="1476" />
+		<SafeMoveTo questId="369246" x="2084" y="1098" />
+		<SafeMoveTo questId="369246" x="1904" y="1059" />
+		<SafeMoveTo questId="369246" x="1834" y="873" />
+		<SafeMoveTo questId="369246" x="1951" y="795" />
+		<SafeMoveTo questId="369246" x="2056" y="652" />
+		<SafeMoveTo questId="369246" x="1639" y="789" />
+		<SafeMoveTo questId="369246" x="1673" y="834" />
+		<SafeMoveTo questId="369246" x="1654" y="225" />
+		<SafeMoveTo questId="369246" x="1816" y="240" />
+		<SafeMoveTo questId="369246" x="1825" y="612" />
+		<SafeMoveTo questId="369246" x="2167" y="530" />
+		<SafeMoveTo questId="369246" x="1901" y="375" />
+		<SafeMoveTo questId="369246" x="1915" y="245" />
+		<SafeMoveTo questId="369246" x="2396" y="742" />
+		<SafeMoveTo questId="369246" x="2414" y="998" />
+		<SafeMoveTo questId="369246" x="2287" y="1060" />
+		<SafeMoveTo questId="369246" x="2001" y="911" />
+		<SafeMoveTo questId="369246" x="2151" y="700" />
+		<SafeMoveTo questId="369246" x="2177" y="739" />
+		<SafeMoveTo questId="369246" x="2285" y="848" />
+	</If>
+
+	<!-- 345498: Kill Melmak -->
+	<If condition="HasQuest(345498)">	
+		<SafeMoveTo questId="345498" x="2219" y="1094" />
+		<SafeMoveTo questId="345498" x="2193" y="1360" />
+		<SafeMoveTo questId="345498" x="2081" y="1476" />
+		<SafeMoveTo questId="345498" x="2084" y="1098" />
+		<SafeMoveTo questId="345498" x="1904" y="1059" />
+		<SafeMoveTo questId="345498" x="1834" y="873" />
+		<SafeMoveTo questId="345498" x="1951" y="795" />
+		<SafeMoveTo questId="345498" x="2056" y="652" />
+		<SafeMoveTo questId="345498" x="1639" y="789" />
+		<SafeMoveTo questId="345498" x="1673" y="834" />
+		<SafeMoveTo questId="345498" x="1654" y="225" />
+		<SafeMoveTo questId="345498" x="1816" y="240" />
+		<SafeMoveTo questId="345498" x="1825" y="612" />
+		<SafeMoveTo questId="345498" x="2167" y="530" />
+		<SafeMoveTo questId="345498" x="1901" y="375" />
+		<SafeMoveTo questId="345498" x="1915" y="245" />
+		<SafeMoveTo questId="345498" x="2396" y="742" />
+		<SafeMoveTo questId="345498" x="2414" y="998" />
+		<SafeMoveTo questId="345498" x="2287" y="1060" />
+		<SafeMoveTo questId="345498" x="2001" y="911" />
+		<SafeMoveTo questId="345498" x="2151" y="700" />
+		<SafeMoveTo questId="345498" x="2177" y="739" />
+		<SafeMoveTo questId="345498" x="2285" y="848" />
+	</If>
+
+	
+	<!-- Check if we still have a bounty -->
+	<If condition="
+		HasQuest(369243) or
+		HasQuest(347070) or 
+		HasQuest(347073) or
+		HasQuest(369246) or
+		HasQuest(345498)">	
+	
+		<LogMessage quest="1" step="2" output=">>"/>
+		<LogMessage quest="1" step="2" output=">> FAILSAFE PROTOCOL INITIATED"/>
+		<LogMessage quest="1" step="2" output=">> Please Report to Community Bounty Thread "/>
+		<LogMessage quest="1" step="2" output=">> that 'path_kill_fields_of_misery' failed. "/>
+		<LogMessage quest="1" step="2" output=">>"/>			
+		
+		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.15" boxSize="15" >
+			<IgnoreScenes>
+				<IgnoreScene sceneName="_EntranceA_" />
+				<IgnoreScene sceneName="_MainGraveyard_" />
+				<IgnoreScene sceneName="_ExitA_" />	
+			</IgnoreScenes>
+		</TrinityExploreDungeon>			
+	
+	</If>
+	
+	<!-- was this called from a debug profile? -->
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('debug')">
+		<LoadProfile file="debug/debug_all.xml" />	
+	</If>				
+	
+	<LoadProfile file="act1.xml" />
+	
+</Order>
+</Profile>

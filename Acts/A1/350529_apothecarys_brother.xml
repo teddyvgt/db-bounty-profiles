@@ -52,6 +52,12 @@
 		</If>
 
 	</If>
+	
+	<!-- was this called from a debug profile? -->
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('debug')">
+		<LeaveGame quest="1" step="1" reason="done." stayInParty="False" />				
+	</If>		
+	
 	<LoadProfile file="act1.xml" />
 	
 </Order>

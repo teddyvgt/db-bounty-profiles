@@ -1,0 +1,139 @@
+<Profile>
+<Name>Fixed Path Kill on Festering Woods</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
+	<UseWaypoint waypointNumber="10" questId="1"/>	
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+
+	<!-- 369249: Kill Brone -->
+	<If condition="HasQuest(369249)">	
+		<SafeMoveTo questId="369249" x="604" y="832" />
+		<SafeMoveTo questId="369249" x="613" y="978" />
+		<SafeMoveTo questId="369249" x="410" y="981" />
+		<SafeMoveTo questId="369249" x="473" y="839" />
+		<SafeMoveTo questId="369249" x="349" y="857" />
+		<SafeMoveTo questId="369249" x="249" y="958" />
+		<SafeMoveTo questId="369249" x="198" y="885" />
+		<SafeMoveTo questId="369249" x="195" y="721" />
+		<SafeMoveTo questId="369249" x="259" y="597" />
+		<SafeMoveTo questId="369249" x="390" y="610" />
+		<SafeMoveTo questId="369249" x="547" y="602" />
+		<SafeMoveTo questId="369249" x="534" y="540" />
+		<SafeMoveTo questId="369249" x="728" y="693" />
+		<SafeMoveTo questId="369249" x="602" y="736" />
+		<SafeMoveTo questId="369249" x="319" y="719" />
+	</If>
+	
+	<!-- 369251: Kill Galush -->
+	<If condition="HasQuest(369251)">	
+		<SafeMoveTo questId="369251" x="604" y="832" />
+		<SafeMoveTo questId="369251" x="613" y="978" />
+		<SafeMoveTo questId="369251" x="410" y="981" />
+		<SafeMoveTo questId="369251" x="473" y="839" />
+		<SafeMoveTo questId="369251" x="349" y="857" />
+		<SafeMoveTo questId="369251" x="249" y="958" />
+		<SafeMoveTo questId="369251" x="198" y="885" />
+		<SafeMoveTo questId="369251" x="195" y="721" />
+		<SafeMoveTo questId="369251" x="259" y="597" />
+		<SafeMoveTo questId="369251" x="390" y="610" />
+		<SafeMoveTo questId="369251" x="547" y="602" />
+		<SafeMoveTo questId="369251" x="534" y="540" />
+		<SafeMoveTo questId="369251" x="728" y="693" />
+		<SafeMoveTo questId="369251" x="602" y="736" />
+		<SafeMoveTo questId="369251" x="319" y="719" />
+	</If>
+
+	<!-- 345507: Kill Grimsmack -->
+	<If condition="HasQuest(345507)">	
+		<SafeMoveTo questId="345507" x="604" y="832" />
+		<SafeMoveTo questId="345507" x="613" y="978" />
+		<SafeMoveTo questId="345507" x="410" y="981" />
+		<SafeMoveTo questId="345507" x="473" y="839" />
+		<SafeMoveTo questId="345507" x="349" y="857" />
+		<SafeMoveTo questId="345507" x="249" y="958" />
+		<SafeMoveTo questId="345507" x="198" y="885" />
+		<SafeMoveTo questId="345507" x="195" y="721" />
+		<SafeMoveTo questId="345507" x="259" y="597" />
+		<SafeMoveTo questId="345507" x="390" y="610" />
+		<SafeMoveTo questId="345507" x="547" y="602" />
+		<SafeMoveTo questId="345507" x="534" y="540" />
+		<SafeMoveTo questId="345507" x="728" y="693" />
+		<SafeMoveTo questId="345507" x="602" y="736" />
+		<SafeMoveTo questId="345507" x="319" y="719" />
+	</If>
+
+	<!-- 347054: Kill Hawthorne -->
+	<If condition="HasQuest(347054)">	
+		<SafeMoveTo questId="347054" x="604" y="832" />
+		<SafeMoveTo questId="347054" x="613" y="978" />
+		<SafeMoveTo questId="347054" x="410" y="981" />
+		<SafeMoveTo questId="347054" x="473" y="839" />
+		<SafeMoveTo questId="347054" x="349" y="857" />
+		<SafeMoveTo questId="347054" x="249" y="958" />
+		<SafeMoveTo questId="347054" x="198" y="885" />
+		<SafeMoveTo questId="347054" x="195" y="721" />
+		<SafeMoveTo questId="347054" x="259" y="597" />
+		<SafeMoveTo questId="347054" x="390" y="610" />
+		<SafeMoveTo questId="347054" x="547" y="602" />
+		<SafeMoveTo questId="347054" x="534" y="540" />
+		<SafeMoveTo questId="347054" x="728" y="693" />
+		<SafeMoveTo questId="347054" x="602" y="736" />
+		<SafeMoveTo questId="347054" x="319" y="719" />
+	</If>
+
+	<!-- 347056: Kill Fecklar -->
+	<If condition="HasQuest(347056)">	
+		<SafeMoveTo questId="347056" x="604" y="832" />
+		<SafeMoveTo questId="347056" x="613" y="978" />
+		<SafeMoveTo questId="347056" x="410" y="981" />
+		<SafeMoveTo questId="347056" x="473" y="839" />
+		<SafeMoveTo questId="347056" x="349" y="857" />
+		<SafeMoveTo questId="347056" x="249" y="958" />
+		<SafeMoveTo questId="347056" x="198" y="885" />
+		<SafeMoveTo questId="347056" x="195" y="721" />
+		<SafeMoveTo questId="347056" x="259" y="597" />
+		<SafeMoveTo questId="347056" x="390" y="610" />
+		<SafeMoveTo questId="347056" x="547" y="602" />
+		<SafeMoveTo questId="347056" x="534" y="540" />
+		<SafeMoveTo questId="347056" x="728" y="693" />
+		<SafeMoveTo questId="347056" x="602" y="736" />
+		<SafeMoveTo questId="347056" x="319" y="719" />
+	</If>
+
+	
+	<!-- Check if we still have a bounty -->
+	<If condition="
+		HasQuest(369249) or
+		HasQuest(369251) or 
+		HasQuest(345507) or
+		HasQuest(347054) or
+		HasQuest(347056)">	
+		
+		<LogMessage quest="1" step="2" output=">>"/>
+		<LogMessage quest="1" step="2" output=">> FAILSAFE PROTOCOL INITIATED"/>
+		<LogMessage quest="1" step="2" output=">> Please Report to Community Bounty Thread "/>
+		<LogMessage quest="1" step="2" output=">> that 'path_kill_festering_woods' failed. "/>
+		<LogMessage quest="1" step="2" output=">>"/>	
+		
+		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.15" boxSize="15" >
+			<IgnoreScenes>
+				<IgnoreScene sceneName="_ExitA_E01" />
+				<IgnoreScene sceneName="_ExitA_E02" />	
+			</IgnoreScenes>
+		</TrinityExploreDungeon>			
+	
+	</If>
+	
+	<!-- was this called from a debug profile? -->
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('debug')">
+		<LoadProfile file="debug/debug_all.xml" />	
+	</If>				
+	
+	<LoadProfile file="act1.xml" />
+	
+</Order>
+</Profile>

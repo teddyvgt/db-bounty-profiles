@@ -1,5 +1,5 @@
 <Profile>
-<Name>Fixed Path Kill on Northern Highlands</Name>
+<Name>Fixed Path Kill on Southern Highlands</Name>
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
@@ -134,13 +134,11 @@
 		HasQuest(344499)
 	">		
 		
-		<LogMessage quest="1" step="2" output="
-			\n>>
-			\n>> FAILSAFE PROTOCOL INITIATED
-			\n>> Please Report to Community Bounty Thread
-			\n>> that 'path_kill_southern_highlands' failed.
-			\n>> 
-		"/>
+		<LogMessage quest="1" step="2" output=">>"/>
+		<LogMessage quest="1" step="2" output=">> FAILSAFE PROTOCOL INITIATED"/>
+		<LogMessage quest="1" step="2" output=">> Please Report to Community Bounty Thread "/>
+		<LogMessage quest="1" step="2" output=">> that 'path_kill_southern_highlands' failed. "/>
+		<LogMessage quest="1" step="2" output=">>"/>		
 		
 		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.15" boxSize="15" >
 			<IgnoreScenes>
@@ -152,8 +150,8 @@
 	
 	<!-- was this called from a debug profile? -->
 	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('debug')">
-		<LeaveGame quest="1" step="1" reason="done." stayInParty="False" />				
-	</If>			
+		<LoadProfile file="debug/debug_all.xml" />	
+	</If>				
 	
 	<LoadProfile file="act1.xml" />
 	

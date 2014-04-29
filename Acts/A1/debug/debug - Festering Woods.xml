@@ -1,5 +1,5 @@
 <Profile>
-<Name>Debug Northern Highlands Kill Looop</Name>
+<Name>Debug Festering Woods Kill Looop</Name>
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
@@ -43,28 +43,20 @@
 <Order>
 
 		<!-- 
-		367561: Kill jezeb
-		367559: Kill Krailen
+		369249: Kill Brone		
+		369251: Kill Galush
+		345507: Kill Grimsmack
+		347054: Kill Hawthorne	
+		347056: Kill Fecklar
 		-->
 		<If condition="
-			HasQuest(367561) or
-			HasQuest(367559)">				
-			<LoadProfile file="../kill_leorics_manor.xml" />
-		</If>	
-		
-		<!-- 
-		369271: Kill Theodyn
-		369253: Kill Reggrel
-		369273: Kill Percepeus
-		369257: Kill Hrugowl	
-		-->
-		<If condition="
-			HasQuest(369271) or
-			HasQuest(369253) or 
-			HasQuest(369273) or
-			HasQuest(369257)">				
-			<LoadProfile file="../path_kill_northern_highlands.xml" />
-		</If>		
+			HasQuest(369249) or
+			HasQuest(369251) or 
+			HasQuest(345507) or
+			HasQuest(347054) or
+			HasQuest(347056)">				
+			<LoadProfile file="../path_kill_festering_woods.xml" />
+		</If>			
 					
 		
 		<WaitTimer questId="1" stepId="1" waitTime="4000"/>		

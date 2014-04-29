@@ -1,5 +1,5 @@
 <Profile>
-<Name>Debug Northern Highlands Kill Looop</Name>
+<Name>Fields of Misery Kill Loop</Name>
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
@@ -42,30 +42,25 @@
   </TargetBlacklists>
 <Order>
 
+
+							
 		<!-- 
-		367561: Kill jezeb
-		367559: Kill Krailen
+		369243: Kill Growler		
+		347070: Kill Charger
+		347073: Kill Dreadclaw
+		369246: Kill Krelm	
+		345498: Kill Melmak
 		-->
 		<If condition="
-			HasQuest(367561) or
-			HasQuest(367559)">				
-			<LoadProfile file="../kill_leorics_manor.xml" />
+			HasQuest(369243) or
+			HasQuest(347070) or 
+			HasQuest(347073) or
+			HasQuest(369246) or
+			HasQuest(345498)">				
+			<LoadProfile file="../path_kill_fields_of_misery.xml" />
 		</If>	
 		
-		<!-- 
-		369271: Kill Theodyn
-		369253: Kill Reggrel
-		369273: Kill Percepeus
-		369257: Kill Hrugowl	
-		-->
-		<If condition="
-			HasQuest(369271) or
-			HasQuest(369253) or 
-			HasQuest(369273) or
-			HasQuest(369257)">				
-			<LoadProfile file="../path_kill_northern_highlands.xml" />
-		</If>		
-					
+		
 		
 		<WaitTimer questId="1" stepId="1" waitTime="4000"/>		
 		

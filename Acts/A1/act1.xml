@@ -41,10 +41,11 @@
     <TargetBlacklist actorId="206461" />
 	<TargetBlacklist actorId="365097" /> <!-- Cursed Chest -->
 	<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->
+	<TargetBlacklist actorId="86385" />  <!-- Goatman Drum -->
   </TargetBlacklists>
 <Order>
 
-	<ToggleTargeting questId="1" stepId="1" killRadius="80" lootRadius="100" />	
+	<ToggleTargeting questId="1" stepId="1" killRadius="31" lootRadius="100" />	
 	
 	<!-- 1	The Old Ruins =============================================================-->
 	
@@ -156,25 +157,19 @@
 			<LoadProfile file="345488_clear_den_of_the_fallen.xml" />
 		</If>
 		
-		<!-- Kill Mange -->
-		<!-- Status: Needs Tweaking -->	
-		<If condition="HasQuest(345490)">
-			<LoadProfile file="345490_kill_mange.xml" />
+		<!-- 
+		347099: Kill Mira		
+		369399: Kill Horrus
+		369404: Kill Kankerrot
+		345490: Kill Mange	
+		-->
+		<If condition="
+			HasQuest(347099) or
+			HasQuest(369399) or 
+			HasQuest(369404) or
+			HasQuest(345490)">				
+			<LoadProfile file="path_kill_weeping_hollow.xml" />
 		</If>			
-		
-		<!-- Kill Horrus/Kankerrot (same questid) -->
-		<!-- Status: Zerg -->	
-		<If condition="HasQuest(369399)">
-			<LoadProfile file="369399_kill_horrus.xml" />
-		</If>
-
-		<!-- Kill Mira Eamon -->
-		<!-- Status: Zerg -->	
-		<If condition="HasQuest(347099)">
-			<LoadProfile file="347099_kill_mira_eamon.xml" />
-		</If>	
-
-		
 	
 	<!-- 7	Cemetery of the Forsaken ==================================================-->
 
@@ -239,19 +234,7 @@
 		<!-- Status: Zerg -->			
 		<If condition="HasQuest(345496)">
 			<LoadProfile file="345496_clear_the_scavengers_den.xml" />
-		</If>		
-		
-		<!-- Kill Melmak -->
-		<!-- Status: Needs Tweaking -->	
-		<If condition="HasQuest(345498)">
-			<LoadProfile file="345498_kill_melmak.xml" />
-		</If>			
-		
-		<!-- Kill Krelm the Flagitious -->
-		<!-- Status: Needs Tweaking -->	
-		<If condition="HasQuest(369246)">
-			<LoadProfile file="kill_fields_of_misery.xml" />
-		</If>		
+		</If>				
 		
 		<!-- The Cursed Grove-->
 		<!-- Status: Zerg -->			
@@ -265,23 +248,22 @@
 			<LoadProfile file="347065_clear_khazra_den.xml" />
 		</If>		
 		
-		<!-- Kill Dreadclaw -->
-		<!-- Status: Needs Tweaking -->	
-		<If condition="HasQuest(347073)">
-			<LoadProfile file="347073_kill_dreadclaw.xml" />
-		</If>			
-
-		<!-- Kill Charger -->
-		<!-- Status: Needs Tweaking -->	
-		<If condition="HasQuest(347070)">
-			<LoadProfile file="347070_kill_charger.xml" />
-		</If>				
-				
-		<!-- Kill Growler -->
-		<!-- Status: Needs Tweaking -->	
-		<If condition="HasQuest(369243)">
-			<LoadProfile file="369243_kill_growler.xml" />
-		</If>		
+		<!-- 
+		369243: Kill Growler		
+		347070: Kill Charger
+		347073: Kill Dreadclaw
+		369246: Kill Krelm	
+		345498: Kill Melmak
+		-->
+		<If condition="
+			HasQuest(369243) or
+			HasQuest(347070) or 
+			HasQuest(347073) or
+			HasQuest(369246) or
+			HasQuest(345498)">				
+			<LoadProfile file="path_kill_fields_of_misery.xml" />
+		</If>	
+		
 
 	<!-- 9 Drowned Temple ===========================================================-->		
 		
@@ -293,28 +275,10 @@
 	
 	<!-- 10 Festering Woods ===========================================================-->
 	
-		<!-- Kill Galush -->
-		<!-- Status: Needs Testing -->	
-		<If condition="HasQuest(369251)">
-			<LoadProfile file="369251_kill_galush.xml" />
-		</If>		
-	
 		<!-- Clear the Crypt of the Ancients -->
 		<!-- Status: Needs Testing -->			
 		<If condition="HasQuest(345517)">
 			<LoadProfile file="345517_crypt_of_the_ancients.xml" />
-		</If>	
-
-		<!-- Kill Fecklar's Ghost-->
-		<!-- Status: OK -->			
-		<If condition="HasQuest(347056)">
-			<LoadProfile file="kill_the_festering_woods.xml" />
-		</If>
-			
-		<!-- Kill Hawthorne Gable-->
-		<!-- Status: OK -->				
-		<If condition="HasQuest(347054)">
-			<LoadProfile file="kill_the_festering_woods.xml" />
 		</If>	
 
 		<!-- Eternal War -->
@@ -334,24 +298,22 @@
 		<If condition="HasQuest(345520)">
 			<LoadProfile file="345520_clear_warriors_rest.xml" />
 		</If>		
-
-		<!-- Kill Grimsmack -->
-		<!-- Status: Needs Testing -->			
-		<If condition="HasQuest(345507)">
-			<LoadProfile file="345507_kill_grimshack.xml" />
-		</If>		
-
-		<!-- Kill Galush Valdant -->
-		<!-- Status: Needs Testing -->			
-		<If condition="HasQuest(369251)">
-			<LoadProfile file="369251_kill_galush.xml" />
-		</If>		
 		
-		<!-- Kill Lord Brone-->
-		<!-- Status: OK, path needs tweaking because it has some dead spots -->			
-		<If condition="HasQuest(369249)">
-			<LoadProfile file="369249_kill_lord_brone.xml" />
-		</If>		
+		<!-- 
+		369249: Kill Brone		
+		369251: Kill Galush
+		345507: Kill Grimsmack
+		347054: Kill Hawthorne	
+		347056: Kill Fecklar
+		-->
+		<If condition="
+			HasQuest(369249) or
+			HasQuest(369251) or 
+			HasQuest(345507) or
+			HasQuest(347054) or
+			HasQuest(347056)">				
+			<LoadProfile file="path_kill_festering_woods.xml" />
+		</If>				
 		
 	<!-- 12	Caverns of Araneae ========================================================-->
 	
