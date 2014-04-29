@@ -31,7 +31,7 @@
         <SafeMoveTo questId="1" stepId="2" x="2032" y="1776" z="1" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location North"/>
         <If condition="CurrentWorldId == 71150 and MarkerExistsAt(-1965109037, 2032.983, 1776.411, 1.434785, 30)">
           <LogMessage message="found marker in North (2032, 1776) - moving there" />
-          <MoveToMapMarker questId="312429" stepId="2" x="2033" y="1776" z="1" markerNameHash="-1965109037" actorId="176002" interactRange="7.766416"
+          <MoveToMapMarker questId="347097" markerNameHash="-1965109037" actorId="176002" interactRange="7.8"
                                  pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
           <WaitTimer questId="1" stepId="2" waitTime="2000" />
         </If>
@@ -39,7 +39,7 @@
         <SafeMoveTo questId="1" stepId="2" x="2233" y="1793" z="-4" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location South"/>
         <If condition="CurrentWorldId == 71150 and MarkerExistsAt(-1965109037, 2233, 1793, 6, 30)">
           <LogMessage message="found marker in West (2233, 1793) - moving there" />
-          <MoveToMapMarker questId="312429" stepId="2" x="2033" y="1776" z="1" markerNameHash="-1965109037" actorId="176002" interactRange="7.766416"
+          <MoveToMapMarker questId="347097" markerNameHash="-1965109037" actorId="176002" interactRange="7.8"
                                  pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
           <WaitTimer questId="1" stepId="2" waitTime="2000" />
         </If>
@@ -47,7 +47,7 @@
         <SafeMoveTo questId="1" stepId="2" x="2062" y="1950" z="-5" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location East"/>
         <If condition="CurrentWorldId == 71150 and MarkerExistsAt(-1965109037, 2062, 1950, -5, 30)">
           <LogMessage message="found marker in East (2062, 1950) - moving there" />
-          <MoveToMapMarker questId="312429" stepId="2" x="2033" y="1776" z="1" markerNameHash="-1965109037" actorId="176002" interactRange="7.766416"
+          <MoveToMapMarker questId="347097" markerNameHash="-1965109037" actorId="176002" interactRange="7.8"
                                  pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
           <WaitTimer questId="1" stepId="2" waitTime="2000" />
         </If>
@@ -55,7 +55,7 @@
         <SafeMoveTo questId="1" stepId="2" x="2173" y="1941" z="6" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location West"/>
         <If condition="CurrentWorldId == 71150 and MarkerExistsAt(-1965109037, 2173, 1941, -4, 30)">
           <LogMessage message="found marker in South (2173, 1941) - moving there" />
-          <MoveToMapMarker questId="312429" stepId="2" x="2033" y="1776" z="1" markerNameHash="-1965109037" actorId="176002" interactRange="7.766416"
+          <MoveToMapMarker questId="347097" markerNameHash="-1965109037" actorId="176002" interactRange="7.8"
                                  pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
           <WaitTimer questId="1" stepId="2" waitTime="2000" />
         </If>
