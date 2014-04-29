@@ -1,5 +1,5 @@
 <Profile>
-<Name>Act 1</Name>
+<Name>Debug Northern Highlands Kill Looop</Name>
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
@@ -42,7 +42,40 @@
   </TargetBlacklists>
 <Order>
 
-	<LoadProfile file="path_kill_northern_highlands.xml" />
-	
+		<!-- Apothecary's Brother-->
+		<!-- Status: OK -->		
+		<If condition="HasQuest(350529)">
+			<LoadProfile file="350529_apothecarys_brother.xml" />
+		</If>		
+
+		<!-- 
+		367561: Kill jezeb
+		367559: Kill Krailen
+		-->
+		<If condition="
+			HasQuest(367561) or
+			HasQuest(367559)">				
+			<LoadProfile file="kill_leorics_manor.xml" />
+		</If>	
+		
+		<!-- 
+		369271: Kill Theodyn
+		369253: Kill Reggrel
+		369273: Kill Percepeus
+		369257: Kill Hrugowl	
+		-->
+		<If condition="
+			HasQuest(369271) or
+			HasQuest(369253) or 
+			HasQuest(369273) or
+			HasQuest(369257)">				
+			<LoadProfile file="path_kill_northern_highlands.xml" />
+		</If>		
+					
+		
+		<WaitTimer questId="1" stepId="1" waitTime="4000"/>		
+		
+		<LeaveGame quest="1" step="1" reason="didn't get any of the bounties we're looking for" stayInParty="False" />	
+
 </Order>
 </Profile>

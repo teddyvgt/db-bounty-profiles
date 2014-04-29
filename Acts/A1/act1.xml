@@ -443,46 +443,37 @@
 	
 	<!-- 14	Northern Highlands ========================================================-->
 	
-		<!-- Kill Theodyn -->
-		<!-- Status: BAD, needs path optimised, gets stuck a lot -->				
-		<If condition="HasQuest(369271)">
-			<LoadProfile file="369271_kill_theodyn.xml" />
-		</If>	
-
-		<!-- Kill Reggrel the Despised -->
-		<!-- Status: OK, needs spawn locations mapped -->			
-		<If condition="HasQuest(369253)">
-			<LoadProfile file="369253_kill_reggrel.xml" />
-		</If>		
 		
 		<!-- Apothecary's Brother-->
 		<!-- Status: OK -->		
 		<If condition="HasQuest(350529)">
 			<LoadProfile file="350529_apothecarys_brother.xml" />
 		</If>		
-		
-		<!-- Kill Percepeus -->
-		<!-- Status: Needs Testing -->		
-		<If condition="HasQuest(369273)">
-			<LoadProfile file="369273_kill_percepeus.xml" />
-		</If>			
-		
-		<!-- Kill Krailen the Wicked-->
-		<!-- Status: OK, pathing to leorics manner gets stuck a lot -->				
-		<If condition="HasQuest(367559)">
-			<LoadProfile file="367559_kill_krailen.xml" />
-		</If>	
 
-		<!-- Kill Hrugowl the Defiant -->
-		<If condition="HasQuest(369257)">
-			<LoadProfile file="369257_kill_hrugowl.xml" />
-		</If>
+		<!-- 
+		367561: Kill jezeb
+		367559: Kill Krailen
+		-->
+		<If condition="
+			HasQuest(367561) or
+			HasQuest(367559)">				
+			<LoadProfile file="kill_leorics_manor.xml" />
+		</If>	
 		
-		<!-- Kill Jezeb the Conjuror -->
-		<!-- Status: BAD, didn't find entrance and ran down to s.highlands -->					
-		<If condition="HasQuest(367561)">
-			<LoadProfile file="367561_kill_jezeb.xml" />
-		</If>			
+		<!-- 
+		369271: Kill Theodyn
+		369253: Kill Reggrel
+		369273: Kill Percepeus
+		369257: Kill Hrugowl	
+		-->
+		<If condition="
+			HasQuest(369271) or
+			HasQuest(369253) or 
+			HasQuest(369273) or
+			HasQuest(369257)">				
+			<LoadProfile file="path_kill_northern_highlands.xml" />
+		</If>		
+		
 		
 	<!-- 15	Halls of Agony Level 1 ====================================================-->
 		

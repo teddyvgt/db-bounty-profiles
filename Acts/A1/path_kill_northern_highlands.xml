@@ -1,7 +1,5 @@
 <Profile>
-
-<Name>Fixed Path Northern Highlands Bounty</Name>
-
+<Name>Fixed Path Kill on Northern Highlands</Name>
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
@@ -11,64 +9,177 @@
 	<UseWaypoint waypointNumber="14" questId="1"/>	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
 
+	
+	<!-- 369271: Kill Theodyn -->
+	<If condition="HasQuest(369271)">	
+		<SafeMoveTo questId="369271" x="1726" y="4019" />
+		<SafeMoveTo questId="369271" x="1820" y="3814" />
+		<SafeMoveTo questId="369271" x="1616" y="3873" />
+		<SafeMoveTo questId="369271" x="1645" y="4014" />
+		<SafeMoveTo questId="369271" x="1739" y="4180" />
+		<SafeMoveTo questId="369271" x="1604" y="4198" />
+		<SafeMoveTo questId="369271" x="1624" y="4081" />
+		<SafeMoveTo questId="369271" x="1493" y="4081" />
+		<SafeMoveTo questId="369271" x="1507" y="4155" />
+		<SafeMoveTo questId="369271" x="1390" y="4087" />
+		<SafeMoveTo questId="369271" x="1612" y="3919" />
+		<SafeMoveTo questId="369271" x="1495" y="3824" />
+		<SafeMoveTo questId="369271" x="1437" y="4032" />
+		<SafeMoveTo questId="369271" x="1410" y="3960" />
+		<SafeMoveTo questId="369271" x="1335" y="3959" />
+		<SafeMoveTo questId="369271" x="1274" y="3902" />
+		<SafeMoveTo questId="369271" x="1137" y="4078" />
+		<SafeMoveTo questId="369271" x="893" y="3992" />
+		<SafeMoveTo questId="369271" x="1159" y="3966" />
+		<SafeMoveTo questId="369271" x="1262" y="3750" />
+		<SafeMoveTo questId="369271" x="930" y="3727" />
+		<SafeMoveTo questId="369271" x="896" y="3920" z="90" />
+		<SafeMoveTo questId="369271" x="937" y="3943" />
+		<SafeMoveTo questId="369271" x="1121" y="3807" /> 
+	</If>
+	
+	<!-- 369253: Kill Reggrel -->
+	<If condition="HasQuest(369253)">	
+		<SafeMoveTo questId="369253" x="1726" y="4019" />
+		<SafeMoveTo questId="369253" x="1820" y="3814" />
+		<SafeMoveTo questId="369253" x="1616" y="3873" />
+		<SafeMoveTo questId="369253" x="1645" y="4014" />
+		<SafeMoveTo questId="369253" x="1739" y="4180" />
+		<SafeMoveTo questId="369253" x="1604" y="4198" />
+		<SafeMoveTo questId="369253" x="1624" y="4081" />
+		<SafeMoveTo questId="369253" x="1493" y="4081" />
+		<SafeMoveTo questId="369253" x="1507" y="4155" />
+		<SafeMoveTo questId="369253" x="1390" y="4087" />
+		<SafeMoveTo questId="369253" x="1612" y="3919" />
+		<SafeMoveTo questId="369253" x="1495" y="3824" />
+		<SafeMoveTo questId="369253" x="1437" y="4032" />
+		<SafeMoveTo questId="369253" x="1410" y="3960" />
+		<SafeMoveTo questId="369253" x="1335" y="3959" />
+		<SafeMoveTo questId="369253" x="1274" y="3902" />
+		<SafeMoveTo questId="369253" x="1137" y="4078" />
+		<SafeMoveTo questId="369253" x="893" y="3992" />
+		<SafeMoveTo questId="369253" x="1159" y="3966" />
+		<SafeMoveTo questId="369253" x="1262" y="3750" />
+		<SafeMoveTo questId="369253" x="930" y="3727" />
+		<SafeMoveTo questId="369253" x="896" y="3920" z="90" />
+		<SafeMoveTo questId="369253" x="937" y="3943" />
+		<SafeMoveTo questId="369253" x="1121" y="3807" /> 
+	</If>	
+	
+	<!-- 369273: Kill Percepeus -->
+	<If condition="HasQuest(369273)">	
+		<SafeMoveTo questId="369273" x="1726" y="4019" />
+		<SafeMoveTo questId="369273" x="1820" y="3814" />
+		<SafeMoveTo questId="369273" x="1616" y="3873" />
+		<SafeMoveTo questId="369273" x="1645" y="4014" />
+		<SafeMoveTo questId="369273" x="1739" y="4180" />
+		<SafeMoveTo questId="369273" x="1604" y="4198" />
+		<SafeMoveTo questId="369273" x="1624" y="4081" />
+		<SafeMoveTo questId="369273" x="1493" y="4081" />
+		<SafeMoveTo questId="369273" x="1507" y="4155" />
+		<SafeMoveTo questId="369273" x="1390" y="4087" />
+		<SafeMoveTo questId="369273" x="1612" y="3919" />
+		<SafeMoveTo questId="369273" x="1495" y="3824" />
+		<SafeMoveTo questId="369273" x="1437" y="4032" />
+		<SafeMoveTo questId="369273" x="1410" y="3960" />
+		<SafeMoveTo questId="369273" x="1335" y="3959" />
+		<SafeMoveTo questId="369273" x="1274" y="3902" />
+		<SafeMoveTo questId="369273" x="1137" y="4078" />
+		<SafeMoveTo questId="369273" x="893" y="3992" />
+		<SafeMoveTo questId="369273" x="1159" y="3966" />
+		<SafeMoveTo questId="369273" x="1262" y="3750" />
+		<SafeMoveTo questId="369273" x="930" y="3727" />
+		<SafeMoveTo questId="369273" x="896" y="3920" z="90" />
+		<SafeMoveTo questId="369273" x="937" y="3943" />
+		<SafeMoveTo questId="369273" x="1121" y="3807" /> 
+	</If>	
+	
+	<!-- 369257: Kill Hrugowl -->
+	<If condition="HasQuest(369257)">	
+		<SafeMoveTo questId="369257" x="1726" y="4019" />
+		<SafeMoveTo questId="369257" x="1820" y="3814" />
+		<SafeMoveTo questId="369257" x="1616" y="3873" />
+		<SafeMoveTo questId="369257" x="1645" y="4014" />
+		<SafeMoveTo questId="369257" x="1739" y="4180" />
+		<SafeMoveTo questId="369257" x="1604" y="4198" />
+		<SafeMoveTo questId="369257" x="1624" y="4081" />
+		<SafeMoveTo questId="369257" x="1493" y="4081" />
+		<SafeMoveTo questId="369257" x="1507" y="4155" />
+		<SafeMoveTo questId="369257" x="1390" y="4087" />
+		<SafeMoveTo questId="369257" x="1612" y="3919" />
+		<SafeMoveTo questId="369257" x="1495" y="3824" />
+		<SafeMoveTo questId="369257" x="1437" y="4032" />
+		<SafeMoveTo questId="369257" x="1410" y="3960" />
+		<SafeMoveTo questId="369257" x="1335" y="3959" />
+		<SafeMoveTo questId="369257" x="1274" y="3902" />
+		<SafeMoveTo questId="369257" x="1137" y="4078" />
+		<SafeMoveTo questId="369257" x="893" y="3992" />
+		<SafeMoveTo questId="369257" x="1159" y="3966" />
+		<SafeMoveTo questId="369257" x="1262" y="3750" />
+		<SafeMoveTo questId="369257" x="930" y="3727" />
+		<SafeMoveTo questId="369257" x="896" y="3920" z="90" />
+		<SafeMoveTo questId="369257" x="937" y="3943" />
+		<SafeMoveTo questId="369257" x="1121" y="3807" /> 
+	</If>	
+	
+	<!-- 367561: Kill Jezeb -->	
+	<If condition="HasQuest(367561)">	
+		<SafeMoveTo questId="367561" x="1726" y="4019" />
+		<SafeMoveTo questId="367561" x="1820" y="3814" />
+		<SafeMoveTo questId="367561" x="1616" y="3873" />
+		<SafeMoveTo questId="367561" x="1645" y="4014" />
+		<SafeMoveTo questId="367561" x="1739" y="4180" />
+		<SafeMoveTo questId="367561" x="1604" y="4198" />
+		<SafeMoveTo questId="367561" x="1624" y="4081" />
+		<SafeMoveTo questId="367561" x="1493" y="4081" />
+		<SafeMoveTo questId="367561" x="1507" y="4155" />
+		<SafeMoveTo questId="367561" x="1390" y="4087" />
+		<SafeMoveTo questId="367561" x="1612" y="3919" />
+		<SafeMoveTo questId="367561" x="1495" y="3824" />
+		<SafeMoveTo questId="367561" x="1437" y="4032" />
+		<SafeMoveTo questId="367561" x="1410" y="3960" />
+		<SafeMoveTo questId="367561" x="1335" y="3959" />
+		<SafeMoveTo questId="367561" x="1274" y="3902" />
+		<SafeMoveTo questId="367561" x="1137" y="4078" />
+		<SafeMoveTo questId="367561" x="893" y="3992" />
+		<SafeMoveTo questId="367561" x="1159" y="3966" />
+		<SafeMoveTo questId="367561" x="1262" y="3750" />
+		<SafeMoveTo questId="367561" x="930" y="3727" />
+		<SafeMoveTo questId="367561" x="896" y="3920" z="90" />
+		<SafeMoveTo questId="367561" x="937" y="3943" />
+		<SafeMoveTo questId="367561" x="1121" y="3807" /> 
+	</If>	
+	
+	
 
-	<SafeMoveTo questId="312429" stepId="2" x="1554" y="3942" z="40" pathPrecision="5" pathPointLimit="250" statusText="" />  
-	<SafeMoveTo questId="312429" stepId="2" x="1511" y="3921" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1518" y="3864" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1470" y="3825" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1514" y="3793" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1720" y="3842" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1818" y="3810" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1745" y="3842" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1728" y="3891" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1727" y="3964" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1724" y="4066" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1735" y="4174" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1684" y="4168" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1636" y="4164" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1622" y="4228" z="32" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1578" y="4160" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1521" y="4156" z="40" pathPrecision="5" pathPointLimit="250" statusText="" />  
-	<SafeMoveTo questId="312429" stepId="2" x="1404" y="4084" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1496" y="4082" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1618" y="4097" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1645" y="3972" z="41" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1595" y="4005" z="39" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1479" y="4020" z="38" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1425" y="4024" z="39" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1433" y="3955" z="50" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1257" y="3783" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1257" y="3783" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1198" y="3869" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1197" y="3944" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1190" y="4002" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1225" y="4028" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1186" y="4076" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1127" y="4073" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1064" y="4055" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1018" y="4035" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="953" y="4029" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="928" y="3969" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="938" y="3940" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="896" y="3913" z="90" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="936" y="3857" z="90" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="937" y="3782" z="90" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="941" y="3722" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1013" y="3735" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1106" y="3736" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1142" y="3771" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1208" y="3711" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1133" y="3789" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1106" y="3871" z="79" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1141" y="3970" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1057" y="3960" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1027" y="3980" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1010" y="3890" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="312429" stepId="2" x="1033" y="3839" z="80" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<!-- Check if we still have a bounty -->
+	<If condition="
+		HasQuest(369271) or
+		HasQuest(369253) or 
+		HasQuest(369273) or
+		HasQuest(369257) or 
+		HasQuest(367561)
+	">	
 	
+		<LogMessage quest="1" step="2" output="
+			\n>>
+			\n>> FAILSAFE PROTOCOL INITIATED
+			\n>> Please Report to Community Bounty Thread
+			\n>> that 'path_kill_northern_highlands' failed.
+			\n>> 
+		"/>
+		
+		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.15" boxSize="15" >
+			<IgnoreScenes>
+				<IgnoreScene sceneName="_Chokepoint_" />
+				<IgnoreScene sceneName="_N01" />
+			</IgnoreScenes>
+		</TrinityExploreDungeon>			
 	
-	<!-- was this called from a debug profile -->
-	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Debug')">
+	</If>
+	
+	<!-- was this called from a debug profile? -->
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('debug')">
 		<LeaveGame quest="1" step="1" reason="done." stayInParty="False" />				
 	</If>			
 	

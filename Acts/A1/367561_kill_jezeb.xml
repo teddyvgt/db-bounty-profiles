@@ -14,20 +14,32 @@
 <Order>
 	<ToggleTargeting questId="1" stepId="2" killRadius="31" />
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
-	<UseWaypoint waypointNumber="10" questId="1"/>	
+	<UseWaypoint waypointNumber="14" questId="1"/>	
 
-    <!-- Look for him -->
+	<If condition="CurrentWorldId == 71150">
+	
+		<SafeMoveTo questId="1" stepId="2" x="1430" y="4030" /> 
+		<SafeMoveTo questId="1" stepId="2" x="1269" y="3903" />
+		<SafeMoveTo questId="1" stepId="2" x="1080" y="3401" />
+		<MoveToActor questId="1" stepId="2" actorId="176001" isPortal="True" destinationWorldId="75049" />
+		<WaitTimer questId="1" stepId="2" waitTime="2000" />
+		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.12" boxSize="12" />
+
+	</If>	
+	
+    <!-- Look for him 
 	<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
 	<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ObjectFound" actorId="218441" objectDistance="150" ignoreMarkers="False"/>
 	<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
 	<MoveToActor questId="1" stepId="2" actorId="218441" interactRange="20"  />		
 	<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="25" >
 		<IgnoreScenes>
-			<!-- Path to Drowned Template -->
 			<IgnoreScene sceneName="_ExitA_E01" />
 			<IgnoreScene sceneName="_ExitA_E02" />		  
 		</IgnoreScenes>
 	</TrinityExploreDungeon>
+	-->
+	
 	<!-- give legendaries a moment to fall from the heavens... -->
 	<WaitTimer questId="1" stepId="2" waitTime="3000" />
 	<LoadProfile file="act1.xml" />	
