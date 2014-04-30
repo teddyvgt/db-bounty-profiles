@@ -76,7 +76,11 @@
 			<LogMessage message="In the Den1" />
 			<!--<SafeMoveTo questId="1" stepId="2" x="401.3363" y="359.3021" z="0.1" pathPrecision="5" pathPointLimit="2500" statusText="" /> 	-->
 			<!--<MoveToActor questId="1" stepId="2"  actorId="176038" isPortal="True" destinationWorldId="194231" interactRange="20"  />-->
-			<TrinityExploreDungeon questId="1" stepId="2"  until="ExitFound" exitNameHash="-711350153" ignoreMarkers="False" objectDistance="50" actorId="176038" boxTolerance="0.7" boxSize="10" pathPrecision="40" stayAfterBounty="False" />
+			<TrinityExploreDungeon questId="1" stepId="2"  until="ExitFound" exitNameHash="-711350153" ignoreMarkers="False" objectDistance="50" actorId="176038" boxTolerance="0.3" boxSize="10" pathPrecision="40" stayAfterBounty="False">
+				<PriorityScenes>				
+					<PriorityScene sceneName="Exit" />	
+				</PriorityScenes>
+			</TrinityExploreDungeon>
 			<MoveToActor questId="1" stepId="2"  actorId="176038" isPortal="True" destinationWorldId="194231" interactRange="20"  />
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</If>	
