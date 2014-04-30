@@ -13,9 +13,10 @@
 </TargetBlacklists>
 <Order>
 
-	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<WaitTimer questId="1" stepId="2" waitTime="1000" />				
 	<UseWaypoint waypointNumber="4" questId="1"/>	
-	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<WaitTimer questId="1" stepId="2" waitTime="3500" />		
 	
 		<!-- Temporary - remove when we have all the actorIds logged -->
 		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.14" boxSize="14" >
@@ -26,10 +27,8 @@
 		
 		<ToggleTargeting questId="1" stepId="2" killRadius="31" />		
 	
-		<!-- Kill Killian Damort -->
-		<!-- Status: Zerg -->	
+		<!-- Kill Killian Damort 
 		<If condition="HasQuest(361343)">
-			<!-- Look for him -->
 			<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />	
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.15" boxSize="35" until="ObjectFound" actorId="218400" objectDistance="50" ignoreMarkers="False"/>
 			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
@@ -39,12 +38,10 @@
 					<IgnoreScene sceneName="Exit" />
 				</IgnoreScenes>
 			</TrinityExploreDungeon>
-		</If>	
+		</If>	-->
 		
-		<!-- Kill Captain Cage -->
-		<!-- Status: Zerg -->	
+		<!-- Kill Captain Cage
 		<If condition="HasQuest(361341)">
-			<!-- Look for him -->
 			<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.15" boxSize="35" until="ObjectFound" actorId="218396" objectDistance="50" ignoreMarkers="False"/>
 			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
@@ -54,12 +51,10 @@
 					<IgnoreScene sceneName="Exit" />
 				</IgnoreScenes>
 			</TrinityExploreDungeon>
-		</If>	
+		</If>	 -->
 
-		<!-- Kill Bellybloat the Scarred -->
-		<!-- Status: Needs Tweaking -->	
+		<!-- Kill Bellybloat the Scarred
 		<If condition="HasQuest(361345)">
-			<!-- Look for him -->
 			<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.15" boxSize="35" until="ObjectFound" actorId="218405" objectDistance="125" ignoreMarkers="False"/>
 			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
@@ -72,10 +67,11 @@
 					<IgnoreScene sceneName="Exit" />
 				</IgnoreScenes>
 			</TrinityExploreDungeon>
-		</If>	
+		</If> -->	
 	
 	<!-- give legendaries a moment to fall from the heavens... -->
 	<WaitTimer questId="1" stepId="2" waitTime="3000" />
 	<LoadProfile file="act1.xml" />	
+	
 </Order>
 </Profile>

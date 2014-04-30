@@ -9,8 +9,9 @@
 </TargetBlacklists>
 <Order>
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<WaitTimer questId="1" stepId="2" waitTime="1000" />		
 	<UseWaypoint waypointNumber="2" questId="1"/>
-	<WaitTimer questId="1" stepId="2" waitTime="2000" />
+	<WaitTimer questId="1" stepId="2" waitTime="3500" />
 	<If condition="HasQuest(375198)">
 		<If condition="CurrentLevelAreaId == 19780">
 			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="364601" boxTolerance="0.10" objectDistance="70" boxSize="15" />

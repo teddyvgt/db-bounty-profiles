@@ -14,9 +14,10 @@
 <Order>
 		<ToggleTargeting questId="1" stepId="2" killRadius="31" />
 
-	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>	
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<WaitTimer questId="1" stepId="2" waitTime="1000" />			
 	<UseWaypoint waypointNumber="5" questId="1"/>
-	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<WaitTimer questId="1" stepId="2" waitTime="3500" />		
 	<If condition="HasQuest(361234)">
 	
 		<If condition="CurrentWorldId == 50585">

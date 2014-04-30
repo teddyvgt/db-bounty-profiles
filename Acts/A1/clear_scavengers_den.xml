@@ -11,8 +11,9 @@
 <Order>
 	<ToggleTargeting questId="1" stepId="2" killRadius="5" combat="True" />
 	<WaitTimer questId="1" stepId="2" waitTime="3800" /><If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
-	<UseWaypoint waypointNumber="8" questId="1"/>
-	<WaitTimer questId="1" stepId="2" waitTime="2000" />
+	<WaitTimer questId="1" stepId="2" waitTime="1000" />		
+	<UseWaypoint waypointNumber="8" questId="1"/>	
+	<WaitTimer questId="1" stepId="2" waitTime="3500" />
 	<If condition="HasQuest(345496)">
 		<!-- Top Cave Location -->
 		<If condition="HasQuest(345496) and CurrentWorldId == 71150">

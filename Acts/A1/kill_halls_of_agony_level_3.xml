@@ -5,15 +5,18 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
-	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<WaitTimer questId="1" stepId="2" waitTime="1000" />				
 	<UseWaypoint waypointNumber="17" questId="1"/>	
-	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<WaitTimer questId="1" stepId="2" waitTime="3500" />		
 
     <!-- Look for him -->
 	<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />
 	<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
 
-	<LoadProfile file="act1.xml" />
+	<!-- give legendaries a moment to fall from the heavens... -->
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />
+	<LoadProfile file="act1.xml" />	
 	
 </Order>
 </Profile>

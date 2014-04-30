@@ -13,7 +13,8 @@
 </TargetBlacklists>
 <Order>	
 
-	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<WaitTimer questId="1" stepId="2" waitTime="1000" />				
 	<UseWaypoint waypointNumber="15" questId="1"/>	
 		
 		<!-- Temporary - remove when we have all the actorIds logged -->
@@ -23,10 +24,7 @@
 			</IgnoreScenes>
 		</TrinityExploreDungeon>		
 		
-		<ToggleTargeting questId="1" stepId="2" killRadius="31" />		
-		
-<!-- Kill Battlerage the Plagued -->
-		<!-- Status: Zerg -->			
+		<!-- Kill Battlerage the Plagued 		
 		<If condition="HasQuest(347011)">
 			<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="30" until="ObjectFound" actorId="218674" objectDistance="50" ignoreMarkers="False"/>
@@ -38,12 +36,10 @@
 					<IgnoreScene sceneName="Exit" />	
 				</IgnoreScenes>
 			</TrinityExploreDungeon>
-		</If>		
+		</If>		-->
 		
-		<!-- Kill Braluk Grimlow -->
-		<!-- Status: Zerg -->	
+		<!-- Kill Braluk Grimlow 
 		<If condition="HasQuest(361327)">
-			<!-- Look for him -->
 			<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="30" until="ObjectFound" actorId="218308" objectDistance="50" ignoreMarkers="False"/>
 			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="75" />
@@ -54,12 +50,10 @@
 					<IgnoreScene sceneName="Exit" />	
 				</IgnoreScenes>
 			</TrinityExploreDungeon>			
-		</If>		
+		</If>		-->
 		
-		<!-- Kill Ragus Grimlow -->
-		<!-- Status: Zerg -->	
+		<!-- Kill Ragus Grimlow 
 		<If condition="HasQuest(361320)">
-			<!-- Look for him -->
 			<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="30" until="ObjectFound" actorId="218307" objectDistance="50" ignoreMarkers="False"/>
 			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="75" />
@@ -70,11 +64,9 @@
 					<IgnoreScene sceneName="Exit" />	
 				</IgnoreScenes>
 			</TrinityExploreDungeon>
-		</If>
+		</If>-->
 
-    <!-- Look for him -->
-	<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />
-	<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
 	<LoadProfile file="act1.xml" />	
+	
 </Order>
 </Profile>

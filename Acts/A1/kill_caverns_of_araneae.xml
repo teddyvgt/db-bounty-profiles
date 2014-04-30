@@ -13,7 +13,8 @@
 </TargetBlacklists>
 <Order>	
 
-	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<WaitTimer questId="1" stepId="2" waitTime="1000" />				
 	<UseWaypoint waypointNumber="12" questId="1"/>	
 		
 		
@@ -27,8 +28,7 @@
 		<ToggleTargeting questId="1" stepId="2" killRadius="31" />		
 		
 		
-		<!-- Kill Rathlin the Widowmaker -->
-		<!-- Status: Needs Testing -->			
+		<!-- Kill Rathlin the Widowmaker 		
 		<If condition="HasQuest(345526)">
 			<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="30" until="ObjectFound" actorId="218674" objectDistance="50" ignoreMarkers="False"/>
@@ -40,10 +40,10 @@
 					<IgnoreScene sceneName="Exit" />	
 				</IgnoreScenes>
 			</TrinityExploreDungeon>
-		</If>		
+		</If>		-->
 		
 		<!-- Kill Venomite -->
-		<!-- Status: Needs Testing -->			
+		<!-- Status: Needs Testing 			
 		<If condition="HasQuest(345524)">
 			<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="30" until="ObjectFound" actorId="218308" objectDistance="50" ignoreMarkers="False"/>
@@ -55,10 +55,9 @@
 					<IgnoreScene sceneName="Exit" />	
 				</IgnoreScenes>
 			</TrinityExploreDungeon>			
-		</If>		
+		</If>		-->
 		
-		<!--Kill Qurash the Reviled -->
-		<!-- Status: Needs Testing -->			
+		<!--Kill Qurash the Reviled 
 		<If condition="HasQuest(345862)">
 			<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="30" until="ObjectFound" actorId="218307" objectDistance="50" ignoreMarkers="False">
@@ -79,10 +78,9 @@
 					<IgnoreScene sceneName="Exit" />	
 				</IgnoreScenes>
 			</TrinityExploreDungeon>
-		</If>
+		</If>-->	
 		
-		<!--Kill Zhelobb -->
-		<!-- Status: Zerg -->			
+		<!--Kill Zhelobb		
 		<If condition="HasQuest(345522)">
 			<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="30" until="ObjectFound" actorId="218448" objectDistance="75" ignoreMarkers="False"/>
@@ -95,9 +93,9 @@
 				</IgnoreScenes>
 			</TrinityExploreDungeon>
 		</If>
-		
-	<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />
-	<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
+		 -->
+
 	<LoadProfile file="act1.xml" />	
+	
 </Order>
 </Profile>

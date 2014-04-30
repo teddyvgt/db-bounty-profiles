@@ -16,8 +16,9 @@
 	<ToggleTargeting questId="1" stepId="2" killRadius="31" />
 
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
-	<UseWaypoint waypointNumber="6" questId="1"/>
-	<WaitTimer questId="1" stepId="2" waitTime="2000" />
+	<WaitTimer questId="1" stepId="2" waitTime="1000" />		
+	<UseWaypoint waypointNumber="6" questId="1"/>	
+	<WaitTimer questId="1" stepId="2" waitTime="3500" />
 	<!-- Den of the Fallen -->
 	<If condition="HasQuest(345488)">
 	

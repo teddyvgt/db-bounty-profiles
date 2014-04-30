@@ -6,11 +6,13 @@
 <Order>
 
 	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
-	<WaitTimer questId="1" stepId="2" waitTime="3000" />
+	<WaitTimer questId="1" stepId="2" waitTime="1000" />		
+	<WaitTimer questId="1" stepId="2" waitTime="1000" />
 	<UseWaypoint waypointNumber="13" questId="1"/>
-	<WaitTimer questId="1" stepId="2" waitTime="3000" />
+	<WaitTimer questId="1" stepId="2" waitTime="3500" />
 	
 	<If condition="CurrentLevelAreaId == 93632 or CurrentLevelAreaId == 19940">
+	
 		<!-- Kill Logrut the warrior -->
 		<If condition="HasQuest(344497)">
 			<SafeMoveTo questId="344497" x="2383" y="4904" />

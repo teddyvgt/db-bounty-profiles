@@ -14,7 +14,8 @@
 </TargetBlacklists>
 <Order>
 	<ToggleTargeting questId="1" stepId="2" killRadius="2" />	
-	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>		
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<WaitTimer questId="1" stepId="2" waitTime="1000" />				
 	<UseWaypoint waypointNumber="3" questId="1"/>	    
 	<WaitTimer questId="1" stepId="2" waitTime="3000" />
 		<While condition="HasQuest(375191)">
