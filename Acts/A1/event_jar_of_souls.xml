@@ -49,22 +49,20 @@
 		<!--  Defiled Crypt -->
 		<If condition="CurrentWorldId == 72636">
 			<!-- Find the Jar of Souls -->
-			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="93713" boxSize="35" boxTolerance="0.05" objectDistance="20">
+			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="93713" boxSize="15" boxTolerance="0.35" objectDistance="55" statusText="Searching for unopened jar">
 				<AlternateActors>
 					<AlternateActor actorId="219334" objectDistance="100" />
 					<LogMessage message="Found opened jar"/>
 				</AlternateActors>
 			</TrinityExploreDungeon>
-			<LogMessage message="Found unopened jar"/>
-			<MoveToActor questId="1" stepId="2"  actorId="93713" interactRange="8" timeout="25" />
-			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="5" />
-			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="219334" boxSize="2" boxTolerance="0.05" objectDistance="50">
+			<MoveToActor questId="1" stepId="2" actorId="93713" />
+			<!-- giving enemies a 5 second head start to let them close in on us and keep us tight on jar -->
+			<WaitTimer questId="1" stepId="2" waitTime="5000" />
+			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="219334" boxSize="15" boxTolerance="0.35" objectDistance="55" statusText="Searching for open jar">
 			</TrinityExploreDungeon>
-			<LogMessage message="Found opened jar"/>
 			<MoveToActor questId="1" stepId="2"  actorId="219334" interactRange="8" />
-
 			<!-- make sure bounty is complete! -->
-			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" pathPrecision="20" boxSize="6" boxTolerance="0.10" stayAfterBounty="False"/>				
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" pathPrecision="20" boxSize="15" boxTolerance="0.35" stayAfterBounty="False"/>				
 		</If>
 	</If>
 	<!-- give legendaries a moment to fall from the heavens... -->
