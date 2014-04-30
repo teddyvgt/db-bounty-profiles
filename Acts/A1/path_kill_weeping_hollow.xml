@@ -21,17 +21,17 @@
 		<SafeMoveTo questId="347099" x="3029" y="2075" />
 		<SafeMoveTo questId="347099" x="2942" y="1887" />
 		<SafeMoveTo questId="347099" x="2858" y="2146" />
-		<SafeMoveTo questId="312429" x="2770" y="2042" />
-		<SafeMoveTo questId="312429" x="2809" y="1860" />
-		<SafeMoveTo questId="312429" x="2564" y="1976" />
-		<SafeMoveTo questId="312429" x="2425" y="2097" />
-		<SafeMoveTo questId="312429" x="2192" y="2038" />
-		<SafeMoveTo questId="312429" x="2317" y="1885" />
-		<SafeMoveTo questId="312429" x="2320" y="1719" />
-		<SafeMoveTo questId="312429" x="2463" y="1677" />
-		<SafeMoveTo questId="312429" x="2571" y="1866" />
-		<SafeMoveTo questId="312429" x="2445" y="1925" />
-		<SafeMoveTo questId="312429" x="2428" y="1798" />
+		<SafeMoveTo questId="347099" x="2770" y="2042" />
+		<SafeMoveTo questId="347099" x="2809" y="1860" />
+		<SafeMoveTo questId="347099" x="2564" y="1976" />
+		<SafeMoveTo questId="347099" x="2425" y="2097" />
+		<SafeMoveTo questId="347099" x="2192" y="2038" />
+		<SafeMoveTo questId="347099" x="2317" y="1885" />
+		<SafeMoveTo questId="347099" x="2320" y="1719" />
+		<SafeMoveTo questId="347099" x="2463" y="1677" />
+		<SafeMoveTo questId="347099" x="2571" y="1866" />
+		<SafeMoveTo questId="347099" x="2445" y="1925" />
+		<SafeMoveTo questId="347099" x="2428" y="1798" />
 	</If>
 	
 	<!-- 369399: Kill Horrus -->
