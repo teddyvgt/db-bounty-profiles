@@ -23,7 +23,7 @@
 	
 		<!-- Halls of Agony Level 3 -->
 		<!--<TrinityExploreDungeon questId="312429" stepId="2" until="ObjectFound" actorId="158944" boxSize="30" boxTolerance="0.25" objectDistance="50">	-->
-		<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.16" boxSize="16" until="ExitFound" exitNameHash="356899046" ignoreMarkers="False" objectDistance="150">
+		<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.55" boxSize="16" until="ExitFound" exitNameHash="356899046" ignoreMarkers="False">
 			<PriorityScenes>				
 				<PriorityScene sceneName="Exit" />				
 				<PriorityScene sceneId="78824" />	
@@ -36,7 +36,7 @@
 		<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" /> 			
 		<WaitTimer questId="1" stepId="1" waitTime="16000" />
 		
-		<!-- bot is having issues picking up loot in this room -->
+		<!-- bot is having issues picking up loot in this room - likely related to aoe avoidance settings -->
 		<SafeMoveTo questId="312429" stepId="2" x="103" y="96" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 		
 		<WaitTimer questId="1" stepId="1" waitTime="1000" />
 		<SafeMoveTo questId="312429" stepId="2" x="130" y="133" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 

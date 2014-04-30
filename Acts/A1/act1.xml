@@ -9,6 +9,7 @@
     <TargetBlacklist actorId="168875" />
     <TargetBlacklist actorId="105361" />
     <TargetBlacklist actorId="79421" />
+    <TargetBlacklist actorId="62215" />
     <TargetBlacklist actorId="177439" />
     <TargetBlacklist actorId="167185" />
     <TargetBlacklist actorId="144149" />
@@ -71,7 +72,7 @@
 			HasQuest(361327) or 
 			HasQuest(361320)">				
 			<LoadProfile file="kill_cathedral_level_1.xml" />
-		</If>			
+		</If>
 		
 	<!-- 3	Cathedral Level 2 =========================================================-->
 	
