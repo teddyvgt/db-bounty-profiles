@@ -52,7 +52,10 @@
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>				
 			</TrinityExploreDungeon>			
-			<MoveToMapMarker questId="1" stepId="1" markerNameHash="497382904" actorId="176001" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="82313" statusText="" /> 	
+
+			<!-- Switched to move to actor because bot was getting stuck standing above the portal on the balcony -->
+			<!-- <MoveToMapMarker questId="1" stepId="1" markerNameHash="497382904" actorId="176001" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="82313" statusText="" /> 	 -->
+			<MoveToActor questId="344488" actorId="176001" interactRange="3" name="g_Portal_ArchTall_Orange-42457"  isPortal="True" destinationWorldId="82313" pathPrecision="5" pathPointLimit="250" statusText="" />
 		
 		</If>		
 		
