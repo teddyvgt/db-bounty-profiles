@@ -7,39 +7,23 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 
 <Order>
-<While condition="CurrentWorldId != 129305">
-	<UseWaypoint waypointNumber="45" questId="1"/>
-	<WaitTimer questId="1" stepId="1" waitTime="5000"/>
-</While>
-	<If condition="HasQuest(369878)">
-	<If condition="CurrentWorldId == 129305">
-	<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" stayAfterBounty="False">
-	<PrioritizeScenes>
-        <PriorityScene sceneName="a4dun_spire_corrupt_SE_02" pathPrecision="40" />          
-    </PrioritizeScenes>
-	</TrinityExploreDungeon >
-      <MoveToActor questId="1" stepId="2" actorId="365097"/>
-	  <WaitTimer questId="1" stepId="2" waitTime="500" />
-		<While condition="ActorExistsAt(364559, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+	<While condition="CurrentWorldId != 129305">
+		<UseWaypoint waypointNumber="45" questId="1"/>
+		<WaitTimer questId="1" stepId="1" waitTime="5000"/>
+	</While>
+	<If condition="CurrentWorldId == 129305 and HasQuest(369878)">
+		<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="75" actorId="5466" boxTolerance="0.1" boxSize="25" ignoreMarkers="False" stayAfterBounty="False">
+			<PrioritizeScenes>
+				<PriorityScene sceneName="a4dun_spire_corrupt_SE_02" pathPrecision="40" />          
+			</PrioritizeScenes>
+		</TrinityExploreDungeon>
+		<MoveToActor questId="1" stepId="2" actorId="365097" />
+		<WaitTimer questId="1" stepId="2" waitTime="500" />		
+		<While condition="ActorExistsAt(5466, Me.Position.X, Me.Position.Y, Me.Position.Z, 50) and HasQuest(369878)">
 			<MoveToActor questId="1" stepId="2" actorId="365097"/>
-		</While>
-	  </If>
-	</If>
-	
-	<!-- Duplicate to handle getting interrupted by the other cursed chest, couldn't find a more elegant solution -->
-	<If condition="HasQuest(369878)">
-	<If condition="CurrentWorldId == 129305">
-	<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="365097" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" stayAfterBounty="False">
-	<PrioritizeScenes>
-        <PriorityScene sceneName="a4dun_spire_corrupt_SE_02" pathPrecision="40" />          
-    </PrioritizeScenes>
-	</TrinityExploreDungeon >
-      <MoveToActor questId="1" stepId="2" actorId="365097"/>
-	  <WaitTimer questId="1" stepId="2" waitTime="500" />
-		<While condition="ActorExistsAt(364559, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
-			<MoveToActor questId="1" stepId="2" actorId="365097"/>
-		</While>
-	  </If>
+		</While>		
+		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.05" boxSize="30" ignoreMarkers="False" stayAfterBounty="False"/>
+		<WaitTimer questId="1" stepId="2" waitTime="3000" />				
 	</If>
 
 	<LoadProfile file="act4.xml" />

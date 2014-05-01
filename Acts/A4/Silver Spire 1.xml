@@ -12,7 +12,8 @@
 	<WaitTimer questId="1" stepId="1" waitTime="5000"/>
 </While>
 	<WaitTimer questId="1" stepId="1" waitTime="1000"/>
-	<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" stayAfterBounty="False" />
+	<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.05" boxSize="25" ignoreMarkers="False" stayAfterBounty="False" />
+	<WaitTimer questId="1" stepId="1" waitTime="2000"/>
 
 	<LoadProfile file="act4.xml" />
 </Order>

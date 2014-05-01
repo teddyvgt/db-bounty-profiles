@@ -10,36 +10,31 @@
 </TargetBlacklists>
 
 <Order>
-<While condition="CurrentWorldId != 121579 and CurrentWorldId != 214956">
-	<UseWaypoint waypointNumber="44" questId="1"/>
-	<WaitTimer questId="1" stepId="1" waitTime="5000"/>
-</While>
+	<While condition="CurrentWorldId != 121579 and CurrentWorldId != 214956">
+		<UseWaypoint waypointNumber="44" questId="1"/>
+		<WaitTimer questId="1" stepId="1" waitTime="5000"/>
+	</While>
 
 	<If condition="CurrentWorldId == 121579">
-      <TrinityExploreDungeon questId="1" stepId="2"  until="ObjectFound" objectDistance="150" actorId="225195" boxTolerance="0.01" boxSize="15" pathPrecision="40" ignoreMarkers="false" stayAfterBounty="False">
-        <PrioritizeScenes>
-          <PriorityScene sceneName="Exit" />
-        </PrioritizeScenes>
-        <IgnoreScenes>
-          <IgnoreScene sceneName="_N_" />
-          <IgnoreScene sceneName="_S_" />
-          <IgnoreScene sceneName="_E_" />
-          <IgnoreScene sceneName="_W_" />
-        </IgnoreScenes>
-      </TrinityExploreDungeon>
-      <!-- The Great Span -->
-      <MoveToActor questId="1" stepId="2" actorId="225195" isPortal="True" destinationWorldId="214956" interactRange="20" />
-      <WaitTimer questId="1" stepId="2" waitTime="1000" />
-	 </If>
-    <If condition="CurrentWorldId == 214956">
-      <WaitTimer questId="1" stepId="2" waitTime="1000" />
-      <!-- Kill Izual -->
-      <SafeMoveTo questId="1" stepId="2" name="Izual" pathPrecision="10" x="583" y="558" z="0" />
-	  <While condition="Me.IsInBossEncounter">
+		<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.07" boxSize="25" until="ExitFound" exitNameHash="1038619951" ignoreMarkers="False">
+			<PrioritizeScenes>
+				<PriorityScene sceneName="Exit" />
+			</PrioritizeScenes>
+			<IgnoreScenes>
+				<IgnoreScene sceneName="_N_" />
+				<IgnoreScene sceneName="_S_" />
+				<IgnoreScene sceneName="_E_" />
+				<IgnoreScene sceneName="_W_" />
+			</IgnoreScenes>
+		</TrinityExploreDungeon>
+		<MoveToActor questId="1" stepId="2" actorId="225195" isPortal="True" destinationWorldId="214956" interactRange="20" />
 		<WaitTimer questId="1" stepId="2" waitTime="1000" />
-	  </While>
-	  <!-- try to counteract the healthglobe run -->
-	  <SafeMoveTo questId="1" stepId="2" name="Izual" pathPrecision="10" x="583" y="558" z="0" />
+	</If>
+    <If condition="CurrentWorldId == 214956">
+		<WaitTimer questId="1" stepId="2" waitTime="1000" />
+		<!-- Kill Izual -->
+		<SafeMoveTo questId="1" stepId="2" name="Izual" pathPrecision="10" x="583" y="558" z="0" />
+		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.05" boxSize="30" ignoreMarkers="False" stayAfterBounty="False"/>
     </If>
 
 	<LoadProfile file="act4.xml" />

@@ -7,42 +7,38 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 
 <Order>
-<While condition="CurrentWorldId != 129305 and CurrentWorldId != 205399">
-	<UseWaypoint waypointNumber="45" questId="1"/>
-	<WaitTimer questId="1" stepId="1" waitTime="5000"/>
-</While>
-    <!-- Look for him -->
-		<If condition="CurrentWorldId == 129305">
-      <TrinityExploreDungeon questId="1" stepId="2"  until="ObjectFound" objectDistance="150" actorId="210763" boxTolerance="0.7" boxSize="10" pathPrecision="40" ignoreMarkers="False" stayAfterBounty="False">
-        <PrioritizeScenes>
-          <PriorityScene sceneName="Exit" />
-        </PrioritizeScenes>
-        <IgnoreScenes>
-          <IgnoreScene sceneName="_N_0" />
-          <IgnoreScene sceneName="_S_0" />
-          <IgnoreScene sceneName="_E_0" />
-          <IgnoreScene sceneName="_W_0" />
-        </IgnoreScenes>
-      </TrinityExploreDungeon >
-			<MoveToActor questId="1" stepId="2" actorId="210763" isPortal="True" interactRange="20"/>
-			<WaitTimer questId="1" stepId="2" waitTime="1000" />
-		</If>
+	<While condition="CurrentWorldId != 129305 and CurrentWorldId != 205399 and CurrentWorldId != 109561">
+		<UseWaypoint waypointNumber="45" questId="1"/>
+		<WaitTimer questId="1" stepId="1" waitTime="5000"/>
+	</While>
+	
+	<If condition="CurrentWorldId == 129305">
+		<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.07" boxSize="25" until="ExitFound" exitNameHash="-72895048" ignoreMarkers="False">
+			<PrioritizeScenes>
+				<PriorityScene sceneName="Exit" />
+			</PrioritizeScenes>
+			<IgnoreScenes>
+			  <IgnoreScene sceneName="_N_0" />
+			  <IgnoreScene sceneName="_S_0" />
+			  <IgnoreScene sceneName="_E_0" />
+			  <IgnoreScene sceneName="_W_0" />
+			</IgnoreScenes>
+		</TrinityExploreDungeon >
+		<MoveToActor questId="1" stepId="2" actorId="210763" isPortal="True" interactRange="15" destinationWorldId="205399" />
+		<WaitTimer questId="1" stepId="2" waitTime="1000" />
+	</If>
     <If condition="CurrentWorldId == 205399">
-      <!-- Pinnacle of Heaven -->
-	  <MoveToActor questId="1" stepId="2" actorId="161279" isPortal="True" interactRange="20"/>
-	  <WaitTimer questId="1" stepId="2" waitTime="1000" />
-	  <!--SafeMoveTo questId="1" stepId="2" name="Diablo" pathPrecision="10" x="360" y="358" z="40"/-->
-	  <SafeMoveTo questId="312429" stepId="2" x="356" y="355" z="41" /> 
-		<While condition="Me.IsInBossEncounter">
-	  <WaitTimer questId="1" stepId="2" waitTime="1000" />
-	  </While>
-	  <!-- try to counteract the healthglobe run -->
-	  <SafeMoveTo questId="1" stepId="2" name="Diablo" pathPrecision="10" x="360" y="358" z="40"/>
-	  
-	  
+		<!-- Pinnacle of Heaven -->
+		<MoveToActor questId="1" stepId="2" actorId="161279" isPortal="True" interactRange="20" destinationWorldId="205399" />
+		<WaitTimer questId="1" stepId="2" waitTime="1000" />
+	</If>
+	<If condition="CurrentWorldId == 109561">
+		<!--SafeMoveTo questId="1" stepId="2" name="Diablo" pathPrecision="10" x="360" y="358" z="40"/-->
+		<SafeMoveTo questId="1" stepId="2" x="356" y="355" z="41" /> 
+		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.05" boxSize="30" ignoreMarkers="False" stayAfterBounty="False"/>	
+		<WaitTimer questId="1" stepId="2" waitTime="6000" />	
     </If>
-
-
+	
 	<LoadProfile file="act4.xml" />
 </Order>
 </Profile>

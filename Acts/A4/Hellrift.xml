@@ -12,21 +12,22 @@
 <Order>
 <While condition="CurrentWorldId != 109526 and CurrentWorldId != 109530 and CurrentWorldId != 109525 and CurrentWorldId != 109530">
 	<UseWaypoint waypointNumber="43" questId="1"/>
-	<WaitTimer questId="1" stepId="1" waitTime="5000"/>
+	<WaitTimer questId="1" stepId="2" waitTime="5000"/>
 </While>
 
-    <LogMessage quest="1" step="2" output="Looking for Portal." />
-	<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="224890" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" stayAfterBounty="False">
-		<PrioritizeScenes>
-			<PriorityScene sceneName="a3dun_Crater_E_Dead_End_02_E01_N01" pathPrecision="40" />          
-		</PrioritizeScenes>
-	</TrinityExploreDungeon >
-		<MoveToActor questId="1" stepId="2" actorId="224890" InteractAttempts="5" isPortal="True"/>
-	<WaitTimer questId="1" stepId="2" waitTime="2500" />
+	<If condition="CurrentWorldId == 109525">
+		<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.07" boxSize="25" until="ExitFound" exitNameHash="984446737" ignoreMarkers="False">
+			<PrioritizeScenes>
+				<PriorityScene sceneName="a3dun_Crater_E_Dead_End_02_E01_N01" pathPrecision="40" />          
+			</PrioritizeScenes>
+		</TrinityExploreDungeon >
+		<MoveToActor questId="1" stepId="2" actorId="224890" interactRange="15" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="109530" />
+		<WaitTimer questId="1" stepId="2" waitTime="2500" />
+	</If>
 	
 	<If condition="CurrentWorldId == 109530">
-		<LogMessage quest="1" step="1" output="Clearing level 2." />	
-		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.45" boxSize="15" ignoreMarkers="False" stayAfterBounty="False"/>
+		<LogMessage quest="1" step="2" output="Clearing level 2." />	
+		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.05" boxSize="25" ignoreMarkers="False" stayAfterBounty="False"/>
 	</If>
 
 	<LoadProfile file="act4.xml" />
