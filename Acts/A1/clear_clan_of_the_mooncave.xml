@@ -13,17 +13,23 @@
 	<WaitTimer questId="1" stepId="2" waitTime="3500" />
 	<If condition="HasQuest(344547)">		
 		
+		<If condition="CurrentWorldId == 71150">
+			<SafeMoveTo questId="1" stepId="2" x="2318" y="4508" z="0"/> 
+			<MoveToActor questId="1" stepId="2" actorId="176008" isPortal="True" destinationWorldId="82502"/>
+		</If>
+		
 		<!--Find cave 1-->
 		<If condition="CurrentWorldId == 71150">
 		  <SafeMoveTo questId="1" stepId="2" x="2188.627" y="4504.445" z="-0.3508204" />
-		  <SafeMoveTo questId="1" stepId="2" x="2188.627" y="4504.445" z="-0.3508204" />
 		  <MoveToActor questId="1" stepId="2" actorId="176008" isPortal="True" destinationWorldId="82502"/>
 		</If>
+		
 		<!--Find cave 2-->
 		<If condition="CurrentWorldId == 71150">
 		  <SafeMoveTo questId="1" stepId="2" x="2431.127" y="4249.725" z="0.3582907" />
 		  <MoveToActor questId="1" stepId="2" actorId="176008" isPortal="True" destinationWorldId="82502"/>
 		</If>
+		
 		<!--Find cave 3-->
 		<If condition="CurrentWorldId == 71150">
 		  <SafeMoveTo questId="1" stepId="2" x="2183.475" y="4028.584" z="-1.920981" />
@@ -36,6 +42,7 @@
 			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1187439574" destinationWorldId="82502" interactRange="8"  />
 		</If>
 		
+		<!-- Cave Level 1 -->
 		<If condition="CurrentWorldId == 82502">		
 			<WaitTimer questId="1" stepId="2" waitTime="2000" />
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="10" until="ExitFound" exitNameHash="-1187439573" ignoreMarkers="False">
@@ -47,6 +54,7 @@
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</If>
 			
+		<!-- Cave Level 2 -->
 		<If condition="CurrentWorldId == 82511">
 			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="75" />
 			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance=".05" boxSize="7" stayAfterBounty="False"/>
