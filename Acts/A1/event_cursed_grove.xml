@@ -19,7 +19,20 @@
 		<If condition="HasQuest(365381)">
 			<SafeMoveTo questId="1" stepId="2" x="1791" y="559" z="-0" pathPrecision="2" pathPointLimit="250" statusText="Moving to Location 1 of 3"/>
 			<If condition="CurrentWorldId == 71150 and ActorExistsAt(365097, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
-				<MoveToActor questId="1" stepId="2" actorId="365097" />
+				
+				<LogMessage quest="1" step="1" output="clearing the area first" /> 
+				<!-- unfortunately this ring terrain formation can cause flip-flop stuck 
+				     between goats outside the ring so we have to clear the area first -->
+					 
+				<SafeMoveTo questId="365381" x="1822" y="717" /> 
+				<SafeMoveTo questId="365381" x="1934" y="733" /> 
+				<SafeMoveTo questId="365381" x="1928" y="551" /> 
+				<SafeMoveTo questId="365381" x="1662" y="514" /> 
+				<SafeMoveTo questId="365381" x="1735" y="699" /> 
+				<SafeMoveTo questId="365381" x="1818" y="690" /> 
+				<SafeMoveTo questId="365381" x="1797" y="584" /> 					 
+					 
+				<MoveToActor questId="1" stepId="2" actorId="365097" />				
 				<ToggleTargeting questId="1" stepId="2" killRadius="5" looting="True" />
 			</If>
 		</If>
