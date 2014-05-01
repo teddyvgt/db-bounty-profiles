@@ -32,7 +32,7 @@
 		<MoveToActor questId="1" stepId="2" actorId="161279" isPortal="True" interactRange="20" destinationWorldId="205399" />
 		<WaitTimer questId="1" stepId="2" waitTime="1000" />
 	</If>
-	<If condition="CurrentWorldId == 109561">
+	<If condition="CurrentWorldId == 109561 or CurrentWorldId == 153670">
 		<!--SafeMoveTo questId="1" stepId="2" name="Diablo" pathPrecision="10" x="360" y="358" z="40"/-->
 		<SafeMoveTo questId="1" stepId="2" x="356" y="355" z="41" /> 
 		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.05" boxSize="30" ignoreMarkers="False" stayAfterBounty="False"/>	
