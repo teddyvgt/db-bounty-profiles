@@ -33,7 +33,7 @@
 		<!--Explore for Caves-->
 		<If condition="CurrentWorldId == 71150">
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="30" until="ExitFound" exitNameHash="-1187439574" ignoreMarkers="False"/>
-			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1187439574" destinationWorldId="82502" interactRange="20"  />
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1187439574" destinationWorldId="82502" interactRange="8"  />
 		</If>
 		
 		<If condition="CurrentWorldId == 82502">		
@@ -43,12 +43,11 @@
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
 			</TrinityExploreDungeon>
-			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1187439573" destinationWorldId="82511" interactRange="20"  />
-			<WaitTimer questId="72095" stepId="11" waitTime="1000" />
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1187439573" destinationWorldId="82511" interactRange="8"  />
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</If>
 			
 		<If condition="CurrentWorldId == 82511">
-			<TrinitySetQuesting />			
 			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="75" />
 			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance=".05" boxSize="7" stayAfterBounty="False"/>
 			<WaitTimer questId="1" stepId="2" waitTime="2000" />
