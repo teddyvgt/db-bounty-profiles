@@ -44,8 +44,26 @@
 			
 			<!-- Hopefully done. -->
 			<SafeMoveTo questId="1" stepId="2" x="1779" y="565" z="0"/>  
-			<MoveToActor questId="1" stepId="2" actorId="81980" />
-			<WaitTimer questId="1" stepId="2" waitTime="3000" />
+			<MoveToActor questId="1" stepId="2" actorId="81980" />		
+			<WaitTimer questId="345500" stepId="2" waitTime="3000" />
+			
+			<SafeMoveTo questId="345500" stepId="2" x="1779" y="565" z="0"/>  
+			<MoveToActor questId="345500" stepId="2" actorId="81980" />
+			<WaitTimer questId="345500" stepId="2" waitTime="3000" />	
+			
+			<SafeMoveTo questId="345500" stepId="2" x="1779" y="565" z="0"/>  
+			<MoveToActor questId="345500" stepId="2" actorId="81980" />
+			<WaitTimer questId="345500" stepId="2" waitTime="3000" />	
+			
+			<!-- Kill the named, He died before I could get his ID, just going to run around again -->
+			<SafeMoveTo questId="345500" stepId="2" x="1774" y="649" z="0" /> 		
+			<SafeMoveTo questId="345500" stepId="2" x="1849" y="651" z="0" /> 			
+			<SafeMoveTo questId="345500" stepId="2" x="1870" y="597" z="0" /> 			
+			<SafeMoveTo questId="345500" stepId="2" x="1791" y="566" z="0" /> 	
+
+			<SafeMoveTo questId="345500" stepId="2" x="1779" y="565" z="0"/>  
+			<MoveToActor questId="345500" stepId="2" actorId="81980" />
+			<WaitTimer questId="345500" stepId="2" waitTime="3000" />
 			
 		</If>
 		
@@ -72,7 +90,28 @@
 				<!-- Hopefully done. -->
 				<SafeMoveTo questId="1" stepId="2" x="2248" y="796" z="0"/>  
 				<MoveToActor questId="1" stepId="2" actorId="81980" />
-				<WaitTimer questId="1" stepId="2" waitTime="4000" />			
+				<WaitTimer questId="1" stepId="2" waitTime="4000" />		
+								
+				<SafeMoveTo questId="345500" stepId="2" x="2248" y="796" z="0"/>  
+				<MoveToActor questId="345500" stepId="2" actorId="81980" />
+				<WaitTimer questId="345500" stepId="2" waitTime="4000" />	
+				
+				<SafeMoveTo questId="345500" stepId="2" x="2248" y="796" z="0"/>  
+				<MoveToActor questId="345500" stepId="2" actorId="81980" />
+				<WaitTimer questId="345500" stepId="2" waitTime="4000" />	
+				
+				<!-- Kill all the Plague Nests  -->
+				<SafeMoveTo questId="345500" stepId="2" x="2261" y="847" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<SafeMoveTo questId="345500" stepId="2" x="2254" y="887" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<SafeMoveTo questId="345500" stepId="2" x="2330" y="888" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<SafeMoveTo questId="345500" stepId="2" x="2344" y="835" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<SafeMoveTo questId="345500" stepId="2" x="2252" y="833" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<SafeMoveTo questId="345500" stepId="2" x="2262" y="882" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<SafeMoveTo questId="345500" stepId="2" x="2255" y="803" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 					
+				
+				<SafeMoveTo questId="345500" stepId="2" x="2248" y="796" z="0"/>  
+				<MoveToActor questId="345500" stepId="2" actorId="81980" />
+				<WaitTimer questId="345500" stepId="2" waitTime="4000" />					
 			
 			</If>		
 		
