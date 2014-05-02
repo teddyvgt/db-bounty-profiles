@@ -22,11 +22,11 @@
 	<If condition="HasQuest(347032)">
 	
 		<!-- Halls of Agony Level 3 -->
-		<!--<TrinityExploreDungeon questId="312429" stepId="2" until="ObjectFound" actorId="158944" boxSize="30" boxTolerance="0.25" objectDistance="50">	-->
-		<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.55" boxSize="16" until="ExitFound" exitNameHash="356899046" ignoreMarkers="False">
+<!-- 		<TrinityExploreDungeon questId="312429" stepId="2" sceneName="_ButcherLair_" until="SceneLeftOrActorFound" actorId="158944" boxSize="12" boxTolerance="0.30" objectDistance="100">
+ -->		
+		<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.30" boxSize="13" until="ExitFound" exitNameHash="356899046" ignoreMarkers="False">
 			<PriorityScenes>				
 				<PriorityScene sceneName="Exit" />				
-				<PriorityScene sceneId="78824" />	
 				<PriorityScene sceneName="_ButcherLair_" />
 			</PriorityScenes>
 		</TrinityExploreDungeon>
