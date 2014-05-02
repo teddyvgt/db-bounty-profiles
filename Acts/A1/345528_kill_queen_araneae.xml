@@ -14,23 +14,11 @@
 	<WaitTimer questId="1" stepId="2" waitTime="3500" />
 	<If condition="HasQuest(345528)">
 			
-		<!-- EXPERIMENTAL 
-		<If condition="CurrentLevelAreaId == 78572">
-			<TrinityExploreDungeon questId="1" until="SceneFound" sceneName="_StomachAche" boxSize="16" boxTolerance="0.12">
-			  <PriortizeScenes>
-				<PriorityScene sceneName="_StomachAche" />
-			  </PriortizeScenes>
-			</TrinityExploreDungeon>	
-			<TrinityOffsetMove questId="1" stepId="1" offsetX="-286" offsetY="0" />
-			<WaitTimer questId="72095" stepId="11" waitTime="500" />
-			<MoveToActor questId="312429" timeout="5000" stepId="2" actorId="183032" MaxSearchDistance="50" isPortal="True" interactRange="20" pathPrecision="5" pathPointLimit="250" destinationWorldId="182976" statusText="" />
-		</If>		
-		-->		
 			
 		<!-- bot has trouble with this exit, it needs some coercion -->		
 		<If condition="CurrentLevelAreaId == 78572">
 			<!--<TrinityExploreDungeon questId="1" stepId="1" until="ExitFound" actorId="183032" boxSize="15" boxTolerance="0.18" objectDistance="60">-->
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.15" boxSize="20" until="ExitFound" exitNameHash="1317387500" ignoreMarkers="False" objectDistance="150">
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.55" boxSize="12" until="ExitFound" exitNameHash="1317387500" ignoreMarkers="False" objectDistance="150">
 				<AlternateActors>
 					<!-- <AlternateActor actorId="5502" objectDistance="10" />	door actor -->								
 					<AlternateActor actorId="183032" objectDistance="60" />	 <!-- exit/checkpoint -->				
@@ -45,23 +33,8 @@
 			
 			<WaitTimer questId="72095" stepId="11" waitTime="500" />
 			
-<!-- 			<If condition="CurrentWorldId == 180550">
-				<LogMessage quest="1" step="2" output="debug MoveToMapMarker 1317387500" />				
-				<MoveToMapMarker questId="312429" markerNameHash="1317387500" actorId="183032" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="182976" statusText="" /> 			
-				<WaitTimer questId="72095" stepId="11" waitTime="1000" />				
-			</If>		
- 			<If condition="CurrentWorldId == 180550">	-->			
-				<MoveToActor questId="312429" timeout="5000" stepId="2" actorId="183032" MaxSearchDistance="50" isPortal="True" interactRange="20" pathPrecision="5" pathPointLimit="250" destinationWorldId="182976" statusText="" />
-<!-- 				<WaitTimer questId="72095" stepId="11" waitTime="1000" />	
-				<MoveToMapMarker questId="312429" markerNameHash="1317387500" actorId="183032" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="182976" statusText="" /> 			
- -->		<!--	</If>	 
-			
-			<If condition="CurrentWorldId == 180550">	
-				<LogMessage quest="1" step="2" output="debug MoveToActor 183032" />			
-				<MoveToActor questId="312429" stepId="2" actorId="183032" interactRange="20" name="Checkpoint-16150"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
-				<WaitTimer questId="72095" stepId="11" waitTime="1000" />				
-			</If>
-			-->
+			<MoveToActor questId="312429" timeout="5000" stepId="2" actorId="183032" MaxSearchDistance="50" isPortal="True" interactRange="20" pathPrecision="5" pathPointLimit="250" destinationWorldId="182976" statusText="" />
+
 		</If>		
 		
 		<If condition="CurrentWorldId == 182976">
