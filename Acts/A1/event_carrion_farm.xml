@@ -7,15 +7,22 @@
 <Order>
 	<ToggleTargeting questId="1" stepId="2" killRadius="31" />
 
-	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
-	<WaitTimer questId="1" stepId="2" waitTime="1000" />				
-	<UseWaypoint waypointNumber="8" questId="1"/>	
-	<WaitTimer questId="1" stepId="2" waitTime="3500" />		
+	<While questId="345500" condition="CurrentLevelAreaId != 19952">
+		<If condition="Me.IsInTown==False">
+			<TrinityTownPortal questId="1" />
+		</If>
+		<WaitTimer questId="1" stepId="2" waitTime="1000" />				
+		<UseWaypoint waypointNumber="8" questId="1"/>	
+		<WaitTimer questId="1" stepId="2" waitTime="5000" />	
+	</While>
+			
 	<If condition="HasQuest(345500)">
 
 		<!-- Location #1 -->
-	
-		<SafeMoveTo questId="1" stepId="2" x="1793" y="560" z="5" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
+			
+		<SafeMoveTo questId="1" stepId="2" x="1774" y="512" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		<SafeMoveTo questId="1" stepId="2" x="1756" y="524" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		
 		<If condition="ActorExistsAt(81980, 1793, 560, 5, 300)">
 			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="75" />
 		
@@ -70,9 +77,11 @@
 		<!-- Location #2 --> 
 		<If condition="HasQuest(345500)">		
 
-			<SafeMoveTo questId="312429" stepId="2" x="2260" y="802" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 	
+			<SafeMoveTo questId="1" stepId="2" x="2260" y="802" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 	
+			
 			<If condition="ActorExistsAt(81980, 2260, 802, 5, 300)">
-			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="75" />
+				
+				<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="75" />
 
 				<!-- talk to the farmer -->								
 				<MoveToActor questId="312429" stepId="2" actorId="81980" interactRange="7" name="NPC_Human_Male_Event_FarmAmbush-4506"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			

@@ -14,22 +14,33 @@
 <Order>
 		<ToggleTargeting questId="1" stepId="2" killRadius="31" />
 
-	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
-	<WaitTimer questId="1" stepId="2" waitTime="1000" />				
-	<UseWaypoint waypointNumber="13" questId="1"/>	
-	<WaitTimer questId="1" stepId="2" waitTime="3500" />	
+	<While questId="344488" condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940">
+		<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+		<WaitTimer questId="1" stepId="2" waitTime="1000" />				
+		<UseWaypoint waypointNumber="13" questId="1"/>	
+		<WaitTimer questId="1" stepId="2" waitTime="5000" />	
+	</While>	
+	
 	<If condition="HasQuest(344488)">	
 
 		<!-- Check Known Locations -->
-		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="1" stepId="1" x="2334" y="3886" z="10" pathPrecision="5" pathPointLimit="250" statusText="" /> 	
-			<MoveToMapMarker questId="1" stepId="1" exitNameHash="497382903" destinationWorldId="82076" interactRange="20"  />					
-		</If>
-		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="312429" stepId="2" x="2089" y="3876" z="10" pathPrecision="5" pathPointLimit="250" statusText="" />
-			<MoveToMapMarker questId="1" stepId="1" exitNameHash="497382903" destinationWorldId="82076" interactRange="20"  />		
-		</If>		
 		
+		<If condition="CurrentWorldId == 71150">			
+			<SafeMoveTo questId="1" stepId="1" x="2334" y="3886" z="10" pathPrecision="5" pathPointLimit="250" statusText="" /> 	
+			<If condition="MarkerExistsAt(497382903, Me.Position.X, Me.Position.Y, Me.Position.Z, 75)">
+				<MoveToActor questId="1" x="2086" y="3858" z="10"  actorId="175482" interactRange="8" name="g_Portal_Rectangle_Orange-4406"  isPortal="True" destinationWorldId="-1" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<WaitTimer questId="1" stepId="1" waitTime="5000" />
+			</If>
+		</If>
+		
+		<If condition="CurrentWorldId == 71150">			
+			<SafeMoveTo questId="1" stepId="2" x="2089" y="3876" z="10" pathPrecision="5" pathPointLimit="250" statusText="" />
+			<If condition="MarkerExistsAt(497382903, Me.Position.X, Me.Position.Y, Me.Position.Z, 75)">
+				<MoveToActor questId="1" x="2086" y="3858" z="10"  actorId="175482" interactRange="8" name="g_Portal_Rectangle_Orange-4406"  isPortal="True" destinationWorldId="-1" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<WaitTimer questId="1" stepId="1" waitTime="5000" />
+			</If>
+		</If>		
+
 		<!--  Search Everywhere -->
 		<If condition="CurrentWorldId == 71150">		
 			<TrinityExploreDungeon questId="1" stepId="1" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="497382903" ignoreMarkers="False">
@@ -39,13 +50,14 @@
 				<IgnoreScenes>
 				</IgnoreScenes>						
 			</TrinityExploreDungeon>			
-			<MoveToMapMarker questId="1" stepId="1" exitNameHash="497382903" destinationWorldId="82076" interactRange="20"  />					
+			<MoveToMapMarker questId="1" stepId="1" exitNameHash="497382903" destinationWorldId="82326" interactRange="20"  />					
+			<WaitTimer questId="1" stepId="1" waitTime="5000" />
 		</If>
 		
 
 		<!--  Watch Tower Level 1 -->
 		<If condition="CurrentLevelAreaId == 82326">
-		
+
 			<!--  Search for Watch Tower -->
 			<TrinityExploreDungeon questId="1" stepId="1" boxTolerance="0.05" boxSize="35" until="ExitFound" exitNameHash="497382904" ignoreMarkers="False">
 				<PrioritizeScenes>
@@ -53,9 +65,10 @@
 				</PrioritizeScenes>				
 			</TrinityExploreDungeon>			
 
-			<!-- Switched to move to actor because bot was getting stuck standing above the portal on the balcony -->
+			<!-- Switched to move to actor and reduced interact range because bot was getting stuck standing above the portal on the balcony -->
 			<!-- <MoveToMapMarker questId="1" stepId="1" markerNameHash="497382904" actorId="176001" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="82313" statusText="" /> 	 -->
 			<MoveToActor questId="344488" actorId="176001" interactRange="3" name="g_Portal_ArchTall_Orange-42457"  isPortal="True" destinationWorldId="82313" pathPrecision="5" pathPointLimit="250" statusText="" />
+			<WaitTimer questId="1" stepId="1" waitTime="5000" />
 		
 		</If>		
 		
@@ -72,7 +85,7 @@
 					<AlternateActor actorId="222404" objectDistance="10" /> <!-- scabbard -->
 				</AlternateActors>	
 			</TrinityExploreDungeon>			 
-						<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
+			
 			<WaitTimer questId="1" stepId="1" waitTime="500" />	
 			
 			<!-- Pick up the scabbard -->

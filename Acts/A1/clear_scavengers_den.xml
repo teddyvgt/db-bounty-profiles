@@ -4,10 +4,6 @@
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
-<TargetBlacklists>
-	<TargetBlacklist actorId="365097" /> <!-- Cursed Chest -->
-	<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->
-</TargetBlacklists>
 <Order>
 	<ToggleTargeting questId="1" stepId="2" killRadius="5" combat="True" />
 	<WaitTimer questId="1" stepId="2" waitTime="3800" /><If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
@@ -50,15 +46,26 @@
 				<MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" interactRange="20"  />
 			</If>		
 		</If>
+		
 		<!-- Inside Scavenger's Den Level 1-->
 		<If condition="HasQuest(345496) and CurrentWorldId == 81163">		
+			
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="925091455" ignoreMarkers="False" objectDistance="150">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
 			</TrinityExploreDungeon>
-			<MoveToActor questId="1" stepId="2" actorId="176038" isPortal="True" destinationWorldId="81164" interactRange="20"  />
+			
+			<MoveToActor questId="1" stepId="2" timeout="10000" actorId="176038" isPortal="True" destinationWorldId="81164" interactRange="20"  />
+
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			
+			<If condition="HasQuest(345496) and CurrentWorldId == 81163">	
+				<MoveToActor questId="1" stepId="2" actorId="176038" isPortal="True" destinationWorldId="81164" interactRange="20"  />
+			</If>
+			
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />
+
 		</If>
 		<!-- Inside Scavenger's Den Level 2-->
 		<If condition="HasQuest(345496) and CurrentWorldId == 81164">

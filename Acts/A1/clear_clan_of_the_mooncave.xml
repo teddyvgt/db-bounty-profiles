@@ -7,10 +7,13 @@
 <Order>
 	<ToggleTargeting questId="1" stepId="2" killRadius="31" />
 
-	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
-	<WaitTimer questId="1" stepId="2" waitTime="1000" />		
-	<UseWaypoint waypointNumber="13" questId="1"/>	
-	<WaitTimer questId="1" stepId="2" waitTime="3500" />
+	<While questId="344547" condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940">
+		<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+		<WaitTimer questId="1" stepId="2" waitTime="1000" />				
+		<UseWaypoint waypointNumber="13" questId="1"/>	
+		<WaitTimer questId="1" stepId="2" waitTime="5000" />	
+	</While>	
+	
 	<If condition="HasQuest(344547)">		
 		
 		<If condition="CurrentWorldId == 71150">
@@ -34,24 +37,30 @@
 		<If condition="CurrentWorldId == 71150">
 		  <SafeMoveTo questId="1" stepId="2" x="2183.475" y="4028.584" z="-1.920981" />
 		  <MoveToActor questId="1" stepId="2" actorId="176008" isPortal="True" destinationWorldId="82502"/>
-		</If>
-		
-		<!--Explore for Caves-->
-		<If condition="CurrentWorldId == 71150">
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="30" until="ExitFound" exitNameHash="-1187439574" ignoreMarkers="False"/>
-			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1187439574" destinationWorldId="82502" interactRange="8"  />
-		</If>
+		</If>		
 		
 		<!-- Cave Level 1 -->
-		<If condition="CurrentWorldId == 82502">		
-			<WaitTimer questId="1" stepId="2" waitTime="2000" />
+		<If condition="CurrentWorldId == 82502">	
+		
+			<WaitTimer questId="1" stepId="2" waitTime="5000" />
+			
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="10" until="ExitFound" exitNameHash="-1187439573" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
 			</TrinityExploreDungeon>
-			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1187439573" destinationWorldId="82511" interactRange="8"  />
+
+			<MoveToActor questId="344547" timeout="10000" actorId="176038" interactRange="20" name="Exit_Location_1-6066" isPortal="True" destinationWorldId="82511" pathPrecision="5" pathPointLimit="250" statusText="" /> 		
+			
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			
+			<!-- Try again -->
+			<If condition="CurrentWorldId == 82502">
+				<MoveToActor questId="1" timeout="10000" actorId="176038" interactRange="20" name="Exit_Location_1-6066" isPortal="True" destinationWorldId="82511" pathPrecision="15" pathPointLimit="250" statusText="" /> 		
+			</If>
+
+			<WaitTimer questId="1" stepId="2" waitTime="4000" />
+			
 		</If>
 			
 		<!-- Cave Level 2 -->
