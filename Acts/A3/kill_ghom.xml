@@ -33,14 +33,11 @@
       <!-- END: Finde die Speisekammer -->
 
       <If condition="CurrentWorldId == 103209">
-        <ToggleTargeting questId="93697" stepId="1" combat="True" looting="True" lootRadius="50" killRadius="70" />
-	     <MoveTo questId="1" x="450" y="359" z="0" pathPrecision="8" />
-		 <WaitTimer questId="93697" stepId="1" waitTime="100000" />
-		 <TrinityMoveTo questId="1" x="401" y="360" z="0" pathPrecision="8" />
-		 <TrinityMoveTo questId="1" x="369" y="360" z="0" pathPrecision="8" />
-		 <MoveTo questId="1" x="369" y="360" z="0" pathPrecision="8" />
-		 <UseTownPortal questId="93697" stepId="16" />
-        <!-- END: Kill Ghom -->
+		<SafeMoveTo questId="1" stepId="1" name="Ghom" pathPrecision="10" x="442" y="358" z="0" straightLinePathing="True" />
+		<WaitTimer questId="1" waitTime="1000" stepId="2"/>
+		<While condition="HasQuest(346166)">
+          <WaitTimer questId="1" stepId="2" waitTime="2000" />
+        </While>
       </If>
     </If>
 
