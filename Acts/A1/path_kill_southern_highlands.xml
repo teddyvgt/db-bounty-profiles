@@ -104,8 +104,15 @@
 	<SafeMoveTo questId="344497" x="1814" y="4021" z="30" pathPrecision="5" pathPointLimit="250" statusText="" />
 	<SafeMoveTo questId="344497" x="1824" y="4087" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 
-
-	<!-- 344490: Kill Cadhul the Deathcaller -->
+		<!-- TEMP this guy doesnt have an objective marker -->
+		<If condition="HasQuest(344490)">
+			<SafeMoveTo questId="312429" stepId="2" x="2120" y="4329" z="10" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="2106" y="4353" z="10" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="2104" y="4296" z="10" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
+			<ToggleTargeting questId="1" combat="True" killRadius="45" />		
+		</If>
+	
+	<!-- 344490: Kill Cadhul the Deathcaller 
 	<SafeMoveTo questId="344490" x="2316" y="4856" z="1" pathPrecision="5" pathPointLimit="250" statusText="" />
 	<SafeMoveTo questId="344490" x="2300" y="4873" z="-1" pathPrecision="5" pathPointLimit="250" statusText="" />
 	<SafeMoveTo questId="344490" x="2355" y="4898" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
@@ -193,7 +200,7 @@
 	<SafeMoveTo questId="344490" x="1811" y="4126" z="20" pathPrecision="5" pathPointLimit="250" statusText="" />
 	<SafeMoveTo questId="344490" x="1814" y="4021" z="30" pathPrecision="5" pathPointLimit="250" statusText="" />
 	<SafeMoveTo questId="344490" x="1824" y="4087" z="20" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-
+-->
 	<!-- 344501: Kill Lorzak -->
 	<SafeMoveTo questId="344501" x="2316" y="4856" z="1" pathPrecision="5" pathPointLimit="250" statusText="" />
 	<SafeMoveTo questId="344501" x="2300" y="4873" z="-1" pathPrecision="5" pathPointLimit="250" statusText="" />
