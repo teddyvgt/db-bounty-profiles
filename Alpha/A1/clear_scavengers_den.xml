@@ -2,6 +2,7 @@
 <Profile>
 <Name>Clear the Scavenger's Den (345496)</Name>
 <KillMonsters>True</KillMonsters>
+<PickupLoot>True</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 

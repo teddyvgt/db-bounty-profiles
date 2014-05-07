@@ -2,6 +2,7 @@
 <Profile>
 <Name>The Curse Grove (365381)</Name>
 <KillMonsters>True</KillMonsters>
+<PickupLoot>True</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 

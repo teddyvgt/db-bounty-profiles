@@ -2,6 +2,7 @@
 <Profile>
 <Name>The Family of Rathe (347058)</Name>
 <KillMonsters>True</KillMonsters>
+<PickupLoot>True</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 

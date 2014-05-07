@@ -2,6 +2,7 @@
 <Profile>
 <Name>Clear the Clan of the Moon Cave (344547)</Name>
 <KillMonsters>True</KillMonsters>
+<PickupLoot>True</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 

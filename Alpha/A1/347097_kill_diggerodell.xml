@@ -2,6 +2,7 @@
 <Profile>
 <Name>Kill the DiggerODell (347097)</Name>
 <KillMonsters>True</KillMonsters>
+<PickupLoot>True</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
