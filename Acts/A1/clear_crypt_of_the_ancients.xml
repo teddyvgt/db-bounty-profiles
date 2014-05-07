@@ -22,20 +22,20 @@
 		
 		<!-- Find Crypt of the Ancients #2 -->	
 		<If condition="CurrentWorldId == 71150">
-		  <MoveToActor questId="72738" stepId="12" actorId="176008" isPortal="True" destinationWorldId="60394" x="576" y="881" z="20" maxSearchDistance="50" />
-		  <WaitTimer questId="72738" stepId="12" waitTime="1000" />
+		  <MoveToActor questId="1" actorId="176008" isPortal="True" destinationWorldId="60394" x="576" y="881" z="20" maxSearchDistance="50" />
+		  <WaitTimer questId="1" waitTime="1000" />
 		</If>
 		
 		<!-- Find Crypt of the Ancients #2 -->		
-		<If condition="CurrentWorldId == 71150">
-		  <MoveToActor questId="72738" stepId="12" actorId="176008" isPortal="True" destinationWorldId="60394" x="320" y="876" z="15" maxSearchDistance="50" />
-		  <WaitTimer questId="72738" stepId="12" waitTime="1000" />
+		<If condition="CurrentWorldId == 71150">		  
+		  <MoveToActor questId="1" actorId="176008" isPortal="True" destinationWorldId="60394" x="320" y="876" z="15" maxSearchDistance="50" />
+		  <WaitTimer questId="1" waitTime="1000" />
 		</If>
 		
 		<!-- Find Crypt of the Ancients #3 -->
 		<If condition="CurrentWorldId == 71150">		  
-		  <MoveToActor questId="72738" stepId="12" actorId="176008" isPortal="True" destinationWorldId="60394" x="445" y="880" z="18" maxSearchDistance="50"  />
-		  <WaitTimer questId="72738" stepId="12" waitTime="1000" />
+		  <MoveToActor questId="1" actorId="176008" isPortal="True" destinationWorldId="60394" x="445" y="880" z="18" maxSearchDistance="50"  />
+		  <WaitTimer questId="1" waitTime="1000" />
 		</If>
 	
 		<!-- Clear out the crypt -->
