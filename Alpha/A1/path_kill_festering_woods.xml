@@ -1,0 +1,157 @@
+<Profile>
+<Name>Fixed Path Kill on Festering Woods</Name>
+<Order>
+
+	<While condition="CurrentLevelAreaId != 19953">			
+		<UseWaypoint waypointNumber="10" questId="1"/>	
+		<WaitTimer questId="1" stepId="2" waitTime="5000" />	
+	</While>	
+	
+	<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
+	<If condition="CurrentLevelAreaId != 19953">			
+		<WaitTimer questId="1" stepId="2" waitTime="3000" />	
+	</If>	
+
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />	
+	
+	<!-- Settings -->
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
+
+	<EndChildren when="ObjectiveMarkerFound" distance="1300">	
+	
+		<!-- 369249: Kill Brone -->
+		<SafeMoveTo pathPrecision="10" questId="369249" x="604" y="832" />
+		<SafeMoveTo pathPrecision="10" questId="369249" x="613" y="978" />
+		<SafeMoveTo pathPrecision="10" questId="369249" x="410" y="981" />
+		<SafeMoveTo pathPrecision="10" questId="369249" x="473" y="839" />
+		<SafeMoveTo pathPrecision="10" questId="369249" x="349" y="857" />
+		<SafeMoveTo pathPrecision="10" questId="369249" x="249" y="958" />
+		<SafeMoveTo pathPrecision="10" questId="369249" x="198" y="885" />
+		<SafeMoveTo pathPrecision="10" questId="369249" x="195" y="721" />
+		<SafeMoveTo pathPrecision="10" questId="369249" x="259" y="597" />
+		<SafeMoveTo pathPrecision="10" questId="369249" x="390" y="610" />
+		<SafeMoveTo pathPrecision="10" questId="369249" x="547" y="602" />
+		<SafeMoveTo pathPrecision="10" questId="369249" x="534" y="540" />
+		<SafeMoveTo pathPrecision="10" questId="369249" x="728" y="693" />
+		<SafeMoveTo pathPrecision="10" questId="369249" x="602" y="736" />
+		<SafeMoveTo pathPrecision="10" questId="369249" x="319" y="719" />
+
+		<!-- 369251: Kill Galush -->
+		<SafeMoveTo pathPrecision="10" questId="369251" x="604" y="832" />
+		<SafeMoveTo pathPrecision="10" questId="369251" x="613" y="978" />
+		<SafeMoveTo pathPrecision="10" questId="369251" x="410" y="981" />
+		<SafeMoveTo pathPrecision="10" questId="369251" x="473" y="839" />
+		<SafeMoveTo pathPrecision="10" questId="369251" x="349" y="857" />
+		<SafeMoveTo pathPrecision="10" questId="369251" x="249" y="958" />
+		<SafeMoveTo pathPrecision="10" questId="369251" x="198" y="885" />
+		<SafeMoveTo pathPrecision="10" questId="369251" x="195" y="721" />
+		<SafeMoveTo pathPrecision="10" questId="369251" x="259" y="597" />
+		<SafeMoveTo pathPrecision="10" questId="369251" x="390" y="610" />
+		<SafeMoveTo pathPrecision="10" questId="369251" x="547" y="602" />
+		<SafeMoveTo pathPrecision="10" questId="369251" x="534" y="540" />
+		<SafeMoveTo pathPrecision="10" questId="369251" x="728" y="693" />
+		<SafeMoveTo pathPrecision="10" questId="369251" x="602" y="736" />
+		<SafeMoveTo pathPrecision="10" questId="369251" x="319" y="719" />
+
+		<!-- 345507: Kill Grimsmack -->
+		<SafeMoveTo pathPrecision="10" questId="345507" x="604" y="832" />
+		<SafeMoveTo pathPrecision="10" questId="345507" x="613" y="978" />
+		<SafeMoveTo pathPrecision="10" questId="345507" x="410" y="981" />
+		<SafeMoveTo pathPrecision="10" questId="345507" x="473" y="839" />
+		<SafeMoveTo pathPrecision="10" questId="345507" x="349" y="857" />
+		<SafeMoveTo pathPrecision="10" questId="345507" x="249" y="958" />
+		<SafeMoveTo pathPrecision="10" questId="345507" x="198" y="885" />
+		<SafeMoveTo pathPrecision="10" questId="345507" x="195" y="721" />
+		<SafeMoveTo pathPrecision="10" questId="345507" x="259" y="597" />
+		<SafeMoveTo pathPrecision="10" questId="345507" x="390" y="610" />
+		<SafeMoveTo pathPrecision="10" questId="345507" x="547" y="602" />
+		<SafeMoveTo pathPrecision="10" questId="345507" x="534" y="540" />
+		<SafeMoveTo pathPrecision="10" questId="345507" x="728" y="693" />
+		<SafeMoveTo pathPrecision="10" questId="345507" x="602" y="736" />
+		<SafeMoveTo pathPrecision="10" questId="345507" x="319" y="719" />
+
+		<!-- 347054: Kill Hawthorne -->
+		<SafeMoveTo pathPrecision="10" questId="347054" x="604" y="832" />
+		<SafeMoveTo pathPrecision="10" questId="347054" x="613" y="978" />
+		<SafeMoveTo pathPrecision="10" questId="347054" x="410" y="981" />
+		<SafeMoveTo pathPrecision="10" questId="347054" x="473" y="839" />
+		<SafeMoveTo pathPrecision="10" questId="347054" x="349" y="857" />
+		<SafeMoveTo pathPrecision="10" questId="347054" x="249" y="958" />
+		<SafeMoveTo pathPrecision="10" questId="347054" x="198" y="885" />
+		<SafeMoveTo pathPrecision="10" questId="347054" x="195" y="721" />
+		<SafeMoveTo pathPrecision="10" questId="347054" x="259" y="597" />
+		<SafeMoveTo pathPrecision="10" questId="347054" x="390" y="610" />
+		<SafeMoveTo pathPrecision="10" questId="347054" x="547" y="602" />
+		<SafeMoveTo pathPrecision="10" questId="347054" x="534" y="540" />
+		<SafeMoveTo pathPrecision="10" questId="347054" x="728" y="693" />
+		<SafeMoveTo pathPrecision="10" questId="347054" x="602" y="736" />
+		<SafeMoveTo pathPrecision="10" questId="347054" x="319" y="719" />
+
+		<!-- 347056: Kill Fecklar -->
+		<SafeMoveTo pathPrecision="10" questId="347056" x="604" y="832" />
+		<SafeMoveTo pathPrecision="10" questId="347056" x="613" y="978" />
+		<SafeMoveTo pathPrecision="10" questId="347056" x="410" y="981" />
+		<SafeMoveTo pathPrecision="10" questId="347056" x="473" y="839" />
+		<SafeMoveTo pathPrecision="10" questId="347056" x="349" y="857" />
+		<SafeMoveTo pathPrecision="10" questId="347056" x="249" y="958" />
+		<SafeMoveTo pathPrecision="10" questId="347056" x="198" y="885" />
+		<SafeMoveTo pathPrecision="10" questId="347056" x="195" y="721" />
+		<SafeMoveTo pathPrecision="10" questId="347056" x="259" y="597" />
+		<SafeMoveTo pathPrecision="10" questId="347056" x="390" y="610" />
+		<SafeMoveTo pathPrecision="10" questId="347056" x="547" y="602" />
+		<SafeMoveTo pathPrecision="10" questId="347056" x="534" y="540" />
+		<SafeMoveTo pathPrecision="10" questId="347056" x="728" y="693" />
+		<SafeMoveTo pathPrecision="10" questId="347056" x="602" y="736" />
+		<SafeMoveTo pathPrecision="10" questId="347056" x="319" y="719" />
+
+	</EndChildren> 		
+	
+	<LogMessage quest="1" output="Moving to Objective Marker" />
+	
+	<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="5" interactAttempts="-1" isPortal="False" maxSearchDistance="1300" timeout="60000" />
+		
+	<ToggleTargeting questId="1" combat="True" killRadius="45" />			
+	
+	<!-- 
+	369249: Kill Brone		
+	369251: Kill Galush
+	345507: Kill Grimsmack
+	347054: Kill Hawthorne	
+	347056: Kill Fecklar
+	-->
+	<If condition="
+		HasQuest(369249) or
+		HasQuest(369251) or 
+		HasQuest(345507) or
+		HasQuest(347054) or
+		HasQuest(347056)">				
+		
+		<LogMessage quest="1" output="Killing remaining monsters for bounty" />		
+		
+		<EndChildren when="BountyComplete">	
+		
+			<SafeMoveTo pathPrecision="10" questId="1" x="604" y="832" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="613" y="978" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="410" y="981" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="473" y="839" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="349" y="857" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="249" y="958" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="198" y="885" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="195" y="721" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="259" y="597" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="390" y="610" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="547" y="602" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="534" y="540" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="728" y="693" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="602" y="736" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="319" y="719" />									
+		
+		</EndChildren> 		
+		
+	</If>	
+	
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<LoadProfile file="act1.xml" />
+	
+</Order>
+</Profile>

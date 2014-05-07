@@ -1,0 +1,104 @@
+<!-- X1_Bounty_A1_Fields_Event_CultistLegion (365401) -->
+<Profile>
+<Name>The Cursed Mill (365401)</Name>
+<KillMonsters>True</KillMonsters>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+
+	<If condition="HasQuest(365401)">
+
+		<!-- Settings -->
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
+	
+		<!-- Drowned Temple Waypoint -->
+		<While condition="CurrentLevelAreaId != 19952">			
+			<UseWaypoint waypointNumber="9" questId="1"/>	
+			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
+		</While>		
+		
+		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
+		<If condition="CurrentLevelAreaId != 19952">			
+			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
+		</If>			
+	
+		<!-- Location #1 -->
+		<If condition="HasQuest(365401)">		
+			<SafeMoveTo questId="1" stepId="2" x="1489" y="765" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to location 1 of 6" />
+			<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+				<ToggleTargeting questId="1" combat="True" killRadius="31" />				
+			</If>			
+			<While condition="HasQuest(365401) and CurrentWorldId == 71150 and ActorExistsAt(364601, 1498, 757, -0, 50)">
+				<MoveToActor questId="365401" stepId="2" actorId="364601" interactRange="20" />
+				<WaitTimer questId="365401" stepId="2" waitTime="2000" />				
+			</While>
+			<!-- move point to avoid getting stuck moving to chest with shrine blocking us -->
+			<SafeMoveTo questId="312429" stepId="2" x="1498" y="774" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		</If>			
+
+		<!-- Location #2 -->		
+		<If condition="HasQuest(365401)">
+			<SafeMoveTo questId="1" stepId="2" x="1829" y="1011" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to location 2 of 6" /> 
+			<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+				<ToggleTargeting questId="1" combat="True" killRadius="31" />				
+			</If>						
+			<While condition="HasQuest(365401) and CurrentWorldId == 71150 and ActorExistsAt(364601, 1829, 1011, -0, 50)">		
+				<MoveToActor questId="365401" stepId="2" actorId="364601" interactRange="20"  />
+				<WaitTimer questId="365401" stepId="2" waitTime="2000" />		
+			</While>
+		</If>	
+		
+		<!-- Location #3 -->		
+		<If condition="HasQuest(365401)">
+			<SafeMoveTo questId="1" stepId="2" x="1492" y="770" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to location 3 of 6" /> 
+			<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+				<ToggleTargeting questId="1" combat="True" killRadius="31" />				
+			</If>						
+			<While condition="HasQuest(365401) and CurrentWorldId == 71150 and ActorExistsAt(364601, 1492, 770, -0, 50)">		
+				<MoveToActor questId="365401" stepId="2" actorId="364601" interactRange="20"  />
+				<WaitTimer questId="365401" stepId="2" waitTime="2000" />				
+			</While>
+		</If>			
+
+		<!-- Location #4 -->
+		<If condition="HasQuest(365401)">
+			<SafeMoveTo questId="1" stepId="2" x="1916" y="729" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to location 4 of 6" /> 
+			<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+				<ToggleTargeting questId="1" combat="True" killRadius="31" />				
+			</If>			
+			<While condition="HasQuest(365401) and CurrentWorldId == 71150 and ActorExistsAt(364601, 1916, 729, -0, 50)">		
+				<MoveToActor questId="365401" stepId="2" actorId="364601" interactRange="20"  />
+				<WaitTimer questId="365401" stepId="2" waitTime="2000" />			
+			</While>
+		</If>		
+
+		<!-- Location #5 -->		
+		<If condition="HasQuest(365401)">
+			<SafeMoveTo questId="1" stepId="2" x="1940" y="378" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to location 5 of 6" /> 
+			<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+				<ToggleTargeting questId="1" combat="True" killRadius="31" />				
+			</If>			
+			<While condition="HasQuest(365401) and CurrentWorldId == 71150 and ActorExistsAt(364601, 1940, 378, -0, 30)">		
+				<MoveToActor questId="365401" stepId="2" actorId="364601" interactRange="20"  />
+				<WaitTimer questId="365401" stepId="2" waitTime="2000" />							
+			</While>
+		</If>		
+
+		<!-- Location #6 -->
+		<If condition="HasQuest(365401)">
+			<SafeMoveTo questId="1" stepId="2" x="2191" y="621" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to location 6 of 6" /> 
+			<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+				<ToggleTargeting questId="1" combat="True" killRadius="15" />				
+			</If>			
+			<While condition="HasQuest(365401) and CurrentWorldId == 71150 and ActorExistsAt(364601, 2191, 621, -0, 30)">
+				<MoveToActor questId="365401" stepId="2" actorId="364601" interactRange="20"  />
+				<WaitTimer questId="365401" stepId="2" waitTime="2000" />			
+			</While>
+		</If>
+		
+	</If>
+	
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<LoadProfile file="act1.xml" />
+	
+</Order>
+</Profile>

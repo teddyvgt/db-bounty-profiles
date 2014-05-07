@@ -1,0 +1,22 @@
+<Profile>
+<Name>Kill Cathedral Level 4</Name>
+<Order>
+
+	<While condition="CurrentWorldId != 50585">	
+		<UseWaypoint waypointNumber="5" questId="1"/>	
+		<WaitTimer questId="1" stepId="2" waitTime="5000" />	
+	</While>			
+	
+	<ToggleTargeting questId="1" combat="True" killRadius="45" />	
+
+	<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.16" boxSize="20" >
+		<IgnoreScenes>
+			<IgnoreScene sceneName="Exit" />	
+		</IgnoreScenes>
+	</TrinityExploreDungeon>		
+
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<LoadProfile file="act1.xml" />
+	
+</Order>
+</Profile>

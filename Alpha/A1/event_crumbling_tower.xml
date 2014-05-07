@@ -1,0 +1,51 @@
+<Profile>
+<Name>Crumbling Tower (344482)</Name>
+<KillMonsters>True</KillMonsters>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+
+	<If condition="HasQuest(344482)">
+	
+		<!-- Settings -->
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
+	
+		<!-- Southern Highlands Waypoint -->	
+		<While condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940 and CurrentWorldId != 80057">			
+			<UseWaypoint waypointNumber="13" questId="1"/>	
+			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
+		</While>	
+		
+		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
+		<If condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940 and CurrentWorldId != 80057">			
+			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
+		</If>		
+
+		<!--Find and Enter Lyceum -->
+		<If condition="CurrentWorldId == 71150">
+			<SafeMoveTo questId="1" stepId="2" x="2114.882" y="4342.156" z="10.57983" />
+			<SafeMoveTo questId="1" stepId="2" x="2114.882" y="4342.156" z="10.57983" />
+			<MoveToActor questId="1" stepId="2" actorId="176001" isPortal="True" destinationWorldId="80057"/>
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />	
+		</If>
+		
+		<!-- Explore for Entrance - does this ever get hit? -->
+		<If condition="CurrentWorldId == 71150">			
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="25" until="ExitFound" exitNameHash="-1187439574" ignoreMarkers="False"/>
+			<MoveToMapMarker questId="1" stepId="2" exitNameHash="-1187439574" destinationWorldId="80057" interactRange="20"  />
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />	
+		</If>
+		
+		<!-- Explore the Lyceum -->
+		<If condition="CurrentWorldId == 80057">	
+			<ToggleTargeting questId="1" combat="True" killRadius="80" />			
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.13" boxSize="13"  stayAfterBounty="False"/>
+			<WaitTimer questId="1" stepId="2" waitTime="2000" />
+		</If>
+		
+	</If>
+	
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<LoadProfile file="act1.xml" />
+	
+</Order>
+</Profile>

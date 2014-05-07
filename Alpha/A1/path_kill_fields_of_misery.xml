@@ -1,0 +1,207 @@
+<Profile>
+<Name>Fixed Path Kill on Fields of Misery</Name>
+<Order>
+
+	<!-- Fields of Misery Waypoint -->
+	<While condition="CurrentLevelAreaId != 19952">			
+		<UseWaypoint waypointNumber="8" questId="1"/>	
+		<WaitTimer questId="1" stepId="2" waitTime="5000" />	
+	</While>		
+
+	<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
+	<If condition="CurrentLevelAreaId != 19952">			
+		<WaitTimer questId="1" stepId="2" waitTime="3000" />	
+	</If>		
+
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />	
+	
+	<!-- Settings -->
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>			
+	
+	<EndChildren when="ObjectiveMarkerFound" distance="1300">	
+
+		<!-- 369243: Kill Growler -->	
+		<SafeMoveTo pathPrecision="10" questId="369243" x="2219" y="1094" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="2193" y="1360" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="2081" y="1476" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="2084" y="1098" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="1904" y="1059" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="1834" y="873" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="1951" y="795" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="2056" y="652" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="1639" y="789" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="1673" y="834" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="1654" y="225" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="1816" y="240" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="1825" y="612" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="2167" y="530" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="1901" y="375" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="1915" y="245" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="2396" y="742" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="2414" y="998" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="2287" y="1060" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="2001" y="911" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="2151" y="700" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="2177" y="739" />
+		<SafeMoveTo pathPrecision="10" questId="369243" x="2285" y="848" />
+		
+		<!-- 347070: Kill Charger -->
+		<SafeMoveTo pathPrecision="10" questId="347070" x="2219" y="1094" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="2193" y="1360" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="2081" y="1476" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="2084" y="1098" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="1904" y="1059" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="1834" y="873" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="1951" y="795" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="2056" y="652" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="1639" y="789" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="1673" y="834" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="1654" y="225" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="1816" y="240" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="1825" y="612" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="2167" y="530" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="1901" y="375" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="1915" y="245" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="2396" y="742" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="2414" y="998" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="2287" y="1060" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="2001" y="911" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="2151" y="700" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="2177" y="739" />
+		<SafeMoveTo pathPrecision="10" questId="347070" x="2285" y="848" />
+
+		<!-- 347073: Kill Dreadclaw -->
+		<SafeMoveTo pathPrecision="10" questId="347073" x="2219" y="1094" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="2193" y="1360" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="2081" y="1476" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="2084" y="1098" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="1904" y="1059" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="1834" y="873" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="1951" y="795" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="2056" y="652" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="1639" y="789" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="1673" y="834" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="1654" y="225" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="1816" y="240" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="1825" y="612" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="2167" y="530" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="1901" y="375" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="1915" y="245" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="2396" y="742" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="2414" y="998" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="2287" y="1060" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="2001" y="911" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="2151" y="700" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="2177" y="739" />
+		<SafeMoveTo pathPrecision="10" questId="347073" x="2285" y="848" />
+
+		<!-- 369246: Kill Krelm -->
+		<SafeMoveTo pathPrecision="10" questId="369246" x="2219" y="1094" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="2193" y="1360" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="2081" y="1476" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="2084" y="1098" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="1904" y="1059" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="1834" y="873" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="1951" y="795" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="2056" y="652" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="1639" y="789" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="1673" y="834" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="1654" y="225" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="1816" y="240" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="1825" y="612" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="2167" y="530" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="1901" y="375" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="1915" y="245" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="2396" y="742" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="2414" y="998" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="2287" y="1060" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="2001" y="911" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="2151" y="700" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="2177" y="739" />
+		<SafeMoveTo pathPrecision="10" questId="369246" x="2285" y="848" />
+
+		<!-- 345498: Kill Melmak -->
+		<SafeMoveTo pathPrecision="10" questId="345498" x="2219" y="1094" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="2193" y="1360" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="2081" y="1476" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="2084" y="1098" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="1904" y="1059" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="1834" y="873" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="1951" y="795" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="2056" y="652" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="1639" y="789" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="1673" y="834" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="1654" y="225" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="1816" y="240" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="1825" y="612" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="2167" y="530" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="1901" y="375" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="1915" y="245" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="2396" y="742" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="2414" y="998" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="2287" y="1060" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="2001" y="911" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="2151" y="700" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="2177" y="739" />
+		<SafeMoveTo pathPrecision="10" questId="345498" x="2285" y="848" />
+
+	</EndChildren>
+
+	<LogMessage quest="1" output="Moving to Objective Marker" />	
+	
+	<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="5" interactAttempts="-1" isPortal="False" maxSearchDistance="1300" timeout="60000" />
+		
+	<ToggleTargeting questId="1" combat="True" killRadius="45" />	
+	
+	<!-- 
+	369243: Kill Growler		
+	347070: Kill Charger
+	347073: Kill Dreadclaw
+	369246: Kill Krelm	
+	345498: Kill Melmak
+	-->
+	<If condition="
+		HasQuest(369243) or
+		HasQuest(347070) or 
+		HasQuest(347073) or
+		HasQuest(369246) or
+		HasQuest(345498)">		
+
+		<LogMessage quest="1" output="Killing remaining monsters for bounty" />	
+
+		<EndChildren when="BountyComplete">			
+		
+			<SafeMoveTo pathPrecision="10" questId="1" x="1654" y="225" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="1816" y="240" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="1825" y="612" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="2167" y="530" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="1901" y="375" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="1915" y="245" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="2396" y="742" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="2414" y="998" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="2287" y="1060" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="2001" y="911" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="2151" y="700" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="2177" y="739" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="2285" y="848" />	
+			<SafeMoveTo pathPrecision="10" questId="1" x="2219" y="1094" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="2193" y="1360" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="2081" y="1476" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="2084" y="1098" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="1904" y="1059" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="1834" y="873" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="1951" y="795" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="2056" y="652" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="1639" y="789" />
+			<SafeMoveTo pathPrecision="10" questId="1" x="1673" y="834" />		
+				
+		</EndChildren> 		
+		
+	</If>			
+	
+	
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<LoadProfile file="act1.xml" />
+	
+</Order>
+</Profile>

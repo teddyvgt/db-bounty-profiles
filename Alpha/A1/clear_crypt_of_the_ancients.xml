@@ -1,0 +1,53 @@
+<Profile>
+<Name>Clear the Crypt of the Ancients</Name>
+<KillMonsters>True</KillMonsters>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+
+	<If condition="HasQuest(345517)">
+	
+		<!-- Settings -->
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>	
+		
+		<!-- Festering Woods Waypoint -->
+		<While condition="CurrentLevelAreaId != 19953">			
+			<UseWaypoint waypointNumber="10" questId="1"/>	
+			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
+		</While>		
+
+		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
+		<If condition="CurrentLevelAreaId != 19953">			
+			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
+		</If>			
+		
+		<!-- Find Crypt of the Ancients #2 -->	
+		<If condition="CurrentWorldId == 71150">
+		  <MoveToActor questId="1" actorId="176008" isPortal="True" destinationWorldId="60394" x="576" y="881" z="20" maxSearchDistance="50" />
+		  <WaitTimer questId="1" waitTime="1000" />
+		</If>
+		
+		<!-- Find Crypt of the Ancients #2 -->		
+		<If condition="CurrentWorldId == 71150">		  
+		  <MoveToActor questId="1" actorId="176008" isPortal="True" destinationWorldId="60394" x="320" y="876" z="15" maxSearchDistance="50" />
+		  <WaitTimer questId="1" waitTime="1000" />
+		</If>
+		
+		<!-- Find Crypt of the Ancients #3 -->
+		<If condition="CurrentWorldId == 71150">		  
+		  <MoveToActor questId="1" actorId="176008" isPortal="True" destinationWorldId="60394" x="445" y="880" z="18" maxSearchDistance="50"  />
+		  <WaitTimer questId="1" waitTime="1000" />
+		</If>
+	
+		<!-- Clear out the crypt -->
+		<If condition="CurrentWorldId == 60394">
+			<ToggleTargeting questId="1" combat="True" killRadius="80" />		
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="10" stayAfterBounty="False"/>
+		</If>
+
+	</If>
+	
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />
+	<LoadProfile file="act1.xml" />	
+	
+</Order>
+</Profile>

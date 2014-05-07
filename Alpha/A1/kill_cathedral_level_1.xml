@@ -1,0 +1,56 @@
+<Profile>
+<Name>Kill Cathedral Level 1</Name>
+<Order>	
+	
+	<!-- Cathedral 1 Waypoint -->
+	<While condition="CurrentWorldId != 50579">			
+		<UseWaypoint waypointNumber="2" questId="1"/>	
+		<WaitTimer questId="1" stepId="2" waitTime="5000" />	
+	</While>		
+
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />	
+	
+	<!-- Settings -->
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>				
+
+	<EndChildren when="ObjectiveMarkerFound" distance="1000">		
+	
+		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.14" boxSize="14" >
+			<IgnoreScenes>
+				<IgnoreScene sceneName="Exit" />	
+			</IgnoreScenes>
+		</TrinityExploreDungeon>	
+		
+	</EndChildren> 			
+	
+	<LogMessage quest="1" output="Moving to Objective Marker" />		
+	
+	<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="5" interactAttempts="-1" isPortal="False" maxSearchDistance="1300" timeout="60000" />	
+	
+	<ToggleTargeting questId="1" combat="True" killRadius="45" />		
+	
+	<!-- 
+	361331: Kill Glidewing		
+	361327: Kill Braluk
+	361320: Kill Ragus
+	-->
+	<If condition="
+		HasQuest(361331) or
+		HasQuest(361327) or 
+		HasQuest(361320)">	
+
+		<LogMessage quest="1" output="Killing remaining monsters for bounty" />			
+
+		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.14" boxSize="14" >
+			<IgnoreScenes>
+				<IgnoreScene sceneName="Exit" />	
+			</IgnoreScenes>
+		</TrinityExploreDungeon>
+				
+	</If>		
+			
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<LoadProfile file="act1.xml" />
+	
+</Order>
+</Profile>

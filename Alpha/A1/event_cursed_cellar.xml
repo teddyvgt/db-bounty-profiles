@@ -1,0 +1,65 @@
+<!-- X1_Bounty_A1_OldTristram_Event_DeathCellar (369944) -->
+<Profile>
+<Name>The Cursed Cellar (369944)</Name>
+<KillMonsters>True</KillMonsters>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+
+	<If condition="HasQuest(369944)">
+	
+		<!-- Settings -->
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
+	
+		<!-- Waypoint -->
+		<While condition="CurrentWorldId != 71150">			
+			<UseWaypoint waypointNumber="1" questId="1"/>	
+			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
+		</While>
+		
+		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
+		<If condition="CurrentWorldId != 71150">			
+			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
+		</If>				
+
+		<!-- Move to the celler -->
+		<If condition="CurrentWorldId == 71150">	
+		
+			<SafeMoveTo questId="1" stepId="2" x="2005" y="2758" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Location 1 of 7"/>
+			<SafeMoveTo questId="1" stepId="2" x="1994" y="2652" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Location 2 of 7"/>
+			<SafeMoveTo questId="1" stepId="2" x="1991" y="2596" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Location 3 of 7"/>
+			<SafeMoveTo questId="1" stepId="2" x="2109" y="2507" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Location 4 of 7"/>
+			<SafeMoveTo questId="1" stepId="2" x="2263" y="2499" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Location 5 of 7"/>
+			<SafeMoveTo questId="1" stepId="2" x="2304" y="2545" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Location 6 of 7"/>
+			<SafeMoveTo questId="1" stepId="2" x="2284" y="2557" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Location 7 of 7"/>	
+			
+			<If condition="MarkerExistsAt(1107870150, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+				<MoveToActor questId="1" stepId="2" actorId="176007" isPortal="True" destinationWorldId="106752" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="2000" />
+			</If>
+			
+		</If>	
+		
+		<!-- Cellar Event -->
+		<If condition="CurrentWorldId == 106752">
+		
+			<ToggleTargeting questId="1" stepId="2" killRadius="80" looting="True" />	
+			
+			<SafeMoveTo questId="1" stepId="2" x="122" y="128" z="-0" />
+			<MoveToActor questId="1" stepId="2" timeout="10000" actorId="365097"/>	
+			
+			<!-- If not completed, there must be a monster hidden in a corner somewhere, find him -->
+			<SafeMoveTo questId="369944" stepId="2" x="153" y="159" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="369944" stepId="2" x="107" y="158" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="369944" stepId="2" x="64" y="130" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			
+			<!-- and go to the chests -->
+			<SafeMoveTo questId="1" stepId="2" x="138" y="108" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 						
+			
+		</If>		
+	</If>
+	
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<LoadProfile file="act1.xml" />
+	
+</Order>
+</Profile>

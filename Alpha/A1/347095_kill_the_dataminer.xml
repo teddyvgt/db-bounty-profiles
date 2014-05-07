@@ -1,0 +1,72 @@
+<!-- X1_Bounty_A1_Cemetery_Kill_Dataminer (347095) -->
+<Profile>
+<Name>Kill the Dataminer</Name>
+<KillMonsters>True</KillMonsters>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+
+	<If condition="HasQuest(347095)">
+
+		<!-- Settings -->
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>			
+	
+		<!-- Cemetery of the Forsaken Waypoint -->
+		<While condition="CurrentLevelAreaId != 72712">			
+			<UseWaypoint waypointNumber="7" questId="1"/>	
+			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
+		</While>
+		
+		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
+		<If condition="CurrentLevelAreaId != 72712">			
+			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
+		</If>				
+	
+		<!--  Cemetery of the Forsaken Entrance #1 -->
+		<If condition="CurrentWorldId == 71150">		
+			<SafeMoveTo questId="1" stepId="2" x="2032" y="1776" z="1" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location North"/>
+			<If condition="MarkerExistsAt(-1965109038, 2032.983, 1776.411, 1.434785, 30)">
+				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="72636" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="3000" />				
+			</If>			
+		</If>
+		
+		<!--  Cemetery of the Forsaken Entrance #2 -->
+		<If condition="CurrentWorldId == 71150">		
+			<SafeMoveTo questId="1" stepId="2" x="2233" y="1793" z="-4" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location South"/>	
+			<If condition="MarkerExistsAt(-1965109038, 2233, 1793, 6, 30)">
+				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="72636" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="3000" />				
+			</If>
+		</If>	
+
+		<!--  Cemetery of the Forsaken Entrance #3 -->
+		<If condition="CurrentWorldId == 71150">
+			<SafeMoveTo questId="1" stepId="2" x="2062" y="1950" z="-5" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location East"/>
+			<If condition="MarkerExistsAt(-1965109038, 2062, 1950, -5, 30)">
+				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="72636" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="3000" />				
+			</If>	
+		</If>	
+		
+		<!--  Cemetery of the Forsaken Entrance #4 -->		
+		<If condition="CurrentWorldId == 71150">		
+			<SafeMoveTo questId="1" stepId="2" x="2173" y="1941" z="6" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location West"/> 
+			<If condition="MarkerExistsAt(-1965109038, 2173, 1941, -4, 30)">
+				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="72636" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="3000" />				
+			</If>						
+		</If>		
+
+		<!--  Defiled Crypt -->
+		<If condition="CurrentWorldId == 72636">		
+			<ToggleTargeting questId="1" combat="True" killRadius="80" />
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxSize="20" boxTolerance="0.18" stayAfterBounty="False"/>					
+		</If>
+	
+	</If>
+	
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />
+	<LoadProfile file="act1.xml" />	
+	
+</Order>
+</Profile>

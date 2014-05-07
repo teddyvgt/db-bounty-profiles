@@ -1,0 +1,19 @@
+<Profile>
+<Name>Kill Halls of Agony Level 2</Name>
+<Order>
+
+	<!-- Halls of Agony 3 Waypoint -->
+	<While condition="CurrentWorldId != 58982">			
+		<UseWaypoint waypointNumber="16" questId="1"/>	
+		<WaitTimer questId="1" stepId="2" waitTime="5000" />	
+	</While>			
+
+	<ToggleTargeting questId="1" combat="True" killRadius="45" />	
+	
+	<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
+
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<LoadProfile file="act1.xml" />
+	
+</Order>
+</Profile>

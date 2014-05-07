@@ -1,0 +1,575 @@
+<Profile>
+<Name>Fixed Path Kill on Southern Highlands</Name>
+<Order>
+
+	<!-- Southern Highlands Waypoint -->
+	<While condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940">			
+		<UseWaypoint waypointNumber="13" questId="1"/>	
+		<WaitTimer questId="1" stepId="2" waitTime="5000" />	
+	</While>	
+	
+	<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
+	<If condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940">			
+		<WaitTimer questId="1" stepId="2" waitTime="3000" />	
+	</If>			
+
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />
+	
+	<!-- Settings -->
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>			
+	
+	<EndChildren when="ObjectiveMarkerFound" distance="1000">	
+	
+		<!-- 344497: Kill Logrut the warrior -->
+		<SafeMoveTo questId="344497" x="2316" y="4856" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2300" y="4873" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2355" y="4898" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2339" y="4943" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2412" y="4883" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2415" y="4833" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2435" y="4816" z="-8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2401" y="4839" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2386" y="4816" z="2" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2381" y="4751" z="8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2387" y="4613" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2450" y="4592" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2494" y="4426" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2444" y="4372" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2339" y="4489" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2357" y="4540" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2167" y="4545" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2142" y="4606" z="-16" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2105" y="4570" z="-8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2082" y="4566" z="-8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2071" y="4533" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1997" y="4530" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1933" y="4515" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1905" y="4520" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1891" y="4461" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1850" y="4444" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1895" y="4381" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1906" y="4433" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2121" y="4461" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2257" y="4444" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2323" y="4294" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2279" y="4278" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2106" y="4422" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2033" y="4411" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1911" y="4359" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1987" y="4344" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2006" y="4208" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2139" y="4215" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2196" y="4301" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2184" y="4328" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2130" y="4323" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2090" y="4294" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2127" y="4325" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2189" y="4327" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2235" y="4211" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2113" y="4125" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1988" y="4143" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1997" y="4090" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1996" y="3926" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2022" y="3956" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2081" y="3969" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2101" y="4110" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2203" y="4090" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2231" y="3991" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2144" y="3962" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2222" y="3909" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2300" y="3950" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2384" y="3949" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2408" y="3914" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2475" y="3922" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2513" y="3946" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2519" y="4010" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2466" y="4031" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2465" y="4029" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2427" y="3979" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2338" y="3984" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2248" y="4099" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2298" y="4163" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2416" y="4100" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2474" y="4165" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2419" y="4186" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2469" y="4274" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2481" y="4260" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2539" y="4287" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2528" y="4345" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="2529" y="4177" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1965" y="4135" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1924" y="4081" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1925" y="3913" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1888" y="3885" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1848" y="3946" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1810" y="3913" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1880" y="4129" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1834" y="4152" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1811" y="4126" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1814" y="4021" z="30" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344497" x="1824" y="4087" z="20" pathPrecision="10" pathPointLimit="250" statusText="" /> 
+
+		<!-- TEMP this guy doesnt have an objective marker -->
+		<If condition="HasQuest(344490)">
+			<SafeMoveTo questId="312429" stepId="2" x="2120" y="4329" z="10" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="2106" y="4353" z="10" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="2104" y="4296" z="10" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
+			<ToggleTargeting questId="1" combat="True" killRadius="45" />		
+		</If>
+	
+		<!-- 344490: Kill Cadhul the Deathcaller 
+		<SafeMoveTo questId="344490" x="2316" y="4856" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2300" y="4873" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2355" y="4898" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2339" y="4943" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2412" y="4883" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2415" y="4833" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2435" y="4816" z="-8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2401" y="4839" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2386" y="4816" z="2" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2381" y="4751" z="8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2387" y="4613" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2450" y="4592" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2494" y="4426" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2444" y="4372" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2339" y="4489" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2357" y="4540" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2167" y="4545" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2142" y="4606" z="-16" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2105" y="4570" z="-8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2082" y="4566" z="-8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2071" y="4533" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1997" y="4530" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1933" y="4515" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1905" y="4520" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1891" y="4461" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1850" y="4444" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1895" y="4381" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1906" y="4433" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2121" y="4461" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2257" y="4444" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2323" y="4294" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2279" y="4278" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2106" y="4422" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2033" y="4411" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1911" y="4359" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1987" y="4344" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2006" y="4208" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2139" y="4215" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2196" y="4301" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2184" y="4328" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2130" y="4323" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2090" y="4294" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2127" y="4325" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2189" y="4327" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2235" y="4211" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2113" y="4125" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1988" y="4143" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1997" y="4090" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1996" y="3926" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2022" y="3956" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2081" y="3969" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2101" y="4110" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2203" y="4090" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2231" y="3991" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2144" y="3962" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2222" y="3909" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2300" y="3950" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2384" y="3949" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2408" y="3914" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2475" y="3922" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2513" y="3946" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2519" y="4010" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2466" y="4031" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2465" y="4029" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2427" y="3979" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2338" y="3984" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2248" y="4099" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2298" y="4163" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2416" y="4100" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2474" y="4165" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2419" y="4186" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2469" y="4274" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2481" y="4260" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2539" y="4287" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2528" y="4345" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="2529" y="4177" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1965" y="4135" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1924" y="4081" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1925" y="3913" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1888" y="3885" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1848" y="3946" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1810" y="3913" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1880" y="4129" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1834" y="4152" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1811" y="4126" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1814" y="4021" z="30" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344490" x="1824" y="4087" z="20" pathPrecision="10" pathPointLimit="250" statusText="" /> 
+-->
+
+		<!-- 344501: Kill Lorzak -->
+		<SafeMoveTo questId="344501" x="2316" y="4856" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2300" y="4873" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2355" y="4898" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2339" y="4943" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2412" y="4883" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2415" y="4833" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2435" y="4816" z="-8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2401" y="4839" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2386" y="4816" z="2" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2381" y="4751" z="8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2387" y="4613" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2450" y="4592" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2494" y="4426" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2444" y="4372" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2339" y="4489" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2357" y="4540" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2167" y="4545" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2142" y="4606" z="-16" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2105" y="4570" z="-8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2082" y="4566" z="-8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2071" y="4533" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1997" y="4530" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1933" y="4515" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1905" y="4520" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1891" y="4461" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1850" y="4444" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1895" y="4381" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1906" y="4433" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2121" y="4461" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2257" y="4444" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2323" y="4294" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2279" y="4278" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2106" y="4422" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2033" y="4411" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1911" y="4359" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1987" y="4344" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2006" y="4208" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2139" y="4215" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2196" y="4301" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2184" y="4328" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2130" y="4323" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2090" y="4294" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2127" y="4325" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2189" y="4327" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2235" y="4211" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2113" y="4125" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1988" y="4143" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1997" y="4090" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1996" y="3926" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2022" y="3956" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2081" y="3969" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2101" y="4110" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2203" y="4090" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2231" y="3991" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2144" y="3962" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2222" y="3909" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2300" y="3950" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2384" y="3949" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2408" y="3914" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2475" y="3922" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2513" y="3946" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2519" y="4010" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2466" y="4031" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2465" y="4029" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2427" y="3979" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2338" y="3984" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2248" y="4099" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2298" y="4163" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2416" y="4100" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2474" y="4165" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2419" y="4186" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2469" y="4274" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2481" y="4260" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2539" y="4287" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2528" y="4345" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="2529" y="4177" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1965" y="4135" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1924" y="4081" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1925" y="3913" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1888" y="3885" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1848" y="3946" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1810" y="3913" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1880" y="4129" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1834" y="4152" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1811" y="4126" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1814" y="4021" z="30" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344501" x="1824" y="4087" z="20" pathPrecision="10" pathPointLimit="250" statusText="" /> 
+
+
+		<!-- 344503: Kill Red Rock -->
+		<SafeMoveTo questId="344503" x="2316" y="4856" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2300" y="4873" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2355" y="4898" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2339" y="4943" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2412" y="4883" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2415" y="4833" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2435" y="4816" z="-8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2401" y="4839" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2386" y="4816" z="2" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2381" y="4751" z="8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2387" y="4613" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2450" y="4592" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2494" y="4426" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2444" y="4372" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2339" y="4489" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2357" y="4540" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2167" y="4545" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2142" y="4606" z="-16" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2105" y="4570" z="-8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2082" y="4566" z="-8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2071" y="4533" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1997" y="4530" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1933" y="4515" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1905" y="4520" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1891" y="4461" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1850" y="4444" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1895" y="4381" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1906" y="4433" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2121" y="4461" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2257" y="4444" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2323" y="4294" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2279" y="4278" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2106" y="4422" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2033" y="4411" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1911" y="4359" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1987" y="4344" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2006" y="4208" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2139" y="4215" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2196" y="4301" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2184" y="4328" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2130" y="4323" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2090" y="4294" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2127" y="4325" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2189" y="4327" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2235" y="4211" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2113" y="4125" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1988" y="4143" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1997" y="4090" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1996" y="3926" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2022" y="3956" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2081" y="3969" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2101" y="4110" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2203" y="4090" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2231" y="3991" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2144" y="3962" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2222" y="3909" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2300" y="3950" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2384" y="3949" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2408" y="3914" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2475" y="3922" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2513" y="3946" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2519" y="4010" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2466" y="4031" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2465" y="4029" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2427" y="3979" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2338" y="3984" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2248" y="4099" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2298" y="4163" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2416" y="4100" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2474" y="4165" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2419" y="4186" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2469" y="4274" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2481" y="4260" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2539" y="4287" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2528" y="4345" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="2529" y="4177" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1965" y="4135" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1924" y="4081" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1925" y="3913" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1888" y="3885" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1848" y="3946" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1810" y="3913" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1880" y="4129" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1834" y="4152" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1811" y="4126" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1814" y="4021" z="30" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344503" x="1824" y="4087" z="20" pathPrecision="10" pathPointLimit="250" statusText="" /> 
+
+		<!-- 344499: Kill Buras the Impaler -->
+		<SafeMoveTo questId="344499" x="2316" y="4856" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2300" y="4873" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2355" y="4898" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2339" y="4943" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2412" y="4883" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2415" y="4833" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2435" y="4816" z="-8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2401" y="4839" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2386" y="4816" z="2" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2381" y="4751" z="8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2387" y="4613" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2450" y="4592" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2494" y="4426" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2444" y="4372" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2339" y="4489" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2357" y="4540" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2167" y="4545" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2142" y="4606" z="-16" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2105" y="4570" z="-8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2082" y="4566" z="-8" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2071" y="4533" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1997" y="4530" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1933" y="4515" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1905" y="4520" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1891" y="4461" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1850" y="4444" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1895" y="4381" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1906" y="4433" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2121" y="4461" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2257" y="4444" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2323" y="4294" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2279" y="4278" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2106" y="4422" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2033" y="4411" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1911" y="4359" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1987" y="4344" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2006" y="4208" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2139" y="4215" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2196" y="4301" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2184" y="4328" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2130" y="4323" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2090" y="4294" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2127" y="4325" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2189" y="4327" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2235" y="4211" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2113" y="4125" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1988" y="4143" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1997" y="4090" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1996" y="3926" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2022" y="3956" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2081" y="3969" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2101" y="4110" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2203" y="4090" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2231" y="3991" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2144" y="3962" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2222" y="3909" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2300" y="3950" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2384" y="3949" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2408" y="3914" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2475" y="3922" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2513" y="3946" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2519" y="4010" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2466" y="4031" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2465" y="4029" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2427" y="3979" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2338" y="3984" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2248" y="4099" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2298" y="4163" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2416" y="4100" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2474" y="4165" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2419" y="4186" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2469" y="4274" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2481" y="4260" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2539" y="4287" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2528" y="4345" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="2529" y="4177" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1965" y="4135" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1924" y="4081" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1925" y="3913" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1888" y="3885" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1848" y="3946" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1810" y="3913" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1880" y="4129" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1834" y="4152" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1811" y="4126" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1814" y="4021" z="30" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<SafeMoveTo questId="344499" x="1824" y="4087" z="20" pathPrecision="10" pathPointLimit="250" statusText="" /> 
+
+	</EndChildren> 		
+
+	<LogMessage quest="1" output="Killing remaining monsters for bounty" />		
+	
+	<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="5" interactAttempts="-1" isPortal="False" maxSearchDistance="1300" timeout="60000" />	
+	
+	<ToggleTargeting questId="1" combat="True" killRadius="45" />	
+
+		<!-- 
+		344497: Kill Logrut
+		344490: Kill Cadhul
+		344501: Kill Lorzak
+		344503: Kill Red Rock
+		344499: Kill Buras
+		-->
+		<If condition="
+			HasQuest(344497) or
+			HasQuest(344490) or 
+			HasQuest(344501) or
+			HasQuest(344503) or 
+			HasQuest(344499)">	
+
+			<LogMessage quest="1" output="Killing remaining monsters for bounty" />				
+			
+			<EndChildren when="BountyComplete">				
+			
+				<SafeMoveTo questId="1" x="1987" y="4344" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2006" y="4208" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2139" y="4215" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2196" y="4301" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2184" y="4328" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2130" y="4323" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2090" y="4294" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2127" y="4325" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2189" y="4327" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2235" y="4211" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2113" y="4125" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="1988" y="4143" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="1997" y="4090" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="1996" y="3926" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2022" y="3956" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2081" y="3969" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2101" y="4110" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2203" y="4090" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2231" y="3991" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2144" y="3962" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2222" y="3909" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2300" y="3950" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2384" y="3949" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2408" y="3914" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2475" y="3922" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2513" y="3946" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2519" y="4010" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2466" y="4031" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2465" y="4029" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2427" y="3979" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2338" y="3984" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2248" y="4099" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2298" y="4163" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2416" y="4100" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2474" y="4165" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2419" y="4186" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2469" y="4274" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2481" y="4260" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2539" y="4287" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2528" y="4345" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2529" y="4177" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="1965" y="4135" z="-1" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="1924" y="4081" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="1925" y="3913" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="1888" y="3885" z="10" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="1848" y="3946" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="1810" y="3913" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="1880" y="4129" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="1834" y="4152" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="1811" y="4126" z="20" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="1814" y="4021" z="30" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="1824" y="4087" z="20" pathPrecision="10" pathPointLimit="250" statusText="" /> 			
+				<SafeMoveTo questId="1" x="1906" y="4433" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2121" y="4461" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2257" y="4444" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2323" y="4294" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2279" y="4278" z="-2" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2106" y="4422" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="2033" y="4411" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />
+				<SafeMoveTo questId="1" x="1911" y="4359" z="0" pathPrecision="10" pathPointLimit="250" statusText="" />				
+			
+			</EndChildren> 					
+			
+		</If>				
+	
+	
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<LoadProfile file="act1.xml" />
+	
+</Order>
+</Profile>
+

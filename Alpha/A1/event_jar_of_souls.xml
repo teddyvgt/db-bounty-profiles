@@ -1,0 +1,97 @@
+<!-- X1_Bounty_A1_Cemetery_Event_JarOfSouls (349016)   -->
+<Profile>
+<Name>Jar of Souls (349016)</Name>
+<KillMonsters>True</KillMonsters>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+	
+	<If condition="HasQuest(349016)">		
+	
+		<!-- Settings -->
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>	
+		
+		<!-- Cemetery of the Forsaken Waypoint -->
+		<While condition="CurrentLevelAreaId != 72712 and CurrentWorldId != 72636">		
+			<UseWaypoint waypointNumber="7" questId="1"/>	
+			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
+		</While>		
+		
+		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
+		<If condition="CurrentLevelAreaId != 72712 and CurrentWorldId != 72636">			
+			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
+		</If>		
+	
+		<!--  Cemetery of the Forsaken Entrance #1 -->
+		<If condition="CurrentWorldId == 71150">		
+			<SafeMoveTo questId="1" stepId="2" x="2032" y="1776" z="1" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location North"/>
+			<If condition="MarkerExistsAt(-1965109038, 2032.983, 1776.411, 1.434785, 30)">
+				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="72636" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="3000" />
+			</If>
+		</If>
+			
+		<!--  Cemetery of the Forsaken Entrance #2 -->			
+		<If condition="CurrentWorldId == 71150">
+			<SafeMoveTo questId="1" stepId="2" x="2233" y="1793" z="-4" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location South"/>	
+			<If condition="MarkerExistsAt(-1965109038, 2233, 1793, 6, 30)">
+				<LogMessage message="found marker in West (2233, 1793) - moving there" />
+				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="72636" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="3000" />
+			</If>	
+		</If>
+		
+		<!--  Cemetery of the Forsaken Entrance #3 -->		
+		<If condition="CurrentWorldId == 71150">
+			<SafeMoveTo questId="1" stepId="2" x="2062" y="1950" z="-5" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location East"/>
+			<If condition="MarkerExistsAt(-1965109038, 2062, 1950, -5, 30)">
+				<LogMessage message="found marker in East (2062, 1950) - moving there" />
+				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="72636" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="3000" />
+			</If>		
+		</If>
+		
+		<!--  Cemetery of the Forsaken Entrance #4 -->			
+		<If condition="CurrentWorldId == 71150">
+			<SafeMoveTo questId="1" stepId="2" x="2173" y="1941" z="6" pathPrecision="5" pathPointLimit="250" statusText="" name="Crypt Location West"/> 
+			<If condition="MarkerExistsAt(-1965109038, 2173, 1941, -4, 30)">
+				<LogMessage message="found marker in South (2173, 1941) - moving there" />
+				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="72636" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="3000" />
+			</If>
+		</If>
+
+		<!--  Defiled Crypt -->
+		<If condition="CurrentWorldId == 72636">
+		
+			<!-- Find the Jar of Souls -->
+			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="93713" boxSize="15" boxTolerance="0.35" objectDistance="55" statusText="Searching for unopened jar">
+				<AlternateActors>
+					<AlternateActor actorId="219334" objectDistance="100" />
+				</AlternateActors>
+			</TrinityExploreDungeon>
+			
+			<ToggleTargeting questId="1" combat="True" killRadius="45" />		
+			
+			<!-- Handle Jar #1 -->
+			<While condition="HasQuest(349016) and ActorExistsAt(93713, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+				<MoveToActor questId="349016" stepId="2" actorId="93713" />
+				<WaitTimer questId="1349016" stepId="2" waitTime="2000" />
+			</While>				
+			
+			<!-- Handle Jar #2 -->
+			<While condition="HasQuest(349016) and ActorExistsAt(219334, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+				<MoveToActor questId="349016" stepId="2" actorId="219334" />
+				<WaitTimer questId="349016" stepId="2" waitTime="2000" />				
+			</While>
+
+			<MoveToActor questId="349016" actorId="219334" interactRange="6" name="a1dun_Crypts_Jar_of_Souls_02-2974"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			
+			<MoveToActor questId="349016" actorId="93713" interactRange="6" name="a1dun_Crypts_Jar_of_Souls_02-2974"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
+
+		</If>
+	</If>
+
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />
+	<LoadProfile file="act1.xml" />	
+	
+</Order>
+</Profile>

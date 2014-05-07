@@ -1,0 +1,7 @@
+<Profile>
+<Name>ALPHA Act 1 - Loader</Name>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+	<LoadProfile file="A1/act1.xml" />
+</Order>
+</Profile>
