@@ -1,13 +1,7 @@
 <Profile>
-
 <Name>Act 1 - Loader</Name>
-<KillMonsters>True</KillMonsters>
-<PickupLoot>true</PickupLoot>
-<GameParams act="OpenWorld" difficulty="Normal" resumeFromSave="False" isPrivate="True" numGames="-1"  />
-<!--This is the Beging of your ORder list-->
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
-	<LogMessage quest="1" step="1" output="[BountyProfiles] Ensure that you delete BountyProfile's Plugin and update Trinity *VIA SVN* before reporting errors!" />
 	<LoadProfile file="Acts/A1/act1.xml" />
 </Order>
-
 </Profile>

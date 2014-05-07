@@ -90,7 +90,7 @@
           <AlternateActor actorId="0" objectDistance="45" />
         </AlternateActors>
       </TrinityExploreDungeon>
-      <TrinityMoveToScene questId="363344" sceneName="GreatWeapon" />
+      <SafeMoveToScene questId="363344" sceneName="GreatWeapon" />
       <WaitTimer questId="363344" waitTime="10000" />
     </While>
 
@@ -106,7 +106,7 @@
           <PriorityScene sceneName="RockHive" />
         </PriorityScenes>
       </TrinityExploreDungeon>
-      <TrinityMoveToScene questId="363346" sceneName="RockHive" />
+      <SafeMoveToScene questId="363346" sceneName="RockHive" />
       <WaitTimer questId="363346" waitTime="5000" />
     </If>
 

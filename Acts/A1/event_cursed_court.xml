@@ -2,39 +2,46 @@
 <Profile>
 <Name>The Cursed Court (375191)</Name>
 <KillMonsters>True</KillMonsters>
-<PickupLoot>true</PickupLoot>
-<TargetBlacklists>
-	<TargetBlacklist actorId="81431" /> <!-- Cath Bannister -->
-	<TargetBlacklist actorId="5717" /> <!-- Cath Barrel -->
-	<TargetBlacklist actorId="5740" /> <!-- Catch Candlestick -->
-	<TargetBlacklist actorId="3892" /> <!-- Lady Dunhyld -->
-	<TargetBlacklist actorId="5747" /> <!-- trDun_Cath_Chandelier_Trap_Switch2-15223 -->
-	<TargetBlacklist actorId="5744" /> <!-- trDun_Cath_Chandelier_Trap-3150 -->
-	<TargetBlacklist actorId="3948" /> <!-- destructibleCandles-4564 -->
-</TargetBlacklists>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
-	<ToggleTargeting questId="1" stepId="2" killRadius="2" />	
-	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
-	<WaitTimer questId="1" stepId="2" waitTime="1000" />				
-	<UseWaypoint waypointNumber="3" questId="1"/>	    
-	<WaitTimer questId="1" stepId="2" waitTime="3000" />
-		<While condition="HasQuest(375191)">
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.15" boxSize="35" until="ObjectFound" actorId="365097" ignoreMarkers="False" objectDistance="50">
-				<PrioritizeScenes>
-					<PriorityScene sceneName="_Cath_SW_Hall_01" />
-				</PrioritizeScenes>
-			</TrinityExploreDungeon>
-			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="5" />
-			<MoveToActor questId="1" stepId="2" actorId="365097" interactRange="8"/>
-			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="5" />			
+
+	<If condition="HasQuest(375191)">
+	
+		<!-- Settings -->
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
+	
+		<!-- Cathedral 2 Waypoint -->
+		<While condition="CurrentWorldId != 50582">			
+			<UseWaypoint waypointNumber="3" questId="1"/>	
+			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
+		</While>	
+		
+		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
+		<If condition="CurrentWorldId != 50582">			
+			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
+		</If>				
+
+		<!-- Find Chest -->
+		<TrinityExploreDungeon questId="375191" stepId="2" boxTolerance="0.15" boxSize="15" until="ObjectFound" actorId="365097" ignoreMarkers="False" objectDistance="15">
+			<PrioritizeScenes>
+				<PriorityScene sceneName="_Cath_SW_Hall_01" />
+			</PrioritizeScenes>
+		</TrinityExploreDungeon>
+		<MoveToActor questId="1" stepId="2" actorId="365097" interactRange="8"/>
+		<WaitTimer questId="1" stepId="2" waitTime="500" />	
+		
+		<ToggleTargeting questId="1" combat="True" killRadius="45" />			
+		
+		<!-- Hang out until completed -->
+		<While condition="HasQuest(375191) and ActorExistsAt(364559, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+			<MoveToActor questId="375191" stepId="2" actorId="364559" interactRange="8"/>
+			<WaitTimer questId="375191" stepId="2" waitTime="2000" />	
 		</While>
-		<!-- Just in case we have roamed too far -->
-		<If condition="HasQuest(375191)">
-			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False" statusText="Cleaning Up..."/>
-		</If>		
-	<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />	
-	<!-- give legendaries a moment to fall from the heavens... -->
-	<WaitTimer questId="1" stepId="2" waitTime="3000" />
-	<LoadProfile file="act1.xml" />	
+		
+	</If>
+	
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<LoadProfile file="act1.xml" />
+	
 </Order>
 </Profile>

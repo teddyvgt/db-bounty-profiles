@@ -41,7 +41,7 @@
           <IgnoreScene sceneName="_W_" />
         </IgnoreScenes>
       </TrinityExploreDungeon>
-      <TrinityMoveToScene questId="359758" sceneName="x1_westm_NSW_02_fire" />
+      <SafeMoveToScene questId="359758" sceneName="x1_westm_NSW_02_fire" />
       <WaitTimer questId="359758" waitTime="45000" />
     </While>
     

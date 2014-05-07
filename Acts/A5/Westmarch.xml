@@ -31,7 +31,7 @@
           <PriorityScene sceneName="x1_westm_NSEW_06" />
         </PriorityScenes>
       </TrinityExploreDungeon>
-      <TrinityMoveToScene questId="359399" sceneName="x1_westm_NSEW_06" />
+      <SafeMoveToScene questId="359399" sceneName="x1_westm_NSEW_06" />
       <WaitTimer questId="312429" stepId="2" waitTime="5000" />
     </While>
 

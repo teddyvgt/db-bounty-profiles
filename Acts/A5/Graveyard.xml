@@ -39,7 +39,7 @@
           <IgnoreScene sceneName="_W_" />
         </IgnoreScenes>
       </TrinityExploreDungeon>
-      <TrinityMoveToScene questId="359079" sceneName="x1_westm_graveyard_NSEW_06"/>
+      <SafeMoveToScene questId="359079" sceneName="x1_westm_graveyard_NSEW_06"/>
       <WaitTimer questId="359079" waitTime="1500" />
     </While>
 
@@ -52,7 +52,7 @@
         </PriorityScenes>
       </TrinityExploreDungeon>
       <If condition="HasQuest(359112) and IsSceneLoaded(341945)">
-        <TrinityMoveToScene questId="359112" sceneName="x1_westm_graveyard_NSEW_14" />
+        <SafeMoveToScene questId="359112" sceneName="x1_westm_graveyard_NSEW_14" />
       </If>
       <MoveToActor questId="359112" actorId="351621" />
       <WaitTimer questId="359112" waitTime="1500" />

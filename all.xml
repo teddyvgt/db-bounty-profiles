@@ -1,13 +1,12 @@
 <Profile>
-<Name>All - Launcher</Name>
+<Name>All - Loader</Name>
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" difficulty="Normal" resumeFromSave="False" isPrivate="True" numGames="-1"  />
 <Order>
-
 	<LogMessage quest="1" step="1" output="Welcome to ALL acts Community Bounty Profile" />
-	<TrinityLoadProfile file="All_Redirect/All_Redirect.xml" />
-	
+	<WaitTimer questId="1" stepId="2" waitTime="500" />	
+	<LoadProfile file="Routes/All_Redirect/All_Redirect.xml" />
 </Order>
 
 </Profile>

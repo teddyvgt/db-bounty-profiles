@@ -1,25 +1,19 @@
 <Profile>
-<Name>General Halls of Agony Level 2 Bounty</Name>
-<KillMonsters>True</KillMonsters>
-<PickupLoot>true</PickupLoot>
-<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
-<TargetBlacklists>
-	<TargetBlacklist actorId="89579"/> <!-- Firewall -->
-</TargetBlacklists>
+<Name>Kill Halls of Agony Level 2</Name>
 <Order>
 
-	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
-	<WaitTimer questId="1" stepId="2" waitTime="1000" />				
-	<UseWaypoint waypointNumber="16" questId="1"/>	
-	<WaitTimer questId="1" stepId="2" waitTime="3500" />		
+	<!-- Halls of Agony 3 Waypoint -->
+	<While condition="CurrentWorldId != 58982">			
+		<UseWaypoint waypointNumber="16" questId="1"/>	
+		<WaitTimer questId="1" stepId="2" waitTime="5000" />	
+	</While>			
 
-    <!-- Look for him -->
-	<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />
+	<ToggleTargeting questId="1" combat="True" killRadius="45" />	
+	
 	<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
 
-	<!-- give legendaries a moment to fall from the heavens... -->
-	<WaitTimer questId="1" stepId="2" waitTime="3000" />
-	<LoadProfile file="act1.xml" />	
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<LoadProfile file="act1.xml" />
 	
 </Order>
 </Profile>

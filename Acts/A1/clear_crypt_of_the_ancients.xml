@@ -1,38 +1,53 @@
-<!-- FesteringWoods -->
 <Profile>
 <Name>Clear the Crypt of the Ancients</Name>
 <KillMonsters>True</KillMonsters>
-<PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
-	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
-	<WaitTimer questId="1" stepId="2" waitTime="1000" />				
-	<UseWaypoint waypointNumber="10" questId="1"/>	
-	<WaitTimer questId="1" stepId="2" waitTime="3500" />	
 	<If condition="HasQuest(345517)">
 	
-		<!-- needs to use waypoints or scene ignores to stop running down into fields of misery -->
+		<!-- Settings -->
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>	
 		
-		<!-- Known Locations -->
-		<SafeMoveTo questId="312429" stepId="2" x="444" y="883" z="18" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-		<MoveToMapMarker questId="312429" stepId="2" markerNameHash="976523526" actorId="176008" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="60394" statusText="" /> 
+		<!-- Festering Woods Waypoint -->
+		<While condition="CurrentLevelAreaId != 19953">			
+			<UseWaypoint waypointNumber="10" questId="1"/>	
+			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
+		</While>		
+
+		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
+		<If condition="CurrentLevelAreaId != 19953">			
+			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
+		</If>			
 		
-		<!-- Legacy Search -->
+		<!-- Find Crypt of the Ancients #2 -->	
 		<If condition="CurrentWorldId == 71150">
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="976523526" ignoreMarkers="False"/>
-			<MoveToMapMarker questId="1" stepId="2" exitNameHash="976523526" destinationWorldId="60394" interactRange="20"  />
-			<WaitTimer questId="1" stepId="2" waitTime="2000" />
+		  <MoveToActor questId="72738" stepId="12" actorId="176008" isPortal="True" destinationWorldId="60394" x="576" y="881" z="20" maxSearchDistance="50" />
+		  <WaitTimer questId="72738" stepId="12" waitTime="1000" />
 		</If>
 		
+		<!-- Find Crypt of the Ancients #2 -->		
+		<If condition="CurrentWorldId == 71150">
+		  <MoveToActor questId="72738" stepId="12" actorId="176008" isPortal="True" destinationWorldId="60394" x="320" y="876" z="15" maxSearchDistance="50" />
+		  <WaitTimer questId="72738" stepId="12" waitTime="1000" />
+		</If>
+		
+		<!-- Find Crypt of the Ancients #3 -->
+		<If condition="CurrentWorldId == 71150">		  
+		  <MoveToActor questId="72738" stepId="12" actorId="176008" isPortal="True" destinationWorldId="60394" x="445" y="880" z="18" maxSearchDistance="50"  />
+		  <WaitTimer questId="72738" stepId="12" waitTime="1000" />
+		</If>
+	
 		<!-- Clear out the crypt -->
 		<If condition="CurrentWorldId == 60394">
-			<TrinitySetQuesting />
+			<ToggleTargeting questId="1" combat="True" killRadius="80" />		
 			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="10" stayAfterBounty="False"/>
 		</If>
 
 	</If>
-	<LoadProfile file="act1.xml" />
+	
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />
+	<LoadProfile file="act1.xml" />	
 	
 </Order>
 </Profile>

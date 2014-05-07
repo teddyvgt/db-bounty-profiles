@@ -2,48 +2,67 @@
 <Profile>
 <Name>Clear the Scavenger's Den (345496)</Name>
 <KillMonsters>True</KillMonsters>
-<PickupLoot>true</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
-	<ToggleTargeting questId="1" stepId="2" killRadius="5" combat="True" />
-	<WaitTimer questId="1" stepId="2" waitTime="3800" /><If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
-	<WaitTimer questId="1" stepId="2" waitTime="1000" />		
-	<UseWaypoint waypointNumber="8" questId="1"/>	
-	<WaitTimer questId="1" stepId="2" waitTime="3500" />
+
 	<If condition="HasQuest(345496)">
+	
+		<!-- Settings -->
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
+	
+		<!-- Fields of Misery Waypoint -->	
+		<While condition="CurrentLevelAreaId != 19952">			
+			<UseWaypoint waypointNumber="8" questId="1"/>	
+			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
+		</While>	
+		
+		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
+		<If condition="CurrentLevelAreaId != 19952">			
+			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
+		</If>			
+	
 		<!-- Top Cave Location -->
-		<If condition="HasQuest(345496) and CurrentWorldId == 71150">
+		<If condition="CurrentWorldId == 71150">
 			<SafeMoveTo questId="1" stepId="2" x="1770" y="369" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Top Cave Location 1 of 5" /> 
-			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(925091454, 1770, 369, -0, 30)">			
+			<If condition="MarkerExistsAt(925091454, 1770, 369, -0, 30)">			
 				<MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="1000" />					
 			</If>
 		</If>
-		<If condition="HasQuest(345496) and CurrentWorldId == 71150">
+		
 		<!-- Middle Cave Location 2 -->
+		<If condition="CurrentWorldId == 71150">			
 			<SafeMoveTo questId="1" stepId="2" x="2120" y="612" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Middle Cave Location 3 of 5" /> 
-			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(925091454, 2120, 612, -0, 30)">		
+			<If condition="MarkerExistsAt(925091454, 2120, 612, -0, 30)">		
 				<MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="1000" />					
 			</If>
 		</If>
-		<If condition="HasQuest(345496) and CurrentWorldId == 71150">
-		<!-- Middle Cave Location 1 -->
+		
+		<!-- Middle Cave Location 1 -->		
+		<If condition="CurrentWorldId == 71150">
 			<SafeMoveTo questId="1" stepId="2" x="2068" y="896" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Middle Cave Location 2 of 5" /> 		
-			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(925091454, 2068, 896, -0, 30)">				
+			<If condition="MarkerExistsAt(925091454, 2068, 896, -0, 30)">				
 				<MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="1000" />					
 			</If>
 		</If>
-		<If condition="HasQuest(345496) and CurrentWorldId == 71150">
+		
 		<!-- Bottom Cave Location 1 -->
+		<If condition="CurrentWorldId == 71150">		
 			<SafeMoveTo questId="1" stepId="2" x="2242" y="1054" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Bottom Cave Location 4 of 5" /> 
-			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(925091454, 2242, 1054, -0, 30)">	
+			<If condition="MarkerExistsAt(925091454, 2242, 1054, -0, 30)">	
 				<MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="1000" />					
 			</If>
 		</If>
-		<If condition="HasQuest(345496) and CurrentWorldId == 71150">
-		<!-- Bottom Cave Location 2 -->
+		
+		<!-- Bottom Cave Location 2 -->		
+		<If condition="CurrentWorldId == 71150">
 			<SafeMoveTo questId="1" stepId="2" x="2236" y="1053" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Bottom Cave Location 5 of 5" /> 
-			<If condition="CurrentWorldId == 71150 and MarkerExistsAt(925091454, 2236, 1053, -0, 30)">	
+			<If condition="MarkerExistsAt(925091454, 2236, 1053, -0, 30)">	
 				<MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="1000" />				
 			</If>		
 		</If>
 		
@@ -61,16 +80,25 @@
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 			
 			<If condition="HasQuest(345496) and CurrentWorldId == 81163">	
-				<MoveToActor questId="1" stepId="2" actorId="176038" isPortal="True" destinationWorldId="81164" interactRange="20"  />
+				<MoveToActor questId="1" timeout="10000" actorId="176038" isPortal="True" destinationWorldId="81164" interactRange="20" />
+			</If>
+			
+			<If condition="HasQuest(345496) and CurrentWorldId == 81163">				
+				<MoveToMapMarker questId="1" stepId="2" actorId="176038" isPortal="True" destinationWorldId="81164" interactRange="20" />
 			</If>
 			
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />
 
 		</If>
+		
 		<!-- Inside Scavenger's Den Level 2-->
 		<If condition="HasQuest(345496) and CurrentWorldId == 81164">
-			<ToggleTargeting questId="1" stepId="2" killRadius="80" combat="True" />
-			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="614" y="495" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
+		
+			<ToggleTargeting questId="1" combat="True" killRadius="80" />			
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance=".10" boxSize="9" stayAfterBounty="False"/>		
+			
+			<!-- commenting out because this should not be necessary with DB fix for holes in map -->
+<!-- 			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="614" y="495" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
 			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="546" y="585" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
 			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="437" y="627" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
 			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="402" y="664" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
@@ -111,18 +139,12 @@
 			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="408" y="662" z="0" pathPrecision="5" pathPointLimit="250" timeout="15" /></If>
 			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="445" y="621" z="0" pathPrecision="5" pathPointLimit="250" timeout="15" /></If>
 			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="469" y="611" z="0" pathPrecision="5" pathPointLimit="250" timeout="15" /></If>
-		</If>
-		<If condition="HasQuest(345496) and CurrentWorldId == 81164">
-			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance=".1" boxSize="5" stayAfterBounty="False">
-				<IgnoreScenes>
-					<IgnoreScene sceneName="_Exit_" />
-					<IgnoreScene sceneName="_Filler" />
-				</IgnoreScenes>
-			</TrinityExploreDungeon>
-		</If>
+ -->	</If>
+
 	</If>
-	<!-- give legendaries a moment to fall from the heavens... -->
-	<WaitTimer questId="1" stepId="2" waitTime="3000" />
-	<LoadProfile file="act1.xml" />	
+	
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<LoadProfile file="act1.xml" />
+	
 </Order>
 </Profile>

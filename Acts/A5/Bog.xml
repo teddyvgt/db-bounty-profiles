@@ -115,7 +115,7 @@
           <IgnoreScene sceneName="_W_" />
         </IgnoreScenes>
       </TrinityExploreDungeon>
-      <TrinityMoveToScene questId="359280" sceneName="Wickerman" />
+      <SafeMoveToScene questId="359280" sceneName="Wickerman" />
     </If>
     <!-- Quest: X1_Bounty_A5_Bog_Event_Wickerman (359280) World: x1_Bog_BogPeople_Cellar_C (269874) LevelArea: x1_Bog_BogPeople_Cellar_C (335815) -->
     <If condition="HasQuest(359280) and CurrentWorldId==269874">
@@ -158,7 +158,7 @@
           <PriorityScene sceneName="LordOfFools" />
         </PriorityScenes>
       </TrinityExploreDungeon>
-      <TrinityMoveToScene questId="359314" sceneName="LordOfFools" />
+      <SafeMoveToScene questId="359314" sceneName="LordOfFools" />
       <WaitTimer questId="359314" waitTime="5000" />
     </While>
 
@@ -170,7 +170,7 @@
           <PriorityScene sceneName="KingOfTheHill" />
         </PriorityScenes>
       </TrinityExploreDungeon>
-      <TrinityMoveToScene questId="359319" sceneName="KingOfTheHill" />
+      <SafeMoveToScene questId="359319" sceneName="KingOfTheHill" />
     </If>
 
     <!-- Quest: X1_Bounty_A5_Bog_Event_AncientEvils (369952) World: x1_Bog_01 (267412) LevelArea: x1_Bog_01_Part2 (258142) -->

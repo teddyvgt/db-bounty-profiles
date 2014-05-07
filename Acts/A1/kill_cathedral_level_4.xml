@@ -1,77 +1,22 @@
 <Profile>
-<Name>General Cathedral Level 4 Bounty</Name>
-<KillMonsters>True</KillMonsters>
-<PickupLoot>true</PickupLoot>
-<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
-<TargetBlacklists>
-	<TargetBlacklist actorId="3892" /> <!-- Lady Dunhyld -->
-	<TargetBlacklist actorId="5747" /> <!-- trDun_Cath_Chandelier_Trap_Switch2-15223 -->
-	<TargetBlacklist actorId="5744" /> <!-- trDun_Cath_Chandelier_Trap-3150 -->
-	<TargetBlacklist actorId="3948" /> <!-- destructibleCandles-4564 -->
-	<TargetBlacklist actorId="365097" /> <!-- Cursed Chest -->
-	<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->
-</TargetBlacklists>
+<Name>Kill Cathedral Level 4</Name>
 <Order>
 
-	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
-	<WaitTimer questId="1" stepId="2" waitTime="1000" />				
-	<UseWaypoint waypointNumber="4" questId="1"/>	
-	<WaitTimer questId="1" stepId="2" waitTime="3500" />		
+	<While condition="CurrentWorldId != 50584">			
+		<UseWaypoint waypointNumber="4" questId="1"/>	
+		<WaitTimer questId="1" stepId="2" waitTime="5000" />	
+	</While>					
 	
-		<!-- Temporary - remove when we have all the actorIds logged -->
-		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.14" boxSize="14" >
-			<IgnoreScenes>
-				<IgnoreScene sceneName="Exit" />	
-			</IgnoreScenes>
-		</TrinityExploreDungeon>			
+	<ToggleTargeting questId="1" combat="True" killRadius="45" />		
+	
+	<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.14" boxSize="14" >
+		<IgnoreScenes>
+			<IgnoreScene sceneName="Exit" />	
+		</IgnoreScenes>
+	</TrinityExploreDungeon>			
 		
-		<ToggleTargeting questId="1" stepId="2" killRadius="31" />		
-	
-		<!-- Kill Killian Damort 
-		<If condition="HasQuest(361343)">
-			<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />	
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.15" boxSize="35" until="ObjectFound" actorId="218400" objectDistance="50" ignoreMarkers="False"/>
-			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
-			<MoveToActor questId="1" stepId="2" actorId="218400" interactRange="20"  />		
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="25" >
-				<IgnoreScenes>
-					<IgnoreScene sceneName="Exit" />
-				</IgnoreScenes>
-			</TrinityExploreDungeon>
-		</If>	-->
-		
-		<!-- Kill Captain Cage
-		<If condition="HasQuest(361341)">
-			<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.15" boxSize="35" until="ObjectFound" actorId="218396" objectDistance="50" ignoreMarkers="False"/>
-			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
-			<MoveToActor questId="1" stepId="2" actorId="218396" interactRange="20"  />		
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="25" >
-				<IgnoreScenes>
-					<IgnoreScene sceneName="Exit" />
-				</IgnoreScenes>
-			</TrinityExploreDungeon>
-		</If>	 -->
-
-		<!-- Kill Bellybloat the Scarred
-		<If condition="HasQuest(361345)">
-			<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />		
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.15" boxSize="35" until="ObjectFound" actorId="218405" objectDistance="125" ignoreMarkers="False"/>
-			<ToggleTargeting questId="1" stepId="2" looting="True" killRadius="31" />
-			<MoveToActor questId="1" stepId="2" actorId="218405" interactRange="20"  />		
-			<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="25" >
-				<PrioritizeScenes>
-					<PriorityScene sceneName="NSE_01" />
-				</PrioritizeScenes>
-				<IgnoreScenes>
-					<IgnoreScene sceneName="Exit" />
-				</IgnoreScenes>
-			</TrinityExploreDungeon>
-		</If> -->	
-	
-	<!-- give legendaries a moment to fall from the heavens... -->
-	<WaitTimer questId="1" stepId="2" waitTime="3000" />
-	<LoadProfile file="act1.xml" />	
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<LoadProfile file="act1.xml" />
 	
 </Order>
 </Profile>

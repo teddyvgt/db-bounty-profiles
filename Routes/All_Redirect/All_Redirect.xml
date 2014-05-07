@@ -1,0 +1,8 @@
+<Profile>
+<Name>All - Route</Name>
+<Order>	
+	<!-- This file is important, do not touch it or the folder its in -->
+	<WaitTimer questId="1" stepId="2" waitTime="500" />	
+	<LoadProfile file="../../Acts/All_Distributor.xml" />
+</Order>
+</Profile>

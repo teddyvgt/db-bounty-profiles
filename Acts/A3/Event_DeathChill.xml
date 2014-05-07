@@ -39,7 +39,7 @@
         <!--
           </IgnoreScenes>
         </TrinityExploreDungeon>
-        <TrinityMoveToScene questId="346192" sceneName="a3_Battlefield_Sub120_IceCavesEntrance_A"/>-->
+        <SafeMoveToScene questId="346192" sceneName="a3_Battlefield_Sub120_IceCavesEntrance_A"/>-->
 
         <TrinityExploreDungeon questId="369851" stepId="2" until="ObjectFound" exitNameHash="942020622" actorId="176003" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="50">
           <PrioritizeScenes>
