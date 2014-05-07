@@ -23,36 +23,51 @@
     </If>
 
 
+    <!-- Quest: X1_Bounty_A5_Graveyard_Event_AltarOfSadness (359116) World: x1_westm_Graveyard_DeathOrb (338944) LevelArea: X1_Westm_Graveyard_DeathOrb (338946) -->
+    <While condition="HasQuest(359116) and CurrentWorldId==338944 and CurrentLevelAreaId==338946">
+      <TrinityExploreDungeon questId="359116" until="ObjectFound" exitNameHash="0" actorId="335575" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45">
+        <AlternateActors>
+          <AlternateActor actorId="340085" />
+        </AlternateActors>
+        <PriorityScenes>
+          <PriorityScene sceneName="x1_westm_graveyard_NSEW_Event_01" />
+        </PriorityScenes>
+      </TrinityExploreDungeon>
+      <If condition="ActorExistsAt(335575, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+        <MoveToActor questId="359116" actorId="335575" interactRange="7" name="x1_Graveyard_Alter_Event_Alter-27015"  pathPrecision="5" pathPointLimit="250" statusText="" />
+      </If>
+      <If condition="ActorExistsAt(340085, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+        <MoveToActor questId="359116" actorId="340085" interactRange="7" name="x1_Graveyard_Alter_Event_Alter_Chest-54172"  pathPrecision="5" pathPointLimit="250" statusText="" />
+      </If>
+      <WaitTimer questId="336254" stepId="1" waitTime="10000" />
+      <TrinityMoveToScene questId="336254" stepId="1" sceneName="x1_westm_graveyard_NSEW_Event_01" />
+    </While>
+
+
+
+
     <!-- Quest: X1_Bounty_A5_Graveyard_Event_Cryptology (359079) World: x1_westm_Graveyard_DeathOrb (338944) LevelArea: X1_Westm_Graveyard_DeathOrb (338946) -->
     <While condition="HasQuest(359079) and CurrentWorldId==338944 and CurrentLevelAreaId==338946">
-      <TrinityExploreDungeon questId="359079" until="SceneFound" sceneName="x1_westm_graveyard_NSEW_06" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
-        <AlternateActors>
-          <AlternateActor actorId="0" objectDistance="45" />
-        </AlternateActors>
+      <TrinityExploreDungeon questId="359079" until="ObjectFound" exitNameHash="0" actorId="332861" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45">
         <PriorityScenes>
           <PriorityScene sceneName="x1_westm_graveyard_NSEW_06" />
         </PriorityScenes>
-        <IgnoreScenes>
-          <IgnoreScene sceneName="_N_" />
-          <IgnoreScene sceneName="_S_" />
-          <IgnoreScene sceneName="_E_" />
-          <IgnoreScene sceneName="_W_" />
-        </IgnoreScenes>
       </TrinityExploreDungeon>
-      <SafeMoveToScene questId="359079" sceneName="x1_westm_graveyard_NSEW_06"/>
+      <MoveToActor questId="359079" actorId="332861" interactRange="8" name="x1_westmarchFemale_A_Graveyard_Unique_1-6498"  pathPrecision="5" pathPointLimit="250" statusText="" />
+      <TrinityMoveToScene sceneName="x1_westm_graveyard_NSEW_06" />
       <WaitTimer questId="359079" waitTime="1500" />
     </While>
 
 
     <!-- Quest: X1_Bounty_A5_Graveyard_Event_GraveRobert (359112) World: x1_westm_Graveyard_DeathOrb (338944) LevelArea: X1_Westm_Graveyard_DeathOrb (338946) -->
     <While condition="HasQuest(359112) and CurrentWorldId==338944 and CurrentLevelAreaId==338946">
-      <TrinityExploreDungeon questId="359112" until="ObjectFound" exitNameHash="0" actorId="351621" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+      <TrinityExploreDungeon questId="359112" until="ObjectFound" exitNameHash="0" actorId="351621" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45">
         <PriorityScenes>
           <PriorityScene sceneName="x1_westm_graveyard_NSEW_14" />
         </PriorityScenes>
       </TrinityExploreDungeon>
       <If condition="HasQuest(359112) and IsSceneLoaded(341945)">
-        <SafeMoveToScene questId="359112" sceneName="x1_westm_graveyard_NSEW_14" />
+        <TrinityMoveToScene questId="359112" sceneName="x1_westm_graveyard_NSEW_14" />
       </If>
       <MoveToActor questId="359112" actorId="351621" />
       <WaitTimer questId="359112" waitTime="1500" />
@@ -61,7 +76,7 @@
     <If condition="CurrentWorldId==338944">
       <WaitTimer questId="1" waitTime="1000" />
       <!-- Start Explore -->
-      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45" />
     </If>
 
     <TrinityTownPortal questId="1" waitTime="5000" />

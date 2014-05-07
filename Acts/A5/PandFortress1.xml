@@ -24,7 +24,7 @@
       <LogMessage output="Exploring for Bounty" />
       <WaitTimer questId="1" waitTime="1000" />
       <!-- Start Explore -->
-      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="15" boxTolerance="0.01" objectDistance="45">
+      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="60" boxSize="15" boxTolerance="0.01" objectDistance="45">
         <IgnoreScenes>
           <IgnoreScene sceneName="Entrance" />
         </IgnoreScenes>

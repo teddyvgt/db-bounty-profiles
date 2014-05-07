@@ -27,7 +27,7 @@
         <LogMessage output="Kill Adria - Exploring for Great Hall" />
         <WaitTimer questId="359915" waitTime="1000" />
         <!-- Start Explore -->
-        <TrinityExploreDungeon questId="359915" until="ExitFound" exitNameHash="-131340091" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <TrinityExploreDungeon questId="359915" until="ExitFound" exitNameHash="-131340091" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45">
           <PriorityScenes>
             <PriorityScene sceneName="Exit" />
           </PriorityScenes>
@@ -44,7 +44,7 @@
     <If condition="ZetaDia.ActInfo.ActiveBounty and CurrentWorldId==283566">
       <WaitTimer questId="1" waitTime="1000" />
       <!-- Start Explore -->
-      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="35" boxTolerance="0.01" objectDistance="45" />
+      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="60" boxSize="35" boxTolerance="0.01" objectDistance="45" />
     </If>
 
     <If condition="not (ZetaDia.ActInfo.ActiveBounty)">

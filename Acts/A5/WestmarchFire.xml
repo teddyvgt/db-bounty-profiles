@@ -27,7 +27,7 @@
 
     <!-- Quest: X1_Bounty_A5_WestmarchFire_Event_BrutelyUnfortunate (359758) World: X1_WESTM_ZONE_03 (263494) LevelArea: X1_WESTM_ZONE_03 (263493) -->
     <While condition="HasQuest(359758) and CurrentWorldId==263494 and CurrentLevelAreaId==263493">
-      <TrinityExploreDungeon questId="359758" until="SceneFound" sceneName="x1_westm_NSW_02_fire" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+      <TrinityExploreDungeon questId="359758" until="SceneFound" sceneName="x1_westm_NSW_02_fire" exitNameHash="0" actorId="0" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45">
         <AlternateActors>
           <AlternateActor actorId="0" objectDistance="45" />
         </AlternateActors>
@@ -41,7 +41,7 @@
           <IgnoreScene sceneName="_W_" />
         </IgnoreScenes>
       </TrinityExploreDungeon>
-      <SafeMoveToScene questId="359758" sceneName="x1_westm_NSW_02_fire" />
+      <TrinityMoveToScene questId="359758" sceneName="x1_westm_NSW_02_fire" />
       <WaitTimer questId="359758" waitTime="45000" />
     </While>
     
@@ -53,7 +53,7 @@
     
     <!-- Quest: X1_Bounty_A5_WestmarchFire_Kill_Urzael (359919) World: X1_WESTM_ZONE_03 (263494) LevelArea: X1_WESTM_ZONE_03 (263493) -->
     <If condition="HasQuest(359919) and CurrentWorldId==263494 and CurrentLevelAreaId==263493">
-      <TrinityExploreDungeon questId="359919" until="ExitFound" exitNameHash="-1689330047" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+      <TrinityExploreDungeon questId="359919" until="ExitFound" exitNameHash="-1689330047" actorId="0" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45">
         <AlternateActors>
           <AlternateActor actorId="0" objectDistance="45" />
         </AlternateActors>
@@ -81,19 +81,19 @@
 
     <!-- Quest: X1_Bounty_A5_WestmarchFire_Event_PestProblems (368613) World: X1_WESTM_ZONE_03 (263494) LevelArea: X1_WESTM_ZONE_03 (263493) -->
     <If condition="HasQuest(368613) and CurrentWorldId==263494 and CurrentLevelAreaId==263493">
-      <TrinityExploreDungeon questId="368613" until="ExitFound" exitNameHash="-1883144025" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+      <TrinityExploreDungeon questId="368613" until="ExitFound" exitNameHash="-1883144025" actorId="0" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45" />
       <MoveToMapMarker questId="368613" markerNameHash="-1883144025" actorId="333736" interactRange="8.464922"
                           pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
     </If>
     <!-- Quest: X1_Bounty_A5_WestmarchFire_Event_PestProblems (368613) World: X1_WestM_Alley_Rats (304358) LevelArea: X1_WestM_Alley_Rats (304359) -->
     <If condition="HasQuest(368613) and CurrentWorldId==304358 and CurrentLevelAreaId==304359">
-      <TrinityExploreDungeon questId="368613" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+      <TrinityExploreDungeon questId="368613" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45" />
     </If>
 
 
     <!-- Quest: X1_Bounty_A5_WestmarchFire_Event_Bonepit (375348) World: X1_WESTM_ZONE_03 (263494) LevelArea: X1_WESTM_ZONE_03 (263493) -->
     <If condition="HasQuest(375348) and CurrentWorldId==263494 and CurrentLevelAreaId==263493">
-      <TrinityExploreDungeon questId="375348" until="ExitFound" exitNameHash="-660641888" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+      <TrinityExploreDungeon questId="375348" until="ExitFound" exitNameHash="-660641888" actorId="0" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45">
         <AlternateActors>
           <AlternateActor actorId="0" objectDistance="45" />
         </AlternateActors>
@@ -112,7 +112,7 @@
     </If>
     <!-- Quest: X1_Bounty_A5_WestmarchFire_Event_Bonepit (375348) World: X1_Abattoir_Random02 (338976) LevelArea: X1_Abattoir_Random02 (338932) -->
     <If condition="HasQuest(375348) and CurrentWorldId==338976 and CurrentLevelAreaId==338932">
-      <TrinityExploreDungeon questId="375348" until="ExitFound" exitNameHash="2115492897" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+      <TrinityExploreDungeon questId="375348" until="ExitFound" exitNameHash="2115492897" actorId="0" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45">
         <IgnoreScenes>
           <IgnoreScene sceneName="_E_01" />
         </IgnoreScenes>
@@ -122,13 +122,13 @@
     </If>
     <!-- Quest: X1_Bounty_A5_WestmarchFire_Event_Bonepit (375348) World: X1_Abattoir_Random02_B (338977) LevelArea: X1_Abattoir_Random02_B (338978) -->
     <If condition="HasQuest(375348) and CurrentWorldId==338977 and CurrentLevelAreaId==338978">
-      <TrinityExploreDungeon questId="375348" until="ObjectFound" exitNameHash="0" actorId="365097" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+      <TrinityExploreDungeon questId="375348" until="ObjectFound" exitNameHash="0" actorId="365097" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45" />
       <MoveToActor questId="375348" actorId="365097" interactRange="10" name="x1_Global_Chest_CursedChest_B-35569"  pathPrecision="5" pathPointLimit="250" statusText="" />
     </If>
 
     <!-- Quest: X1_Bounty_A5_WestmarchFire_Event_HideAndSeek (368607) World: [sno unknown] (263494) LevelArea: X1_WESTM_ZONE_03 (263493) -->
     <If condition="HasQuest(368607) and CurrentWorldId==263494">
-      <TrinityExploreDungeon questId="368607" until="ExitFound" exitNameHash="-842376652" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+      <TrinityExploreDungeon questId="368607" until="ExitFound" exitNameHash="-842376652" actorId="0" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45">
         <AlternateActors>
           <AlternateActor actorId="0" objectDistance="45" />
         </AlternateActors>
@@ -149,7 +149,7 @@
     <While condition="HasQuest(368607) and CurrentWorldId==351793">
       <WaitTimer questId="312429" stepId="2" waitTime="500" />
       <MoveToActor questId="341244" stepId="16" actorId="314816" interactRange="7" name="x1_Child_Kyla-24750"  pathPrecision="5" pathPointLimit="250" statusText="" />
-      <TrinityExploreDungeon questId="341244" stepId="3" until="ObjectFound" actorId="160279" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+      <TrinityExploreDungeon questId="341244" stepId="3" until="ObjectFound" actorId="160279" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45" />
       <WaitTimer questId="341244" stepId="5" waitTime="5000" />
       <SafeMoveTo questId="341244" stepId="9" x="363" y="360" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
       <MoveToActor questId="341244" stepId="11" x="286" y="343" z="-10" actorId="314816" interactRange="7" name="x1_Child_Kyla-24750"  pathPrecision="5" pathPointLimit="250" statusText="" />
@@ -158,7 +158,7 @@
     <If condition="CurrentWorldId==263494">
       <WaitTimer questId="1" waitTime="1000" />
       <!-- Start Explore -->
-      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45" />
+      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45" />
     </If>
 
     <If condition="not (ZetaDia.ActInfo.ActiveBounty)">
