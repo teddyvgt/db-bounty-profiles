@@ -5,8 +5,7 @@
 	<!-- Southern Highlands Waypoint -->
 	<While condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940">			
 		<UseWaypoint waypointNumber="13" questId="1"/>	
-		<WaitTimer questId="1" stepId="2" waitTime="5000" />	
-	</While>	
+		<WaitTimer questId="1" stepId="2" waitTime="6000" /></While>	
 	
 	<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
 	<If condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940">			
@@ -14,6 +13,8 @@
 	</If>			
 
 	<WaitTimer questId="1" stepId="2" waitTime="3000" />
+	
+		
 	
 	<!-- Settings -->
 	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>			
@@ -565,6 +566,7 @@
 			</EndChildren> 					
 			
 		</If>				
+	
 	
 	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		

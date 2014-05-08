@@ -1,12 +1,14 @@
 <Profile>
 <Name>Fixed Path Kill on Weeping Hollow</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>True</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
 	<!-- Weeping Hollow Waypoint -->
 	<While condition="CurrentLevelAreaId != 19954">			
 		<UseWaypoint waypointNumber="6" questId="1"/>	
-		<WaitTimer questId="1" stepId="2" waitTime="5000" />	
-	</While>	
+		<WaitTimer questId="1" stepId="2" waitTime="6000" /></While>	
 	
 	<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
 	<If condition="CurrentLevelAreaId != 19954">		
@@ -14,6 +16,8 @@
 	</If>			
 
 	<WaitTimer questId="1" stepId="2" waitTime="3000" />
+	
+	
 	
 	<!-- Settings -->
 	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>			
@@ -157,7 +161,7 @@
 		
 	</If>			
 
-		
+	
 	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
 	<LoadProfile file="act1.xml" />

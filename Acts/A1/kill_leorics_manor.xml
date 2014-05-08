@@ -1,5 +1,8 @@
 <Profile>
 <Name>Kill Leorics Manner</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>True</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
 	<While condition="CurrentLevelAreaId != 100854 and CurrentLevelAreaId != 19941 and CurrentLevelAreaId != 1199 and CurrentLevelAreaId != 19943">			

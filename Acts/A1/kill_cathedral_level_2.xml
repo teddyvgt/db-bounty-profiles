@@ -1,5 +1,8 @@
 <Profile>
 <Name>Kill Cathedral Level 2</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>True</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
 	<While condition="CurrentWorldId != 50582">			

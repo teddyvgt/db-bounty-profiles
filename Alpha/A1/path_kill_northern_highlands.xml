@@ -1,11 +1,13 @@
 <Profile>
 <Name>Fixed Path Kill on Northern Highlands</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>True</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
 	<While condition="CurrentLevelAreaId != 19941 and CurrentLevelAreaId != 1199 and CurrentLevelAreaId != 19943">			
 		<UseWaypoint waypointNumber="14" questId="1"/>	
-		<WaitTimer questId="1" stepId="2" waitTime="5000" />	
-	</While>	
+		<WaitTimer questId="1" stepId="2" waitTime="6000" /></While>	
 	
 	<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
 	<If condition="CurrentLevelAreaId != 19941 and CurrentLevelAreaId != 1199 and CurrentLevelAreaId != 19943">				
@@ -13,6 +15,8 @@
 	</If>		
 
 	<WaitTimer questId="1" stepId="2" waitTime="3000" />	
+	
+	
 	
 	<!-- Settings -->
 	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
@@ -176,6 +180,8 @@
 		</EndChildren> 			
 		
 	</If>		
+
+		
 	
 	<WaitTimer questId="1" stepId="2" waitTime="950" />		
 	<LoadProfile file="act1.xml" />

@@ -1,5 +1,8 @@
 <Profile>
 <Name>Fixed Path Kill on Northern Highlands</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>True</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
 	<While condition="CurrentLevelAreaId != 19941 and CurrentLevelAreaId != 1199 and CurrentLevelAreaId != 19943">			
