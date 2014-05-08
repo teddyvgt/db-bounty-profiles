@@ -10,11 +10,12 @@
 	<!-- Settings -->
 	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>			
 	
-	<SafeMoveTo questId="1" stepId="2" x="1614" y="3835" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="1" stepId="2" x="1511" y="3854" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-	<SafeMoveTo questId="1" stepId="2" x="1535" y="3998" z="40" pathPrecision="5" pathPointLimit="250" statusText="" /> 	
-	<SafeMoveTo questId="1" stepId="2" x="1430" y="4030" /> 
+	<SafeMoveTo questId="1" stepId="2" x="1614" y="3835" z="40" /> 
+	<SafeMoveTo questId="1" stepId="2" x="1511" y="3854" z="40" /> 
+	<SafeMoveTo questId="1" stepId="2" x="1535" y="3998" z="40" /> 	
+	<SafeMoveTo questId="1" stepId="2" x="1430" y="4030" />
 	<SafeMoveTo questId="1" stepId="2" x="1269" y="3903" />
+	<SafeMoveTo questId="1" stepId="2" x="1014" y="4015" z="80" /> 
 	<SafeMoveTo questId="1" stepId="2" x="1080" y="3401" />
 	<MoveToActor questId="1" stepId="2" actorId="176001" isPortal="True" destinationWorldId="75049" />
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />
