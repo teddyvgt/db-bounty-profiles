@@ -25,7 +25,7 @@
 	
 	<LogMessage quest="1" output="Moving to Objective Marker" />		
 	
-	<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="5" interactAttempts="-1" isPortal="False" maxSearchDistance="1300" timeout="60000" />	
+	<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="10" interactAttempts="-1" isPortal="False" maxSearchDistance="1300" timeout="60000" />	
 	
 	<ToggleTargeting questId="1" combat="True" killRadius="45" />		
 	

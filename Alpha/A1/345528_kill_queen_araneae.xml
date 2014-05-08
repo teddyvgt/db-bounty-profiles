@@ -27,23 +27,26 @@
 		<!-- Settings -->
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>			
 		
-		<EndChildren when="ObjectiveMarkerFound" distance="1000">			
+		<!-- Caverns of Araneae -->
+		<If condition="CurrentLevelAreaId == 78572">		
+		
+			<EndChildren when="ObjectiveMarkerFound" distance="1000">			
 
-			<!-- Caverns of Araneae -->
-			<If condition="CurrentLevelAreaId == 78572">
+			
 				<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.55" boxSize="12" until="ExitFound" exitNameHash="1317387500" ignoreMarkers="False" objectDistance="150">
 					<PriorityScenes>
 						<PriorityScene sceneName="Exit" />
 					</PriorityScenes>				
 				</TrinityExploreDungeon>
 				<MoveToActor questId="312429" timeout="5000" stepId="2" actorId="183032" MaxSearchDistance="50" isPortal="True" interactRange="20" pathPrecision="5" pathPointLimit="250" destinationWorldId="182976" statusText="" />
-			</If>		
+				
 			
-		</EndChildren> 		
+			</EndChildren> 		
+		</If>	
 
 		<LogMessage quest="1" output="Moving to Objective Marker" />		
 		
-		<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="5" interactAttempts="-1" isPortal="False" maxSearchDistance="1050" timeout="60000" />
+		<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="10" interactAttempts="-1" isPortal="False" maxSearchDistance="1050" timeout="60000" />
 			
 		<MoveToActor questId="312429" timeout="5000" stepId="2" actorId="183032" MaxSearchDistance="50" isPortal="True" interactRange="20" pathPrecision="5" pathPointLimit="250" destinationWorldId="182976" statusText="" />			
 			

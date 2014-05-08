@@ -36,6 +36,8 @@
 
 			<ToggleTargeting questId="1" combat="True" killRadius="45" />						
 			
+			<WaitTimer questId="1" stepId="2" waitTime="3000" />
+			
 			<AdvanceConversation NumberOfTimes="4" />
 			
 			<!-- Wait for it to start and some extra time for delays between spawns -->

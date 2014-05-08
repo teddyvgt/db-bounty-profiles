@@ -13,19 +13,19 @@
 	<!-- Settings -->
 	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>				
 
-<!-- 	<EndChildren when="ObjectiveMarkerFound" distance="1000">	 -->	
+	<EndChildren when="ObjectiveMarkerFound" distance="1500">	
 	
-		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.16" boxSize="20" >
+		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="FullyExplored" boxTolerance="0.16" boxSize="20" >
 			<IgnoreScenes>
 				<IgnoreScene sceneName="Exit" />	
 			</IgnoreScenes>
 		</TrinityExploreDungeon>		
 	
-<!-- 	</EndChildren> 	 -->
+	</EndChildren>
 	
 	<LogMessage quest="1" output="Moving to Objective Marker" />		
 	
-	<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="5" interactAttempts="-1" isPortal="False" maxSearchDistance="1050" timeout="60000" />
+	<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="10" interactAttempts="-1" isPortal="False" maxSearchDistance="1600" timeout="60000" />
 	
 	<ToggleTargeting questId="1" combat="True" killRadius="45" />		
 		
