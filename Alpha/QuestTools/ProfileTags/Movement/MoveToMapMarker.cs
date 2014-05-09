@@ -536,9 +536,12 @@ namespace QuestTools.ProfileTags.Movement
                                     && (a.CommonData.GetAttribute<int>(ActorAttributeType.BountyObjective) > 0))
                             .OrderBy(a => a.Position.Distance2D(_mapMarkerLastPosition)).FirstOrDefault();
 
-                    // Portals are not the actual objective but at the marker location
-                    _actor = ZetaDia.Actors.GetActorsOfType<DiaObject>(true).Where(o => o != null && o.IsValid && o is GizmoPortal 
-                       && o.Position.Distance2D(_mapMarkerLastPosition) <= PathPrecision).OrderBy(o => o.Distance).FirstOrDefault();
+                    if (_actor == null)
+                    {
+                        // Portals are not the actual objective but at the marker location
+                        _actor = ZetaDia.Actors.GetActorsOfType<DiaObject>(true).Where(o => o != null && o.IsValid && o is GizmoPortal
+                           && o.Position.Distance2D(_mapMarkerLastPosition) <= PathPrecision).OrderBy(o => o.Distance).FirstOrDefault();
+                    }
 
                 }
                 catch (Exception ex)
