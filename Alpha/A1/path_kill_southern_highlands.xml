@@ -1,5 +1,8 @@
 <Profile>
 <Name>Fixed Path Kill on Southern Highlands</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>True</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
 	<!-- Southern Highlands Waypoint -->
@@ -13,9 +16,7 @@
 	</If>			
 
 	<WaitTimer questId="1" stepId="2" waitTime="3000" />
-	
-		
-	
+
 	<!-- Settings -->
 	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>			
 	
@@ -478,10 +479,10 @@
 
 	</EndChildren> 		
 
-	<LogMessage quest="1" output="Killing remaining monsters for bounty" />		
+	<LogMessage quest="1" output="Moving to Objective Marker" />	
 	
 	<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="10" interactAttempts="-1" isPortal="False" maxSearchDistance="1300" timeout="60000" />	
-	
+
 	<ToggleTargeting questId="1" combat="True" killRadius="45" />	
 
 		<!-- 

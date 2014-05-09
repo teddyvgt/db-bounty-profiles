@@ -12,7 +12,7 @@
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
 		
 		<!-- Weeping Hollow Waypoint -->
-		<While condition="CurrentLevelAreaId != 19954">			
+		<While condition="CurrentLevelAreaId != 19954 and CurrentWorldId != 135193 and CurrentWorldId != 194232">			
 			<UseWaypoint waypointNumber="6" questId="1"/>	
 			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
 		</While>	
@@ -22,6 +22,11 @@
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
 		</If>				
 
+		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
+		<If condition="CurrentWorldId == 71150">
+			<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="135193" maxSearchDistance="1500" timeout="60000" />						
+		</If>				
+	
 		<If condition="CurrentWorldId == 71150">
 			<LogMessage message="Moving to spot #1"/>
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />

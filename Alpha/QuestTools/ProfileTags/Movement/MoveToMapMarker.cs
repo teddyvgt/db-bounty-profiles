@@ -10,6 +10,7 @@ using Zeta.Game;
 using Zeta.Game.Internals;
 using Zeta.Game.Internals.Actors;
 using Zeta.Game.Internals.Actors.Gizmos;
+using Zeta.Game.Internals.SNO;
 using Zeta.TreeSharp;
 using Zeta.XmlEngine;
 using Action = Zeta.TreeSharp.Action;
@@ -163,11 +164,10 @@ namespace QuestTools.ProfileTags.Movement
                 InteractAttempts = 5;
             if (TimeoutSeconds == 0)
                 TimeoutSeconds = TimeoutSecondsDefault;
-            if (_behaviorStartTime == DateTime.MinValue)
-                _behaviorStartTime = DateTime.UtcNow;
             if (MaxSearchDistance <= 0)
                 MaxSearchDistance = 10;
 
+            _behaviorStartTime = DateTime.UtcNow;
 
             _lastPosition = Vector3.Zero;
             _stuckStart = DateTime.UtcNow;
@@ -196,9 +196,23 @@ namespace QuestTools.ProfileTags.Movement
                ),
                 new DecoratorContinue(ret => _lastMoveResult == MoveResult.ReachedDestination && _actor == null,
                     new Sequence(
-                        new Action(ret => Logger.Log("{0}, finished!", _lastMoveResult)),
-                        new Action(ret => _isDone = true),
-                        new Action(ret => RunStatus.Failure)
+                        new Action(ret =>
+                        {
+                            var objective = GetObjectiveMarker();
+                            var distance = objective.Position.Distance(ZetaDia.Me.Position);
+                            if (objective != null && distance > PathPrecision)
+                            {
+                                Logger.Log("Bad! tag thinks it has reached destination but objective is {0} yards away!", distance);
+                            }
+                        }),
+                        new DecoratorContinue(ret => _markerSearchType != MarkerSearchType.Objective || IsObjectiveInRange(),
+                            new Sequence(
+                                new Action(ret => Logger.Log("{0}, finished!", _lastMoveResult)),
+                                new Action(ret => _isDone = true),
+                                new Action(ret => RunStatus.Failure)
+                            )
+                        )
+
                     )
                 ),
                 CheckTimeout(),
@@ -250,51 +264,50 @@ namespace QuestTools.ProfileTags.Movement
                                 new Action(ret => Logger.Log("Moved {0:0} yards after interaction, finished {1}", _lastPosition.Distance(ZetaDia.Me.Position), Status()))
                             )
                         ),
-                        new Decorator(ret => _markerSearchType == MarkerSearchType.Objective && IsValidObjective() && _actor.Position.Distance(ZetaDia.Me.Position) <= PathPrecision,
+                        new Decorator(ret => _markerSearchType == MarkerSearchType.Objective && IsValidObjective() && _actor.ActorType == ActorType.Monster && _actor.Position.Distance(ZetaDia.Me.Position) <= PathPrecision,
                             new Sequence(
                                 new Action(ret => _isDone = true),
                                 new Action(ret => Logger.Log("We found the objective and its a monster, ending tag so we can kill it", Status()))
                             )
                         ),
-                        new Decorator(ret => _actor != null && _actor.IsValid,
-                            new PrioritySelector(
-                                new Action(ret =>
-                                {
-                                    Logger.Log("MoveToActorOutsideRange actorSNO={0}", _actor.ActorSNO);
-                                    return RunStatus.Failure;
-                                }),
-                                MoveToActorOutsideRange(),
-                                 new Action(ret =>
-                                 {
-                                     Logger.Log("UseActorIfInRange actorSNO={0}", _actor.ActorSNO);
-                                     return RunStatus.Failure;
-                                 }),
-                                new Decorator(ret => _markerSearchType != MarkerSearchType.Objective || IsValidObjective() && _actor.Position.Distance(ZetaDia.Me.Position) <= PathPrecision,
-                                    UseActorIfInRange()
-                                )
+                        new DecoratorContinue(ret => _markerSearchType == MarkerSearchType.Objective && IsValidObjective() && _actor.ActorType == ActorType.Gizmo && _actor is GizmoPortal && _actor.Position.Distance(ZetaDia.Me.Position) <= PathPrecision,
+                            new Sequence(
+                                new Action(ret => Logger.Log("We found the objective and its a portal", Status()))
                             )
                         ),
-                        new Decorator(ret => _markerSearchType == MarkerSearchType.Objective,
+                        new Decorator(ret => _markerSearchType == MarkerSearchType.Objective && GetObjectiveMarker() == null,
                             new Sequence(
-                                new Action(ret => { Logger.Log("actor=null"); return RunStatus.Failure; } )
+                                new Action(ret => _isDone = true),
+                                new Action(ret => Logger.Log("There is no objective marker, ending tag", Status()))
+                            )
+                        ),                        
+                        new Decorator(ret => _actor != null && _actor.IsValid,
+                            new PrioritySelector(
+                                MoveToActorOutsideRange(),
+                                UseActorIfInRange()
                             )
                         ),
                         new Decorator(ret => _miniMapMarker != null && _actor == null,
-                            new Sequence(
-                                new Action(ret => Logger.Log("actor=null")),
-                                new PrioritySelector(
-                                    MoveToMapMarkerOnly(),
-                                    MoveToMapMarkerSuccess()
-                                )
+                            new PrioritySelector(
+                                MoveToMapMarkerOnly(),
+                                MoveToMapMarkerSuccess()
                             )
                         ),
-                        new Sequence(
-                            new Action(ret => Logger.Log("MoveToPosition")),
-                            MoveToPosition()
-                        )
+                        MoveToPosition()
                     )
                 )
             );
+        }
+
+        private bool IsObjectiveInRange()
+        {
+            var objective = GetObjectiveMarker();
+            var distance = objective.Position.Distance(ZetaDia.Me.Position);
+            if (objective != null && distance < PathPrecision)
+            {
+                return true;
+            }
+            return false;
         }
 
         private bool IsValidObjective()
@@ -310,6 +323,13 @@ namespace QuestTools.ProfileTags.Movement
             return false;
         }
 
+        private static MinimapMarker GetObjectiveMarker()
+        {
+            return ZetaDia.Minimap.Markers.CurrentWorldMarkers
+                .Where(m => m.IsPointOfInterest && m.Id < 1000)
+                .OrderBy(m => m.Position.Distance2D(ZetaDia.Me.Position)).FirstOrDefault();
+        }
+
         private static MinimapMarker GetRiftExitMarker()
         {
             int index = DataDictionary.RiftWorldIds.IndexOf(ZetaDia.CurrentWorldId);
@@ -319,14 +339,6 @@ namespace QuestTools.ProfileTags.Movement
             return ZetaDia.Minimap.Markers.CurrentWorldMarkers
                 .OrderBy(m => m.Position.Distance2D(ZetaDia.Me.Position))
                 .FirstOrDefault(m => m.NameHash == DataDictionary.RiftPortalHashes[index]);
-        }
-
-
-        private static MinimapMarker GetObjectiveMarker()
-        {
-            return ZetaDia.Minimap.Markers.CurrentWorldMarkers
-                .Where(m => m.IsPointOfInterest && m.Id < 1000)
-                .OrderBy(m => m.Position.Distance2D(ZetaDia.Me.Position)).FirstOrDefault();
         }
 
         private void FindMiniMapMarker()
@@ -349,7 +361,7 @@ namespace QuestTools.ProfileTags.Movement
             if (MapMarkerNameHash == -1)
             {
                 _markerSearchType = MarkerSearchType.Objective;
-                _miniMapMarker = GetObjectiveMarker(); 
+                _miniMapMarker = GetObjectiveMarker();
                 if (_miniMapMarker != null)
                 {
 
@@ -444,7 +456,7 @@ namespace QuestTools.ProfileTags.Movement
                 new Sequence(
                     new Action(ret => _isDone = true),
                     new Action(ret => Logger.Log("Timeout of {0} seconds exceeded in current behavior", TimeoutSeconds)),
-                    new Action(ret => { return RunStatus.Failure; })
+                    new Action(ret => RunStatus.Failure)
                 )
             );
         }
@@ -455,7 +467,7 @@ namespace QuestTools.ProfileTags.Movement
             new Decorator(ret => _miniMapMarker != null && _miniMapMarker.Position.Distance(ZetaDia.Me.Position) < PathPrecision,
                 new Action(delegate
                     {
-                        Logger.Log("Successfully Moved to Map Marker {0}, distance: {1} {2}", _miniMapMarker.NameHash, _miniMapMarker.Position.Distance(ZetaDia.Me.Position), Status());
+                        Logger.Debug("Successfully Moved to Map Marker {0}, distance: {1} {2}", _miniMapMarker.NameHash, _miniMapMarker.Position.Distance(ZetaDia.Me.Position), Status());
                         _isDone = true;
                         return RunStatus.Success;
                     }
@@ -475,11 +487,11 @@ namespace QuestTools.ProfileTags.Movement
             }
             if (_actor != null && _actor.IsValid)
             {
-                //if (QuestTools.EnableDebugLogging)
-                //{
-                    Logger.Log("Found actor {0} {1} {2} of distance {3} from point {4}",
+                if (QuestTools.EnableDebugLogging)
+                {
+                    Logger.Debug("Found actor {0} {1} {2} of distance {3} from point {4}",
                                         _actor.ActorSNO, _actor.Name, _actor.ActorType, _actor.Position.Distance(_mapMarkerLastPosition), _mapMarkerLastPosition);
-                //}
+                }
             }
             else if (ActorId != 0 && Position != Vector3.Zero && _position.Distance(ZetaDia.Me.Position) <= PathPrecision)
             {
@@ -494,26 +506,20 @@ namespace QuestTools.ProfileTags.Movement
             }
             else if (ActorId == 0 && _markerSearchType == MarkerSearchType.Objective && _mapMarkerLastPosition.Distance2D(myPos) <= 200)
             {
-                Logger.Log("Objective Actor Search");
-
                 try
                 {
                     _actor = ZetaDia.Actors.GetActorsOfType<DiaObject>(true)
                             .Where(a => a.CommonData != null && a.Position.Distance2D(_mapMarkerLastPosition) <= PathPrecision
                                     && (a.CommonData.GetAttribute<int>(ActorAttributeType.BountyObjective) > 0))
                             .OrderBy(a => a.Position.Distance2D(_mapMarkerLastPosition)).FirstOrDefault();
-
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Logger.Log("Failed trying to find actor {0}", ex);
                 }
-                
-
             }
             else if (ActorId == 0 && _mapMarkerLastPosition != Vector3.Zero && _mapMarkerLastPosition.Distance2D(myPos) <= 90)
             {
-
                 _actor = ZetaDia.Actors.GetActorsOfType<DiaObject>(true)
                     .Where(a => a.Position.Distance2D(_mapMarkerLastPosition) <= MaxSearchDistance)
                     .OrderBy(a => a.Position.Distance2D(_mapMarkerLastPosition)).FirstOrDefault();
@@ -521,44 +527,34 @@ namespace QuestTools.ProfileTags.Movement
                 if (_actor != null)
                 {
                     InteractRange = _actor.CollisionSphere.Radius;
-
-                    Logger.Log("Found Actor from Map Marker! mapMarkerPos={0} actor={1} {2} {3} {4}",
+                    Logger.Debug("Found Actor from Map Marker! mapMarkerPos={0} actor={1} {2} {3} {4}",
                         _mapMarkerLastPosition, _actor.ActorSNO, _actor.Name, _actor.ActorType, _actor.Position);
                 }
             }
             else if (_mapMarkerLastPosition.Distance(ZetaDia.Me.Position) < PathPrecision)
             {
-                //if (QuestTools.EnableDebugLogging)
-                //{
-                Logger.Log("Could not find an actor {0} within range {1} from point {2}",
-                                   ActorId, PathPrecision, _mapMarkerLastPosition);
-                //}
+                if (QuestTools.EnableDebugLogging)
+                {
+                    Logger.Debug("Could not find an actor {0} within range {1} from point {2}",
+                                       ActorId, PathPrecision, _mapMarkerLastPosition);
+                }
+            }
+
+            if (ActorId == 0 && _actor != null && _markerSearchType == MarkerSearchType.Objective)
+            {
+                if (IsValidObjective())
+                {
+                    // need to lock on to a specific actor or we'll just keep finding other things near the marker.
+                    ActorId = _actor.ActorSNO;
+                    Logger.Log("Found our Objective Actor! mapMarkerPos={0} actor={1} {2} {3} {4}",
+                        _mapMarkerLastPosition, _actor.ActorSNO, _actor.Name, _actor.ActorType, _actor.Position);
+                }
             }
 
             if (_actor is GizmoPortal && !IsPortal)
             {
                 IsPortal = true;
             }
-
-            if (ActorId == 0 && _actor != null && _markerSearchType == MarkerSearchType.Objective)
-            {
-                Logger.Log("found an actor, testing if its valid Objective ");
-
-                if (IsValidObjective())
-                {
-                    // need to lock on to a specific actor or we'll just keep finding other things near the marker.
-                    ActorId = _actor.ActorSNO;
-
-                    Logger.Log("Found our Objective Actor! mapMarkerPos={0} actor={1} {2} {3} {4}",
-                        _mapMarkerLastPosition, _actor.ActorSNO, _actor.Name, _actor.ActorType, _actor.Position);
-                }
-                else
-                {
-                    Logger.Log("actor is not valid objective mapMarkerPos={0} actor={1} {2} {3} {4}",
-                        _mapMarkerLastPosition, _actor.ActorSNO, _actor.Name, _actor.ActorType, _actor.Position);
-                }
-            }
-
         }
 
         private float DistanceToMapMarker(DiaObject o)
@@ -584,10 +580,10 @@ namespace QuestTools.ProfileTags.Movement
                 new Action(
                     delegate
                     {
-                        Logger.Log("Moving to actor {0}, distance: {1} {2}", _actor.ActorSNO, _actor.Position.Distance(ZetaDia.Me.Position), Status());
+                        Logger.Log("Moving to actor {0}, distance: {1} {2} {3}", _actor.Name, _actor.Position.Distance(ZetaDia.Me.Position), _actor.ActorSNO, Status());
                         if (!Move(_actor.Position))
                         {
-                            Logger.Log("Move result failed, we're done {0}", Status());
+                            Logger.Debug("Move result failed, we're done {0}", Status());
                             _isDone = true;
                             return RunStatus.Failure;
                         }
@@ -601,7 +597,7 @@ namespace QuestTools.ProfileTags.Movement
         private Decorator UseActorIfInRange()
         {
             return // use the actor if defined and within range
-            new Wait(2, ret => _actor != null && _actor.IsValid && _actor.Position.Distance(ZetaDia.Me.Position) <= InteractRange && InteractAttempts > -1 && (_completedInteractAttempts < InteractAttempts || IsPortal),
+            new Wait(2, ret => _actor.Position.Distance(ZetaDia.Me.Position) <= InteractRange && InteractAttempts > -1 && (_completedInteractAttempts < InteractAttempts || IsPortal),
                 new Sequence(
                     new Action(ret => _lastPosition = ZetaDia.Me.Position),
                     new Action(ret => _actor.Interact()),
@@ -631,7 +627,7 @@ namespace QuestTools.ProfileTags.Movement
                         {
                             //if (QuestTools.EnableDebugLogging)
                             //{
-                                Logger.Log("Moving to Map Marker {0}, distance: {1:0} {2}", _miniMapMarker.NameHash, _miniMapMarker.Position.Distance(ZetaDia.Me.Position), Status());
+                            Logger.Log("Moving to Map Marker {0} at <{1}, {2}, {3}>,  distance: {4:0}", _miniMapMarker.NameHash, _miniMapMarker.Position.X, _miniMapMarker.Position.Y, _miniMapMarker.Position.Z, _miniMapMarker.Position.Distance(ZetaDia.Me.Position));
                             //}
                         }
 
@@ -655,12 +651,12 @@ namespace QuestTools.ProfileTags.Movement
                         }
                         else
                         {
-                            Logger.Log("Position Defined only - Within {0} of destination {1}", PathPrecision, Position);
+                            Logger.Debug("Position Defined only - Within {0} of destination {1}", PathPrecision, Position);
                             _isDone = true;
                         }
                         if (!moveStatus)
                         {
-                            Logger.Log("Movement failed to position {0}", Position);
+                            Logger.Debug("Movement failed to position {0}", Position);
                             //isDone = true;
                         }
                         return RunStatus.Success;
@@ -774,7 +770,7 @@ namespace QuestTools.ProfileTags.Movement
             if (DataDictionary.RiftWorldIds.Contains(ZetaDia.CurrentWorldId))
                 extraInfo += "IsRift ";
 
-            //if (QuestToolsSettings.Instance.DebugEnabled)
+            if (QuestToolsSettings.Instance.DebugEnabled)
                 return String.Format("questId={0} stepId={1} actorId={2} exitNameHash={3} isPortal={4} destinationWorldId={5} " +
                     "pathPointLimit={6} interactAttempts={7} interactRange={8} pathPrecision={9} x=\"{10}\" y=\"{11}\" z=\"{12}\" " + extraInfo,
                     this.QuestId, this.StepId, this.ActorId, this.MapMarkerNameHash, this.IsPortal, this.DestinationWorldId,

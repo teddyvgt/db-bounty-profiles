@@ -22,16 +22,34 @@
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
 		</If>			
 
-		<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.30" boxSize="13" until="ExitFound" exitNameHash="356899046" ignoreMarkers="False">
-			<PriorityScenes>				
-				<PriorityScene sceneName="Exit" />				
-				<PriorityScene sceneName="_ButcherLair_" />
-			</PriorityScenes>
-		</TrinityExploreDungeon>	
+		<!-- Explore until we find Objective marker -->
+		<EndChildren questId="1" when="ObjectiveMarkerFound" distance="1000">					
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.30" boxSize="12" objectDistance="100" until="ExitFound" exitNameHash="356899046" ignoreMarkers="False">
+				<PriorityScenes>				
+					<PriorityScene sceneName="Exit" />				
+					<PriorityScene sceneName="_ButcherLair_" />
+				</PriorityScenes>
+			</TrinityExploreDungeon>	
+			<MoveToActor questId="1" stepId="1" actorId="158944" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="78839" />			
+		</EndChildren> 		
 		
-		<MoveToActor questId="1" stepId="1" actorId="158944" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="78839" />
+		<!-- Move to Boss Entrance using Objective Marker -->
+		<If condition="CurrentWorldId == 58983">
+			<MoveToMapMarker questId="1" markerNameHash="356899046" actorId="0" interactRange="5" pathPrecision="10" interactAttempts="-1" isPortal="False" maxSearchDistance="1050" timeout="60000" />
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />		
+		</If>
 		
-		<ToggleTargeting questId="1" combat="True" killRadius="150" />	
+		<!-- Explore for Boss Entrance -->		
+		<If condition="CurrentWorldId == 58983">	
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.30" boxSize="12" objectDistance="100" until="ExitFound" exitNameHash="356899046" ignoreMarkers="False">
+				<PriorityScenes>				
+					<PriorityScene sceneName="Exit" />				
+					<PriorityScene sceneName="_ButcherLair_" />
+				</PriorityScenes>
+			</TrinityExploreDungeon>	
+			<MoveToActor questId="1" stepId="1" actorId="158944" interactRange="20" pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="78839" />
+			<ToggleTargeting questId="1" combat="True" killRadius="150" />	
+		</If>
 		
 		<While condition="Me.IsInBossEncounter">
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />

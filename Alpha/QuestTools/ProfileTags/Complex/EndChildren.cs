@@ -52,8 +52,9 @@ namespace QuestTools.ProfileTags
         private static Func<ProfileBehavior, bool> _BehaviorProcess;
         private static Stopwatch conditionTimer = new Stopwatch();
         private static Stopwatch debounceTimer = new Stopwatch();
-        private const int conditionInterval = 4000;
+        private const int conditionInterval = 2000;
         private const int debounceInterval = 400;
+        private bool _isDone = false;
 
         #endregion
 
@@ -79,6 +80,12 @@ namespace QuestTools.ProfileTags
         {
             get
             {
+                if (_isDone)
+                {
+                    Logger.Log("Done");
+                    return true;
+                }
+
                 if (!conditionTimer.IsRunning || !debounceTimer.IsRunning)
                 {
                     conditionTimer.Start();
@@ -92,25 +99,32 @@ namespace QuestTools.ProfileTags
                 }
 
                 // End tag if child tags are all done.
-                if (ChildrenFinished())
+                if (!_isDone && ChildrenFinished())
                 {
                     conditionTimer.Stop();
                     debounceTimer.Stop();
                     return true;
                 }
 
-                // End tag if condition evaluates to True.
-                if (conditionTimer.ElapsedMilliseconds > conditionInterval)
+                if (_isDone)
                 {
-                    Logger.Log("checking condition...");
+                    Logger.Log("Tag Done but children couldnt be stopped");
+                }
+
+                // End tag if condition evaluates to True.
+                if (!_isDone && conditionTimer.ElapsedMilliseconds > conditionInterval)
+                {
+                    Logger.Log("Checking \"{0}\" Condition", ConditionType);
 
                     if (CheckCondition())
                     {
-                        StopBehaviors();
+                        _isDone = true;
+                        StopBehaviors();                        
                         conditionTimer.Stop();
                         debounceTimer.Stop();
                         return true;
                     }
+
                     conditionTimer.Reset();
                 }
 
@@ -191,9 +205,29 @@ namespace QuestTools.ProfileTags
         /// <returns>
         protected void StopBehaviors()
         {
+            Logger.Log("Stopping behaviors ({0})", Body.Count);
+
             foreach (ProfileBehavior behavior in Body)
             {
-                behavior.OnDone();
+                var tagName = behavior.GetType().ToString().Split('.').Last();
+
+                if (behavior.Behavior.IsRunning)
+                {
+                    behavior.OnDone();
+
+                    if (behavior.Behavior.IsRunning)
+                    {
+                        Logger.Log("Failed to stop {0}", tagName);
+                    }
+                    else
+                    {
+                        Logger.Log("Stopped {0}", tagName);
+                    }
+                }
+                else
+                {
+                    Logger.Log("{0} is not running", tagName);
+                }
             }
         }
 

@@ -7,7 +7,8 @@
 
 	<While condition="CurrentWorldId != 50584">			
 		<UseWaypoint waypointNumber="4" questId="1"/>	
-		<WaitTimer questId="1" stepId="2" waitTime="6000" /></While>					
+		<WaitTimer questId="1" stepId="2" waitTime="6000" />
+	</While>					
 	
 	<WaitTimer questId="1" stepId="2" waitTime="3000" />	
 	

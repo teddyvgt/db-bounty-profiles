@@ -20,9 +20,8 @@
 		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
 		<If condition="CurrentLevelAreaId != 19952">			
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
-		</If>			
-	
-		<!-- Top Cave Location -->
+		</If>		
+		
 		<If condition="CurrentWorldId == 71150">
 			<SafeMoveTo questId="1" stepId="2" x="1770" y="369" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Top Cave Location 1 of 5" /> 
 			<If condition="MarkerExistsAt(925091454, 1770, 369, -0, 30)">			
@@ -31,42 +30,52 @@
 			</If>
 		</If>
 		
-		<!-- Middle Cave Location 2 -->
-		<If condition="CurrentWorldId == 71150">			
+		<!-- Go straight to the entrance if marker is visible -->		
+		<If condition="CurrentWorldId == 71150">
+			<MoveToMapMarker questId="1" markerNameHash="925091454" actorId="175501" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="-1" maxSearchDistance="1500" timeout="60000" />								
+		</If>
+		
+		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
+		<If condition="CurrentWorldId == 71150">
+			<MoveToMapMarker questId="1" markerNameHash="-1" actorId="175501" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="-1" maxSearchDistance="1500" timeout="60000" />								
+		</If>				
+		
+		
+		<If condition="CurrentWorldId == 71150">		
 			<SafeMoveTo questId="1" stepId="2" x="2120" y="612" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Middle Cave Location 3 of 5" /> 
 			<If condition="MarkerExistsAt(925091454, 2120, 612, -0, 30)">		
 				<MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" interactRange="20"  />
 				<WaitTimer questId="1" stepId="2" waitTime="1000" />					
 			</If>
-		</If>
-		
-		<!-- Middle Cave Location 1 -->		
+		</If>		
+
 		<If condition="CurrentWorldId == 71150">
+			<MoveToMapMarker questId="1" markerNameHash="-1" actorId="175501" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="-1" maxSearchDistance="1500" timeout="60000" />								
 			<SafeMoveTo questId="1" stepId="2" x="2068" y="896" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Middle Cave Location 2 of 5" /> 		
 			<If condition="MarkerExistsAt(925091454, 2068, 896, -0, 30)">				
 				<MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" interactRange="20"  />
 				<WaitTimer questId="1" stepId="2" waitTime="1000" />					
 			</If>
-		</If>
-		
-		<!-- Bottom Cave Location 1 -->
+		</If>				
+
 		<If condition="CurrentWorldId == 71150">		
+			<MoveToMapMarker questId="1" markerNameHash="-1" actorId="175501" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="-1" maxSearchDistance="1500" timeout="60000" />						
 			<SafeMoveTo questId="1" stepId="2" x="2242" y="1054" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Bottom Cave Location 4 of 5" /> 
 			<If condition="MarkerExistsAt(925091454, 2242, 1054, -0, 30)">	
 				<MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" interactRange="20"  />
 				<WaitTimer questId="1" stepId="2" waitTime="1000" />					
 			</If>
-		</If>
+		</If>		
 		
-		<!-- Bottom Cave Location 2 -->		
 		<If condition="CurrentWorldId == 71150">
+			<MoveToMapMarker questId="1" markerNameHash="-1" actorId="175501" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="-1" maxSearchDistance="1500" timeout="60000" />								
 			<SafeMoveTo questId="1" stepId="2" x="2236" y="1053" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Bottom Cave Location 5 of 5" /> 
 			<If condition="MarkerExistsAt(925091454, 2236, 1053, -0, 30)">	
 				<MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" interactRange="20"  />
 				<WaitTimer questId="1" stepId="2" waitTime="1000" />				
 			</If>		
 		</If>
-		
+
 		<!-- Inside Scavenger's Den Level 1-->
 		<If condition="HasQuest(345496) and CurrentWorldId == 81163">		
 			

@@ -54,11 +54,16 @@
 		<TargetBlacklist actorId="116063" /> <!-- Spider 'spawner' -->	
 		<TargetBlacklist actorId="62215" /> <!-- sack -->		
 		<TargetBlacklist actorId="89579"/> <!-- Firewall -->
+		
 		<!-- Don't want to waste time talking to Tyrael every time we see him -->			
 		<TargetBlacklist actorId="114622" /> <!-- Tyrael -->
-		<!-- Blacklisting Cursed Events so that TrinityExplore can trigger ObjectFound -->
+		
+		<!-- Blacklisting Quest Objects so that TrinityExplore can trigger ObjectFound properly -->
 		<TargetBlacklist actorId="365097" /> <!-- Cursed Chest -->
-		<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->
+		<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->		
+		<TargetBlacklist actorId="204032" /> <!-- Precious Ore -->	
+		<TargetBlacklist actorId="202277" /> <!-- Precious Ore -->			
+		
 	</TargetBlacklists>
 	<Order>
 		

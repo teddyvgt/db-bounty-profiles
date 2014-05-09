@@ -20,8 +20,18 @@
 		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
 		<If condition="CurrentLevelAreaId != 19952">			
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
-		</If>					
+		</If>		
 
+		<!-- Attempt to go straight to the entrance using marker -->
+		<If condition="CurrentWorldId == 71150">
+			<MoveToMapMarker questId="1" markerNameHash="2036518712" actorId="176003" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="119888" maxSearchDistance="1500" timeout="60000" />						
+		</If>
+
+		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
+		<If condition="CurrentWorldId == 71150">
+			<MoveToMapMarker questId="1" markerNameHash="-1" actorId="176003" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="-1" maxSearchDistance="1500" timeout="60000" />								
+		</If>			
+		
 		<!-- Find Khazra Den #1-->
 		<If condition="CurrentWorldId == 71150">
 		  <!-- added pre-move step to avoid a stuck spot -->
@@ -32,7 +42,7 @@
 		<If condition="CurrentWorldId == 71150 and ActorExistsAt(176003, 2068, 899, 0, 300)">
 		  <MoveToActor questId="1" stepId="2" actorId="176003" isPortal="True" destinationWorldId="119888" x="2068" y="899" z="-0" />
 		  <WaitTimer questId="1" stepId="2" waitTime="2500" />
-		</If>
+		</If>		
 
 		<!-- Find Khazra Den #2 -->
 		<If condition="CurrentWorldId == 71150">

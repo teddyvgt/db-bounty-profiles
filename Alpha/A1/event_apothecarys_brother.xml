@@ -54,9 +54,10 @@
 			<MoveToActor questId="1" stepId="2" actorId="129782" />			
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.10" boxSize="12" until="ObjectFound" actorId="136009" ignoreMarkers="False" />			
 			<WaitTimer questId="72546" stepId="17" waitTime="500" />							
+			<ToggleTargeting questId="1" stepId="1" killRadius="100" />			
 			<MoveToActor questId="312429" stepId="2" actorId="136009" interactRange="8" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
 			<MoveToActor questId="312429" stepId="2" actorId="129782" interactRange="8" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-			<ToggleTargeting questId="1" stepId="1" killRadius="100" />
+
 			
 			<!-- the guy disappears when the quest is done -->
 			<While condition="HasQuest(350529) and ActorExistsAt(129782, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">				
