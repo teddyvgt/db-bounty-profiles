@@ -26,7 +26,7 @@
 		<If condition="HasQuest(365401)">		
 			<SafeMoveTo questId="1" stepId="2" x="1489" y="765" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to location 1 of 6" />
 			<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
-				<ToggleTargeting questId="1" combat="True" killRadius="31" />				
+				<ToggleTargeting questId="1" combat="True" killRadius="15" />				
 			</If>			
 			<While condition="HasQuest(365401) and CurrentWorldId == 71150 and ActorExistsAt(364601, 1498, 757, -0, 50)">
 				<MoveToActor questId="365401" stepId="2" actorId="364601" interactRange="20" />
@@ -40,7 +40,7 @@
 		<If condition="HasQuest(365401)">
 			<SafeMoveTo questId="1" stepId="2" x="1829" y="1011" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to location 2 of 6" /> 
 			<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
-				<ToggleTargeting questId="1" combat="True" killRadius="31" />				
+				<ToggleTargeting questId="1" combat="True" killRadius="15" />				
 			</If>						
 			<While condition="HasQuest(365401) and CurrentWorldId == 71150 and ActorExistsAt(364601, 1829, 1011, -0, 50)">		
 				<MoveToActor questId="365401" stepId="2" actorId="364601" interactRange="20"  />
@@ -52,7 +52,7 @@
 		<If condition="HasQuest(365401)">
 			<SafeMoveTo questId="1" stepId="2" x="1492" y="770" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to location 3 of 6" /> 
 			<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
-				<ToggleTargeting questId="1" combat="True" killRadius="31" />				
+				<ToggleTargeting questId="1" combat="True" killRadius="15" />				
 			</If>						
 			<While condition="HasQuest(365401) and CurrentWorldId == 71150 and ActorExistsAt(364601, 1492, 770, -0, 50)">		
 				<MoveToActor questId="365401" stepId="2" actorId="364601" interactRange="20"  />
@@ -60,7 +60,7 @@
 			</While>
 		</If>			
 
-		<!-- Location #4 -->
+		<!-- Location #4 
 		<If condition="HasQuest(365401)">
 			<SafeMoveTo questId="1" stepId="2" x="1916" y="729" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to location 4 of 6" /> 
 			<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
@@ -70,13 +70,13 @@
 				<MoveToActor questId="365401" stepId="2" actorId="364601" interactRange="20"  />
 				<WaitTimer questId="365401" stepId="2" waitTime="2000" />			
 			</While>
-		</If>		
+		</If>		-->
 
 		<!-- Location #5 -->		
 		<If condition="HasQuest(365401)">
 			<SafeMoveTo questId="1" stepId="2" x="1940" y="378" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to location 5 of 6" /> 
 			<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
-				<ToggleTargeting questId="1" combat="True" killRadius="31" />				
+				<ToggleTargeting questId="1" combat="True" killRadius="15" />				
 			</If>			
 			<While condition="HasQuest(365401) and CurrentWorldId == 71150 and ActorExistsAt(364601, 1940, 378, -0, 30)">		
 				<MoveToActor questId="365401" stepId="2" actorId="364601" interactRange="20"  />

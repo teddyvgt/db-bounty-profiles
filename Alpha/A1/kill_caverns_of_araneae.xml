@@ -25,10 +25,24 @@
 	
 	</EndChildren>
 	
-	<LogMessage quest="1" output="Moving to Objective Marker" />		
+	<LogMessage quest="1" output="Moving to Objective Marker" />			
 	
 	<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="10" interactAttempts="-1" isPortal="False" maxSearchDistance="1600" timeout="60000" />
 	
+	<!-- 
+		If movement functions failed to generate a path to location and ended prematurely 
+		We can try and get into a different position with ExploreDungeon
+	-->
+	<EndChildren when="Timeout" timeout="20000">	
+		<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.16" boxSize="20" until="FullyExplored" ignoreMarkers="True" />			
+	</EndChildren>
+	
+	<!-- 
+		and now hopefully we'll get a path to the objective
+	-->	
+	<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="10" interactAttempts="-1" isPortal="False" maxSearchDistance="1600" timeout="60000" />				
+		
+		
 	<ToggleTargeting questId="1" combat="True" killRadius="45" />		
 		
 	<!-- 

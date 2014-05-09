@@ -29,7 +29,7 @@
 
 		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
 		<If condition="CurrentWorldId == 71150">
-			<MoveToMapMarker questId="1" markerNameHash="-1" actorId="176003" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="-1" maxSearchDistance="1500" timeout="60000" />								
+			<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="-1" maxSearchDistance="1500" timeout="60000" />								
 		</If>			
 		
 		<!-- Find Khazra Den #1-->

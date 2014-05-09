@@ -12,7 +12,7 @@
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
 		
 		<!-- Southern Highlands Waypoint -->
-		<While condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940">		
+		<While condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940 and CurrentLevelAreaId != 82502  and CurrentLevelAreaId != 82511">		
 			<UseWaypoint waypointNumber="13" questId="1"/>	
 			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
 		</While>		
@@ -20,10 +20,10 @@
 		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
 		<If condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940">		
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
-		</If>					
+		</If>			
 
 		<!-- Attempt to go straight to the entrance using marker -->
-		<MoveToMapMarker questId="1" markerNameHash="-1187439574" actorId="176008" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="82502" maxSearchDistance="1500" timeout="60000" />						
+		<MoveToMapMarker questId="1" markerNameHash="-1" actorId="176008" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="82502" maxSearchDistance="1500" timeout="60000" />						
 		<WaitTimer questId="1" stepId="2" waitTime="1000" />				
 		
 		<!--Find cave 0-->		
@@ -57,7 +57,7 @@
 		<!-- Cave Level 1 -->
 		<If condition="CurrentWorldId == 82502">	
 		
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.05" boxSize="10" until="ExitFound" exitNameHash="-1187439573" ignoreMarkers="False">
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.1" boxSize="10" until="ExitFound" exitNameHash="-1187439573" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>

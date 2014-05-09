@@ -23,8 +23,8 @@
 		</If>			
 
 		<!-- Explore until we find Objective marker -->
-		<EndChildren questId="1" when="ObjectiveMarkerFound" distance="1000">					
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.30" boxSize="12" objectDistance="100" until="ExitFound" exitNameHash="356899046" ignoreMarkers="False">
+		<EndChildren when="ObjectiveMarkerFound" distance="1000">					
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.30" boxSize="12" objectDistance="100" until="ExitFound" exitNameHash="356899046" ignoreMarkers="True">
 				<PriorityScenes>				
 					<PriorityScene sceneName="Exit" />				
 					<PriorityScene sceneName="_ButcherLair_" />
@@ -34,12 +34,9 @@
 		</EndChildren> 		
 		
 		<!-- Move to Boss Entrance using Objective Marker -->
-		<If condition="CurrentWorldId == 58983">
-			<MoveToMapMarker questId="1" markerNameHash="356899046" actorId="0" interactRange="5" pathPrecision="10" interactAttempts="-1" isPortal="False" maxSearchDistance="1050" timeout="60000" />
-			<WaitTimer questId="1" stepId="2" waitTime="1000" />		
-		</If>
+		<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="15" interactAttempts="5" isPortal="False" maxSearchDistance="100" timeout="60000" />
 		
-		<!-- Explore for Boss Entrance -->		
+		<!-- Explore for Boss Entrance	-->
 		<If condition="CurrentWorldId == 58983">	
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.30" boxSize="12" objectDistance="100" until="ExitFound" exitNameHash="356899046" ignoreMarkers="False">
 				<PriorityScenes>				
@@ -51,10 +48,8 @@
 			<ToggleTargeting questId="1" combat="True" killRadius="150" />	
 		</If>
 		
-		<While condition="Me.IsInBossEncounter">
-			<WaitTimer questId="1" stepId="2" waitTime="1000" />
-		</While>		
-		
+		<WaitWhile condition="Me.IsInBossEncounter" />
+
 	</If>
 	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />

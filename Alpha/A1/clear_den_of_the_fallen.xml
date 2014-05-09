@@ -24,7 +24,7 @@
 
 		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
 		<If condition="CurrentWorldId == 71150">
-			<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="135193" maxSearchDistance="1500" timeout="60000" />						
+			<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="135193" maxSearchDistance="2000" timeout="60000" />						
 		</If>				
 	
 		<If condition="CurrentWorldId == 71150">

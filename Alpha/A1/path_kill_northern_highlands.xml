@@ -14,9 +14,7 @@
 		<WaitTimer questId="1" stepId="2" waitTime="3000" />	
 	</If>		
 
-	<WaitTimer questId="1" stepId="2" waitTime="3000" />	
-	
-	
+	<WaitTimer questId="1" stepId="2" waitTime="3000" />		
 	
 	<!-- Settings -->
 	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		

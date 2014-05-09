@@ -38,27 +38,42 @@ namespace QuestTools.ProfileTags
         public enum EndChildrenConditionType
         {
             ObjectiveMarkerFound = 0,
-            BountyComplete
+            BountyComplete,
+            Timeout
         }
 
         [XmlAttribute("when")]
         [XmlAttribute("conditionType")]
         public EndChildrenConditionType ConditionType { get; set; }
 
+        /// <summary>
+        /// Use with the timeout ConditionType, 
+        /// Milliseconds that need to have passed before everything is stopped.
+        /// </summary>
+        [XmlAttribute("timeout")]
+        public int Timeout { get; set; }
+
         #endregion
 
         #region Local Variables
 
         private static Func<ProfileBehavior, bool> _BehaviorProcess;
-        private static Stopwatch conditionTimer = new Stopwatch();
+        private static Stopwatch checkTimer = new Stopwatch();
         private static Stopwatch debounceTimer = new Stopwatch();
-        private const int conditionInterval = 2000;
-        private const int debounceInterval = 400;
+        private static Stopwatch totalElapsed = new Stopwatch();
+        private const int conditionInterval = 1000;
+        private const int debounceInterval = 200;
         private bool _isDone = false;
 
         #endregion
 
-        public EndChildrenTag() { }
+        public EndChildrenTag() {
+
+            if (ConditionType == EndChildrenConditionType.Timeout && Timeout == null || Timeout <= 0)
+            {
+                Logger.Log("Attribute Error: use timeout=\"1000\" with the timeout condition type");
+            }
+        }
 
         /// <summary>
         /// Wraps original child nodes</summary>
@@ -86,9 +101,14 @@ namespace QuestTools.ProfileTags
                     return true;
                 }
 
-                if (!conditionTimer.IsRunning || !debounceTimer.IsRunning)
+                if (!totalElapsed.IsRunning)
                 {
-                    conditionTimer.Start();
+                    totalElapsed.Start();
+                }
+
+                if (!checkTimer.IsRunning || !debounceTimer.IsRunning)
+                {
+                    checkTimer.Start();
                     debounceTimer.Start();
                 }
 
@@ -101,7 +121,7 @@ namespace QuestTools.ProfileTags
                 // End tag if child tags are all done.
                 if (!_isDone && ChildrenFinished())
                 {
-                    conditionTimer.Stop();
+                    checkTimer.Stop();
                     debounceTimer.Stop();
                     return true;
                 }
@@ -112,7 +132,7 @@ namespace QuestTools.ProfileTags
                 }
 
                 // End tag if condition evaluates to True.
-                if (!_isDone && conditionTimer.ElapsedMilliseconds > conditionInterval)
+                if (!_isDone && checkTimer.ElapsedMilliseconds > conditionInterval)
                 {
                     Logger.Log("Checking \"{0}\" Condition", ConditionType);
 
@@ -120,12 +140,12 @@ namespace QuestTools.ProfileTags
                     {
                         _isDone = true;
                         StopBehaviors();                        
-                        conditionTimer.Stop();
+                        checkTimer.Stop();
                         debounceTimer.Stop();
                         return true;
                     }
 
-                    conditionTimer.Reset();
+                    checkTimer.Reset();
                 }
 
                 debounceTimer.Reset();
@@ -165,8 +185,12 @@ namespace QuestTools.ProfileTags
             {
                 case EndChildrenConditionType.BountyComplete:
                     return GetIsBountyDone();
+
                 case EndChildrenConditionType.ObjectiveMarkerFound:
                     return ObjectiveMarkerExists();
+
+                case EndChildrenConditionType.Timeout:
+                    return CheckTimeout();
 
             }
 
@@ -198,37 +222,6 @@ namespace QuestTools.ProfileTags
 
             return markerExists;
 
-        }
-
-        /// <summary>
-        /// Stop all child behaviors</summary>
-        /// <returns>
-        protected void StopBehaviors()
-        {
-            Logger.Log("Stopping behaviors ({0})", Body.Count);
-
-            foreach (ProfileBehavior behavior in Body)
-            {
-                var tagName = behavior.GetType().ToString().Split('.').Last();
-
-                if (behavior.Behavior.IsRunning)
-                {
-                    behavior.OnDone();
-
-                    if (behavior.Behavior.IsRunning)
-                    {
-                        Logger.Log("Failed to stop {0}", tagName);
-                    }
-                    else
-                    {
-                        Logger.Log("Stopped {0}", tagName);
-                    }
-                }
-                else
-                {
-                    Logger.Log("{0} is not running", tagName);
-                }
-            }
         }
 
         /// <summary>
@@ -294,6 +287,46 @@ namespace QuestTools.ProfileTags
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// Checks time since tag started against the timeout="" setting</summary>
+        /// <returns>
+        public bool CheckTimeout()
+        {
+            return (totalElapsed.ElapsedMilliseconds >= Timeout);
+        }
+
+
+        /// <summary>
+        /// Stop all child behaviors</summary>
+        /// <returns>
+        protected void StopBehaviors()
+        {
+            Logger.Log("Stopping behaviors ({0})", Body.Count);
+
+            foreach (ProfileBehavior behavior in Body)
+            {
+                var tagName = behavior.GetType().ToString().Split('.').Last();
+
+                if (behavior.Behavior.IsRunning)
+                {
+                    behavior.OnDone();
+
+                    if (behavior.Behavior.IsRunning)
+                    {
+                        Logger.Log("Failed to stop {0}", tagName);
+                    }
+                    else
+                    {
+                        Logger.Log("Stopped {0}", tagName);
+                    }
+                }
+                else
+                {
+                    Logger.Log("{0} is not running", tagName);
+                }
+            }
         }
 
     }

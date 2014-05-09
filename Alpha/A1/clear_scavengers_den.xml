@@ -22,14 +22,6 @@
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
 		</If>		
 		
-		<If condition="CurrentWorldId == 71150">
-			<SafeMoveTo questId="1" stepId="2" x="1770" y="369" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Top Cave Location 1 of 5" /> 
-			<If condition="MarkerExistsAt(925091454, 1770, 369, -0, 30)">			
-				<MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" interactRange="20"  />
-				<WaitTimer questId="1" stepId="2" waitTime="1000" />					
-			</If>
-		</If>
-		
 		<!-- Go straight to the entrance if marker is visible -->		
 		<If condition="CurrentWorldId == 71150">
 			<MoveToMapMarker questId="1" markerNameHash="925091454" actorId="175501" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="-1" maxSearchDistance="1500" timeout="60000" />								
@@ -37,7 +29,7 @@
 		
 		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
 		<If condition="CurrentWorldId == 71150">
-			<MoveToMapMarker questId="1" markerNameHash="-1" actorId="175501" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="-1" maxSearchDistance="1500" timeout="60000" />								
+			<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="-1" maxSearchDistance="1500" timeout="60000" />								
 		</If>				
 		
 		
