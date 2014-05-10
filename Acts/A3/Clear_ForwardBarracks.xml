@@ -12,6 +12,9 @@
         <WaitTimer questId="1" stepId="1" waitTime="2500"/>
       </While>
       <If condition="CurrentWorldId == 95804">
+
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>	
+	  
         <!-- Attempt to move to first known spot -->
         <SafeMoveTo questId="1" stepId="1" x="4135" y="601" z="-6" />
         <If condition="ActorExistsAt(185156, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
@@ -32,6 +35,7 @@
 
       <If condition="CurrentWorldId == 185247">
         <TrinitySetQuesting />
+		<ToggleTargeting questId="1" combat="True" />		
         <TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
         <WaitTimer questId="1" stepId="1" waitTime="500" />
       </If>

@@ -1,0 +1,8 @@
+<Profile>
+<Name>Act 1 - Zerg Loader</Name>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+	<LogMessage quest="1" step="1" output="[Warning] ZERG mode turns combat off at times and is intended for players with items or skills that prevent from being blocked by monsters" />
+	<LoadProfile file="Routes/Zerg/A3Zerg.xml" />
+</Order>
+</Profile>

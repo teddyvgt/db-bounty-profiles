@@ -51,11 +51,15 @@
 			<UseWaypoint waypointNumber="41" questId="1"/>
 			<WaitTimer questId="1" stepId="1" waitTime="5000"/>
 		</While>
+		<If condition="HasQuest(369900)">
+			<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>			
+		</If>
 		<While condition="(HasQuest(369900) and not ActorExistsAt(368169, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)) or HasQuest(349258) or HasQuest(349256) or HasQuest(349260) or HasQuest(357131)">
 			<SafeMoveTo questId="312429" stepId="2" x="795" y="1134" z="-15" pathPrecision="5"/> 
 			<SafeMoveTo questId="312429" stepId="2" x="774" y="1049" z="-30" pathPrecision="5"/> 
 			<SafeMoveTo questId="312429" stepId="2" x="830" y="967" z="-15" pathPrecision="5"/> 
 			<SafeMoveTo questId="312429" stepId="2" x="712" y="907" z="0" pathPrecision="5"/> 
+			<ToggleTargeting questId="1" combat="True" />	
 			<SafeMoveTo questId="312429" stepId="2" x="612" y="850" z="0" pathPrecision="5"/> 
 			<SafeMoveTo questId="312429" stepId="2" x="540" y="782" z="15" pathPrecision="5"/> 
 			<SafeMoveTo questId="312429" stepId="2" x="721" y="723" z="0" pathPrecision="5"/> 
@@ -85,6 +89,7 @@
 			<UseWaypoint waypointNumber="41" questId="1"/>
 			<WaitTimer questId="1" stepId="1" waitTime="5000"/>
 		</While>
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>
 		<SafeMoveTo questId="312429" stepId="2" x="862" y="1003" z="-15" pathPrecision="5"/> 
 		<SafeMoveTo questId="312429" stepId="2" x="724" y="905" z="0" pathPrecision="5"/> 
 		<SafeMoveTo questId="312429" stepId="2" x="859" y="714" z="0" pathPrecision="5"/> 
@@ -94,6 +99,7 @@
 			<MoveToActor questId="1" stepId="2" actorId="161276" isPortal="True" destinationWorldId="166640" x="990" y="268" z="18" />
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />
 		</While>
+		<ToggleTargeting questId="1" combat="True" killRadius="80" />	
 		<MoveTo questId="1" stepId="2" pathPrecision="10" x="358" y="352" z="0" />
 		<While condition="Me.IsInBossEncounter">
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
@@ -280,12 +286,13 @@
 
 
 	<!-- kill diablo -->
-	<If condition="HasQuest(349288)">
+	<If condition="HasQuest(349288)">		
 		<WaitTimer questId="1" stepId="1" waitTime="2500"/>
 		<While condition="CurrentWorldId != 129305 and CurrentWorldId != 153670 and CurrentWorldId != 205399 and CurrentWorldId != 196292 and CurrentWorldId !=109561">
 			<UseWaypoint waypointNumber="45" questId="1"/>
 			<WaitTimer questId="1" stepId="1" waitTime="5000"/>
 		</While>
+		<ToggleTargeting questId="1" combat="False" />		
 		<While condition="CurrentWorldId == 129305">
 			<ExploreDungeon questId="1" stepId="2"  until="ObjectFound" objectDistance="100" actorId="210763" boxSize="14" pathPrecision="30" boxTolerance="0.4" ignoreMarkers="False" stayAfterBounty="False">
 				<PrioritizeScenes>
@@ -295,6 +302,7 @@
 			<MoveToActor questId="1" stepId="2" actorId="210763" isPortal="True" interactRange="20"/>
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</While>
+		<ToggleTargeting questId="1" combat="True" />		
 	</If>
 	<!--
 	[QuestTools] worldId changed from 129305 to 109561 - a4dun_Diablo_Arena
@@ -336,13 +344,13 @@
 		<MoveToActor questId="1" stepId="1" actorId="114622" x="379" y="422" z="0"  />	
 	</ActBountiesComplete>
 	
-		<!-- should we move onto to the next act? -->
-		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('All_Redirect')">
-			<TrinityLoadProfile file="../All_Distributor.xml" />			
-		</If>		
+	<!-- should we move onto to the next act? -->
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('All_Redirect')">
+		<TrinityLoadProfile file="../All_Distributor.xml" />			
+	</If>		
 
-		<!-- nope repeating the same act. gooo! -->
-		<LeaveGame quest="1" step="1" reason="done." stayInParty="False" />			
+	<!-- nope repeating the same act. gooo! -->
+	<LeaveGame quest="1" step="1" reason="done." stayInParty="False" />			
 	
 </Order>
 </Profile>

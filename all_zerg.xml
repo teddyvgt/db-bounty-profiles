@@ -1,0 +1,12 @@
+<Profile>
+<Name>All - Loader</Name>
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" difficulty="Normal" resumeFromSave="False" isPrivate="True" numGames="-1"  />
+<Order>
+	<LogMessage quest="1" step="1" output="Welcome to ALL acts Community Bounty Profile" />
+	<WaitTimer questId="1" stepId="2" waitTime="500" />	
+	<LoadProfile file="Routes/All_Redirect/Zerg/All_Redirect_Zerg.xml" />
+</Order>
+
+</Profile>

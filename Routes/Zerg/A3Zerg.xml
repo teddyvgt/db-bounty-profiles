@@ -1,0 +1,8 @@
+<Profile>
+<Name>Act 1 - Zerg Route</Name>
+<Order>
+	<!-- This file is important, do not touch it or the folder its in -->
+	<WaitTimer questId="1" stepId="2" waitTime="500" />		
+	<LoadProfile file="../../Acts/A3/Act3.xml" />
+</Order>
+</Profile>

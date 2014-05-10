@@ -63,7 +63,7 @@
 	<Order>
 		
 		<WaitTimer questId="1" stepId="2" waitTime="500" />	
-		<ToggleTargeting questId="1" killRadius="5" />					
+		<ToggleTargeting questId="1" killRadius="5" combat="True" />					
 
 		<!-- 1	The Old Ruins =============================================================-->
 

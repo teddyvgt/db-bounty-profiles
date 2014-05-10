@@ -12,7 +12,12 @@
         <WaitTimer questId="1" stepId="1" waitTime="2500"/>
       </While>
 
+	  
+	  
       <If condition="CurrentWorldId == 95804">
+
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>	
+	  
         <!-- <TrinityExploreDungeon questId="346190" stepId="1" until="ObjectFound" actorId="176003" boxTolerance="0.10" boxSize="15" />-->
         <!--<TrinityExploreDungeon questId="349204" stepId="2" until="ObjectFound" actorId="54882" boxTolerance="0.20" boxSize="20" />-->
         <SafeMoveTo questId="312429" stepId="2" x="4185" y="396" z="-3" pathPrecision="5" pathPointLimit="250"  />
@@ -45,6 +50,7 @@ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="22175
       </If>
       <If condition="CurrentWorldId == 221750">
         <TrinitySetQuesting />
+		<ToggleTargeting questId="1" combat="True" killRadius="80" />		
         <TrinityExploreDungeon questId="349204" stepId="2" until="BountyComplete" boxTolerance="0.1" boxSize="20" ignoreMarkers="False"  />
       </If>
     </If>

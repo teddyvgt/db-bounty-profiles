@@ -13,6 +13,7 @@
       </While>
 
       <If condition="CurrentWorldId == 95804">
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		  
         <SafeMoveTo questId="346182" stepId="2" x="4168" y="395" z="-2" pathPrecision="5" pathPointLimit="250" statusText="" />
         <SafeMoveTo questId="346182" stepId="2" x="4104" y="463" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />
         <TrinityExploreDungeon questId="346182" stepId="1" pathPrecision="25" until="ObjectFound" actorId="207272" boxTolerance="0.30" boxSize="25" >
@@ -25,6 +26,7 @@
 			<IgnoreScene sceneName="Entrance" />
           </IgnoreScenes>
         </TrinityExploreDungeon>
+		<ToggleTargeting questId="1" combat="True" />			
         <WaitTimer questId="1" stepId="2" waitTime="500" />
         <MoveToActor questId="346182" stepId="1" actorId="207272" interactRange="8"  pathPrecision="5" pathPointLimit="250"  />
         <While condition="HasQuest(346182) and ActorExistsAt(207272, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">

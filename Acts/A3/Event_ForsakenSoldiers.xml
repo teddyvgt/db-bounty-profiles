@@ -14,7 +14,8 @@
       </While>
 
       <If condition="CurrentWorldId == 75434">
-        <WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>	        
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
         <TrinityExploreDungeon questId="369853" stepId="2" until="ObjectFound" objectDistance="100" actorId="364601" boxTolerance="0.01" boxSize="20" ignoreMarkers="False" pathPrecision="20">
           <PrioritizeScenes>
             <PriorityScene sceneName="a3dun_Keep_NSEW_03_War" />
@@ -26,7 +27,8 @@
             <IgnoreScene sceneName="_W_" />
           </IgnoreScenes>
         </TrinityExploreDungeon>
-        <MoveToActor questId="369853" stepId="2" actorId="364601" interactRange="11" name="x1_Event_CursedShrine-20054"  pathPrecision="5" pathPointLimit="250" />
+		<ToggleTargeting questId="1" combat="True" />        
+		<MoveToActor questId="369853" stepId="2" actorId="364601" interactRange="11" name="x1_Event_CursedShrine-20054"  pathPrecision="5" pathPointLimit="250" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
 
         <While condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 150) and HasQuest(369853)">

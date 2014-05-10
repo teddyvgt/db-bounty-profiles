@@ -15,6 +15,7 @@
       </While>
 
       <If condition="CurrentWorldId == 93104">
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		  
         <WaitTimer questId="1" stepId="1" waitTime="1000"/>
         <!--<SafeMoveTo questId="312429" stepId="2" x="448" y="613" z="0" pathPrecision="5" pathPointLimit="250" statusText="" />-->
         <TrinityExploreDungeon questId="346146" stepId="1" until="ObjectFound" actorId="149331" boxTolerance="0.30" boxSize="30" objectDistance="90">
@@ -25,6 +26,7 @@
             <IgnoreScene sceneName="Exit" />
           </IgnoreScenes>
         </TrinityExploreDungeon>
+		<ToggleTargeting questId="1" combat="True" />				
         <!--<WaitTimer questId="1" stepId="2" waitTime="1000" />-->
         <MoveToActor questId="346146" stepId="1"  actorId="149331" interactRange="8" name="A3_UniqueVendor_Weaponsmith-13932"  pathPrecision="10" pathPointLimit="250"  />
         <!--<WaitTimer questId="1" stepId="2" waitTime="60000" />-->

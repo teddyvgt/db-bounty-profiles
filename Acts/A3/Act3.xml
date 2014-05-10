@@ -9,7 +9,7 @@
 
     <!-- Act 3 Bounties -->
     <LogMessage quest="1" step="1" output="Act 3 Bounties" />
-
+	<ToggleTargeting questId="1" combat="True" />
 
     <!--WAYPOINT [27] a3Dun_rmpt_Level02        -->
 

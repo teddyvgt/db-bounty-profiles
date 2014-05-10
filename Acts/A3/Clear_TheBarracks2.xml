@@ -13,6 +13,7 @@
       </While>
 
       <If condition="CurrentWorldId == 95804">
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		  
         <MoveToActor questId="349210" stepId="2" name="The Barracks Level 1 Entrance" actorId="176001" interactRange="10" x="4144" y="316" z="1" isPortal="True" destinationWorldId="174555" />
         <WaitTimer questId="349210" stepId="2" waitTime="1000" />
       </If>
@@ -38,6 +39,7 @@
       <!-- Explore The Barracks Level 2 -->
       <If condition="CurrentWorldId == 221749">
         <TrinitySetQuesting />
+		<ToggleTargeting questId="1" combat="True" />				
         <TrinityExploreDungeon questId="349210" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
       </If>
     </If>

@@ -13,6 +13,7 @@
       </While>
 
       <If condition="CurrentWorldId == 95804">
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		  
         <While condition="CurrentLevelAreaId != 154644">
           <UseWaypoint questId="1" waypointNumber="31" />
           <WaitTimer questId="1" stepId="1" waitTime="2500"/>
@@ -49,6 +50,7 @@
       </If>
       <If condition="CurrentWorldId == 221751">
         <TrinitySetQuesting />
+		<ToggleTargeting questId="1" combat="True" />			
         <TrinityExploreDungeon questId="349206" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
       </If>
     </If>

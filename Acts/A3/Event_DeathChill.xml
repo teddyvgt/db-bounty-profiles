@@ -20,6 +20,7 @@
       </While>
 
       <If condition="CurrentWorldId == 95804">
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		  
         <If condition="CurrentLevelAreaId == 155048">
           <SafeMoveTo questId="1" stepId="2" x="3300" y="609" z="0" pathPrecision="5" pathPointLimit="250" />
         </If>
@@ -66,7 +67,8 @@ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="18991
             <PriorityScene sceneName="a3dun_iceCaves_EW_01" />
           </PrioritizeScenes>
         </TrinityExploreDungeon>
-        <MoveToActor questId="1" stepId="2" actorId="364601" interactRange="11" name="x1_Event_CursedShrine-26406"  pathPrecision="5" pathPointLimit="250" />
+        <ToggleTargeting questId="1" combat="True" />
+		<MoveToActor questId="1" stepId="2" actorId="364601" interactRange="11" name="x1_Event_CursedShrine-26406"  pathPrecision="5" pathPointLimit="250" />
         <!--<ToggleTargeting questId="1" combat="True" looting="True" killRadius="150" lootRadius="90" />-->
         <While condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 150) and HasQuest(369851)">
           <MoveToActor questId="1" stepId="2" actorId="364601"/>
