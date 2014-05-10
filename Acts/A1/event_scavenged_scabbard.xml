@@ -12,13 +12,13 @@
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>
 		
 		<!-- Southern Highlands Waypoint -->
-		<While condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940">			
+		<While condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940 and CurrentLevelAreaId != 82326 and CurrentLevelAreaId != 82327">				
 			<UseWaypoint waypointNumber="13" questId="1"/>	
 			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
 		</While>
 		
 		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
-		<If condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940">			
+		<If condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940 and CurrentLevelAreaId != 82326 and CurrentLevelAreaId != 82327">					
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
 		</If>			
 

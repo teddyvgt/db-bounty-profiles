@@ -12,13 +12,13 @@
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>
 		
 		<!-- Southern Highlands Waypoint -->
-		<While condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940">			
+		<While condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940 and CurrentLevelAreaId != 82326 and CurrentLevelAreaId != 82327">		
 			<UseWaypoint waypointNumber="13" questId="1"/>	
 			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
 		</While>
 		
 		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
-		<If condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940">			
+		<If condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940 and CurrentLevelAreaId != 82326 and CurrentLevelAreaId != 82327">			
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
 		</If>			
 
@@ -55,16 +55,29 @@
 
 		<!--  Watch Tower Level 1 -->
 		<If condition="CurrentLevelAreaId == 82326">
+		
+			<MoveToMapMarker questId="1" stepId="1" exitNameHash="-1" destinationWorldId="-1" interactRange="5"  />		
 
-			<!--  Search for Watch Tower -->
-			<TrinityExploreDungeon questId="1" stepId="1" boxTolerance="0.05" boxSize="35" until="ExitFound" exitNameHash="497382904" ignoreMarkers="False">
-				<PrioritizeScenes>
-					<PriorityScene sceneName="Exit" />
-				</PrioritizeScenes>				
-			</TrinityExploreDungeon>			
+			<If condition="CurrentLevelAreaId == 82326">			
+			
+				<!--  Search for Watch Tower -->
+				<TrinityExploreDungeon questId="1" stepId="1" boxTolerance="0.05" boxSize="35" until="ExitFound" exitNameHash="497382904" ignoreMarkers="False">
+					<PrioritizeScenes>
+						<PriorityScene sceneName="Exit" />
+					</PrioritizeScenes>				
+				</TrinityExploreDungeon>			
 
-			<!-- Requires a low interact range or bot gets stuck above the portal on the balcony -->
-			<MoveToActor questId="344488" actorId="176001" interactRange="3" name="g_Portal_ArchTall_Orange-42457"  isPortal="True" destinationWorldId="82313" pathPrecision="5" pathPointLimit="250" statusText="" />
+				<!-- Requires a low interact range or bot gets stuck above the portal on the balcony -->
+				<MoveToActor questId="344488" actorId="176001" interactRange="3" name="g_Portal_ArchTall_Orange-42457" isPortal="True" destinationWorldId="82313" pathPrecision="5" pathPointLimit="250" statusText="" />
+				
+			</If>
+			
+			<If condition="CurrentLevelAreaId == 82326">
+			
+				<MoveToMapMarker questId="1" stepId="1" exitNameHash="-1" destinationWorldId="-1" interactRange="5"  />					
+			
+			</If>
+			
 			<WaitTimer questId="1" stepId="1" waitTime="5000" />
 		
 		</If>		
