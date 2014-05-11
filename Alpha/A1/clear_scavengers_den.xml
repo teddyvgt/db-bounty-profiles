@@ -20,18 +20,14 @@
 		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
 		<If condition="CurrentLevelAreaId != 19952">			
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
-		</If>		
-		
-		<!-- Go straight to the entrance if marker is visible -->		
-		<If condition="CurrentWorldId == 71150">
-			<MoveToMapMarker questId="1" markerNameHash="925091454" actorId="175501" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="-1" maxSearchDistance="1500" timeout="60000" />								
-		</If>
+		</If>				
 		
 		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
 		<If condition="CurrentWorldId == 71150">
-			<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="-1" maxSearchDistance="1500" timeout="60000" />								
-		</If>				
-		
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="20" />
+			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="925091454" />	
+		</If>			
 		
 		<If condition="CurrentWorldId == 71150">		
 			<SafeMoveTo questId="1" stepId="2" x="2120" y="612" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Middle Cave Location 3 of 5" /> 

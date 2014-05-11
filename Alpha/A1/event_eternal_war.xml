@@ -24,8 +24,7 @@
 
 		<If condition="CurrentLevelAreaId == 19953">
 
-<!-- 			<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="10" interactAttempts="5" isPortal="False" maxSearchDistance="1300" timeout="60000" />		
- -->		
+
 			<!-- Search for the the monument -->		
 			<TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="111907" pathPrecision="40" boxSize="10" boxTolerance="0.40">		
 				<IgnoreScenes>

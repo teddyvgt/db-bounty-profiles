@@ -1,4 +1,3 @@
-<!-- X1_Bounty_A1_Cemetery_Event_MatriarchsBones (349020)  -->
 <Profile>
 <Name>The Matriarchs Bones (349020)</Name>
 <KillMonsters>True</KillMonsters>
@@ -6,7 +5,12 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
+	<!-- 
+	349020: X1_Bounty_A1_Cemetery_Event_MatriarchsBones
+	-->
 	<If condition="HasQuest(349020)">		
+	
+		<LogMessage questId="349020" output="Bounty > 349020: Matriarch's Bones" /> 		
 	
 		<!-- Settings -->
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>	
@@ -17,9 +21,15 @@
 			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
 		</While>
 		
-		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
-		<If condition="CurrentLevelAreaId != 72712 and CurrentLevelAreaId != 83264">				
-			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
+		<!-- Go straight to the entrance if OBJECTIVE marker is visible or MoveToMapMarker if we already know where it is -->	
+		<If condition="CurrentWorldId == 71150">		
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />	
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="20" />		
+			<MoveToMapMarker markerNameHash="-1965109038" questId="1" interactRange="20" destinationWorldId="-1" pathPrecision="20" />				
+			<If condition="MarkerExistsAt(-1965109038, Me.Position.X, Me.Position.Y, Me.Position.Z, 30)">
+				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="-1" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="3000" />				
+			</If>			
 		</If>			
 
 		<!--  Cemetery of the Forsaken Entrance #1 -->
@@ -135,7 +145,7 @@
 
 			<!-- Backup Plan -->
 			<If condition="HasQuest(349020)">
-				<LogMessage quest="1" step="1" output="Maybe something went wrong..." />	
+				<LogMessage questId="1" step="1" output="Maybe something went wrong..." />	
 				<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="5" stayAfterBounty="False"/>
 				<MoveToActor questId="1" stepId="1" actorId="3892" interactRange="8" name="CryingGhost_Female_01_A-1573"  pathPrecision="5" pathPointLimit="250" statusText="" /> 
 				<MoveToActor questId="1" stepId="1" actorId="174754" interactRange="7" name="a1dun_Crypts_Bowl_of_Bones_03-1762"  pathPrecision="5" pathPointLimit="250" statusText="" /> 

@@ -5,51 +5,6 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
-	<While condition="CurrentWorldId != 50582">			
-		<UseWaypoint waypointNumber="3" questId="1"/>	
-		<WaitTimer questId="1" stepId="2" waitTime="6000" /></While>
-
-	<WaitTimer questId="1" stepId="2" waitTime="3000" />	
-	
-	<!-- Settings -->
-	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>				
-
-	<EndChildren when="ObjectiveMarkerFound" distance="1000">		
-	
-		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.14" boxSize="14" >
-			<IgnoreScenes>
-				<IgnoreScene sceneName="Exit" />	
-			</IgnoreScenes>
-		</TrinityExploreDungeon>		
-	
-	</EndChildren> 	
-	
-	<LogMessage quest="1" output="Moving to Objective Marker" />		
-	
-	<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="10" interactAttempts="-1" isPortal="False" maxSearchDistance="1050" timeout="60000" />
-
-	<!-- 
-		If movement functions failed to generate a path to location and ended prematurely 
-		We can try and get into a different position with ExploreDungeon
-	-->
-	<EndChildren when="Timeout" timeout="20000">	
-	
-		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.14" boxSize="14" >
-			<IgnoreScenes>
-				<IgnoreScene sceneName="Exit" />	
-			</IgnoreScenes>
-		</TrinityExploreDungeon>	
-		
-	</EndChildren>
-	
-	<!-- 
-		and now hopefully we'll get a path to the objective
-	-->	
-	<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="10" interactAttempts="-1" isPortal="False" maxSearchDistance="1600" timeout="60000" />				
-		
-	
-	<ToggleTargeting questId="1" combat="True" killRadius="45" />		
-
 	<!-- 
 	361334: Kill Merrium		
 	361339: Kill Firestarter
@@ -58,18 +13,40 @@
 	<If condition="
 		HasQuest(361334) or
 		HasQuest(361339) or 
-		HasQuest(361336)">				
+		HasQuest(361336)">	
+		
+		<LogMessage questId="361334" output="Bounty > 361334: Kill Merrium" /> 	
+		<LogMessage questId="361339" output="Bounty > 361339: Kill Firestarter" /> 	
+		<LogMessage questId="361336" output="Bounty > 361336: Kill Cudgelarm" /> 				
 
-		<LogMessage quest="1" output="Killing remaining monsters for bounty" />				
-			
-		<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.14" boxSize="14" >
-			<IgnoreScenes>
-				<IgnoreScene sceneName="Exit" />	
-			</IgnoreScenes>
-		</TrinityExploreDungeon>		
-			
-	</If>		
+		<!-- Cathedral 2 Waypoint -->
+		<While condition="CurrentWorldId != 50582">			
+			<UseWaypoint waypointNumber="3" questId="1"/>	
+			<WaitTimer questId="1" stepId="2" waitTime="6000" />
+		</While>		
+
+		<If condition="CurrentWorldId == 50582">			
 	
+			<!-- Settings -->
+			<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>				
+
+			<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="20" />			
+			<ToggleTargeting questId="1" combat="True" killRadius="45" />		
+		
+			<!-- Kill Remaining Monsters to Finish Bounty -->
+			<If condition="ZetaDia.ActInfo.ActiveBounty">			
+				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.14" boxSize="14" >
+				  <IgnoreScenes>
+					<IgnoreScene sceneName="Exit" />
+				  </IgnoreScenes>
+				</TrinityExploreDungeon>
+			</If>		
+		
+		</If>				
+	
+	</If>
 	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
 	<LoadProfile file="act1.xml" />

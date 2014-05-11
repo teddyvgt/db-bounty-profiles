@@ -5,24 +5,40 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
-	<While condition="CurrentLevelAreaId != 100854 and CurrentLevelAreaId != 19941 and CurrentLevelAreaId != 1199 and CurrentLevelAreaId != 19943">			
-		<UseWaypoint waypointNumber="14" questId="1"/>	
-		<WaitTimer questId="1" stepId="2" waitTime="6000" /></While>		
+	<!-- 
+	367561: Kill jezeb
+	367559: Kill Krailen
+	-->
+	<If condition="
+		HasQuest(367561) or
+		HasQuest(367559)">				
 
-	<!-- Settings -->
-	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>			
+		<LogMessage questId="367561" output="Bounty > 367561: Kill Jezeb" /> 	
+		<LogMessage questId="367559" output="Bounty > 367559: Kill Krailen" /> 	
 	
-	<SafeMoveTo questId="1" stepId="2" x="1614" y="3835" z="40" /> 
-	<SafeMoveTo questId="1" stepId="2" x="1511" y="3854" z="40" /> 
-	<SafeMoveTo questId="1" stepId="2" x="1535" y="3998" z="40" /> 	
-	<SafeMoveTo questId="1" stepId="2" x="1430" y="4030" />
-	<SafeMoveTo questId="1" stepId="2" x="1269" y="3903" />
-	<SafeMoveTo questId="1" stepId="2" x="1014" y="4015" z="80" /> 
-	<SafeMoveTo questId="1" stepId="2" x="1080" y="3401" />
-	<MoveToActor questId="1" stepId="2" actorId="176001" isPortal="True" destinationWorldId="75049" />
-	<WaitTimer questId="1" stepId="2" waitTime="2000" />
-	<ToggleTargeting questId="1" combat="True" killRadius="45" />	
-	<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.12" boxSize="12" />
+		<!-- Northern Highlands Waypoint -->				
+		<While condition="CurrentLevelAreaId != 100854 and CurrentLevelAreaId != 19941 and CurrentLevelAreaId != 1199 and CurrentLevelAreaId != 19943">			
+			<UseWaypoint waypointNumber="14" questId="1"/>	
+			<WaitTimer questId="1" stepId="2" waitTime="6000" />
+		</While>	
+
+		<If	condition="CurrentLevelAreaId == 100854 or CurrentLevelAreaId == 19941 or CurrentLevelAreaId == 1199 or CurrentLevelAreaId == 19943">			
+		
+			<SafeMoveTo questId="1" stepId="2" x="1614" y="3835" z="40" /> 
+			<SafeMoveTo questId="1" stepId="2" x="1511" y="3854" z="40" /> 
+			<SafeMoveTo questId="1" stepId="2" x="1535" y="3998" z="40" /> 	
+			<SafeMoveTo questId="1" stepId="2" x="1430" y="4030" />
+			<SafeMoveTo questId="1" stepId="2" x="1269" y="3903" />
+			<SafeMoveTo questId="1" stepId="2" x="1014" y="4015" z="80" /> 
+			<SafeMoveTo questId="1" stepId="2" x="1080" y="3401" />
+			<MoveToActor questId="1" stepId="2" actorId="176001" isPortal="True" destinationWorldId="75049" />
+			<WaitTimer questId="1" stepId="2" waitTime="2000" />
+			<ToggleTargeting questId="1" combat="True" killRadius="45" />	
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.12" boxSize="12" />			
+		
+		</If>
+		
+	</If>		
 
 	<WaitTimer questId="1" stepId="2" waitTime="3000" />
 	<LoadProfile file="act1.xml" />	

@@ -1,4 +1,4 @@
-<!-- X1_Bounty_A1_LeoricsDungeon_Event_IronMaiden (345546) -->
+
 <Profile>
 <Name>A Stranger In Need (345546)</Name>
 <KillMonsters>True</KillMonsters>
@@ -6,8 +6,13 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
+	<!-- 
+	345546: X1_Bounty_A1_LeoricsDungeon_Event_IronMaiden
+	-->
 	<If condition="HasQuest(345546)">
 
+		<LogMessage questId="345546" output="Bounty > 345546: A Stranger in Need" /> 		
+	
 		<!-- Settings -->
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>	
 
@@ -17,13 +22,11 @@
 			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
 		</While>	
 
-		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
-		<If condition="CurrentWorldId != 58982">		
-			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
-		</If>	
-
 		<!-- Event -->
 		<If condition="CurrentWorldId == 58982">
+
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="20" />		
+	
 			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="221574" boxTolerance="0.10" boxSize="15" ignoreMarkers="False"/> 
 
 			<!-- Initial Iron Maiden -->

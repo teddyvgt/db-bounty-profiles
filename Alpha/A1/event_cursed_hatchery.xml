@@ -22,24 +22,35 @@
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
 		</If>			
 
-		<!-- Look for the Shrine -->
-		<If condition="HasQuest(375201)">
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.12" boxSize="12" until="ObjectFound" actorId="365097" ignoreMarkers="False" objectDistance="40">
-				<IgnoreScenes>
-					<IgnoreScene sceneName="_W_"/>
-					<IgnoreScene sceneName="_Filler"/>
-				</IgnoreScenes>
-			</TrinityExploreDungeon>
-		</If>
-		<MoveToActor questId="375201" stepId="2" actorId="365097" interactRange="8"/>
-
-		<ToggleTargeting questId="1" combat="True" killRadius="45" />				
+		<If condition="CurrentWorldId == 180550">
+				
+			<!-- Attempt to go straight to the OBJECTIVE marker -->
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="20" />
+<!-- 			<MoveToObjective questId="1" markerDistance="3000" actorDistance="20" markerNameHash="1317387500" />						
+ -->			
+			<LogMessage questId="1" step="1" output="Moving On" />
 			
-		<!-- Hang out until completed -->
-		<While condition="HasQuest(375201) and ActorExistsAt(364559, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
-			<MoveToActor questId="375201" stepId="2" actorId="364559" interactRange="8"/>
-			<WaitTimer questId="375201" stepId="2" waitTime="2000" />	
-		</While>		
+			<!-- Look for the chest if its not nearby -->		
+			<If condition="HasQuest(375201) and not ActorExistsAt(365097, Me.Position.X, Me.Position.Y, Me.Position.Z, 40) and not ActorExistsAt(364559, Me.Position.X, Me.Position.Y, Me.Position.Z, 40)">
+				<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.12" boxSize="12" until="ObjectFound" actorId="365097" ignoreMarkers="False" objectDistance="40">
+					<IgnoreScenes>
+						<IgnoreScene sceneName="_W_"/>
+						<IgnoreScene sceneName="_Filler"/>
+					</IgnoreScenes>
+				</TrinityExploreDungeon>
+			</If>
+			
+			<MoveToActor questId="375201" stepId="2" actorId="365097" interactRange="8"/>
+
+			<ToggleTargeting questId="1" combat="True" killRadius="20" />				
+				
+			<!-- Hang out until completed -->
+			<While condition="HasQuest(375201) and ActorExistsAt(364559, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+				<MoveToActor questId="375201" stepId="2" actorId="364559" interactRange="8"/>
+				<WaitTimer questId="375201" stepId="2" waitTime="2000" />	
+			</While>
+
+		</If>		
 	
 	</If>
 	

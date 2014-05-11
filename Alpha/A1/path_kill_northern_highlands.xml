@@ -5,135 +5,6 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
-	<While condition="CurrentLevelAreaId != 19941 and CurrentLevelAreaId != 1199 and CurrentLevelAreaId != 19943">			
-		<UseWaypoint waypointNumber="14" questId="1"/>	
-		<WaitTimer questId="1" stepId="2" waitTime="6000" /></While>	
-	
-	<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
-	<If condition="CurrentLevelAreaId != 19941 and CurrentLevelAreaId != 1199 and CurrentLevelAreaId != 19943">				
-		<WaitTimer questId="1" stepId="2" waitTime="3000" />	
-	</If>		
-
-	<WaitTimer questId="1" stepId="2" waitTime="3000" />		
-	
-	<!-- Settings -->
-	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
-
-	<EndChildren when="ObjectiveMarkerFound" distance="900">		
-
-		<!-- 369271: Kill Theodyn -->
-		<SafeMoveTo questId="369271" x="1726" y="4019" />
-		<SafeMoveTo questId="369271" x="1820" y="3814" />
-		<SafeMoveTo questId="369271" x="1616" y="3873" />
-		<SafeMoveTo questId="369271" x="1645" y="4014" />
-		<SafeMoveTo questId="369271" x="1739" y="4180" />
-		<SafeMoveTo questId="369271" x="1604" y="4198" />
-		<SafeMoveTo questId="369271" x="1624" y="4081" />
-		<SafeMoveTo questId="369271" x="1493" y="4081" />
-		<SafeMoveTo questId="369271" x="1507" y="4155" />
-		<SafeMoveTo questId="369271" x="1390" y="4087" />
-		<SafeMoveTo questId="369271" x="1612" y="3919" />
-		<SafeMoveTo questId="369271" x="1495" y="3824" />
-		<SafeMoveTo questId="369271" x="1437" y="4032" />
-		<SafeMoveTo questId="369271" x="1410" y="3960" />
-		<SafeMoveTo questId="369271" x="1335" y="3959" />
-		<SafeMoveTo questId="369271" x="1274" y="3902" />
-		<SafeMoveTo questId="369271" x="1137" y="4078" />
-		<SafeMoveTo questId="369271" x="893" y="3992" />
-		<SafeMoveTo questId="369271" x="1159" y="3966" />
-		<SafeMoveTo questId="369271" x="1262" y="3750" />
-		<SafeMoveTo questId="369271" x="930" y="3727" />
-		<SafeMoveTo questId="369271" x="896" y="3920" z="90" />
-		<SafeMoveTo questId="369271" x="937" y="3943" />
-		<SafeMoveTo questId="369271" x="1121" y="3807" /> 
-
-		<!-- 369253: Kill Reggrel -->	
-		<SafeMoveTo questId="369253" x="1726" y="4019" />
-		<SafeMoveTo questId="369253" x="1820" y="3814" />
-		<SafeMoveTo questId="369253" x="1616" y="3873" />
-		<SafeMoveTo questId="369253" x="1645" y="4014" />
-		<SafeMoveTo questId="369253" x="1739" y="4180" />
-		<SafeMoveTo questId="369253" x="1604" y="4198" />
-		<SafeMoveTo questId="369253" x="1624" y="4081" />
-		<SafeMoveTo questId="369253" x="1493" y="4081" />
-		<SafeMoveTo questId="369253" x="1507" y="4155" />
-		<SafeMoveTo questId="369253" x="1390" y="4087" />
-		<SafeMoveTo questId="369253" x="1612" y="3919" />
-		<SafeMoveTo questId="369253" x="1495" y="3824" />
-		<SafeMoveTo questId="369253" x="1437" y="4032" />
-		<SafeMoveTo questId="369253" x="1410" y="3960" />
-		<SafeMoveTo questId="369253" x="1335" y="3959" />
-		<SafeMoveTo questId="369253" x="1274" y="3902" />
-		<SafeMoveTo questId="369253" x="1137" y="4078" />
-		<SafeMoveTo questId="369253" x="893" y="3992" />
-		<SafeMoveTo questId="369253" x="1159" y="3966" />
-		<SafeMoveTo questId="369253" x="1262" y="3750" />
-		<SafeMoveTo questId="369253" x="930" y="3727" />
-		<SafeMoveTo questId="369253" x="896" y="3920" z="90" />
-		<SafeMoveTo questId="369253" x="937" y="3943" />
-		<SafeMoveTo questId="369253" x="1121" y="3807" /> 
-		
-		<!-- 369273: Kill Percepeus -->
-		<SafeMoveTo questId="369273" x="1726" y="4019" />
-		<SafeMoveTo questId="369273" x="1820" y="3814" />
-		<SafeMoveTo questId="369273" x="1616" y="3873" />
-		<SafeMoveTo questId="369273" x="1645" y="4014" />
-		<SafeMoveTo questId="369273" x="1739" y="4180" />
-		<SafeMoveTo questId="369273" x="1604" y="4198" />
-		<SafeMoveTo questId="369273" x="1624" y="4081" />
-		<SafeMoveTo questId="369273" x="1493" y="4081" />
-		<SafeMoveTo questId="369273" x="1507" y="4155" />
-		<SafeMoveTo questId="369273" x="1390" y="4087" />
-		<SafeMoveTo questId="369273" x="1612" y="3919" />
-		<SafeMoveTo questId="369273" x="1495" y="3824" />
-		<SafeMoveTo questId="369273" x="1437" y="4032" />
-		<SafeMoveTo questId="369273" x="1410" y="3960" />
-		<SafeMoveTo questId="369273" x="1335" y="3959" />
-		<SafeMoveTo questId="369273" x="1274" y="3902" />
-		<SafeMoveTo questId="369273" x="1137" y="4078" />
-		<SafeMoveTo questId="369273" x="893" y="3992" />
-		<SafeMoveTo questId="369273" x="1159" y="3966" />
-		<SafeMoveTo questId="369273" x="1262" y="3750" />
-		<SafeMoveTo questId="369273" x="930" y="3727" />
-		<SafeMoveTo questId="369273" x="896" y="3920" z="90" />
-		<SafeMoveTo questId="369273" x="937" y="3943" />
-		<SafeMoveTo questId="369273" x="1121" y="3807" /> 
-		
-		<!-- 369257: Kill Hrugowl -->
-		<SafeMoveTo questId="369257" x="1726" y="4019" />
-		<SafeMoveTo questId="369257" x="1820" y="3814" />
-		<SafeMoveTo questId="369257" x="1616" y="3873" />
-		<SafeMoveTo questId="369257" x="1645" y="4014" />
-		<SafeMoveTo questId="369257" x="1739" y="4180" />
-		<SafeMoveTo questId="369257" x="1604" y="4198" />
-		<SafeMoveTo questId="369257" x="1624" y="4081" />
-		<SafeMoveTo questId="369257" x="1493" y="4081" />
-		<SafeMoveTo questId="369257" x="1507" y="4155" />
-		<SafeMoveTo questId="369257" x="1390" y="4087" />
-		<SafeMoveTo questId="369257" x="1612" y="3919" />
-		<SafeMoveTo questId="369257" x="1495" y="3824" />
-		<SafeMoveTo questId="369257" x="1437" y="4032" />
-		<SafeMoveTo questId="369257" x="1410" y="3960" />
-		<SafeMoveTo questId="369257" x="1335" y="3959" />
-		<SafeMoveTo questId="369257" x="1274" y="3902" />
-		<SafeMoveTo questId="369257" x="1137" y="4078" />
-		<SafeMoveTo questId="369257" x="893" y="3992" />
-		<SafeMoveTo questId="369257" x="1159" y="3966" />
-		<SafeMoveTo questId="369257" x="1262" y="3750" />
-		<SafeMoveTo questId="369257" x="930" y="3727" />
-		<SafeMoveTo questId="369257" x="896" y="3920" z="90" />
-		<SafeMoveTo questId="369257" x="937" y="3943" />
-		<SafeMoveTo questId="369257" x="1121" y="3807" /> 
-
-		
-	</EndChildren> 		
-	
-	<LogMessage quest="1" output="Moving to Objective Marker" />
-	
-	<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="10" interactAttempts="-1" isPortal="False" maxSearchDistance="1300" timeout="60000" />
-		
-	<ToggleTargeting questId="1" combat="True" killRadius="45" />		
-	
 	<!-- 
 	369271: Kill Theodyn
 	369253: Kill Reggrel
@@ -144,42 +15,136 @@
 		HasQuest(369271) or
 		HasQuest(369253) or 
 		HasQuest(369273) or
-		HasQuest(369257)">			
+		HasQuest(369257)">	
+		
+		<LogMessage questId="369271" output="Bounty > 369271: Kill Theodyn" /> 	
+		<LogMessage questId="369253" output="Bounty > 369253: Kill Reggrel" /> 	
+		<LogMessage questId="369273" output="Bounty > 369273: Kill Percepeus" /> 	
+		<LogMessage questId="369257" output="Bounty > 369257: Kill Hrugowl" /> 		
 
-		<LogMessage quest="1" output="Killing remaining monsters for bounty" />		
-		
-		<EndChildren when="BountyComplete">			
+		<!-- Northern Highlands Waypoint -->
+		<While condition="CurrentLevelAreaId != 19941 and CurrentLevelAreaId != 1199 and CurrentLevelAreaId != 19943">						
+			<UseWaypoint waypointNumber="14" questId="1"/>	
+			<WaitTimer questId="1" stepId="2" waitTime="6000" />
+		</While>	
 	
-			<SafeMoveTo questId="1" x="1612" y="3919" />
-			<SafeMoveTo questId="1" x="1495" y="3824" />
-			<SafeMoveTo questId="1" x="1437" y="4032" />
-			<SafeMoveTo questId="1" x="1410" y="3960" />
-			<SafeMoveTo questId="1" x="1335" y="3959" />
-			<SafeMoveTo questId="1" x="1274" y="3902" />
-			<SafeMoveTo questId="1" x="1137" y="4078" />
-			<SafeMoveTo questId="1" x="893" y="3992" />
-			<SafeMoveTo questId="1" x="1159" y="3966" />
-			<SafeMoveTo questId="1" x="1262" y="3750" />
-			<SafeMoveTo questId="1" x="930" y="3727" />
-			<SafeMoveTo questId="1" x="896" y="3920" z="90" />
-			<SafeMoveTo questId="1" x="937" y="3943" />
-			<SafeMoveTo questId="1" x="1121" y="3807" /> 
-			<SafeMoveTo questId="1" x="1726" y="4019" />
-			<SafeMoveTo questId="1" x="1820" y="3814" />
-			<SafeMoveTo questId="1" x="1616" y="3873" />
-			<SafeMoveTo questId="1" x="1645" y="4014" />
-			<SafeMoveTo questId="1" x="1739" y="4180" />
-			<SafeMoveTo questId="1" x="1604" y="4198" />
-			<SafeMoveTo questId="1" x="1624" y="4081" />
-			<SafeMoveTo questId="1" x="1493" y="4081" />
-			<SafeMoveTo questId="1" x="1507" y="4155" />
-			<SafeMoveTo questId="1" x="1390" y="4087" />
-		
-		</EndChildren> 			
+		<If condition="CurrentLevelAreaId == 19941 or CurrentLevelAreaId == 1199 or CurrentLevelAreaId == 19943">			
+
+			<!-- Settings -->
+			<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>				
+
+			<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="20" />			
+			<ToggleTargeting questId="1" combat="True" killRadius="45" />			
+
+			<!-- 369271: Kill Theodyn -->
+			<SafeMoveTo questId="369271" x="1726" y="4019" />
+			<SafeMoveTo questId="369271" x="1820" y="3814" />
+			<SafeMoveTo questId="369271" x="1616" y="3873" />
+			<SafeMoveTo questId="369271" x="1645" y="4014" />
+			<SafeMoveTo questId="369271" x="1739" y="4180" />
+			<SafeMoveTo questId="369271" x="1604" y="4198" />
+			<SafeMoveTo questId="369271" x="1624" y="4081" />
+			<SafeMoveTo questId="369271" x="1493" y="4081" />
+			<SafeMoveTo questId="369271" x="1507" y="4155" />
+			<SafeMoveTo questId="369271" x="1390" y="4087" />
+			<SafeMoveTo questId="369271" x="1612" y="3919" />
+			<SafeMoveTo questId="369271" x="1495" y="3824" />
+			<SafeMoveTo questId="369271" x="1437" y="4032" />
+			<SafeMoveTo questId="369271" x="1410" y="3960" />
+			<SafeMoveTo questId="369271" x="1335" y="3959" />
+			<SafeMoveTo questId="369271" x="1274" y="3902" />
+			<SafeMoveTo questId="369271" x="1137" y="4078" />
+			<SafeMoveTo questId="369271" x="893" y="3992" />
+			<SafeMoveTo questId="369271" x="1159" y="3966" />
+			<SafeMoveTo questId="369271" x="1262" y="3750" />
+			<SafeMoveTo questId="369271" x="930" y="3727" />
+			<SafeMoveTo questId="369271" x="896" y="3920" z="90" />
+			<SafeMoveTo questId="369271" x="937" y="3943" />
+			<SafeMoveTo questId="369271" x="1121" y="3807" /> 
+
+			<!-- 369253: Kill Reggrel -->	
+			<SafeMoveTo questId="369253" x="1726" y="4019" />
+			<SafeMoveTo questId="369253" x="1820" y="3814" />
+			<SafeMoveTo questId="369253" x="1616" y="3873" />
+			<SafeMoveTo questId="369253" x="1645" y="4014" />
+			<SafeMoveTo questId="369253" x="1739" y="4180" />
+			<SafeMoveTo questId="369253" x="1604" y="4198" />
+			<SafeMoveTo questId="369253" x="1624" y="4081" />
+			<SafeMoveTo questId="369253" x="1493" y="4081" />
+			<SafeMoveTo questId="369253" x="1507" y="4155" />
+			<SafeMoveTo questId="369253" x="1390" y="4087" />
+			<SafeMoveTo questId="369253" x="1612" y="3919" />
+			<SafeMoveTo questId="369253" x="1495" y="3824" />
+			<SafeMoveTo questId="369253" x="1437" y="4032" />
+			<SafeMoveTo questId="369253" x="1410" y="3960" />
+			<SafeMoveTo questId="369253" x="1335" y="3959" />
+			<SafeMoveTo questId="369253" x="1274" y="3902" />
+			<SafeMoveTo questId="369253" x="1137" y="4078" />
+			<SafeMoveTo questId="369253" x="893" y="3992" />
+			<SafeMoveTo questId="369253" x="1159" y="3966" />
+			<SafeMoveTo questId="369253" x="1262" y="3750" />
+			<SafeMoveTo questId="369253" x="930" y="3727" />
+			<SafeMoveTo questId="369253" x="896" y="3920" z="90" />
+			<SafeMoveTo questId="369253" x="937" y="3943" />
+			<SafeMoveTo questId="369253" x="1121" y="3807" /> 
+			
+			<!-- 369273: Kill Percepeus -->
+			<SafeMoveTo questId="369273" x="1726" y="4019" />
+			<SafeMoveTo questId="369273" x="1820" y="3814" />
+			<SafeMoveTo questId="369273" x="1616" y="3873" />
+			<SafeMoveTo questId="369273" x="1645" y="4014" />
+			<SafeMoveTo questId="369273" x="1739" y="4180" />
+			<SafeMoveTo questId="369273" x="1604" y="4198" />
+			<SafeMoveTo questId="369273" x="1624" y="4081" />
+			<SafeMoveTo questId="369273" x="1493" y="4081" />
+			<SafeMoveTo questId="369273" x="1507" y="4155" />
+			<SafeMoveTo questId="369273" x="1390" y="4087" />
+			<SafeMoveTo questId="369273" x="1612" y="3919" />
+			<SafeMoveTo questId="369273" x="1495" y="3824" />
+			<SafeMoveTo questId="369273" x="1437" y="4032" />
+			<SafeMoveTo questId="369273" x="1410" y="3960" />
+			<SafeMoveTo questId="369273" x="1335" y="3959" />
+			<SafeMoveTo questId="369273" x="1274" y="3902" />
+			<SafeMoveTo questId="369273" x="1137" y="4078" />
+			<SafeMoveTo questId="369273" x="893" y="3992" />
+			<SafeMoveTo questId="369273" x="1159" y="3966" />
+			<SafeMoveTo questId="369273" x="1262" y="3750" />
+			<SafeMoveTo questId="369273" x="930" y="3727" />
+			<SafeMoveTo questId="369273" x="896" y="3920" z="90" />
+			<SafeMoveTo questId="369273" x="937" y="3943" />
+			<SafeMoveTo questId="369273" x="1121" y="3807" /> 
+			
+			<!-- 369257: Kill Hrugowl -->
+			<SafeMoveTo questId="369257" x="1726" y="4019" />
+			<SafeMoveTo questId="369257" x="1820" y="3814" />
+			<SafeMoveTo questId="369257" x="1616" y="3873" />
+			<SafeMoveTo questId="369257" x="1645" y="4014" />
+			<SafeMoveTo questId="369257" x="1739" y="4180" />
+			<SafeMoveTo questId="369257" x="1604" y="4198" />
+			<SafeMoveTo questId="369257" x="1624" y="4081" />
+			<SafeMoveTo questId="369257" x="1493" y="4081" />
+			<SafeMoveTo questId="369257" x="1507" y="4155" />
+			<SafeMoveTo questId="369257" x="1390" y="4087" />
+			<SafeMoveTo questId="369257" x="1612" y="3919" />
+			<SafeMoveTo questId="369257" x="1495" y="3824" />
+			<SafeMoveTo questId="369257" x="1437" y="4032" />
+			<SafeMoveTo questId="369257" x="1410" y="3960" />
+			<SafeMoveTo questId="369257" x="1335" y="3959" />
+			<SafeMoveTo questId="369257" x="1274" y="3902" />
+			<SafeMoveTo questId="369257" x="1137" y="4078" />
+			<SafeMoveTo questId="369257" x="893" y="3992" />
+			<SafeMoveTo questId="369257" x="1159" y="3966" />
+			<SafeMoveTo questId="369257" x="1262" y="3750" />
+			<SafeMoveTo questId="369257" x="930" y="3727" />
+			<SafeMoveTo questId="369257" x="896" y="3920" z="90" />
+			<SafeMoveTo questId="369257" x="937" y="3943" />
+			<SafeMoveTo questId="369257" x="1121" y="3807" /> 
+
+		</If>
 		
 	</If>		
-
-		
 	
 	<WaitTimer questId="1" stepId="2" waitTime="950" />		
 	<LoadProfile file="act1.xml" />

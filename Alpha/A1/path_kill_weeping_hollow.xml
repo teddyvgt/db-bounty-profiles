@@ -5,121 +5,6 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
-	<!-- Weeping Hollow Waypoint -->
-	<While condition="CurrentLevelAreaId != 19954">			
-		<UseWaypoint waypointNumber="6" questId="1"/>	
-		<WaitTimer questId="1" stepId="2" waitTime="6000" /></While>	
-	
-	<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
-	<If condition="CurrentLevelAreaId != 19954">		
-		<WaitTimer questId="1" stepId="2" waitTime="3000" />	
-	</If>			
-
-	<WaitTimer questId="1" stepId="2" waitTime="3000" />
-	
-	
-	
-	<!-- Settings -->
-	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>			
-	
-	<EndChildren when="ObjectiveMarkerFound" distance="1000">		
-
-		<!-- 347099: Kill Mira -->
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2869" y="2369" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2682" y="2297" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2543" y="2178" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2595" y="1983" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2816" y="2222" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2947" y="2281" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="3029" y="2075" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2942" y="1887" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2858" y="2146" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2770" y="2042" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2809" y="1860" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2564" y="1976" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2425" y="2097" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2192" y="2038" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2317" y="1885" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2320" y="1719" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2463" y="1677" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2571" y="1866" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2445" y="1925" />
-		<SafeMoveTo pathPrecision="10" questId="347099" x="2428" y="1798" />
-
-		<!-- 369399: Kill Horrus -->
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2869" y="2369" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2682" y="2297" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2543" y="2178" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2595" y="1983" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2816" y="2222" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2947" y="2281" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="3029" y="2075" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2942" y="1887" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2858" y="2146" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2770" y="2042" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2809" y="1860" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2564" y="1976" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2425" y="2097" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2192" y="2038" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2317" y="1885" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2320" y="1719" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2463" y="1677" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2571" y="1866" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2445" y="1925" />
-		<SafeMoveTo pathPrecision="10" questId="369399" x="2428" y="1798" />
-
-		<!-- 369404: Kill Kankerrot -->
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2869" y="2369" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2682" y="2297" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2543" y="2178" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2595" y="1983" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2816" y="2222" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2947" y="2281" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="3029" y="2075" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2942" y="1887" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2858" y="2146" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2770" y="2042" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2809" y="1860" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2564" y="1976" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2425" y="2097" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2192" y="2038" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2317" y="1885" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2320" y="1719" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2463" y="1677" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2571" y="1866" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2445" y="1925" />
-		<SafeMoveTo pathPrecision="10" questId="369404" x="2428" y="1798" />
-
-		<!-- 345490: Kill Mange -->
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2869" y="2369" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2682" y="2297" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2543" y="2178" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2595" y="1983" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2816" y="2222" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2947" y="2281" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="3029" y="2075" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2942" y="1887" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2858" y="2146" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2770" y="2042" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2809" y="1860" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2564" y="1976" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2425" y="2097" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2192" y="2038" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2317" y="1885" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2320" y="1719" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2463" y="1677" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2571" y="1866" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2445" y="1925" />
-		<SafeMoveTo pathPrecision="10" questId="345490" x="2428" y="1798" />
-		
-	</EndChildren> 		
-	
-	<LogMessage quest="1" output="Moving to Objective Marker" />		
-	
-	<MoveToMapMarker questId="1" markerNameHash="-1" actorId="0" interactRange="5" pathPrecision="10" interactAttempts="-1" isPortal="False" maxSearchDistance="1050" timeout="60000" />
-		
-	<ToggleTargeting questId="1" combat="True" killRadius="45" />		
-	
 	<!-- 
 	347099: Kill Mira		
 	369399: Kill Horrus
@@ -132,36 +17,118 @@
 		HasQuest(369404) or
 		HasQuest(345490)">	
 		
-		<LogMessage quest="1" output="Killing remaining monsters for bounty" />			
-		
-		<EndChildren when="BountyComplete">			
-		
-			<SafeMoveTo pathPrecision="10" questId="1" x="2858" y="2146" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="2770" y="2042" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="2809" y="1860" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="2564" y="1976" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="2425" y="2097" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="2192" y="2038" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="2317" y="1885" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="2320" y="1719" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="2463" y="1677" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="2571" y="1866" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="2445" y="1925" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="2428" y="1798" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="2869" y="2369" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="2682" y="2297" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="2543" y="2178" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="2595" y="1983" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="2816" y="2222" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="2947" y="2281" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="3029" y="2075" />
-			<SafeMoveTo pathPrecision="10" questId="1" x="2942" y="1887" />			
-		
-		</EndChildren> 		
-		
-	</If>			
+		<LogMessage questId="347099" output="Bounty > 347099: Kill Mira" /> 	
+		<LogMessage questId="369399" output="Bounty > 369399: Kill Horrus" /> 	
+		<LogMessage questId="369404" output="Bounty > 369404: Kill Kankerrot" /> 	
+		<LogMessage questId="345490" output="Bounty > 345490: Kill Mange" /> 				
 
+		<!-- Weeping Hollow Waypoint -->
+		<While condition="CurrentLevelAreaId != 19954">			
+			<UseWaypoint waypointNumber="6" questId="1"/>	
+			<WaitTimer questId="1" stepId="2" waitTime="6000" />
+		</While>		
 	
+		<If condition="CurrentLevelAreaId == 19954">			
+
+			<!-- Settings -->
+			<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>				
+
+			<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="20" />			
+			<ToggleTargeting questId="1" combat="True" killRadius="45" />	
+
+			<!-- 347099: Kill Mira -->
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2869" y="2369" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2682" y="2297" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2543" y="2178" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2595" y="1983" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2816" y="2222" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2947" y="2281" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="3029" y="2075" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2942" y="1887" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2858" y="2146" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2770" y="2042" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2809" y="1860" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2564" y="1976" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2425" y="2097" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2192" y="2038" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2317" y="1885" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2320" y="1719" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2463" y="1677" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2571" y="1866" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2445" y="1925" />
+			<SafeMoveTo pathPrecision="10" questId="347099" x="2428" y="1798" />
+
+			<!-- 369399: Kill Horrus -->
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2869" y="2369" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2682" y="2297" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2543" y="2178" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2595" y="1983" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2816" y="2222" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2947" y="2281" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="3029" y="2075" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2942" y="1887" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2858" y="2146" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2770" y="2042" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2809" y="1860" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2564" y="1976" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2425" y="2097" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2192" y="2038" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2317" y="1885" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2320" y="1719" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2463" y="1677" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2571" y="1866" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2445" y="1925" />
+			<SafeMoveTo pathPrecision="10" questId="369399" x="2428" y="1798" />
+
+			<!-- 369404: Kill Kankerrot -->
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2869" y="2369" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2682" y="2297" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2543" y="2178" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2595" y="1983" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2816" y="2222" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2947" y="2281" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="3029" y="2075" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2942" y="1887" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2858" y="2146" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2770" y="2042" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2809" y="1860" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2564" y="1976" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2425" y="2097" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2192" y="2038" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2317" y="1885" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2320" y="1719" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2463" y="1677" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2571" y="1866" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2445" y="1925" />
+			<SafeMoveTo pathPrecision="10" questId="369404" x="2428" y="1798" />
+
+			<!-- 345490: Kill Mange -->
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2869" y="2369" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2682" y="2297" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2543" y="2178" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2595" y="1983" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2816" y="2222" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2947" y="2281" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="3029" y="2075" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2942" y="1887" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2858" y="2146" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2770" y="2042" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2809" y="1860" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2564" y="1976" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2425" y="2097" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2192" y="2038" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2317" y="1885" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2320" y="1719" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2463" y="1677" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2571" y="1866" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2445" y="1925" />
+			<SafeMoveTo pathPrecision="10" questId="345490" x="2428" y="1798" />
+		
+		</If>
+		
+	</If>
 	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
 	<LoadProfile file="act1.xml" />

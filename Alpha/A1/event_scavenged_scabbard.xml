@@ -56,21 +56,22 @@
 		<!--  Watch Tower Level 1 -->
 		<If condition="CurrentLevelAreaId == 82326">
 		
-			<MoveToMapMarker questId="1" stepId="1" exitNameHash="-1" destinationWorldId="-1" interactRange="5"  />		
-
-			<If condition="CurrentLevelAreaId == 82326">			
-			
-				<!--  Search for Watch Tower -->
+			<!-- Attempt to go straight to the OBJECTIVE marker -->
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="20" />			
+<!-- 			<MoveToObjective questId="1" markerDistance="3000" actorDistance="20" interactAttempts="-1" markerNameHash="497382904" />	
+ -->
+			<!--  Search for Watch Tower 2 -->
+			<If condition="CurrentLevelAreaId == 82326">										
 				<TrinityExploreDungeon questId="1" stepId="1" boxTolerance="0.05" boxSize="35" until="ExitFound" exitNameHash="497382904" ignoreMarkers="False">
 					<PrioritizeScenes>
 						<PriorityScene sceneName="Exit" />
 					</PrioritizeScenes>				
-				</TrinityExploreDungeon>			
-
-				<!-- Requires a low interact range or bot gets stuck above the portal on the balcony -->
-				<MoveToActor questId="344488" actorId="176001" interactRange="3" name="g_Portal_ArchTall_Orange-42457" isPortal="True" destinationWorldId="82313" pathPrecision="5" pathPointLimit="250" statusText="" />
-				
+				</TrinityExploreDungeon>							
 			</If>
+			
+			<!-- Requires a low interact range or bot gets stuck above the portal on the balcony -->
+			<MoveToActor questId="344488" actorId="176001" interactRange="5" name="g_Portal_ArchTall_Orange-42457" isPortal="True" destinationWorldId="82313" pathPrecision="5" pathPointLimit="250" statusText="" />
+			
 			
 			<If condition="CurrentLevelAreaId == 82326">
 			
@@ -108,7 +109,7 @@
 			<WaitTimer questId="1" stepId="1" waitTime="1000" />		
 			
 			<If condition="HasQuest(344488)">
-				<LogMessage quest="1" step="1" output="Maybe something went wrong...fully exploring dungeon" />	
+				<LogMessage questId="1" step="1" output="Maybe something went wrong...fully exploring dungeon" />	
 				<MoveToActor questId="1" stepId="1" actorId="81609" interactRange="8" name="A1_UniqueVendor_Armorer-3541"  pathPrecision="5" pathPointLimit="250" statusText="" /> 				
 				<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="5"  stayAfterBounty="False"/>
 				<MoveToActor questId="1" stepId="1" actorId="222404" interactRange="9" name="a1dun_highlands_JeweledScabbard-4736"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			

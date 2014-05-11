@@ -6,7 +6,12 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
-	<If condition="HasQuest(344547)">		
+	<!-- 
+	344547: X1_Bounty_A1_Highlands_Clear_CaveMoonClan2
+	-->
+	<If condition="HasQuest(344547)">	
+
+		<LogMessage questId="344547" output="Bounty > 344547: Clear Clan of the Moon Cave" /> 	
 	
 		<!-- Settings -->
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
@@ -22,10 +27,13 @@
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
 		</If>			
 
-		<!-- Attempt to go straight to the entrance using marker -->
-		<MoveToMapMarker questId="1" markerNameHash="-1" actorId="176008" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="82502" maxSearchDistance="1500" timeout="60000" />						
-		<WaitTimer questId="1" stepId="2" waitTime="1000" />				
-		
+		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
+		<If condition="CurrentWorldId == 71150">
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="20" />
+<!-- 			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="" /> -->
+		</If>	
+
 		<!--Find cave 0-->		
 		<If condition="CurrentWorldId == 71150">
 			<SafeMoveTo questId="1" stepId="2" x="2318" y="4508" z="0"/> 
