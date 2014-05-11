@@ -93,10 +93,10 @@ namespace QuestTools.ProfileTags.Movement
             if (MaxSearchDistance <= 0)
                 MaxSearchDistance = 10;
 
-            if (MarkerDistance < 200)
+            if (MarkerDistance == null || MarkerDistance < 200)
                 MarkerDistance = 3000;
-            if (ActorDistance < 5)
-                ActorDistance = 20;
+            if (ActorDistance == null || ActorDistance < 5)
+                ActorDistance = 80;
 
             QuestToolsSettings.Instance.DebugEnabled = true;
 

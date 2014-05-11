@@ -30,7 +30,7 @@
 		<If condition="CurrentWorldId == 71150">
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 			<MoveToObjective questId="1" interactRange="20"  pathPrecision="20" />
-			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="2036518712" />					
+			<MoveToMapMarker questId="1" interactRange="30" isPortal="True" markerNameHash="2036518712" />					
 		</If>	
 
 		<!-- Find Khazra Den #1-->
