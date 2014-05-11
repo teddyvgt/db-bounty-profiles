@@ -12,7 +12,7 @@
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>			
 	
 		<!-- Caverns of Araneae Waypoint -->	
-		<While condition="CurrentWorldId != 180550">			
+		<While condition="CurrentWorldId != 180550 and CurrentWorldId != 182976">			
 			<UseWaypoint waypointNumber="12" questId="1"/>	
 			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
 		</While>	

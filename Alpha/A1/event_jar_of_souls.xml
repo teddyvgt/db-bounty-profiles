@@ -17,7 +17,7 @@
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>	
 		
 		<!-- Cemetery of the Forsaken Waypoint -->
-		<While condition="CurrentLevelAreaId != 72712 and CurrentWorldId != 72636">		
+		<While condition="CurrentLevelAreaId != 72712 and CurrentWorldId != 72636 and CurrentWorldId != 71150">		
 			<UseWaypoint waypointNumber="7" questId="1"/>	
 			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
 		</While>		
