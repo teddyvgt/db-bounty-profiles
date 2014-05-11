@@ -26,12 +26,6 @@
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
 		</If>			
 
-		<!-- Try objective marker -->		
-		<If condition="CurrentWorldId == 58983">
-			<WaitTimer questId="1" stepId="2" waitTime="1000" />		
-			<MoveToObjective questId="1" interactRange="20"  pathPrecision="20" />			
-		</If>		
-
 		<!-- Try actual marker (objective disappears if exit was already used) -->		
 		<If condition="CurrentWorldId == 58983">
 			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="1317387500" />			
