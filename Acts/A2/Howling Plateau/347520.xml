@@ -1,0 +1,84 @@
+<Profile>
+
+<Name>Clear Lair of the Lacuni</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<UseWaypoint waypointNumber="19" questId="1"/>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+
+	<If condition="HasQuest(347520)">
+		<!-- Find the caverns -->
+		<MoveToMapMarker questId="1" x="2037.23" y="1614.266" z="203.9635" markerNameHash="288776660" actorId="185067" interactRange="20" pathPrecision="40" pathPointLimit="250" isPortal="True" destinationWorldId="60838" />
+		<WaitTimer questId="1" stepId="2" waitTime="1000" />
+		<If condition="CurrentWorldId == 70885 and ActorExistsAt(185067, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="1" stepId ="2" actorId="185067" interactRange="10" pathPrecision="10" isPortal="True" destinationWorldId="60838" /> 
+		</If>
+		
+		<If condition="CurrentWorldId == 70885">
+			<WaitTimer questId="1" stepId="2" waitTime="2500" />
+			<MoveToMapMarker questId="1" x="2285.899" y="1633.591" z="207.8471" markerNameHash="288776660" actorId="185067" interactRange="20" pathPrecision="40" pathPointLimit="250" isPortal="True" destinationWorldId="60838" />
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<If condition="CurrentWorldId == 70885 and ActorExistsAt(185067, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+				<MoveToActor questId="1" stepId ="2" actorId="185067" interactRange="10" pathPrecision="10" isPortal="True" destinationWorldId="60838" /> 
+			</If>		
+		</If>
+		
+		<If condition="CurrentWorldId == 70885">
+			<WaitTimer questId="1" stepId="2" waitTime="2500" />
+			<MoveToMapMarker questId="1" x="2333.686" y="1131.099" z="205.0582" markerNameHash="288776660" actorId="185067" interactRange="20" pathPrecision="40" pathPointLimit="250" isPortal="True" destinationWorldId="60838" />
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<If condition="CurrentWorldId == 70885 and ActorExistsAt(185067, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+				<MoveToActor questId="1" stepId ="2" actorId="185067" interactRange="10" pathPrecision="10" isPortal="True" destinationWorldId="60838" /> 
+			</If>			
+		</If>
+		
+		<If condition="CurrentWorldId == 70885">
+			<WaitTimer questId="1" stepId="2" waitTime="2500" />
+			<MoveToMapMarker questId="1" x="2443.748" y="1323.829" z="207.587" markerNameHash="288776660" actorId="185067" interactRange="20" pathPrecision="40" pathPointLimit="250" isPortal="True" destinationWorldId="60838" /> 
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<If condition="CurrentWorldId == 70885 and ActorExistsAt(185067, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+				<MoveToActor questId="1" stepId ="2" actorId="185067" interactRange="10" pathPrecision="10" isPortal="True" destinationWorldId="60838" /> 
+			</If>		
+		</If>
+		
+		<If condition="CurrentWorldId == 70885">
+			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="185067" boxSize="20" boxTolerance=".80" pathPrecision="40">
+				<IgnoreScenes>
+					<IgnoreScene sceneId="31345" />
+				</IgnoreScenes>
+			</TrinityExploreDungeon>
+			<MoveToMapMarker questId="1" stepId="2" markerNameHash="288776660" actorId="185067" isPortal="True" destinationWorldId="60838" interactRange="20"/>
+		</If>
+		
+		<WaitTimer questId="1" stepId="2" waitTime="1000" />
+		<SafeMoveTo questId="1" x="208" y="72" z="14" pathPrecision="20" statusText="" />
+		<SafeMoveTo questId="1" x="158" y="174" z="-1" pathPrecision="20" statusText="" />
+		<SafeMoveTo questId="1" x="70" y="202" z="-1" pathPrecision="20" statusText="" />
+		<SafeMoveTo questId="1" x="119" y="71" z="-1" pathPrecision="20" statusText="" />
+		<SafeMoveTo questId="1" x="171" y="166" z="-1" pathPrecision="20" statusText="" />
+		<WaitTimer questId="1" stepId="2" waitTime="3000" />
+		<WaitTimer questId="1" stepId="2" waitTime="3000" />
+		<WaitTimer questId="1" stepId="2" waitTime="3000" />
+		<WaitTimer questId="1" stepId="2" waitTime="3000" />
+		<SafeMoveTo questId="1" x="210" y="144" z="13" pathPrecision="20" statusText="" />
+		<WaitTimer questId="1" stepId="2" waitTime="500" />
+		<SafeMoveTo questId="1" x="171" y="166" z="-1" pathPrecision="20" statusText="" />
+		<WaitTimer questId="1" stepId="2" waitTime="500" />
+		<SafeMoveTo questId="1" x="210" y="144" z="13" pathPrecision="20" statusText="" />
+		<WaitTimer questId="1" stepId="2" waitTime="500" />
+		<SafeMoveTo questId="1" x="171" y="166" z="-1" pathPrecision="20" statusText="" />
+		<WaitTimer questId="1" stepId="2" waitTime="500" />
+		<SafeMoveTo questId="1" x="210" y="144" z="13" pathPrecision="20" statusText="" />
+		<WaitTimer questId="1" stepId="2" waitTime="500" />
+		<SafeMoveTo questId="1" x="171" y="166" z="-1" pathPrecision="20" statusText="" />
+		<WaitTimer questId="1" stepId="2" waitTime="500" />
+		
+		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance=".10" boxSize="15" />
+    </If>
+	<LoadProfile file="../act2.xml" />
+</Order>
+</Profile>

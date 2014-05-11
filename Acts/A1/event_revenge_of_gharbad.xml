@@ -5,7 +5,12 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />>
 <Order>
 
+	<!-- 
+	344486: X1_Bounty_A1_Highlands_Event_Gharbad_The_Weak 
+	-->
 	<If condition="HasQuest(344486)">		
+	
+		<LogMessage questId="369243" output="Bounty > 344486: X1_Bounty_A1_Highlands_Event_Gharbad_The_Weak" /> 	
 	
 		<!-- Settings -->
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>	

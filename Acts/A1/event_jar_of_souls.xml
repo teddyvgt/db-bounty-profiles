@@ -1,4 +1,4 @@
-<!-- X1_Bounty_A1_Cemetery_Event_JarOfSouls (349016)   -->
+
 <Profile>
 <Name>Jar of Souls (349016)</Name>
 <KillMonsters>True</KillMonsters>
@@ -6,13 +6,18 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 	
+	<!-- 
+	349016: X1_Bounty_A1_Cemetery_Event_JarOfSouls
+	-->	
 	<If condition="HasQuest(349016)">		
+	
+		<LogMessage questId="349016" output="Bounty > 349016: Jar of Souls" /> 	
 	
 		<!-- Settings -->
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>	
 		
 		<!-- Cemetery of the Forsaken Waypoint -->
-		<While condition="CurrentLevelAreaId != 72712 and CurrentWorldId != 72636">		
+		<While condition="CurrentLevelAreaId != 72712 and CurrentWorldId != 72636 and CurrentWorldId != 71150">		
 			<UseWaypoint waypointNumber="7" questId="1"/>	
 			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
 		</While>		
@@ -21,6 +26,17 @@
 		<If condition="CurrentLevelAreaId != 72712 and CurrentWorldId != 72636">			
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
 		</If>		
+		
+		<!-- Go straight to the entrance if OBJECTIVE marker is visible or MoveToMapMarker if we already know where it is -->	
+		<If condition="CurrentWorldId == 71150">		
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />	
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />		
+			<MoveToMapMarker markerNameHash="-1965109038" questId="1" destinationWorldId="-1" interactRange="20"  pathPrecision="20" />				
+			<If condition="MarkerExistsAt(-1965109038, Me.Position.X, Me.Position.Y, Me.Position.Z, 30)">
+				<MoveToActor questId="1" stepId="2" actorId="176002" isPortal="True" destinationWorldId="-1" interactRange="20"  />
+				<WaitTimer questId="1" stepId="2" waitTime="3000" />				
+			</If>			
+		</If>				
 	
 		<!--  Cemetery of the Forsaken Entrance #1 -->
 		<If condition="CurrentWorldId == 71150">		
@@ -63,14 +79,26 @@
 
 		<!--  Defiled Crypt -->
 		<If condition="CurrentWorldId == 72636">
+
+			<!-- Explore for Event Scene -->
+			<TrinityExploreDungeon questId="1"  boxTolerance="0.30" boxSize="35" sceneName="_JarSouls_" until="SceneFound" ignoreMarkers="False">			
+				<PriorityScenes>								
+					<PriorityScene sceneName="_JarSouls_" />
+				</PriorityScenes>
+			</TrinityExploreDungeon>				
 		
-			<!-- Find the Jar of Souls -->
-			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="93713" boxSize="15" boxTolerance="0.35" objectDistance="55" statusText="Searching for unopened jar">
-				<AlternateActors>
-					<AlternateActor actorId="219334" objectDistance="100" />
-				</AlternateActors>
-			</TrinityExploreDungeon>
-			
+			<!-- Attempt to go straight to the OBJECTIVE marker -->
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />
+
+			<!-- Look for the jar if its not nearby -->		
+			<If condition="HasQuest(349016) and not ActorExistsAt(93713, Me.Position.X, Me.Position.Y, Me.Position.Z, 100) and not ActorExistsAt(219334, Me.Position.X, Me.Position.Y, Me.Position.Z, 100)">
+				<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="93713" boxSize="15" boxTolerance="0.35" objectDistance="55" statusText="Searching for unopened jar">
+					<AlternateActors>
+						<AlternateActor actorId="219334" objectDistance="100" />
+					</AlternateActors>
+				</TrinityExploreDungeon>			
+			</If>				
+		
 			<ToggleTargeting questId="1" combat="True" killRadius="45" />		
 			
 			<!-- Handle Jar #1 -->

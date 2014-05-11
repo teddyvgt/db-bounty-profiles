@@ -1,0 +1,30 @@
+<Profile>
+
+<Name>Miners Gold</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<UseWaypoint waypointNumber="19" questId="1"/>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+
+	<If condition="HasQuest(347654)">
+		<!-- Do event -->
+		<WaitTimer questId="1" stepId="2" waitTime="2000" />
+		<SafeMoveTo questId="1" stepId="2" x="2257" y="1311" z="230" pathPrecision="20" pathPointLimit="250" statusText="" /> 
+		<MoveToActor questId="1" stepId="2" x="2257" y="1298" z="230" actorId="2924" interactRange="7"  pathPrecision="10" pathPointLimit="250" statusText="" />
+		
+		<!-- Do the waves -->
+		<While condition="not ActorExistsAt(260238, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<SafeMoveTo questId="1" stepId="2" x="2243" y="1278" z="230" pathPrecision="10" pathPointLimit="250" statusText="" />
+			<SafeMoveTo questId="1" stepId="2" x="2245" y="1335" z="230" pathPrecision="10" pathPointLimit="250" statusText="" /> 
+		</While>
+		<!-- Get chest -->
+		<MoveToActor questId="1" stepId="2" x="2257" y="1298" z="230" actorId="260238" interactRange="7"  pathPrecision="10" pathPointLimit="250" statusText="" />
+		<WaitTimer questId="1" stepId="2" waitTime="1000" />
+    </If>
+	<LoadProfile file="../act2.xml" />
+</Order>
+</Profile>

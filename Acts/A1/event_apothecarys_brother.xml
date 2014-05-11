@@ -5,7 +5,12 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
+	<!-- 
+	350529: Apothecary's Brother 
+	-->
 	<If condition="HasQuest(350529)">
+	
+		<LogMessage questId="350529" output="Bounty > 350529: Apothecary's Brother " /> 		
 	
 		<!-- Settings -->
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>			
@@ -15,11 +20,13 @@
 			<UseWaypoint waypointNumber="14" questId="1"/>	
 			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
 		</While>		
-
-		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
-		<If condition="CurrentLevelAreaId != 19941 and CurrentLevelAreaId != 1199 and CurrentLevelAreaId != 19943">			
-			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
-		</If>	
+		
+		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
+		<If condition="CurrentWorldId == 71150">
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />
+<!-- 			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="" />	 -->
+		</If>			
 
 		<!-- Location #1 -->
 		<If condition="CurrentWorldId == 71150">
@@ -51,13 +58,16 @@
 		<!-- Help this moron find his lost douche of a brother-->
 		<If condition="CurrentWorldId == 132995">
 		
-			<MoveToActor questId="1" stepId="2" actorId="129782" />			
+			<MoveToActor questId="1" stepId="2" actorId="129782" />	
+			
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />				
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.10" boxSize="12" until="ObjectFound" actorId="136009" ignoreMarkers="False" />			
+			
 			<WaitTimer questId="72546" stepId="17" waitTime="500" />							
+			<ToggleTargeting questId="1" stepId="1" killRadius="100" />			
 			<MoveToActor questId="312429" stepId="2" actorId="136009" interactRange="8" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
 			<MoveToActor questId="312429" stepId="2" actorId="129782" interactRange="8" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-			<ToggleTargeting questId="1" stepId="1" killRadius="100" />
-			
+
 			<!-- the guy disappears when the quest is done -->
 			<While condition="HasQuest(350529) and ActorExistsAt(129782, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">				
 				<MoveToActor questId="350529" stepId="2" actorId="129782"/>

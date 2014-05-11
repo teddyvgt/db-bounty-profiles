@@ -1,0 +1,70 @@
+<Profile>
+
+<Name>Sardar's Treasure</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<UseWaypoint waypointNumber="23" questId="1"/>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+
+	<WaitTimer questId="312429" stepId="2" waitTime="2000" />
+	<!-- Search for the hidden entrance -->
+	<MoveToMapMarker questId="1" x="3903" y="4159" z="112" markerNameHash="1352061372" actorId="176003"  interactRange="25" pathPrecision="40" pathPointLimit="250" isPortal="True" destinationWorldId="62568" /> 
+	<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+	<TrinityIfSNOInRange snoid="175603" range="100">
+		<MoveToActor questId="312429" stepId ="2" actorId="175603" interactRange="10" pathPrecision="10" statusText="" /> 
+		<WaitTimer questId="312429" stepId="2" waitTime="6000" />
+		<MoveToMapMarker questId="312429" stepId="2" markerNameHash="922565181" actorId="175467" interactRange="20" pathPrecision="10" isPortal="True" destinationWorldId="157882" statusText="" /> 
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<MoveToActor questId="312429" stepId ="2" actorId="175467" interactRange="10" pathPrecision="10" statusText="" /> 
+	</TrinityIfSNOInRange>
+	
+	<If condition="CurrentWorldId == 70885">
+		<MoveToMapMarker questId="1" x="3510.038" y="3961.117" z="112.2554" markerNameHash="1352061372" actorId="176003"  interactRange="25" pathPrecision="40" pathPointLimit="250" isPortal="True" destinationWorldId="62568" /> 
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<TrinityIfSNOInRange snoid="175603" range="100">
+			<MoveToActor questId="312429" stepId ="2" actorId="175603" interactRange="10" pathPrecision="10" statusText="" /> 
+			<WaitTimer questId="312429" stepId="2" waitTime="6000" />
+			<MoveToMapMarker questId="312429" stepId="2" markerNameHash="922565181" actorId="175467" interactRange="20" pathPrecision="10" isPortal="True" destinationWorldId="157882" statusText="" /> 
+			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+			<MoveToActor questId="312429" stepId ="2" actorId="175467" interactRange="10" pathPrecision="10" statusText="" /> 
+		</TrinityIfSNOInRange>
+    </If>
+	
+	<If condition="CurrentWorldId == 70885">
+		<MoveToMapMarker questId="1" x="3027.407" y="3973.139" z="112.2504" markerNameHash="1352061372" actorId="176003"  interactRange="25" pathPrecision="40" pathPointLimit="250" isPortal="True" destinationWorldId="62568" /> 
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<TrinityIfSNOInRange snoid="175603" range="100">
+			<MoveToActor questId="312429" stepId ="2" actorId="175603" interactRange="10" pathPrecision="10" statusText="" /> 
+			<WaitTimer questId="312429" stepId="2" waitTime="6000" />
+			<MoveToMapMarker questId="312429" stepId="2" markerNameHash="922565181" actorId="175467" interactRange="20" pathPrecision="10" isPortal="True" destinationWorldId="157882" statusText="" /> 
+			<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+			<MoveToActor questId="312429" stepId ="2" actorId="175467" interactRange="10" pathPrecision="10" statusText="" /> 
+		</TrinityIfSNOInRange>
+    </If>
+	
+	<If condition="CurrentWorldId == 157882">
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<AWTrinityExploreDungeon bountyQuestSNO="347591" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" actorId="219879" boxSize="15" boxTolerance=".10" />
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<MoveToActor questId="312429" stepId ="2" actorId="219879" interactRange="10" pathPrecision="20" statusText="" /> 
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<AWTrinityExploreDungeon bountyQuestSNO="347591" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" actorId="190708" boxSize="15" boxTolerance=".10" />
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<MoveToActor questId="312429" stepId ="2" actorId="190708" interactRange="10" pathPrecision="20" statusText="" /> 
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<BountyAtStep bountyQuestSNO="347591" bountyStep="4">
+			<AWTrinityExploreDungeon bountyQuestSNO="347591" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="15" />
+		</BountyAtStep>
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+    </If>
+	
+    <!-- Portal Home -->
+    <TrinityTownPortal questId="312429" stepId="2" />
+    <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+	<TrinityLoadProfile file="../act2.xml" />
+</Order>
+</Profile>

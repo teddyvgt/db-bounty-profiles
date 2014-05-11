@@ -1,0 +1,108 @@
+<Profile>
+
+<Name>Rygnar Idol</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<UseWaypoint waypointNumber="21" questId="1"/>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+
+    <!-- Find the caverns -->
+	<WaitTimer questId="312429" stepId="2" waitTime="2500" />
+	<MoveToMapMarker questId="1" x="1521.309" y="543.2228" z="158.9059" markerNameHash="260002582" actorId="185067" interactRange="20" pathPrecision="30" pathPointLimit="250" isPortal="True" destinationWorldId="2812" /> 
+	<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+	<If condition="CurrentWorldId == 70885 and ActorExistsAt(185067, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+		<MoveToActor questId="312429" stepId="2" actorId="185067" interactRange="10" pathPrecision="10" statusText="" /> 
+	</If>
+	<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+	
+	<If condition="CurrentWorldId == 70885">
+		<WaitTimer questId="312429" stepId="2" waitTime="500" />
+		<MoveToMapMarker questId="1" x="1838.121" y="612.9257" z="175.4232" markerNameHash="260002582" actorId="185067" interactRange="20" pathPrecision="30" pathPointLimit="250" isPortal="True" destinationWorldId="2812" /> 
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<If condition="CurrentWorldId == 70885 and ActorExistsAt(185067, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="185067" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+    </If>
+	
+	<If condition="CurrentWorldId == 70885">
+		<SafeMoveTo questId="312429" stepId="2" x="1886" y="495" z="159" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+		<WaitTimer questId="312429" stepId="2" waitTime="500" />
+		<MoveToMapMarker questId="1" x="1987" y="426" z="162" markerNameHash="260002582" actorId="185067" interactRange="20" pathPrecision="30" pathPointLimit="250" isPortal="True" destinationWorldId="2812" /> 
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<If condition="CurrentWorldId == 70885 and ActorExistsAt(185067, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="185067" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+    </If>
+	
+	<!-- If the southern side didn't contain it, tp, wp and go east to look -->
+	<If condition="CurrentWorldId == 70885">
+		<WaitTimer questId="312429" stepId="2" waitTime="500" />
+		<TrinityTownPortal questId="312429" stepId="2" />
+		<WaitTimer questId="312429" stepId="2" waitTime="500" />
+		<UseWaypoint questId="1" stepId="1" actorId="6442" x="324.8699" y="291.0312" z="1.645629" waypointNumber="21"/> 
+		<WaitTimer questId="312429" stepId="2" waitTime="500" />
+    </If>
+	
+	<If condition="CurrentWorldId == 70885">
+		<WaitTimer questId="312429" stepId="2" waitTime="500" />
+		<MoveToMapMarker questId="1" x="1347" y="605" z="177" markerNameHash="260002582" actorId="185067" interactRange="20" pathPrecision="30" pathPointLimit="250" isPortal="True" destinationWorldId="2812" /> 
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<If condition="CurrentWorldId == 70885 and ActorExistsAt(185067, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="185067" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+    </If>
+	
+	<If condition="CurrentWorldId == 70885">
+		<WaitTimer questId="312429" stepId="2" waitTime="500" />
+		<MoveToMapMarker questId="1" x="1490" y="825" z="177" markerNameHash="260002582" actorId="185067" interactRange="20" pathPrecision="30" pathPointLimit="250" isPortal="True" destinationWorldId="2812" /> 
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<If condition="CurrentWorldId == 70885 and ActorExistsAt(185067, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="185067" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+    </If>
+	
+	<If condition="CurrentWorldId == 70885">
+		<WaitTimer questId="312429" stepId="2" waitTime="500" />
+		<MoveToMapMarker questId="1" x="1360" y="870" z="174" markerNameHash="260002582" actorId="185067" interactRange="20" pathPrecision="30" pathPointLimit="250" isPortal="True" destinationWorldId="2812" /> 
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<If condition="CurrentWorldId == 70885 and ActorExistsAt(185067, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="185067" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+    </If>
+	
+	<If condition="CurrentWorldId == 70885">
+		<TrinityExploreDungeon questId="312429" stepId="2" until="ObjectFound" actorId="185067" boxSize="25" boxTolerance=".80" pathPrecision="40">
+			<IgnoreScenes>
+				<IgnoreScene sceneId="57508" />
+				<IgnoreScene sceneId="57577" />
+			</IgnoreScenes>
+		</TrinityExploreDungeon>
+		<MoveToMapMarker questId="312429" stepId="2" markerNameHash="260002582" actorId="185067" isPortal="True" destinationWorldId="2812" interactRange="25"/>
+    </If>
+	
+	<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+	<MoveToActor questId="312429" stepId="2" actorId="2935" interactRange="7" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+	<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+	<AWTrinityExploreDungeon bountyQuestSNO="350564" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" actorId="5992" boxTolerance=".10" boxSize="15" />
+	<WaitTimer questId="312429" stepId="2" waitTime="3000" />
+	<MoveToActor questId="312429" stepId="2" actorId="307" interactRange="7" pathPrecision="5" pathPointLimit="250" statusText="" />
+	<WaitTimer questId="312429" stepId="2" waitTime="3000" />
+	<WaitTimer questId="312429" stepId="2" waitTime="500" />
+	<WaitTimer questId="312429" stepId="2" waitTime="500" />
+	
+	
+    <!-- Portal Home -->
+    <TrinityTownPortal questId="312429" stepId="2" />
+    <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+	<TrinityLoadProfile file="../act2.xml" />
+</Order>
+</Profile>

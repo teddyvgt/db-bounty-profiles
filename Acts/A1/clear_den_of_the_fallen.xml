@@ -6,21 +6,28 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
+	<!-- 
+	X1_Bounty_A1_Wilderness_Clear_DenOfTheFallen2 (345488) 
+	-->
 	<If condition="HasQuest(345488)">
+	
+		<LogMessage questId="345488" output="Bounty > 345488: Clear the Den of the Fallen" /> 		
 	
 		<!-- Settings -->
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
 		
 		<!-- Weeping Hollow Waypoint -->
-		<While condition="CurrentLevelAreaId != 19954">			
+		<While condition="CurrentLevelAreaId != 19954 and CurrentWorldId != 135193 and CurrentWorldId != 194232">			
 			<UseWaypoint waypointNumber="6" questId="1"/>	
 			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
 		</While>	
 		
-		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
-		<If condition="CurrentLevelAreaId != 19954">			
-			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
-		</If>				
+		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
+		<If condition="CurrentWorldId == 71150">
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />\
+			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" destinationWorldId="-1" markerNameHash="-2043651426"  />
+		</If>	
 
 		<If condition="CurrentWorldId == 71150">
 			<LogMessage message="Moving to spot #1"/>

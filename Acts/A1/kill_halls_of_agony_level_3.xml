@@ -5,18 +5,52 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
-	<!-- Halls of Agony 3 Waypoint -->
-	<While condition="CurrentWorldId != 58983">			
-		<UseWaypoint waypointNumber="17" questId="1"/>	
-		<WaitTimer questId="1" stepId="2" waitTime="5000" />	
-	</While>				
-
-	<ToggleTargeting questId="1" combat="True" killRadius="45" />	
+	<!-- 
+	347027: Kill Garrach
+	347020: Kill Treefist
+	347023: Kill Boneslag
+	-->
+	<If condition="
+		HasQuest(347027) or
+		HasQuest(347020) or 
+		HasQuest(347023)">	
+		
+		<LogMessage questId="347027" output="Bounty > 347027: Kill Garrach" /> 	
+		<LogMessage questId="347020" output="Bounty > 347020: Kill Treefist" /> 	
+		<LogMessage questId="347023" output="Bounty > 347023: Kill Boneslag" /> 			
+		
+		<!-- Halls of Agony 1 Waypoint -->
+		<While condition="CurrentWorldId != 58983">			
+			<UseWaypoint waypointNumber="17" questId="1"/>	
+			<WaitTimer questId="1" stepId="2" waitTime="6000" />
+		</While>				
 	
-	<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False"/>
+		<If condition="CurrentWorldId == 58983">			
+	
+			<!-- Settings -->
+			<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>				
 
+			<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />			
+			<ToggleTargeting questId="1" combat="True" killRadius="45" />		
+		
+			<!-- Kill Remaining Monsters to Finish Bounty -->
+			<If condition="ZetaDia.ActInfo.ActiveBounty">			
+				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.14" boxSize="14" >
+				  <IgnoreScenes>
+					<IgnoreScene sceneName="Exit" />
+				  </IgnoreScenes>
+				</TrinityExploreDungeon>
+			</If>		
+		
+		</If>				
+	
+	</If>
+			
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
 	<LoadProfile file="act1.xml" />
 	
 </Order>
-</Profile>
+</Profile>	
+	

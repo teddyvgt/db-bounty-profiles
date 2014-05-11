@@ -1,4 +1,3 @@
-<!-- X1_Bounty_A1_Cathedral_Kill_SkeletonKing (361234) -->
 <Profile>
 <Name>Kill the Skeleton King (361234)</Name>
 <KillMonsters>True</KillMonsters>
@@ -6,7 +5,12 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
+	<!-- 
+	X1_Bounty_A1_Cathedral_Kill_SkeletonKing (361234) 
+	-->
 	<If condition="HasQuest(361234)">
+	
+		<LogMessage questId="347032" output="Bounty > 347032: Kill Skeleton King" /> 	
 	
 		<!-- Settings -->
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
@@ -24,11 +28,11 @@
 
 		<If condition="CurrentWorldId == 50585">
 		  <SafeMoveTo questId="1" stepId="2" x="627" y="571" z="0" useNavigator="True" />
-<!-- 		  <WaitTimer questId="1" stepId="2" waitTime="5000" /> -->
+<!-- 		  <WaitTimer questId="1" stepId="2" waitTime="6000" />-->
 		  <!-- The Royal Crypts -->
 		  <!-- Pillars -->
 		  <SafeMoveTo questId="1" stepId="2" x="628" y="573" z="0" useNavigator="True" />
-<!-- 		  <WaitTimer questId="1" stepId="2" waitTime="5000" /> -->
+<!-- 		  <WaitTimer questId="1" stepId="2" waitTime="6000" />-->
 		  <!-- force move to door, ignore skeletons 
 		  [00:35:06.332 N] [37ED776C] GizmoType: Door Name: trDun_Cath_Gate_D-2243 ActorSNO: 5767 Distance: 14.3267 Position: <550.1918, 536.5969, 0.2680054> Barracade: False Radius: 12.9823 -->
 		  <MoveToActor questId="1" stepId="2" interactRange="15" x="548" y="541" z="0" actorId="5767" endAnimation="trDun_Cath_Gate_D_Open" useNavigator="True" />

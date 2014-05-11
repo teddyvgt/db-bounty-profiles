@@ -22,30 +22,38 @@
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
 		</If>			
 
+		<!-- Try objective marker -->		
+		<If condition="CurrentWorldId == 58983">
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />		
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />			
+		</If>	
+
 		<!-- Check location #1 -->
-		<SafeMoveTo questId="1" stepId="2" x="1815" y="691" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Location 1 of 3"/>
-		<SafeMoveTo questId="1" stepId="2" x="1799" y="617" z="-0" pathPrecision="1" pathPointLimit="250" statusText="Moving to Location 1 of 3"/>		
-		<If condition="CurrentWorldId == 71150 and ActorExistsAt(365097, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">							
-			
-			<!-- the ring terrain formation causes flip-flop between goats outside the ring so we have to clear the area first -->					 
-			<SafeMoveTo questId="365381" x="1822" y="717" statusText="Clearing area around chest"/>  
-			<SafeMoveTo questId="365381" x="1934" y="733" statusText="Clearing area around chest"/>  
-			<SafeMoveTo questId="365381" x="1928" y="551" statusText="Clearing area around chest"/>  
-			<SafeMoveTo questId="365381" x="1662" y="514" statusText="Clearing area around chest"/>  
-			<SafeMoveTo questId="365381" x="1735" y="699" statusText="Clearing area around chest"/>   
-			<SafeMoveTo questId="365381" x="1818" y="690" statusText="Clearing area around chest"/>  
-			<SafeMoveTo questId="365381" x="1797" y="584" statusText="Clearing area around chest"/>  					 				 
-			<MoveToActor questId="1" stepId="2" actorId="365097" />		
-			<WaitTimer questId="1" stepId="2" waitTime="500" />	
-			
-			<ToggleTargeting questId="1" combat="True" killRadius="45" />				
-			
-			<!-- Hang out until completed -->
-			<While condition="HasQuest(365381) and ActorExistsAt(364559, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
-				<MoveToActor questId="365381" stepId="2" actorId="364559" interactRange="8"/>
-				<WaitTimer questId="365381" stepId="2" waitTime="2000" />	
-			</While>
-			
+		<If condition="HasQuest(365381)">			
+			<SafeMoveTo questId="1" stepId="2" x="1815" y="691" z="-0" pathPrecision="5" pathPointLimit="250" statusText="Moving to Location 1 of 3"/>
+			<SafeMoveTo questId="1" stepId="2" x="1799" y="617" z="-0" pathPrecision="1" pathPointLimit="250" statusText="Moving to Location 1 of 3"/>		
+			<If condition="CurrentWorldId == 71150 and ActorExistsAt(365097, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">							
+				
+				<!-- the ring terrain formation causes flip-flop between goats outside the ring so we have to clear the area first -->					 
+				<SafeMoveTo questId="365381" x="1822" y="717" statusText="Clearing area around chest"/>  
+				<SafeMoveTo questId="365381" x="1934" y="733" statusText="Clearing area around chest"/>  
+				<SafeMoveTo questId="365381" x="1928" y="551" statusText="Clearing area around chest"/>  
+				<SafeMoveTo questId="365381" x="1662" y="514" statusText="Clearing area around chest"/>  
+				<SafeMoveTo questId="365381" x="1735" y="699" statusText="Clearing area around chest"/>   
+				<SafeMoveTo questId="365381" x="1818" y="690" statusText="Clearing area around chest"/>  
+				<SafeMoveTo questId="365381" x="1797" y="584" statusText="Clearing area around chest"/>  					 				 
+				<MoveToActor questId="1" stepId="2" actorId="365097" />		
+				<WaitTimer questId="1" stepId="2" waitTime="500" />	
+				
+				<ToggleTargeting questId="1" combat="True" killRadius="45" />				
+				
+				<!-- Hang out until completed -->
+				<While condition="HasQuest(365381) and ActorExistsAt(364559, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+					<MoveToActor questId="365381" stepId="2" actorId="364559" interactRange="8"/>
+					<WaitTimer questId="365381" stepId="2" waitTime="2000" />	
+				</While>	
+				
+			</If>
 		</If>
 
 		<!-- Check location #2 -->

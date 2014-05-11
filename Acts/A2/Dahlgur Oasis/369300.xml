@@ -1,0 +1,27 @@
+<Profile>
+
+<Name>Kill Khahul the Serpent</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<UseWaypoint waypointNumber="23" questId="1"/>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+
+	<If condition="HasQuest(369300)">
+		<!-- Look for the named -->
+		<SafeMoveTo questId="1" x="3785.279" y="4260.446" z="100.1264" pathPrecision="20" statusText="" /> 
+		<!-- Get the rest of the kills -->
+		<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />
+		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="30">
+			<IgnoreScenes>        
+				<IgnoreScene sceneId="57508" />
+				<IgnoreScene sceneId="57577" />
+			</IgnoreScenes>
+		</TrinityExploreDungeon>
+	</If>
+	<LoadProfile file="../act2.xml" />
+</Order>
+</Profile>

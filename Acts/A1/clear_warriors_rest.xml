@@ -1,11 +1,16 @@
 <Profile>
-<Name>Clear Warriors Rest</Name>
+<Name>Clear Warriors Rest (345520)</Name>
 <KillMonsters>True</KillMonsters>
 <PickupLoot>True</PickupLoot>
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
 
+	<!-- 
+	345520: Clear Warriors Rest
+	-->
 	<If condition="HasQuest(345520)">
+	
+		<LogMessage questId="345520" output="Bounty > 345520: Clear Warriors Rest" /> 		
 	
 		<!-- Settings -->
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
@@ -20,7 +25,14 @@
 		<If condition="CurrentLevelAreaId != 19953">			
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
 		</If>			
-	
+		
+		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
+		<If condition="CurrentLevelAreaId == 19953">
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />
+<!-- 			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="" />	 -->			
+		</If>	
+
 		<!--  Warriors Rest #1 -->
 		<If condition="CurrentLevelAreaId == 19953">
 			<MoveToActor questId="1" stepId="2" actorId="176008" isPortal="True" destinationWorldId="60393" x="404" y="678" z="15" maxSearchDistance="50" statusText="Checking Warriors Rest Location #1" />

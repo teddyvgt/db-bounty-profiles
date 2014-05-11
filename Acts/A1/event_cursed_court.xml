@@ -20,15 +20,30 @@
 		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
 		<If condition="CurrentWorldId != 50582">			
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
-		</If>				
+		</If>	
+		
+		<If condition="CurrentWorldId == 50582">		
 
-		<!-- Find Chest -->
-		<TrinityExploreDungeon questId="375191" stepId="2" boxTolerance="0.15" boxSize="15" until="ObjectFound" actorId="365097" ignoreMarkers="False" objectDistance="15">
-			<PrioritizeScenes>
-				<PriorityScene sceneName="_Cath_SW_Hall_01" />
-			</PrioritizeScenes>
-		</TrinityExploreDungeon>
-		<MoveToActor questId="1" stepId="2" actorId="365097" interactRange="8"/>
+			<!-- Attempt to go straight to the OBJECTIVE marker -->
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />
+<!-- 			<MoveToObjective questId="1" markerDistance="3000" actorDistance="20" markerNameHash="1317387500" />						
+ -->			
+			<LogMessage questId="1" step="1" output="Moving On" />
+			
+			<!-- Look for the chest if its not nearby -->		
+			<If condition="HasQuest(375201) and not ActorExistsAt(365097, Me.Position.X, Me.Position.Y, Me.Position.Z, 100) and not ActorExistsAt(364559, Me.Position.X, Me.Position.Y, Me.Position.Z, 100)">
+				<TrinityExploreDungeon questId="375191" stepId="2" boxTolerance="0.15" boxSize="15" until="ObjectFound" actorId="365097" ignoreMarkers="False" objectDistance="15">
+					<PrioritizeScenes>
+						<PriorityScene sceneName="_Cath_SW_Hall_01" />
+					</PrioritizeScenes>
+				</TrinityExploreDungeon>
+				
+			</If>		
+
+		</If>
+		
+		<MoveToActor questId="1" stepId="2" actorId="365097" interactRange="8"/>		
+		
 		<WaitTimer questId="1" stepId="2" waitTime="500" />	
 		
 		<ToggleTargeting questId="1" combat="True" killRadius="45" />			

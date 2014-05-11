@@ -1,0 +1,30 @@
+<Profile>
+
+<Name>Kill Hemit</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<UseWaypoint waypointNumber="19" questId="1"/>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+
+	<If condition="HasQuest(347534)">
+		<!-- Look for the named -->
+		<SafeMoveTo questId="1" x="2109.986" y="1484.584" z="209.6511" pathPrecision="20" statusText="" /> 
+		<SafeMoveTo questId="1" x="2079.914" y="1376.052" z="207.5953" pathPrecision="20" statusText="" /> 
+		<SafeMoveTo questId="1" x="2490.916" y="1050.44" z="207.5677" pathPrecision="20" statusText="" /> 
+		<!-- Get the rest of the kills -->
+		<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />
+		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="30">
+			<IgnoreScenes>        
+				<IgnoreScene sceneId="31345"/>
+				<IgnoreScene sceneId="31390"/>
+				<IgnoreScene sceneId="31389"/>
+			</IgnoreScenes>
+		</TrinityExploreDungeon>
+	</If>
+	<LoadProfile file="../act2.xml" />
+</Order>
+</Profile>

@@ -1,0 +1,29 @@
+<Profile>
+
+<Name>Kill Belial</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<UseWaypoint waypointNumber="20" questId="1"/>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+
+	<If condition="HasQuest(358353)">
+		<SafeMoveTo questId="1" stepId="2" name="Imperial Palace" pathPrecision="10" x="261" y="560" z="7" />
+		<WaitTimer questId="1" stepId="2" waitTime="1000" />
+	
+		<MoveToActor questId="1" stepId="2" actorId="159574" isPortal="True" maxSearchDistance="50" interactRange="20" destinationWorldId="60756" x="241" y="557" z="7" />
+		<WaitTimer questId="1" stepId="2" waitTime="1000" />
+		
+		<TrinitySetQuesting/>
+		
+		<While condition="not ActorExistsAt(185156, Me.Position.X, Me.Position.Y, Me.Position.Z, 200)">
+			<WaitTimer questId="1" stepId="2" waitTime="500" />
+		</While>
+		<WaitTimer questId="1" stepId="2" waitTime="2000" />
+	</If>
+	<LoadProfile file="../act2.xml" />
+</Order>
+</Profile>

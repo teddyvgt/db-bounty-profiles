@@ -1,0 +1,35 @@
+<Profile>
+
+<Name>Shrine of Rakanishu</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<UseWaypoint waypointNumber="23" questId="1"/>
+
+	<If condition="HasQuest(346065)">
+		<SafeMoveTo questId="1" stepId="2" x="3516" y="4307" z="100" pathPrecision="10" pathPointLimit="1000" statusText="" /> 
+		<SafeMoveTo questId="1" stepId="2" x="3192" y="4288" z="100" pathPrecision="10" pathPointLimit="1000" statusText="" /> 
+		<SafeMoveTo questId="1" stepId="2" x="2998.802" y="4445.071" z="120.1" pathPrecision="10" pathPointLimit="1000" statusText="" />
+		<WaitTimer questId="1" stepId="2" waitTime="1000" />
+		<WaitTimer questId="1" stepId="2" waitTime="1000" />
+
+		<If condition="HasQuest(346065)">
+			<SafeMoveTo questId="1" stepId="2" x="3192" y="4288" z="100" pathPrecision="10" pathPointLimit="1000" statusText="" />
+			<SafeMoveTo questId="1" stepId="2" x="3516" y="4307" z="100" pathPrecision="10" pathPointLimit="1000" statusText="" /> 
+			<SafeMoveTo questId="1" stepId="2" x="3698.435" y="4177.69" z="73.43011" pathPrecision="10" pathPointLimit="1000" statusText="" />
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+		</If>
+		
+		<If condition="HasQuest(346065)">
+			<!-- Backup hack in case not done. -->
+			<LogMessage quest="312429" step="2" output="Swiggity swooty, we're roaming for that booty..." />
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="30" stayAfterBounty="False"/>
+		</If>
+	</If>
+	<LoadProfile file="../act2.xml" />
+</Order>
+</Profile>

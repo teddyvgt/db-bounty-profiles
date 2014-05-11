@@ -1,0 +1,23 @@
+<Profile>
+
+<Name>Kill Zoltun Kulle</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<UseWaypoint waypointNumber="25" questId="1"/>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+	
+	<If condition="HasQuest(347656)">
+		<!-- Enter Kulles dungeon -->
+		<MoveToActor questId="312429" stepId="2" actorId="159581" isPortal="True" destinationWorldId="60193" x="655" y="282" z="-12" />
+
+		<!-- Kill Kulle -->
+		<SafeMoveTo questId="312429" stepId="2" x="58" y="104" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
+		<WaitTimer questId="312429" stepId="2" waitTime="2500" />
+	</If>
+	<LoadProfile file="../act2.xml" />
+</Order>
+</Profile>

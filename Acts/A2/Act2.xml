@@ -1,27 +1,282 @@
 <Profile>
-<Name>Act 2</Name>
+
+<Name>Act 2 - Loader</Name>
 <KillMonsters>True</KillMonsters>
 <PickupLoot>true</PickupLoot>
-<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" maxDeaths="5" numGames="-1" />
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>
-
-	<LogMessage quest="1" step="1" output=">> ACT 2 IS NOT SUPPORTED" />
-	<WaitTimer questId="1" stepId="1" waitTime="500"/>
+	<LogMessage quest="1" step="1" output="Act 2 Bounties" /> 
+	<!-- Act 2 Bounties -->
+	<!-- Road to Alcarnus: -->
+	<!-- Kill Jhorum the Cleric -->
+	<If condition="HasQuest(347565)">
+		<TrinityLoadProfile nodelay="True" file="./Road to Alcarnus/347565.xml" />
+	</If>
+	<!-- Kill Sammash -->
+	<If condition="HasQuest(347569)">
+		<TrinityLoadProfile nodelay="True" file="./Road to Alcarnus/347569.xml" />
+	</If>
+	<!-- Kill Shondar the Invoker -->
+	<If condition="HasQuest(346036)">
+		<TrinityLoadProfile nodelay="True" file="./Road to Alcarnus/346036.xml" />
+	</If>
+	<!-- Kill High Cultist Murdos -->
+	<If condition="HasQuest(347563)">
+		<TrinityLoadProfile nodelay="True" file="./Road to Alcarnus/347563.xml" />
+	</If>
+	<!-- Kill Yeth -->
+	<If condition="HasQuest(347560)">
+		<TrinityLoadProfile nodelay="True" file="./Road to Alcarnus/347560.xml" />
+	</If>
+	<!-- Kill Bonesplinter -->
+	<If condition="HasQuest(346034)">
+		<TrinityLoadProfile nodelay="True" file="./Road to Alcarnus/346034.xml" />
+	</If>
+	<!-- Kill Maghda -->
+	<If condition="HasQuest(347558)">
+		<TrinityLoadProfile nodelay="True" file="./Road to Alcarnus/347558.xml" />
+	</If>
 	
+	<!-- City of Caldeum: -->
+	<!-- Kill Belial -->
+	<If condition="HasQuest(358353)">
+		<TrinityLoadProfile nodelay="True" file="./City of Caldeum/358353.xml" />
+	</If>
 	
-	
-	<!-- ACT profiles go here -->
-	
-	
-	
-	<!-- should we move onto to the next act? -->
-	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('All_Redirect')">
-		<TrinityLoadProfile file="../All_Distributor.xml" />			
+	<!-- Archives of Zoltun Kulle: -->
+	<!-- Kill Zoltun Kulle -->
+	<If condition="HasQuest(347656)">
+		<TrinityLoadProfile nodelay="True" file="./Archives of Zoltun Kulle/347656.xml" />
+	</If>
+	<!-- Kill Mage Lord Skomora -->
+	<If condition="HasQuest(346121)">
+		<TrinityLoadProfile nodelay="True" file="./Archives of Zoltun Kulle/346121.xml" />
+	</If>
+	<!-- Kill Rockgut -->
+	<If condition="HasQuest(347650)">
+		<TrinityLoadProfile nodelay="True" file="./Archives of Zoltun Kulle/347650.xml" />
+	</If>
+	<!-- Kill Hellscream -->
+	<If condition="HasQuest(346115)">
+		<TrinityLoadProfile nodelay="True" file="./Archives of Zoltun Kulle/346115.xml" />
+	</If>
+	<!-- Kill Mage Lord Caustus -->
+	<If condition="HasQuest(347652)">
+		<TrinityLoadProfile nodelay="True" file="./Archives of Zoltun Kulle/347652.xml" />
+	</If>
+	<!-- Kill The Tomekeeper -->
+	<If condition="HasQuest(346119)">
+		<TrinityLoadProfile nodelay="True" file="./Archives of Zoltun Kulle/346119.xml" />
 	</If>		
+	<!-- Kill Mage Lord Flaydren -->
+	<If condition="HasQuest(347654)">
+		<TrinityLoadProfile nodelay="True" file="./Archives of Zoltun Kulle/347654.xml" />
+	</If>
+	<!-- Kill Mage Lord Ghuyan -->
+	<If condition="HasQuest(346123)">
+		<TrinityLoadProfile nodelay="True" file="./Archives of Zoltun Kulle/346123.xml" />
+	</If>
+	<!-- Kill Thugeesh the Enraged -->
+	<If condition="HasQuest(346111)">
+		<TrinityLoadProfile nodelay="True" file="./Archives of Zoltun Kulle/346111.xml" />
+	</If>
+	<!-- Kill Thrum -->
+	<If condition="HasQuest(346117)">
+		<TrinityLoadProfile nodelay="True" file="./Archives of Zoltun Kulle/346117.xml" />
+	</If>
+	<!-- Kill The Archivist -->
+	<If condition="HasQuest(346108)">
+		<TrinityLoadProfile nodelay="True" file="./Archives of Zoltun Kulle/346108.xml" />
+	</If>
+	<!-- The Cursed Pit -->
+	<If condition="HasQuest(375261)">
+		<TrinityLoadProfile nodelay="True" file="./Archives of Zoltun Kulle/375261.xml" />
+	</If>
+	<!-- The Cursed Spire -->
+	<If condition="HasQuest(375257)">
+		<TrinityLoadProfile nodelay="True" file="./Archives of Zoltun Kulle/375257.xml" />
+	</If>		
+
+	<!-- Howling Plateau: -->
+	<!-- Miners Gold -->
+	<If condition="HasQuest(345954)">
+		<TrinityLoadProfile nodelay="True" file="./Howling Plateau/345954.xml" />
+	</If>
+	<!-- Kill Ashek -->
+	<If condition="HasQuest(345976)">
+		<TrinityLoadProfile nodelay="True" file="./Howling Plateau/345976.xml" />
+	</If>
+	<!-- Kill Gart the Mad -->
+	<If condition="HasQuest(347532)">
+		<TrinityLoadProfile nodelay="True" file="./Howling Plateau/347532.xml" />
+	</If>
+	<!-- The Cursed Battlement -->
+	<If condition="HasQuest(369797)">
+		<TrinityLoadProfile nodelay="True" file="./Howling Plateau/369797.xml" />
+	</If>
+	<!-- Kill Taros the Wild -->
+	<If condition="HasQuest(345971)">
+		<TrinityLoadProfile nodelay="True" file="./Howling Plateau/345971.xml" />
+	</If>
+	<!-- Kill Sasha the Slasher -->
+	<If condition="HasQuest(345960)">
+		<TrinityLoadProfile nodelay="True" file="./Howling Plateau/345960.xml" />
+	</If>
+	<!-- Clear Sirocco Caverns -->
+	<If condition="HasQuest(347525)">
+		<TrinityLoadProfile nodelay="True" file="./Howling Plateau/347525.xml" />
+	</If>
+	<!-- The Cursed Outpost -->
+	<If condition="HasQuest(369800)">
+		<TrinityLoadProfile nodelay="True" file="./Howling Plateau/369800.xml" />
+	</If>
+	<!-- Kill Hemit -->
+	<If condition="HasQuest(347534)">
+		<TrinityLoadProfile nodelay="True" file="./Howling Plateau/347534.xml" />
+	</If>
+	<!-- Kill Razormouth -->
+	<If condition="HasQuest(345973)">
+		<TrinityLoadProfile nodelay="True" file="./Howling Plateau/345973.xml" />
+	</If>
+	<!-- Clear Lair of the Lacuni -->
+	<If condition="HasQuest(347520)">
+		<TrinityLoadProfile nodelay="True" file="./Howling Plateau/347520.xml" />
+	</If>
 	
-	<!-- nope repeating the same act. gooo! -->
-	<LeaveGame quest="1" step="1" reason="done." stayInParty="False" />		
-	<ReloadProfile />	
+	<!-- Dahlgur Oasis: -->
+	<!-- Clear the Ancient Cave -->
+	<If condition="HasQuest(346069)">
+		<TrinityLoadProfile nodelay="True" file="./Dahlgur Oasis/346069.xml" />
+	</If>
+	<!-- Clear the Mysterious Cave -->
+	<If condition="HasQuest(347598)">
+		<TrinityLoadProfile nodelay="True" file="./Dahlgur Oasis/347598.xml" />
+	</If>
+	<!-- Clear the Flooded Cave -->
+	<If condition="HasQuest(346071)">
+		<TrinityLoadProfile nodelay="True" file="./Dahlgur Oasis/346071.xml" />
+	</If>
+	<!-- Kill Bashiok -->
+	<If condition="HasQuest(347600)">
+		<TrinityLoadProfile nodelay="True" file="./Dahlgur Oasis/347600.xml" />
+	</If>
+	<!-- Kill Gryssian -->
+	<If condition="HasQuest(369298)">
+		<TrinityLoadProfile nodelay="True" file="./Dahlgur Oasis/369298.xml" />
+	</If>
+	<!-- Kill Khahul the Serpent -->
+	<If condition="HasQuest(369300)">
+		<TrinityLoadProfile nodelay="True" file="./Dahlgur Oasis/369300.xml" />
+	</If>
+	<!-- Kill Scar Talon -->
+	<If condition="HasQuest(346075)">
+		<TrinityLoadProfile nodelay="True" file="./Dahlgur Oasis/346075.xml" />
+	</If>
+	<!-- Kill Torsar -->
+	<If condition="HasQuest(347604)">
+		<TrinityLoadProfile nodelay="True" file="./Dahlgur Oasis/347604.xml" />
+	</If>
+	<!-- Kill Tridiun the Impaler -->
+	<If condition="HasQuest(369302)">
+		<TrinityLoadProfile nodelay="True" file="./Dahlgur Oasis/369302.xml" />
+	</If>
+	<!-- Sardar's Treasure -->
+	<If condition="HasQuest(347591)">
+		<TrinityLoadProfile nodelay="True" file="./Dahlgur Oasis/347591.xml" />
+	</If>
+	<!-- The Cursed Shallows -->
+	<If condition="HasQuest(369813)">
+		<TrinityLoadProfile nodelay="True" file="./Dahlgur Oasis/369813.xml" />
+	</If>
+	<!-- Shrine of Rakanishu -->
+	<If condition="HasQuest(346065)">
+		<TrinityLoadProfile nodelay="True" file="./Dahlgur Oasis/346065.xml" />
+	</If>
+	<!-- Lost Treasure of Khan Dakab -->
+	<If condition="HasQuest(346067)">
+		<TrinityLoadProfile nodelay="True" file="./Dahlgur Oasis/346067.xml" />
+	</If>
 	
+	<!-- Desolate Sands: -->
+	<!-- Kill Raiha -->
+	<If condition="HasQuest(346090)">
+		<TrinityLoadProfile nodelay="True" file="./Desolate Sands/346090.xml" />
+	</If>
+	<!-- Kill Blarg -->
+	<If condition="HasQuest(346092)">
+		<TrinityLoadProfile nodelay="True" file="./Desolate Sands/346092.xml" />
+	</If>
+	<!-- Kill Bloodfeather -->
+	<If condition="HasQuest(346094)">
+		<TrinityLoadProfile nodelay="True" file="./Desolate Sands/346094.xml" />
+	</If>
+	<!-- Kill Pazuzu-->
+	<If condition="HasQuest(347638)">
+		<TrinityLoadProfile nodelay="True" file="./Desolate Sands/347638.xml" />
+	</If>
+	<!-- Kill Mage Lord Misgen-->
+	<If condition="HasQuest(354788)">
+		<TrinityLoadProfile nodelay="True" file="./Desolate Sands/354788.xml" />
+	</If>
+	<!-- Kill Plagar the Damned-->
+	<If condition="HasQuest(347607)">
+		<TrinityLoadProfile nodelay="True" file="./Desolate Sands/347607.xml" />
+	</If>
+	<!-- Clear the Vile Cavern-->
+	<If condition="HasQuest(346086)">
+		<TrinityLoadProfile nodelay="True" file="./Desolate Sands/346086.xml" />
+	</If>
+	<!-- Clear the Cave of the Burrowing Horror-->
+	<If condition="HasQuest(346088)">
+		<TrinityLoadProfile nodelay="True" file="./Desolate Sands/346088.xml" />
+	</If>
+
+
+	<!-- Stinging Winds:-->
+	<!-- Kill Inquisitor Hamath -->
+	<If condition="HasQuest(355278)">
+		<TrinityLoadProfile nodelay="True" file="./Stinging Winds/355278.xml" />
+	</If>
+	<!-- Kill Balzhak -->
+	<If condition="HasQuest(369277)">
+		<TrinityLoadProfile nodelay="True" file="./Stinging Winds/369277.xml" />
+	</If>
+	<!-- Kill Samaras -->
+	<If condition="HasQuest(369288)">
+		<TrinityLoadProfile nodelay="True" file="./Stinging Winds/369288.xml" />
+	</If>
+	<!-- Clear the Ruins -->
+	<If condition="HasQuest(350556)">
+		<TrinityLoadProfile nodelay="True" file="./Stinging Winds/350556.xml" />
+	</If>
+	<!-- Rygnar Idol -->
+	<If condition="HasQuest(350564)">
+		<TrinityLoadProfile nodelay="True" file="./Stinging Winds/350564.xml" />
+	</If>
+	<!-- The Guardian Spirits -->
+	<If condition="HasQuest(350560)">
+		<TrinityLoadProfile nodelay="True" file="./Stinging Winds/350560.xml" />
+	</If>
+	<!-- Restless Sands -->
+	<If condition="HasQuest(350562)">
+		<TrinityLoadProfile nodelay="True" file="./Stinging Winds/350562.xml" />
+	</If>
+	
+	<ActBountiesComplete act="A2">
+		<!-- Make sure we are in Hidden Camp -->
+		<If condition="Me.IsInTown==False">   
+			<UseTownPortal questId="1" />       
+		</If>
+		<If condition="not CurrentWorldId == 161472">
+			<UseWaypoint waypointNumber="25" questId="1"/>
+			<WaitTimer questId="1" stepId="1" waitTime="5000" />
+		</If>
+		<ForceTownRun questId="1"/>
+		<WaitTimer questId="1" stepId="1" waitTime="1000"/>
+		<MoveToActor questId="312429" stepId="2" actorId="114622" />
+	</ActBountiesComplete>
+
+	<LeaveGame reason="No more bounties that we can do. Resetting game." />  
 </Order>
+
 </Profile>

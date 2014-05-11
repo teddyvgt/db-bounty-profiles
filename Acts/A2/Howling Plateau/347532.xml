@@ -1,0 +1,36 @@
+<Profile>
+
+<Name>Kill Gart the Mad</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<UseWaypoint waypointNumber="19" questId="1"/>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+
+	<If condition="HasQuest(347532)">
+		<!-- Look for the named -->
+		<SafeMoveTo questId="1" x="2343" y="1509" z="208" pathPrecision="20" statusText="" /> 
+		<SafeMoveTo questId="1" x="2381" y="1402" z="207" pathPrecision="20" statusText="" /> 
+		<SafeMoveTo questId="1" x="2449" y="1244" z="207" pathPrecision="20" statusText="" /> 
+		<SafeMoveTo questId="1" x="2517" y="1252" z="207" pathPrecision="20" statusText="" /> 
+		<SafeMoveTo questId="1" x="2521" y="1406" z="207" pathPrecision="20" statusText="" /> 
+		<SafeMoveTo questId="1" x="2388" y="1077" z="208" pathPrecision="20" statusText="" /> 
+		<SafeMoveTo questId="1" x="2148" y="1443" z="208" pathPrecision="20" statusText="" />
+		<SafeMoveTo questId="1" x="1939" y="1527" z="207" pathPrecision="20" statusText="" />
+		<SafeMoveTo questId="1" x="1869" y="1749" z="194" pathPrecision="20" statusText="" />
+		<!-- Get the rest of the kills -->
+		<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />
+		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="30">
+			<IgnoreScenes>        
+				<IgnoreScene sceneId="31345"/>
+				<IgnoreScene sceneId="31390"/>
+				<IgnoreScene sceneId="31389"/>
+			</IgnoreScenes>
+		</TrinityExploreDungeon>
+	</If>
+	<LoadProfile file="../act2.xml" />
+</Order>
+</Profile>

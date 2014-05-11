@@ -1,0 +1,86 @@
+<Profile>
+
+<Name>The Cursed Shallows</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<UseWaypoint waypointNumber="23" questId="1"/>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+
+	<If condition="HasQuest(369813)">
+		<!-- Find the caverns -->
+
+		<MoveToMapMarker questId="1" x="3901.54" y="4156.07" z="85.79088" markerNameHash="1352061373" actorId="176003"  interactRange="25" pathPrecision="40" pathPointLimit="250" isPortal="True" destinationWorldId="62569" /> 
+		<WaitTimer questId="1" stepId="2" waitTime="1000" />
+		<If condition="CurrentWorldId == 70885 and ActorExistsAt(176003, Me.Position.X, Me.Position.Y, Me.Position.Z, 60)">
+			<MoveToActor questId="1" stepId="2" actorId="176003" interactRange="10" pathPrecision="10" isPortal="True" destinationWorldId="62569"/> 
+		</If>
+		
+		<If condition="CurrentWorldId == 70885">
+			<MoveToMapMarker questId="1" x="3511.087" y="3972.39" z="85.52499" markerNameHash="1352061373" actorId="176003"  interactRange="25" pathPrecision="40" pathPointLimit="250" isPortal="True" destinationWorldId="62569" /> 
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<If condition="CurrentWorldId == 70885 and ActorExistsAt(176003, Me.Position.X, Me.Position.Y, Me.Position.Z, 60)">
+				<MoveToActor questId="1" stepId="2" actorId="176003" interactRange="10" pathPrecision="10" isPortal="True" destinationWorldId="62569"/> 
+			</If>
+		</If>
+		
+		<If condition="CurrentWorldId == 70885">
+			<MoveToMapMarker questId="1" x="3185.416" y="4192.338" z="88.65594" markerNameHash="1352061373" actorId="176003"  interactRange="25" pathPrecision="40" pathPointLimit="250" isPortal="True" destinationWorldId="62569" /> 
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<If condition="CurrentWorldId == 70885 and ActorExistsAt(176003, Me.Position.X, Me.Position.Y, Me.Position.Z, 60)">
+				<MoveToActor questId="1" stepId="2" actorId="176003" interactRange="10" pathPrecision="10" isPortal="True" destinationWorldId="62569"/> 
+			</If>
+		</If>
+		
+		<If condition="CurrentWorldId == 70885">
+			<MoveToMapMarker questId="1" x="2976.617" y="4253.643" z="85.52535" markerNameHash="1352061373" actorId="176003"  interactRange="25" pathPrecision="40" pathPointLimit="250" isPortal="True" destinationWorldId="62569" /> 
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<If condition="CurrentWorldId == 70885 and ActorExistsAt(176003, Me.Position.X, Me.Position.Y, Me.Position.Z, 60)">
+				<MoveToActor questId="1" stepId="2" actorId="176003" interactRange="10" pathPrecision="10" isPortal="True" destinationWorldId="62569"/> 
+			</If>
+		</If>
+		
+		<If condition="CurrentWorldId == 70885">
+			<MoveToMapMarker questId="1" x="3188" y="4191" z="92" markerNameHash="1352061373" actorId="176003"  interactRange="25" pathPrecision="40" pathPointLimit="250" isPortal="True" destinationWorldId="62569" /> 
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<If condition="CurrentWorldId == 70885 and ActorExistsAt(176003, Me.Position.X, Me.Position.Y, Me.Position.Z, 60)">
+				<MoveToActor questId="1" stepId="2" actorId="176003" interactRange="10" pathPrecision="10" isPortal="True" destinationWorldId="62569"/> 
+			</If>
+		</If>
+		
+		<If condition="CurrentWorldId == 70885">
+			<MoveToMapMarker questId="1" x="3037" y="3973" z="90" markerNameHash="1352061373" actorId="176003"  interactRange="25" pathPrecision="40" pathPointLimit="250" isPortal="True" destinationWorldId="62569" /> 
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<If condition="CurrentWorldId == 70885 and ActorExistsAt(176003, Me.Position.X, Me.Position.Y, Me.Position.Z, 60)">
+				<MoveToActor questId="1" stepId="2" actorId="176003" interactRange="10" pathPrecision="10" isPortal="True" destinationWorldId="62569"/> 
+			</If>
+		</If>
+		
+		<If condition="CurrentWorldId == 70885">
+			<MoveToMapMarker questId="1" x="2842" y="4385" z="91" markerNameHash="1352061373" actorId="176003"  interactRange="25" pathPrecision="40" pathPointLimit="250" isPortal="True" destinationWorldId="62569" /> 
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<If condition="CurrentWorldId == 70885 and ActorExistsAt(176003, Me.Position.X, Me.Position.Y, Me.Position.Z, 60)">
+				<MoveToActor questId="1" stepId="2" actorId="176003" interactRange="10" pathPrecision="10" isPortal="True" destinationWorldId="62569"/> 
+			</If>
+		</If>
+		
+		<If condition="CurrentWorldId == 70885">
+			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="176003" boxSize="25" boxTolerance=".80" pathPrecision="40">
+				<IgnoreScenes>
+					<IgnoreScene sceneId="57508" />
+					<IgnoreScene sceneId="57577" />
+				</IgnoreScenes>
+			</TrinityExploreDungeon>
+			<MoveToMapMarker questId="1" stepId="2" markerNameHash="1352061373" actorId="176003"  isPortal="True" destinationWorldId="62569" interactRange="25"/>
+		</If>
+	
+		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance=".10" boxSize="15" />
+		<WaitTimer questId="1" stepId="2" waitTime="1000" />
+	
+	</If>
+	<LoadProfile file="../act2.xml" />
+</Order>
+</Profile>

@@ -1,0 +1,158 @@
+<Profile>
+
+<Name>Clear the Cave of the Burrowing Horror</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<UseWaypoint waypointNumber="24" questId="1"/>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+
+    <!-- Find the Ruins -->
+	<WaitTimer questId="312429" stepId="2" waitTime="2500" />
+	<SafeMoveTo questId="1" x="1234" y="3983" z="110" pathPrecision="20" pathPointLimit="1250" />
+	<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+	<If condition="ActorExistsAt(139951, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+		<MoveToActor questId="312429" stepId="2" actorId="139951" interactRange="10" pathPrecision="10" statusText="" /> 
+	</If>
+	<If condition="ActorExistsAt(218947, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+		<MoveToActor questId="312429" stepId="2" actorId="218947" interactRange="10" pathPrecision="10" statusText="" /> 
+	</If>
+	<If condition="ActorExistsAt(175501, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+		<MoveToActor questId="312429" stepId="2" actorId="175501" interactRange="10" pathPrecision="10" statusText="" /> 
+	</If>
+	<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+	
+	<If condition="CurrentWorldId == 70885">
+		<WaitTimer questId="312429" stepId="2" waitTime="500" />
+		<SafeMoveTo questId="1" x="1079" y="3731" z="111" pathPrecision="20" pathPointLimit="1250" />
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<If condition="ActorExistsAt(139951, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="139951" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<If condition="ActorExistsAt(218947, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="218947" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<If condition="ActorExistsAt(175501, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="175501" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+    </If>
+	
+	<If condition="CurrentWorldId == 70885">
+		<WaitTimer questId="312429" stepId="2" waitTime="500" />
+		<SafeMoveTo questId="1" x="846" y="3653" z="110" pathPrecision="20" pathPointLimit="1250" />
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<If condition="ActorExistsAt(139951, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="139951" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<If condition="ActorExistsAt(218947, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="218947" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<If condition="ActorExistsAt(175501, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="175501" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+    </If>
+
+	<If condition="CurrentWorldId == 70885">
+		<WaitTimer questId="312429" stepId="2" waitTime="500" />
+		<SafeMoveTo questId="1" x="887" y="3991" z="110" pathPrecision="20" pathPointLimit="1250" />
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<If condition="ActorExistsAt(139951, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="139951" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<If condition="ActorExistsAt(218947, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="218947" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<If condition="ActorExistsAt(175501, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="175501" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+    </If>
+	
+	<If condition="CurrentWorldId == 70885">
+		<WaitTimer questId="312429" stepId="2" waitTime="500" />
+		<SafeMoveTo questId="1" x="586" y="3938" z="110" pathPrecision="20" pathPointLimit="1250" />
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<If condition="ActorExistsAt(139951, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="139951" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<If condition="ActorExistsAt(218947, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="218947" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<If condition="ActorExistsAt(175501, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="175501" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+    </If>
+	
+	<If condition="CurrentWorldId == 70885">
+		<WaitTimer questId="312429" stepId="2" waitTime="500" />
+		<SafeMoveTo questId="1" x="362" y="3927" z="109" pathPrecision="20" pathPointLimit="1250" />
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<If condition="ActorExistsAt(139951, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="139951" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<If condition="ActorExistsAt(218947, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="218947" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<If condition="ActorExistsAt(175501, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="175501" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+    </If>
+	
+	<If condition="CurrentWorldId == 70885">
+		<WaitTimer questId="312429" stepId="2" waitTime="500" />
+		<SafeMoveTo questId="1" x="182" y="3630" z="110" pathPrecision="20" pathPointLimit="1250" />
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<If condition="ActorExistsAt(139951, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="139951" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<If condition="ActorExistsAt(218947, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="218947" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<If condition="ActorExistsAt(175501, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="175501" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+    </If>
+	
+	<If condition="CurrentWorldId == 70885">
+		<TrinityExploreDungeon questId="312429" stepId="2" until="ObjectFound" actorId="139951" boxSize="25" boxTolerance=".80" pathPrecision="40">
+			<IgnoreScenes>
+				<IgnoreScene sceneId="57508" />
+				<IgnoreScene sceneId="57577" />
+			</IgnoreScenes>
+		</TrinityExploreDungeon>
+		<If condition="ActorExistsAt(139951, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="139951" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<If condition="ActorExistsAt(218947, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="218947" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+		<If condition="ActorExistsAt(175501, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">
+			<MoveToActor questId="312429" stepId="2" actorId="175501" interactRange="10" pathPrecision="10" statusText="" /> 
+		</If>
+    </If>
+	
+	<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+	<AWTrinityExploreDungeon bountyQuestSNO="346088" bountyStep="4" questId="312429" stepId="2" until="ExitFound" exitNameHash="1028158261" boxSize="15" boxTolerance=".10" />
+	<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+	<If condition="CurrentWorldId == 111666">
+		<MoveToMapMarker questId="1" markerNameHash="1028158261" actorId="176001" interactRange="20" pathPrecision="10" pathPointLimit="250" isPortal="True" destinationWorldId="218970" statusText="" /> 
+	</If>
+	<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+	<AWTrinityExploreDungeon bountyQuestSNO="346088" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="15" />
+	<WaitTimer questId="312429" stepId="2" waitTime="1000" />	
+	
+	
+    <!-- Portal Home -->
+    <TrinityTownPortal questId="312429" stepId="2" />
+    <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+	<TrinityLoadProfile file="../act2.xml" />
+</Order>
+</Profile>

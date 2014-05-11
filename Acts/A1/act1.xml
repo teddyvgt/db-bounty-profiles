@@ -1,5 +1,5 @@
 <Profile>
-	<Name>Act 1</Name>
+	<Name>ALPHA Act 1</Name>
 	<KillMonsters>True</KillMonsters>
 	<PickupLoot>True</PickupLoot>
 	<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
@@ -54,16 +54,22 @@
 		<TargetBlacklist actorId="116063" /> <!-- Spider 'spawner' -->	
 		<TargetBlacklist actorId="62215" /> <!-- sack -->		
 		<TargetBlacklist actorId="89579"/> <!-- Firewall -->
+		<TargetBlacklist actorId="89503"/> <!-- cath brazier trap -->
+		
 		<!-- Don't want to waste time talking to Tyrael every time we see him -->			
 		<TargetBlacklist actorId="114622" /> <!-- Tyrael -->
-		<!-- Blacklisting Cursed Events so that TrinityExplore can trigger ObjectFound -->
+		
+		<!-- Blacklisting Quest Objects so that TrinityExplore can trigger ObjectFound properly -->
 		<TargetBlacklist actorId="365097" /> <!-- Cursed Chest -->
-		<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->
+		<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->		
+		<TargetBlacklist actorId="204032" /> <!-- Precious Ore -->	
+		<TargetBlacklist actorId="202277" /> <!-- Precious Ore -->			
+		
 	</TargetBlacklists>
 	<Order>
 		
 		<WaitTimer questId="1" stepId="2" waitTime="500" />	
-		<ToggleTargeting questId="1" killRadius="5" combat="True" />					
+		<ToggleTargeting questId="1" killRadius="5" />	
 
 		<!-- 1	The Old Ruins =============================================================-->
 
@@ -271,8 +277,8 @@
 		<!-- 
 		369249: Kill Brone		
 		369251: Kill Galush
-		345507: Kill Grimsmack
-		347054: Kill Hawthorne	
+		345507: Kill Grimsmack	
+		347054: Kill Hawthorne
 		347056: Kill Fecklar
 		-->
 		<If condition="
@@ -447,17 +453,17 @@
 
 
 
-		<LogMessage quest="1" step="1" output="Checking if we have all bounties complete" /> 
+		<LogMessage questId="1" step="1" output="Checking if we have all bounties complete" /> 
 		<ActBountiesComplete act="A1">
-			<LogMessage quest="1" step="1" output="Seems like we have 5 complete" />
+			<LogMessage questId="1" step="1" output="Seems like we have 5 complete" />
 			<If condition="Me.IsInTown==False">   
-				<LogMessage quest="1" step="1" output="Going back to town to turn it in." />
+				<LogMessage questId="1" step="1" output="Going back to town to turn it in." />
 				<TrinityTownPortal questId="1" /> 
 			</If>				
 			<WaitTimer questId="1" stepId="1" waitTime="1000"/>	
-			<LogMessage quest="1" step="1" output="Lets make sure we are actually in the right town" />
+			<LogMessage questId="1" step="1" output="Lets make sure we are actually in the right town" />
 			<While condition="CurrentWorldId != 332336">
-				<LogMessage quest="1" step="1" output="Doesn't look like we are! using the waypoint" />
+				<LogMessage questId="1" step="1" output="Doesn't look like we are! using the waypoint" />
 				<UseWaypoint waypointNumber="0" questId="1"/>
 				<WaitTimer questId="1" stepId="1" waitTime="7500"/>
 			</While>
@@ -465,7 +471,7 @@
 			<ForceTownRun questId="1"/>	
 			<WaitTimer questId="1" stepId="1" waitTime="1000"/>						
 
-			<LogMessage quest="1" step="1" output="Attempting to interact with Tyrael" />
+			<LogMessage questId="1" step="1" output="Attempting to interact with Tyrael" />
 			<MoveToActor questId="1" stepId="1" x="419" y="531" z="24" actorId="114622" interactRange="8" name="Tyrael_Heaven-34594"  pathPrecision="5" pathPointLimit="250" statusText="" />
 
 		</ActBountiesComplete>

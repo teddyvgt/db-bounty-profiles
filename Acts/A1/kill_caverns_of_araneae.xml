@@ -5,21 +5,53 @@
 <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
 <Order>	
 
-	<!-- Caverns of Araneae Waypoint -->
-	<While condition="CurrentWorldId != 180550">			
-		<UseWaypoint waypointNumber="12" questId="1"/>	
-		<WaitTimer questId="1" stepId="2" waitTime="5000" />	
-	</While>
+	<!-- 
+	345526: Kill Rathlin		
+	345524: Kill Venomite
+	345862: Kill Qurash
+	345522: Kill Zhelobb	
+	-->
+	<If condition="
+		HasQuest(345526) or
+		HasQuest(345524) or 
+		HasQuest(345862) or
+		HasQuest(345522)">	
+		
+		<LogMessage questId="345526" output="Bounty > 345526: Kill Rathlin" /> 	
+		<LogMessage questId="345524" output="Bounty > 345524: Kill Venomite" /> 	
+		<LogMessage questId="345862" output="Bounty > 345862: Kill Qurash" /> 				
+		<LogMessage questId="345522" output="Bounty > 345522: Kill Zhelobb" /> 			
+		
+		<!-- Caverns of Araneae Waypoint -->
+		<While condition="CurrentWorldId != 180550">			
+			<UseWaypoint waypointNumber="12" questId="1"/>	
+			<WaitTimer questId="1" stepId="2" waitTime="6000" />
+		</While>		
+	
+		<If condition="CurrentWorldId == 180550">			
+	
+			<!-- Settings -->
+			<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>				
 
-	<ToggleTargeting questId="1" combat="True" killRadius="45" />	
+			<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />			
+			<ToggleTargeting questId="1" combat="True" killRadius="45" />		
 		
-	<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.16" boxSize="20" >
-		<IgnoreScenes>
-			<IgnoreScene sceneName="Exit" />	
-		</IgnoreScenes>
-	</TrinityExploreDungeon>		
+			<!-- Kill Remaining Monsters to Finish Bounty -->
+			<If condition="ZetaDia.ActInfo.ActiveBounty">			
+				<TrinityExploreDungeon stayAfterBounty="False" questId="1" stepId="2" until="BountyComplete" boxTolerance="0.14" boxSize="14" >
+				  <IgnoreScenes>
+					<IgnoreScene sceneName="Exit" />
+				  </IgnoreScenes>
+				</TrinityExploreDungeon>
+			</If>		
 		
-	<ToggleTargeting questId="1" stepId="2" killRadius="31" />					
+		</If>				
+	
+	</If>		
+		
+	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
 	<LoadProfile file="act1.xml" />	
 	
 </Order>

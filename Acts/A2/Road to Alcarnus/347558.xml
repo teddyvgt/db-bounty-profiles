@@ -1,0 +1,26 @@
+<Profile>
+
+<Name>Kill Maghda</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<UseWaypoint waypointNumber="22" questId="1"/>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+	
+	<If condition="HasQuest(347558)">
+		<!-- Enter Maghda's chamber -->
+		<SafeMoveTo questId="1" stepId="2" x="1092" y="1558" z="184" pathPrecision="10" pathPointLimit="250" statusText="" /> 
+		<SafeMoveTo questId="1" stepId="2" x="894" y="1213" z="197" pathPrecision="10" pathPointLimit="250" statusText="" /> 
+		<MoveToActor questId="312429" stepId="2" actorId="195234" isPortal="True" destinationWorldId="195200" x="886" y="1205" z="194" />
+		<!-- Kill her -->
+		<SafeMoveTo questId="312429" stepId ="2" x="146" y="200" z="0" straightLinePathing="True" pathPrecision="10" pathPointLimit="250" statusText="" /> 
+		<WaitTimer questId="312429" stepId="2" waitTime="2500" />
+		<WaitTimer questId="312429" stepId="2" waitTime="2500" />
+		<WaitTimer questId="312429" stepId="2" waitTime="2500" />
+	</If>
+	<LoadProfile file="../act2.xml" />
+</Order>
+</Profile>

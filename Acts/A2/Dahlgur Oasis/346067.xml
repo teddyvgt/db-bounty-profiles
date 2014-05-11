@@ -1,0 +1,66 @@
+<Profile>
+
+<Name>Lost Treasure of Khan Dakab</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<UseWaypoint waypointNumber="23" questId="1"/>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+
+	<WaitTimer questId="312429" stepId="2" waitTime="2000" />
+	<!-- Find the Alchemist at the entrance -->
+	<SafeMoveTo questId="312429" stepId="2" x="2998.802" y="4445.071" z="120.1" pathPrecision="30" pathPointLimit="1000" statusText="" />
+	<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+	<TrinityIfSNOInRange snoid="175603" range="150">
+		<MoveToActor questId="312429" stepId ="2" actorId="175603" interactRange="6" pathPrecision="10" statusText="" /> 
+		<WaitTimer questId="312429" stepId="2" waitTime="3000" />
+		<MoveToActor questId="312429" stepId ="2" actorId="175603" interactRange="6" pathPrecision="10" statusText="" /> 
+		<WaitTimer questId="312429" stepId="2" waitTime="2500" />
+		<!--MoveToMapMarker questId="312429" stepId="2" markerNameHash="913850831" actorId="176002" interactRange="20" pathPrecision="10" isPortal="True" destinationWorldId="158593" statusText="" /--> 
+		<MoveToActor questId="312429" stepId ="2" actorId="176002" interactRange="20" pathPrecision="10" statusText="" /> 
+	</TrinityIfSNOInRange>
+	<!-- If we're still in dahlgur, find the other spawnpoint -->
+	<If condition="CurrentWorldId == 70885">
+		<SafeMoveTo questId="312429" stepId ="2" x="3428" y="4320" z="100" pathPrecision="30" pathPointLimit="1000" statusText="" />
+		<SafeMoveTo questId="312429" stepId ="2" x="3742" y="4341" z="100" pathPrecision="30" pathPointLimit="1000" statusText="" />
+		<SafeMoveTo questId="312429" stepId ="2" x="3703" y="4183" z="73" pathPrecision="30" pathPointLimit="1000" statusText="" />
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<TrinityIfSNOInRange snoid="175603" range="150">
+				<MoveToActor questId="312429" stepId ="2" x="3699" y="4147" z="80" actorId="175603" interactRange="6" pathPrecision="10" statusText="" /> 
+				<WaitTimer questId="312429" stepId="2" waitTime="3000" />
+				<MoveToActor questId="312429" stepId ="2" x="3669" y="4175" z="80"  actorId="175603" interactRange="6" pathPrecision="10" statusText="" /> 
+				<WaitTimer questId="312429" stepId="2" waitTime="2500" />
+				<!--MoveToMapMarker questId="312429" stepId="2" markerNameHash="913850831" actorId="176002" interactRange="20" pathPrecision="10" isPortal="True" destinationWorldId="158593" statusText="" /--> 
+				<MoveToActor questId="312429" stepId ="2" actorId="176002" interactRange="20" pathPrecision="10" statusText="" /> 
+		</TrinityIfSNOInRange>
+    </If>
+	
+	<If condition="CurrentWorldId == 158593">
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<AWTrinityExploreDungeon bountyQuestSNO="346067" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" actorId="219880" boxSize="15" boxTolerance=".10" />
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<MoveToActor questId="312429" stepId ="2" actorId="219880" interactRange="10" pathPrecision="20" statusText="" /> 
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<AWTrinityExploreDungeon bountyQuestSNO="346067" bountyStep="4" questId="312429" stepId="2" until="ObjectFound" actorId="190524" boxSize="15" boxTolerance=".10" />
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<MoveToActor questId="312429" stepId ="2" actorId="190524" interactRange="10" pathPrecision="20" statusText="" /> 
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+		<BountyAtStep bountyQuestSNO="346067" bountyStep="4">
+			<AWTrinityExploreDungeon bountyQuestSNO="346067" bountyStep="4" questId="312429" stepId="2" until="FullyExplored" boxTolerance=".10" boxSize="15" />
+		</BountyAtStep>
+		<WaitTimer questId="312429" stepId="2" waitTime="1000" />
+    </If>
+	
+	
+
+	
+	
+    <!-- Portal Home -->
+    <TrinityTownPortal questId="312429" stepId="2" />
+    <WaitTimer questId="312429" stepId="2" waitTime="2500" />
+	<TrinityLoadProfile file="../act2.xml" />
+</Order>
+</Profile>

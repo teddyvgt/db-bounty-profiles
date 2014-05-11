@@ -1,0 +1,35 @@
+<Profile>
+
+<Name>Kill Bonesplinter</Name>
+
+<KillMonsters>True</KillMonsters>
+<PickupLoot>true</PickupLoot>
+<GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
+<Order>
+	<If condition="Me.IsInTown==False"><TrinityTownPortal questId="1" /></If>
+	<UseWaypoint waypointNumber="22" questId="1"/>
+	<WaitTimer questId="1" stepId="1" waitTime="1000" />
+
+	<If condition="HasQuest(346034)">
+		<!-- Look for the named -->
+		<SafeMoveTo questId="1" x="1455" y="1275" z="186" pathPrecision="10" pathPointLimit="250" statusText="" /> 
+		<SafeMoveTo questId="1" x="1559" y="1230" z="184" pathPrecision="10" pathPointLimit="250" statusText="" /> 
+		<SafeMoveTo questId="1" x="1587" y="1158" z="183" pathPrecision="10" pathPointLimit="250" statusText="" /> 
+		<SafeMoveTo questId="1" x="1500" y="1135" z="184" pathPrecision="10" pathPointLimit="250" statusText="" /> 
+		<SafeMoveTo questId="1" x="1447" y="1115" z="184" pathPrecision="10" pathPointLimit="250" statusText="" /> 
+		<SafeMoveTo questId="1" x="1409" y="1304" z="186" pathPrecision="10" pathPointLimit="250" statusText="" /> 
+		<!-- Get the rest of the kills -->
+		<SafeMoveTo questId="1" x="979" y="1435" z="197" pathPrecision="10" pathPointLimit="250" statusText="" /> 
+		<LogMessage quest="1" step="2" output="Swiggity swooty, we're roaming for that booty..." />
+		<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance="0.10" boxSize="20">
+			<IgnoreScenes>        
+				<IgnoreScene sceneId="31342" />
+				<IgnoreScene sceneId="31343" />
+				<IgnoreScene sceneId="31364" />
+				<IgnoreScene sceneId="31322" />
+			</IgnoreScenes>
+		</TrinityExploreDungeon>
+	</If>
+	<LoadProfile file="../act2.xml" />
+</Order>
+</Profile>

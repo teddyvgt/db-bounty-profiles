@@ -23,25 +23,25 @@
 
 		<!-- Middle Cave Location 1 -->
 		<If condition="CurrentWorldId == 71150">			
-			<SafeMoveTo questId="312429" stepId="2" x="2068" y="896" z="0" pathPrecision="5" pathPointLimit="250" statusText="Middle Cave Location 1" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="2068" y="896" z="0" pathPrecision="5" pathPointLimit="250" /> 
 			<MoveToActor questId="1" stepId="2" actorId="176038" isPortal="True" destinationWorldId="82370"/>
 		</If>	
 		
 		<!-- Middle Cave Location 2 -->
 		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="312429" stepId="2" x="2120" y="612" z="0" pathPrecision="5" pathPointLimit="250" statusText="Middle Cave Location 2" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="2120" y="612" z="0" pathPrecision="5" pathPointLimit="250" /> 
 			<MoveToActor questId="1" stepId="2" actorId="176038" isPortal="True" destinationWorldId="82370"/>
 		</If>	
 		
 		<!-- Bottom Cave Location -->
 		<If condition="CurrentWorldId == 71150">		
-			<SafeMoveTo questId="312429" stepId="2" x="2242" y="1054" z="0" pathPrecision="5" pathPointLimit="250" statusText="Bottom Cave Location" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="2242" y="1054" z="0" pathPrecision="5" pathPointLimit="250" /> 
 			<MoveToActor questId="1" stepId="2" actorId="176038" isPortal="True" destinationWorldId="82370"/>
 		</If>	
 		
 		<!-- Top Cave Location -->
 		<If condition="CurrentWorldId == 71150">			
-			<SafeMoveTo questId="312429" stepId="2" x="1770" y="369" z="0" pathPrecision="5" pathPointLimit="250" statusText="Top Cave Location" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="1770" y="369" z="0" pathPrecision="5" pathPointLimit="250" /> 
 			<MoveToActor questId="1" stepId="2" actorId="176038" isPortal="True" destinationWorldId="82370"/>
 		</If>	
 		
@@ -76,7 +76,7 @@
 			<MoveToActor questId="1" stepId="2" actorId="107076" />
 
 			<!-- Find one of the ores -->
-			<LogMessage quest="1" step="1" output="Looking for 347060 or 204032" />
+			<LogMessage questId="1" step="1" output="Looking for 347060 or 204032" />
 			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="202277" boxTolerance="0.10" boxSize="12" objectDistance="40">
 				<AlternateActors>
 					<AlternateActor actorId="204032" objectDistance="40" />
@@ -85,7 +85,7 @@
 			
 			<!-- Find the other ore #1 -->				
 			<If condition="HasQuest(347060) and ActorExistsAt(202277, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
-				<LogMessage quest="1" step="1" output="Found 202277, looking for 347060" />				
+				<LogMessage questId="1" step="1" output="Found 202277, looking for 347060" />				
 				<MoveToActor questId="1" stepId="2" timeout="15000" actorId="202277" />				
 				<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="204032" boxTolerance="0.10" boxSize="12" objectDistance="40" stayAfterBounty="False" />
 				<MoveToActor questId="1" stepId="2" timeout="15000" actorId="204032" />					
@@ -93,7 +93,7 @@
 			
 			<!-- Find the other ore #2 -->		
 			<If condition="HasQuest(347060) and ActorExistsAt(204032, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
-				<LogMessage quest="1" step="1" output="Found 347060, looking for 202277" />
+				<LogMessage questId="1" step="1" output="Found 347060, looking for 202277" />
 				<MoveToActor questId="1" stepId="2" timeout="15000" actorId="204032" />				
 				<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="202277" boxTolerance="0.10" boxSize="12" objectDistance="40"  stayAfterBounty="False" />
 				<MoveToActor questId="1" stepId="2" timeout="15000" actorId="202277" />					
