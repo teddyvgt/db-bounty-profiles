@@ -33,7 +33,7 @@
 		
 		<!-- This world finds it hard to navigate to objective so explore for the Exit Scene -->
 		<If condition="CurrentWorldId == 58983">
-			<TrinityExploreDungeon questId="1"  boxTolerance="0.30" boxSize="35" sceneName="_ButcherLair_" until="SceneFound" ignoreMarkers="False">			
+			<TrinityExploreDungeon questId="1"  boxTolerance="0.30" boxSize="30" sceneName="_ButcherLair_" until="SceneFound" ignoreMarkers="False">			
 				<PriorityScenes>								
 					<PriorityScene sceneName="_ButcherLair_" />
 				</PriorityScenes>
