@@ -93,7 +93,7 @@
 		<If condition="HasQuest(345496) and CurrentWorldId == 81164">
 		
 			<ToggleTargeting questId="1" combat="True" killRadius="80" />			
-			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance=".10" boxSize="9" stayAfterBounty="False"/>		
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance=".10" pathPrecision="20" boxSize="9" stayAfterBounty="False"/>		
 			
 			<!-- commenting out because this should not be necessary with DB fix for holes in map -->
 <!-- 			<If condition="HasQuest(345496) and CurrentWorldId==81164"><SafeMoveTo questId="1" stepId="2" x="614" y="495" z="-0" pathPrecision="50" pathPointLimit="250" timeout="15" /></If>
