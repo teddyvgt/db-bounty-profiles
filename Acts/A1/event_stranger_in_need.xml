@@ -27,7 +27,7 @@
 
 			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />		
 	
-			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="221574" boxTolerance="0.10" boxSize="15" ignoreMarkers="False"/> 
+			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="221574" objectDistance="80" boxTolerance="0.10" boxSize="15" ignoreMarkers="False"/> 
 
 			<!-- Initial Iron Maiden -->
 			<MoveToActor questId="1" stepId="2" actorId="221574" />
