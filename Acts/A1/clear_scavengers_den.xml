@@ -8,7 +8,6 @@
 	<!-- 
 	345496: X1_Bounty_A1_Fields_Clear_ScavengerDen2
 	-->	
-	<Timer>
 	<If condition="HasQuest(345496)">
 	
 		<!-- Settings -->
@@ -99,7 +98,6 @@
 		</If>
 
 	</If>	
-	</Timer>
 	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
 	<LoadProfile file="act1.xml" />
