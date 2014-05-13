@@ -16,7 +16,7 @@
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>			
 
 		<!-- Halls of Agony 3 Waypoint -->
-		<While condition="CurrentLevelAreaId != 19775 and CurrentLevelAreaId != 87707 and CurrentLevelAreaId != 94676">			
+		<While condition="CurrentLevelAreaId != 19775 and CurrentWorldId != 87707 and CurrentWorldId != 94676">			
 			<UseWaypoint waypointNumber="16" questId="1"/>	
 			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
 		</While>	

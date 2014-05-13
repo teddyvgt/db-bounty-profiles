@@ -77,7 +77,7 @@
 
 			<!-- Find one of the ores -->
 			<LogMessage questId="1" step="1" output="Looking for 347060 or 204032" />
-			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="202277" boxTolerance="0.10" boxSize="12" objectDistance="40">
+			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="202277" boxTolerance="0.10" boxSize="12" objectDistance="50">
 				<AlternateActors>
 					<AlternateActor actorId="204032" objectDistance="40" />
 				</AlternateActors>			
@@ -85,17 +85,21 @@
 			
 			<!-- Find the other ore #1 -->				
 			<If condition="HasQuest(347060) and ActorExistsAt(202277, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+				<WaitTimer questId="1" stepId="11" waitTime="3000" />
 				<LogMessage questId="1" step="1" output="Found 202277, looking for 347060" />				
 				<MoveToActor questId="1" stepId="2" timeout="15000" actorId="202277" />				
 				<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="204032" boxTolerance="0.10" boxSize="12" objectDistance="40" stayAfterBounty="False" />
+				<WaitTimer questId="1" stepId="11" waitTime="3000" />					
 				<MoveToActor questId="1" stepId="2" timeout="15000" actorId="204032" />					
 			</If>
 			
 			<!-- Find the other ore #2 -->		
 			<If condition="HasQuest(347060) and ActorExistsAt(204032, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+				<WaitTimer questId="1" stepId="11" waitTime="3000" />				
 				<LogMessage questId="1" step="1" output="Found 347060, looking for 202277" />
 				<MoveToActor questId="1" stepId="2" timeout="15000" actorId="204032" />				
 				<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="202277" boxTolerance="0.10" boxSize="12" objectDistance="40"  stayAfterBounty="False" />
+				<WaitTimer questId="1" stepId="11" waitTime="3000" />					
 				<MoveToActor questId="1" stepId="2" timeout="15000" actorId="202277" />					
 			</If>
 			
@@ -105,7 +109,8 @@
 			<MoveToActor questId="1" stepId="2" timeout="15000" actorId="107076" />			
 			<WaitTimer questId="347060" stepId="2" waitTime="10000" />
 			<MoveToActor questId="347060" timeout="5000" stepId="2" actorId="107076" />
-			<WaitTimer questId="347060" stepId="2" waitTime="7000" />			
+			<WaitTimer questId="347060" stepId="2" waitTime="7000" />	
+			<MoveToActor questId="347060" timeout="5000" stepId="2" actorId="107076" />
 			
 		</If>
 		

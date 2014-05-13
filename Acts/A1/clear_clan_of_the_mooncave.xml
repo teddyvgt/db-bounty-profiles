@@ -17,7 +17,7 @@
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
 		
 		<!-- Southern Highlands Waypoint -->
-		<While condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940 and CurrentLevelAreaId != 82502  and CurrentLevelAreaId != 82511">		
+		<While condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940 and CurrentWorldId != 82502  and CurrentWorldId != 82511">		
 			<UseWaypoint waypointNumber="13" questId="1"/>	
 			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
 		</While>		
@@ -31,7 +31,7 @@
 		<If condition="CurrentWorldId == 71150">
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />
-<!-- 			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="" /> -->
+			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="-1187439574" />
 		</If>	
 
 		<!--Find cave 0-->		
@@ -60,12 +60,19 @@
 		  <SafeMoveTo questId="1" stepId="2" x="2183.475" y="4028.584" z="-1.920981" />
 		  <MoveToActor questId="1" stepId="2" actorId="176008" isPortal="True" destinationWorldId="82502"/>
 		  <WaitTimer questId="1" stepId="2" waitTime="1000" />
+		</If>	
+		
+		<!--Find cave 4-->
+		<If condition="CurrentWorldId == 71150">
+		  <SafeMoveTo questId="1" stepId="2" x="2295.898" y="4024.81" z="-4.088893" />
+		  <MoveToActor questId="1" stepId="2" actorId="176008" isPortal="True" destinationWorldId="82502"/>
+		  <WaitTimer questId="1" stepId="2" waitTime="1000" />
 		</If>		
 		
 		<!-- Cave Level 1 -->
 		<If condition="CurrentWorldId == 82502">	
 		
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.1" boxSize="10" until="ExitFound" exitNameHash="-1187439573" ignoreMarkers="False">
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.1" boxSize="12" until="ExitFound" exitNameHash="-1187439573" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>

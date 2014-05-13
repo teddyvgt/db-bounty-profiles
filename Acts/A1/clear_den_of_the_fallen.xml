@@ -90,7 +90,7 @@
 		<If condition="CurrentLevelAreaId == 135237">
 			<WaitTimer questId="1" stepId="2" waitTime="3000" />
 			<LogMessage message="In the Den1" />
-			<TrinityExploreDungeon questId="1" stepId="2"  until="ExitFound" exitNameHash="-711350153" ignoreMarkers="False" objectDistance="50" actorId="176038" boxTolerance="0.3" boxSize="10" pathPrecision="40" stayAfterBounty="False">
+			<TrinityExploreDungeon questId="1" stepId="2"  until="ExitFound" exitNameHash="-711350153" ignoreMarkers="False" objectDistance="50" actorId="176038" boxTolerance="0.3" boxSize="13" pathPrecision="40" stayAfterBounty="False">
 				<PriorityScenes>				
 					<PriorityScene sceneName="Exit" />	
 				</PriorityScenes>

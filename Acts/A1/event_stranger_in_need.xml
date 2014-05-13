@@ -26,8 +26,14 @@
 		<If condition="CurrentWorldId == 58982">
 
 			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />		
-	
-			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="221574" objectDistance="80" boxTolerance="0.10" boxSize="15" ignoreMarkers="False"/> 
+			
+			<If condition="ActorExistsAt(221574, Me.Position.X, Me.Position.Y, Me.Position.Z, 40)">	
+				<ToggleTargeting questId="1" combat="True" killRadius="80" />	
+			</If>
+			
+			<If condition="not ActorExistsAt(221574, Me.Position.X, Me.Position.Y, Me.Position.Z, 40)">	
+				<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="221574" objectDistance="80" boxTolerance="0.10" boxSize="15" ignoreMarkers="False"/> 
+			</If>			
 
 			<!-- Initial Iron Maiden -->
 			<MoveToActor questId="1" stepId="2" actorId="221574" />

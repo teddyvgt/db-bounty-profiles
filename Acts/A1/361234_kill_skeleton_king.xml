@@ -16,7 +16,7 @@
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
 	
 		<!-- Royal Crypts -->
-		<While condition="CurrentWorldId != 50585">			
+		<While condition="CurrentWorldId != 50585 and CurrentWorldId != 73261">			
 			<UseWaypoint waypointNumber="5" questId="1"/>	
 			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
 		</While>	

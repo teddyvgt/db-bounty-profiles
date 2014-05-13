@@ -8,6 +8,7 @@
 	<!-- 
 	347065: X1_Bounty_A1_Fields_Clear_KhazraDen
 	-->
+	<Timer>	
 	<If condition="HasQuest(347065)">
 
 		<LogMessage questId="347065" output="Bounty > 347065: Clear Khazra Den" /> 		
@@ -82,6 +83,7 @@
 		</If>
 		
 	</If>
+	</Timer>
 	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
 	<LoadProfile file="act1.xml" />
