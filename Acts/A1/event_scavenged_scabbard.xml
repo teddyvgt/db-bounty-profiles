@@ -57,7 +57,8 @@
 		<If condition="CurrentLevelAreaId == 82326">
 		
 			<!-- Attempt to go straight to the OBJECTIVE marker -->
-			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />			
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />
+			<WaitTimer questId="1" stepId="1" waitTime="1000" />			
 <!-- 			<MoveToObjective questId="1" markerDistance="3000" actorDistance="20" interactAttempts="-1" markerNameHash="497382904" />	
  -->
 			<!--  Search for Watch Tower 2 -->
@@ -70,13 +71,12 @@
 			</If>
 			
 			<!-- Requires a low interact range or bot gets stuck above the portal on the balcony -->
-			<MoveToActor questId="344488" actorId="176001" interactRange="5" name="g_Portal_ArchTall_Orange-42457" isPortal="True" destinationWorldId="82313" pathPrecision="5" pathPointLimit="250" statusText="" />
-			
-			
 			<If condition="CurrentLevelAreaId == 82326">
+				<MoveToActor questId="344488" actorId="176001" interactRange="5" name="g_Portal_ArchTall_Orange-42457" isPortal="True" destinationWorldId="82313" pathPrecision="5" pathPointLimit="250" statusText="" />
+			</If>
 			
-				<MoveToMapMarker questId="1" stepId="1" exitNameHash="-1" destinationWorldId="-1" interactRange="5"  />					
-			
+			<If condition="CurrentLevelAreaId == 82326">			
+				<MoveToMapMarker questId="1" stepId="1" exitNameHash="-1" destinationWorldId="-1" interactRange="5"  />								
 			</If>
 			
 			<WaitTimer questId="1" stepId="1" waitTime="5000" />

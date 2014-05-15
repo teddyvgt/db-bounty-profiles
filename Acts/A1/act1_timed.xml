@@ -210,7 +210,9 @@
 			<LoadProfile file="347095_kill_the_dataminer.xml" />
 		</If>	
 
+		
 
+		
 		<!-- 8	Fields of Misery ==========================================================-->
 
 		<!-- The Precious Ores -->
@@ -324,6 +326,10 @@
 			<LoadProfile file="path_kill_festering_woods.xml" />
 		</If>				
 
+		<!-- temp delete 
+		<StopAllTimers />			
+		<LeaveGame quest="1" step="1" reason="BECAUSE IT TAKES SO LONG OMG." stayInParty="False" />		-->	
+		
 		<!-- 12	Caverns of Araneae ========================================================-->
 
 		<!-- Kill Queen Araneae -->

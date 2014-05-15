@@ -81,7 +81,7 @@
 		<If condition="CurrentWorldId == 72636">
 
 			<!-- Explore for Event Scene -->
-			<TrinityExploreDungeon questId="1"  boxTolerance="0.30" boxSize="35" sceneName="_JarSouls_" until="SceneFound" ignoreMarkers="False">			
+			<TrinityExploreDungeon questId="1"  boxTolerance="0.18" boxSize="16" pathPrecision="40" sceneName="_JarSouls_" until="SceneFound" ignoreMarkers="False">			
 				<PriorityScenes>								
 					<PriorityScene sceneName="_JarSouls_" />
 				</PriorityScenes>
@@ -92,7 +92,7 @@
 
 			<!-- Look for the jar if its not nearby -->		
 			<If condition="HasQuest(349016) and not ActorExistsAt(93713, Me.Position.X, Me.Position.Y, Me.Position.Z, 100) and not ActorExistsAt(219334, Me.Position.X, Me.Position.Y, Me.Position.Z, 100)">
-				<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="93713" boxSize="15" boxTolerance="0.35" objectDistance="55" statusText="Searching for unopened jar">
+				<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="93713" boxSize="14" boxTolerance="0.18" pathPrecision="35" ignoreMarkers="True" objectDistance="55" statusText="Searching for unopened jar">
 					<AlternateActors>
 						<AlternateActor actorId="219334" objectDistance="100" />
 					</AlternateActors>

@@ -195,6 +195,7 @@ namespace QuestTools.Diagnostics
         /// </summary>
         private static void PersistentTiming_OnStart(IBot bot)
         {
+            Logger.Log("Game Start");
             Load();
         }
 
@@ -202,8 +203,12 @@ namespace QuestTools.Diagnostics
         /// When the game is started via the START button on DemonBuddy
         /// </summary>
         private static void PersistentTiming_OnStop(IBot bot)
-        {            
+        {
+            Logger.Log("Game Stopped");
+
+            // Save everything and reset; user might intend to close DB and we dont want to lose data.
             Save();
+            Reset();
         }
 
         /// <summary>
@@ -211,8 +216,17 @@ namespace QuestTools.Diagnostics
         /// </summary>
         private static void PersistentTiming_OnGameChanged(object sender, EventArgs e)
         {
-            Timings.Where(t => t.IsRunning).ToList().ForEach(t => { t.FailedCount++; });
-            StopAll();
+            Logger.Log("Game Changed");
+            
+            // Mark any partially finished timers from last game as failed
+            Timings.ForEach(t => {
+                if (t.IsDirty)
+                {
+                    t.FailedCount++;
+                }
+            });
+            
+            // Game changed is a good opportunity to stay in sync with our file storage
             Save();
         }
 
@@ -233,13 +247,16 @@ namespace QuestTools.Diagnostics
             if (existingTimer == null)
             {
                 timing.Start();
+                timing.IsDirty = true;
                 Timings.Add(timing);
-                //timing.Print("Starting Timer (New) ");
+                Logger.Log("Starting Timer (New) '{0}' Group:{1} {2} ({3})", timing.Name, timing.Group, timing.QuestName, timing.QuestId);
             }
             else
             {
                 existingTimer.Start();
-                //existingTimer.Print(string.Format("Starting Timer (Existing) AllowRestarts={0} ", existingTimer.AllowResetStartTime));
+                existingTimer.IsDirty = true;
+                Logger.Log("Starting Timer (Existing) '{0}' Group:{1} {2} ({3})", timing.Name, timing.Group, timing.QuestName, timing.QuestId);
+
             }
         }
 
@@ -308,6 +325,7 @@ namespace QuestTools.Diagnostics
         /// </summary>
         private static void Load()
         {
+            Logger.Log(">> Loading Timings");
             var output = new List<Timing>();
             try
             {
@@ -329,6 +347,7 @@ namespace QuestTools.Diagnostics
                             Group = tokens[9],
                             FailedCount = Int32.Parse(tokens[10])
                         };
+                        t.Print("Loaded: ");
                         output.Add(t);
                     }
                     LastLoad = DateTime.UtcNow;
@@ -381,6 +400,7 @@ namespace QuestTools.Diagnostics
 
                     Timings.ForEach(t =>
                     {
+                        
                         line = String.Format(format, 
                             t.Name, 
                             t.QuestId, 
@@ -394,13 +414,13 @@ namespace QuestTools.Diagnostics
                             t.Group,
                             t.FailedCount
                         );
-                        //t.Print("Saving");
+                        t.Print("Saving: ");
+                        t.IsDirty = false;
                         w.Write(line);
                     });                        
                 }
                 saved = true;
-                LastSave = DateTime.UtcNow;
-                Reset();
+                LastSave = DateTime.UtcNow;                
             }
             catch(Exception ex)
             {
@@ -431,6 +451,7 @@ namespace QuestTools.Diagnostics
         public int MinTimeSeconds = 0;
         public int FailedCount = 0;
         public bool AllowResetStartTime = false;
+        public bool IsDirty = false;
 
         public float TimeAverageSeconds {
             get
@@ -505,7 +526,12 @@ namespace QuestTools.Diagnostics
         /// </summary>
         public void Print(string message)
         {
-            var format = message + "Timer '{0}' Group:{11} {3} ({1}) took {10} seconds to complete (Max={5}, Min={6}, Avg={7} from {9} timings)";
+
+            //var format = message + "Timer '{0}' Group:{11} {3} ({1}) took {10} seconds to complete (Max={5}, Min={6}, Avg={7} from {9} timings)";
+
+            var format = (IsDirty) 
+                ? message + ">> Dirty Timer '{0}' Group:{11} {3} ({1}) {10}(Max={5}, Min={6}, Avg={7} from {9} timings)"
+                : message + "Pass-Through '{0}' Group:{11} {3} ({1}) {10}(Max={5}, Min={6}, Avg={7} from {9} timings)";
 
             Logger.Log(format, 
                 Name, 
@@ -518,7 +544,7 @@ namespace QuestTools.Diagnostics
                 FormatTime((int)TimeAverageSeconds),
                 TotalTimeSeconds,
                 TimesTimed,
-                Elapsed.TotalSeconds,
+                (Elapsed.TotalSeconds > 0) ? "took " + Elapsed.TotalSeconds + " seconds to complete " : string.Empty,
                 Group,
                 FailedCount
 

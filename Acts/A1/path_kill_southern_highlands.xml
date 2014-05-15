@@ -97,7 +97,11 @@
 			<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />			
-			<ToggleTargeting questId="1" combat="True" killRadius="45" />				
+			<ToggleTargeting questId="1" combat="True" killRadius="45" />	
+
+			<!-- Attempt to get into a better position for objective pathing -->		
+			<TrinityExploreDungeon questId="1" timeout="15" timeoutType="Timer" until="BountyComplete"  boxTolerance="0.6" boxSize="20" pathPrecision="50" ignoreMarkers="False" />
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />				
 		
 			<!-- 344497: Kill Logrut the warrior -->
 			<SafeMoveTo questId="344497" x="2316" y="4856" z="1" pathPrecision="10" pathPointLimit="250" statusText="" />
