@@ -19,7 +19,7 @@
 		<!-- Southern Highlands Waypoint -->
 		<While condition="CurrentLevelAreaId != 93632 and CurrentLevelAreaId != 19940 and CurrentWorldId != 82502  and CurrentWorldId != 82511">		
 			<UseWaypoint waypointNumber="13" questId="1"/>	
-			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
+			<WaitTimer questId="1" waitTime="7001" />	
 		</While>		
 		
 		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
@@ -39,7 +39,7 @@
 			<SafeMoveTo questId="1" stepId="2" x="2318" y="4508" z="0"/> 
 			<MoveToActor questId="1" stepId="2" actorId="176008" isPortal="True" destinationWorldId="82502"/>
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />			
-		</If>
+		</If>		
 		
 		<!--Find cave 1-->
 		<If condition="CurrentWorldId == 71150">
@@ -48,12 +48,20 @@
 		  <WaitTimer questId="1" stepId="2" waitTime="1000" />		  
 		</If>
 		
+		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
+		<If condition="CurrentWorldId == 71150">
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />
+			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="-1187439574" />
+		</If>				
+		
 		<!--Find cave 2-->
 		<If condition="CurrentWorldId == 71150">
 		  <SafeMoveTo questId="1" stepId="2" x="2431.127" y="4249.725" z="0.3582907" />
 		  <MoveToActor questId="1" stepId="2" actorId="176008" isPortal="True" destinationWorldId="82502"/>
 		  <WaitTimer questId="1" stepId="2" waitTime="1000" />		  
 		</If>
+		
 		
 		<!--Find cave 3-->
 		<If condition="CurrentWorldId == 71150">
@@ -67,12 +75,12 @@
 		  <SafeMoveTo questId="1" stepId="2" x="2295.898" y="4024.81" z="-4.088893" />
 		  <MoveToActor questId="1" stepId="2" actorId="176008" isPortal="True" destinationWorldId="82502"/>
 		  <WaitTimer questId="1" stepId="2" waitTime="1000" />
-		</If>		
+		</If>			
 		
 		<!-- Cave Level 1 -->
 		<If condition="CurrentWorldId == 82502">	
 		
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.1" boxSize="12" until="ExitFound" exitNameHash="-1187439573" ignoreMarkers="False">
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.1" boxSize="12" pathPrecision="20" until="ExitFound" exitNameHash="-1187439573" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
@@ -94,12 +102,15 @@
 		<!-- Cave Level 2 -->
 		<If condition="CurrentWorldId == 82511">
 			<ToggleTargeting questId="1" combat="True" killRadius="80" />		
-			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance=".05" boxSize="7" stayAfterBounty="False"/>
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" pathPrecision="20" boxTolerance=".05" boxSize="7" stayAfterBounty="False"/>
 		</If>
 		
 	</If>
 	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Timed')">
+		<LoadProfile file="act1_timed.xml" />	
+	</If>		
 	<LoadProfile file="act1.xml" />	
 	
 </Order>

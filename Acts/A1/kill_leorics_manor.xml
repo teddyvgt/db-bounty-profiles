@@ -19,7 +19,7 @@
 		<!-- Northern Highlands Waypoint -->				
 		<While condition="CurrentLevelAreaId != 100854 and CurrentLevelAreaId != 19941 and CurrentLevelAreaId != 1199 and CurrentLevelAreaId != 19943">			
 			<UseWaypoint waypointNumber="14" questId="1"/>	
-			<WaitTimer questId="1" stepId="2" waitTime="6000" />
+			<WaitTimer questId="1" waitTime="7001" />
 		</While>	
 
 		<If	condition="CurrentLevelAreaId == 100854 or CurrentLevelAreaId == 19941 or CurrentLevelAreaId == 1199 or CurrentLevelAreaId == 19943">			
@@ -41,6 +41,9 @@
 	</If>		
 
 	<WaitTimer questId="1" stepId="2" waitTime="3000" />
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Timed')">
+		<LoadProfile file="act1_timed.xml" />	
+	</If>		
 	<LoadProfile file="act1.xml" />	
 	
 </Order>

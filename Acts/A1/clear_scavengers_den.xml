@@ -16,7 +16,7 @@
 		<!-- Fields of Misery Waypoint -->	
 		<While condition="CurrentLevelAreaId != 19952 and CurrentWorldId != 81163 and CurrentWorldId != 81164">			
 			<UseWaypoint waypointNumber="8" questId="1"/>	
-			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
+			<WaitTimer questId="1" waitTime="7001" />	
 		</While>	
 		
 		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
@@ -46,7 +46,14 @@
 				<MoveToActor questId="1" stepId="2" actorId="175501" isPortal="True" destinationWorldId="81163" interactRange="20"  />
 				<WaitTimer questId="1" stepId="2" waitTime="1000" />					
 			</If>
-		</If>				
+		</If>		
+
+		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
+		<If condition="CurrentWorldId == 71150">
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />
+			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="925091454" />	
+		</If>			
 
 		<If condition="CurrentWorldId == 71150">		
 			<MoveToMapMarker questId="1" markerNameHash="-1" actorId="175501" interactRange="10" pathPrecision="10" interactAttempts="5" isPortal="True" destinationWorldId="-1" maxSearchDistance="1500" timeout="60000" />						
@@ -74,32 +81,31 @@
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>
 			</TrinityExploreDungeon>
+			<MoveToActor questId="1" stepId="2" timeout="10000" actorId="176038" isPortal="True" destinationWorldId="81164" interactRange="25"  />	
 			
-			<MoveToActor questId="1" stepId="2" timeout="10000" actorId="176038" isPortal="True" destinationWorldId="81164" interactRange="25"  />
-
-			<WaitTimer questId="1" stepId="2" waitTime="1000" />
-			
+			<!-- Reports of not being able to kill portal while standing beside it - try a few things -->					
 			<If condition="HasQuest(345496) and CurrentWorldId == 81163">	
+				<WaitTimer questId="1" stepId="2" waitTime="1000" />
 				<MoveToActor questId="1" timeout="10000" actorId="176038" isPortal="True" destinationWorldId="81164" interactRange="25" />
-			</If>
-			
+			</If>			
 			<If condition="HasQuest(345496) and CurrentWorldId == 81163">				
 				<MoveToMapMarker questId="1" stepId="2" actorId="176038" isPortal="True" destinationWorldId="81164" interactRange="25" />
 			</If>
-			
-			<WaitTimer questId="1" stepId="2" waitTime="3000" />
 
 		</If>
 		
 		<!-- Inside Scavenger's Den Level 2-->
 		<If condition="HasQuest(345496) and CurrentWorldId == 81164">		
 			<ToggleTargeting questId="1" combat="True" killRadius="80" />			
-			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance=".10" boxSize="9" stayAfterBounty="False"/>				
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance=".10" boxSize="9" pathPrecision="15" stayAfterBounty="False"/>				
 		</If>
 
 	</If>	
 	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Timed')">
+		<LoadProfile file="act1_timed.xml" />	
+	</If>		
 	<LoadProfile file="act1.xml" />
 	
 </Order>

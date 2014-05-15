@@ -15,7 +15,7 @@
 		<!-- Fields of Misery Waypoint -->
 		<While condition="CurrentLevelAreaId != 19952">			
 			<UseWaypoint waypointNumber="8" questId="1"/>	
-			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
+			<WaitTimer questId="1" waitTime="7001" />	
 		</While>		
 		
 		<If condition="CurrentLevelAreaId == 19952">		
@@ -96,11 +96,28 @@
 				</While>
 			</If>
 			
+			<!-- Location #7 -->
+			<If condition="HasQuest(365401)">
+				<SafeMoveTo questId="1" stepId="2" x="1936" y="716" z="-0" pathPrecision="5" pathPointLimit="250" />
+				<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+					<ToggleTargeting questId="1" combat="True" killRadius="15" />				
+				</If>			
+				<While condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 50)">
+					<MoveToActor questId="365401" stepId="2" actorId="364601" interactRange="20"  />
+					<WaitTimer questId="365401" stepId="2" waitTime="2000" />			
+				</While>
+			</If>			
+			
+			
+			
 		</If>			
 		
 	</If>
 	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Timed')">
+		<LoadProfile file="act1_timed.xml" />	
+	</If>		
 	<LoadProfile file="act1.xml" />
 	
 </Order>

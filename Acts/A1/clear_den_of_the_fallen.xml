@@ -19,13 +19,13 @@
 		<!-- Weeping Hollow Waypoint -->
 		<While condition="CurrentLevelAreaId != 19954 and CurrentWorldId != 135193 and CurrentWorldId != 194232">			
 			<UseWaypoint waypointNumber="6" questId="1"/>	
-			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
+			<WaitTimer questId="1" waitTime="7001" />	
 		</While>	
 		
 		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
 		<If condition="CurrentWorldId == 71150">
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
-			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />\
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />
 			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" destinationWorldId="-1" markerNameHash="-2043651426"  />
 		</If>	
 
@@ -102,13 +102,16 @@
 		<!-- Den of the Fallen Level 2 -->		
 		<If condition="CurrentLevelAreaId == 194232">		
 			<ToggleTargeting questId="1" combat="True" killRadius="80" />		
-			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance=".10" boxSize="9" stayAfterBounty="False"/>
+			<TrinityExploreDungeon questId="1" stepId="2" until="BountyComplete" boxTolerance=".10" boxSize="9"  pathPrecision="30" stayAfterBounty="False"/>
 			<LogMessage message="Bounty - Den of the Fallen Complete" />
 		</If>
 
 	</If>	
 		
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Timed')">
+		<LoadProfile file="act1_timed.xml" />	
+	</If>		
 	<LoadProfile file="act1.xml" />
 	
 </Order>

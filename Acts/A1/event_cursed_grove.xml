@@ -14,7 +14,7 @@
 		<!-- Fields of Misery Waypoint -->
 		<While condition="CurrentLevelAreaId != 19952">			
 			<UseWaypoint waypointNumber="8" questId="1"/>	
-			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
+			<WaitTimer questId="1" waitTime="7001" />	
 		</While>	
 		
 		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
@@ -34,7 +34,8 @@
 			<SafeMoveTo questId="1" stepId="2" x="1799" y="617" z="-0" pathPrecision="1" pathPointLimit="250" statusText="Moving to Location 1 of 3"/>		
 			<If condition="CurrentWorldId == 71150 and ActorExistsAt(365097, Me.Position.X, Me.Position.Y, Me.Position.Z, 150)">							
 				
-				<!-- the ring terrain formation causes flip-flop between goats outside the ring so we have to clear the area first -->					 
+				<!-- the ring terrain formation causes flip-flop between goats outside the ring so we have to clear the area first -->	
+				<ToggleTargeting questId="1" combat="True" killRadius="45" />					
 				<SafeMoveTo questId="365381" x="1822" y="717" statusText="Clearing area around chest"/>  
 				<SafeMoveTo questId="365381" x="1934" y="733" statusText="Clearing area around chest"/>  
 				<SafeMoveTo questId="365381" x="1928" y="551" statusText="Clearing area around chest"/>  
@@ -44,9 +45,7 @@
 				<SafeMoveTo questId="365381" x="1797" y="584" statusText="Clearing area around chest"/>  					 				 
 				<MoveToActor questId="1" stepId="2" actorId="365097" />		
 				<WaitTimer questId="1" stepId="2" waitTime="500" />	
-				
-				<ToggleTargeting questId="1" combat="True" killRadius="45" />				
-				
+
 				<!-- Hang out until completed -->
 				<While condition="HasQuest(365381) and ActorExistsAt(364559, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
 					<MoveToActor questId="365381" stepId="2" actorId="364559" interactRange="8"/>
@@ -65,18 +64,17 @@
 
 			<If condition="CurrentWorldId == 71150 and ActorExistsAt(365097, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
 					
-				<!-- the ring terrain formation causes flip-flop between goats outside the ring so we have to clear the area first -->						
+				<!-- the ring terrain formation causes flip-flop between goats outside the ring so we have to clear the area first -->	
+				<ToggleTargeting questId="1" combat="True" killRadius="45" />	
 				<SafeMoveTo questId="312429" stepId="2" x="2320" y="954" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 				<SafeMoveTo questId="312429" stepId="2" x="2415" y="951" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 				<SafeMoveTo questId="312429" stepId="2" x="2367" y="711" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 				<SafeMoveTo questId="312429" stepId="2" x="2169" y="757" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 				<SafeMoveTo questId="312429" stepId="2" x="2209" y="939" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
 				<SafeMoveTo questId="312429" stepId="2" x="2295" y="919" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-				<SafeMoveTo questId="312429" stepId="2" x="2287" y="828" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-														
+				<SafeMoveTo questId="312429" stepId="2" x="2287" y="828" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 													
 				<MoveToActor questId="1" stepId="2" actorId="365097" />
 				<WaitTimer questId="1" stepId="2" waitTime="500" />	
-				<ToggleTargeting questId="1" combat="True" killRadius="45" />	
 				
 				<!-- Hang out until completed -->
 				<While condition="HasQuest(365381) and ActorExistsAt(364559, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
@@ -111,6 +109,9 @@
 	</If>
 	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Timed')">
+		<LoadProfile file="act1_timed.xml" />	
+	</If>		
 	<LoadProfile file="act1.xml" />
 	
 </Order>

@@ -18,7 +18,7 @@
 		<!-- Fields of Misery Waypoint -->	
 		<While condition="CurrentLevelAreaId != 19952">			
 			<UseWaypoint waypointNumber="8" questId="1"/>	
-			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
+			<WaitTimer questId="1" waitTime="7001" />	
 		</While>	
 
 		<!-- Location #1 -->			
@@ -31,7 +31,7 @@
 		
 			<!-- talk to the farmer -->					
 			<MoveToActor questId="1" actorId="81980" interactRange="7" name="NPC_Human_Male_Event_FarmAmbush-16778"  pathPrecision="5" pathPointLimit="250" statusText="" /> 	
-			<WaitTimer questId="1" stepId="2" waitTime="6000" />
+			<WaitTimer questId="1" stepId="2" waitTime="6500" />
 			
 			<!-- Kill all the Plague Nests  -->
 			<SafeMoveTo questId="1" stepId="2" x="1774" y="649" z="0" /> 
@@ -88,7 +88,7 @@
 
 				<!-- talk to the farmer -->								
 				<MoveToActor questId="312429" stepId="2" actorId="81980" interactRange="7" name="NPC_Human_Male_Event_FarmAmbush-4506"  pathPrecision="5" pathPointLimit="250" statusText="" /> 			
-				<WaitTimer questId="1" stepId="2" waitTime="6000" />			
+				<WaitTimer questId="1" stepId="2" waitTime="6500" />			
 				
 				<!-- Kill all the Plague Nests  -->
 				<SafeMoveTo questId="312429" stepId="2" x="2261" y="847" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
@@ -133,6 +133,9 @@
 	</If>
 	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Timed')">
+		<LoadProfile file="act1_timed.xml" />	
+	</If>		
 	<LoadProfile file="act1.xml" />
 	
 </Order>

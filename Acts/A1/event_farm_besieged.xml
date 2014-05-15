@@ -18,7 +18,7 @@
 		<!-- Fields of Misery Waypoint -->
 		<While condition="CurrentLevelAreaId != 19952">			
 			<UseWaypoint waypointNumber="8" questId="1"/>	
-			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
+			<WaitTimer questId="1" waitTime="7001" />	
 		</While>	
 		
 		<!-- Go straight to the OBJECTIVE marker -->		
@@ -72,6 +72,9 @@
 			
 		
 	</If>
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Timed')">
+		<LoadProfile file="act1_timed.xml" />	
+	</If>		
 	<LoadProfile file="act1.xml" />
 	
 </Order>

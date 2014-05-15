@@ -18,7 +18,7 @@
 		<!-- Northern Highlands Waypoint -->
 		<While condition="CurrentLevelAreaId != 19941 and CurrentLevelAreaId != 1199 and CurrentLevelAreaId != 19943">			
 			<UseWaypoint waypointNumber="14" questId="1"/>	
-			<WaitTimer questId="1" stepId="2" waitTime="6000" />	
+			<WaitTimer questId="1" waitTime="7001" />	
 		</While>		
 		
 		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
@@ -61,7 +61,7 @@
 			<MoveToActor questId="1" stepId="2" actorId="129782" />	
 			
 			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />				
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.10" boxSize="12" until="ObjectFound" actorId="136009" ignoreMarkers="False" />			
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.10" boxSize="12" pathPrecision="20" until="ObjectFound" actorId="136009" ignoreMarkers="False" />			
 			
 			<WaitTimer questId="72546" stepId="17" waitTime="500" />							
 			<ToggleTargeting questId="1" stepId="1" killRadius="100" />			
@@ -79,6 +79,9 @@
 	</If>
 	
 	<WaitTimer questId="1" stepId="2" waitTime="2000" />		
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Timed')">
+		<LoadProfile file="act1_timed.xml" />	
+	</If>		
 	<LoadProfile file="act1.xml" />
 	
 </Order>
