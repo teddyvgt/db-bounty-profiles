@@ -11,7 +11,7 @@
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>	
 		
 		<!-- Fields of Misery Waypoint -->
-		<While condition="CurrentLevelAreaId != 19952 and CurrentWorldId!=82371 and CurrentWorldId == 82371">		
+		<While condition="CurrentLevelAreaId != 19952 and CurrentWorldId!=82371 and CurrentWorldId != 82371">		
 			<UseWaypoint waypointNumber="8" questId="1"/>	
 			<WaitTimer questId="1" waitTime="7001" />	
 		</While>	
