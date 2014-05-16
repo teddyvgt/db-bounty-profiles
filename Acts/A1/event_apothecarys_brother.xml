@@ -21,18 +21,22 @@
 			<WaitTimer questId="1" waitTime="7001" />	
 		</While>		
 		
+		<!-- Go up to Leorics Hunting Grounds -->
+		<If condition="CurrentWorldId == 71150">		
+			<SafeMoveTo questId="312429" stepId="2" x="1461" y="4054" z="40" pathPrecision="5" pathPointLimit="250" statusText="Checking location #1" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="1418" y="3955" z="50" pathPrecision="5" pathPointLimit="250" statusText="Checking location #1" /> 
+			<SafeMoveTo questId="312429" stepId="2" x="1285" y="3896" z="78" pathPrecision="5" pathPointLimit="250" statusText="Checking location #1" /> 
+		</If>
+		
 		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
 		<If condition="CurrentWorldId == 71150">
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />
-<!-- 			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="" />	 -->
+ 			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="853662530" />
 		</If>			
-
+			
 		<!-- Location #1 -->
-		<If condition="CurrentWorldId == 71150">
-			<SafeMoveTo questId="312429" stepId="2" x="1461" y="4054" z="40" pathPrecision="5" pathPointLimit="250" statusText="Checking location #1" /> 
-			<SafeMoveTo questId="312429" stepId="2" x="1418" y="3955" z="50" pathPrecision="5" pathPointLimit="250" statusText="Checking location #1" /> 
-			<SafeMoveTo questId="312429" stepId="2" x="1285" y="3896" z="78" pathPrecision="5" pathPointLimit="250" statusText="Checking location #1" /> 
+		<If condition="CurrentWorldId == 71150">		
 			<SafeMoveTo questId="312429" stepId="2" x="1229" y="3815" z="80" pathPrecision="5" pathPointLimit="250" statusText="Checking location #1" /> 
 			<MoveToActor questId="1" stepId="2" actorId="175482" isPortal="True" destinationWorldId="132995"/>
 			<WaitTimer questId="1" stepId="2" waitTime="2000" />
@@ -61,13 +65,14 @@
 			<MoveToActor questId="1" stepId="2" actorId="129782" />	
 			
 			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />				
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.10" boxSize="12" pathPrecision="20" until="ObjectFound" actorId="136009" ignoreMarkers="False" />			
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.10" boxSize="12" pathPrecision="30" until="ObjectFound" actorId="136009" ignoreMarkers="False" />			
 			
 			<WaitTimer questId="72546" stepId="17" waitTime="500" />							
 			<ToggleTargeting questId="1" stepId="1" killRadius="100" />			
 			<MoveToActor questId="312429" stepId="2" actorId="136009" interactRange="8" pathPrecision="5" pathPointLimit="250" statusText="" /> 			
 			<MoveToActor questId="312429" stepId="2" actorId="129782" interactRange="8" pathPrecision="5" pathPointLimit="250" statusText="" /> 
-
+			<WaitTimer questId="72546" stepId="17" waitTime="2000" />
+			
 			<!-- the guy disappears when the quest is done -->
 			<While condition="HasQuest(350529) and ActorExistsAt(129782, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">				
 				<MoveToActor questId="350529" stepId="2" actorId="129782"/>

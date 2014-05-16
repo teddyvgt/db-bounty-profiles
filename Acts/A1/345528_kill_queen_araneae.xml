@@ -83,8 +83,15 @@
 
 		<!-- Boss Lair -->
 		<If condition="CurrentWorldId == 182976">	
+		
 			<ToggleTargeting questId="1" combat="True" killRadius="150" />
-			<WaitTimer questId="1" waitTime="8000" />				
+			<While condition="Me.IsInBossEncounter">
+				<SafeMoveTo questId="345528" stepId="2" x="396" y="368" z="13" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<SafeMoveTo questId="345528" stepId="2" x="340" y="383" z="13" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<SafeMoveTo questId="345528" stepId="2" x="361" y="338" z="13" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+				<SafeMoveTo questId="345528" stepId="2" x="413" y="371" z="13" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+			</While>
+			
 		</If>
 		
 	</If>
