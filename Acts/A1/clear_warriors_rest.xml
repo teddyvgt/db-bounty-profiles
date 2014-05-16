@@ -16,21 +16,16 @@
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
 	
 		<!-- Festering Woods Waypoint -->
-		<While condition="CurrentLevelAreaId != 19953">			
+		<While condition="CurrentLevelAreaId != 19953 and CurrentLevelAreaId != 60396">			
 			<UseWaypoint waypointNumber="10" questId="1"/>	
 			<WaitTimer questId="1" waitTime="7001" />	
 		</While>		
 		
-		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
-		<If condition="CurrentLevelAreaId != 19953">			
-			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
-		</If>			
-		
-		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
+		<!-- Go straight to the entrance if OBJECTIVE marker -->		
 		<If condition="CurrentLevelAreaId == 19953">
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
 			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />
-<!-- 			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="" />	 -->			
+			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="976523525" destinationWorldId="-1" />	
 		</If>	
 
 		<!--  Warriors Rest #1 -->

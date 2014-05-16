@@ -24,14 +24,31 @@
 			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="1317387500" />			
 		</If>		
 		
-		<!-- This world finds it hard to navigate to objective so explore for Exit scene -->
+		<!-- Go straight to the entrance if OBJECTIVE marker -->		
+		<WaitTimer questId="1" stepId="2" waitTime="1000" />
+		<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />				
+		
+		<!-- Attempt to get into a better position for objective pathing -->	
 		<If condition="CurrentWorldId == 180550">		
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.6" boxSize="15" pathPrecision="30" until="SceneFound" sceneName="_StomachAche" ignoreMarkers="False" objectDistance="150">
+			<TrinityExploreDungeon questId="1" timeout="15" timeoutType="Timer"  stepId="2" boxTolerance="0.6" boxSize="12" pathPrecision="40" until="SceneFound" sceneName="_StomachAche" ignoreMarkers="False" objectDistance="150">
 				<PriorityScenes>
 					<PriorityScene sceneName="_StomachAche" />
 				</PriorityScenes>				
-			</TrinityExploreDungeon>
-		</If>
+			</TrinityExploreDungeon>				
+		</If>			
+		
+		<!-- Go straight to the entrance if OBJECTIVE marker -->		
+		<WaitTimer questId="1" stepId="2" waitTime="1000" />
+		<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />				
+		
+		<!-- Attempt to get into a better position for objective pathing -->	
+		<If condition="CurrentWorldId == 180550">		
+			<TrinityExploreDungeon questId="1" timeout="60" timeoutType="Timer"  stepId="2" boxTolerance="0.6" boxSize="12" pathPrecision="40" until="SceneFound" sceneName="_StomachAche" ignoreMarkers="False" objectDistance="150">
+				<PriorityScenes>
+					<PriorityScene sceneName="_StomachAche" />
+				</PriorityScenes>				
+			</TrinityExploreDungeon>				
+		</If>		
 		
 		<!-- Try objective marker -->		
 		<If condition="CurrentWorldId == 180550">
@@ -39,9 +56,24 @@
 			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="1317387500" />				
 		</If>
 		
+		<!-- Attempt to get into a better position for objective pathing -->	
+		<If condition="CurrentWorldId == 180550">		
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.6" boxSize="12" pathPrecision="40" until="SceneFound" sceneName="_StomachAche" ignoreMarkers="False" objectDistance="150">
+				<PriorityScenes>
+					<PriorityScene sceneName="_StomachAche" />
+				</PriorityScenes>				
+			</TrinityExploreDungeon>				
+		</If>		
+		
+		<!-- Try objective marker -->		
+		<If condition="CurrentWorldId == 180550">
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />	
+			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="1317387500" />				
+		</If>		
+		
 		<!-- Reduce box size and explore again -->
 		<If condition="CurrentWorldId == 180550">			
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.55" boxSize="12" pathPrecision="20" until="ExitFound" exitNameHash="1317387500" ignoreMarkers="False" objectDistance="150">
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.55" boxSize="9" pathPrecision="30" until="ExitFound" exitNameHash="1317387500" ignoreMarkers="False" objectDistance="150">
 				<PriorityScenes>
 					<PriorityScene sceneName="Exit" />
 				</PriorityScenes>				
@@ -52,7 +84,7 @@
 		<!-- Boss Lair -->
 		<If condition="CurrentWorldId == 182976">	
 			<ToggleTargeting questId="1" combat="True" killRadius="150" />
-			<WaitTimer questId="345528" waitTime="10000" />				
+			<WaitTimer questId="1" waitTime="8000" />				
 		</If>
 		
 	</If>

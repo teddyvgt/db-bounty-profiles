@@ -48,8 +48,14 @@
 
 				<!-- Hang out until completed -->
 				<While condition="HasQuest(365381) and ActorExistsAt(364559, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
+					
+					<!-- walk around a bit and go back to chest -->
 					<MoveToActor questId="365381" stepId="2" actorId="364559" interactRange="8"/>
-					<WaitTimer questId="365381" stepId="2" waitTime="2000" />	
+					<SafeMoveTo questId="365381" stepId="2" x="1784" y="602" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+					<SafeMoveTo questId="365381" stepId="2" x="1814" y="633" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+					<SafeMoveTo questId="365381" stepId="2" x="1839" y="586" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 
+					<SafeMoveTo questId="365381" stepId="2" x="1806" y="570" z="0" pathPrecision="5" pathPointLimit="250" statusText="" /> 					
+					
 				</While>	
 				
 			</If>

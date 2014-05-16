@@ -23,13 +23,13 @@
 			<!-- Settings -->
 			<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
 				
-			<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
+			<!-- Go straight to the entrance if OBJECTIVE marker -->		
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />	
-			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" actorId="364601" />				
-			<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 50)">
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="20" actorId="364601" />				
+			<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 80)">
 				<ToggleTargeting questId="1" combat="True" killRadius="45" />		
 			</If>
-			<While condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 50)">
+			<While condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 80)">
 				<MoveToActor questId="365401" stepId="2" actorId="364601" interactRange="20" />
 				<WaitTimer questId="365401" stepId="2" waitTime="2000" />				
 			</While>			
@@ -60,6 +60,17 @@
 				</While>
 			</If>	
 			
+			<!-- Go straight to the entrance if OBJECTIVE marker -->		
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />	
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="20" actorId="364601" />				
+			<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 80)">
+				<ToggleTargeting questId="1" combat="True" killRadius="45" />		
+			</If>
+			<While condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 80)">
+				<MoveToActor questId="365401" stepId="2" actorId="364601" interactRange="20" />
+				<WaitTimer questId="365401" stepId="2" waitTime="2000" />				
+			</While>						
+			
 			<!-- Location #3 -->		
 			<If condition="HasQuest(365401)">
 				<SafeMoveTo questId="1" stepId="2" x="1492" y="770" z="-0" pathPrecision="5" pathPointLimit="250" /> 
@@ -84,6 +95,17 @@
 				</While>
 			</If>		
 
+			<!-- Go straight to the entrance if OBJECTIVE marker -->		
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />	
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" actorId="364601" />				
+			<If condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 70)">
+				<ToggleTargeting questId="1" combat="True" killRadius="45" />		
+			</If>
+			<While condition="ActorExistsAt(364601, Me.Position.X, Me.Position.Y, Me.Position.Z, 70)">
+				<MoveToActor questId="365401" stepId="2" actorId="364601" interactRange="20" />
+				<WaitTimer questId="365401" stepId="2" waitTime="2000" />				
+			</While>						
+			
 			<!-- Location #6 -->
 			<If condition="HasQuest(365401)">
 				<SafeMoveTo questId="1" stepId="2" x="2191" y="621" z="-0" pathPrecision="5" pathPointLimit="250" /> 
