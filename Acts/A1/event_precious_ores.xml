@@ -11,16 +11,24 @@
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>	
 		
 		<!-- Fields of Misery Waypoint -->
-		<While condition="CurrentLevelAreaId != 19952">			
+		<While condition="CurrentLevelAreaId != 19952 and CurrentWorldId!=82371 and CurrentWorldId == 82371">		
 			<UseWaypoint waypointNumber="8" questId="1"/>	
 			<WaitTimer questId="1" waitTime="7001" />	
 		</While>	
 
-		<!-- Safety wait here because of DB bug with WHILE loops ignoring wait tags on subsequent loops -->
-		<If condition="CurrentLevelAreaId != 19952">				
-			<WaitTimer questId="1" stepId="2" waitTime="3000" />	
-		</If>			
-
+		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
+		<If condition="CurrentWorldId == 71150">
+			<WaitTimer questId="1" stepId="2" waitTime="1000" />
+			<MoveToObjective questId="1" interactRange="30"  pathPrecision="20" />
+			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="-431250552" />				
+		</If>				
+		
+		<!-- Attempt to get into a better position for objective pathing -->	
+		<If condition="CurrentWorldId == 71150">
+			<TrinityExploreDungeon questId="1" timeout="10" timeoutType="Timer" until="BountyComplete"  boxTolerance="0.6" boxSize="20" pathPrecision="50" ignoreMarkers="False" />
+			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />				
+		</If>		
+	
 		<!-- Middle Cave Location 1 -->
 		<If condition="CurrentWorldId == 71150">			
 			<SafeMoveTo questId="312429" stepId="2" x="2068" y="896" z="0" pathPrecision="5" pathPointLimit="250" /> 
@@ -61,7 +69,7 @@
 		<!-- Cave Level 1 -->
 		<If condition="CurrentWorldId == 82370">
 			<WaitTimer questId="1" stepId="2" waitTime="2000" />
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" until="ExitFound" exitNameHash="-431250551" ignoreMarkers="False">
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.18" boxSize="20" pathPrecision="40" until="ExitFound" exitNameHash="-431250551" ignoreMarkers="False">
 				<PrioritizeScenes>
 					<PriorityScene sceneName="Exit" />
 				</PrioritizeScenes>		
@@ -77,9 +85,9 @@
 
 			<!-- Find one of the ores -->
 			<LogMessage questId="1" step="1" output="Looking for 347060 or 204032" />
-			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="202277" boxTolerance="0.10" boxSize="12" objectDistance="50">
+			<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="202277" boxTolerance="0.10" boxSize="12" pathPrecision="80" objectDistance="50">
 				<AlternateActors>
-					<AlternateActor actorId="204032" objectDistance="40" />
+					<AlternateActor actorId="204032" objectDistance="80" />
 				</AlternateActors>			
 			</TrinityExploreDungeon>
 			
@@ -88,7 +96,7 @@
 				<WaitTimer questId="1" stepId="11" waitTime="3000" />
 				<LogMessage questId="1" step="1" output="Found 202277, looking for 347060" />				
 				<MoveToActor questId="1" stepId="2" timeout="15000" actorId="202277" />				
-				<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="204032" boxTolerance="0.10" boxSize="12" objectDistance="40" stayAfterBounty="False" />
+				<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="204032" boxTolerance="0.10" boxSize="12" objectDistance="80" pathPrecision="30" stayAfterBounty="False" />
 				<WaitTimer questId="1" stepId="11" waitTime="3000" />					
 				<MoveToActor questId="1" stepId="2" timeout="15000" actorId="204032" />					
 			</If>
@@ -98,7 +106,7 @@
 				<WaitTimer questId="1" stepId="11" waitTime="3000" />				
 				<LogMessage questId="1" step="1" output="Found 347060, looking for 202277" />
 				<MoveToActor questId="1" stepId="2" timeout="15000" actorId="204032" />				
-				<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="202277" boxTolerance="0.10" boxSize="12" objectDistance="40"  stayAfterBounty="False" />
+				<TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" actorId="202277" boxTolerance="0.10" boxSize="12" objectDistance="80" pathPrecision="30" stayAfterBounty="False" />
 				<WaitTimer questId="1" stepId="11" waitTime="3000" />					
 				<MoveToActor questId="1" stepId="2" timeout="15000" actorId="202277" />					
 			</If>

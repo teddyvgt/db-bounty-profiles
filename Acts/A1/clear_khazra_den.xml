@@ -24,9 +24,15 @@
 		<!-- Go straight to the entrance if OBJECTIVE marker is visible -->		
 		<If condition="CurrentWorldId == 71150">
 			<WaitTimer questId="1" stepId="2" waitTime="1000" />
-			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />
-			<MoveToMapMarker questId="1" interactRange="30" isPortal="True" markerNameHash="2036518712" />					
+			<MoveToObjective questId="1" interactRange="30"  pathPrecision="20" />
+			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="2036518712" />					
 		</If>	
+		
+		<!-- Sometimes these caves have destinationFinished but not within interact range issues, try something else -->
+		<If condition="CurrentWorldId == 71150 and ActorExistsAt(176003, Me.Position.X, Me.Position.Y, Me.Position.Z, 80)">
+		  <MoveToActor questId="1" stepId="2" actorId="176003" isPortal="True" destinationWorldId="119888" x="2068" y="899" z="-0" />
+		  <WaitTimer questId="1" stepId="2" waitTime="2500" />
+		</If>				
 
 		<!-- Find Khazra Den #1-->
 		<If condition="CurrentWorldId == 71150">

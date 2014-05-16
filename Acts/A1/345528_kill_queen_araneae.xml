@@ -28,35 +28,35 @@
 		<WaitTimer questId="1" stepId="2" waitTime="1000" />
 		<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />				
 		
-		<!-- Attempt to get into a better position for objective pathing -->	
+		<!-- Attempt to get into a better position for objective pathing 	
 		<If condition="CurrentWorldId == 180550">		
 			<TrinityExploreDungeon questId="1" timeout="15" timeoutType="Timer"  stepId="2" boxTolerance="0.6" boxSize="12" pathPrecision="40" until="SceneFound" sceneName="_StomachAche" ignoreMarkers="False" objectDistance="150">
 				<PriorityScenes>
 					<PriorityScene sceneName="_StomachAche" />
 				</PriorityScenes>				
 			</TrinityExploreDungeon>				
-		</If>			
+		</If>			-->
 		
-		<!-- Go straight to the entrance if OBJECTIVE marker -->		
+		<!-- Go straight to the entrance if OBJECTIVE marker 	
 		<WaitTimer questId="1" stepId="2" waitTime="1000" />
-		<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />				
+		<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />	-->				
 		
-		<!-- Attempt to get into a better position for objective pathing -->	
+		<!-- Attempt to get into a better position for objective pathing 	
 		<If condition="CurrentWorldId == 180550">		
 			<TrinityExploreDungeon questId="1" timeout="60" timeoutType="Timer"  stepId="2" boxTolerance="0.6" boxSize="12" pathPrecision="40" until="SceneFound" sceneName="_StomachAche" ignoreMarkers="False" objectDistance="150">
 				<PriorityScenes>
 					<PriorityScene sceneName="_StomachAche" />
 				</PriorityScenes>				
 			</TrinityExploreDungeon>				
-		</If>		
+		</If>		-->
 		
-		<!-- Try objective marker -->		
+		<!-- Try objective marker 	
 		<If condition="CurrentWorldId == 180550">
 			<MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />	
 			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="1317387500" />				
-		</If>
+		</If>-->	
 		
-		<!-- Attempt to get into a better position for objective pathing -->	
+
 		<If condition="CurrentWorldId == 180550">		
 			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.6" boxSize="12" pathPrecision="40" until="SceneFound" sceneName="_StomachAche" ignoreMarkers="False" objectDistance="150">
 				<PriorityScenes>
