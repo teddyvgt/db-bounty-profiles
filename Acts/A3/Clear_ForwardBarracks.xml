@@ -6,10 +6,14 @@
 
   <Order>
     <If condition="HasQuest(349198)">
+    		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
 
       <While condition="CurrentWorldId != 95804 and CurrentWorldId != 185247 ">
         <UseWaypoint questId="1" waypointNumber="31" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
       </While>
       <If condition="CurrentWorldId == 95804">
 
@@ -24,11 +28,11 @@
       </If>
       <!-- General search -->
       <If condition="CurrentWorldId == 95804">
-        <TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="185156" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" pathPrecision="25">
+        <ExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="300" actorId="185156" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" pathPrecision="25">
           <PrioritizeScenes>
             <PriorityScene sceneName="HumanGenericD" />
           </PrioritizeScenes>
-        </TrinityExploreDungeon>
+        </ExploreDungeon>
         <MoveToActor questId="1" stepId="1" name="ForwardBarracks Entrance" actorId="185156" interactRange="10" isPortal="True" destinationWorldId="185247" />
         <WaitTimer questId="1" stepId="1" waitTime="500" />
       </If>
@@ -36,7 +40,7 @@
       <If condition="CurrentWorldId == 185247">
         <TrinitySetQuesting />
 		<ToggleTargeting questId="1" combat="True" />		
-        <TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
+        <ExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
         <WaitTimer questId="1" stepId="1" waitTime="500" />
       </If>
     </If>

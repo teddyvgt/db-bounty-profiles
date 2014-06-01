@@ -6,10 +6,13 @@
 
   <Order>
     <If condition="HasQuest(369319) or HasQuest(369312) or HasQuest(346132) or HasQuest(369316)">
-
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
       <While condition="CurrentWorldId != 93099 and CurrentWorldId != 81019">
         <UseWaypoint questId="1" waypointNumber="27" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
       </While>
 
       <If condition="CurrentWorldId == 93099">
@@ -45,7 +48,7 @@
 		</If>-->
 		<!-- sure is sure ;) -->
 		<If condition="ZetaDia.ActInfo.ActiveBounty">
-			<TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="20" stayAfterBounty="False" pathPrecision="20"/>
+			<ExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.60" boxSize="15" ignoreMarkers="False" stayAfterBounty="False" pathPrecision="20"/>
 		</If>
       </If>
 

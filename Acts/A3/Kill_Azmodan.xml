@@ -6,34 +6,29 @@
 
   <Order>
     <If condition="HasQuest(349244)">
-
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
       <While condition="CurrentWorldId != 119290 and CurrentWorldId != 121214">
         <UseWaypoint questId="1" waypointNumber="38" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
       </While>
 
       <If condition="CurrentWorldId == 119290">
-        <TrinityExploreDungeon questId="349244" stepId="1" until="ExitFound" exitNameHash="1743679055" actorId="159575" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
-          <AlternateActors>
-            <AlternateActor actorId="0" objectDistance="45" />
-          </AlternateActors>
-          <PriorityScenes>
-            <PriorityScene sceneName="Exit" />
-          </PriorityScenes>
-          <IgnoreScenes>
-            <IgnoreScene sceneName="_N_" />
-            <IgnoreScene sceneName="_S_" />
-            <IgnoreScene sceneName="_E_" />
-            <IgnoreScene sceneName="_W_" />
-          </IgnoreScenes>
-        </TrinityExploreDungeon>
-        <MoveToMapMarker questId="349244" stepId="1" markerNameHash="1743679055" actorId="159575" interactRange="20"
-        pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="121214"  />
+        <ExploreDungeon stayAfterBounty="False" questId="1" stepId="2"  until="ObjectFound" objectDistance="100" actorId="159575" boxSize="25" boxTolerance="25" pathPrecision="45">
+					<Objectives>
+						<Objective markerNameHash="1743679055"/>
+					</Objectives>
+        </ExploreDungeon>
+        <MoveToActor questId="1" stepId="2" actorId="159575" isPortal="True" destinationWorldId="121214" interactRange="20" />
+        <WaitTimer questId="1" stepId="2" waitTime="1000" />
 
       </If>
       <If condition="CurrentWorldId == 121214">
-        <SafeMoveTo questId="349244" stepId="2" x="490" y="539" z="0" pathPrecision="5" pathPointLimit="250"  />
-        <SafeMoveTo questId="349244" stepId="2" x="425" y="431" z="0" pathPrecision="5" pathPointLimit="250"  />
+        <SafeMoveTo questId="312429" stepId="2" x="542" y="545" z="1" pathPrecision="5" pathPointLimit="250" />
+        <SafeMoveTo questId="312429" stepId="2" x="449" y="484" z="0" pathPrecision="5" pathPointLimit="250" /> 
+        <SafeMoveTo questId="312429" stepId="2" x="409" y="409" z="1" pathPrecision="5" pathPointLimit="250" /> 
         <While condition="Me.IsInBossEncounter">
           <WaitTimer questId="1" stepId="2" waitTime="1000" />
         </While>

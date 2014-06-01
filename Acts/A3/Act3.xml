@@ -10,9 +10,8 @@
     <!-- Act 3 Bounties -->
     <LogMessage quest="1" step="1" output="Act 3 Bounties" />
 	<ToggleTargeting questId="1" combat="True" />
-
+    
     <!--WAYPOINT [27] a3Dun_rmpt_Level02        -->
-
 
     <!--Kill_Allucayrd-->
     <!--state: maybe static route -->
@@ -145,7 +144,6 @@
 
     <!--WAYPOINT [31] A3_Battlefields_02        -->
 
-
     <!--Clear_TheBarracks2-->
     <!--state: testing-->
     <If condition="HasQuest(349210)">
@@ -155,6 +153,7 @@
     <!--state: testing-->
     <If condition="HasQuest(349204)">
       <LoadProfile file="Clear_BattlefieldStores2.xml" />
+      <LeaveGame quest="1" step="1" reason="done." stayInParty="False" />
     </If>
     <!--Clear_FortifiedBunker2-->
     <!--state: testing-->
@@ -399,25 +398,29 @@
     </If>
 
 
-    <LogMessage quest="1" step="1" output="Checking if we have all bounties complete" />
-    <ActBountiesComplete act="A3">
-      <LogMessage quest="1" step="1" output="Seems like we have 5 complete" />
-      <If condition="Me.IsInTown==False">
-        <LogMessage quest="1" step="1" output="Going back to town to turn it in." />
-        <TrinityTownPortal questId="1" />
-      </If>
-      <WaitTimer questId="1" stepId="1" waitTime="1000"/>
-      <LogMessage quest="1" step="1" output="Lets make sure we are actually in the right town" />
-      <While condition="CurrentWorldId != 172909">
-        <LogMessage quest="1" step="1" output="Doesn't look like we are! using the waypoint" />
-        <UseWaypoint waypointNumber="26" questId="1"/>
-        <WaitTimer questId="1" stepId="1" waitTime="7500"/>
-      </While>
-      <LogMessage quest="1" step="1" output="Attempting to interact with Tyrael" />
-      <MoveToActor questId="1" stepId="1" actorId="114622" x="379" y="422" z="0"  />
-      <LogMessage quest="1" step="1" output="Should have interacted with him by now." />
+	<ActBountiesComplete act="A3">
+		<While condition="CurrentWorldId != 172909">  
+			<WaitTimer questId="1" stepId="1" waitTime="3000"/>
+			<UseWaypoint waypointNumber="26" questId="1"/> 
+			<WaitTimer questId="1" stepId="1" waitTime="1000"/>
+		</While>
+		<ToggleTargeting questId="1" combat="True" killRadius="45" />
+		<WaitTimer questId="1" stepId="1" waitTime="1000"/>
+		<SafeMoveTo questId="312429" stepId="2" x="385" y="419" z="1" pathPrecision="5" statusText="" />
+		<MoveToActor questId="1" stepId="1" actorId="114622" />
+		<WaitTimer questId="1" stepId="1" waitTime="1000"/>
+		<WaitTimer questId="1" stepId="1" waitTime="1000"/>
+		<WaitTimer questId="1" stepId="1" waitTime="1000"/>
+		<WaitTimer questId="1" stepId="1" waitTime="1000"/>
+	</ActBountiesComplete>
 
-    </ActBountiesComplete>
+		<!-- should we move onto to the next act? -->
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('All_Redirect')">
+			<TrinityLoadProfile file="../All_Distributor.xml" />			
+		</If>		
+
+		<!-- nope repeating the same act. gooo! -->
+		<LeaveGame quest="1" step="1" reason="done." stayInParty="False" />		
 
     <!-- should we move onto to the next act? -->
     <If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('All_Redirect')">

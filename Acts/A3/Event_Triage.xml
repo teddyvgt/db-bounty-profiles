@@ -8,24 +8,42 @@
   </TargetBlacklists>
   <Order>
     <If condition="HasQuest(346180)">
-
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
       <While condition="CurrentWorldId != 95804 ">
         <UseWaypoint questId="1" waypointNumber="31" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
       </While>
 
       <If condition="CurrentWorldId == 95804">
-		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>
-		 <WaitTimer questId="1" stepId="2" waitTime="1000" />
-		 <MoveToObjective questId="1" interactRange="20"  pathPrecision="40" />
-		 <ToggleTargeting questId="1" combat="True" killRadius="45" />
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		  
+        <ExploreDungeon questId="346180" stepId="1" until="ObjectFound" ignoreMarkers="False" actorId="205312" boxTolerance="0.40" boxSize="15" pathPrecision="15">
+          <PrioritizeScenes>
+            <PriorityScene sceneId="108251" />
+            <PriorityScene sceneName="HumanGenericE" />
+          </PrioritizeScenes>
+          <IgnoreScenes>
+            <IgnoreScene sceneName="a3dun_Bridge_" />
+          </IgnoreScenes>
+        </ExploreDungeon>
+        <!--
+            <IgnoreScene sceneName="a3dun_Bridge_NS_01_Chokepoint" />
+            <IgnoreScene sceneName="a3_Battlefield_Chokepoint_B" />
+            <IgnoreScene sceneName="a3dun_Bridge_NS_04_Chokepoint" />
+            <IgnoreScene sceneName="a3_Battlefield_ChokepointB_E02_S01" />
+            -->
+		<ToggleTargeting questId="1" combat="True" />					
         <WaitTimer questId="1" stepId="2" waitTime="500" />
-        <MoveToActor questId="346180" stepId="1" actorId="205312" interactRange="8" name="bastionsKeepGuard_Melee_A_01_snatched-13068"  pathPrecision="5" pathPointLimit="250"  />
-		<While condition="ActorExistsAt(205468, Me.Position.X, Me.Position.Y, Me.Position.Z, 150) and HasQuest(346180)">
-          <MoveToActor questId="346180" stepId="2" actorId="205468" />
+        <MoveToActor questId="346180" stepId="1" actorId="205312" interactRange="8" pathPrecision="5" pathPointLimit="250"  />
+        <!--<ToggleTargeting questId="1" combat="true" looting="true" killRadius="60" />-->
+        <While condition="ActorExistsAt(205468, Me.Position.X, Me.Position.Y, Me.Position.Z, 150) and HasQuest(346180)">
+          <MoveToActor questId="205468" stepId="2" actorId="205468" />
           <WaitTimer questId="1" stepId="2" waitTime="500" />
         </While>
-		<WaitTimer questId="1" stepId="2" waitTime="500" />
+        <!--<ToggleTargeting questId="1" combat="true" looting="true" killRadius="20" />-->
+        <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
     </If>
 

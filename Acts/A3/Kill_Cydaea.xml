@@ -8,10 +8,13 @@
   </TargetBlacklists>
   <Order>
     <If condition="HasQuest(349224)">
-
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
       <While condition="CurrentWorldId != 119641 and CurrentWorldId != 139272 and CurrentWorldId != 119650">
         <UseWaypoint questId="1" waypointNumber="37" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
       </While>
 
       <If condition="CurrentWorldId == 119641">
@@ -87,8 +90,8 @@
         <SafeMoveTo questId="349224" stepId="2" x="1110" y="1281" z="41" pathPrecision="20" pathPointLimit="250" />
         <SafeMoveTo questId="349224" stepId="2" x="1271" y="1094" z="41" pathPrecision="20" pathPointLimit="250" />
         <SafeMoveTo questId="349224" stepId="2" x="1152" y="1093" z="0" pathPrecision="20" pathPointLimit="250" />
-        <While condition="HasQuest(349224)">
-          <WaitTimer questId="1" stepId="2" waitTime="2000" />
+        <While condition="Me.IsInBossEncounter">
+          <WaitTimer questId="1" stepId="2" waitTime="1000" />
         </While>
       </If>
     </If>

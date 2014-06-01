@@ -6,36 +6,28 @@
 
   <Order>
     <If condition="HasQuest(369825)">
-
-      <While condition="CurrentWorldId != 95804 ">
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+      <While condition="CurrentWorldId != 95804">
         <UseWaypoint questId="1" waypointNumber="31" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
       </While>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
 
       <If condition="CurrentWorldId == 95804">
-		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		  
+		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" />
+        </If>		  
         <SafeMoveTo questId="1" stepId="2" x="4177" y="392" z="-2" pathPrecision="15" pathPointLimit="250" statusText="" />
         <SafeMoveTo questId="1" stepId="2" x="4177" y="392" z="-2" pathPrecision="15" pathPointLimit="250" statusText="" />
         <SafeMoveTo questId="1" stepId="2" x="4102" y="506" z="0" pathPrecision="15" pathPointLimit="250" statusText="" />
         <SafeMoveTo questId="1" stepId="2" x="3936" y="626" z="20" pathPrecision="15" pathPointLimit="250" statusText="" />
         <While condition="ActorExistsAt(365097, Me.Position.X, Me.Position.Y, Me.Position.Z, 150) and HasQuest(369825)">
-          <MoveToActor questId="369825" stepId="1" actorId="365097" interactRange="10" name="x1_Global_Chest_CursedChest_B-9174"  pathPrecision="5" pathPointLimit="250" />
+          <ToggleTargeting questId="1" combat="True" />
+          <MoveToActor questId="369825" stepId="1" actorId="365097" interactRange="10" pathPrecision="5" pathPointLimit="250" />
           <WaitTimer questId="369825" stepId="1" waitTime="2000" />
         </While>
-        
-        <If condition="HasQuest(369825)">
-          <TrinityExploreDungeon questId="1" stepId="1" until="ObjectFound" actorId="205468" boxTolerance="0.40" boxSize="15" pathPrecision="15">
-            <IgnoreScenes>
-              <IgnoreScene sceneName="a3dun_Bridge_" />
-            </IgnoreScenes>
-          </TrinityExploreDungeon>
-		  <ToggleTargeting questId="1" combat="True" />		
-          <While condition="ActorExistsAt(365097, Me.Position.X, Me.Position.Y, Me.Position.Z, 150) and HasQuest(369825)">
-            <MoveToActor questId="369825" stepId="1" actorId="365097" interactRange="10" name="x1_Global_Chest_CursedChest_B-9174"  pathPrecision="5" pathPointLimit="250" />
-            <WaitTimer questId="369825" stepId="1" waitTime="2000" />
-          </While>
-        </If>
-
       </If>
 
     </If>

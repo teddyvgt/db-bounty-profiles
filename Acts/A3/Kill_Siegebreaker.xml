@@ -8,18 +8,22 @@
   </TargetBlacklists>
   <Order>
     <If condition="HasQuest(349242)">
-
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
       <While condition="CurrentLevelAreaId != 112565 and CurrentLevelAreaId != 69504 and CurrentWorldId != 226713">
         <UseWaypoint questId="1" waypointNumber="33" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
       </While>
-      <While condition="CurrentLevelAreaId == 112565 and not (ActorExistsAt(6442, Me.Position.X, Me.Position.Y, Me.Position.Z, 40))">
+      <!-- <While condition="CurrentLevelAreaId == 112565 and not (ActorExistsAt(6442, Me.Position.X, Me.Position.Y, Me.Position.Z, 40))">
         <WaitTimer questId="1" stepId="1" waitTime="500"/>
         <UseWaypoint questId="1" waypointNumber="33" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
-      </While>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
+      </While> -->
 
       <If condition="CurrentWorldId == 95804">
+      		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>	
         <!--<SafeMoveTo questId="349242" stepId="2" x="2579" y="631" z="0" pathPrecision="5" pathPointLimit="250"  />-->
         <If condition="CurrentWorldId == 95804 and ActorExistsAt(Me.ActorSNO, 2633, 608, 0, 300)">
           <SafeMoveTo questId="349242" stepId="2" x="2649" y="618" z="0" />
@@ -72,9 +76,10 @@ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="22671
         <WaitTimer questId="1" waitTime="1000" stepId="2"/>
       </If>
       <If condition="CurrentWorldId == 226713">
+        <ToggleTargeting questId="1" combat="True" />
         <WaitTimer questId="1" waitTime="1000" stepId="2"/>
-        <While condition="HasQuest(349242)">
-          <WaitTimer questId="1" stepId="2" waitTime="2000" />
+        <While condition="Me.IsInBossEncounter">
+          <WaitTimer questId="1" stepId="2" waitTime="1000" />
         </While>
       </If>
     </If>

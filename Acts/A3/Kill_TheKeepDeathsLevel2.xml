@@ -6,15 +6,18 @@
 
   <Order>
     <If condition="HasQuest(346160) or HasQuest(349119) or HasQuest(349115) or HasQuest(349301)">
-
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
       <While condition="CurrentWorldId != 75434">
         <UseWaypoint questId="1" waypointNumber="29" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
       </While>
 
       <If condition="CurrentWorldId == 75434">
         <LogMessage quest="1" step="2" output="Search mobs to complete the quest..." />
-        <TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" stayAfterBounty="False" pathPrecision="15"/>
+        <ExploreDungeon questId="1" stepId="1" ignoreMarkers="False" until="BountyComplete" boxTolerance="0.70" boxSize="10" stayAfterBounty="False" pathPrecision="15"/>
       </If>
     </If>
 

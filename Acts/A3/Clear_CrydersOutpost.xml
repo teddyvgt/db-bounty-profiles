@@ -3,13 +3,19 @@
   <KillMonsters>True</KillMonsters>
   <PickupLoot>true</PickupLoot>
   <GameParams act="OpenWorld" resumeFromSave="False" isPrivate="True" numGames="-1" />
-
+  <TargetBlacklists>
+	<TargetBlacklist actorId="54530"/> <!-- Crane -->
+</TargetBlacklists>
   <Order>
     <If condition="HasQuest(346188)">
+    		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
 
       <While condition="CurrentLevelAreaId != 154644 and CurrentWorldId != 185217">
         <UseWaypoint questId="1" waypointNumber="31" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
       </While>
 
       <If condition="CurrentWorldId == 95804">
@@ -24,10 +30,9 @@
         <SafeMoveTo questId="312429" stepId="2" x="4055" y="596" z="-1" pathPrecision="5" pathPointLimit="250" />
         <SafeMoveTo questId="312429" stepId="2" x="3960" y="593" z="-7" pathPrecision="5" pathPointLimit="250" />
         
-        <MoveToActor questId="346188" stepId="2" actorId="54882" interactRange="8" name="a3dun_Keep_Door_Wooden_A-13230"  pathPrecision="5" pathPointLimit="250" />
+        <MoveToActor questId="346188" stepId="2" actorId="54882" interactRange="8" name="a3dun_Keep_Door_Wooden_A-13230" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
-        <MoveToMapMarker questId="346188" stepId="2" markerNameHash="211059664" actorId="176001" interactRange="20"
-pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="185217" />
+        <MoveToActor questId="1" stepId="2" actorId="176001" isPortal="True" destinationWorldId="185217" interactRange="20" />
 
       </If>
 
@@ -35,7 +40,7 @@ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="18521
         <If condition="HasQuest(346188)">
 			<TrinitySetQuesting />
 			<ToggleTargeting questId="1" combat="True" />				
-          <TrinityExploreDungeon questId="346188" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" />
+          <ExploreDungeon questId="346188" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="15" />
         </If>
       </If>
     </If>

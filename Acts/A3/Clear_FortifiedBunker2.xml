@@ -6,10 +6,14 @@
 
   <Order>
     <If condition="HasQuest(349202)">
+    		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
 
       <While condition="CurrentLevelAreaId != 154644 and CurrentWorldId != 174516 and CurrentWorldId != 221748 ">
         <UseWaypoint questId="1" waypointNumber="31" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
       </While>
 
       <If condition="CurrentWorldId == 95804">
@@ -24,7 +28,7 @@
       </If>
 
       <If condition="CurrentWorldId == 174516">
-        <TrinityExploreDungeon questId="349202" stepId="2" until="ExitFound" exitNameHash="-1761785482" actorId="175482" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
+        <ExploreDungeon questId="349202" stepId="2" until="ExitFound" exitNameHash="-1761785482" actorId="175482" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="45">
           <PriorityScenes>
             <PriorityScene sceneName="Exit" />
           </PriorityScenes>
@@ -34,7 +38,7 @@
             <IgnoreScene sceneName="_E_" />
             <IgnoreScene sceneName="_W_" />
           </IgnoreScenes>
-        </TrinityExploreDungeon>
+        </ExploreDungeon>
         <WaitTimer questId="1" stepId="2" waitTime="500" />
         <UsePortal questId="349202" stepId="1" actorId="175482" destinationWorldId="221748" interactRange="40" portalMarkerHash="-1761785482" />
         <!--<MoveToMapMarker questId="349202" stepId="2" x="577" y="359" z="1" markerNameHash="-1761785482" actorId="175482" interactRange="20"
@@ -44,7 +48,7 @@ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="22174
         <If condition="CurrentWorldId == 221748">
 		<TrinitySetQuesting />
 		<ToggleTargeting questId="1" combat="True" />		
-        <TrinityExploreDungeon questId="349202" stepId="2" until="BountyComplete" boxTolerance="0.1" boxSize="15" ignoreMarkers="False" />
+        <ExploreDungeon questId="349202" stepId="2" until="BountyComplete" boxTolerance="0.1" boxSize="15" ignoreMarkers="False" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
 

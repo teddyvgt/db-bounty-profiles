@@ -6,10 +6,13 @@
 
   <Order>
     <If condition="HasQuest(349210)">
-
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
       <While condition="CurrentWorldId != 95804 and CurrentWorldId != 174555 and CurrentWorldId != 221749">
         <UseWaypoint questId="1" waypointNumber="31" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
       </While>
 
       <If condition="CurrentWorldId == 95804">
@@ -20,7 +23,7 @@
 
       <!-- Explore The Barracks Level 1 -->
       <If condition="CurrentWorldId == 174555">
-        <TrinityExploreDungeon questId="349210" stepId="2" until="ExitFound" boxSize="25" boxTolerance="0.1" exitNameHash="-1693984105" pathPrecision="25" objectDistance="45">
+        <ExploreDungeon questId="349210" stepId="2" until="ExitFound" boxSize="25" boxTolerance="0.1" exitNameHash="-1693984105" pathPrecision="25" objectDistance="45">
           <PrioritizeScenes>
             <PriorityScene sceneName="Exit" />
             <PriorityScene sceneName="_NS_" />
@@ -32,7 +35,7 @@
             <IgnoreScene sceneName="_E_" />
             <IgnoreScene sceneName="_W_" />
           </IgnoreScenes>
-        </TrinityExploreDungeon>
+        </ExploreDungeon>
         <MoveToMapMarker questId="349210" markerNameHash="-1693984105" actorId="175482" interactRange="12.26449"
                        pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="221749" statusText="" />
       </If>
@@ -40,7 +43,7 @@
       <If condition="CurrentWorldId == 221749">
         <TrinitySetQuesting />
 		<ToggleTargeting questId="1" combat="True" />				
-        <TrinityExploreDungeon questId="349210" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
+        <ExploreDungeon questId="349210" stepId="2" until="BountyComplete" boxTolerance="0.01" boxSize="15" ignoreMarkers="False" />
       </If>
     </If>
 

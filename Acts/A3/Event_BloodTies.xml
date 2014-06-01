@@ -6,10 +6,13 @@
 
   <Order>
     <If condition="HasQuest(349196)">
-
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
       <While condition="CurrentWorldId != 95804 and CurrentWorldId != 174555 and CurrentWorldId != 221749">
         <UseWaypoint questId="1" waypointNumber="31" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
       </While>
 
       <If condition="CurrentWorldId == 95804">
@@ -21,22 +24,11 @@
       </If>
 
       <If condition="CurrentWorldId == 174555">
-        <TrinityExploreDungeon questId="349196" stepId="2" until="ExitFound" exitNameHash="-1693984105" actorId="175482" pathPrecision="25" boxSize="25" boxTolerance="0.1" objectDistance="45">
-          <AlternateActors>
-            <AlternateActor actorId="0" objectDistance="45" />
-          </AlternateActors>
-          <PriorityScenes>
-            <PriorityScene sceneName="Exit" />
-            <PriorityScene sceneName="_NS_" />
-            <PriorityScene sceneName="_EW_" />
-          </PriorityScenes>
-          <IgnoreScenes>
-            <IgnoreScene sceneName="_N_" />
-            <IgnoreScene sceneName="_S_" />
-            <IgnoreScene sceneName="_E_" />
-            <IgnoreScene sceneName="_W_" />
-          </IgnoreScenes>
-        </TrinityExploreDungeon>
+        <ExploreDungeon questId="349196" stepId="2" until="ObjectFound" markerNameHash="-1693984105" actorId="175482" pathPrecision="25" boxSize="25" boxTolerance="0.1" objectDistance="45" ignoreMarkers="False">
+          <Objectives>
+			<Objective markerNameHash="-1693984105"/>
+          </Objectives>
+        </ExploreDungeon>
         <MoveToMapMarker questId="349196" stepId="2" markerNameHash="-1693984105" actorId="175482" interactRange="20"
         pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="221749"  />
         <WaitTimer questId="349196" stepId="2" waitTime="500" />
@@ -47,7 +39,7 @@
       <If condition="CurrentWorldId == 221749">
         <MoveToActor questId="1" stepId="1" actorId="174995" x="341" y="1234" z="0"  />
         <WaitTimer questId="349196" stepId="2" waitTime="500" />
-        <TrinityExploreDungeon questId="349196" stepId="3" until="ObjectFound" actorId="118261" boxTolerance="0.10" boxSize="15" pathPrecision="15">
+        <ExploreDungeon questId="349196" stepId="3" until="ObjectFound" actorId="118261" boxTolerance="0.10" boxSize="15" pathPrecision="15" ignoreMarkers="False">
           <PrioritizeScenes>
             <PriorityScene sceneName="a3dun_Keep_EW_02" />
           </PrioritizeScenes>
@@ -57,7 +49,7 @@
             <IgnoreScene sceneName="_E_" />
             <IgnoreScene sceneName="_W_" />
           </IgnoreScenes>
-        </TrinityExploreDungeon>
+        </ExploreDungeon>
 		<ToggleTargeting questId="1" combat="True" />				
         <WaitTimer questId="1" stepId="2" waitTime="500" />
         <MoveToActor questId="349196" stepId="3"  actorId="118261" interactRange="4" name="bastionsKeepGuard_Melee_A_02-10321"  pathPrecision="5" pathPointLimit="250"  />

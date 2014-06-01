@@ -6,23 +6,26 @@
 
   <Order>
     <If condition="HasQuest(356417) or HasQuest(349218) or HasQuest(349216) or HasQuest(346204)">
-
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
       <While condition="CurrentLevelAreaId != 112565 and CurrentLevelAreaId != 69504 ">
         <UseWaypoint questId="1" waypointNumber="33" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
       </While >
-      <While condition="CurrentLevelAreaId == 112565 and not (ActorExistsAt(6442, Me.Position.X, Me.Position.Y, Me.Position.Z, 40))">
+      <!--<While condition="CurrentLevelAreaId == 112565 and not (ActorExistsAt(6442, Me.Position.X, Me.Position.Y, Me.Position.Z, 40))">
         <WaitTimer questId="1" stepId="1" waitTime="500"/>
         <UseWaypoint questId="1" waypointNumber="33" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
-      </While>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
+      </While> -->
 
       <If condition="CurrentWorldId == 95804">
         <If condition="HasQuest(356417) or HasQuest(349218) or HasQuest(349216) or HasQuest(346204)">
           <SafeMoveTo questId="1" stepId="2" x="2502" y="620" z="0" pathPrecision="5" pathPointLimit="250" />
         </If>
         <LogMessage quest="1" step="2" output="Search mobs to complete the quest..." />
-        <TrinityExploreDungeon questId="1" stepId="1" until="BountyComplete" boxTolerance="0.10" boxSize="20" pathPrecision="20"  >
+        <ExploreDungeon questId="1" stepId="1" ignoreMarkers="False" until="BountyComplete" boxTolerance="0.10" boxSize="20" pathPrecision="20"  >
           <PrioritizeScenes>
             <PriorityScene sceneName="Exit" />
             <PriorityScene sceneName="a3dun_Bridge" />
@@ -31,7 +34,7 @@
             <IgnoreScene sceneName="_Chokepoint" />
             <IgnoreScene sceneName="_E02_S01" />
           </IgnoreScenes>
-        </TrinityExploreDungeon>
+        </ExploreDungeon>
       </If>
     </If>
 

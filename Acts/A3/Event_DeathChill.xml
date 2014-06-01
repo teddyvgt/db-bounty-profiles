@@ -8,15 +8,18 @@
   </PrioritizeScenes>
   <Order>
     <If condition="HasQuest(369851)">
-
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
       <While condition="CurrentLevelAreaId != 155048 and CurrentLevelAreaId != 112565 and CurrentWorldId != 189910">
         <UseWaypoint questId="1" waypointNumber="32" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
       </While>
       <While condition="CurrentLevelAreaId == 155048 and not (ActorExistsAt(6442, Me.Position.X, Me.Position.Y, Me.Position.Z, 40))">
         <WaitTimer questId="1" stepId="1" waitTime="500"/>
         <UseWaypoint questId="1" waypointNumber="33" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
       </While>
 
       <If condition="CurrentWorldId == 95804">
@@ -42,7 +45,7 @@
         </TrinityExploreDungeon>
         <SafeMoveToScene questId="346192" sceneName="a3_Battlefield_Sub120_IceCavesEntrance_A"/>-->
 
-        <TrinityExploreDungeon questId="369851" stepId="2" until="ObjectFound" exitNameHash="942020622" actorId="176003" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="50">
+        <ExploreDungeon questId="369851" stepId="2" ignoreMarkers="False" until="ObjectFound" exitNameHash="942020622" actorId="176003" pathPrecision="25" boxSize="25" boxTolerance="0.01" objectDistance="50">
           <PrioritizeScenes>
             <PriorityScene sceneName="Entrance" />
           </PrioritizeScenes>
@@ -51,14 +54,14 @@
             <IgnoreScene sceneName="a3dun_Bridge_" />
             <!--<IgnoreScene sceneName="_03" />-->
           </IgnoreScenes>
-        </TrinityExploreDungeon>
+        </ExploreDungeon>
 
         <MoveToMapMarker questId="369851" stepId="2" markerNameHash="942020622" actorId="176003" interactRange="20"
 pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="189910" />
       </If>
 
       <If condition="CurrentWorldId == 189910">
-        <TrinityExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="60" actorId="364601" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" pathPrecision="20">
+        <ExploreDungeon questId="1" stepId="2" until="ObjectFound" objectDistance="60" actorId="364601" boxTolerance="0.01" boxSize="25" ignoreMarkers="False" pathPrecision="20">
           <AlternateActors>
             <!--normal shrine to fix a Issue because trinity event bug-->
             <AlternateActor actorId="176076" objectDistance="60" />
@@ -66,7 +69,7 @@ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="18991
           <PrioritizeScenes>
             <PriorityScene sceneName="a3dun_iceCaves_EW_01" />
           </PrioritizeScenes>
-        </TrinityExploreDungeon>
+        </ExploreDungeon>
         <ToggleTargeting questId="1" combat="True" />
 		<MoveToActor questId="1" stepId="2" actorId="364601" interactRange="11" name="x1_Event_CursedShrine-26406"  pathPrecision="5" pathPointLimit="250" />
         <!--<ToggleTargeting questId="1" combat="True" looting="True" killRadius="150" lootRadius="90" />-->

@@ -6,28 +6,24 @@
 
   <Order>
     <If condition="HasQuest(346166)">
-
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
       <!-- Checking we are in Keep Death 3 or Speisekammer -->
       <While condition="CurrentWorldId != 136415 and CurrentWorldId != 103209">
         <UseWaypoint waypointNumber="30" questId="1" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
       </While>
 
       <!-- START: Finde die Speisekammer -->
       <If condition="CurrentWorldId == 136415 and CurrentWorldId != 103209">
-        <TrinityExploreDungeon questId="1" stepId="2" until="ExitFound" exitNameHash="2102427919" pathPrecision="25" boxTolerance="0.70" boxSize="10">
-          <PriorityScenes>
-            <PriorityScene sceneName="Exit" />
-            <PriorityScene sceneName="Gluttony" />
-          </PriorityScenes>
-          <IgnoreScenes>
-            <IgnoreScene sceneName="_N_" />
-            <IgnoreScene sceneName="_S_" />
-            <IgnoreScene sceneName="_E_" />
-            <IgnoreScene sceneName="_W_" />
-          </IgnoreScenes>
-        </TrinityExploreDungeon>
-        <MoveToMapMarker  questId="1" stepId="22" actorId="161277" isPortal="True" markerNameHash="2102427919" destinationWorldId="103209" />
+        <ExploreDungeon stayAfterBounty="False" questId="1" stepId="2"  until="ObjectFound" objectDistance="100" actorId="161277" boxSize="10" boxTolerance="0.70" pathPrecision="25">
+					<Objectives>
+						<Objective markerNameHash="2102427919"/>
+					</Objectives>
+        </ExploreDungeon>
+        <MoveToActor questId="1" stepId="2" actorId="161277" isPortal="True" destinationWorldId="103209" interactRange="20" />
         <WaitTimer questId="1" stepId="22" waitTime="1000" />
       </If>
       <!-- END: Finde die Speisekammer -->

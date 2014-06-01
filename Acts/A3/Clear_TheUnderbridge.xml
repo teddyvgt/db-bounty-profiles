@@ -6,16 +6,19 @@
 
   <Order>
     <If condition="HasQuest(349208)">
-
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
       <While condition="CurrentLevelAreaId != 112565 and CurrentLevelAreaId != 69504 and CurrentWorldId != 197622 ">
         <UseWaypoint questId="1" waypointNumber="33" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
       </While>
-      <While condition="CurrentLevelAreaId == 112565 and not (ActorExistsAt(6442, Me.Position.X, Me.Position.Y, Me.Position.Z, 40))">
+      <!-- <While condition="CurrentLevelAreaId == 112565 and not (ActorExistsAt(6442, Me.Position.X, Me.Position.Y, Me.Position.Z, 40))">
         <WaitTimer questId="1" stepId="1" waitTime="500"/>
         <UseWaypoint questId="1" waypointNumber="33" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
-      </While>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
+      </While> -->
 
       <!--
       <If condition="CurrentWorldId == 95804">
@@ -52,7 +55,7 @@ pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="19762
       <If condition="CurrentWorldId == 197622">
         <TrinitySetQuesting />
 		<ToggleTargeting questId="1" combat="True" />			
-        <TrinityExploreDungeon questId="349208" stepId="2" until="BountyComplete" boxTolerance="0.1" boxSize="15" ignoreMarkers="False" />
+        <ExploreDungeon questId="349208" stepId="2" until="BountyComplete" boxTolerance="0.70" boxSize="10" ignoreMarkers="False" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
       </If>
 

@@ -6,23 +6,26 @@
 
   <Order>
     <If condition="HasQuest(346184)">
-
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
+		<WaitTimer questId="1" stepId="1" waitTime="500"/>
       <While condition="CurrentLevelAreaId != 112565 ">
         <UseWaypoint questId="1" waypointNumber="33" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
       </While>
-      <While condition="CurrentLevelAreaId == 112565 and not (ActorExistsAt(6442, Me.Position.X, Me.Position.Y, Me.Position.Z, 40))">
+      <!-- <While condition="CurrentLevelAreaId == 112565 and not (ActorExistsAt(6442, Me.Position.X, Me.Position.Y, Me.Position.Z, 40))">
         <WaitTimer questId="1" stepId="1" waitTime="500"/>
         <UseWaypoint questId="1" waypointNumber="33" />
-        <WaitTimer questId="1" stepId="1" waitTime="2500"/>
-      </While>
+        <WaitTimer questId="1" stepId="1" waitTime="1000"/>
+      </While> -->
 
       <If condition="CurrentWorldId == 95804">
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		  
         <!--until="ObjectFound" actorId="152145"-->
         <SafeMoveTo questId="346184" stepId="2" x="2570" y="634" z="0" pathPrecision="5" pathPointLimit="250" />
         <WaitTimer questId="1" stepId="2" waitTime="500" />
-        <TrinityExploreDungeon questId="346184" stepId="1" until="ObjectFound" actorId="152145" boxTolerance="0.70" boxSize="20" pathPrecision="20" objectDistance="45">
+        <ExploreDungeon questId="346184"  stepId="1" ignoreMarkers="False" until="ObjectFound" actorId="152145" boxTolerance="0.70" boxSize="20" pathPrecision="20" objectDistance="45">
           <PrioritizeScenes>
             <PriorityScene sceneId="68283" />
             <PriorityScene sceneName="a3dun_Bridge" />
@@ -32,11 +35,11 @@
             <IgnoreScene sceneName="_E02_S01" />
             <IgnoreScene sceneName="a3_Battlefield_" />
           </IgnoreScenes>
-        </TrinityExploreDungeon>
+        </ExploreDungeon>
         <WaitTimer questId="1" stepId="2" waitTime="500" />
         <ToggleTargeting questId="1" combat="True" />		
 		<MoveToActor questId="346184" stepId="1" actorId="152145" interactRange="8" pathPrecision="5" pathPointLimit="250"  />
-        <While condition="ActorExistsAt(152145, Me.Position.X, Me.Position.Y, Me.Position.Z, 150) and HasQuest(346184)">
+        <While condition="ActorExistsAt(152145, Me.Position.X, Me.Position.Y, Me.Position.Z, 250) and HasQuest(346184)">
           <MoveToActor questId="1" stepId="2" actorId="152145"/>
         </While>
       </If>
