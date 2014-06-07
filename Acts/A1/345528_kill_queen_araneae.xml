@@ -58,7 +58,7 @@
 		
 
 		<If condition="CurrentWorldId == 180550">		
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.6" boxSize="12" pathPrecision="40" until="SceneFound" sceneName="_StomachAche" ignoreMarkers="False" objectDistance="150">
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.6" boxSize="8" pathPrecision="40" until="SceneFound" sceneName="_StomachAche" ignoreMarkers="False" objectDistance="150">
 				<PriorityScenes>
 					<PriorityScene sceneName="_StomachAche" />
 				</PriorityScenes>				
@@ -71,9 +71,8 @@
 			<MoveToMapMarker questId="1" interactRange="20" isPortal="True" markerNameHash="1317387500" />				
 		</If>		
 		
-		<!-- Reduce box size and explore again -->
 		<If condition="CurrentWorldId == 180550">			
-			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.55" boxSize="9" pathPrecision="30" until="ExitFound" exitNameHash="1317387500" ignoreMarkers="False" objectDistance="150">
+			<TrinityExploreDungeon questId="1" stepId="2" boxTolerance="0.55" boxSize="6" pathPrecision="20" until="ExitFound" exitNameHash="1317387500" ignoreMarkers="False" objectDistance="150">
 				<PriorityScenes>
 					<PriorityScene sceneName="Exit" />
 				</PriorityScenes>				
