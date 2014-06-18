@@ -74,7 +74,10 @@
 	</If>
 	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Timed')">
 		<LoadProfile file="act1_timed.xml" />	
-	</If>		
+	</If>	
+	<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Reverse')">
+		<LoadProfile file="act1_reverse.xml" />	
+	</If>	
 	<LoadProfile file="act1.xml" />
 	
 </Order>

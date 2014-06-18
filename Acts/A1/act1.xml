@@ -59,9 +59,13 @@
 		<!-- Don't want to waste time talking to Tyrael every time we see him -->			
 		<TargetBlacklist actorId="114622" /> <!-- Tyrael -->
 		
-		<!-- Blacklisting Quest Objects so that TrinityExplore can trigger ObjectFound properly -->
+		<!-- Blacklisting Quest Objects is required, if the bot is allowed to click shrine/chest when control is reverted
+			 back to the profile the shrine/chest will no longer exist (ActorId changes after clicking shrine/chest) 
+			 and so ObjectFound is not triggered and DungeonExplore continues exploring level unable to find the objective. -->
 		<TargetBlacklist actorId="365097" /> <!-- Cursed Chest -->
 		<TargetBlacklist actorId="364601" /> <!-- Cursed Shrine -->		
+
+	    <!-- Similar to above issue, have to blacklist the objects to ensure that dungeon explore can find these actors -->
 		<TargetBlacklist actorId="204032" /> <!-- Precious Ore -->	
 		<TargetBlacklist actorId="202277" /> <!-- Precious Ore -->			
 		
@@ -71,6 +75,16 @@
 		<WaitTimer questId="1" stepId="2" waitTime="500" />	
 		<ToggleTargeting questId="1" killRadius="5" />	
 
+
+
+		
+<!-- =================================================================================================
+ =================================================================================================
+  ================================================================================================= -->
+		
+		
+		
+		
 		<!-- 1	The Old Ruins =============================================================-->
 
 		<!-- The Cursed Cellar -->
