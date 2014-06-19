@@ -76,7 +76,15 @@
 		<ToggleTargeting questId="1" killRadius="5" />	
 
 
-
+		<!-- Inside boss fight areas, may have been teleported into a boss fight by another bot/player -->
+		<If condition="CurrentWorldId == 73261 and HasQuest(361234)">
+			<LoadProfile file="361234_kill_skeleton_king.xml" />
+		</If>
+		<If condition="CurrentWorldId == 182976 and HasQuest(345528)">
+			<LoadProfile file="345528_kill_queen_araneae.xml" />
+		</If>	
+		
+		
 		
 <!-- =================================================================================================
  =================================================================================================
