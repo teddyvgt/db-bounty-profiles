@@ -9,12 +9,12 @@
 	X1_Bounty_A1_OldTristram_Event_DeathCellar (369944) 
 	-->
 	<If condition="HasQuest(369944)">
-	
+
 		<!-- Settings -->
 		<If condition="Zeta.Bot.Settings.GlobalSettings.Instance.LastProfile.Contains('Zerg')"><ToggleTargeting questId="1" combat="False" /></If>		
 	
 		<!-- Waypoint -->
-		<While condition="CurrentWorldId != 71150">			
+		<While condition="CurrentLevelAreaId != 101351 and CurrentLevelAreaId != 91324 and CurrentLevelAreaId != 106757">			
 			<UseWaypoint waypointNumber="1" questId="1"/>	
 			<WaitTimer questId="1" waitTime="7001" />	
 		</While>
