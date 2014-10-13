@@ -10,7 +10,8 @@
            CurrentWorldId == 338600
         or CurrentWorldId == 322531
         or CurrentWorldId == 338600
-        or CurrentWorldId == 357658)">
+        or CurrentWorldId == 357658
+        or CurrentWorldId==357653)">
       <TownPortal questId="1" waitTime="5000" />
     </If>
     <!-- In Town: World: X1_Westmarch_Hub (304235) LevelArea: x1_Westm_Hub (270011) -->
@@ -22,19 +23,32 @@
       <WaitTimer questId="1" waitTime="1500" />
     </If>
 
-
+    <!-- Quest: X1_Bounty_A5_PandExt_Event_Resurrection (367884) World: X1_Pand_Ext_2_Battlefields (338600) LevelArea: X1_Pand_Ext_2_Battlefields (338602) -->
+    <If condition="HasQuest(367884) and CurrentWorldId==338600 ">
+      <!-- Quest: X1_Bounty_A5_PandExt_Event_Resurrection (367884) World: X1_Pand_Ext_2_Battlefields (338600) LevelArea: X1_Pand_Ext_2_Battlefields (338602) -->
+      <ExploreDungeon questId="367884" until="ExitFound" exitNameHash="-1551729969" actorId="0" pathPrecision="45" boxSize="60" boxTolerance="0.01" objectDistance="45">
+        <PriorityScenes>
+          <PriorityScene sceneName="Cellar_Entrance" />
+        </PriorityScenes>
+      </ExploreDungeon>
+      <MoveToMapMarker questId="367884" markerNameHash="-1551729969" interactRange="17.28876"
+          pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+    </If>
+    <!-- Quest: X1_Bounty_A5_PandExt_Event_Resurrection (367884) World: X1_Pand_Ext_Cellar_C (357653) LevelArea: X1_Pand_Ext_Cellar_C (357654) -->
+    <If condition="HasQuest(367884) and CurrentWorldId==357653">
+      <ExploreDungeon questId="367884" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="45" boxSize="60" boxTolerance="0.01" objectDistance="45"/>
+    </If>
 
     <!-- Quest: X1_Bounty_A5_PandExt_Event_LostLegion (367926) World: X1_Pand_Ext_2_Battlefields (338600) LevelArea: X1_Pand_Ext_2_Battlefields (338602) -->
     <If condition="HasQuest(367926) and CurrentWorldId==338600 and CurrentLevelAreaId==338602">
       <ExploreDungeon questId="367926" until="ExitFound" exitNameHash="-1551729967" actorId="0" pathPrecision="45" boxSize="60" boxTolerance="0.01" objectDistance="45" />
-      <MoveToMapMarker questId="367926" markerNameHash="-1551729967" actorId="176002" interactRange="14.63835"
+      <MoveToMapMarker questId="367926" markerNameHash="-1551729967" interactRange="14.63835"
                            pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
     </If>
     <!-- Quest: X1_Bounty_A5_PandExt_Event_LostLegion (367926) World: X1_Pand_Ext_Cellar_E (357658) LevelArea: X1_Pand_Ext_Cellar_E (357657) -->
     <If condition="HasQuest(367926) and CurrentWorldId==357658 and CurrentLevelAreaId==357657">
       <ExploreDungeon questId="367926" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="45" boxSize="60" boxTolerance="0.01" objectDistance="45" />
     </If>
-
 
     <!-- Quest: X1_Bounty_A5_PandExt_Event_DemonCache (367888) World: X1_Pand_Ext_2_Battlefields (338600) LevelArea: X1_Pand_Ext_2_Battlefields (338602) -->
     <If condition="HasQuest(367888) and CurrentWorldId==338600 and CurrentLevelAreaId==338602">
@@ -43,18 +57,13 @@
           <PriorityScene sceneName="Cellar_Entrance" />
         </PriorityScenes>
       </ExploreDungeon>
-      <MoveToMapMarker questId="367888" markerNameHash="-1551729969" actorId="176002" interactRange="14.23409"
+      <MoveToMapMarker questId="367888" markerNameHash="-1551729969" interactRange="14.23409"
                        pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
     </If>
     <!-- Quest: X1_Bounty_A5_PandExt_Event_DemonCache (367888) World: X1_Pand_Ext_Cellar_C (357653) LevelArea: X1_Pand_Ext_Cellar_C (357654) -->
     <If condition="HasQuest(367888) and CurrentWorldId==357653 and CurrentLevelAreaId==357654">
-      <ExploreDungeon questId="367888" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45">
-        <PriorityScenes>
-          <PriorityScene sceneName="Exit" />
-        </PriorityScenes>
-      </ExploreDungeon>
+      <ExploreDungeon questId="367888" until="BountyComplete" boxSize="25" boxTolerance="0.01" objectDistance="45" />
     </If>
-
 
     <!-- Quest: X1_Bounty_A5_PandExt_Kill_Muilliuqs (367935) World: X1_Pand_Ext_2_Battlefields (338600) LevelArea: X1_Pand_Ext_2_Battlefields (338602) -->
     <If condition="HasQuest(367935) and CurrentWorldId==338600 and CurrentLevelAreaId==338602">
@@ -72,7 +81,7 @@
           <IgnoreScene sceneName="_W_" />
         </IgnoreScenes>
       </ExploreDungeon>
-      <MoveToMapMarker questId="367935" markerNameHash="-1551729971" actorId="176002" interactRange="14.63835"
+      <MoveToMapMarker questId="367935" markerNameHash="-1551729971" interactRange="14.63835"
                        pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
     </If>
     <!-- Quest: X1_Bounty_A5_PandExt_Kill_Muilliuqs (367935) World: X1_Pand_Ext_Cellar_A (322531) LevelArea: X1_Pand_Ext_Cellar_A (322645) -->
@@ -93,8 +102,6 @@
       </ExploreDungeon>
     </If>
 
-
-
     <!-- Quest: X1_Bounty_A5_PandExt_Event_TheGreatWeapon (363344) World: X1_Pand_Ext_2_Battlefields (338600) LevelArea: X1_Pand_Ext_2_Battlefields (338602) -->
     <While condition="HasQuest(363344) and CurrentWorldId==338600 and CurrentLevelAreaId==338602">
       <ExploreDungeon questId="363344" until="SceneFound" sceneName="GreatWeapon" exitNameHash="0" actorId="0" pathPrecision="45" boxSize="45" boxTolerance="0.01" objectDistance="45">
@@ -103,10 +110,9 @@
         </AlternateActors>
       </ExploreDungeon>
       <MoveToScene questId="363344" sceneName="GreatWeapon" />
+      <MoveToObjective questId="363344" />
       <WaitTimer questId="363344" waitTime="10000" />
     </While>
-
-
 
     <!-- Quest: X1_Bounty_A5_PandExt_Event_TheHive (363346) World: X1_Pand_Ext_2_Battlefields (338600) LevelArea: X1_Pand_Ext_2_Battlefields (338602) -->
     <If condition="HasQuest(363346) and CurrentWorldId==338600">
@@ -122,15 +128,10 @@
       <WaitTimer questId="363346" waitTime="5000" />
     </If>
 
-
-
     <!-- Quest: X1_Bounty_A5_PandExt_Event_SiegeDistraction (363342) World: [sno unknown] LevelArea: X1_Pand_Ext_2_Battlefields -->
     <If condition="HasQuest(363342) and CurrentWorldId==338600 and CurrentLevelAreaId==338602">
       <!-- Start Explore -->
-      <ExploreDungeon questId="363342" until="ObjectFound" exitNameHash="0" actorId="351967" pathPrecision="60" boxSize="35" boxTolerance="0.01" objectDistance="45">
-        <AlternateActors>
-          <AlternateActor actorId="0" objectDistance="45" />
-        </AlternateActors>
+      <ExploreDungeon questId="363342" until="ObjectiveFound" exitNameHash="0" actorId="351967" pathPrecision="60" boxSize="35" boxTolerance="0.01" objectDistance="45">
         <PriorityScenes>
           <PriorityScene sceneName="NSEW_Event_Ballista" />
         </PriorityScenes>
@@ -141,15 +142,14 @@
           <IgnoreScene sceneName="_W_" />
         </IgnoreScenes>
       </ExploreDungeon>
-
+      <MoveToObjective questId="363342" />
     </If>
     <!-- Quest: X1_Bounty_A5_PandExt_Event_SiegeDistraction (363342) World: [sno unknown] LevelArea: X1_Pand_Ext_2_Battlefields -->
     <While condition="HasQuest(363342) and CurrentWorldId==338600 and CurrentLevelAreaId==338602 and ActorExistsAt(351967, Me.Position.X, Me.Position.Y, Me.Position.Z, 300)">
       <WaitTimer questId="363342" waitTime="3000" />
       <MoveToActor questId="353085" stepId="1" actorId="4675" name="MarkerLocation" />
+      <MoveToObjective questId="353085" stepId="3" />
     </While>
-
-
 
     <!-- Quest: X1_Bounty_A5_PandExt_Kill_Baethus (363204) World: X1_Pand_Ext_2_Battlefields LevelArea: X1_Pand_Ext_2_Battlefields -->
     <If condition="HasQuest(363204) and CurrentWorldId==338600">
@@ -168,7 +168,7 @@
           <IgnoreScene sceneName="_W_" />
         </IgnoreScenes>
       </ExploreDungeon>
-      <MoveToMapMarker questId="363204"  x="418" y="797" z="-18" markerNameHash="-1551729971" actorId="176002" interactRange="20"
+      <MoveToMapMarker questId="363204"  x="418" y="797" z="-18" markerNameHash="-1551729971" interactRange="20"
             pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="322531" statusText="" />
     </If>
     <!-- Quest: X1_Bounty_A5_PandExt_Kill_Baethus (363204) World: X1_Pand_Ext_Cellar_A LevelArea: X1_Pand_Ext_Cellar_A -->
@@ -189,7 +189,8 @@
       </ExploreDungeon>
     </If>
 
-    <While condition="ZetaDia.ActInfo.ActiveBounty and CurrentWorldId==338600">
+    <While condition="ZetaDia.ActInfo.ActiveBounty and CurrentWorldId==338600 and not 
+           ( HasQuest(363204) or HasQuest(363342) or HasQuest(363346) or HasQuest(363344) or HasQuest(367935) or HasQuest(367888) or HasQuest(367926) or HasQuest(367884) )">
       <WaitTimer questId="1" waitTime="1000" />
       <!-- Start Explore -->
       <ExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="20" boxSize="40" boxTolerance="0.01" objectDistance="45" />>

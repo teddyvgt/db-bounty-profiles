@@ -23,55 +23,7 @@
     <If condition="not (ZetaDia.ActInfo.ActiveBounty) and CurrentWorldId==267412">
       <WaitTimer questId="1" waitTime="1500" />
     </If>
-
-    <!-- Quest: X1_Bounty_A5_Bog_Event_AncientEvils (369952) World: x1_Bog_01 (267412) LevelArea: x1_Bog_01_Part2 (258142) -->
-    <If condition="HasQuest(369952) and CurrentWorldId==267412 and CurrentLevelAreaId==258142">
-      <TrinityExploreDungeon questId="369952" until="ExitFound" exitNameHash="1649975401" actorId="0" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45">
-        <AlternateMarkers>
-          <AlternateMarker markerNameHash="1649975403" />
-        </AlternateMarkers>
-        <AlternateActors>
-          <AlternateActor actorId="0" objectDistance="45" />
-        </AlternateActors>
-        <PriorityScenes>
-          <PriorityScene sceneName="Exit" />
-        </PriorityScenes>
-      </TrinityExploreDungeon>
-      <MoveToMapMarker questId="369952" markerNameHash="1649975401" actorId="342003" interactRange="12.50264"
-                           pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
-      <MoveToMapMarker questId="369952" markerNameHash="1649975403" actorId="342003" interactRange="12.50264"
-                           pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
-    </If>
-    <!-- Quest: X1_Bounty_A5_Bog_Event_AncientEvils (369952) World: x1_Catacombs_FakeEntrance_04 (341040) LevelArea: x1_Catacombs_FakeEntrance_04 (341041) -->
-    <If condition="HasQuest(369952) and CurrentWorldId==341040 and CurrentLevelAreaId==341041">
-      <TrinityExploreDungeon questId="369952" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45">
-        <PriorityScenes>
-          <PriorityScene sceneName="x1_Catacombs_NSEW_02" />
-        </PriorityScenes>
-      </TrinityExploreDungeon>
-    </If>
-
-
-    <!-- Quest: X1_Bounty_A5_Bog_Event_AncientEvils (369952) World: x1_Bog_01 (267412) LevelArea: x1_Bog_01_Part2 (258142) -->
-    <If condition="HasQuest(369952) and CurrentWorldId==267412">
-      <!-- Quest: X1_Bounty_A5_Bog_Event_AncientEvils (369952) World: x1_Bog_01 (267412) LevelArea: x1_Bog_01_Part2 (258142) -->
-      <TrinityExploreDungeon questId="369952" until="ExitFound" exitNameHash="1649975402" actorId="0" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45">
-        <AlternateActors>
-          <AlternateActor actorId="0" objectDistance="45" />
-        </AlternateActors>
-        <PriorityScenes>
-          <PriorityScene sceneName="Exit" />
-        </PriorityScenes>
-      </TrinityExploreDungeon>
-      <MoveToMapMarker questId="369952" markerNameHash="1649975402" actorId="342003" interactRange="12.50264"
-                             pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
-    </If>
-    <!-- Quest: X1_Bounty_A5_Bog_Event_AncientEvils (369952) World: x1_Catacombs_FakeEntrance_04 (341040) LevelArea: x1_Catacombs_FakeEntrance_04 (341041) -->
-    <If condition="HasQuest(369952) and CurrentWorldId==341040">
-      <TrinityExploreDungeon questId="369952" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45" />
-    </If>
-
-
+  
 
     <!-- Quest: X1_Bounty_A5_Bog_Event_3Boggits (367872) World: x1_Bog_01 (267412) LevelArea: x1_Bog_01_Part2 (258142) -->
     <If condition="HasQuest(367872) and CurrentWorldId==267412">
@@ -156,35 +108,28 @@
 
     <!-- Quest: X1_Bounty_A5_Bog_Event_AncientEvils (369952) World: x1_Bog_01 (267412) LevelArea: x1_Bog_01_Part2 (258142) -->
     <If condition="HasQuest(369952) and CurrentWorldId==267412">
-      <TrinityExploreDungeon questId="369952" until="ExitFound" exitNameHash="1649975400" actorId="0" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45">
-        <AlternateActors>
-          <AlternateActor actorId="0" objectDistance="45" />
-        </AlternateActors>
+      <TrinityExploreDungeon questId="369952" until="ObjectiveFound" exitNameHash="1344182686" pathPrecision="60" boxSize="45" boxTolerance="0.01">
         <PriorityScenes>
           <PriorityScene sceneName="Exit" />
         </PriorityScenes>
       </TrinityExploreDungeon>
-      <MoveToMapMarker questId="369952" markerNameHash="1649975400" actorId="342003" interactRange="12.50264"
-                             pathPrecision="5" pathPointLimit="250" isPortal="True" destinationWorldId="-1" statusText="" />
+      <MoveToObjective questId="369952" />
     </If>
+    
     <!-- Quest: X1_Bounty_A5_Bog_Event_AncientEvils (369952) World: x1_Catacombs_FakeEntrance_04 (341040) LevelArea: x1_Catacombs_FakeEntrance_04 (341041) -->
     <If condition="HasQuest(369952) and CurrentWorldId==341040">
-      <TrinityExploreDungeon questId="369952" until="ExitFound" exitNameHash="341040" actorId="0" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45">
-        <AlternateActors>
-          <AlternateActor actorId="0" objectDistance="45" />
-        </AlternateActors>
+      <TrinityExploreDungeon questId="369952" until="ExitFound" exitNameHash="341040" pathPrecision="60" boxSize="45" boxTolerance="0.01">
         <PriorityScenes>
           <PriorityScene sceneName="Exit" />
         </PriorityScenes>
       </TrinityExploreDungeon>
-
     </If>
 
     <While condition="ZetaDia.ActInfo.ActiveBounty and CurrentWorldId==267412">
       <LogMessage output="Generic Bounty Explore" />
       <WaitTimer questId="1" waitTime="1000" />
       <!-- Start Explore -->
-      <TrinityExploreDungeon questId="1" until="BountyComplete" exitNameHash="0" actorId="0" pathPrecision="60" boxSize="45" boxTolerance="0.01" objectDistance="45" />
+      <TrinityExploreDungeon questId="1" until="BountyComplete" pathPrecision="60" boxSize="45" boxTolerance="0.01" />
     </While>
 
     <If condition="not (ZetaDia.ActInfo.ActiveBounty)">

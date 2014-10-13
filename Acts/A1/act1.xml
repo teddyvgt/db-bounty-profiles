@@ -504,7 +504,7 @@
 		</If>		
 
 		<!-- nope repeating the same act. gooo! -->
-		<LeaveGame quest="1" step="1" reason="done." stayInParty="False" />		
+		<LeaveGame quest="1" step="1" reason="done." stayInParty="True" />		
 
 	</Order>
 </Profile>
