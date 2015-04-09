@@ -14,7 +14,7 @@
 
     <!-- In Town: World: X1_Westmarch_Hub (304235) LevelArea: x1_Westm_Hub (270011) -->
     <If condition="CurrentWorldId==304235 and CurrentLevelAreaId==270011">
-      <UseWaypoint questId="1" waypointNumber="53" />
+      <UseWaypoint questId="1" waypointNumber="55" />
     </If>
     <If condition="not (ZetaDia.ActInfo.ActiveBounty) and CurrentWorldId==271233">
       <WaitTimer questId="1" waitTime="1500" />

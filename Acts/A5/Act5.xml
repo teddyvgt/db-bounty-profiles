@@ -8,19 +8,19 @@
 
     <!-- Act1 Hub -->
     <If condition="CurrentLevelAreaId == 332339">
-      <UseWaypoint questId="312429" stepId="2" waypointNumber="46" name="A5 Hub" statusText="" />
+      <UseWaypoint questId="312429" stepId="2" waypointNumber="48" name="A5 Hub" statusText="" />
     </If>
     <!-- Act2 Hub -->
     <If condition="CurrentLevelAreaId == 168314">
-      <UseWaypoint questId="312429" stepId="2" waypointNumber="46" name="A5 Hub" statusText="" />
+      <UseWaypoint questId="312429" stepId="2" waypointNumber="48" name="A5 Hub" statusText="" />
     </If>
     <!-- Act3 Hub -->
     <If condition="CurrentLevelAreaId == 92945">
-      <UseWaypoint questId="312429" stepId="2" waypointNumber="46" name="A5 Hub" statusText="" />
+      <UseWaypoint questId="312429" stepId="2" waypointNumber="48" name="A5 Hub" statusText="" />
     </If>
     <!-- Act4 Hub -->
     <If condition="CurrentLevelAreaId == 92945">
-      <UseWaypoint questId="312429" stepId="2" waypointNumber="46" name="A5 Hub" statusText="" />
+      <UseWaypoint questId="312429" stepId="2" waypointNumber="48" name="A5 Hub" statusText="" />
     </If>
 
     <!--<HaveBounty questId="367935">
@@ -572,7 +572,7 @@
       <LogMessage quest="1" output="Lets make sure we are actually in the right town" />
       <While condition="CurrentWorldId != 304235">
         <LogMessage quest="1" output="Doesn't look like we are! using the waypoint" />
-        <UseWaypoint questId="312429" stepId="2" waypointNumber="46" name="Waypoint-89710" statusText="" />
+        <UseWaypoint questId="312429" stepId="2" waypointNumber="48" name="Waypoint-89710" statusText="" />
         <WaitTimer questId="1" waitTime="3500"/>
       </While>
       <LogMessage quest="357001" output="Attempting to interact with Tyrael" />
